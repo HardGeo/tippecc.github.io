@@ -153,7 +153,7 @@
 
             <!-- Speech Bubble -->
             {#if showBubble}
-                <div class="absolute left-0 mt-2 w-72 bg-gray-100 p-4 rounded-md shadow-lg z-10">
+                <div class="absolute left-0 mt-2 w-72 bg-gray-100 p-4 rounded-md shadow-lg z-10 text-black">
                     <button
                         on:click={copyData}
                         class="absolute right-5 bg-gray-200 p-2 rounded-md shadow-md hover:bg-gray-200"

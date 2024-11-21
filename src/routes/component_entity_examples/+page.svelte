@@ -178,11 +178,14 @@
         const wasGeneratedBy = data.wasGeneratedBy
 
 
-        //Create Entities
+        // Create Entities
         const { startEntities, generatedToUsedMap } = createEntityFlowCore(wasDerivedFrom, 'prov:generatedEntity', 'prov:usedEntity');
 
         // Process all starting entities
         for (let startEntity of startEntities) {
+            // Create a local Set to track used yPositions for this specific startEntity
+            let localNodeYPositions = new Set<number>();
+
             // create all entity nodes and edges
             createEntityFlow(
                 startEntity, 
@@ -193,8 +196,11 @@
                 'height: 40px',
                 "was derived from",
                 false,
-                generatedToUsedMap);
-        };
+                generatedToUsedMap,
+                localNodeYPositions); // Pass the Set to track yPositions locally
+        }
+
+
 
         // Create Actions (renaming for consistency)
         const { startEntities: startActions, generatedToUsedMap: generatedToUsedMapAction } = createEntityFlowCore(wasInformedBy, 'prov:informed', 'prov:informant');
@@ -271,10 +277,12 @@
             EntityName: 'prov:entity',
             swapArrow: false,
             style: "stroke: red;",
-            labelStyle: "color: red;"
+            labelStyle: "color: red;",
+            handle1: "right",
+            handle2: "left"
         });
 
-        /* BRAUCHE ICH DIESES LABEL ??????? ODER REICHT USED
+
         // Add Edges for wasGeneratedBy
         addEdgesOnly({
             dataset: wasGeneratedBy,  
@@ -284,11 +292,14 @@
             EntityName: 'prov:activity',
             swapArrow: true,
             style: "stroke: green;",
-            labelStyle: "color: green;"
+            labelStyle: "color: green;",
+            handle1: "left",
+            handle2: "right"
         });
-        */  
 
     });
+
+    ////Test message
 
 
 

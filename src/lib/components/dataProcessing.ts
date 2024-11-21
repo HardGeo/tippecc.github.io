@@ -257,7 +257,8 @@ export function createPeople ({
                 targetHandle: targetHandle, // Assign the correct target handle
                 animated: false,
                 label: EdgeLabel,
-                style: edgeStyle
+                style: edgeStyle,
+                labelStyle: 'color: black;',
             });
             return e;
         });
@@ -327,7 +328,8 @@ export function addOrga ({
                 target:target,
                 animated: false,
                 label: EdgeLabel,
-                style: edgeStyle
+                style: edgeStyle,
+                labelStyle: 'color: black;',
             });
             return e;
         });
@@ -408,7 +410,8 @@ export function addSoftware({
                 targetHandle: targetHandle, // Assign the correct target handle
                 animated: false,
                 label: EdgeLabel,
-                style: edgestyle
+                style: edgestyle,
+                labelStyle: 'color: black;',
             });
             return e;
         });
@@ -425,7 +428,9 @@ export function addEdgesOnly({
     EntityName,
     swapArrow,
     style,
-    labelStyle
+    labelStyle,
+    handle1,
+    handle2
     //edgeStyle = {} // Allow optional edge style customization
 }: {
     dataset: any, 
@@ -435,7 +440,9 @@ export function addEdgesOnly({
     EntityName: string,
     swapArrow: boolean,
     style: string,
-    labelStyle: string
+    labelStyle: string,
+    handle1: string,
+    handle2: string
 }) {
     for (const member of Object.values(dataset)) {
         const activityId = member[IdName];
@@ -446,8 +453,8 @@ export function addEdgesOnly({
         const target = swapArrow ? activityId : entityId;
 
         // Specify the correct handles for source and target
-        const sourceHandle = swapArrow ? `${entityId}-right` : `${activityId}-left`; // Use entityNode right or activityNode left
-        const targetHandle = swapArrow ? `${activityId}-left` : `${entityId}-right`; // Use activityNode left or entityNode right
+        const sourceHandle = swapArrow ? `${entityId}-${handle1}` : `${activityId}-${handle2}`; // Use entityNode right or activityNode left
+        const targetHandle = swapArrow ? `${activityId}-${handle2}` : `${entityId}-${handle1}`; // Use activityNode left or entityNode right
         
         // Add edge between activity and entity
         edges.update(e => {
