@@ -68,7 +68,7 @@ while (queue.length > 0) {
                 id: currentEntity,
                 type: 'entityNode', // Specify the custom node type
                 data: {
-                    parameter: 'Prec',
+                    parameter: "Prec",   
                     zeitspranne: [{ start: 1910, end: 1950 }, { start: 1980, end: 2050 }],
                     regionalmodell: 'CLMcom-KIT-CCLM5-0-15',
                     globalmodell: 'NCC-NorESM1-M',
@@ -191,6 +191,7 @@ export function createActionFlow(
 
 //-----------------------------------------------------------------------------
 
+
 // ADD PEOPLE
 export function createPeople ({
     dataset,
@@ -219,10 +220,14 @@ export function createPeople ({
 }) {
     // Process hadMember to create collections
     const entityNodes = new Set(); // Keep track of added collection nodes
+
     let yPosition = 0;
+
     for (const [id, member] of Object.entries(dataset)) {
+        
         const Id = member[IdName]; // Use collection name as the ID
         const entity = member[EntityName];
+
         // Only add the collection node if it hasn't been added yet
         if (!entityNodes.has(Id)) {
             // Add collection node

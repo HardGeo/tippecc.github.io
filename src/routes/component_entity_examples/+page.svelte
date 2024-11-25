@@ -1,9 +1,8 @@
 <script lang="ts">
     import { SvelteFlow, Controls, Background, BackgroundVariant, MarkerType, type Node, type Edge } from '@xyflow/svelte';
-    import { writable } from 'svelte/store';
+    import { writable} from 'svelte/store';
     import { SvelteComponent, onMount } from 'svelte';
     import '@xyflow/svelte/dist/style.css';
-
 
 
     import EntityNode from '$lib/components/entityNode1.svelte';
@@ -15,6 +14,7 @@
     import data from '$lib/tippecc-prov.json'
 
     import { createEntityFlowCore, createActionFlow, createPeople, addOrga, addSoftware, addEdgesOnly, createEntityFlow } from '$lib/components//dataProcessing'; // Adjust path as necessary
+    import {adjustPositions, adjustPositionsNotOrder} from "$lib/components/adjustPositions";
 
     const defaultEdgeOptions = {
         style: 'stroke-width: 3; stroke: black; z-index: 1;',
@@ -183,8 +183,6 @@
 
         // Process all starting entities
         for (let startEntity of startEntities) {
-            // Create a local Set to track used yPositions for this specific startEntity
-            let localNodeYPositions = new Set<number>();
 
             // create all entity nodes and edges
             createEntityFlow(
@@ -197,28 +195,8 @@
                 "was derived from",
                 false,
                 generatedToUsedMap,
-                localNodeYPositions); // Pass the Set to track yPositions locally
-        }
+            )}
 
-
-
-        // Create Actions (renaming for consistency)
-        const { startEntities: startActions, generatedToUsedMap: generatedToUsedMapAction } = createEntityFlowCore(wasInformedBy, 'prov:informed', 'prov:informant');
-
-        // Process all starting actions
-        for (let startAction of startActions) {
-            createActionFlow(
-                startAction, 
-                nodes, 
-                edges, 
-                '#3399bf',
-                '',
-                '',
-                "wasInformedBy",
-                false,
-                generatedToUsedMapAction
-            );   
-        };
 
         // create all Collection edges and nodes
         createPeople({
@@ -235,11 +213,21 @@
             edgeStyle: "stroke: #e28743"
         });
 
+
+        adjustPositions({
+            nodes: nodes,
+            edges: edges,
+            edgeToSelect: "wasAttributedTo",
+            nodeTypeToAdjust: 'personNode',
+            minSpace: 400
+
+        });
+
         // create Organisations
         addOrga({
             dataset: Organisations, 
             nodes: nodes,  
-            edges:edges, 
+            edges: edges, 
             color: '#e28743',
             border_radius: '',
             height: '',
@@ -248,6 +236,14 @@
             EntityName: 'prov:delegate',
             swapArrow: false,
             edgeStyle: "stroke: #e28743"
+        });
+        adjustPositions({
+            nodes: nodes,
+            edges: edges,
+            edgeToSelect: "actedOnBehalfOf",
+            nodeTypeToAdjust: 'orgaNode',
+            minSpace: 400
+
         });
 
 
@@ -267,6 +263,24 @@
             edgestyle: "stroke: #e28743;"
         });
 
+        // Create Actions (renaming for consistency)
+        const { startEntities: startActions, generatedToUsedMap: generatedToUsedMapAction } = createEntityFlowCore(wasInformedBy, 'prov:informed', 'prov:informant');
+
+        // Process all starting actions
+        for (let startAction of startActions) {
+            createActionFlow(
+                startAction, 
+                nodes, 
+                edges, 
+                '#3399bf',
+                '',
+                '',
+                "wasInformedBy",
+                false,
+                generatedToUsedMapAction
+            );   
+        };
+
 
         //Add Edges for Used
         addEdgesOnly({
@@ -280,6 +294,24 @@
             labelStyle: "color: red;",
             handle1: "right",
             handle2: "left"
+        });
+
+
+        adjustPositionsNotOrder({
+            nodes: nodes,
+            edges: edges,
+            edgeToSelect: "used",
+            nodeTypeToAdjust: 'activityNode',
+            minSpace: 200
+
+        });
+        adjustPositions({
+            nodes: nodes,
+            edges: edges,
+            edgeToSelect: "wasAssociatedWith",
+            nodeTypeToAdjust: 'softwareNode',
+            minSpace: 400
+
         });
 
 
