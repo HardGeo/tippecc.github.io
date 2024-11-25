@@ -24,7 +24,9 @@
             color: 'black'
         }
     };
-
+    
+    
+    let minZoom = 0.04;
     const initialNodes: Node[] = [
         /*
         {
@@ -335,14 +337,15 @@
 
 
 <div style="height: 2000px;">
-    <SvelteFlow
+    <SvelteFlow 
+        {minZoom}
         {nodes}
         {edges}
         {defaultEdgeOptions}
         nodeTypes={nodeTypes}
         fitView
     >
-        <Controls />
+    <Controls/>
         <Background variant={BackgroundVariant.Dots} />
     </SvelteFlow>
 </div>
