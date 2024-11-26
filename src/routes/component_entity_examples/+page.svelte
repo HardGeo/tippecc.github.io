@@ -11,9 +11,9 @@
     import OrgaNode from '$lib/components/OrgaNode.svelte';
     import SoftwareNode from '$lib/components/SoftwareNode.svelte';
 
-    import data from '$lib/tippecc-prov.json'
+    import data from '$lib/tippecc-prov copy.json'
 
-    import { createEntityFlowCore, createActionFlow, createPeople, addOrga, addSoftware, addEdgesOnly, createEntityFlow } from '$lib/components//dataProcessing'; // Adjust path as necessary
+    import { createActionFlow, createPeople, addOrga, addSoftware, addEdgesOnly, createEntityFlow } from '$lib/components//dataProcessing'; // Adjust path as necessary
     import {adjustPositions, adjustPositionsNotOrder} from "$lib/components/adjustPositions";
 
     const defaultEdgeOptions = {
@@ -170,39 +170,25 @@
     };
 
     onMount(() => {
-        const wasDerivedFrom = data.wasDerivedFrom;
-        const wasInformedBy = data.wasInformedBy;
         //const hadMember = data.hadMember;
-        const People = data.wasAttributedTo;
-        const Organisations = data.actedOnBehalfOf;
-        const Software = data.wasAssociatedWith
-        const used = data.used
-        const wasGeneratedBy = data.wasGeneratedBy
 
 
-        // Create Entities
-        const { startEntities, generatedToUsedMap } = createEntityFlowCore(wasDerivedFrom, 'prov:generatedEntity', 'prov:usedEntity');
-
-        // Process all starting entities
-        for (let startEntity of startEntities) {
-
-            // create all entity nodes and edges
-            createEntityFlow(
-                startEntity, 
-                nodes, 
-                edges, 
-                '#6ec13c',
-                'border-radius: 50%',
-                'height: 40px',
-                "was derived from",
-                false,
-                generatedToUsedMap,
-            )}
+        // create all entity nodes and edges
+        createEntityFlow(
+            data,
+            nodes, 
+            edges, 
+            '#6ec13c',
+            'border-radius: 50%',
+            'height: 40px',
+            "was derived from",
+            false,
+        )
 
 
         // create all Collection edges and nodes
         createPeople({
-            dataset: People, 
+            dataset: data, 
             nodes: nodes,  
             edges: edges, 
             color: '#e28743',
@@ -227,7 +213,7 @@
 
         // create Organisations
         addOrga({
-            dataset: Organisations, 
+            dataset: data, 
             nodes: nodes,  
             edges: edges, 
             color: '#e28743',
@@ -251,7 +237,7 @@
 
         //Add Software Nodes
         addSoftware({
-            dataset: Software,  
+            dataset: data,  
             nodes: nodes, 
             edges: edges, 
             color: '#e28743',
@@ -265,28 +251,23 @@
             edgestyle: "stroke: #e28743;"
         });
 
-        // Create Actions (renaming for consistency)
-        const { startEntities: startActions, generatedToUsedMap: generatedToUsedMapAction } = createEntityFlowCore(wasInformedBy, 'prov:informed', 'prov:informant');
 
         // Process all starting actions
-        for (let startAction of startActions) {
-            createActionFlow(
-                startAction, 
-                nodes, 
-                edges, 
-                '#3399bf',
-                '',
-                '',
-                "wasInformedBy",
-                false,
-                generatedToUsedMapAction
-            );   
-        };
+        createActionFlow(
+            data, 
+            nodes, 
+            edges, 
+            '#3399bf',
+            '',
+            '',
+            "wasInformedBy",
+            false
+        );
 
 
         //Add Edges for Used
         addEdgesOnly({
-            dataset: used,  
+            dataset: data.used,  
             edges: edges, 
             EdgeLabel: "used",
             IdName: 'prov:activity',
@@ -319,7 +300,7 @@
 
         // Add Edges for wasGeneratedBy
         addEdgesOnly({
-            dataset: wasGeneratedBy,  
+            dataset: data.wasGeneratedBy,  
             edges: edges, 
             EdgeLabel: "wasGeneratedBy",
             IdName: 'prov:entity',

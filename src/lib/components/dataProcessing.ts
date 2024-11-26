@@ -41,7 +41,7 @@ export function createEntityFlowCore(
 //-----------------------------------------------------------------------
 
 export function createEntityFlow(
-entity: any, 
+dataset: any,
 nodes: any, 
 edges: any, 
 color: string,
@@ -49,121 +49,66 @@ border_radius: string,
 height: string,
 label: string,
 swapArrow: boolean,
-generatedToUsedMap: Map<string, string[]> 
 ): void {
 // Function to print all derivations starting from a given entity
-let queue = [entity];
-let visited = new Set<string>();
-let yPosition = 0;
 
-while (queue.length > 0) {
-    let currentEntity = queue.shift()!;
-    if (visited.has(currentEntity)) continue;
-    visited.add(currentEntity);
+// Create Entities
+const { startEntities, generatedToUsedMap } = createEntityFlowCore(dataset.wasDerivedFrom, 'prov:generatedEntity', 'prov:usedEntity');
 
-    // Add node for currentEntity
-    nodes.update(n => {
-        if (!n.some(node => node.id === currentEntity)) {
-            n.push({
-                id: currentEntity,
-                type: 'entityNode', // Specify the custom node type
-                data: {
-                    parameter: "Prec",   
-                    zeitspranne: [{ start: 1910, end: 1950 }, { start: 1980, end: 2050 }],
-                    regionalmodell: 'CLMcom-KIT-CCLM5-0-15',
-                    globalmodell: 'NCC-NorESM1-M',
-                    einheit: 'kg m-2 s-1',
-                    szenario: 'SSP-100',
-                    format: 'netCDF',
-                    resolutionZeitlich: 'Mon',
-                    resolutionRaeumlich: 22,
-                    spatialExtent: [11.97, 12.156, 50.523, 51.058],
-                    spatialExtent_orig: [11.9, 12.3, 50.3, 51.2],
-                    dateigroesse: '200MB',
-                    timestamp: '2019-12-09-T14:52:55Z',
-                    project: 'CORDEX',
-                    experiment: 'historic',
-                    standard: 'CF-1.4',
-                    bias: 'yes',
-                    source: 'Climate Limited-area Modelling Community (CLM-Community)',
-                    institution: 'IMK-TRO/KIT, Karlsruhe, Germany in collaboration with the CLM community',
-                    domain: 'AFR-22',
-                    contact: 'hendrik.feldmann@kit.edu',
-                    tracking_id: 'hdl:21.14103/0f700e74-9c64-4638-9fab-e7a2f3d26b26',
-                    doi: 'www.exampleDOI.com'
 
-                },
-                position: { x: 0, y: yPosition }, // Randomized for simplicity
-                style: `background: ${color}; ${border_radius}; ${height}; border: 2px solid black;`
-            });
-            yPosition += 400;       
-        }
-        return n;
-    });
+// Process all starting entities
+for (let startEntity of startEntities) {
+    let queue = [startEntity];
 
-    // Add edges to connected entities
-    if (generatedToUsedMap.has(currentEntity)) {
-        for (const usedEntity of generatedToUsedMap.get(currentEntity)!) {
-            const source = swapArrow ? usedEntity : currentEntity;
-            const target = swapArrow ? currentEntity : usedEntity;
-            edges.update(e => {
-                e.push({
-                    id: `${usedEntity}-${currentEntity}`,
-                    source: source,
-                    target: target,
-                    animated: false,
-                    label: label,
-                    type: 'default',
-                    labelStyle: 'color: black; font-size: 12px; z-index: 2; pointer-events: none;'
-                });
-                return e;
-            });
-
-            // Continue traversing from the used entity
-            queue.push(usedEntity);
-        }
-    }
-}
-}
-
-export function createActionFlow(
-    entity: any, 
-    nodes: any, 
-    edges: any, 
-    color: string,
-    border_radius: string,
-    height: string,
-    label: string,
-    swapArrow: boolean,
-    generatedToUsedMap: Map<string, string[]> 
-    ): void {
-    // Function to print all derivations starting from a given entity
-    let queue = [entity];
     let visited = new Set<string>();
     let yPosition = 0;
+
     while (queue.length > 0) {
         let currentEntity = queue.shift()!;
         if (visited.has(currentEntity)) continue;
         visited.add(currentEntity);
-    
+
+
         // Add node for currentEntity
         nodes.update(n => {
             if (!n.some(node => node.id === currentEntity)) {
                 n.push({
                     id: currentEntity,
-                    type: 'activityNode', // Specify the custom node type
+                    type: 'entityNode', // Specify the custom node type
                     data: {
-                        aggregateInfo: currentEntity,
-    
+                        parameter: dataset.entity[currentEntity]["parameter"],   
+                        zeitspranne: dataset.entity[currentEntity]["zeitspranne"],
+                        regionalmodell: dataset.entity[currentEntity]["regionalmodell"],
+                        globalmodell: dataset.entity[currentEntity]["globalmodell"],
+                        einheit: dataset.entity[currentEntity]["einheit"],
+                        szenario: dataset.entity[currentEntity]["szenario"],
+                        format: dataset.entity[currentEntity]["format"],
+                        resolutionZeitlich: dataset.entity[currentEntity]["resolutionZeitlich"],
+                        resolutionRaeumlich: dataset.entity[currentEntity]["resolutionRaeumlich"],
+                        spatialExtent: dataset.entity[currentEntity]["spatialExtent"],
+                        spatialExtent_orig: dataset.entity[currentEntity]["spatialExtent_orig"],
+                        dateigroesse: dataset.entity[currentEntity]["dateigroesse"],
+                        timestamp: dataset.entity[currentEntity]["timestamp"],
+                        project: dataset.entity[currentEntity]["project"],
+                        experiment: dataset.entity[currentEntity]["experiment"],
+                        standard: dataset.entity[currentEntity]["standard"],
+                        bias: dataset.entity[currentEntity]["bias"],
+                        source: dataset.entity[currentEntity]["source"],
+                        institution: dataset.entity[currentEntity]["institution"],
+                        domain: dataset.entity[currentEntity]["domain"],
+                        contact: dataset.entity[currentEntity]["contact"],
+                        tracking_id: dataset.entity[currentEntity]["tracking_id"],
+                        doi: dataset.entity[currentEntity]["doi"]
+
                     },
-                    position: { x: 700, y:yPosition }, // Randomized for simplicity
+                    position: { x: 0, y: yPosition },
                     style: `background: ${color}; ${border_radius}; ${height}; border: 2px solid black;`
                 });
-                yPosition += 400;
+                yPosition += 400;       
             }
             return n;
         });
-    
+
         // Add edges to connected entities
         if (generatedToUsedMap.has(currentEntity)) {
             for (const usedEntity of generatedToUsedMap.get(currentEntity)!) {
@@ -181,13 +126,88 @@ export function createActionFlow(
                     });
                     return e;
                 });
-    
+
                 // Continue traversing from the used entity
                 queue.push(usedEntity);
             }
         }
     }
-    }
+}
+}
+
+export function createActionFlow(
+    dataset:any,
+    nodes: any, 
+    edges: any, 
+    color: string,
+    border_radius: string,
+    height: string,
+    label: string,
+    swapArrow: boolean
+    ): void {
+    // Function to print all derivations starting from a given entity
+
+    // Create Actions (renaming for consistency)
+    const { 
+        startEntities: startActions, 
+        generatedToUsedMap: generatedToUsedMapAction } = createEntityFlowCore(
+            dataset.wasInformedBy, 
+            'prov:informed', 
+            'prov:informant'
+        );
+    
+    for (let startAction of startActions) {
+        let queue = [startAction];
+        let visited = new Set<string>();
+        let yPosition = 0;
+        while (queue.length > 0) {
+            let currentEntity = queue.shift()!;
+            if (visited.has(currentEntity)) continue;
+            visited.add(currentEntity);
+        
+            // Add node for currentEntity
+            nodes.update(n => {
+                if (!n.some(node => node.id === currentEntity)) {
+                    n.push({
+                        id: currentEntity,
+                        type: 'activityNode', // Specify the custom node type
+                        data: {
+                            aggregateInfo: currentEntity,
+        
+                        },
+                        position: { x: 700, y:yPosition }, // Randomized for simplicity
+                        style: `background: ${color}; ${border_radius}; ${height}; border: 2px solid black;`
+                    });
+                    yPosition += 400;
+                }
+                return n;
+            });
+        
+            // Add edges to connected entities
+            if (generatedToUsedMapAction.has(currentEntity)) {
+                for (const usedEntity of generatedToUsedMapAction.get(currentEntity)!) {
+                    const source = swapArrow ? usedEntity : currentEntity;
+                    const target = swapArrow ? currentEntity : usedEntity;
+                    edges.update(e => {
+                        e.push({
+                            id: `${usedEntity}-${currentEntity}`,
+                            source: source,
+                            target: target,
+                            animated: false,
+                            label: label,
+                            type: 'default',
+                            labelStyle: 'color: black; font-size: 12px; z-index: 2; pointer-events: none;'
+                        });
+                        return e;
+                    });
+        
+                    // Continue traversing from the used entity
+                    queue.push(usedEntity);
+                }
+            }
+        }
+        }
+}
 
 //-----------------------------------------------------------------------------
 
@@ -223,10 +243,12 @@ export function createPeople ({
 
     let yPosition = 0;
 
-    for (const [id, member] of Object.entries(dataset)) {
+    for (const [id, member] of Object.entries(dataset.wasAttributedTo)) {
+        
         
         const Id = member[IdName]; // Use collection name as the ID
         const entity = member[EntityName];
+        console.log(dataset.agent);
 
         // Only add the collection node if it hasn't been added yet
         if (!entityNodes.has(Id)) {
@@ -236,7 +258,7 @@ export function createPeople ({
                     id: Id,
                     type: 'personNode',
                     data: { person: Id,
-                            orcid: '0000-0001-6892-7046'
+                            orcid: dataset.agent[Id]["orcid"]
                      },
                     position: { x:-500, y: yPosition }, // Adjust position as needed
                     style: `background: ${color}; ${border_radius}; width: ${Id.length*10}px;${height}; border: 2px solid black`
@@ -299,7 +321,7 @@ export function addOrga ({
 }) {
     let yPosition = 0;
     const entityNodes = new Set();
-    for (const [id, member] of Object.entries(dataset)) {
+    for (const [id, member] of Object.entries(dataset.actedOnBehalfOf)) {
         const Id = member[IdName]; // Use name as the ID
         const entity = member[EntityName];
         
@@ -312,7 +334,7 @@ export function addOrga ({
                     type: 'orgaNode',
                     data: {
                         orga: Id,
-                        rorid: 'XXX-XXXX-XX'
+                        rorid: dataset.agent[Id]["rorid"]
                      },
                     position: { x:-800, y: yPosition }, // Adjust position as needed
                     style: `background: ${color}; ${border_radius}; width: ${Id.length*10}px;${height}; border: 2px solid black`
@@ -374,7 +396,7 @@ export function addSoftware({
     edgestyle: string
 }) {
     let yPosition = 0;
-    for (const member of Object.values(dataset)) {
+    for (const member of Object.values(dataset.wasAssociatedWith)) {
         const activityId = member[IdName];
         const agentId = member[EntityName];
         
@@ -386,10 +408,10 @@ export function addSoftware({
                     type: 'softwareNode',
                     data: {
                         software: agentId,
-                        source: 'www.example.com',
-                        version: '1.7',
-                        repository: 'https://github.com/rue-a/provo?tab=readme-ov-file',
-                        license: 'MIT'
+                        source: dataset.agent[agentId]["source"],
+                        version: dataset.agent[agentId]["version"],
+                        repository: dataset.agent[agentId]["repository"],
+                        license: dataset.agent[agentId]["license"]
                      },
                     position: { x: 1200, y: yPosition }, // Adjust as needed
                     style: `background: ${color}; ${border_radius}; width: ${agentId.length*10}px;${height}; border: 2px solid black`

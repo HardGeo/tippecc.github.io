@@ -1,0 +1,546 @@
+{
+    "prefix": {
+        "brick": "https://brickschema.org/schema/Brick#",
+        "csvw": "http://www.w3.org/ns/csvw#",
+        "dc": "http://purl.org/dc/elements/1.1/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "dcmitype": "http://purl.org/dc/dcmitype/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dcam": "http://purl.org/dc/dcam/",
+        "doap": "http://usefulinc.com/ns/doap#",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "odrl": "http://www.w3.org/ns/odrl/2/",
+        "org": "http://www.w3.org/ns/org#",
+        "prof": "http://www.w3.org/ns/dx/prof/",
+        "qb": "http://purl.org/linked-data/cube#",
+        "schema": "https://schema.org/",
+        "sh": "http://www.w3.org/ns/shacl#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "ssn": "http://www.w3.org/ns/ssn/",
+        "time": "http://www.w3.org/2006/time#",
+        "vann": "http://purl.org/vocab/vann/",
+        "void": "http://rdfs.org/ns/void#",
+        "wgs": "https://www.w3.org/2003/01/geo/wgs84_pos#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xml": "http://www.w3.org/XML/1998/namespace",
+        "cf": "https://cfconventions.org/cf-conventions/cf-conventions.html",
+        "esgf_portal": "http://www.provbook.org/tippecc/esgf_portal/",
+        "exe": "http://www.provbook.org/tippecc/exe/#",
+        "orgs": "http://www.provbook.org/tippecc/orgs/",
+        "people": "http://www.provbook.org/tippecc/people/",
+        "sdo": "http://schema.org/",
+        "software": "http://www.provbook.org/tippecc/software/",
+        "tippecc_data": "http://www.provbook.org/tippecc/data/",
+        "wd": "http://www.wikidata.org/entity/"
+    },
+    "wasAttributedTo": {
+        "_:id1": {
+            "prov:entity": "tippecc_data:Kariba_2080_2099_monthly",
+            "prov:agent": "people:Kawawa"
+        },
+        "_:id2": {
+            "prov:entity": "tippecc_data:Kariba.shp",
+            "prov:agent": "people:Kawawa"
+        },
+        "_:id8": {
+            "prov:entity": "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc",
+            "prov:agent": "people:Franzi"
+        },
+        "_:id13": {
+            "prov:entity": "tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc",
+            "prov:agent": "people:Jessica"
+        },
+        "_:id15": {
+            "prov:entity": "tippecc_data:bias_adjusted_datasets",
+            "prov:agent": "people:Francios"
+        },
+        "_:id19": {
+            "prov:entity": "tippecc_data:raw_datasets",
+            "prov:agent": "people:Francios"
+        },
+        "_:id20": {
+            "prov:entity": "tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc",
+            "prov:agent": "people:Jessica"
+        },
+        "_:id26": {
+            "prov:entity": "tippecc_data:bias_adjusted_datasets",
+            "prov:agent": "people:Jessica"
+        },
+        "_:id36": {
+            "prov:entity": "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099_monthsum.nc",
+            "prov:agent": "people:Franzi"
+        },
+        "_:id39": {
+            "prov:entity": "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc",
+            "prov:agent": "people:Franzi"
+        },
+        "_:id42": {
+            "prov:entity": "tippecc_data:raw_datasets",
+            "prov:agent": "people:Jessica"
+        }
+    },
+    "used": {
+        "_:id3": {
+            "prov:activity": "exe:combineDatasetsHistoricalRCP",
+            "prov:entity": "esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_historicl.nc"
+        },
+        "_:id5": {
+            "prov:activity": "exe:sliceByTime",
+            "prov:entity": "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc"
+        },
+        "_:id10": {
+            "prov:activity": "exe:sliceByArea",
+            "prov:entity": "tippecc_data:Kariba.shp"
+        },
+        "_:id16": {
+            "prov:activity": "exe:aggregateMonthlySum",
+            "prov:entity": "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc"
+        },
+        "_:id27": {
+            "prov:activity": "exe:bias_adjustment",
+            "prov:entity": "tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc"
+        },
+        "_:id29": {
+            "prov:activity": "exe:sliceByArea",
+            "prov:entity": "tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc"
+        },
+        "_:id43": {
+            "prov:activity": "exe:combineDatasetsHistoricalRCP",
+            "prov:entity": "esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_rcp85.nc"
+        }
+    },
+    "hadMember": {
+        "_:id4": {
+            "prov:collection": "tippecc_data:bias_adjusted_datasets",
+            "prov:entity": "tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc"
+        },
+        "_:id7": {
+            "prov:collection": "tippecc_data:Kariba_2080_2099_monthly",
+            "prov:entity": "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099_monthsum.nc"
+        },
+        "_:id14": {
+            "prov:collection": "tippecc_data:Kariba_2080_2099_monthly",
+            "prov:entity": "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc"
+        },
+        "_:id25": {
+            "prov:collection": "tippecc_data:raw_datasets",
+            "prov:entity": "tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc"
+        },
+        "_:id32": {
+            "prov:collection": "tippecc_data:Kariba_2080_2099_monthly",
+            "prov:entity": "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc"
+        }
+    },
+    "wasInformedBy": {
+        "_:id6": {
+            "prov:informed": "exe:sliceByProjectArea",
+            "prov:informant": "exe:regrid"
+        },
+        "_:id11": {
+            "prov:informed": "exe:bias_adjustment",
+            "prov:informant": "exe:sliceByProjectArea"
+        },
+        "_:id21": {
+            "prov:informed": "exe:regrid",
+            "prov:informant": "exe:combineDatasetsHistoricalRCP"
+        },
+        "_:id30": {
+            "prov:informed": "exe:sliceByTime",
+            "prov:informant": "exe:sliceByArea"
+        },
+        "_:id31": {
+            "prov:informed": "exe:aggregateMonthlySum",
+            "prov:informant": "exe:sliceByTime"
+        },
+        "_:id34": {
+            "prov:informed": "exe:sliceByArea",
+            "prov:informant": "exe:bias_adjustment"
+        }
+    },
+    "wasAssociatedWith": {
+        "_:id9": {
+            "prov:activity": "exe:sliceByTime",
+            "prov:agent": "software:cdo"
+        },
+        "_:id17": {
+            "prov:activity": "exe:aggregateMonthlySum",
+            "prov:agent": "software:cdo"
+        },
+        "_:id40": {
+            "prov:activity": "exe:bias_adjustment",
+            "prov:agent": "software:wits_fortran_magic_tool"
+        }
+    },
+    "actedOnBehalfOf": {
+        "_:id12": {
+            "prov:delegate": "people:Jessica",
+            "prov:responsible": "orgs:WITS"
+        },
+        "_:id18": {
+            "prov:delegate": "people:Kawawa",
+            "prov:responsible": "orgs:UNZA"
+        },
+        "_:id22": {
+            "prov:delegate": "people:Francios",
+            "prov:responsible": "orgs:WITS"
+        },
+        "_:id35": {
+            "prov:delegate": "people:Franzi",
+            "prov:responsible": "orgs:UniJena"
+        }
+    },
+    "wasDerivedFrom": {
+        "_:id23": {
+            "prov:generatedEntity": "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc",
+            "prov:usedEntity": "tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc"
+        },
+        "_:id24": {
+            "prov:generatedEntity": "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099_monthsum.nc",
+            "prov:usedEntity": "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc"
+        },
+        "_:id28": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc",
+            "prov:usedEntity": "tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc"
+        },
+        "_:id33": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc",
+            "prov:usedEntity": "esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_rcp85.nc"
+        },
+        "_:id37": {
+            "prov:generatedEntity": "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc",
+            "prov:usedEntity": "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc"
+        },
+        "_:id38": {
+            "prov:generatedEntity": "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc",
+            "prov:usedEntity": "tippecc_data:Kariba.shp"
+        },
+        "_:id41": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc",
+            "prov:usedEntity": "esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_historicl.nc"
+        }
+    },
+    "entity": {
+        "tippecc_data:Kariba_2080_2099_monthly": {
+            "prov:type": {
+                "$": "prov:Collection",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        },
+        "tippecc_data:bias_adjusted_datasets": {
+            "prov:type": {
+                "$": "prov:Collection",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        },
+        "tippecc_data:raw_datasets": {
+            "prov:type": {
+                "$": "prov:Collection",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        },
+        "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099_monthsum.nc": {
+            "parameter": "Prec",   
+            "zeitspranne": [{ "start": 1910, "end": 1950 }, { "start": 1980, "end": 2050 }],
+            "regionalmodell": "CLMcom-KIT-CCLM5-0-15",
+            "globalmodell": "NCC-NorESM1-M",
+            "einheit": "kg m-2 s-1",
+            "szenario": "SSP-100",
+            "format": "netCDF",
+            "resolutionZeitlich": "Mon",
+            "resolutionRaeumlich": 22,
+            "spatialExtent": [11.97, 12.156, 50.523, 51.058],
+            "spatialExtent_orig": [11.9, 12.3, 50.3, 51.2],
+            "dateigroesse": "200MB",
+            "timestamp": "2019-12-09-T14:52:55Z",
+            "project": "CORDEX",
+            "experiment": "historic",
+            "standard": "CF-1.4",
+            "bias": "yes",
+            "source": "Climate Limited-area Modelling Community (CLM-Community)",
+            "institution": "IMK-TRO/KIT, Karlsruhe, Germany in collaboration with the CLM community",
+            "domain": "AFR-22",
+            "contact": "hendrik.feldmann@kit.edu",
+            "tracking_id": "hdl:21.14103/0f700e74-9c64-4638-9fab-e7a2f3d26b26",
+            "doi": "www.exampleDOI.com"
+
+        },
+        "tippecc_data:Kariba.shp": {
+            "parameter": "Prec",   
+            "zeitspranne": [],
+            "regionalmodell": "undefined",
+            "globalmodell": "undefined",
+            "einheit": "kg m-2 s-1",
+            "szenario": "undefined",
+            "format": "SHP",
+            "resolutionZeitlich": "undefined",
+            "resolutionRaeumlich": 22,
+            "spatialExtent": [11.97, 12.156, 50.523, 51.058],
+            "spatialExtent_orig": [11.9, 12.3, 50.3, 51.2],
+            "dateigroesse": "2MB",
+            "timestamp": "2019-06-09-T14:52:55Z",
+            "project": "undefined",
+            "experiment": "undefined",
+            "standard": "undefined",
+            "bias": "undefined",
+            "source": "undefined",
+            "institution": "undefined",
+            "domain": "undefined",
+            "contact": "undefined",
+            "tracking_id": "undefined",
+            "doi": "undefined"
+        },
+        "esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_historicl.nc": {
+            "prov:type": {
+                "$": "prov:Collection",
+                "type": "prov:QUALIFIED_NAME"
+            },
+            "parameter": "Par1",   
+            "zeitspranne": [{ "start": 1980, "end": 2050 }],
+            "regionalmodell": "CLMcom-KIT-CCLM5-0-15",
+            "globalmodell": "NCC-NorESM1-M",
+            "einheit": "Unit1",
+            "szenario": "SSP-100",
+            "format": "application/x-netcdf",
+            "resolutionZeitlich": "Mon",
+            "resolutionRaeumlich": 22,
+            "spatialExtent": [11.97, 12.156, 50.523, 51.058],
+            "spatialExtent_orig": [11.9, 12.3, 50.3, 51.2],
+            "dateigroesse": "10MB",
+            "timestamp": "2019-12-09-T14:52:55Z",
+            "project": "Proj1",
+            "experiment": "historic",
+            "standard": "nerc:CFSN0453/",
+            "bias": "no",
+            "source": "Climate Limited-area Modelling Community (CLM-Community)",
+            "institution": "IMK-TRO/KIT, Karlsruhe, Germany in collaboration with the CLM community",
+            "domain": "AFR-22",
+            "contact": "lala@lala.com",
+            "tracking_id": "xxx",
+            "doi": "www.exampleDOI.com"
+        },
+        "esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_rcp85.nc": {
+            "prov:type": {
+                "$": "prov:Collection",
+                "type": "prov:QUALIFIED_NAME"
+            },
+            "parameter": "Par2",   
+            "zeitspranne": [{ "start": 1950, "end": 2050 }],
+            "regionalmodell": "Reg1",
+            "globalmodell": "Glob1",
+            "einheit": "Unit2",
+            "szenario": "SSP-100",
+            "format": "application/x-netcdf",
+            "resolutionZeitlich": "Week",
+            "resolutionRaeumlich": 22,
+            "spatialExtent": [11.97, 12.156, 50.523, 51.058],
+            "spatialExtent_orig": [11.9, 12.3, 50.3, 51.2],
+            "dateigroesse": "22.58MB",
+            "timestamp": "2019-12-09-T14:52:55Z",
+            "project": "Proj1",
+            "experiment": "historic",
+            "standard": "nerc:CFSN0453/",
+            "bias": "yes",
+            "source": "Climate Limited-area Modelling Community (CLM-Community)",
+            "institution": "IMK-TRO/KIT, Karlsruhe, Germany in collaboration with the CLM community",
+            "domain": "AFR-22",
+            "contact": "lala@lala.com",
+            "tracking_id": "xxx",
+            "doi": "www.exampleDOI34464.com"
+        },
+        "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc": {
+            "parameter": "Par3",   
+            "zeitspranne": [{ "start": 1940, "end": 2050 }],
+            "regionalmodell": "Reg2",
+            "globalmodell": "Glob2",
+            "einheit": "Unit3",
+            "szenario": "SSP-200",
+            "format": "application/x-netcdf",
+            "resolutionZeitlich": "Mon",
+            "resolutionRaeumlich": 40,
+            "spatialExtent": [11.97, 12.156, 50.523, 51.058],
+            "spatialExtent_orig": [11.9, 12.3, 50.3, 51.2],
+            "dateigroesse": "26.58MB",
+            "timestamp": "2019-12-09-T14:52:55Z",
+            "project": "Proj2",
+            "experiment": "future",
+            "standard": "nerc:CFSN0453/",
+            "bias": "yes",
+            "source": "Climate Limited-area Modelling Community (CLM-Community)",
+            "institution": "Uni Jena",
+            "domain": "AFR-22",
+            "contact": "lala@lala.com",
+            "tracking_id": "xxx",
+            "doi": "www.exampleDOI34464.com"
+        },
+        "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc": {
+            "parameter": "Par4",   
+            "zeitspranne": [{ "start": 1945, "end": 2050 }],
+            "regionalmodell": "Reg3",
+            "globalmodell": "Glob2",
+            "einheit": "Unit4",
+            "szenario": "SSP-300",
+            "format": "application/x-netcdf",
+            "resolutionZeitlich": "Mon",
+            "resolutionRaeumlich": 40,
+            "spatialExtent": [11.99, 12.056, 50.723, 51.058],
+            "spatialExtent_orig": [11.9, 12.3, 50.3, 51.2],
+            "dateigroesse": "26.44MB",
+            "timestamp": "2022-12-09-T14:52:55Z",
+            "project": "Proj2",
+            "experiment": "future",
+            "standard": "nerc:CFSN0453/",
+            "bias": "no",
+            "source": "Climate Limited-area Modelling Community (CLM-Community)",
+            "institution": "Uni Jena",
+            "domain": "AFR-22",
+            "contact": "lala@lala.com",
+            "tracking_id": "xxx",
+            "doi": "www.exampleDOI34464.com"
+        },
+        "tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc": {
+            "parameter": "Par4",   
+            "zeitspranne": [{ "start": 1940, "end": 2050 }],
+            "regionalmodell": "Reg2",
+            "globalmodell": "Glob2",
+            "einheit": "Unit4",
+            "szenario": "SSP-200",
+            "format": "application/x-netcdf",
+            "resolutionZeitlich": "Mon",
+            "resolutionRaeumlich": 40,
+            "spatialExtent": [11.97, 12.156, 50.523, 51.058],
+            "spatialExtent_orig": [11.9, 12.3, 50.3, 51.2],
+            "dateigroesse": "26.58MB",
+            "timestamp": "2019-12-09-T14:52:55Z",
+            "project": "Proj2",
+            "experiment": "future",
+            "standard": "nerc:CFSN0453/",
+            "bias": "yes",
+            "source": "Climate Limited-area Modelling Community (CLM-Community)",
+            "institution": "Uni Jena",
+            "domain": "AFR-22",
+            "contact": "lala@lala.com",
+            "tracking_id": "xxx",
+            "doi": "www.exampleDOI34464.com"
+        },
+        "tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc": {
+            "parameter": "Par3",   
+            "zeitspranne": [{ "start": 1940, "end": 2050 }],
+            "regionalmodell": "Reg2",
+            "globalmodell": "Glob2",
+            "einheit": "Unit3",
+            "szenario": "SSP-200",
+            "format": "application/x-netcdf",
+            "resolutionZeitlich": "Mon",
+            "resolutionRaeumlich": 40,
+            "spatialExtent": [11.97, 12.156, 50.523, 51.058],
+            "spatialExtent_orig": [11.9, 12.3, 50.3, 51.2],
+            "dateigroesse": "26.58MB",
+            "timestamp": "2019-12-09-T14:52:55Z",
+            "project": "Proj2",
+            "experiment": "future",
+            "standard": "nerc:CFSN0453/",
+            "bias": "yes",
+            "source": "Climate Limited-area Modelling Community (CLM-Community)",
+            "institution": "Uni Jena",
+            "domain": "AFR-22",
+            "contact": "lala@lala.com",
+            "tracking_id": "xxx",
+            "doi": "www.exampleDOI34464.com"
+        }
+    },
+    "agent": {
+        "software:xclim": {
+            "source": "www.example.com",
+            "version": "1.7",
+            "repository": "https://github.com/rue-a/provo?tab=readme-ov-file",
+            "license": "MIT"
+        },
+        "orgs:UNZA": {
+            "prov:type": "prov:Organization",
+            "wd:P6782": "xxx ror",
+            "rorid": "XXX-XXXX-XX"
+        },
+        "orgs:UniJena": {
+            "prov:type": "prov:Organization",
+            "prov:label": "Uni Jena",
+            "rorid": "XXX-XXXX-XX"
+        },
+        "software:wits_fortran_magic_tool": {
+            "source": "www.example.com",
+            "version": "1.7",
+            "repository": "https://github.com/rue-a/provo?tab=readme-ov-file",
+            "license": "MIT"
+        },
+        "orgs:WITS": {
+            "prov:type": "prov:Organization",
+            "prov:label": "WITS",
+            "rorid": "XXX-XXXX-XX"
+        },
+        "people:Francios": {
+            "prov:type": "prov:Person",
+            "orcid": "0000-0001-6892-7046",
+            "prov:label": "Francios"
+        },
+        "people:Kawawa": {
+            "prov:type": "prov:Person",
+            "orcid": "0000-0001-6892-7046",
+            "prov:label": "Kawawa"
+        },
+        "software:cdo": {
+            "source": "www.example.com",
+            "version": "1.7",
+            "repository": "https://github.com/rue-a/provo?tab=readme-ov-file",
+            "license": "MIT"
+        },
+        "people:Franzi": {
+            "prov:type": "prov:Person",
+            "prov:label": "Franziska Zander",
+            "orcid": "0000-0001-6892-7046"
+        },
+        "people:Jessica": {
+            "prov:type": "prov:Person",
+            "wd:P496": "xxx orcid",
+            "orcid": "0000-0001-6892-7046"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id44": {
+            "prov:entity": "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099_monthsum.nc",
+            "prov:activity": "exe:aggregateMonthlySum",
+            "prov:time": "2012-04-03T13:35:23+00:00"
+        },
+        "_:id45": {
+            "prov:entity": "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc",
+            "prov:activity": "exe:sliceByArea",
+            "prov:time": "2012-04-03T13:35:23+00:00"
+        },
+        "_:id46": {
+            "prov:entity": "tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc",
+            "prov:activity": "exe:sliceByTime",
+            "prov:time": "2012-04-03T13:35:23+00:00"
+        },
+        "_:id47": {
+            "prov:entity": "tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc",
+            "prov:activity": "exe:sliceByProjectArea",
+            "prov:time": "2012-04-03T13:35:23+00:00"
+        },
+        "_:id48": {
+            "prov:entity": "tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc",
+            "prov:activity": "exe:bias_adjustment",
+            "prov:time": "2012-04-03T13:35:23+00:00"
+        }
+    },
+    "activity": {
+        "exe:aggregateMonthlySum": {},
+        "exe:combineDatasetsHistoricalRCP": {},
+        "exe:regrid": {},
+        "exe:bias_adjustment": {},
+        "exe:sliceByArea": {},
+        "exe:sliceByProjectArea": {},
+        "exe:sliceByTime": {}
+    }
+}
