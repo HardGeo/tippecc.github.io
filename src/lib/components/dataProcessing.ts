@@ -67,8 +67,52 @@ for (let startEntity of startEntities) {
         let currentEntity = queue.shift()!;
         if (visited.has(currentEntity)) continue;
         visited.add(currentEntity);
+        
+        const variables = dataset.entity[currentEntity]["cf:variables"];
+        
+        // EXTRACT PARAMTER NAME
+        // Split the string at ", ", find the part starting with "name:", and extract the value
+        const name = variables
+        .split(", ")  // Split into an array by commas
+        .find(part => part.startsWith("name:"))  // Find the segment starting with "name:"
+        ?.split(": ")[1];  // Split by ": " and get the value after the colon
+        
+        //EXTRACT UNIT
+        const unit = variables
+        .split(", ")  // Split into an array by commas
+        .find(part => part.startsWith("units:"))  // Find the segment starting with "units:"
+        ?.split(": ")[1];  // Split by ": " and get the value after the colon
+        
 
+        //EXTRACT TIMESPAN
+        function parseTimespans(timespans: string): { start: number; end: number }[] {
+            if (!timespans) {
+              return [];  // Return an empty array if no timespans data is available
+            }
+          
+            // Process the timespans string by splitting it at ", " for multiple ranges
+            return timespans.split(", ").map(range => {
+              const [start, end] = range.split("-").map(Number);  // Split each range by "-" and convert to numbers
+              return { start, end };
+            });
+          }
+        // Safe access to the timespans data
+        const timespans = dataset?.entity?.[currentEntity]?.["dcterms:temporal"];
+        // Parse the timespans string
+        const parsedTimespans = parseTimespans(timespans);
+        
+        
+        // EXTRACT BBOXES
+        const Bboxes = dataset.entity[currentEntity]["dcterms:spatial"];
+        // Regular expression to match numbers inside square brackets
+        const regex = /\[([^\]]+)\]/g;
+        const matches = [...Bboxes.matchAll(regex)]; // Get all matches
+        // Extract numbers from matches and convert them to arrays
+        const boundingBoxes = matches.map(match => match[1].split(', ').map(Number));
+        const extent = boundingBoxes[0]
+        const extent_orig = boundingBoxes[1]
 
+           
         // Add node for currentEntity
         nodes.update(n => {
             if (!n.some(node => node.id === currentEntity)) {
@@ -76,29 +120,29 @@ for (let startEntity of startEntities) {
                     id: currentEntity,
                     type: 'entityNode', // Specify the custom node type
                     data: {
-                        parameter: dataset.entity[currentEntity]["parameter"],   
-                        zeitspranne: dataset.entity[currentEntity]["zeitspranne"],
-                        regionalmodell: dataset.entity[currentEntity]["regionalmodell"],
-                        globalmodell: dataset.entity[currentEntity]["globalmodell"],
-                        einheit: dataset.entity[currentEntity]["einheit"],
-                        szenario: dataset.entity[currentEntity]["szenario"],
-                        format: dataset.entity[currentEntity]["format"],
-                        resolutionZeitlich: dataset.entity[currentEntity]["resolutionZeitlich"],
-                        resolutionRaeumlich: dataset.entity[currentEntity]["resolutionRaeumlich"],
-                        spatialExtent: dataset.entity[currentEntity]["spatialExtent"],
-                        spatialExtent_orig: dataset.entity[currentEntity]["spatialExtent_orig"],
-                        dateigroesse: dataset.entity[currentEntity]["dateigroesse"],
-                        timestamp: dataset.entity[currentEntity]["timestamp"],
-                        project: dataset.entity[currentEntity]["project"],
-                        experiment: dataset.entity[currentEntity]["experiment"],
-                        standard: dataset.entity[currentEntity]["standard"],
-                        bias: dataset.entity[currentEntity]["bias"],
-                        source: dataset.entity[currentEntity]["source"],
-                        institution: dataset.entity[currentEntity]["institution"],
-                        domain: dataset.entity[currentEntity]["domain"],
-                        contact: dataset.entity[currentEntity]["contact"],
-                        tracking_id: dataset.entity[currentEntity]["tracking_id"],
-                        doi: dataset.entity[currentEntity]["doi"]
+                        parameter: name,
+                        zeitspranne: parsedTimespans,
+                        regionalmodell: dataset.entity[currentEntity]["tippecc:regionalmodel"],
+                        globalmodell: dataset.entity[currentEntity]["tippecc:globalmodel"],
+                        einheit: unit,
+                        szenario: dataset.entity[currentEntity]["tippecc:scenario"],
+                        format: dataset.entity[currentEntity]["datacite:format"],
+                        resolutionZeitlich: dataset.entity[currentEntity]["dcat:temporalResolution"],
+                        resolutionRaeumlich: dataset.entity[currentEntity]["dcat:spatialResolutionInMeters"]["$"],
+                        spatialExtent: extent,
+                        spatialExtent_orig: extent_orig,
+                        dateigroesse: dataset.entity[currentEntity]["datacite:size"],
+                        timestamp: dataset.entity[currentEntity]["prov:generatedAtTime"],
+                        project: dataset.entity[currentEntity]["sdo:project"],
+                        experiment: dataset.entity[currentEntity]["tippecc:experiment"],
+                        standard: dataset.entity[currentEntity]["cf:standard"],
+                        bias: dataset.entity[currentEntity]["tippecc:bias"],
+                        source: dataset.entity[currentEntity]["dcterms:publisher"],
+                        institution: dataset.entity[currentEntity]["dcterms:creator"],
+                        domain: dataset.entity[currentEntity]["tippecc:domain"],
+                        contact: dataset.entity[currentEntity]["tippecc:contact"],
+                        tracking_id: dataset.entity[currentEntity]["esgf_portal:tracking_id"],
+                        doi: dataset.entity[currentEntity]["dcterms:identifier"]
 
                     },
                     position: { x: 0, y: yPosition },
@@ -258,7 +302,7 @@ export function createPeople ({
                     id: Id,
                     type: 'personNode',
                     data: { person: Id,
-                            orcid: dataset.agent[Id]["orcid"]
+                            orcid: dataset.agent[Id]["orcid:identifier"]
                      },
                     position: { x:-500, y: yPosition }, // Adjust position as needed
                     style: `background: ${color}; ${border_radius}; width: ${Id.length*10}px;${height}; border: 2px solid black`
@@ -334,7 +378,7 @@ export function addOrga ({
                     type: 'orgaNode',
                     data: {
                         orga: Id,
-                        rorid: dataset.agent[Id]["rorid"]
+                        rorid: dataset.agent[Id]["ror:identifier"]
                      },
                     position: { x:-800, y: yPosition }, // Adjust position as needed
                     style: `background: ${color}; ${border_radius}; width: ${Id.length*10}px;${height}; border: 2px solid black`
@@ -408,10 +452,10 @@ export function addSoftware({
                     type: 'softwareNode',
                     data: {
                         software: agentId,
-                        source: dataset.agent[agentId]["source"],
-                        version: dataset.agent[agentId]["version"],
-                        repository: dataset.agent[agentId]["repository"],
-                        license: dataset.agent[agentId]["license"]
+                        source: dataset.agent[agentId]["dcterms:source"],
+                        version: dataset.agent[agentId]["sdo:version"],
+                        repository: dataset.agent[agentId]["sdo:codeRepository"],
+                        license: dataset.agent[agentId]["sdo:license"]
                      },
                     position: { x: 1200, y: yPosition }, // Adjust as needed
                     style: `background: ${color}; ${border_radius}; width: ${agentId.length*10}px;${height}; border: 2px solid black`

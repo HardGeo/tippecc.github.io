@@ -1,0 +1,341 @@
+@prefix cf: <https://cfconventions.org/cf-conventions/cf-conventions.html> .
+@prefix datacite: <http://datacite.org/sdo/kernel-4> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix esgf_portal: <http://www.provbook.org/tippecc/esgf_portal/> .
+@prefix exe: <http://www.provbook.org/tippecc/exe/#> .
+@prefix orcid: <http://www.orcid.org/> .
+@prefix orgs: <http://www.provbook.org/tippecc/orgs/> .
+@prefix people: <http://www.provbook.org/tippecc/people/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ror: <https://ror.org/> .
+@prefix schema: <https://schema.org/> .
+@prefix sdo: <http://schema.org/> .
+@prefix software: <http://www.provbook.org/tippecc/software/> .
+@prefix tippecc: <http://www.provbook.org/tippecc/> .
+@prefix tippecc_data: <http://www.provbook.org/tippecc/data/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+tippecc_data:Kariba_2080_2099_monthly a prov:Collection,
+        prov:Entity ;
+    prov:hadMember tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc,
+        tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc,
+        tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099_monthsum.nc ;
+    prov:wasAttributedTo people:Kawawa .
+
+tippecc_data:bias_adjusted_datasets a prov:Collection,
+        prov:Entity ;
+    prov:hadMember tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc ;
+    prov:wasAttributedTo people:Francios,
+        people:Jessica .
+
+tippecc_data:raw_datasets a prov:Collection,
+        prov:Entity ;
+    prov:hadMember tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc ;
+    prov:wasAttributedTo people:Francios,
+        people:Jessica .
+
+software:xclim a prov:Agent ;
+    dcterms:source "www.example.com"^^xsd:string ;
+    sdo:codeRepository "https://github.com/rue-a/provo?tab=readme-ov-file"^^xsd:string ;
+    sdo:license "MIT"^^xsd:string ;
+    sdo:version "1.7"^^xsd:string .
+
+tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099_monthsum.nc a prov:Entity ;
+    datacite:format "netCDF"^^xsd:string ;
+    datacite:size "200MB"^^xsd:string ;
+    dcterms:creator "IMK-TRO/KIT, Karlsruhe, Germany in collaboration with the CLM community"^^xsd:string ;
+    dcterms:identifier "doi:10.1234/example.doi"^^xsd:string ;
+    dcterms:publisher "Climate Limited-area Modelling Community (CLM-Community)"^^xsd:string ;
+    dcterms:spatial "Bounding Box: [11.97, 12.156, 50.523, 51.058]; Original Bounding Box: [11.9, 12.3, 50.3, 51.2]"^^xsd:string ;
+    dcterms:temporal "1910-1950, 1980-2050"^^xsd:string ;
+    sdo:project "CORDEX"^^xsd:string ;
+    tippecc:bias "yes"^^xsd:string ;
+    tippecc:contact "hendrik.feldmann@kit.edu"^^xsd:string ;
+    tippecc:domain "AFR-22"^^xsd:string ;
+    esgf_portal:tracking_id "hdl:21.14103/0f700e74-9c64-4638-9fab-e7a2f3d26b26"^^xsd:string ;
+    tippecc:experiment "historic"^^xsd:string ;
+    tippecc:globalmodel "NCC-NorESM1-M"^^xsd:string ;
+    tippecc:regionalmodel "CLMcom-KIT-CCLM5-0-15"^^xsd:string ;
+    tippecc:scenario "SSP-100"^^xsd:string ;
+    dcat:spatialResolutionInMeters "1000"^^xsd:int ;
+    dcat:temporalResolution "P1D"^^xsd:string ;
+    prov:generatedAtTime "2019-12-09T14:52:55Z"^^xsd:string ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:aggregateMonthlySum ;
+            prov:atTime "2012-04-03T13:35:23+00:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:Franzi ;
+    prov:wasDerivedFrom tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc ;
+    cf:standard "CF-1.4"^^xsd:string ;
+    cf:variables "name: Prec, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string .
+
+exe:aggregateMonthlySum a prov:Activity ;
+    prov:used tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc ;
+    prov:wasAssociatedWith software:cdo ;
+    prov:wasInformedBy exe:sliceByTime .
+
+exe:combineDatasetsHistoricalRCP a prov:Activity ;
+    prov:used esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_historicl.nc,
+        esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_rcp85.nc .
+
+exe:regrid a prov:Activity ;
+    prov:wasInformedBy exe:combineDatasetsHistoricalRCP .
+
+orgs:UNZA a prov:Agent,
+        "prov:Organization"^^xsd:string ;
+    wd:P6782 "xxx ror"^^xsd:string ;
+    ror:identifier "XXX-XXXX-XX"^^xsd:string .
+
+orgs:UniJena a prov:Agent,
+        "prov:Organization"^^xsd:string ;
+    rdfs:label "Uni Jena"^^xsd:string ;
+    ror:identifier "XXX-XXXX-XX"^^xsd:string .
+
+software:wits_fortran_magic_tool a prov:Agent ;
+    dcterms:source "www.example.com"^^xsd:string ;
+    sdo:codeRepository "https://github.com/rue-a/provo?tab=readme-ov-file"^^xsd:string ;
+    sdo:license "MIT"^^xsd:string ;
+    sdo:version "1.7"^^xsd:string .
+
+tippecc_data:Kariba.shp a prov:Entity ;
+    datacite:format "SHP"^^xsd:string ;
+    datacite:size "2MB"^^xsd:string ;
+    dcterms:creator "undefined"^^xsd:string ;
+    dcterms:identifier "undefined"^^xsd:string ;
+    dcterms:publisher "undefined"^^xsd:string ;
+    dcterms:spatial "Bounding Box: [11.97, 12.156, 50.523, 51.058]; Original Bounding Box: [11.9, 12.3, 50.3, 51.2]"^^xsd:string ;
+    dcterms:temporal ""^^xsd:string ;
+    sdo:project "undefined"^^xsd:string ;
+    tippecc:bias "undefined"^^xsd:string ;
+    tippecc:contact "undefined"^^xsd:string ;
+    tippecc:domain "AFR-22"^^xsd:string ;
+    esgf_portal:tracking_id "undefined"^^xsd:string ;
+    tippecc:experiment "undefined"^^xsd:string ;
+    tippecc:globalmodel "NCC-NorESM1-M"^^xsd:string ;
+    tippecc:regionalmodel "CLMcom-KIT-CCLM5-0-15"^^xsd:string ;
+    tippecc:scenario "undefined"^^xsd:string ;
+    dcat:spatialResolutionInMeters "1000"^^xsd:int ;
+    dcat:temporalResolution "undefined"^^xsd:string ;
+    prov:generatedAtTime "2019-12-09T14:52:55Z"^^xsd:string ;
+    prov:wasAttributedTo people:Kawawa ;
+    cf:standard "undefined"^^xsd:string ;
+    cf:variables "name: Prec, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string .
+
+esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_historicl.nc a prov:Collection,
+        prov:Entity ;
+    datacite:format "netCDF"^^xsd:string ;
+    datacite:size "156MB"^^xsd:string ;
+    dcterms:creator "IMK-TRO/KIT, Karlsruhe, Germany in collaboration with the CLM community"^^xsd:string ;
+    dcterms:identifier "doi:10.1234/example.doi"^^xsd:string ;
+    dcterms:publisher "Climate Limited-area Modelling Community (CLM-Community)"^^xsd:string ;
+    dcterms:spatial "Bounding Box: [12, 12.166, 50.553, 51.058]; Original Bounding Box: [11.9, 12.3, 50.3, 51.2]"^^xsd:string ;
+    dcterms:temporal "1980-2050"^^xsd:string ;
+    sdo:project "CORDEX"^^xsd:string ;
+    tippecc:bias "yes"^^xsd:string ;
+    tippecc:contact "hendrik.feldmann@kit.edu"^^xsd:string ;
+    tippecc:domain "AFR-22"^^xsd:string ;
+    esgf_portal:tracking_id "hdl:21.14103/0f700e74-9c64-4638-9fab-e7a2f3d26b26"^^xsd:string ;
+    tippecc:experiment "historic"^^xsd:string ;
+    tippecc:globalmodel "NCC-NorESM1-M"^^xsd:string ;
+    tippecc:regionalmodel "CLMcom-KIT-CCLM5-0-15"^^xsd:string ;
+    tippecc:scenario "SSP-100"^^xsd:string ;
+    dcat:spatialResolutionInMeters "100"^^xsd:int ;
+    dcat:temporalResolution "P1D"^^xsd:string ;
+    prov:generatedAtTime "2019-12-09T14:52:55Z"^^xsd:string ;
+    cf:standard "CF-1.4"^^xsd:string ;
+    cf:variables "name: Par1, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string .
+
+esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_rcp85.nc a prov:Collection,
+        prov:Entity ;
+    datacite:format "netCDF"^^xsd:string ;
+    datacite:size "200MB"^^xsd:string ;
+    dcterms:creator "IMK-TRO/KIT, Karlsruhe, Germany in collaboration with the CLM community"^^xsd:string ;
+    dcterms:identifier "doi:10.1234/example.doi"^^xsd:string ;
+    dcterms:publisher "Climate Limited-area Modelling Community (CLM-Community)"^^xsd:string ;
+    dcterms:spatial "Bounding Box: [11.97, 12.156, 50.523, 51.058]; Original Bounding Box: [11.9, 12.3, 50.3, 51.2]"^^xsd:string ;
+    dcterms:temporal "1910-1960, 1980-2050"^^xsd:string ;
+    sdo:project "CORDEX"^^xsd:string ;
+    tippecc:bias "yes"^^xsd:string ;
+    tippecc:contact "hendrik.feldmann@kit.edu"^^xsd:string ;
+    tippecc:domain "AFR-22"^^xsd:string ;
+    esgf_portal:tracking_id "hdl:21.14103/0f700e74-9c64-4638-9fab-e7a2f3d26b26"^^xsd:string ;
+    tippecc:experiment "historic"^^xsd:string ;
+    tippecc:globalmodel "NCC-NorESM1-M"^^xsd:string ;
+    tippecc:regionalmodel "CLMcom-KIT-CCLM5-0-15"^^xsd:string ;
+    tippecc:scenario "SSP-100"^^xsd:string ;
+    dcat:spatialResolutionInMeters "100"^^xsd:int ;
+    dcat:temporalResolution "P1D"^^xsd:string ;
+    prov:generatedAtTime "2019-12-09T14:52:55Z"^^xsd:string ;
+    cf:standard "CF-1.4"^^xsd:string ;
+    cf:variables "name: Par2, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string .
+
+exe:bias_adjustment a prov:Activity ;
+    prov:used tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc ;
+    prov:wasAssociatedWith software:wits_fortran_magic_tool ;
+    prov:wasInformedBy exe:sliceByProjectArea .
+
+exe:sliceByArea a prov:Activity ;
+    prov:used tippecc_data:Kariba.shp,
+        tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc ;
+    prov:wasInformedBy exe:bias_adjustment .
+
+exe:sliceByProjectArea a prov:Activity ;
+    prov:wasInformedBy exe:regrid .
+
+exe:sliceByTime a prov:Activity ;
+    prov:used tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc ;
+    prov:wasAssociatedWith software:cdo ;
+    prov:wasInformedBy exe:sliceByArea .
+
+orgs:WITS a prov:Agent,
+        "prov:Organization"^^xsd:string ;
+    rdfs:label "WITS"^^xsd:string ;
+    ror:identifier "XXX-XXXX-XX"^^xsd:string .
+
+people:Francios a prov:Agent,
+        "prov:Person"^^xsd:string ;
+    rdfs:label "Francios"^^xsd:string ;
+    orcid:identifier "0000-0001-6892-7046"^^xsd:string ;
+    prov:actedOnBehalfOf orgs:WITS .
+
+people:Kawawa a prov:Agent,
+        "prov:Person"^^xsd:string ;
+    rdfs:label "Kawawa"^^xsd:string ;
+    orcid:identifier "0000-0001-6892-7046"^^xsd:string ;
+    prov:actedOnBehalfOf orgs:UNZA .
+
+software:cdo a prov:Agent ;
+    dcterms:source "www.example.com"^^xsd:string ;
+    sdo:codeRepository "https://github.com/rue-a/provo?tab=readme-ov-file"^^xsd:string ;
+    sdo:license "MIT"^^xsd:string ;
+    sdo:version "1.7"^^xsd:string ;
+    schema:version "1.7"^^xsd:string .
+
+tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc a prov:Entity ;
+    datacite:format "netCDF"^^xsd:string ;
+    datacite:size "200MB"^^xsd:string ;
+    dcterms:creator "IMK-TRO/KIT, Karlsruhe, Germany in collaboration with the CLM community"^^xsd:string ;
+    dcterms:identifier "doi:10.1234/example.doi"^^xsd:string ;
+    dcterms:publisher "Climate Limited-area Modelling Community (CLM-Community)"^^xsd:string ;
+    dcterms:spatial "Bounding Box: [11.97, 12.156, 50.523, 51.058]; Original Bounding Box: [11.9, 12.3, 50.3, 51.2]"^^xsd:string ;
+    dcterms:temporal "1910-1950, 1980-2050"^^xsd:string ;
+    sdo:project "CORDEX"^^xsd:string ;
+    tippecc:bias "yes"^^xsd:string ;
+    tippecc:contact "hendrik.feldmann@kit.edu"^^xsd:string ;
+    tippecc:domain "AFR-22"^^xsd:string ;
+    esgf_portal:tracking_id "hdl:21.14103/0f700e74-9c64-4638-9fab-e7a2f3d26b26"^^xsd:string ;
+    tippecc:experiment "historic"^^xsd:string ;
+    tippecc:globalmodel "NCC-NorESM1-M"^^xsd:string ;
+    tippecc:regionalmodel "CLMcom-KIT-CCLM5-0-15"^^xsd:string ;
+    tippecc:scenario "SSP-100"^^xsd:string ;
+    dcat:spatialResolutionInMeters "1000"^^xsd:int ;
+    dcat:temporalResolution "P1D"^^xsd:string ;
+    prov:generatedAtTime "2019-12-09T14:52:55Z"^^xsd:string ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:sliceByArea ;
+            prov:atTime "2012-04-03T13:35:23+00:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:Franzi ;
+    prov:wasDerivedFrom tippecc_data:Kariba.shp,
+        tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc ;
+    cf:standard "CF-1.4"^^xsd:string ;
+    cf:variables "name: Par3, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string .
+
+tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc a prov:Entity ;
+    datacite:format "netCDF"^^xsd:string ;
+    datacite:size "200MB"^^xsd:string ;
+    dcterms:creator "IMK-TRO/KIT, Karlsruhe, Germany in collaboration with the CLM community"^^xsd:string ;
+    dcterms:identifier "doi:10.1234/example.doi"^^xsd:string ;
+    dcterms:publisher "Climate Limited-area Modelling Community (CLM-Community)"^^xsd:string ;
+    dcterms:spatial "Bounding Box: [11.97, 12.156, 50.523, 51.058]; Original Bounding Box: [11.9, 12.3, 50.3, 51.2]"^^xsd:string ;
+    dcterms:temporal "1910-1950"^^xsd:string ;
+    sdo:project "CORDEX"^^xsd:string ;
+    tippecc:bias "yes"^^xsd:string ;
+    tippecc:contact "hendrik.feldmann@kit.edu"^^xsd:string ;
+    tippecc:domain "AFR-22"^^xsd:string ;
+    esgf_portal:tracking_id "hdl:21.14103/0f700e74-9c64-4638-9fab-e7a2f3d26b26"^^xsd:string ;
+    tippecc:experiment "historic"^^xsd:string ;
+    tippecc:globalmodel "NCC-NorESM1-M"^^xsd:string ;
+    tippecc:regionalmodel "CLMcom-KIT-CCLM5-0-15"^^xsd:string ;
+    tippecc:scenario "SSP-100"^^xsd:string ;
+    dcat:spatialResolutionInMeters "1000"^^xsd:int ;
+    dcat:temporalResolution "P1D"^^xsd:string ;
+    prov:generatedAtTime "2019-12-09T14:52:55Z"^^xsd:string ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:sliceByTime ;
+            prov:atTime "2012-04-03T13:35:23+00:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:Franzi ;
+    prov:wasDerivedFrom tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc ;
+    cf:standard "CF-1.4"^^xsd:string ;
+    cf:variables "name: Par4, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string .
+
+tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc a prov:Entity ;
+    datacite:format "netCDF"^^xsd:string ;
+    datacite:size "200MB"^^xsd:string ;
+    dcterms:creator "IMK-TRO/KIT, Karlsruhe, Germany in collaboration with the CLM community"^^xsd:string ;
+    dcterms:identifier "doi:10.1234/example.doi"^^xsd:string ;
+    dcterms:publisher "Climate Limited-area Modelling Community (CLM-Community)"^^xsd:string ;
+    dcterms:spatial "Bounding Box: [11.97, 12.156, 50.523, 51.058]; Original Bounding Box: [11.9, 12.3, 50.3, 51.2]"^^xsd:string ;
+    dcterms:temporal "1910-1950, 1980-2050"^^xsd:string ;
+    sdo:project "CORDEX"^^xsd:string ;
+    tippecc:bias "yes"^^xsd:string ;
+    tippecc:contact "hendrik.feldmann@kit.edu"^^xsd:string ;
+    tippecc:domain "AFR-22"^^xsd:string ;
+    esgf_portal:tracking_id "hdl:21.14103/0f700e74-9c64-4638-9fab-e7a2f3d26b26"^^xsd:string ;
+    tippecc:experiment "historic"^^xsd:string ;
+    tippecc:globalmodel "NCC-NorESM1-M"^^xsd:string ;
+    tippecc:regionalmodel "CLMcom-KIT-CCLM5-0-15"^^xsd:string ;
+    tippecc:scenario "SSP-100"^^xsd:string ;
+    dcat:spatialResolutionInMeters "1000"^^xsd:int ;
+    dcat:temporalResolution "P1D"^^xsd:string ;
+    prov:generatedAtTime "2019-12-09T14:52:55Z"^^xsd:string ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:sliceByProjectArea ;
+            prov:atTime "2012-04-03T13:35:23+00:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:Jessica ;
+    prov:wasDerivedFrom esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_historicl.nc,
+        esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_rcp85.nc ;
+    cf:standard "CF-1.4"^^xsd:string ;
+    cf:variables "name: Par5, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string .
+
+tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc a prov:Entity ;
+    datacite:format "netCDF"^^xsd:string ;
+    datacite:size "20MB"^^xsd:string ;
+    dcterms:creator "IMK-TRO/KIT, Karlsruhe, Germany in collaboration with the CLM community"^^xsd:string ;
+    dcterms:identifier "doi:10.1234/example.doi"^^xsd:string ;
+    dcterms:publisher "Climate Limited-area Modelling Community (CLM-Community)"^^xsd:string ;
+    dcterms:spatial "Bounding Box: [11.97, 12.156, 50.523, 51.058]; Original Bounding Box: [11.9, 12.3, 50.3, 51.2]"^^xsd:string ;
+    dcterms:temporal "1910-1950, 1980-2050"^^xsd:string ;
+    sdo:project "CORDEX"^^xsd:string ;
+    tippecc:bias "yes"^^xsd:string ;
+    tippecc:contact "hendrik.feldmann@kit.edu"^^xsd:string ;
+    tippecc:domain "AFR-22"^^xsd:string ;
+    esgf_portal:tracking_id "hdl:21.14103/0f700e74-9c64-4638-9fab-e7a2f3d26b26"^^xsd:string ;
+    tippecc:experiment "historic"^^xsd:string ;
+    tippecc:globalmodel "NCC-NorESM1-M"^^xsd:string ;
+    tippecc:regionalmodel "CLMcom-KIT-CCLM5-0-15"^^xsd:string ;
+    tippecc:scenario "SSP-100"^^xsd:string ;
+    dcat:spatialResolutionInMeters "1000"^^xsd:int ;
+    dcat:temporalResolution "P1M"^^xsd:string ;
+    prov:generatedAtTime "2019-12-09T14:52:55Z"^^xsd:string ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:bias_adjustment ;
+            prov:atTime "2012-04-03T13:35:23+00:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:Jessica ;
+    prov:wasDerivedFrom tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc ;
+    cf:standard "CF-1.4"^^xsd:string ;
+    cf:variables "name: Par6, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string .
+
+people:Franzi a prov:Agent,
+        "prov:Person"^^xsd:string ;
+    rdfs:label "Franziska Zander"^^xsd:string ;
+    orcid:identifier "0000-0001-6892-7046"^^xsd:string ;
+    prov:actedOnBehalfOf orgs:UniJena .
+
+people:Jessica a prov:Agent,
+        "prov:Person"^^xsd:string ;
+    orcid:identifier "0000-0001-6892-7046"^^xsd:string ;
+    prov:actedOnBehalfOf orgs:WITS ;
+    wd:P496 "xxx orcid"^^xsd:string .
+
