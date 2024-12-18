@@ -1,6 +1,5 @@
 <script lang="ts">
-    import { SvelteFlow, Controls, Background, BackgroundVariant, MarkerType, type Node, type Edge } from '@xyflow/svelte';
-    import { writable} from 'svelte/store';
+    import { SvelteFlow, Controls, Background, BackgroundVariant, MarkerType} from '@xyflow/svelte';
     import { SvelteComponent, onMount } from 'svelte';
     import '@xyflow/svelte/dist/style.css';
 
@@ -10,6 +9,8 @@
     import PersonNode from '$lib/components/PersonNode.svelte';
     import OrgaNode from '$lib/components/OrgaNode.svelte';
     import SoftwareNode from '$lib/components/SoftwareNode.svelte';
+    import Sidebar from '$lib/components/Sidebar.svelte'; // Import the Sidebar
+    import { nodes, edges } from '$lib/store';
 
     import data from '$lib/generate_rdfjson/article-prov.json'
 
@@ -27,11 +28,6 @@
     
     
     let minZoom = 0.04;
-    const initialNodes: Node[] = [];
-    const initialEdges: Edge[] = [];
-    
-    const nodes = writable<Node[]>(initialNodes);
-    const edges = writable<Edge[]>(initialEdges);
 
     const nodeTypes: Record<string, typeof SvelteComponent> = {
         entityNode: EntityNode as unknown as typeof SvelteComponent,
@@ -188,7 +184,6 @@
 
 </script>
 
-
 <div style="height: 2000px;">
     <SvelteFlow 
         {minZoom}
@@ -201,4 +196,5 @@
     <Controls/>
         <Background variant={BackgroundVariant.Dots} />
     </SvelteFlow>
+    <Sidebar title="Details" />
 </div>

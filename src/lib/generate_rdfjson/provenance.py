@@ -29,7 +29,7 @@ d1.add_namespace('esgf_portal', 'http://www.provbook.org/tippecc/esgf_portal/')
 
 d1.add_namespace('dcterms', 'http://purl.org/dc/terms/')
 d1.add_namespace('dcat','http://www.w3.org/ns/dcat#')
-d1.add_namespace('datacite', 'http://datacite.org/sdo/kernel-4')
+d1.add_namespace('datacite', 'https://datacite-metadata-schema.readthedocs.io/en/4.6/')
 d1.add_namespace('wd', 'http://www.wikidata.org/entity/')
 d1.add_namespace('sdo', 'http://schema.org/')
 d1.add_namespace('cf', 'https://cfconventions.org/cf-conventions/cf-conventions.html')

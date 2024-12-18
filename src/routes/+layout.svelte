@@ -50,20 +50,21 @@
 				current_page.slice(0, 1).toUpperCase() + current_page.slice(1, current_page.length);
 		}
 	}
+	
 </script>
 
-<!-- App Shell -->
-<AppShell>
-	<svelte:fragment slot="header">
-		<!-- App Bar -->
-		<div class="flex">
-			<Navbar {current} verticality={true} {nav_elements} />
-		</div>
-	</svelte:fragment>
-	<!-- Page Route Content -->
-	<slot />
+	<!-- App Shell -->
+	<AppShell>
+		<svelte:fragment slot="header">
+			<!-- App Bar -->
+			<div class="flex">
+				<Navbar {current} verticality={true} {nav_elements} />
+			</div>
+		</svelte:fragment>
+		<!-- Page Route Content -->
+		<slot />
 
-	<svelte:fragment slot="pageFooter">
-		<Footer />
-	</svelte:fragment>
-</AppShell>
+		<svelte:fragment slot="pageFooter">
+			<Footer />
+		</svelte:fragment>
+	</AppShell>

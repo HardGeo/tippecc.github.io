@@ -1,0 +1,16 @@
+{
+    "CDI": "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)",
+    "history": "Sat Apr 06 17:44:17 2024: cdo -O -s -sub /opt/rbis/www/tippecc_data/tmp/water_budget/CLMcom-KIT-CCLM5-0-15_v1_MPI-M-MPI-ESM-LR__evspsblpot_all__yearsum_mean_1981_2000.nc /opt/rbis/www/tippecc_data/tmp/water_budget/CLMcom-KIT-CCLM5-0-15_v1_MPI-M-MPI-ESM-LR__evspsblpot_all__yearsum_mean_2080_2099.nc /opt/rbis/www/tippecc_data/tmp/water_budget/CLMcom-KIT-CCLM5-0-15_v1_MPI-M-MPI-ESM-LR__evspsblpot_all__yearsum_mean_1980_2000-2080_2099.nc\nSat Apr 06 17:44:08 2024: cdo -O -s -timmean -selyear,1981/2000 /opt/rbis/www/tippecc_data/tmp/water_budget/CLMcom-KIT-CCLM5-0-15_v1_MPI-M-MPI-ESM-LR__evspsblpot_all__yearsum_mean.nc /opt/rbis/www/tippecc_data/tmp/water_budget/CLMcom-KIT-CCLM5-0-15_v1_MPI-M-MPI-ESM-LR__evspsblpot_all__yearsum_mean_1981_2000.nc\nSat Apr 06 17:43:28 2024: cdo -O -s -yearsum /opt/rbis/www/tippecc_data/tmp/water_budget/CLMcom-KIT-CCLM5-0-15_v1_MPI-M-MPI-ESM-LR__evspsblpot_all.nc /opt/rbis/www/tippecc_data/tmp/water_budget/CLMcom-KIT-CCLM5-0-15_v1_MPI-M-MPI-ESM-LR__evspsblpot_all__yearsum_mean.nc\nSat Apr 06 17:42:12 2024: cdo -O -s -mergetime /opt/rbis/www/tippecc_data/tmp/water_budget/CLMcom-KIT-CCLM5-0-15_v1_MPI-M-MPI-ESM-LR__evspsblpot_2000.nc /opt/rbis/www/tippecc_data/tmp/water_budget/CLMcom-KIT-CCLM5-0-15_v1_MPI-M-MPI-ESM-LR__evspsblpot_2050.nc /opt/rbis/www/tippecc_data/tmp/water_budget/CLMcom-KIT-CCLM5-0-15_v1_MPI-M-MPI-ESM-LR__evspsblpot_2100.nc /opt/rbis/www/tippecc_data/tmp/water_budget/CLMcom-KIT-CCLM5-0-15_v1_MPI-M-MPI-ESM-LR__evspsblpot_all.nc",
+    "Conventions": "CF-1.6",
+    "frequency": "year",
+    "CDO": "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)",
+    "time_bnds": {},
+    "evspsblpot": {
+        "standard_name": "water_potential_evapotranspiration_flux",
+        "long_name": "Potential evapotranspiration (\"fao_pm98\" method)",
+        "units": "kg m-2 s-1",
+        "cell_methods": "tasmin: time: minimum tasmax: time: maximum hurs: time: mean rsds: time: mean rsus: time: mean rlds: time: mean rlus: time: mean sfcWind: time: mean",
+        "history": "tasmin: \ntasmax: \nhurs: \nrsds: \nrsus: \nrlds: \nrlus: \nsfcWind: \n[2024-03-15 23:43:46] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.47.0",
+        "description": "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with the fao_pm98 method."
+    }
+}

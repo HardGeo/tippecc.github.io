@@ -1,0 +1,13 @@
+{
+    "CDI": "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)",
+    "Conventions": "CF-1.6",
+    "history": "Sat Nov 02 14:22:07 2024: cdo -O -s -mergetime /data/water_budget/CLMcom-KIT-CCLM5-0-15_v1_MPI-M-MPI-ESM-LR__water_budget_2000.nc /data/water_budget/CLMcom-KIT-CCLM5-0-15_v1_MPI-M-MPI-ESM-LR__water_budget_2050.nc /data/water_budget/CLMcom-KIT-CCLM5-0-15_v1_MPI-M-MPI-ESM-LR__water_budget_2100.nc /data/water_budget/CLMcom-KIT-CCLM5-0-15_v1_MPI-M-MPI-ESM-LR__water_budget_all.nc",
+    "CDO": "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)",
+    "water_budget_from_tas": {
+        "long_name": "Water budget (\"br65\" method)",
+        "units": "kg m-2 s-1",
+        "cell_methods": "pr: time: mean evspsblpot: tasmin: time: minimum tasmax: time: maximum hurs: time: mean rsds: time: mean rsus: time: mean rlds: time: mean rlus: time: mean sfcWind: time: mean",
+        "history": "pr: \nevspsblpot: tasmin: \ntasmax: \nhurs: \nrsds: \nrsus: \nrlds: \nrlus: \nsfcWind: \n[2024-04-20 12:20:01] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.48.2\n[2024-04-20 12:37:56] water_budget_from_tas: WATER_BUDGET_FROM_TAS(pr=pr, evspsblpot=evspsblpot, method='BR65') - xclim version: 0.48.2",
+        "description": "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget, where the potential evapotranspiration is calculated with the br65 method."
+    }
+}

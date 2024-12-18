@@ -1,0 +1,16 @@
+{
+    "CDI": "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)",
+    "history": "Sat Nov 02 09:37:00 2024: cdo -O -s -timmean -selyear,2080/2099 /data/water_budget/GERICS-REMO2015_v1_MOHC-HadGEM2-ES__evspsblpot_all__mm__yearsum.nc /data/water_budget/GERICS-REMO2015_v1_MOHC-HadGEM2-ES__evspsblpot_all__mm__yearsum_mean_2080_2099.nc\nSat Nov 02 09:36:14 2024: cdo -O -s -yearsum /data/water_budget/GERICS-REMO2015_v1_MOHC-HadGEM2-ES__evspsblpot_all__mm.nc /data/water_budget/GERICS-REMO2015_v1_MOHC-HadGEM2-ES__evspsblpot_all__mm__yearsum.nc",
+    "Conventions": "CF-1.6",
+    "frequency": "year",
+    "CDO": "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)",
+    "time_bnds": {},
+    "evspsblpot": {
+        "standard_name": "water_potential_evapotranspiration_flux",
+        "long_name": "Potential evapotranspiration (\"fao_pm98\" method)",
+        "units": "mmday",
+        "cell_methods": "tasmin: time: minimum tasmax: time: maximum hurs: time: mean rsds: time: mean rsus: time: mean rlds: time: mean rlus: time: mean sfcWind: time: mean",
+        "history": "tasmin: 2019-03-22T13:08:56Z altered by CMOR: Treated scalar dimension: 'height'. 2019-03-22T13:08:56Z altered by CMOR: replaced missing value flag (-9e+33) with standard missing value (1e+20).\ntasmax: 2019-03-22T13:13:10Z altered by CMOR: Treated scalar dimension: 'height'. 2019-03-22T13:13:10Z altered by CMOR: replaced missing value flag (-9e+33) with standard missing value (1e+20).\nhurs: 2019-03-22T14:23:53Z altered by CMOR: Converted units from '1' to '%'. 2019-03-22T14:23:53Z altered by CMOR: Treated scalar dimension: 'height'. 2019-03-22T14:23:53Z altered by CMOR: replaced missing value flag (-9e+33) with standard missing value (1e+20).\nrsds: 2019-03-22T13:54:29Z altered by CMOR: replaced missing value flag (-9e+33) with standard missing value (1e+20).\nrsus: 2019-07-30T15:20:09Z altered by CMOR: Changed sign. 2019-07-30T15:20:09Z altered by CMOR: replaced missing value flag (-9e+33) with standard missing value (1e+20).\nrlds: 2019-07-30T15:24:17Z altered by CMOR: replaced missing value flag (-9e+33) with standard missing value (1e+20).\nrlus: 2019-07-30T15:26:01Z altered by CMOR: Changed sign. 2019-07-30T15:26:01Z altered by CMOR: replaced missing value flag (-9e+33) with standard missing value (1e+20).\nsfcWind: 2019-03-22T14:04:31Z altered by CMOR: Treated scalar dimension: 'height'. 2019-03-22T14:04:31Z altered by CMOR: replaced missing value flag (-9e+33) with standard missing value (1e+20).\n[2024-04-19 22:43:17] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.48.2",
+        "description": "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with the fao_pm98 method."
+    }
+}

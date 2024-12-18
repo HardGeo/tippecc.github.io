@@ -43,51 +43,20 @@
         tracking_id: 'hdl:21.14103/0f700e74-9c64-4638-9fab-e7a2f3d26b26',
         doi: 'www.exampleDOI.com'
 	}
+    
+    import { detailInfo } from '$lib/store';  // Import the store
     let showBubble = false;
 
     const showDetails = () => {
-        showBubble = !showBubble; // Toggle the speech bubble visibility on button click
-    }
-
-    function copyData() {
-        // Format data to copy, you can adjust this string based on what you need
-        let dataToCopy = `
-            Parameter: ${data.parameter}
-            Unit: ${data.einheit}
-            Timespan: ${data.zeitspranne.map(t => `${t.start} - ${t.end}`).join(', ')}
-            Regional Model: ${data.regionalmodell}
-            Global Model: ${data.globalmodell}
-            Format: ${data.format}
-            Scenario: ${data.szenario}
-            Temporal Res.: ${data.resolutionZeitlich}
-            Spatial Res.: ${data.resolutionRaeumlich}
-            Spatial Extent: ${data.spatialExtent.join(', ')}
-            spatialExtent_orig: ${data.spatialExtent_orig}
-            File Size: ${data.dateigroesse}
-            Timestamp: ${data.timestamp}
-            Project: ${data.project}
-            Experiment: ${data.experiment}
-            Standard: ${data.standard}
-            Bias: ${data.bias}
-            Source: ${data.source}
-            Institution: ${data.institution}
-            Tracking ID: ${data.tracking_id}
-            Contact: ${data.contact}
-            Domain: ${data.domain}
-            DOI: ${data.doi}
-        `;
-
-        // Use Clipboard API to copy the string
-        navigator.clipboard.writeText(dataToCopy)
-            .then(() => {
-                console.log('Data copied to clipboard');
-                alert('Data copied to clipboard!');
-            })
-            .catch(err => {
-                console.error('Failed to copy: ', err);
-                alert('Failed to copy data. Please try again.');
-            });
-    }
+        showBubble = !showBubble;
+        console.log('Show Bubble:', showBubble);
+        // Update the store with the current entity's details
+        if (showBubble) {
+            detailInfo.set(data);
+        } else {
+            detailInfo.set(null);  // Clear the details when the bubble is hidden
+        }
+    };
 
 </script>
 
@@ -148,102 +117,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600 hover:text-gray-800" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
                 </svg>
-            
             </button>
-
-            <!-- Speech Bubble -->
-            {#if showBubble}
-                <div class="absolute left-0 mt-2 w-72 bg-gray-100 p-4 rounded-md shadow-lg z-10 text-black">
-                    <button
-                        on:click={copyData}
-                        class="absolute right-5 bg-gray-200 p-2 rounded-md shadow-md hover:bg-gray-200"
-                        title="Copy to Clipboard"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600 hover:text-gray-800" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M15 2H9a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2zM9 4h6v12H9V4z" />
-                            <path d="M5 6a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 11-2 0V7H6v2a1 1 0 01-2 0V6z" />
-                        </svg>
-                        </button>
-                
-                    <div class="triangle absolute left-1/2 -top-2 transform -translate-x-1/2"></div>
-                    <div>
-                        <strong>Parameter:</strong> {data.parameter}
-                    </div>
-                    <div>
-                        <strong>Unit:</strong> {data.einheit}
-                    </div>
-                    <div>
-                        <strong>Timespan:</strong>
-                        {#each data.zeitspranne as timespan, index}
-                            <div>
-                                {timespan.start} - {timespan.end}
-                            </div>
-                        {/each}
-                    </div>
-                    <div>
-                        <strong>Regional Model:</strong> {data.regionalmodell}
-                    </div>
-                    <div>
-                        <strong>Global Model:</strong> {data.globalmodell}
-                    </div>
-
-                    <div>
-                        <strong>Format:</strong> {data.format}
-                    </div>
-                    <div>
-                        <strong>Scenario:</strong> {data.szenario}
-                    </div>
-                    <div>
-                        <strong>Temporal Res.:</strong> {data.resolutionZeitlich}
-                    </div>
-                    <div>
-                        <strong>Spatial Res.:</strong> {data.resolutionRaeumlich}
-                    </div>
-                    <div>
-                        <strong>Spatial Extent:</strong> {data.spatialExtent}
-                    </div>
-                    <div>
-                        <strong>Spatial Extent Orig:</strong> {data.spatialExtent_orig}
-                    </div>
-                    <div>
-                        <strong>File Size:</strong> {data.dateigroesse}
-                    </div>
-                    <div>
-                        <strong>Timestamp:</strong> {data.timestamp}
-                    </div>
-                    <div>
-                        <strong>Project:</strong> {data.project}
-                    </div>
-                    <div>
-                        <strong>Experiment:</strong> {data.experiment}
-                    </div>
-                    <div>
-                        <strong>Standard:</strong> {data.standard}
-                    </div>
-                    <div>
-                        <strong>Bias:</strong> {data.bias}
-                    </div>
-                    <div>
-                        <strong>Source:</strong> {data.source}
-                    </div>
-                    <div>
-                        <strong>Institution:</strong> {data.institution}
-                    </div>
-                    <div>
-                        <strong>Tracking ID:</strong> {data.tracking_id}
-                    </div>
-                    <div>
-                        <strong>Contact:</strong> {data.contact}
-                    </div>
-                    <div>
-                        <strong>Domain:</strong> {data.domain}
-                    </div>
-                    <div>
-                        <strong>DOI:</strong> {data.doi}
-                    </div>
-                    <!-- Add more fields from data as needed -->
-                </div>
-            {/if}
         </div>
     </div>
 

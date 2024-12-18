@@ -1,0 +1,16 @@
+{
+    "CDI": "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)",
+    "history": "Sat Nov 02 12:02:18 2024: cdo -O -s -sub /data/water_budget/ICTP-RegCM4-7_v0_MPI-M-MPI-ESM-MR__evspsblpot_all__mm__yearsum_mean_2080_2099.nc /data/water_budget/ICTP-RegCM4-7_v0_MPI-M-MPI-ESM-MR__evspsblpot_all__mm__yearsum_mean_1981_2000.nc /data/water_budget/ICTP-RegCM4-7_v0_MPI-M-MPI-ESM-MR__evspsblpot_all__mm__yearsum_mean_1980_2000-2080_2099.nc\nSat Nov 02 12:02:12 2024: cdo -O -s -timmean -selyear,2080/2099 /data/water_budget/ICTP-RegCM4-7_v0_MPI-M-MPI-ESM-MR__evspsblpot_all__mm__yearsum.nc /data/water_budget/ICTP-RegCM4-7_v0_MPI-M-MPI-ESM-MR__evspsblpot_all__mm__yearsum_mean_2080_2099.nc\nSat Nov 02 12:01:10 2024: cdo -O -s -yearsum /data/water_budget/ICTP-RegCM4-7_v0_MPI-M-MPI-ESM-MR__evspsblpot_all__mm.nc /data/water_budget/ICTP-RegCM4-7_v0_MPI-M-MPI-ESM-MR__evspsblpot_all__mm__yearsum.nc",
+    "Conventions": "CF-1.6",
+    "frequency": "year",
+    "CDO": "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)",
+    "time_bnds": {},
+    "evspsblpot": {
+        "standard_name": "water_potential_evapotranspiration_flux",
+        "long_name": "Potential evapotranspiration (\"fao_pm98\" method)",
+        "units": "mmday",
+        "cell_methods": "tasmin: time: minimum tasmax: time: maximum hurs: time: point rsds: time: mean rlds: time: mean sfcWind: time: point",
+        "history": "tasmin: \ntasmax: \nhurs: \nrsds: \nrsus: \nrlds: \nrlus: \nsfcWind: \n[2024-04-20 11:05:03] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.48.2",
+        "description": "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with the fao_pm98 method."
+    }
+}
