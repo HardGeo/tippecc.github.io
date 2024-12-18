@@ -5,7 +5,9 @@
 
     export let data = {
         person: 'Franziska',
-        orcid: '0000-0001-6892-7046'
+        orcid: '0000-0001-6892-7046',
+        orga: 'Uni Jena',
+        rorid: 'XXX-XXX-XXX-XXX'
     };
 </script>
 
@@ -28,15 +30,32 @@
     />
 
     <!-- Person and ORCID Information -->
-    <div class="flex-col space-y-2">
-        <!-- Person Chip -->
-        <div class="bg-white text-orange-800 border border-orange-800 text-center font-bold px-4 py-2 rounded-md text-lg items-center justify-center flex-grow">
-            {data.person}
+    <div class="flex flex-col space-y-3 w-full">
+        <!-- Left Side: Person and Organisation -->
+        <div class="flex space-x-2 w-full">
+            <!-- Person Chip -->
+            <div class="bg-orange-700 text-white border border-orange-800 font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
+                {data.person}
+            </div>
+            <!-- Organisation Chip -->
+            <div class="bg-orange-700 text-white border border-orange-800 font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
+                {data.orga}
+            </div>
         </div>
-
-        <!-- ORCID Chip -->
-        <div class="bg-orange-800 text-white text-center font-bold px-4 py-2 rounded-md text-lg items-center justify-center flex-grow whitespace-nowrap">
-            {data.orcid}
+    
+        <!-- Right Side: ORCID and ROR ID -->
+        <div class="flex space-x-2 w-full min-w-0">
+            <!-- ORCID Chip -->
+            <div class="bg-white text-orange-800 border border-orange-800 font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
+                {data.orcid}
+            </div>
+            <!-- ROR ID Chip -->
+            <div class="bg-white text-orange-800 border border-orange-800 font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
+                {data.rorid}
+            </div>
         </div>
     </div>
+    
+
+    
 </div>

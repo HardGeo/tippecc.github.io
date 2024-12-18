@@ -14,7 +14,7 @@
 
     import data from '$lib/generate_rdfjson/article-prov.json'
 
-    import { createActionFlow, createPeople, addOrga, addSoftware, addEdgesOnly, createEntityFlow } from '$lib/components//dataProcessing'; // Adjust path as necessary
+    import { createActionFlow, createPeople, addSoftware, addEdgesOnly, createEntityFlow } from '$lib/components//dataProcessing'; // Adjust path as necessary
     import {adjustPositions, adjustPositionsNotOrder} from "$lib/components/adjustPositions";
 
     const defaultEdgeOptions = {
@@ -63,8 +63,8 @@
             border_radius: '',
             height: '',
             EdgeLabel: "wasAttributedTo",
-            IdName: 'prov:agent',
-            EntityName: 'prov:entity',
+            //IdName: 'prov:agent',
+            //EntityName: 'prov:entity',
             swapArrow: false,
             edgeStyle: "stroke: #e28743"
         });
@@ -80,6 +80,7 @@
         });
 
         // create Organisations
+        /*
         addOrga({
             dataset: data, 
             nodes: nodes,  
@@ -100,7 +101,7 @@
             nodeTypeToAdjust: 'orgaNode',
             minSpace: 400
 
-        });
+        });*/
 
 
         //Add Software Nodes

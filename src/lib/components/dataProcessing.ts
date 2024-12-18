@@ -256,7 +256,6 @@ export function createActionFlow(
 //-----------------------------------------------------------------------------
 
 
-// ADD PEOPLE
 export function createPeople ({
     dataset,
     nodes,
@@ -265,8 +264,6 @@ export function createPeople ({
     border_radius,
     height,
     EdgeLabel,
-    IdName,
-    EntityName,
     swapArrow,
     edgeStyle
 }: {
@@ -277,59 +274,62 @@ export function createPeople ({
     border_radius: string,
     height: string,
     EdgeLabel: string,
-    IdName: string,
-    EntityName: string,
     swapArrow: boolean,
     edgeStyle: string
 }) {
-    // Process hadMember to create collections
-    const entityNodes = new Set(); // Keep track of added collection nodes
-
+    const entityNodes = new Set(); 
     let yPosition = 0;
 
     for (const [id, member] of Object.entries(dataset.wasAttributedTo)) {
-        
-        
-        const Id = member[IdName]; // Use collection name as the ID
-        const entity = member[EntityName];
-        console.log(dataset.agent);
+        const personId = member["prov:agent"]; // Use full person identifier (e.g., people:Franzi)
+        const entity = member["prov:entity"];
 
-        // Only add the collection node if it hasn't been added yet
-        if (!entityNodes.has(Id)) {
-            // Add collection node
+        // Find organization (orgaId) from actedOnBehalfOf
+        const actedOnBehalfOfEntry = Object.values(dataset.actedOnBehalfOf).find(
+            (entry: any) => entry["prov:delegate"] === personId
+        );
+
+        const orgaId = actedOnBehalfOfEntry?.["prov:responsible"] || null;
+        const rorid = orgaId ? dataset.agent[orgaId]?.["ror:identifier"] : null;
+
+        // Only add the person node if it hasn't been added yet
+        if (!entityNodes.has(personId)) {
             nodes.update(n => {
                 n.push({
-                    id: Id,
+                    id: personId,
                     type: 'personNode',
-                    data: { person: Id,
-                            orcid: dataset.agent[Id]["orcid:identifier"]
-                     },
-                    position: { x:-500, y: yPosition }, // Adjust position as needed
-                    style: `background: ${color}; ${border_radius}; width: ${Id.length*10}px;${height}; border: 2px solid black`
+                    data: { 
+                        person: personId,
+                        orga: orgaId || "N/A",
+                        orcid: dataset.agent?.[personId]?.["orcid:identifier"] || "N/A",
+                        rorid: rorid || "N/A"
+                    },
+                    position: { x: -600, y: yPosition },
+                    style: `background: ${color}; ${border_radius}; width: ${personId.length * 10}px; ${height}; border: 2px solid black`
                 });
                 return n;
             });
-            entityNodes.add(Id); // Mark this entity as added
+            entityNodes.add(personId);
             yPosition += 400;
         }
 
-        // Add edge between the collection and the corresponding entity
-        const source = swapArrow ? entity : Id;
-        const target = swapArrow ? Id : entity;
-        const sourceHandle = swapArrow ? `${entity}-left` : `${Id}-right`; // Use personNode right or entityNode left
-        const targetHandle = swapArrow ? `${Id}-right` : `${entity}-left`; // Use entityNode left or personNode right
+        // Add edge between the person and the corresponding entity
+        const source = swapArrow ? entity : personId;
+        const target = swapArrow ? personId : entity;
+        const sourceHandle = swapArrow ? `${entity}-left` : `${personId}-right`;
+        const targetHandle = swapArrow ? `${personId}-right` : `${entity}-left`;
 
         edges.update(e => {
             e.push({
-                id: `${Id}-${entity}`,
-                source:source,
-                target:target,
-                sourceHandle: sourceHandle, // Assign the correct source handle
-                targetHandle: targetHandle, // Assign the correct target handle
+                id: `${personId}-${entity}`,
+                source: source,
+                target: target,
+                sourceHandle: sourceHandle,
+                targetHandle: targetHandle,
                 animated: false,
                 label: EdgeLabel,
                 style: edgeStyle,
-                labelStyle: 'color: black;',
+                labelStyle: 'color: black;'
             });
             return e;
         });
@@ -337,7 +337,11 @@ export function createPeople ({
 }
 //-----------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------
+
+
+/*
 // ADD ORGANISATIONS
+
 export function addOrga ({
     dataset,
     nodes,
@@ -408,7 +412,7 @@ export function addOrga ({
 }
 //-----------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------
-
+*/
 
 
 //ADD Nodes and Edges for Software
