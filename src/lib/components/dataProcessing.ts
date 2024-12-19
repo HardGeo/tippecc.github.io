@@ -176,7 +176,7 @@ for (let startEntity of startEntities) {
                         animated: false,
                         label: label,
                         type: 'default',
-                        labelStyle: 'color: black; font-size: 12px; z-index: 2; pointer-events: none;'
+                        labelStyle: 'color: black; font-size: 16px; z-index: 2; pointer-events: none;'
                     });
                     return e;
                 });
@@ -250,7 +250,7 @@ export function createActionFlow(
                             animated: false,
                             label: label,
                             type: 'default',
-                            labelStyle: 'color: black; font-size: 12px; z-index: 2; pointer-events: none;'
+                            labelStyle: 'color: black; font-size: 16px; z-index: 2; pointer-events: none;'
                         });
                         return e;
                     });
@@ -339,7 +339,7 @@ export function createPeople ({
                 animated: false,
                 label: EdgeLabel,
                 style: edgeStyle,
-                labelStyle: 'color: black;'
+                labelStyle: 'color: black; font-size: 16px'
             });
             return e;
         });
@@ -414,7 +414,7 @@ export function addOrga ({
                 animated: false,
                 label: EdgeLabel,
                 style: edgeStyle,
-                labelStyle: 'color: black;',
+                labelStyle: 'color: black; font-size: 16px',
             });
             return e;
         });
@@ -496,7 +496,7 @@ export function addSoftware({
                 animated: false,
                 label: EdgeLabel,
                 style: edgestyle,
-                labelStyle: 'color: black;',
+                labelStyle: 'color: black; font-size: 16px',
             });
             return e;
         });

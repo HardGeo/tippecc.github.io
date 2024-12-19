@@ -143,7 +143,7 @@
             EntityName: 'prov:entity',
             swapArrow: false,
             style: "stroke: red;",
-            labelStyle: "color: red;",
+            labelStyle: "color: red; font-size: 16px",
             handle1: "right",
             handle2: "left"
         });
@@ -176,7 +176,7 @@
             EntityName: 'prov:activity',
             swapArrow: true,
             style: "stroke: green;",
-            labelStyle: "color: green;",
+            labelStyle: "color: green; font-size: 16px",
             handle1: "left",
             handle2: "right"
         });
