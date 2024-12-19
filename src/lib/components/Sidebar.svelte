@@ -41,6 +41,7 @@ Tracking ID;${detailedData.tracking_id}
 Contact;${detailedData.contact}
 Domain;${detailedData.domain}
 DOI;${detailedData.doi}
+Collection;${detailedData.collection}
 `.trim();
 
         // Use Clipboard API to copy the string
@@ -203,6 +204,10 @@ DOI;${detailedData.doi}
                 <tr>
                     <td class="pr-4 align-top"><strong>DOI:</strong></td>
                     <td class="pl-4">{detailedData.doi}</td>
+                </tr>
+                <tr>
+                    <td class="pr-4 align-top"><strong>Collection:</strong></td>
+                    <td class="pl-4">{detailedData.collection}</td>
                 </tr>
             </tbody>
         </table>

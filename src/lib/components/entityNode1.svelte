@@ -49,7 +49,6 @@
 
     const showDetails = () => {
         showBubble = !showBubble;
-        console.log('Show Bubble:', showBubble);
         // Update the store with the current entity's details
         if (showBubble) {
             detailInfo.set(data);

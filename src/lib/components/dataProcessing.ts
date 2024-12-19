@@ -112,6 +112,15 @@ for (let startEntity of startEntities) {
         const extent = boundingBoxes[0]
         const extent_orig = boundingBoxes[1]
 
+
+        // EXTRACT COLLECTION
+        function findCollectionForEntity(currentEntity, hadMember) {
+            // Iterate through the hadMember object to find the matching collection
+            const entry = Object.values(hadMember).find(member => member["prov:entity"] === currentEntity);
+            return entry ? entry["prov:collection"] : "No Collection defined";
+        }
+        const collection = findCollectionForEntity(currentEntity, dataset.hadMember);
+
            
         // Add node for currentEntity
         nodes.update(n => {
@@ -142,7 +151,8 @@ for (let startEntity of startEntities) {
                         domain: dataset.entity[currentEntity]["tippecc:domain"],
                         contact: dataset.entity[currentEntity]["tippecc:contact"],
                         tracking_id: dataset.entity[currentEntity]["esgf_portal:tracking_id"],
-                        doi: dataset.entity[currentEntity]["dcterms:identifier"]
+                        doi: dataset.entity[currentEntity]["dcterms:identifier"],
+                        collection: collection
 
                     },
                     position: { x: 0, y: yPosition },
