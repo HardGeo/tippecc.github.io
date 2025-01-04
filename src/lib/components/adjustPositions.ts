@@ -19,6 +19,7 @@ export function adjustPositions ({
     const currentEdges = get(edges); // Current edges in the flow
     const currentNodes = get(nodes); // Current edges in the flow
     const attributedEdges = currentEdges.filter(edge => edge.label === edgeToSelect);
+    //console.log(attributedEdges);
     // Group the filtered edges by the source
     const groupedBySource: Record<string, Edge[]> = attributedEdges.reduce((acc, edge) => {
     // If the source doesn't exist in the accumulator, create an empty array for it
@@ -154,7 +155,7 @@ export function adjustPositions ({
     const updatedNodes = adjustYPositions(currentNodes, minSpacing);
 
     // Log updated nodes
-    console.log('Updated Nodes with Minimum Spacing:', updatedNodes);
+    //console.log('Updated Nodes with Minimum Spacing:', updatedNodes);
 
 }
 
@@ -186,6 +187,7 @@ export function adjustPositionsNotOrder({
         return acc;
     }, {});
 
+
     const yPositionsBySource = {};
 
     // Iterate through each group to calculate mean Y positions
@@ -214,10 +216,13 @@ export function adjustPositionsNotOrder({
         yPositionsBySource[source] = yMean;
     });
 
+
     // Adjust y positions based on calculated means
     const adjustYPositionsPreservingOrder = (nodes, minSpacing) => {
         // Filter nodes by type
-        const nodesToAdjust = nodes.filter(node => node.type === nodeTypeToAdjust);
+        const nodesToAdjust = nodes.filter(node => {
+            return node.id.startsWith('exe:');
+        });
 
         // Preserve original order
         const originalOrder = nodesToAdjust.map(node => node.id);
@@ -254,5 +259,5 @@ export function adjustPositionsNotOrder({
     const updatedNodes = adjustYPositionsPreservingOrder(currentNodes, minSpace);
 
     // Log the updated nodes
-    console.log('Updated Nodes Preserving Original Order:', updatedNodes);
+    //console.log('Updated Nodes Preserving Original Order:', updatedNodes);
 }

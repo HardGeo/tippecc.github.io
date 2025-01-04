@@ -7,7 +7,6 @@
     import EntityNode from '$lib/components/entityNode1.svelte';
     import ActivityNode from '$lib/components/ActivityNode.svelte';
     import PersonNode from '$lib/components/PersonNode.svelte';
-    import OrgaNode from '$lib/components/OrgaNode.svelte';
     import SoftwareNode from '$lib/components/SoftwareNode.svelte';
     import Sidebar from '$lib/components/Sidebar.svelte'; // Import the Sidebar
     //import TopBar from '$lib/components/TopBar.svelte';
@@ -34,7 +33,6 @@
         entityNode: EntityNode as unknown as typeof SvelteComponent,
         activityNode: ActivityNode as unknown as typeof SvelteComponent,
         personNode: PersonNode as unknown as typeof SvelteComponent,
-        orgaNode: OrgaNode as unknown as typeof SvelteComponent,
         softwareNode: SoftwareNode as unknown as typeof SvelteComponent,
     };
 

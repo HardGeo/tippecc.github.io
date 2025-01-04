@@ -3,9 +3,6 @@
 
     export let id;
 
-    export let data = {
-        aggregateInfo: 'exe:aggregateMonthlySum'
-    };
 </script>
 
 <div class="bg-blue-100 rounded-lg shadow-lg relative inline-block" style="z-index: 1;">
@@ -43,6 +40,6 @@
 
     <!-- Display Main Information with exact background size -->
     <div class="bg-white text-blue-700 border-4 border-blue-700 font-bold px-4 py-2 rounded-md text-lg inline-block">
-        {data.aggregateInfo}
+        {id}
     </div>
 </div>
