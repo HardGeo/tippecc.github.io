@@ -220,9 +220,7 @@ export function adjustPositionsNotOrder({
     // Adjust y positions based on calculated means
     const adjustYPositionsPreservingOrder = (nodes, minSpacing) => {
         // Filter nodes by type
-        const nodesToAdjust = nodes.filter(node => {
-            return node.id.startsWith('exe:');
-        });
+        const nodesToAdjust = nodes.filter(node => node.type === nodeTypeToAdjust);
 
         // Preserve original order
         const originalOrder = nodesToAdjust.map(node => node.id);

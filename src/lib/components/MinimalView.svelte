@@ -100,22 +100,7 @@
                 1000
             );   
         }
-        /*
-        // create all Collection edges and nodes
-        createFlow({
-            dataset: hadMember, 
-            nodes: nodes,  
-            edges:edges,
-            color: '#6ec13c',
-            border_radius: 'border-radius: 50%',
-            height: 'height: 40px',
-            EdgeLabel: "hadMember",
-            IdName: 'prov:collection',
-            EntityName: 'prov:entity',
-            swapArrow: true,
-            edgeStyle: "stroke: black",
-            xPos: -400
-        });*/
+
 
         //Create all People (Agents) Nodes and Edges
         createFlow({
@@ -136,7 +121,7 @@
             nodes: nodes,
             edges: edges,
             edgeToSelect: "wasAttributedTo",
-            nodeTypeToAdjust: 'default',
+            nodeTypeToAdjust: 'personNode',
             minSpace: 400
 
         });
@@ -159,7 +144,7 @@
             nodes: nodes,
             edges: edges,
             edgeToSelect: "actedOnBehalfOf",
-            nodeTypeToAdjust: 'default',
+            nodeTypeToAdjust: 'orgaNode',
             minSpace: 400
 
         });
@@ -197,7 +182,7 @@
             nodes: nodes,
             edges: edges,
             edgeToSelect: "used",
-            nodeTypeToAdjust: 'default',
+            nodeTypeToAdjust: 'activityNode',
             minSpace: 200
 
         });
@@ -205,7 +190,7 @@
             nodes: nodes,
             edges: edges,
             edgeToSelect: "wasAssociatedWith",
-            nodeTypeToAdjust: 'default',
+            nodeTypeToAdjust: 'softwareNode',
             minSpace: 400
 
         });
