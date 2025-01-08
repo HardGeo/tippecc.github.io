@@ -55,6 +55,7 @@ e5ds = 'tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1
 e6ds = 'tippecc_data:Kariba.shp'
 e7ds = 'esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_rcp85.nc'
 e8ds = 'esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_historicl.nc'
+print(metadata[e1ds])
 
 e1 = d1.entity(e1ds, metadata[e1ds])
 e2 = d1.entity(e2ds, metadata[e2ds])
@@ -125,7 +126,6 @@ d1.wasDerivedFrom('tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_da
                   'tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc')
 d1.wasDerivedFrom('tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099_monthsum.nc',
                   'tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc')
-d1.wasDerivedFrom(e3, e4)
 d1.wasDerivedFrom(e4, e5)
 d1.wasDerivedFrom(e3, e6)
 d1.wasDerivedFrom(e5, e7)

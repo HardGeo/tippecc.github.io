@@ -1,177 +1,177 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<prov:document xmlns:brick="https://brickschema.org/schema/Brick#" xmlns:csvw="http://www.w3.org/ns/csvw#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcat="http://www.w3.org/ns/dcat#" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcam="http://purl.org/dc/dcam/" xmlns:doap="http://usefulinc.com/ns/doap#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:geo="http://www.opengis.net/ont/geosparql#" xmlns:odrl="http://www.w3.org/ns/odrl/2/" xmlns:org="http://www.w3.org/ns/org#" xmlns:prof="http://www.w3.org/ns/dx/prof/" xmlns:qb="http://purl.org/linked-data/cube#" xmlns:schema="https://schema.org/" xmlns:sh="http://www.w3.org/ns/shacl#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:sosa="http://www.w3.org/ns/sosa/" xmlns:ssn="http://www.w3.org/ns/ssn/" xmlns:time="http://www.w3.org/2006/time#" xmlns:vann="http://purl.org/vocab/vann/" xmlns:void="http://rdfs.org/ns/void#" xmlns:wgs="https://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:cf="https://cfconventions.org/cf-conventions/cf-conventions.html" xmlns:datacite="http://datacite.org/sdo/kernel-4" xmlns:esgf_portal="http://www.provbook.org/tippecc/esgf_portal/" xmlns:exe="http://www.provbook.org/tippecc/exe/#" xmlns:orcid="http://www.orcid.org/" xmlns:orgs="http://www.provbook.org/tippecc/orgs/" xmlns:people="http://www.provbook.org/tippecc/people/" xmlns:ror="https://ror.org/" xmlns:sdo="http://schema.org/" xmlns:software="http://www.provbook.org/tippecc/software/" xmlns:tippecc="http://www.provbook.org/tippecc/" xmlns:tippecc_data="http://www.provbook.org/tippecc/data/" xmlns:wd="http://www.wikidata.org/entity/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <prov:actedOnBehalfOf>
-    <prov:delegate prov:ref="people:Kawawa"/>
-    <prov:responsible prov:ref="orgs:UNZA"/>
-  </prov:actedOnBehalfOf>
-  <prov:used>
-    <prov:activity prov:ref="exe:combineDatasetsHistoricalRCP"/>
-    <prov:entity prov:ref="esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_rcp85.nc"/>
-  </prov:used>
-  <prov:actedOnBehalfOf>
-    <prov:delegate prov:ref="people:Franzi"/>
-    <prov:responsible prov:ref="orgs:UniJena"/>
-  </prov:actedOnBehalfOf>
-  <prov:wasDerivedFrom>
-    <prov:generatedEntity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc"/>
-    <prov:usedEntity prov:ref="tippecc:data/Kariba.shp"/>
-  </prov:wasDerivedFrom>
-  <prov:wasDerivedFrom>
-    <prov:generatedEntity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc"/>
-    <prov:usedEntity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc"/>
-  </prov:wasDerivedFrom>
-  <prov:wasAttributedTo>
-    <prov:entity prov:ref="tippecc:data/raw_datasets"/>
-    <prov:agent prov:ref="people:Francios"/>
-  </prov:wasAttributedTo>
-  <prov:wasAssociatedWith>
-    <prov:activity prov:ref="exe:bias_adjustment"/>
-    <prov:agent prov:ref="software:wits_fortran_magic_tool"/>
-  </prov:wasAssociatedWith>
-  <prov:wasAttributedTo>
-    <prov:entity prov:ref="tippecc:data/Kariba_2080_2099_monthly"/>
-    <prov:agent prov:ref="people:Kawawa"/>
-  </prov:wasAttributedTo>
-  <prov:wasAttributedTo>
-    <prov:entity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099_monthsum.nc"/>
-    <prov:agent prov:ref="people:Franzi"/>
-  </prov:wasAttributedTo>
-  <prov:used>
-    <prov:activity prov:ref="exe:aggregateMonthlySum"/>
-    <prov:entity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc"/>
-  </prov:used>
-  <prov:wasInformedBy>
-    <prov:informed prov:ref="exe:aggregateMonthlySum"/>
-    <prov:informant prov:ref="exe:sliceByTime"/>
-  </prov:wasInformedBy>
-  <prov:wasDerivedFrom>
-    <prov:generatedEntity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc"/>
-    <prov:usedEntity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc"/>
-  </prov:wasDerivedFrom>
-  <prov:wasInformedBy>
-    <prov:informed prov:ref="exe:sliceByArea"/>
-    <prov:informant prov:ref="exe:bias_adjustment"/>
-  </prov:wasInformedBy>
-  <prov:used>
-    <prov:activity prov:ref="exe:sliceByTime"/>
-    <prov:entity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc"/>
-  </prov:used>
-  <prov:wasAttributedTo>
-    <prov:entity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc"/>
-    <prov:agent prov:ref="people:Franzi"/>
-  </prov:wasAttributedTo>
-  <prov:wasAttributedTo>
-    <prov:entity prov:ref="tippecc:data/Kariba.shp"/>
-    <prov:agent prov:ref="people:Kawawa"/>
-  </prov:wasAttributedTo>
-  <prov:wasAttributedTo>
-    <prov:entity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc"/>
-    <prov:agent prov:ref="people:Jessica"/>
-  </prov:wasAttributedTo>
-  <prov:used>
-    <prov:activity prov:ref="exe:combineDatasetsHistoricalRCP"/>
-    <prov:entity prov:ref="esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_historicl.nc"/>
-  </prov:used>
-  <prov:used>
-    <prov:activity prov:ref="exe:sliceByArea"/>
-    <prov:entity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc"/>
-  </prov:used>
-  <prov:hadMember>
-    <prov:collection prov:ref="tippecc:data/Kariba_2080_2099_monthly"/>
-    <prov:entity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc"/>
-  </prov:hadMember>
-  <prov:wasAssociatedWith>
-    <prov:activity prov:ref="exe:aggregateMonthlySum"/>
-    <prov:agent prov:ref="software:cdo"/>
-  </prov:wasAssociatedWith>
-  <prov:used>
-    <prov:activity prov:ref="exe:bias_adjustment"/>
-    <prov:entity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc"/>
-  </prov:used>
-  <prov:wasAttributedTo>
-    <prov:entity prov:ref="tippecc:data/bias_adjusted_datasets"/>
-    <prov:agent prov:ref="people:Francios"/>
-  </prov:wasAttributedTo>
-  <prov:wasAttributedTo>
-    <prov:entity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc"/>
-    <prov:agent prov:ref="people:Jessica"/>
-  </prov:wasAttributedTo>
-  <prov:actedOnBehalfOf>
-    <prov:delegate prov:ref="people:Francios"/>
-    <prov:responsible prov:ref="orgs:WITS"/>
-  </prov:actedOnBehalfOf>
-  <prov:wasAttributedTo>
-    <prov:entity prov:ref="tippecc:data/raw_datasets"/>
-    <prov:agent prov:ref="people:Jessica"/>
-  </prov:wasAttributedTo>
-  <prov:wasDerivedFrom>
-    <prov:generatedEntity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc"/>
-    <prov:usedEntity prov:ref="esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_historicl.nc"/>
-  </prov:wasDerivedFrom>
-  <prov:hadMember>
-    <prov:collection prov:ref="tippecc:data/Kariba_2080_2099_monthly"/>
-    <prov:entity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc"/>
-  </prov:hadMember>
-  <prov:wasInformedBy>
-    <prov:informed prov:ref="exe:sliceByProjectArea"/>
-    <prov:informant prov:ref="exe:regrid"/>
-  </prov:wasInformedBy>
-  <prov:used>
-    <prov:activity prov:ref="exe:sliceByArea"/>
-    <prov:entity prov:ref="tippecc:data/Kariba.shp"/>
-  </prov:used>
-  <prov:wasDerivedFrom>
-    <prov:generatedEntity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099_monthsum.nc"/>
-    <prov:usedEntity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc"/>
-  </prov:wasDerivedFrom>
-  <prov:hadMember>
-    <prov:collection prov:ref="tippecc:data/raw_datasets"/>
-    <prov:entity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc"/>
-  </prov:hadMember>
-  <prov:actedOnBehalfOf>
-    <prov:delegate prov:ref="people:Jessica"/>
-    <prov:responsible prov:ref="orgs:WITS"/>
-  </prov:actedOnBehalfOf>
-  <prov:wasInformedBy>
-    <prov:informed prov:ref="exe:regrid"/>
-    <prov:informant prov:ref="exe:combineDatasetsHistoricalRCP"/>
-  </prov:wasInformedBy>
-  <prov:wasInformedBy>
-    <prov:informed prov:ref="exe:sliceByTime"/>
-    <prov:informant prov:ref="exe:sliceByArea"/>
-  </prov:wasInformedBy>
-  <prov:wasAttributedTo>
-    <prov:entity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc"/>
-    <prov:agent prov:ref="people:Franzi"/>
-  </prov:wasAttributedTo>
-  <prov:hadMember>
-    <prov:collection prov:ref="tippecc:data/bias_adjusted_datasets"/>
-    <prov:entity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc"/>
-  </prov:hadMember>
-  <prov:wasDerivedFrom>
-    <prov:generatedEntity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc"/>
-    <prov:usedEntity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc"/>
-  </prov:wasDerivedFrom>
-  <prov:wasAssociatedWith>
-    <prov:activity prov:ref="exe:sliceByTime"/>
-    <prov:agent prov:ref="software:cdo"/>
-  </prov:wasAssociatedWith>
+<prov:document xmlns:brick="https://brickschema.org/schema/Brick#" xmlns:csvw="http://www.w3.org/ns/csvw#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcat="http://www.w3.org/ns/dcat#" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcam="http://purl.org/dc/dcam/" xmlns:doap="http://usefulinc.com/ns/doap#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:geo="http://www.opengis.net/ont/geosparql#" xmlns:odrl="http://www.w3.org/ns/odrl/2/" xmlns:org="http://www.w3.org/ns/org#" xmlns:prof="http://www.w3.org/ns/dx/prof/" xmlns:qb="http://purl.org/linked-data/cube#" xmlns:schema="https://schema.org/" xmlns:sh="http://www.w3.org/ns/shacl#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:sosa="http://www.w3.org/ns/sosa/" xmlns:ssn="http://www.w3.org/ns/ssn/" xmlns:time="http://www.w3.org/2006/time#" xmlns:vann="http://purl.org/vocab/vann/" xmlns:void="http://rdfs.org/ns/void#" xmlns:wgs="https://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:cf="https://cfconventions.org/cf-conventions/cf-conventions.html" xmlns:datacite="https://datacite-metadata-schema.readthedocs.io/en/4.6/" xmlns:esgf_portal="http://www.provbook.org/tippecc/esgf_portal/" xmlns:exe="http://www.provbook.org/tippecc/exe/#" xmlns:orcid="http://www.orcid.org/" xmlns:orgs="http://www.provbook.org/tippecc/orgs/" xmlns:people="http://www.provbook.org/tippecc/people/" xmlns:ror="https://ror.org/" xmlns:sdo="http://schema.org/" xmlns:software="http://www.provbook.org/tippecc/software/" xmlns:tippecc="http://www.provbook.org/tippecc/" xmlns:tippecc_data="http://www.provbook.org/tippecc/data/" xmlns:wd="http://www.wikidata.org/entity/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <prov:wasDerivedFrom>
     <prov:generatedEntity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc"/>
     <prov:usedEntity prov:ref="esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_rcp85.nc"/>
   </prov:wasDerivedFrom>
   <prov:wasInformedBy>
-    <prov:informed prov:ref="exe:bias_adjustment"/>
-    <prov:informant prov:ref="exe:sliceByProjectArea"/>
+    <prov:informed prov:ref="exe:sliceByProjectArea"/>
+    <prov:informant prov:ref="exe:regrid"/>
   </prov:wasInformedBy>
-  <prov:hadMember>
-    <prov:collection prov:ref="tippecc:data/Kariba_2080_2099_monthly"/>
-    <prov:entity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099_monthsum.nc"/>
-  </prov:hadMember>
+  <prov:wasInformedBy>
+    <prov:informed prov:ref="exe:sliceByTime"/>
+    <prov:informant prov:ref="exe:sliceByArea"/>
+  </prov:wasInformedBy>
+  <prov:actedOnBehalfOf>
+    <prov:delegate prov:ref="people:Jessica"/>
+    <prov:responsible prov:ref="orgs:WITS"/>
+  </prov:actedOnBehalfOf>
+  <prov:wasAttributedTo>
+    <prov:entity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc"/>
+    <prov:agent prov:ref="people:Jessica"/>
+  </prov:wasAttributedTo>
+  <prov:wasInformedBy>
+    <prov:informed prov:ref="exe:aggregateMonthlySum"/>
+    <prov:informant prov:ref="exe:sliceByTime"/>
+  </prov:wasInformedBy>
+  <prov:used>
+    <prov:activity prov:ref="exe:combineDatasetsHistoricalRCP"/>
+    <prov:entity prov:ref="esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_rcp85.nc"/>
+  </prov:used>
+  <prov:wasInformedBy>
+    <prov:informed prov:ref="exe:regrid"/>
+    <prov:informant prov:ref="exe:combineDatasetsHistoricalRCP"/>
+  </prov:wasInformedBy>
+  <prov:wasAttributedTo>
+    <prov:entity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc"/>
+    <prov:agent prov:ref="people:Franzi"/>
+  </prov:wasAttributedTo>
+  <prov:wasAttributedTo>
+    <prov:entity prov:ref="tippecc:data/Kariba.shp"/>
+    <prov:agent prov:ref="people:Kawawa"/>
+  </prov:wasAttributedTo>
+  <prov:actedOnBehalfOf>
+    <prov:delegate prov:ref="people:Kawawa"/>
+    <prov:responsible prov:ref="orgs:UNZA"/>
+  </prov:actedOnBehalfOf>
+  <prov:wasDerivedFrom>
+    <prov:generatedEntity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc"/>
+    <prov:usedEntity prov:ref="tippecc:data/Kariba.shp"/>
+  </prov:wasDerivedFrom>
   <prov:wasAttributedTo>
     <prov:entity prov:ref="tippecc:data/bias_adjusted_datasets"/>
     <prov:agent prov:ref="people:Jessica"/>
   </prov:wasAttributedTo>
+  <prov:wasDerivedFrom>
+    <prov:generatedEntity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc"/>
+    <prov:usedEntity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc"/>
+  </prov:wasDerivedFrom>
+  <prov:actedOnBehalfOf>
+    <prov:delegate prov:ref="people:Francios"/>
+    <prov:responsible prov:ref="orgs:WITS"/>
+  </prov:actedOnBehalfOf>
+  <prov:used>
+    <prov:activity prov:ref="exe:sliceByArea"/>
+    <prov:entity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc"/>
+  </prov:used>
+  <prov:wasAttributedTo>
+    <prov:entity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099_monthsum.nc"/>
+    <prov:agent prov:ref="people:Franzi"/>
+  </prov:wasAttributedTo>
+  <prov:used>
+    <prov:activity prov:ref="exe:bias_adjustment"/>
+    <prov:entity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc"/>
+  </prov:used>
+  <prov:wasInformedBy>
+    <prov:informed prov:ref="exe:bias_adjustment"/>
+    <prov:informant prov:ref="exe:sliceByProjectArea"/>
+  </prov:wasInformedBy>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="exe:aggregateMonthlySum"/>
+    <prov:agent prov:ref="software:cdo"/>
+  </prov:wasAssociatedWith>
+  <prov:wasDerivedFrom>
+    <prov:generatedEntity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc"/>
+    <prov:usedEntity prov:ref="esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_historicl.nc"/>
+  </prov:wasDerivedFrom>
+  <prov:wasAttributedTo>
+    <prov:entity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc"/>
+    <prov:agent prov:ref="people:Franzi"/>
+  </prov:wasAttributedTo>
+  <prov:wasAttributedTo>
+    <prov:entity prov:ref="tippecc:data/bias_adjusted_datasets"/>
+    <prov:agent prov:ref="people:Francios"/>
+  </prov:wasAttributedTo>
+  <prov:used>
+    <prov:activity prov:ref="exe:aggregateMonthlySum"/>
+    <prov:entity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc"/>
+  </prov:used>
+  <prov:hadMember>
+    <prov:collection prov:ref="tippecc:data/Kariba_2080_2099_monthly"/>
+    <prov:entity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099_monthsum.nc"/>
+  </prov:hadMember>
+  <prov:hadMember>
+    <prov:collection prov:ref="tippecc:data/Kariba_2080_2099_monthly"/>
+    <prov:entity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc"/>
+  </prov:hadMember>
+  <prov:hadMember>
+    <prov:collection prov:ref="tippecc:data/Kariba_2080_2099_monthly"/>
+    <prov:entity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc"/>
+  </prov:hadMember>
+  <prov:hadMember>
+    <prov:collection prov:ref="tippecc:data/raw_datasets"/>
+    <prov:entity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc"/>
+  </prov:hadMember>
+  <prov:wasAttributedTo>
+    <prov:entity prov:ref="tippecc:data/raw_datasets"/>
+    <prov:agent prov:ref="people:Jessica"/>
+  </prov:wasAttributedTo>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="exe:sliceByTime"/>
+    <prov:agent prov:ref="software:cdo"/>
+  </prov:wasAssociatedWith>
+  <prov:wasDerivedFrom>
+    <prov:generatedEntity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc"/>
+    <prov:usedEntity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc"/>
+  </prov:wasDerivedFrom>
+  <prov:wasDerivedFrom>
+    <prov:generatedEntity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc"/>
+    <prov:usedEntity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc"/>
+  </prov:wasDerivedFrom>
+  <prov:actedOnBehalfOf>
+    <prov:delegate prov:ref="people:Franzi"/>
+    <prov:responsible prov:ref="orgs:UniJena"/>
+  </prov:actedOnBehalfOf>
+  <prov:hadMember>
+    <prov:collection prov:ref="tippecc:data/bias_adjusted_datasets"/>
+    <prov:entity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc"/>
+  </prov:hadMember>
+  <prov:wasDerivedFrom>
+    <prov:generatedEntity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099_monthsum.nc"/>
+    <prov:usedEntity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc"/>
+  </prov:wasDerivedFrom>
+  <prov:wasAttributedTo>
+    <prov:entity prov:ref="tippecc:data/Kariba_2080_2099_monthly"/>
+    <prov:agent prov:ref="people:Kawawa"/>
+  </prov:wasAttributedTo>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="exe:bias_adjustment"/>
+    <prov:agent prov:ref="software:wits_fortran_magic_tool"/>
+  </prov:wasAssociatedWith>
+  <prov:used>
+    <prov:activity prov:ref="exe:sliceByTime"/>
+    <prov:entity prov:ref="tippecc:data/CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc"/>
+  </prov:used>
+  <prov:wasAttributedTo>
+    <prov:entity prov:ref="tippecc:data/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc"/>
+    <prov:agent prov:ref="people:Jessica"/>
+  </prov:wasAttributedTo>
+  <prov:used>
+    <prov:activity prov:ref="exe:sliceByArea"/>
+    <prov:entity prov:ref="tippecc:data/Kariba.shp"/>
+  </prov:used>
+  <prov:wasAttributedTo>
+    <prov:entity prov:ref="tippecc:data/raw_datasets"/>
+    <prov:agent prov:ref="people:Francios"/>
+  </prov:wasAttributedTo>
+  <prov:used>
+    <prov:activity prov:ref="exe:combineDatasetsHistoricalRCP"/>
+    <prov:entity prov:ref="esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_historicl.nc"/>
+  </prov:used>
+  <prov:wasInformedBy>
+    <prov:informed prov:ref="exe:sliceByArea"/>
+    <prov:informant prov:ref="exe:bias_adjustment"/>
+  </prov:wasInformedBy>
   <prov:collection prov:id="tippecc:data/Kariba_2080_2099_monthly"/>
   <prov:collection prov:id="tippecc:data/bias_adjusted_datasets"/>
   <prov:collection prov:id="tippecc:data/raw_datasets"/>

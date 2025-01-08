@@ -1,5 +1,5 @@
 @prefix cf: <https://cfconventions.org/cf-conventions/cf-conventions.html> .
-@prefix datacite: <http://datacite.org/sdo/kernel-4> .
+@prefix datacite: <https://datacite-metadata-schema.readthedocs.io/en/4.6/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix esgf_portal: <http://www.provbook.org/tippecc/esgf_portal/> .
@@ -44,8 +44,6 @@ software:xclim a prov:Agent ;
     sdo:version "1.7"^^xsd:string .
 
 tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099_monthsum.nc a prov:Entity ;
-    datacite:format "netCDF"^^xsd:string ;
-    datacite:size "200MB"^^xsd:string ;
     dcterms:creator "IMK-TRO/KIT, Karlsruhe, Germany in collaboration with the CLM community"^^xsd:string ;
     dcterms:identifier "doi:10.1234/example.doi"^^xsd:string ;
     dcterms:publisher "Climate Limited-area Modelling Community (CLM-Community)"^^xsd:string ;
@@ -69,7 +67,9 @@ tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_karib
     prov:wasAttributedTo people:Franzi ;
     prov:wasDerivedFrom tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc ;
     cf:standard "CF-1.4"^^xsd:string ;
-    cf:variables "name: Prec, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string .
+    cf:variables "name: Prec, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string ;
+    datacite:format "netCDF"^^xsd:string ;
+    datacite:size "200MB"^^xsd:string .
 
 exe:aggregateMonthlySum a prov:Activity ;
     prov:used tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc ;
@@ -100,8 +100,6 @@ software:wits_fortran_magic_tool a prov:Agent ;
     sdo:version "1.7"^^xsd:string .
 
 tippecc_data:Kariba.shp a prov:Entity ;
-    datacite:format "SHP"^^xsd:string ;
-    datacite:size "2MB"^^xsd:string ;
     dcterms:creator "undefined"^^xsd:string ;
     dcterms:identifier "undefined"^^xsd:string ;
     dcterms:publisher "undefined"^^xsd:string ;
@@ -121,12 +119,12 @@ tippecc_data:Kariba.shp a prov:Entity ;
     prov:generatedAtTime "2019-12-09T14:52:55Z"^^xsd:string ;
     prov:wasAttributedTo people:Kawawa ;
     cf:standard "undefined"^^xsd:string ;
-    cf:variables "name: Prec, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string .
+    cf:variables "name: Prec, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string ;
+    datacite:format "SHP"^^xsd:string ;
+    datacite:size "2MB"^^xsd:string .
 
 esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_historicl.nc a prov:Collection,
         prov:Entity ;
-    datacite:format "netCDF"^^xsd:string ;
-    datacite:size "156MB"^^xsd:string ;
     dcterms:creator "IMK-TRO/KIT, Karlsruhe, Germany in collaboration with the CLM community"^^xsd:string ;
     dcterms:identifier "doi:10.1234/example.doi"^^xsd:string ;
     dcterms:publisher "Climate Limited-area Modelling Community (CLM-Community)"^^xsd:string ;
@@ -145,12 +143,12 @@ esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_historicl.nc a pro
     dcat:temporalResolution "P1D"^^xsd:string ;
     prov:generatedAtTime "2019-12-09T14:52:55Z"^^xsd:string ;
     cf:standard "CF-1.4"^^xsd:string ;
-    cf:variables "name: Par1, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string .
+    cf:variables "name: Par1, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string ;
+    datacite:format "netCDF"^^xsd:string ;
+    datacite:size "156MB"^^xsd:string .
 
 esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_rcp85.nc a prov:Collection,
         prov:Entity ;
-    datacite:format "netCDF"^^xsd:string ;
-    datacite:size "200MB"^^xsd:string ;
     dcterms:creator "IMK-TRO/KIT, Karlsruhe, Germany in collaboration with the CLM community"^^xsd:string ;
     dcterms:identifier "doi:10.1234/example.doi"^^xsd:string ;
     dcterms:publisher "Climate Limited-area Modelling Community (CLM-Community)"^^xsd:string ;
@@ -169,7 +167,9 @@ esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_rcp85.nc a prov:Co
     dcat:temporalResolution "P1D"^^xsd:string ;
     prov:generatedAtTime "2019-12-09T14:52:55Z"^^xsd:string ;
     cf:standard "CF-1.4"^^xsd:string ;
-    cf:variables "name: Par2, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string .
+    cf:variables "name: Par2, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string ;
+    datacite:format "netCDF"^^xsd:string ;
+    datacite:size "200MB"^^xsd:string .
 
 exe:bias_adjustment a prov:Activity ;
     prov:used tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc ;
@@ -214,8 +214,6 @@ software:cdo a prov:Agent ;
     schema:version "1.7"^^xsd:string .
 
 tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc a prov:Entity ;
-    datacite:format "netCDF"^^xsd:string ;
-    datacite:size "200MB"^^xsd:string ;
     dcterms:creator "IMK-TRO/KIT, Karlsruhe, Germany in collaboration with the CLM community"^^xsd:string ;
     dcterms:identifier "doi:10.1234/example.doi"^^xsd:string ;
     dcterms:publisher "Climate Limited-area Modelling Community (CLM-Community)"^^xsd:string ;
@@ -240,11 +238,11 @@ tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_karib
     prov:wasDerivedFrom tippecc_data:Kariba.shp,
         tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc ;
     cf:standard "CF-1.4"^^xsd:string ;
-    cf:variables "name: Par3, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string .
+    cf:variables "name: Par3, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string ;
+    datacite:format "netCDF"^^xsd:string ;
+    datacite:size "200MB"^^xsd:string .
 
 tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba_2080-2099.nc a prov:Entity ;
-    datacite:format "netCDF"^^xsd:string ;
-    datacite:size "200MB"^^xsd:string ;
     dcterms:creator "IMK-TRO/KIT, Karlsruhe, Germany in collaboration with the CLM community"^^xsd:string ;
     dcterms:identifier "doi:10.1234/example.doi"^^xsd:string ;
     dcterms:publisher "Climate Limited-area Modelling Community (CLM-Community)"^^xsd:string ;
@@ -268,11 +266,11 @@ tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_karib
     prov:wasAttributedTo people:Franzi ;
     prov:wasDerivedFrom tippecc_data:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_kariba.nc ;
     cf:standard "CF-1.4"^^xsd:string ;
-    cf:variables "name: Par4, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string .
+    cf:variables "name: Par4, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string ;
+    datacite:format "netCDF"^^xsd:string ;
+    datacite:size "200MB"^^xsd:string .
 
 tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc a prov:Entity ;
-    datacite:format "netCDF"^^xsd:string ;
-    datacite:size "200MB"^^xsd:string ;
     dcterms:creator "IMK-TRO/KIT, Karlsruhe, Germany in collaboration with the CLM community"^^xsd:string ;
     dcterms:identifier "doi:10.1234/example.doi"^^xsd:string ;
     dcterms:publisher "Climate Limited-area Modelling Community (CLM-Community)"^^xsd:string ;
@@ -297,11 +295,11 @@ tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100
     prov:wasDerivedFrom esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_historicl.nc,
         esgf_portal:CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_rcp85.nc ;
     cf:standard "CF-1.4"^^xsd:string ;
-    cf:variables "name: Par5, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string .
+    cf:variables "name: Par5, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string ;
+    datacite:format "netCDF"^^xsd:string ;
+    datacite:size "200MB"^^xsd:string .
 
 tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_2100_.nc a prov:Entity ;
-    datacite:format "netCDF"^^xsd:string ;
-    datacite:size "20MB"^^xsd:string ;
     dcterms:creator "IMK-TRO/KIT, Karlsruhe, Germany in collaboration with the CLM community"^^xsd:string ;
     dcterms:identifier "doi:10.1234/example.doi"^^xsd:string ;
     dcterms:publisher "Climate Limited-area Modelling Community (CLM-Community)"^^xsd:string ;
@@ -325,7 +323,9 @@ tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_b_1950_21
     prov:wasAttributedTo people:Jessica ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_pr_Afr_day_1950_2100.nc ;
     cf:standard "CF-1.4"^^xsd:string ;
-    cf:variables "name: Par6, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string .
+    cf:variables "name: Par6, units: kg m-2 s-1, long_name: Precipitation, standard_name: precipitation_flux"^^xsd:string ;
+    datacite:format "netCDF"^^xsd:string ;
+    datacite:size "20MB"^^xsd:string .
 
 people:Franzi a prov:Agent,
         "prov:Person"^^xsd:string ;
