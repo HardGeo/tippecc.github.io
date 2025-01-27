@@ -1,6 +1,6 @@
 <script lang="ts">
     import { SvelteFlow, Controls, Background, BackgroundVariant, MarkerType} from '@xyflow/svelte';
-    import { SvelteComponent, onMount } from 'svelte';
+    import { SvelteComponent } from 'svelte';
     import '@xyflow/svelte/dist/style.css';
 
 
@@ -10,7 +10,18 @@
     import SoftwareNode from '$lib/components/SoftwareNode.svelte';
     import Sidebar from '$lib/components/Sidebar.svelte'; // Import the Sidebar
     //import TopBar from '$lib/components/TopBar.svelte';
-    import { nodes, edges } from '$lib/store';
+
+    import { 
+        isSwitchOn, 
+        updateLabels, 
+        wasDerivedFrom_lb, 
+        wasInformedBy_lb, 
+        wasAttributedTo_lb, 
+        wasAssociatedWith_lb, 
+        wasGeneratedBy_lb, 
+        used_lb,
+        nodes,
+        edges } from "$lib/store"; // Import the store
 
     import data from '$lib/generate_rdfjson/article-prov.json'
     //import data from '$lib/generate_rdfjson/test.json'
@@ -27,7 +38,6 @@
         }
     };
     
-    
     let minZoom = 0.04;
 
     const nodeTypes: Record<string, typeof SvelteComponent> = {
@@ -36,11 +46,14 @@
         personNode: PersonNode as unknown as typeof SvelteComponent,
         softwareNode: SoftwareNode as unknown as typeof SvelteComponent,
     };
+    $: {
+        // Adjust labels based on switch state
+        updateLabels($isSwitchOn);
 
-    onMount(() => {
         // Clear the nodes and edges stores before repopulating them
         nodes.set([]);
         edges.set([]);
+
         //const hadMember = data.hadMember;
 
 
@@ -49,7 +62,7 @@
             data,
             nodes, 
             edges, 
-            "was derived from",
+            $wasDerivedFrom_lb,
             false,
         )
 
@@ -58,7 +71,7 @@
             dataset: data, 
             nodes: nodes,  
             edges: edges, 
-            EdgeLabel: "wasAttributedTo",
+            EdgeLabel: $wasAttributedTo_lb,
             //IdName: 'prov:agent',
             //EntityName: 'prov:entity',
             swapArrow: false,
@@ -69,7 +82,7 @@
         adjustPositions({
             nodes: nodes,
             edges: edges,
-            edgeToSelect: "wasAttributedTo",
+            edgeToSelect: $wasAttributedTo_lb,
             nodeTypeToAdjust: 'personNode',
             minSpace: 400
 
@@ -81,7 +94,7 @@
             dataset: data, 
             nodes: nodes,  
             edges: edges, 
-            EdgeLabel: "actedOnBehalfOf",
+            EdgeLabel: $actedOnBehalfOf_lb,
             IdName: 'prov:responsible',
             EntityName: 'prov:delegate',
             swapArrow: false,
@@ -90,7 +103,7 @@
         adjustPositions({
             nodes: nodes,
             edges: edges,
-            edgeToSelect: "actedOnBehalfOf",
+            edgeToSelect: $actedOnBehalfOf_lb,
             nodeTypeToAdjust: 'orgaNode',
             minSpace: 400
 
@@ -102,7 +115,7 @@
             dataset: data,  
             nodes: nodes, 
             edges: edges, 
-            EdgeLabel: "wasAssociatedWith",
+            EdgeLabel: $wasAssociatedWith_lb,
             IdName: 'prov:activity',
             EntityName: 'prov:agent',
             swapArrow: true,
@@ -115,7 +128,7 @@
             data, 
             nodes, 
             edges, 
-            "wasInformedBy",
+            $wasInformedBy_lb,
             false
         );
 
@@ -124,7 +137,7 @@
         addEdgesOnly({
             dataset: data.used,  
             edges: edges, 
-            EdgeLabel: "used",
+            EdgeLabel: $used_lb,
             IdName: 'prov:activity',
             EntityName: 'prov:entity',
             swapArrow: false,
@@ -138,7 +151,7 @@
         adjustPositionsNotOrder({
             nodes: nodes,
             edges: edges,
-            edgeToSelect: "used",
+            edgeToSelect: $used_lb,
             nodeTypeToAdjust: 'activityNode',
             minSpace: 200
 
@@ -146,7 +159,7 @@
         adjustPositions({
             nodes: nodes,
             edges: edges,
-            edgeToSelect: "wasAssociatedWith",
+            edgeToSelect: $wasAssociatedWith_lb,
             nodeTypeToAdjust: 'softwareNode',
             minSpace: 400
 
@@ -157,7 +170,7 @@
         addEdgesOnly({
             dataset: data.wasGeneratedBy,  
             edges: edges, 
-            EdgeLabel: "wasGeneratedBy",
+            EdgeLabel: $wasGeneratedBy_lb,
             IdName: 'prov:entity',
             EntityName: 'prov:activity',
             swapArrow: true,
@@ -166,8 +179,7 @@
             handle1: "left",
             handle2: "right"
         });
-
-    });
+    }    
 
 </script>
 

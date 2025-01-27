@@ -8,7 +8,13 @@
     import CollectionNode from '$lib/components/CollectionNode.svelte';
     import Sidebar from '$lib/components/Sidebar.svelte'; // Import the Sidebar
     //import TopBar from '$lib/components/TopBar.svelte';
-    import { nodes, edges } from '$lib/store';
+    import { 
+        isSwitchOn, 
+        updateLabels, 
+        wasDerivedFrom_lb, 
+        hadMember_lb,
+        nodes,
+        edges } from "$lib/store"; // Import the store
 
     import data from '$lib/generate_rdfjson/article-prov.json'
 
@@ -32,8 +38,10 @@
         entityNode: EntityNode as unknown as typeof SvelteComponent,
         collectionNode: CollectionNode as unknown as typeof SvelteComponent
     };
-
-    onMount(() => {
+    
+    $: {
+        // Adjust labels based on switch state
+        updateLabels($isSwitchOn);
         // Clear the nodes and edges stores before repopulating them
         nodes.set([]);
         edges.set([]);
@@ -45,7 +53,7 @@
             data,
             nodes, 
             edges, 
-            "was derived from",
+            $wasDerivedFrom_lb,
             false,
         );
 
@@ -55,7 +63,7 @@
             dataset: hadMember, 
             nodes: nodes,  
             edges:edges,
-            EdgeLabel: "hadMember",
+            EdgeLabel: $hadMember_lb,
             IdName: 'prov:collection',
             EntityName: 'prov:entity',
             swapArrow: false,
@@ -67,14 +75,12 @@
         adjustPositions({
             nodes: nodes,
             edges: edges,
-            edgeToSelect: "hadMember",
+            edgeToSelect: $hadMember_lb,
             nodeTypeToAdjust: 'collectionNode',
             minSpace: 400
 
         });
-
-
-    });
+    }
 
 </script>
 
