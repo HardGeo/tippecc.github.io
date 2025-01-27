@@ -9,10 +9,39 @@
         orga: 'Uni Jena',
         rorid: 'XXX-XXX-XXX-XXX'
     };
+
+    import { detailInfo } from '$lib/store';
+    let showBubble = false;
+
+    const showDetails = () => {
+        showBubble = !showBubble;
+        // Update the store with the current entity's details
+        if (showBubble) {
+            detailInfo.set(data);
+        } else {
+            detailInfo.set(null); // Clear the details when the bubble is hidden
+        }
+    };
+
+    const handleKeyDown = (event) => {
+        // Trigger showDetails on Enter or Space key press
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            showDetails();
+        }
+    };
 </script>
 
-<div class="bg-yellow-200 rounded-lg shadow-lg relative inline-block p-4" style="z-index: 1;">
-
+<!-- Updated with role and keyboard event handling -->
+<div
+    class="bg-yellow-200 rounded-lg shadow-lg relative inline-block p-4 cursor-pointer"
+    style="z-index: 1;"
+    role="button"
+    tabindex="0"
+    aria-label="Show details"
+    on:click={showDetails}
+    on:keydown={handleKeyDown}
+>
     <!-- Right Handle -->
     <Handle
         type="source"
@@ -23,7 +52,7 @@
 
     <!-- Person and ORCID Information -->
     <div class="flex flex-col space-y-3 w-full">
-        <!-- Left Side: Person and Organisation -->
+        <!-- Person and Organisation -->
         <div class="flex space-x-2 w-full">
             <!-- Person Chip -->
             <div class="bg-orange-700 text-white border border-orange-800 font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
@@ -34,20 +63,5 @@
                 {data.orga}
             </div>
         </div>
-    
-        <!-- Right Side: ORCID and ROR ID -->
-        <div class="flex space-x-2 w-full min-w-0">
-            <!-- ORCID Chip -->
-            <div class="bg-white text-orange-800 border border-orange-800 font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
-                {data.orcid}
-            </div>
-            <!-- ROR ID Chip -->
-            <div class="bg-white text-orange-800 border border-orange-800 font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
-                {data.rorid}
-            </div>
-        </div>
     </div>
-    
-
-    
 </div>

@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { nodes, edges } from '$lib/store'; // Import the nodes and edges stores
 
     import { detailInfo } from '$lib/store';
     import { onDestroy } from 'svelte';
@@ -13,7 +12,8 @@
         unsubscribe();  // Clean up the subscription when the component is destroyed
     });
 
-    export let title = "Detail View";   
+    export let title = "Entity Details";   
+    export let title_person = "Person Details"; 
 
     function copyData() {
         // Format data to copy, you can adjust this string based on what you need
@@ -42,6 +42,27 @@ Contact;${detailedData.contact}
 Domain;${detailedData.domain}
 DOI;${detailedData.doi}
 Collection;${detailedData.collection}
+`.trim();
+
+        // Use Clipboard API to copy the string
+        navigator.clipboard.writeText(dataToCopy)
+            .then(() => {
+                console.log('Data copied to clipboard');
+                alert('Data copied to clipboard!');
+            })
+            .catch(err => {
+                console.error('Failed to copy: ', err);
+                alert('Failed to copy data. Please try again.');
+            });
+    }
+
+    function copyPersonData() {
+        // Format data to copy, you can adjust this string based on what you need
+        let dataToCopy = `
+Person:;${detailedData.person}
+ORCID;${detailedData.orcid}
+Organisation;${detailedData.orga}
+RORID;${detailedData.rorid}
 `.trim();
 
         // Use Clipboard API to copy the string
@@ -91,7 +112,7 @@ Collection;${detailedData.collection}
 
 <div class="sidebar">
 
-    {#if detailedData}
+    {#if detailedData?.parameter}
         <h2>{title}</h2>
         <button
             on:click={copyData}
@@ -208,6 +229,43 @@ Collection;${detailedData.collection}
                 <tr>
                     <td class="pr-4 align-top"><strong>Collection:</strong></td>
                     <td class="pl-4">{detailedData.collection}</td>
+                </tr>
+            </tbody>
+        </table>
+    {/if}
+    {#if detailedData?.person}
+        <h2>{title_person}</h2>
+        <button
+            on:click={copyPersonData}
+            class="absolute right-4 bg-gray-200 p-2 rounded-md shadow-md hover:bg-gray-200"
+            title="Copy to Clipboard"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-600 hover:text-gray-800" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M14 2H9a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2zM9 4h6v12H9V4z" />
+                <path d="M4 6a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 11-2 0V7H6v2a1 1 0 01-2 0V6z" />
+            </svg>
+        </button>
+
+        <div class="triangle absolute left-1/2 -top-2 transform -translate-x-1/2"></div>
+        
+        <!-- Table layout with bigger column spacing -->
+        <table class="w-full table-auto">
+            <tbody>
+                <tr>
+                    <td class="pr-4 align-top"><strong>Person:</strong></td>
+                    <td class="pl-4">{detailedData.person}</td>
+                </tr>
+                <tr>
+                    <td class="pr-4 align-top"><strong>ORCID:</strong></td>
+                    <td class="pl-4">{detailedData.orcid}</td>
+                </tr>
+                <tr>
+                    <td class="pr-4 align-top"><strong>Organisation:</strong></td>
+                    <td class="pl-4">{detailedData.orga}</td>
+                </tr>
+                <tr>
+                    <td class="pr-4 align-top"><strong>RORID:</strong></td>
+                    <td class="pl-4">{detailedData.rorid}</td>
                 </tr>
             </tbody>
         </table>
