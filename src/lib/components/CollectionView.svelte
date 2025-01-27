@@ -45,9 +45,6 @@
             data,
             nodes, 
             edges, 
-            '#6ec13c',
-            'border-radius: 50%',
-            'height: 40px',
             "was derived from",
             false,
         );
