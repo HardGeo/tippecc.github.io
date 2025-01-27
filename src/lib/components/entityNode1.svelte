@@ -120,16 +120,6 @@
         </div>
     </div>
 
-    <!-- Time Span with Graphical Timeline -->
-    <div class="space-y-1 w-full justify-evenly">
-        <div class="flex items-center space-x-2">
-            <Timeline
-                step={25}
-                activeRanges={data.zeitspranne}
-            />
-        </div>
-    </div>
-
     <div class="flex space-x-4 w-full justify-between">
         <!-- Temporal Resolution Chip -->
         <div class="bg-green-700 text-gray-100 font-bold px-4 py-2 rounded-md inline-flex items-center justify-center inline-block text-sm flex-grow">
@@ -202,6 +192,17 @@
         <!-- Global Model Chip -->
         <div class="bg-white text-green-700 font-bold border border-green-700 px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow">
             {data.globalmodell}
+        </div>
+    </div>
+
+
+    <!-- Time Span with Graphical Timeline -->
+    <div class="space-y-1 w-full justify-evenly">
+        <div class="flex items-center space-x-2">
+            <Timeline
+                step={25}
+                activeRanges={data.zeitspranne}
+            />
         </div>
     </div>
 </div>

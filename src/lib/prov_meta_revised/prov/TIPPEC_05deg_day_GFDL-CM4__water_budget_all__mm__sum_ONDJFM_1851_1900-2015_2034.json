@@ -1,0 +1,88 @@
+{
+    "collection": [
+        "COLLECTION__TIPPECC",
+        "COLLECTION__CMIP6"
+    ],
+    "processing": [
+        {
+            "function": "FUNCTION__CDO_SUB",
+            "software": [
+                "SOFTWARE__CDO_1_9_3"
+            ],
+            "function_call": "",
+            "executed_by": "PERSON__ZANDER_FRANZISKA",
+            "on_behalf_of": "ORG__FSU",
+            "execution_time": "2025-01-21 20:31:02 CET+0100"
+        }
+    ],
+    "input_files": [
+        "/data/cmip6/TIPPEC_05deg_day_GFDL-CM4__water_budget_all__mm__sum_ONDJFM_2015_2034.nc",
+        "/data/cmip6/TIPPEC_05deg_day_GFDL-CM4__water_budget_all__mm__sum_ONDJFM_1851_1900.nc"
+    ],
+    "output_file": [
+        "/data/cmip6/TIPPEC_05deg_day_GFDL-CM4__water_budget_all__mm__sum_ONDJFM_1851_1900-2015_2034.nc"
+    ],
+    "metadata": {
+        "file_size": 81563,
+        "last_modification_time": "2025-01-21 20:31:02 CET+0100",
+        "content": [
+            true,
+            {
+                "size": [
+                    84,
+                    62
+                ],
+                "cornerCoordinates": {
+                    "upperLeft": [
+                        10.0,
+                        -5.0
+                    ],
+                    "upperRight": [
+                        52.0,
+                        -5.0
+                    ],
+                    "lowerLeft": [
+                        10.0,
+                        -36.0
+                    ],
+                    "lowerRight": [
+                        52.0,
+                        -36.0
+                    ],
+                    "center": [
+                        31.0,
+                        -20.5
+                    ]
+                },
+                "extent": {
+                    "type": "Polygon",
+                    "coordinates": [
+                        []
+                    ]
+                },
+                "NETCDF_DIM_time_VALUES": [
+                    "63692.5"
+                ],
+                "time#calendar": "365_day",
+                "time#units": "days since 1850-01-01",
+                "bands": {
+                    "1": {
+                        "min": -305.024,
+                        "max": 138.591,
+                        "NETCDF_DIM_time": "63692.5",
+                        "index": 1
+                    }
+                },
+                "varinfo": {
+                    "type": "Float64",
+                    "NETCDF_VARNAME": "water_budget_from_tas",
+                    "standard_name": "precipitation_minus_potential_evapotranspiration_flux",
+                    "long_name": "Water budget (\"FAO_PM985\" method)",
+                    "unit": "mmday"
+                },
+                "num_bands": 1
+            }
+        ]
+    },
+    "_comment": "Used keys are defined in the prov_metadata.json file."
+}

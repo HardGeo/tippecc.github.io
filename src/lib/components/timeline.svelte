@@ -56,12 +56,13 @@
 
     .filled-section-label {
         position: absolute;
-        top: 7px;
+        top: 8px;
         left: 50%;
         transform: translateX(-50%);
-        font-size: 8px;
-        color: rgb(55, 65, 81);
+        font-size: 13px;
+        color: #15803d; /* Tailwind green-700 */
         white-space: nowrap;
+        font-weight: bold;
     }
 
     .timeline {
