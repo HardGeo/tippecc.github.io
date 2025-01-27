@@ -22,14 +22,6 @@
         style="background-color: black; width: 10px; height: 10px; border-radius: 50%; position: absolute; left: -10px; top: 50%; transform: translateY(-50%);"
     />
 
-    <!-- Right Handle -->
-    <Handle
-        type="target"
-        position={Position.Right}
-        id={`${id}-right`}
-        style="background-color: black; width: 10px; height: 10px; border-radius: 50%; position: absolute; right: -10px; top: 50%; transform: translateY(-50%);"
-    />
-
     <!-- Software Information with Flex Layout -->
     <div class="flex flex-col space-y-3">
         <!-- Row with Software, Version, and License Chips -->

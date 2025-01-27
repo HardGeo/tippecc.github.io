@@ -49,22 +49,15 @@
             data,
             nodes, 
             edges, 
-            '#6ec13c',
-            'border-radius: 50%',
-            'height: 40px',
             "was derived from",
             false,
         )
 
 
-        // create all Collection edges and nodes
         createPeople({
             dataset: data, 
             nodes: nodes,  
             edges: edges, 
-            color: '#e28743',
-            border_radius: '',
-            height: '',
             EdgeLabel: "wasAttributedTo",
             //IdName: 'prov:agent',
             //EntityName: 'prov:entity',
@@ -88,9 +81,6 @@
             dataset: data, 
             nodes: nodes,  
             edges: edges, 
-            color: '#e28743',
-            border_radius: '',
-            height: '',
             EdgeLabel: "actedOnBehalfOf",
             IdName: 'prov:responsible',
             EntityName: 'prov:delegate',
@@ -112,13 +102,9 @@
             dataset: data,  
             nodes: nodes, 
             edges: edges, 
-            color: '#e28743',
-            border_radius: '',
-            height: '',
             EdgeLabel: "wasAssociatedWith",
             IdName: 'prov:activity',
             EntityName: 'prov:agent',
-            style: 'background: #e28743; border: 2px solid black; width: 150px', // Customize as needed
             swapArrow: true,
             edgestyle: "stroke: #e28743;"
         });
@@ -129,9 +115,6 @@
             data, 
             nodes, 
             edges, 
-            '#3399bf',
-            '',
-            '',
             "wasInformedBy",
             false
         );

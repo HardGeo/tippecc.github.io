@@ -43,10 +43,7 @@ export function createEntityFlowCore(
 export function createEntityFlow(
 dataset: any,
 nodes: any, 
-edges: any, 
-color: string,
-border_radius: string,
-height: string,
+edges: any,
 label: string,
 swapArrow: boolean,
 ): void {
@@ -156,7 +153,6 @@ for (let startEntity of startEntities) {
 
                     },
                     position: { x: 0, y: yPosition },
-                    style: `background: ${color}; ${border_radius}; ${height}; border: 2px solid black;`
                 });
                 yPosition += 400;       
             }
@@ -193,9 +189,6 @@ export function createActionFlow(
     dataset:any,
     nodes: any, 
     edges: any, 
-    color: string,
-    border_radius: string,
-    height: string,
     label: string,
     swapArrow: boolean
     ): void {
@@ -230,7 +223,6 @@ export function createActionFlow(
         
                         },
                         position: { x: 700, y:yPosition }, // Randomized for simplicity
-                        style: `background: ${color}; ${border_radius}; ${height}; border: 2px solid black;`
                     });
                     yPosition += 400;
                 }
@@ -270,9 +262,6 @@ export function createPeople ({
     dataset,
     nodes,
     edges,
-    color,
-    border_radius,
-    height,
     EdgeLabel,
     swapArrow,
     edgeStyle
@@ -280,9 +269,6 @@ export function createPeople ({
     dataset: any, 
     nodes: any, 
     edges: any,
-    color: string,
-    border_radius: string,
-    height: string,
     EdgeLabel: string,
     swapArrow: boolean,
     edgeStyle: string
@@ -315,7 +301,6 @@ export function createPeople ({
                         rorid: rorid || "N/A"
                     },
                     position: { x: -600, y: yPosition },
-                    style: `background: ${color}; ${border_radius}; width: ${personId.length * 10}px; ${height}; border: 2px solid black`
                 });
                 return n;
             });
@@ -356,9 +341,6 @@ export function addOrga ({
     dataset,
     nodes,
     edges,
-    color,
-    border_radius,
-    height,
     EdgeLabel,
     IdName,
     EntityName,
@@ -368,9 +350,6 @@ export function addOrga ({
     dataset: any, 
     nodes: any, 
     edges: any,
-    color: string,
-    border_radius: string,
-    height: string,
     EdgeLabel: string,
     IdName: string,
     EntityName: string,
@@ -395,7 +374,6 @@ export function addOrga ({
                         rorid: dataset.agent[Id]["ror:identifier"]
                      },
                     position: { x:-800, y: yPosition }, // Adjust position as needed
-                    style: `background: ${color}; ${border_radius}; width: ${Id.length*10}px;${height}; border: 2px solid black`
                 });
                 return n;
             });
@@ -430,26 +408,18 @@ export function addSoftware({
     dataset,
     nodes,
     edges,
-    color,
-    border_radius,
-    height,
     EdgeLabel,
     IdName,
     EntityName,
-    style,
     swapArrow,
     edgestyle
 }: {
     dataset: any, 
     nodes: any,
     edges: any,
-    color: string,
-    border_radius: string,
-    height: string,
     EdgeLabel: string,
     IdName: string,
     EntityName: string,
-    style: string,
     swapArrow: boolean,
     edgestyle: string
 }) {
@@ -472,7 +442,6 @@ export function addSoftware({
                         license: dataset.agent[agentId]["sdo:license"]
                      },
                     position: { x: 1200, y: yPosition }, // Adjust as needed
-                    style: `background: ${color}; ${border_radius}; width: ${agentId.length*10}px;${height}; border: 2px solid black`
                 });
             }
             return n;

@@ -13,14 +13,6 @@
 
 <div class="bg-yellow-200 rounded-lg shadow-lg relative inline-block p-4" style="z-index: 1;">
 
-    <!-- Left Handle -->
-    <Handle
-        type="target"
-        position={Position.Left}
-        id={`${id}-left`}
-        style="background-color: black; width: 10px; height: 10px; border-radius: 50%; position: absolute; left: -10px; top: 50%; transform: translateY(-50%);"
-    />
-
     <!-- Right Handle -->
     <Handle
         type="source"
