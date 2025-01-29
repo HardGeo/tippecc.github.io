@@ -22,6 +22,7 @@
     import SoftwareNode from "./SoftwareNode_mini.svelte";
     import PersonNode from "./PersonNode_mini.svelte";
     import OrgaNode from "./OrgaNode_mini.svelte";
+    import Sidebar from '$lib/components/Sidebar.svelte'; // Import the Sidebar
     import { 
         isSwitchOn, 
         updateLabels, 
@@ -81,8 +82,8 @@
                 startEntity, 
                 nodes, 
                 edges, 
-                $wasDerivedFrom_lb, 
-                false, 
+                $wasDerivedFrom_lb,
+                true, 
                 generatedToUsedMap, 
                 'entityNode', 
                 0
@@ -102,7 +103,7 @@
                 nodes, 
                 edges, 
                 $wasInformedBy_lb, 
-                false, 
+                true, 
                 generatedToUsedMapAction, 
                 'activityNode', 
                 1000
@@ -220,4 +221,5 @@
     <SvelteFlow {nodes} {edges} {defaultEdgeOptions} {connectionLineStyle} nodeTypes={nodeTypes} {minZoom} fitView>
         <Background />
     </SvelteFlow>
+    <Sidebar title="Details" />
 </div>

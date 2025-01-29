@@ -43,12 +43,13 @@
         tracking_id: 'hdl:21.14103/0f700e74-9c64-4638-9fab-e7a2f3d26b26',
         doi: 'www.exampleDOI.com'
 	}
-    
+    export let setActiveTab;
+
     import { detailInfo } from '$lib/store';  // Import the store
     let showBubble = false;
 
     const showDetails = () => {
-        showBubble = !showBubble;
+        showBubble = true;
         // Update the store with the current entity's details
         if (showBubble) {
             detailInfo.set(data);
@@ -61,7 +62,7 @@
 
 
 
-<div class="p-4 bg-green-50 rounded-lg shadow-lg space-y-3 mx-auto relative" style="z-index: 1;">
+<div class="p-4 bg-[#A5D6A7] rounded-lg shadow-lg space-y-3 mx-auto relative" style="z-index: 1;">
     <!-- Top Handle -->
     <Handle
     type="target"
@@ -96,12 +97,12 @@
 
     <div class="flex space-x-4 w-full justify-between">
         <!-- Parameter Chip -->
-        <div class="bg-green-700 text-gray-100 rounded-md h-8 leading-tight inline-flex items-center justify-center text-lg font-bold flex-grow">
+        <div class="bg-[#EAF6EA] text-[#424242] rounded-md h-8 leading-tight inline-flex items-center justify-center text-lg font-bold flex-grow">
             {data.parameter}
         </div>
 
         <!-- Unit Chip -->
-        <div class="bg-white text-green-700 border border-green-700 rounded-md h-8 leading-tight inline-flex items-center justify-center text-xs flex-grow font-bold">
+        <div class="bg-[#EAF6EA] text-[#424242] border border-[#9CCEA0] rounded-md h-8 leading-tight inline-flex items-center justify-center text-xs flex-grow font-bold">
             {data.einheit}
         </div>
 
@@ -110,10 +111,10 @@
             <!-- Copy Icon -->
             <button
                 on:click={showDetails}
-                class="absolute -top-2 right-0 bg-gray-200 p-2 rounded-md shadow-md hover:bg-gray-200"
+                class="absolute -top-2 right-0 bg-[#EAF6EA] p-2 rounded-md shadow-md hover:bg-white"
                 title="Show Details"
             >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600 hover:text-gray-800" viewBox="0 0 20 20" fill="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#424242] hover:text-[#A5D6A7]" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
                 </svg>
             </button>
@@ -122,11 +123,11 @@
 
     <div class="flex space-x-4 w-full justify-between">
         <!-- Temporal Resolution Chip -->
-        <div class="bg-green-700 text-gray-100 font-bold px-4 py-2 rounded-md inline-flex items-center justify-center inline-block text-sm flex-grow">
+        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 rounded-md inline-flex items-center justify-center inline-block text-sm flex-grow">
             {data.resolutionZeitlich}
         </div>
 
-		<div class="relative group flex flex-col items-center space-y-2 bg-white border border-green-700 rounded-md p-2 overflow-hidden flex-grow">
+		<div class="relative group flex flex-col items-center space-y-2 bg-[#EAF6EA] border border-[#9CCEA0] rounded-md p-2 overflow-hidden flex-grow">
             <!-- SVG map visualization -->
             <svg class="w-14 h-14" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <!-- Black outline for original extent -->
@@ -135,7 +136,7 @@
                     y=0 
                     width=100
                     height=100
-                    fill="#fee2e2" 
+                    fill="#E0E0E0" 
                     stroke="none" 
                     stroke-width="3"
                 />
@@ -148,7 +149,7 @@
                         width={(data.spatialExtent[1] - data.spatialExtent[0]) / (data.spatialExtent_orig[1] - data.spatialExtent_orig[0]) * 100}
                         height={(data.spatialExtent[3] - data.spatialExtent[2]) / (data.spatialExtent_orig[3] - data.spatialExtent_orig[2]) * 100}
                         fill="none" 
-                        stroke="red" 
+                        stroke="black" 
                         stroke-width="2"
                     />
                 {/if}
@@ -164,33 +165,33 @@
 		</div>
 
         <!-- Spatial Resolution with Map -->
-        <div class="bg-gray-200 text-green-700 font-bold px-4 py-2 rounded-md inline-flex items-center justify-center inline-block text-sm flex-grow">
+        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 rounded-md inline-flex items-center justify-center inline-block text-sm flex-grow">
             {data.resolutionRaeumlich}
         </div>
     </div>
 
     <!-- Scenario and Format Chips -->
     <div class="flex space-x-4 w-full justify-between">
-        <div class="bg-green-700 text-gray-100 font-bold px-4 py-2 inline-flex items-center justify-center rounded-md text-xs flex-grow">
+        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 inline-flex items-center justify-center rounded-md text-xs flex-grow">
             {data.szenario}
         </div>
-        <div class="bg-white text-green-700 font-bold border border-green-700 px-4 py-2 inline-flex items-center justify-center rounded-md text-xs flex-grow">
+        <div class="bg-[#EAF6EA] text-[#424242] font-bold border border-[#9CCEA0] px-4 py-2 inline-flex items-center justify-center rounded-md text-xs flex-grow">
             {data.format}
         </div>
         <!-- File Size -->
-        <div class="bg-gray-200 text-green-700 font-bold px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow">
+        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow">
             {data.dateigroesse}
         </div>
     </div>
 
     <div class="flex space-x-4 w-full justify-between">
         <!-- Regional Model Chip -->
-        <div class="bg-green-700 text-gray-100 font-bold px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow">
+        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow">
             {data.regionalmodell}
         </div>
 
         <!-- Global Model Chip -->
-        <div class="bg-white text-green-700 font-bold border border-green-700 px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow">
+        <div class="bg-[#EAF6EA] text-[#424242] font-bold border border-[#9CCEA0] px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow">
             {data.globalmodell}
         </div>
     </div>

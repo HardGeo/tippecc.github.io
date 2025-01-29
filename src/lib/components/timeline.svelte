@@ -50,7 +50,7 @@
         position: absolute;
         top: 0;
         height: 100%;
-        background-color: #047857;
+        background-color: #424242;
         border-radius: 10px;
     }
 
@@ -59,8 +59,8 @@
         top: 8px;
         left: 50%;
         transform: translateX(-50%);
-        font-size: 13px;
-        color: #15803d; /* Tailwind green-700 */
+        font-size: 12px;
+        color: #424242; 
         white-space: nowrap;
         font-weight: bold;
     }
@@ -68,7 +68,7 @@
     .timeline {
         height: 7px;
         width: 100%;
-        background-color: rgb(229, 231, 235);
+        background-color: #EAF6EA;
         position: relative;
         top: 2px;
         border-radius: 25px;

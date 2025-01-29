@@ -12,7 +12,7 @@
     };
 </script>
 
-<div class="bg-gray-300 p-6 rounded-lg shadow-lg relative inline-block" style="z-index: 1;">
+<div class="bg-[#CE93D8] p-6 rounded-lg shadow-lg relative inline-block" style="z-index: 1;">
 
     <!-- Left Handle -->
     <Handle
@@ -27,28 +27,28 @@
         <!-- Row with Software, Version, and License Chips -->
         <div class="flex space-x-3 w-full">
             <!-- Software Chip -->
-            <div class="bg-white border border-purple-500 text-purple-500 font-bold px-4 py-2 rounded-md text-lg flex-shrink-0 text-center">
+            <div class="bg-[#F8F2F9] border border-[#C28DB8] text-[#424242] font-bold px-4 py-2 rounded-md text-lg flex-shrink-0 text-center">
                 {data.software}
             </div>
 
             <!-- Version Chip -->
-            <div class="bg-white text-purple-500 border border-purple-500 font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
+            <div class="bg-[#F8F2F9] text-[#424242] border border-[#C28DB8] font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
                 {data.version}
             </div>
 
             <!-- License Chip -->
-            <div class="bg-white text-purple-500 border border-purple-500 font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
+            <div class="bg-[#F8F2F9] text-[#424242] border border-[#C28DB8] font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
                 {data.license}
             </div>
         </div>
 
         <!-- Source URL Chip -->
-        <div class="bg-purple-500 text-white font-bold px-4 py-2 rounded-md text-lg w-full text-center">
+        <div class="bg-[#F8F2F9] text-[#424242] border border-[#C28DB8] font-bold px-4 py-2 rounded-md text-lg w-full text-center">
             {data.source}
         </div>
 
         <!-- Repository URL Chip, allows for max 2 lines -->
-        <div class="bg-purple-500 text-white font-bold px-4 py-2 rounded-md text-lg w-full break-words text-center">
+        <div class="bg-[#F8F2F9] text-[#424242] border border-[#C28DB8] font-bold px-4 py-2 rounded-md text-lg w-full break-words text-center">
             {data.repository}
         </div>
     </div>

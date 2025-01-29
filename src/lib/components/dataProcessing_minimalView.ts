@@ -79,7 +79,6 @@ export function createEntityFlow(
                 // Add edge between the current entity and the used entity
                 const source = swapArrow ? usedEntity : currentEntity;
                 const target = swapArrow ? currentEntity : usedEntity;
-
                 const sourceHandle = swapArrow ? `${usedEntity}-top` : `${currentEntity}-bottom`;
                 const targetHandle = swapArrow ? `${currentEntity}-bottom` : `${usedEntity}-top`;
                 edges.update(e => {
@@ -89,6 +88,7 @@ export function createEntityFlow(
                         target: target,
                         animated: false,
                         label: label,
+                        type: "default",
                         labelStyle: "color: black; font-size: 16px;",
                         sourceHandle: sourceHandle,
                         targetHandle: targetHandle

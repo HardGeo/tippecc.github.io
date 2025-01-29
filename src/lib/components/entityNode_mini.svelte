@@ -67,7 +67,7 @@
 
     <!-- Top Handle -->
     <Handle
-    type="target"
+    type="source"
     position={Position.Top}
     id={`${id}-top`}
     style="background-color: black; width: 10px; height: 10px; border-radius: 50%; position: absolute; margin-top: -5px"
@@ -75,7 +75,7 @@
 
     <!-- Bottom Handle -->
     <Handle
-        type="source"
+        type="target"
         position={Position.Bottom}
         id={`${id}-bottom`}
         style="background-color: black; width: 10px; height: 10px; border-radius: 50%; position: absolute; margin-bottom: -2px;"

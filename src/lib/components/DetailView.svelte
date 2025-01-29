@@ -75,7 +75,7 @@
             //IdName: 'prov:agent',
             //EntityName: 'prov:entity',
             swapArrow: false,
-            edgeStyle: "stroke: #e28743"
+            edgeStyle: "stroke: #4B5563"
         });
 
 
@@ -119,7 +119,7 @@
             IdName: 'prov:activity',
             EntityName: 'prov:agent',
             swapArrow: true,
-            edgestyle: "stroke: #e28743;"
+            edgestyle: "stroke: #4B5563;"
         });
 
 
@@ -141,8 +141,8 @@
             IdName: 'prov:activity',
             EntityName: 'prov:entity',
             swapArrow: false,
-            style: "stroke: red;",
-            labelStyle: "color: red; font-size: 16px",
+            style: "stroke: #4B5563;",
+            labelStyle: "color: black; font-size: 16px",
             handle1: "right",
             handle2: "left"
         });
@@ -174,8 +174,8 @@
             IdName: 'prov:entity',
             EntityName: 'prov:activity',
             swapArrow: true,
-            style: "stroke: green;",
-            labelStyle: "color: green; font-size: 16px",
+            style: "stroke: #4B5563;",
+            labelStyle: "color: black; font-size: 16px",
             handle1: "left",
             handle2: "right"
         });

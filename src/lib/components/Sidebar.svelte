@@ -1,84 +1,41 @@
 <script lang="ts">
-
     import { detailInfo } from '$lib/store';
     import { onDestroy } from 'svelte';
+    import SidebarDetails from './SidebarDetails.svelte';
+    import SidebarLegend from './SidebarLegend.svelte';
+    import SidebarExplanation from './SidebarExplanation.svelte';
 
     let detailedData;
+    let activeTab = 'details'; // Default active tab
     const unsubscribe = detailInfo.subscribe((data) => {
         detailedData = data;
+
+        // Automatically switch to the Details tab when detailInfo changes
+        if (data) {
+            activeTab = 'details';
+        }
     });
 
     onDestroy(() => {
         unsubscribe();  // Clean up the subscription when the component is destroyed
     });
 
-    export let title = "Entity Details";   
-    export let title_person = "Person Details"; 
 
-    function copyData() {
-        // Format data to copy, you can adjust this string based on what you need
-        let dataToCopy = `
-Parameter;${detailedData.parameter}
-Unit;${detailedData.einheit}
-Timespan;${detailedData.zeitspranne.map(t => `${t.start} - ${t.end}`).join(',')}
-Regional Model;${detailedData.regionalmodell}
-Global Model;${detailedData.globalmodell}
-Format;${detailedData.format}
-Scenario;${detailedData.szenario}
-Temporal Res.;${detailedData.resolutionZeitlich}
-Spatial Res.;${detailedData.resolutionRaeumlich}
-Spatial Extent;${detailedData.spatialExtent.join(',')}
-spatialExtent_orig;${detailedData.spatialExtent_orig}
-File Size;${detailedData.dateigroesse}
-Timestamp;${detailedData.timestamp}
-Project;${detailedData.project}
-Experiment;${detailedData.experiment}
-Standard;${detailedData.standard}
-Bias;${detailedData.bias}
-Source;${detailedData.source}
-Institution;${detailedData.institution}
-Tracking ID;${detailedData.tracking_id}
-Contact;${detailedData.contact}
-Domain;${detailedData.domain}
-DOI;${detailedData.doi}
-Collection;${detailedData.collection}
-`.trim();
-
-        // Use Clipboard API to copy the string
-        navigator.clipboard.writeText(dataToCopy)
-            .then(() => {
-                console.log('Data copied to clipboard');
-                alert('Data copied to clipboard!');
-            })
-            .catch(err => {
-                console.error('Failed to copy: ', err);
-                alert('Failed to copy data. Please try again.');
-            });
-    }
-
-    function copyPersonData() {
-        // Format data to copy, you can adjust this string based on what you need
-        let dataToCopy = `
-Person:;${detailedData.person}
-ORCID;${detailedData.orcid}
-Organisation;${detailedData.orga}
-RORID;${detailedData.rorid}
-`.trim();
-
-        // Use Clipboard API to copy the string
-        navigator.clipboard.writeText(dataToCopy)
-            .then(() => {
-                console.log('Data copied to clipboard');
-                alert('Data copied to clipboard!');
-            })
-            .catch(err => {
-                console.error('Failed to copy: ', err);
-                alert('Failed to copy data. Please try again.');
-            });
+    function setActiveTab(tab) {
+        console.log('Switching to tab:', tab); // Debug log
+        activeTab = tab;
     }
 </script>
 
 <style>
+
+    .tab-navigation {
+        display: flex;
+        justify-content: left;  /* Distributes buttons evenly */
+        width: 95%;  /* Ensures it spans the full sidebar width */
+        gap: 20px
+    }
+
     .sidebar {
         width: 440px;
         background: #ffffff;
@@ -108,168 +65,60 @@ RORID;${detailedData.rorid}
     .sidebar li {
         margin-bottom: 0.4rem;
     }
+
+    .tab-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: rgb(194, 194, 194);
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer !important;;
+        transition: background-color 0.2s, color 0.2s;
+        color: black;
+        pointer-events: auto;
+        z-index: 20;
+    }
+
+    .tab-button:hover {
+        background-color: #203c74;
+        color: white;
+        cursor: pointer !important;
+    }
+
+    .tab-button.active {
+        background-color: #203c74 !important; /* Keep the active button blue */
+        color: white;
+    }
+
 </style>
 
 <div class="sidebar">
-
-    {#if detailedData?.parameter}
-        <h2>{title}</h2>
+    <div class="tab-navigation">
         <button
-            on:click={copyData}
-            class="absolute right-4 bg-gray-200 p-2 rounded-md shadow-md hover:bg-gray-200"
-            title="Copy to Clipboard"
-        >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-600 hover:text-gray-800" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M14 2H9a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2zM9 4h6v12H9V4z" />
-                <path d="M4 6a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 11-2 0V7H6v2a1 1 0 01-2 0V6z" />
-            </svg>
+            class="tab-button"
+            class:active={activeTab === 'details'}
+            on:click={() => setActiveTab('details')}>
+            Details
         </button>
-
-        <div class="triangle absolute left-1/2 -top-2 transform -translate-x-1/2"></div>
-        
-        <!-- Table layout with bigger column spacing -->
-        <table class="w-full table-auto">
-            <tbody>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Parameter:</strong></td>
-                    <td class="pl-4">{detailedData.parameter}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Unit:</strong></td>
-                    <td class="pl-4">{detailedData.einheit}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Timespan:</strong></td>
-                    <td class="pl-4">
-                        {#each detailedData.zeitspranne as timespan}
-                            <div>{timespan.start} - {timespan.end}</div>
-                        {/each}
-                    </td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Model (R):</strong></td>
-                    <td class="pl-4">{detailedData.regionalmodell}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Model (G):</strong></td>
-                    <td class="pl-4">{detailedData.globalmodell}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Format:</strong></td>
-                    <td class="pl-4">{detailedData.format}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Scenario:</strong></td>
-                    <td class="pl-4">{detailedData.szenario}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Temp Res:</strong></td>
-                    <td class="pl-4">{detailedData.resolutionZeitlich}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Spat Res:</strong></td>
-                    <td class="pl-4">{detailedData.resolutionRaeumlich}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Sp. Extent:</strong></td>
-                    <td class="pl-4">{detailedData.spatialExtent.join(', ')}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Sp. Ext Or.:</strong></td>
-                    <td class="pl-4">{detailedData.spatialExtent_orig.join(', ')}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>File Size:</strong></td>
-                    <td class="pl-4">{detailedData.dateigroesse}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Timestamp:</strong></td>
-                    <td class="pl-4">{detailedData.timestamp}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Project:</strong></td>
-                    <td class="pl-4">{detailedData.project}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Experiment:</strong></td>
-                    <td class="pl-4">{detailedData.experiment}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Standard:</strong></td>
-                    <td class="pl-4">{detailedData.standard}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Bias:</strong></td>
-                    <td class="pl-4">{detailedData.bias}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Source:</strong></td>
-                    <td class="pl-4">{detailedData.source}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Institution:</strong></td>
-                    <td class="pl-4">{detailedData.institution}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Tracking ID:</strong></td>
-                    <td class="pl-4">{detailedData.tracking_id}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Contact:</strong></td>
-                    <td class="pl-4">{detailedData.contact}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Domain:</strong></td>
-                    <td class="pl-4">{detailedData.domain}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>DOI:</strong></td>
-                    <td class="pl-4">{detailedData.doi}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Collection:</strong></td>
-                    <td class="pl-4">{detailedData.collection}</td>
-                </tr>
-            </tbody>
-        </table>
-    {/if}
-    {#if detailedData?.person}
-        <h2>{title_person}</h2>
         <button
-            on:click={copyPersonData}
-            class="absolute right-4 bg-gray-200 p-2 rounded-md shadow-md hover:bg-gray-200"
-            title="Copy to Clipboard"
-        >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-600 hover:text-gray-800" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M14 2H9a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2zM9 4h6v12H9V4z" />
-                <path d="M4 6a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 11-2 0V7H6v2a1 1 0 01-2 0V6z" />
-            </svg>
+            class="tab-button"
+            class:active={activeTab === 'legend'}
+            on:click={() => setActiveTab('legend')}>
+            Legend
         </button>
+        <button
+            class="tab-button"
+            class:active={activeTab === 'explanation'}
+            on:click={() => setActiveTab('explanation')}>
+            Explanation
+        </button>
+    </div>
 
-        <div class="triangle absolute left-1/2 -top-2 transform -translate-x-1/2"></div>
-        
-        <!-- Table layout with bigger column spacing -->
-        <table class="w-full table-auto">
-            <tbody>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Person:</strong></td>
-                    <td class="pl-4">{detailedData.person}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>ORCID:</strong></td>
-                    <td class="pl-4">{detailedData.orcid}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>Organisation:</strong></td>
-                    <td class="pl-4">{detailedData.orga}</td>
-                </tr>
-                <tr>
-                    <td class="pr-4 align-top"><strong>RORID:</strong></td>
-                    <td class="pl-4">{detailedData.rorid}</td>
-                </tr>
-            </tbody>
-        </table>
+    {#if activeTab === 'details'}
+        <SidebarDetails {detailedData} />
+    {:else if activeTab === 'legend'}
+        <SidebarLegend />
+    {:else if activeTab === 'explanation'}
+        <SidebarExplanation />
     {/if}
-
 </div>
-

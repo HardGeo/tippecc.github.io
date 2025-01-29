@@ -234,6 +234,8 @@ export function createActionFlow(
                 for (const usedEntity of generatedToUsedMapAction.get(currentEntity)!) {
                     const source = swapArrow ? usedEntity : currentEntity;
                     const target = swapArrow ? currentEntity : usedEntity;
+                    const sourceHandle = swapArrow ? `${usedEntity}-top` : `${currentEntity}-bottom`;
+                    const targetHandle = swapArrow ? `${currentEntity}-bottom` : `${usedEntity}-top`;
                     edges.update(e => {
                         e.push({
                             id: `${usedEntity}-${currentEntity}`,
@@ -242,7 +244,9 @@ export function createActionFlow(
                             animated: false,
                             label: label,
                             type: 'default',
-                            labelStyle: 'color: black; font-size: 16px; z-index: 2; pointer-events: none;'
+                            labelStyle: 'color: black; font-size: 16px; z-index: 2; pointer-events: none;',
+                            sourceHandle: sourceHandle,
+                            targetHandle: targetHandle
                         });
                         return e;
                     });

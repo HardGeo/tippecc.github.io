@@ -14,7 +14,7 @@
     let showBubble = false;
 
     const showDetails = () => {
-        showBubble = !showBubble;
+        showBubble = true;
         // Update the store with the current entity's details
         if (showBubble) {
             detailInfo.set(data);
@@ -34,7 +34,7 @@
 
 <!-- Updated with role and keyboard event handling -->
 <div
-    class="bg-yellow-200 rounded-lg shadow-lg relative inline-block p-4 cursor-pointer"
+    class="bg-[#FFE082] rounded-lg shadow-lg relative inline-block p-4 cursor-pointer"
     style="z-index: 1;"
     role="button"
     tabindex="0"
@@ -55,11 +55,11 @@
         <!-- Person and Organisation -->
         <div class="flex space-x-2 w-full">
             <!-- Person Chip -->
-            <div class="bg-orange-700 text-white border border-orange-800 font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
+            <div class="bg-[#FFF9E5] text-[#424242] border border-[#E8CC71] font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
                 {data.person}
             </div>
             <!-- Organisation Chip -->
-            <div class="bg-orange-700 text-white border border-orange-800 font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
+            <div class="bg-[#FFF9E5] text-[#424242] border border-[#E8CC71] font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
                 {data.orga}
             </div>
         </div>

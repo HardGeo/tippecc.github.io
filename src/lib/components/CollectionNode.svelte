@@ -17,7 +17,6 @@
         style="background-color: black; width: 10px; height: 10px; border-radius: 50%; position: absolute; right: -10px; top: 50%; transform: translateY(-50%);"
     />
 
-
     <!-- Label -->
     <div class="text-center text-lg font-semibold text-black px-2 py-1">{id}</div>
 </div>
