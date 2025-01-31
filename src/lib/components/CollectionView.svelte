@@ -67,7 +67,7 @@
             IdName: 'prov:collection',
             EntityName: 'prov:entity',
             swapArrow: false,
-            edgeStyle: "stroke: black",
+            edgeStyle: "stroke: #424242",
             nodeType: 'collectionNode',
             xPos: -800
         });

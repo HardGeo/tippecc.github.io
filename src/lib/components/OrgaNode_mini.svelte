@@ -17,7 +17,7 @@
     />
 
     <!-- Left Side: Person and Organisation -->
-    <div class="bg-white text-orange-800 border-4 border-orange-700 font-bold px-4 py-4 rounded-md text-lg inline-block">{id}</div>
+    <div class="bg-[#FFF9E5] text-[#424242] border-4 border-[#E8CC71] font-bold px-4 py-4 rounded-md text-lg inline-block">{id}</div>
     
 
     

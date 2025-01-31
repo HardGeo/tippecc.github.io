@@ -63,7 +63,7 @@
 
 
 
-<div class="p-4 bg-green-50 rounded-lg shadow-lg mx-auto relative space-y-3 inline-block max-w">
+<div class="p-4 bg-[#EAF6EA] border-4 border-[#9CCEA0] rounded-lg shadow-lg mx-auto relative space-y-3 inline-block max-w">
 
     <!-- Top Handle -->
     <Handle
@@ -99,5 +99,5 @@
 
 
     <!-- Label -->
-    <div class="text-center text-lg font-semibold text-black px-2 py-1">{id}</div>
+    <div class="text-center text-lg font-bold text-[#424242] px-2 py-1">{id}</div>
 </div>

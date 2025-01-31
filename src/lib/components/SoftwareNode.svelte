@@ -27,28 +27,28 @@
         <!-- Row with Software, Version, and License Chips -->
         <div class="flex space-x-3 w-full">
             <!-- Software Chip -->
-            <div class="bg-[#F8F2F9] border border-[#C28DB8] text-[#424242] font-bold px-4 py-2 rounded-md text-lg flex-shrink-0 text-center">
+            <div class="bg-[#F8F2F9] border border-[#C28DB8] text-[#424242] font-bold px-4 py-2 rounded-md text-lg flex-shrink-0 text-center hover:bg-white transition-colors duration-200">
                 {data.software}
             </div>
 
             <!-- Version Chip -->
-            <div class="bg-[#F8F2F9] text-[#424242] border border-[#C28DB8] font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
+            <div class="bg-[#F8F2F9] text-[#424242] border border-[#C28DB8] font-bold px-4 py-2 rounded-md text-lg flex-grow text-center hover:bg-white transition-colors duration-200">
                 {data.version}
             </div>
 
             <!-- License Chip -->
-            <div class="bg-[#F8F2F9] text-[#424242] border border-[#C28DB8] font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
+            <div class="bg-[#F8F2F9] text-[#424242] border border-[#C28DB8] font-bold px-4 py-2 rounded-md text-lg flex-grow text-center hover:bg-white transition-colors duration-200">
                 {data.license}
             </div>
         </div>
 
         <!-- Source URL Chip -->
-        <div class="bg-[#F8F2F9] text-[#424242] border border-[#C28DB8] font-bold px-4 py-2 rounded-md text-lg w-full text-center">
+        <div class="bg-[#F8F2F9] text-[#424242] border border-[#C28DB8] font-bold px-4 py-2 rounded-md text-lg w-full text-center hover:bg-white transition-colors duration-200">
             {data.source}
         </div>
 
         <!-- Repository URL Chip, allows for max 2 lines -->
-        <div class="bg-[#F8F2F9] text-[#424242] border border-[#C28DB8] font-bold px-4 py-2 rounded-md text-lg w-full break-words text-center">
+        <div class="bg-[#F8F2F9] text-[#424242] border border-[#C28DB8] font-bold px-4 py-2 rounded-md text-lg w-full break-words text-center hover:bg-white transition-colors duration-200">
             {data.repository}
         </div>
     </div>

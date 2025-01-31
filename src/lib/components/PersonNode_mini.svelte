@@ -5,7 +5,7 @@
 
 </script>
 
-<div class="bg-orange-800 rounded-lg shadow-lg relative inline-block p-4" style="z-index: 1;">
+<div class="bg-[#FFF9E5] border-4 border-[#E8CC71] rounded-lg shadow-lg relative inline-block p-4" style="z-index: 1;">
 
     <!-- Left Handle -->
     <Handle
@@ -24,7 +24,7 @@
     />
 
     <!-- Left Side: Person and Organisation -->
-    <div class="text-white text-center text-lg font-semibold text-black px-2 py-1">{id}</div>
+    <div class="text-[#424242] text-center text-lg font-bold text-black px-2 py-1">{id}</div>
     
 
     

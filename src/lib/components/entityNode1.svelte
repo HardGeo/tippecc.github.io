@@ -97,12 +97,12 @@
 
     <div class="flex space-x-4 w-full justify-between">
         <!-- Parameter Chip -->
-        <div class="bg-[#EAF6EA] text-[#424242] rounded-md h-8 leading-tight inline-flex items-center justify-center text-lg font-bold flex-grow">
+        <div class="bg-[#EAF6EA] text-[#424242] rounded-md h-8 leading-tight inline-flex items-center justify-center text-lg font-bold flex-grow hover:bg-white transition-colors duration-200">
             {data.parameter}
         </div>
 
         <!-- Unit Chip -->
-        <div class="bg-[#EAF6EA] text-[#424242] border border-[#9CCEA0] rounded-md h-8 leading-tight inline-flex items-center justify-center text-xs flex-grow font-bold">
+        <div class="bg-[#EAF6EA] text-[#424242] border border-[#9CCEA0] rounded-md h-8 leading-tight inline-flex items-center justify-center text-xs flex-grow font-bold hover:bg-white transition-colors duration-200">
             {data.einheit}
         </div>
 
@@ -123,11 +123,11 @@
 
     <div class="flex space-x-4 w-full justify-between">
         <!-- Temporal Resolution Chip -->
-        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 rounded-md inline-flex items-center justify-center inline-block text-sm flex-grow">
+        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 rounded-md inline-flex items-center justify-center inline-block text-sm flex-grow hover:bg-white transition-colors duration-200">
             {data.resolutionZeitlich}
         </div>
 
-		<div class="relative group flex flex-col items-center space-y-2 bg-[#EAF6EA] border border-[#9CCEA0] rounded-md p-2 overflow-hidden flex-grow">
+		<div class="relative group flex flex-col items-center space-y-2 bg-[#EAF6EA] border border-[#9CCEA0] rounded-md p-2 overflow-hidden flex-grow hover:bg-white transition-colors duration-200">
             <!-- SVG map visualization -->
             <svg class="w-14 h-14" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <!-- Black outline for original extent -->
@@ -165,33 +165,33 @@
 		</div>
 
         <!-- Spatial Resolution with Map -->
-        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 rounded-md inline-flex items-center justify-center inline-block text-sm flex-grow">
+        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 rounded-md inline-flex items-center justify-center inline-block text-sm flex-grow hover:bg-white transition-colors duration-200">
             {data.resolutionRaeumlich}
         </div>
     </div>
 
     <!-- Scenario and Format Chips -->
     <div class="flex space-x-4 w-full justify-between">
-        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 inline-flex items-center justify-center rounded-md text-xs flex-grow">
+        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 inline-flex items-center justify-center rounded-md text-xs flex-grow hover:bg-white transition-colors duration-200">
             {data.szenario}
         </div>
-        <div class="bg-[#EAF6EA] text-[#424242] font-bold border border-[#9CCEA0] px-4 py-2 inline-flex items-center justify-center rounded-md text-xs flex-grow">
+        <div class="bg-[#EAF6EA] text-[#424242] font-bold border border-[#9CCEA0] px-4 py-2 inline-flex items-center justify-center rounded-md text-xs flex-grow hover:bg-white transition-colors duration-200">
             {data.format}
         </div>
         <!-- File Size -->
-        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow">
+        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow hover:bg-white transition-colors duration-200">
             {data.dateigroesse}
         </div>
     </div>
 
     <div class="flex space-x-4 w-full justify-between">
         <!-- Regional Model Chip -->
-        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow">
+        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow hover:bg-white transition-colors duration-200">
             {data.regionalmodell}
         </div>
 
         <!-- Global Model Chip -->
-        <div class="bg-[#EAF6EA] text-[#424242] font-bold border border-[#9CCEA0] px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow">
+        <div class="bg-[#EAF6EA] text-[#424242] font-bold border border-[#9CCEA0] px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow hover:bg-white transition-colors duration-200">
             {data.globalmodell}
         </div>
     </div>
