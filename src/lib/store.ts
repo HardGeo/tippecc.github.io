@@ -8,6 +8,16 @@ export const detailInfo = writable(null);
 export const isSwitchOn = writable(false);
 
 
+export const changedPar = writable(new Set<string>());
+export const changedUnit = writable(new Set<string>());
+export const changedTempRes = writable(new Set<string>());
+export const changedSpatRes = writable(new Set<string>());
+export const changedScenario = writable(new Set<string>());
+export const changedFormat = writable(new Set<string>());
+export const changedSize = writable(new Set<string>());
+export const changedGlobMod = writable(new Set<string>());
+export const changedRegMod = writable(new Set<string>());
+
 // Writable stores for the label states
 export const wasDerivedFrom_lb = writable("wasDerivedFrom");
 export const wasInformedBy_lb = writable("wasInformedBy");

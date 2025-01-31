@@ -45,7 +45,19 @@
 	}
     export let setActiveTab;
 
-    import { detailInfo } from '$lib/store';  // Import the store
+    import { 
+    detailInfo,
+    changedPar, 
+    changedUnit,  
+    changedTempRes, 
+    changedSpatRes, 
+    changedScenario, 
+    changedFormat, 
+    changedSize, 
+    changedGlobMod, 
+    changedRegMod} from '$lib/store';
+
+    import { onDestroy } from 'svelte';
     let showBubble = false;
 
     const showDetails = () => {
@@ -57,6 +69,63 @@
             detailInfo.set(null);  // Clear the details when the bubble is hidden
         }
     };
+
+    let isChanged = false;
+    const unsubscribe = changedPar.subscribe(set => {
+        isChanged = set.has(id); // Check if this entity is in the changed set
+    });
+
+    let isChangedUnit = false;
+    const unsubscribeUnit = changedUnit.subscribe(set => {
+        isChangedUnit = set.has(id); // Check if this entity is in the changed set
+    });
+
+    let isChangedTempRes = false;
+    const unsubscribeTempRes = changedTempRes.subscribe(set => {
+        isChangedTempRes = set.has(id); // Check if this entity is in the changed set
+    });
+
+    let isChangedSpatRes = false;
+    const unsubscribeSpatRes = changedSpatRes.subscribe(set => {
+        isChangedSpatRes = set.has(id); // Check if this entity is in the changed set
+    });
+
+    let isChangedScenario = false;
+    const unsubscribeScenario = changedScenario.subscribe(set => {
+        isChangedScenario = set.has(id); // Check if this entity is in the changed set
+    });
+
+    let isChangedFormat = false;
+    const unsubscribeFormat = changedFormat.subscribe(set => {
+        isChangedFormat = set.has(id); // Check if this entity is in the changed set
+    });
+
+    let isChangedSize = false;
+    const unsubscribeSize = changedSize.subscribe(set => {
+        isChangedSize = set.has(id); // Check if this entity is in the changed set
+    });
+
+    let isChangedGlobMod = false;
+    const unsubscribeGlobMod = changedGlobMod.subscribe(set => {
+        isChangedGlobMod = set.has(id); // Check if this entity is in the changed set
+    });
+
+    let isChangedRegMod = false;
+    const unsubscribeRegMod = changedRegMod.subscribe(set => {
+        isChangedRegMod = set.has(id); // Check if this entity is in the changed set
+    });
+
+    onDestroy(() => {
+        unsubscribe();
+        unsubscribeUnit();
+        unsubscribeTempRes();
+        unsubscribeSpatRes();
+        unsubscribeScenario();
+        unsubscribeFormat();
+        unsubscribeSize();
+        unsubscribeGlobMod();
+        unsubscribeRegMod();
+    });
 
 </script>
 
@@ -97,12 +166,18 @@
 
     <div class="flex space-x-4 w-full justify-between">
         <!-- Parameter Chip -->
-        <div class="bg-[#EAF6EA] text-[#424242] rounded-md h-8 leading-tight inline-flex items-center justify-center text-lg font-bold flex-grow hover:bg-white transition-colors duration-200">
+        <div 
+            class="bg-[#EAF6EA] text-[#424242] rounded-md h-8 leading-tight inline-flex items-center justify-center text-lg font-bold flex-grow hover:bg-white transition-colors duration-200"
+            style="z-index: 1; border: {isChanged ? '2px solid #7f1d1d' : 'none'};"
+        >
             {data.parameter}
         </div>
 
         <!-- Unit Chip -->
-        <div class="bg-[#EAF6EA] text-[#424242] border border-[#9CCEA0] rounded-md h-8 leading-tight inline-flex items-center justify-center text-xs flex-grow font-bold hover:bg-white transition-colors duration-200">
+        <div 
+            class="bg-[#EAF6EA] text-[#424242] border border-[#9CCEA0] rounded-md h-8 leading-tight inline-flex items-center justify-center text-xs flex-grow font-bold hover:bg-white transition-colors duration-200"
+            style="z-index: 1; border: {isChangedUnit ? '2px solid #7f1d1d' : 'none'};"
+        >
             {data.einheit}
         </div>
 
@@ -123,10 +198,14 @@
 
     <div class="flex space-x-4 w-full justify-between">
         <!-- Temporal Resolution Chip -->
-        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 rounded-md inline-flex items-center justify-center inline-block text-sm flex-grow hover:bg-white transition-colors duration-200">
+        <div 
+            class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 rounded-md inline-flex items-center justify-center inline-block text-sm flex-grow hover:bg-white transition-colors duration-200"
+            style="z-index: 1; border: {isChangedTempRes ? '2px solid #7f1d1d' : 'none'};"
+        >
             {data.resolutionZeitlich}
         </div>
 
+        <!-- Spatial extent -->
 		<div class="relative group flex flex-col items-center space-y-2 bg-[#EAF6EA] border border-[#9CCEA0] rounded-md p-2 overflow-hidden flex-grow hover:bg-white transition-colors duration-200">
             <!-- SVG map visualization -->
             <svg class="w-14 h-14" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -165,33 +244,51 @@
 		</div>
 
         <!-- Spatial Resolution with Map -->
-        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 rounded-md inline-flex items-center justify-center inline-block text-sm flex-grow hover:bg-white transition-colors duration-200">
+        <div 
+            class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 rounded-md inline-flex items-center justify-center inline-block text-sm flex-grow hover:bg-white transition-colors duration-200"
+            style="z-index: 1; border: {isChangedSpatRes ? '2px solid #7f1d1d' : 'none'};"
+            >
             {data.resolutionRaeumlich}
         </div>
     </div>
 
     <!-- Scenario and Format Chips -->
     <div class="flex space-x-4 w-full justify-between">
-        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 inline-flex items-center justify-center rounded-md text-xs flex-grow hover:bg-white transition-colors duration-200">
+        <div 
+            class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 inline-flex items-center justify-center rounded-md text-xs flex-grow hover:bg-white transition-colors duration-200"
+            style="z-index: 1; border: {isChangedScenario ? '2px solid #7f1d1d' : 'none'};"
+        >
             {data.szenario}
         </div>
-        <div class="bg-[#EAF6EA] text-[#424242] font-bold border border-[#9CCEA0] px-4 py-2 inline-flex items-center justify-center rounded-md text-xs flex-grow hover:bg-white transition-colors duration-200">
+        <div 
+            class="bg-[#EAF6EA] text-[#424242] font-bold border border-[#9CCEA0] px-4 py-2 inline-flex items-center justify-center rounded-md text-xs flex-grow hover:bg-white transition-colors duration-200"
+            style="z-index: 1; border: {isChangedFormat ? '2px solid #7f1d1d' : 'none'};"
+        >
             {data.format}
         </div>
         <!-- File Size -->
-        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow hover:bg-white transition-colors duration-200">
+        <div 
+            class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow hover:bg-white transition-colors duration-200"
+            style="z-index: 1; border: {isChangedSize ? '2px solid #7f1d1d' : 'none'};"
+        >
             {data.dateigroesse}
         </div>
     </div>
 
     <div class="flex space-x-4 w-full justify-between">
         <!-- Regional Model Chip -->
-        <div class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow hover:bg-white transition-colors duration-200">
+        <div 
+            class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow hover:bg-white transition-colors duration-200"
+            style="z-index: 1; border: {isChangedRegMod ? '2px solid #7f1d1d' : 'none'};"
+        >
             {data.regionalmodell}
         </div>
 
         <!-- Global Model Chip -->
-        <div class="bg-[#EAF6EA] text-[#424242] font-bold border border-[#9CCEA0] px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow hover:bg-white transition-colors duration-200">
+        <div 
+            class="bg-[#EAF6EA] text-[#424242] font-bold border border-[#9CCEA0] px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow hover:bg-white transition-colors duration-200"
+            style="z-index: 1; border: {isChangedGlobMod ? '2px solid #7f1d1d' : 'none'};"
+        >
             {data.globalmodell}
         </div>
     </div>

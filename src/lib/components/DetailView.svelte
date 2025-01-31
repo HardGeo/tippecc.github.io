@@ -3,7 +3,6 @@
     import { SvelteComponent } from 'svelte';
     import '@xyflow/svelte/dist/style.css';
 
-
     import EntityNode from '$lib/components/entityNode1.svelte';
     import ActivityNode from '$lib/components/ActivityNode.svelte';
     import PersonNode from '$lib/components/PersonNode.svelte';
@@ -179,6 +178,7 @@
             handle1: "left",
             handle2: "right"
         });
+
     }    
 
 </script>
