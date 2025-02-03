@@ -154,7 +154,8 @@ export function createEntityFlow(
                             contact: dataset.entity[currentEntity]["tippecc:contact"],
                             tracking_id: dataset.entity[currentEntity]["esgf_portal:tracking_id"],
                             doi: dataset.entity[currentEntity]["dcterms:identifier"],
-                            collection: collection 
+                            collection: collection,
+                            variant: dataset.entity[currentEntity]["parent_variant_label"] || "r1i1p1f1"
                         
                         },
                         position: { x: xPos, y: yPosition },

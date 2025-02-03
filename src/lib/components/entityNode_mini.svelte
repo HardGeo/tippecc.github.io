@@ -40,7 +40,8 @@
         domain: 'AFR-22',
         contact: 'hendrik.feldmann@kit.edu',
         tracking_id: 'hdl:21.14103/0f700e74-9c64-4638-9fab-e7a2f3d26b26',
-        doi: 'www.exampleDOI.com'
+        doi: 'www.exampleDOI.com',
+        variant: "r1i1p1f1"
 	}
     
     import { showDetails, handleKeyDown } from '$lib/store';  // Import the store
