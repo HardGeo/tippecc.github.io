@@ -1,6 +1,8 @@
 <script>
     import { Handle, Position } from '@xyflow/svelte';
 
+    import { showDetails, handleKeyDown } from '$lib/store';
+
     export let id;
 
     export let data = {
@@ -12,7 +14,15 @@
     };
 </script>
 
-<div class="bg-[#CE93D8] p-6 rounded-lg shadow-lg relative inline-block" style="z-index: 1;">
+<div 
+    class="bg-[#CE93D8] p-6 rounded-lg shadow-lg relative inline-block"
+    style="z-index: 1;"
+    role="button"
+    tabindex="0"
+    aria-label="Show details"
+    on:click={() => showDetails(data)}
+    on:keydown={(event) => handleKeyDown(event, data)}
+>
 
     <!-- Left Handle -->
     <Handle

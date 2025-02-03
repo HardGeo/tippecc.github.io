@@ -10,26 +10,10 @@
         rorid: 'XXX-XXX-XXX-XXX'
     };
 
-    import { detailInfo } from '$lib/store';
-    let showBubble = false;
+    import { showDetails, handleKeyDown } from '$lib/store';
+    //let showBubble = false;
 
-    const showDetails = () => {
-        showBubble = true;
-        // Update the store with the current entity's details
-        if (showBubble) {
-            detailInfo.set(data);
-        } else {
-            detailInfo.set(null); // Clear the details when the bubble is hidden
-        }
-    };
 
-    const handleKeyDown = (event) => {
-        // Trigger showDetails on Enter or Space key press
-        if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            showDetails();
-        }
-    };
 </script>
 
 <!-- Updated with role and keyboard event handling -->
@@ -39,8 +23,8 @@
     role="button"
     tabindex="0"
     aria-label="Show details"
-    on:click={showDetails}
-    on:keydown={handleKeyDown}
+    on:click={() => showDetails(data)}
+    on:keydown={(event) => handleKeyDown(event, data)}
 >
     <!-- Right Handle -->
     <Handle
@@ -55,11 +39,11 @@
         <!-- Person and Organisation -->
         <div class="flex space-x-2 w-full">
             <!-- Person Chip -->
-            <div class="bg-[#FFF9E5] text-[#424242] border border-[#E8CC71] font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
+            <div class="bg-[#FFF9E5] text-[#424242] border border-[#E8CC71] font-bold px-4 py-2 rounded-md text-lg flex-grow text-center hover:bg-white transition-colors duration-200">
                 {data.person}
             </div>
             <!-- Organisation Chip -->
-            <div class="bg-[#FFF9E5] text-[#424242] border border-[#E8CC71] font-bold px-4 py-2 rounded-md text-lg flex-grow text-center">
+            <div class="bg-[#FFF9E5] text-[#424242] border border-[#E8CC71] font-bold px-4 py-2 rounded-md text-lg flex-grow text-center hover:bg-white transition-colors duration-200">
                 {data.orga}
             </div>
         </div>

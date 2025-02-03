@@ -43,10 +43,8 @@
         tracking_id: 'hdl:21.14103/0f700e74-9c64-4638-9fab-e7a2f3d26b26',
         doi: 'www.exampleDOI.com'
 	}
-    export let setActiveTab;
 
     import { 
-    detailInfo,
     changedPar, 
     changedUnit,  
     changedTempRes, 
@@ -55,20 +53,12 @@
     changedFormat, 
     changedSize, 
     changedGlobMod, 
-    changedRegMod} from '$lib/store';
+    changedRegMod,
+    showDetails, 
+    handleKeyDown} from '$lib/store';
 
     import { onDestroy } from 'svelte';
-    let showBubble = false;
 
-    const showDetails = () => {
-        showBubble = true;
-        // Update the store with the current entity's details
-        if (showBubble) {
-            detailInfo.set(data);
-        } else {
-            detailInfo.set(null);  // Clear the details when the bubble is hidden
-        }
-    };
 
     let isChanged = false;
     const unsubscribe = changedPar.subscribe(set => {
@@ -131,7 +121,14 @@
 
 
 
-<div class="p-4 bg-[#A5D6A7] rounded-lg shadow-lg space-y-3 mx-auto relative" style="z-index: 1;">
+<div class="p-4 bg-[#A5D6A7] rounded-lg shadow-lg space-y-3 mx-auto relative"
+    style="z-index: 1;"
+    role="button"
+    tabindex="0"
+    aria-label="Show details"
+    on:click={() => showDetails(data)}
+    on:keydown={(event) => handleKeyDown(event, data)}
+>
     <!-- Top Handle -->
     <Handle
     type="target"
@@ -181,19 +178,6 @@
             {data.einheit}
         </div>
 
-        <!-- Details Button -->
-        <div class="relative group w-auto flex-grow">
-            <!-- Copy Icon -->
-            <button
-                on:click={showDetails}
-                class="absolute -top-2 right-0 bg-[#EAF6EA] p-2 rounded-md shadow-md hover:bg-white"
-                title="Show Details"
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#424242] hover:text-[#A5D6A7]" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                </svg>
-            </button>
-        </div>
     </div>
 
     <div class="flex space-x-4 w-full justify-between">

@@ -1,0 +1,82 @@
+{
+    "collection": [
+        "COLLECTION__TIPPECC",
+        "COLLECTION__CMIP6"
+    ],
+    "processing": [
+        {
+            "label": "Delete first & last timesteps",
+            "description": "Delete the first and last timesteps from the dataset to remove incomplete years.",
+            "function": "FUNCTION__CDO_SELTIMESTEP",
+            "software": "SOFTWARE__CDO_1_9_3",
+            "function_call": "cdo.seltimestep('start + '/' + end + ' ' + dataset, output=output_file,format='NETCDF3_64BIT')",
+            "params": {
+                "start": "2",
+                "end": "251"
+            },
+            "executed_by": "PERSON__ZANDER_FRANZISKA",
+            "on_behalf_of": "ORG__FSU",
+            "execution_time": "2025-01-24 20:49:18 CET+0100"
+        }
+    ],
+    "input_files": [
+        "/data/cmip6_raw_ind/TIPPECC_MPI-ESM1-2-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM.nc"
+    ],
+    "output_file": [
+        "/data/cmip6_raw_ind/TIPPECC_MPI-ESM1-2-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100.nc"
+    ],
+    "metadata": {
+        "file_size": 10491987,
+        "last_modification_time": "2025-01-24 20:49:18 CET+0100",
+        "content": [
+            true,
+            {
+                "time#calendar": "proleptic_gregorian",
+                "time#units": "days since 1850-01-01",
+                "num_bands": 250,
+                "min": -1499.441,
+                "max": 1628.664,
+                "varinfo": {
+                    "type": "Float64",
+                    "NETCDF_VARNAME": "water_budget_from_tas",
+                    "standard_name": null,
+                    "long_name": "Water budget (\"FAO_PM985\" method)",
+                    "unit": "mmday"
+                },
+                "size": [
+                    84,
+                    62
+                ],
+                "cornerCoordinates": {
+                    "upperLeft": [
+                        10.0,
+                        -5.0
+                    ],
+                    "upperRight": [
+                        52.0,
+                        -5.0
+                    ],
+                    "lowerLeft": [
+                        10.0,
+                        -36.0
+                    ],
+                    "lowerRight": [
+                        52.0,
+                        -36.0
+                    ],
+                    "center": [
+                        31.0,
+                        -20.5
+                    ]
+                },
+                "extent": {
+                    "type": "Polygon",
+                    "coordinates": [
+                        []
+                    ]
+                }
+            }
+        ]
+    },
+    "_comment": "Used keys are defined in the prov_metadata.json file."
+}

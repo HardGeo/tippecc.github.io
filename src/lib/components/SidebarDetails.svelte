@@ -73,6 +73,27 @@ RORID;${detailedData.rorid}
                 alert('Failed to copy data. Please try again.');
             });
     }
+
+    function copySoftwareData() {
+        // Format data to copy, you can adjust this string based on what you need
+        let dataToCopy = `
+Software:;${detailedData.software}
+Version;${detailedData.version}
+License;${detailedData.license}
+Source;${detailedData.source}
+`.trim();
+
+        // Use Clipboard API to copy the string
+        navigator.clipboard.writeText(dataToCopy)
+            .then(() => {
+                console.log('Data copied to clipboard');
+                alert('Data copied to clipboard!');
+            })
+            .catch(err => {
+                console.error('Failed to copy: ', err);
+                alert('Failed to copy data. Please try again.');
+            });
+    }
 </script>
 
 <style>
@@ -237,7 +258,7 @@ RORID;${detailedData.rorid}
                     <path d="M4 6a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 11-2 0V7H6v2a1 1 0 01-2 0V6z" />
                 </svg>
             </button>
-            <h2>{"Person Details"}</h2>
+            <h2>{"Agent Details"}</h2>
             <div class="triangle absolute left-1/2 -top-2 transform -translate-x-1/2"></div>
             
             <div class="table-container">
@@ -265,5 +286,49 @@ RORID;${detailedData.rorid}
             </div>
         </div>
     {/if}
+
+
+    {#if detailedData?.software}
+        <div class="relative"> <!-- Ensure relative positioning -->
+            
+            <button
+                on:click={copySoftwareData}
+                class="bg-gray-200 p-2 rounded-md shadow-md hover:bg-gray-200 mt-4"
+                title="Copy to Clipboard"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-600 hover:text-gray-800" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M14 2H9a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2zM9 4h6v12H9V4z" />
+                    <path d="M4 6a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 11-2 0V7H6v2a1 1 0 01-2 0V6z" />
+                </svg>
+            </button>
+            <h2>{"Software Details"}</h2>
+            <div class="triangle absolute left-1/2 -top-2 transform -translate-x-1/2"></div>
+            
+            <div class="table-container">
+                <!-- Table layout with adjusted column spacing -->
+                <table class="w-full">
+                    <tbody>
+                        <tr>
+                            <td ><strong>Software:</strong></td> 
+                            <td >{detailedData.software}</td>
+                        </tr>
+                        <tr>
+                            <td ><strong>Version:</strong></td>
+                            <td >{detailedData.version}</td>
+                        </tr>
+                        <tr>
+                            <td ><strong>License.:</strong></td>
+                            <td >{detailedData.license}</td>
+                        </tr>
+                        <tr>
+                            <td ><strong>Source:</strong></td>
+                            <td >{detailedData.source}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {/if}
+
 
 </div>

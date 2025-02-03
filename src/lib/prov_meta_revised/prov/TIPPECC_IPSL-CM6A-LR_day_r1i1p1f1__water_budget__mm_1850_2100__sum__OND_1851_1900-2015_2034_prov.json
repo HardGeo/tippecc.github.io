@@ -1,0 +1,79 @@
+{
+    "collection": [
+        "COLLECTION__TIPPECC",
+        "COLLECTION__CMIP6"
+    ],
+    "processing": [
+        {
+            "label": "Calc abs. change",
+            "description": "Calculate absolute change for the time period 2015-2034 relative to 1851-1900.",
+            "function": "FUNCTION__CDO_SUB",
+            "software": "SOFTWARE__CDO_1_9_3",
+            "function_call": "cdo.sub(input=/data/cmip6_raw_ind/TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__OND_2015_2034.nc /data/cmip6_raw_ind/TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__OND_1851_1900.nc, output=/data/cmip6_raw_ind/TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__OND_1851_1900-2015_2034.nc, options='-f nc4')",
+            "executed_by": "PERSON__ZANDER_FRANZISKA",
+            "on_behalf_of": "ORG__FSU",
+            "execution_time": "2025-01-24 19:06:57 CET+0100"
+        }
+    ],
+    "input_files": [
+        "/data/cmip6_raw_ind/TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__OND_2015_2034.nc",
+        "/data/cmip6_raw_ind/TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__OND_1851_1900.nc"
+    ],
+    "output_file": [
+        "/data/cmip6_raw_ind/TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__OND_1851_1900-2015_2034.nc"
+    ],
+    "metadata": {
+        "file_size": 80869,
+        "last_modification_time": "2025-01-24 19:06:57 CET+0100",
+        "content": [
+            true,
+            {
+                "time#calendar": "gregorian",
+                "time#units": "days since 1850-01-01",
+                "num_bands": 1,
+                "min": -117.692,
+                "max": 60.186,
+                "varinfo": {
+                    "type": "Float64",
+                    "NETCDF_VARNAME": "water_budget_from_tas",
+                    "standard_name": null,
+                    "long_name": "Water budget (\"FAO_PM985\" method)",
+                    "unit": "mmday"
+                },
+                "size": [
+                    84,
+                    62
+                ],
+                "cornerCoordinates": {
+                    "upperLeft": [
+                        10.0,
+                        -5.0
+                    ],
+                    "upperRight": [
+                        52.0,
+                        -5.0
+                    ],
+                    "lowerLeft": [
+                        10.0,
+                        -36.0
+                    ],
+                    "lowerRight": [
+                        52.0,
+                        -36.0
+                    ],
+                    "center": [
+                        31.0,
+                        -20.5
+                    ]
+                },
+                "extent": {
+                    "type": "Polygon",
+                    "coordinates": [
+                        []
+                    ]
+                }
+            }
+        ]
+    },
+    "_comment": "Used keys are defined in the prov_metadata.json file."
+}

@@ -22,7 +22,7 @@
         nodes,
         edges } from "$lib/store"; // Import the store
 
-    import data from '$lib/generate_rdfjson/article-prov.json'
+    import data from '$lib/generate_rdfjson/article-prov.json';
     //import data from '$lib/generate_rdfjson/test.json'
 
     import { createActionFlow, createPeople, addSoftware, addEdgesOnly, createEntityFlow } from '$lib/components//dataProcessing'; // Adjust path as necessary

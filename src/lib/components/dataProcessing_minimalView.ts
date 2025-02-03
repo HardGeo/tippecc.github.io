@@ -41,6 +41,7 @@ export function createEntityFlowCore(
 //-----------------------------------------------------------------------
 
 export function createEntityFlow(
+    dataset: any,
     entity: any, 
     nodes: any, 
     edges: any,
@@ -59,19 +60,128 @@ export function createEntityFlow(
         if (visited.has(currentEntity)) continue;
         visited.add(currentEntity);
 
-        // Add node for currentEntity
-        nodes.update(n => {
-            if (!n.some(node => node.id === currentEntity)) {
-                n.push({
-                    id: currentEntity,
-                    type: nodeType,
-                    data: { label: currentEntity },
-                    position: { x: xPos, y: yPosition },
+        if (nodeType == "entityNode") {
+            const variables = dataset.entity[currentEntity]["cf:variables"];
+        
+            // EXTRACT PARAMTER NAME
+            // Split the string at ", ", find the part starting with "name:", and extract the value
+            const name = variables
+            .split(", ")  // Split into an array by commas
+            .find(part => part.startsWith("name:"))  // Find the segment starting with "name:"
+            ?.split(": ")[1];  // Split by ": " and get the value after the colon
+            
+            //EXTRACT UNIT
+            const unit = variables
+            .split(", ")  // Split into an array by commas
+            .find(part => part.startsWith("units:"))  // Find the segment starting with "units:"
+            ?.split(": ")[1];  // Split by ": " and get the value after the colon
+            
+    
+            //EXTRACT TIMESPAN
+            function parseTimespans(timespans: string): { start: number; end: number }[] {
+                if (!timespans) {
+                  return [];  // Return an empty array if no timespans data is available
+                }
+              
+                // Process the timespans string by splitting it at ", " for multiple ranges
+                return timespans.split(", ").map(range => {
+                  const [start, end] = range.split("-").map(Number);  // Split each range by "-" and convert to numbers
+                  return { start, end };
                 });
-                yPosition += 400;
+              }
+            // Safe access to the timespans data
+            const timespans = dataset?.entity?.[currentEntity]?.["dcterms:temporal"];
+            // Parse the timespans string
+            const parsedTimespans = parseTimespans(timespans);
+            
+            
+            // EXTRACT BBOXES
+            const Bboxes = dataset.entity[currentEntity]["dcterms:spatial"];
+            // Regular expression to match numbers inside square brackets
+            const regex = /\[([^\]]+)\]/g;
+            const matches = [...Bboxes.matchAll(regex)]; // Get all matches
+            // Extract numbers from matches and convert them to arrays
+            const boundingBoxes = matches.map(match => match[1].split(', ').map(Number));
+            const extent = boundingBoxes[0]
+            const extent_orig = boundingBoxes[1]
+    
+    
+            // EXTRACT COLLECTION
+            function findCollectionForEntity(currentEntity, hadMember) {
+                // Iterate through the hadMember object to find the matching collection
+                const entry = Object.values(hadMember).find(member => member["prov:entity"] === currentEntity);
+                return entry ? entry["prov:collection"] : "No Collection defined";
             }
-            return n;
-        });
+            const collection = findCollectionForEntity(currentEntity, dataset.hadMember);
+    
+            
+            const regionalmodel =  dataset.entity[currentEntity]["tippecc:regionalmodel"];
+            const globalmodel =  dataset.entity[currentEntity]["tippecc:globalmodel"];
+            const scenario =  dataset.entity[currentEntity]["tippecc:scenario"];
+            const format =  dataset.entity[currentEntity]["datacite:format"];
+            const temporalResolution =  dataset.entity[currentEntity]["dcat:temporalResolution"];
+            const spatialResolution = dataset.entity[currentEntity]["dcat:spatialResolutionInMeters"]["$"];
+            const size = dataset.entity[currentEntity]["datacite:size"];
+    
+    
+            // Add node for currentEntity
+            nodes.update(n => {
+                if (!n.some(node => node.id === currentEntity)) {
+                    n.push({
+                        id: currentEntity,
+                        type: nodeType,
+                        data: {                         
+                            parameter: name,
+                            zeitspranne: parsedTimespans,
+                            regionalmodell: regionalmodel,
+                            globalmodell: globalmodel,
+                            einheit: unit,
+                            szenario: scenario,
+                            format: format,
+                            resolutionZeitlich: temporalResolution,
+                            resolutionRaeumlich: spatialResolution,
+                            spatialExtent: extent,
+                            spatialExtent_orig: extent_orig,
+                            dateigroesse: size,
+                            timestamp: dataset.entity[currentEntity]["prov:generatedAtTime"],
+                            project: dataset.entity[currentEntity]["sdo:project"],
+                            experiment: dataset.entity[currentEntity]["tippecc:experiment"],
+                            standard: dataset.entity[currentEntity]["cf:standard"],
+                            bias: dataset.entity[currentEntity]["tippecc:bias"],
+                            source: dataset.entity[currentEntity]["dcterms:publisher"],
+                            institution: dataset.entity[currentEntity]["dcterms:creator"],
+                            domain: dataset.entity[currentEntity]["tippecc:domain"],
+                            contact: dataset.entity[currentEntity]["tippecc:contact"],
+                            tracking_id: dataset.entity[currentEntity]["esgf_portal:tracking_id"],
+                            doi: dataset.entity[currentEntity]["dcterms:identifier"],
+                            collection: collection 
+                        
+                        },
+                        position: { x: xPos, y: yPosition },
+                    });
+                    yPosition += 400;
+                }
+                return n;
+            });
+    
+        }
+
+        if (nodeType == "activityNode") {
+            // Add node for currentEntity
+            nodes.update(n => {
+                if (!n.some(node => node.id === currentEntity)) {
+                    n.push({
+                        id: currentEntity,
+                        type: nodeType,
+                        data: { label: currentEntity },
+                        position: { x: xPos, y: yPosition },
+                    });
+                    yPosition += 400;
+                }
+                return n;
+            });
+            
+        }
 
         // Get all entities that this one was derived from
         if (generatedToUsedMap.has(currentEntity)) {
@@ -106,6 +216,7 @@ export function createEntityFlow(
 
 // ADD FLOW
 export function createFlow ({
+    data,
     dataset,
     nodes,
     edges,
@@ -117,6 +228,7 @@ export function createFlow ({
     nodeType,
     xPos
 }: {
+    data:any,
     dataset: any, 
     nodes: any, 
     edges: any,
@@ -132,25 +244,133 @@ export function createFlow ({
     const entityNodes = new Set(); // Keep track of added collection nodes
     let yPosition = 0;
     for (const [id, member] of Object.entries(dataset)) {
-        const Id = member[IdName]; // Use collection name as the ID
+        const Id = member[IdName];
         const entity = member[EntityName];
-        
-        // Only add the collection node if it hasn't been added yet
-        if (!entityNodes.has(Id)) {
-            // Add collection node
-            nodes.update(n => {
-                n.push({
-                    id: Id,
-                    type: nodeType,
-                    data: { label: Id },
-                    position: { x: xPos, y:yPosition }, // Adjust position as needed
+
+        if (nodeType == "personNode") {
+            
+            // Only add the collection node if it hasn't been added yet
+            if (!entityNodes.has(Id)) {
+                // Add collection node
+                nodes.update(n => {
+                    n.push({
+                        id: Id,
+                        type: nodeType,
+                        data: {                         
+                            person: Id,
+                            orga: "N/A", //orgaId
+                            orcid: data.agent?.[Id]?.["orcid:identifier"] || "N/A",
+                            rorid: "N/A"  //rorid
+                        },
+                        position: { x: xPos, y:yPosition }, // Adjust position as needed
+                    });
+                    
+                    return n;
                 });
-                
-                return n;
-            });
-            yPosition += 400;
-            entityNodes.add(Id); // Mark this entity as added
+                yPosition += 400;
+                entityNodes.add(Id); // Mark this entity as added
+            }
+
         }
+
+        if (nodeType == "orgaNode") {
+            // Find organization (orgaId) from actedOnBehalfOf
+            const actedOnBehalfOfEntry = Object.values(data.actedOnBehalfOf).find(
+                (entry: any) => entry["prov:delegate"] === entity
+            );
+
+            const orgaId = actedOnBehalfOfEntry?.["prov:responsible"] || null;
+            const rorid = orgaId ? data.agent[orgaId]?.["ror:identifier"] : null;
+            
+            // Only add the collection node if it hasn't been added yet
+            if (!entityNodes.has(Id)) {
+                // Add collection node
+                nodes.update(n => {
+                    n.push({
+                        id: Id,
+                        type: nodeType,
+                        data: {                         
+                            person: "N/A", //entity,
+                            orga: Id || "N/A",
+                            orcid: "N/A", //data.agent?.[entity]?.["orcid:identifier"] ||
+                            rorid: rorid || "N/A" 
+                        },
+                        position: { x: xPos, y:yPosition }, // Adjust position as needed
+                    });
+                    
+                    return n;
+                });
+                yPosition += 400;
+                entityNodes.add(Id); // Mark this entity as added
+            }
+
+        }
+
+        if (nodeType == "orgaNode") {
+            // Find organization (orgaId) from actedOnBehalfOf
+            const actedOnBehalfOfEntry = Object.values(data.actedOnBehalfOf).find(
+                (entry: any) => entry["prov:delegate"] === entity
+            );
+
+            const orgaId = actedOnBehalfOfEntry?.["prov:responsible"] || null;
+            const rorid = orgaId ? data.agent[orgaId]?.["ror:identifier"] : null;
+            
+            // Only add the collection node if it hasn't been added yet
+            if (!entityNodes.has(Id)) {
+                // Add collection node
+                nodes.update(n => {
+                    n.push({
+                        id: Id,
+                        type: nodeType,
+                        data: {                         
+                            person: "N/A", //entity,
+                            orga: Id || "N/A",
+                            orcid: "N/A", //data.agent?.[entity]?.["orcid:identifier"] ||
+                            rorid: rorid || "N/A" 
+                        },
+                        position: { x: xPos, y:yPosition }, // Adjust position as needed
+                    });
+                    
+                    return n;
+                });
+                yPosition += 400;
+                entityNodes.add(Id); // Mark this entity as added
+            }
+
+        }
+        if (nodeType === "orgaNode" || nodeType === "collectionNode") {
+            // Find organization (orgaId) from actedOnBehalfOf
+            const actedOnBehalfOfEntry = Object.values(data.actedOnBehalfOf).find(
+                (entry: any) => entry["prov:delegate"] === entity
+            );
+
+            const orgaId = actedOnBehalfOfEntry?.["prov:responsible"] || null;
+            const rorid = orgaId ? data.agent[orgaId]?.["ror:identifier"] : null;
+            
+            // Only add the collection node if it hasn't been added yet
+            if (!entityNodes.has(Id)) {
+                // Add collection node
+                nodes.update(n => {
+                    n.push({
+                        id: Id,
+                        type: nodeType,
+                        data: {                         
+                            person: "N/A", //entity,
+                            orga: Id || "N/A",
+                            orcid: "N/A", //data.agent?.[entity]?.["orcid:identifier"] ||
+                            rorid: rorid || "N/A" 
+                        },
+                        position: { x: xPos, y:yPosition }, // Adjust position as needed
+                    });
+                    
+                    return n;
+                });
+                yPosition += 400;
+                entityNodes.add(Id); // Mark this entity as added
+            }
+
+        }
+
 
         // Add edge between the collection and the corresponding entity
         const source = swapArrow ? entity : Id;
@@ -182,6 +402,7 @@ export function createFlow ({
 //ADD Nodes and Edges for Software
 export function addSoftware({
     dataset,
+    data,
     nodes,
     edges,
     EdgeLabel,
@@ -193,6 +414,7 @@ export function addSoftware({
     xPos
 }: {
     dataset: any, 
+    data: any,
     nodes: any,
     edges: any,
     EdgeLabel: string,
@@ -207,6 +429,7 @@ export function addSoftware({
     for (const member of Object.values(dataset)) {
         const activityId = member[IdName];
         const agentId = member[EntityName];
+
         
         // Ensure agent node is added if not present
         nodes.update(n => {
@@ -214,7 +437,13 @@ export function addSoftware({
                 n.push({
                     id: agentId,
                     type: nodeType,
-                    data: { label: agentId },
+                    data: {                         
+                        software: agentId,
+                        source: data.agent[agentId]["dcterms:source"],
+                        version: data.agent[agentId]["sdo:version"],
+                        repository: data.agent[agentId]["sdo:codeRepository"],
+                        license: data.agent[agentId]["sdo:license"] 
+                    },
                     position: { x: xPos, y: yPosition }, // Adjust as needed
                 });
                 yPosition += 400;

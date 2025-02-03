@@ -2,7 +2,6 @@
     import { Handle, Position } from '@xyflow/svelte';
     
     export let id;
-    /*
     export let selected;
     export let selectable;
     export let deletable;
@@ -44,26 +43,19 @@
         doi: 'www.exampleDOI.com'
 	}
     
-    import { detailInfo } from '$lib/store';  // Import the store
-    let showBubble = false;
-
-    const showDetails = () => {
-        showBubble = !showBubble;
-        // Update the store with the current entity's details
-        if (showBubble) {
-            detailInfo.set(data);
-        } else {
-            detailInfo.set(null);  // Clear the details when the bubble is hidden
-        }
-    };
-
-    */
+    import { showDetails, handleKeyDown } from '$lib/store';  // Import the store
 
 </script>
 
 
-
-<div class="p-4 bg-[#EAF6EA] border-4 border-[#9CCEA0] rounded-lg shadow-lg mx-auto relative space-y-3 inline-block max-w">
+<div class="p-4 bg-[#EAF6EA] border-4 border-[#9CCEA0] rounded-lg shadow-lg mx-auto relative space-y-3 inline-block max-w"
+    style="z-index: 1;"
+    role="button"
+    tabindex="0"
+    aria-label="Show details"
+    on:click={() => showDetails(data)}
+    on:keydown={(event) => handleKeyDown(event, data)}
+>
 
     <!-- Top Handle -->
     <Handle

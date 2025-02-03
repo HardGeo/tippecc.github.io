@@ -7,6 +7,22 @@ export const edges = writable<Edge[]>([]);
 export const detailInfo = writable(null);
 export const isSwitchOn = writable(false);
 
+// Store for tracking the visibility of the bubble
+export const showBubble = writable<boolean>(false);
+
+export function showDetails(data: any) {
+    showBubble.set(true);
+    detailInfo.set(data);
+}
+
+export function handleKeyDown (event: KeyboardEvent, data: any) {
+    // Trigger showDetails on Enter or Space key press
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        showDetails(data);
+    }
+}
+
 
 export const changedPar = writable(new Set<string>());
 export const changedUnit = writable(new Set<string>());

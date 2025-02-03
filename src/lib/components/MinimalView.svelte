@@ -1,13 +1,14 @@
 <script lang="ts">
     // Import necessary libraries
     import { SvelteComponent } from "svelte";
-    import { writable } from 'svelte/store';
+
     import { 
         SvelteFlow, 
         Background, 
         MarkerType 
     } from '@xyflow/svelte';
     import '@xyflow/svelte/dist/style.css';
+
     import data from '$lib/generate_rdfjson/article-prov.json';
     import { 
         createEntityFlowCore, 
@@ -79,6 +80,7 @@
 
         for (let startEntity of startEntities) {
             createEntityFlow(
+                data,
                 startEntity, 
                 nodes, 
                 edges, 
@@ -99,6 +101,7 @@
 
         for (let startAction of startActions) {
             createEntityFlow(
+                data,
                 startAction, 
                 nodes, 
                 edges, 
@@ -109,9 +112,10 @@
                 1000
             );
         }
-
+        
         // Create People (Agents) Nodes and Edges
         createFlow({
+            data: data,
             dataset: data.wasAttributedTo,
             nodes: nodes,
             edges: edges,
@@ -131,9 +135,10 @@
             nodeTypeToAdjust: 'personNode',
             minSpace: 400
         });
-
+        
         // Create Organisations (Agents) Nodes and Edges
         createFlow({
+            data: data,
             dataset: data.actedOnBehalfOf,
             nodes: nodes,
             edges: edges,
@@ -157,6 +162,7 @@
         // Add Software Nodes
         addSoftware({
             dataset: data.wasAssociatedWith,
+            data: data,
             nodes: nodes,
             edges: edges,
             EdgeLabel: $wasAssociatedWith_lb,
@@ -212,7 +218,7 @@
             handle2: "right"
         });
     }
-
+    
 
 </script>
 

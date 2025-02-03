@@ -1,11 +1,29 @@
 <script>
     import { Handle, Position } from '@xyflow/svelte';
 
+    import { showDetails, handleKeyDown } from '$lib/store';
+
     export let id;
 
+
+    export let data = {
+        software: 'software:cdo',
+        source: 'www.example.com',
+        version: '1.7',
+        repository: 'https://github.com/rue-a/provo?tab=readme-ov-file',
+        license: 'MIT'
+    };
 </script>
 
-<div class="rounded-lg shadow-lg relative inline-block" style="z-index: 1;">
+<div 
+    class="rounded-lg shadow-lg relative inline-block" 
+    style="z-index: 1;"
+    role="button"
+    tabindex="0"
+    aria-label="Show details"
+    on:click={() => showDetails(data)}
+    on:keydown={(event) => handleKeyDown(event, data)}
+>
 
 
     <!-- Left Handle -->

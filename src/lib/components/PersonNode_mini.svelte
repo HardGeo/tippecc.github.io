@@ -3,9 +3,26 @@
 
     export let id;
 
+    export let data = {
+        person: 'Franziska',
+        orcid: '0000-0001-6892-7046',
+        orga: 'Uni Jena',
+        rorid: 'XXX-XXX-XXX-XXX'
+    };
+
+    import { showDetails, handleKeyDown } from '$lib/store';
+
 </script>
 
-<div class="bg-[#FFF9E5] border-4 border-[#E8CC71] rounded-lg shadow-lg relative inline-block p-4" style="z-index: 1;">
+<div 
+    class="bg-[#FFF9E5] border-4 border-[#E8CC71] rounded-lg shadow-lg relative inline-block p-4" 
+    style="z-index: 1;"
+    role="button"
+    tabindex="0"
+    aria-label="Show details"
+    on:click={() => showDetails(data)}
+    on:keydown={(event) => handleKeyDown(event, data)}
+>
 
     <!-- Left Handle -->
     <Handle

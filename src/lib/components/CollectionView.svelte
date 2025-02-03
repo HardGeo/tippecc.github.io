@@ -60,6 +60,7 @@
 
         // create all Collection edges and nodes
         createFlow({
+            data:data,
             dataset: hadMember, 
             nodes: nodes,  
             edges:edges,

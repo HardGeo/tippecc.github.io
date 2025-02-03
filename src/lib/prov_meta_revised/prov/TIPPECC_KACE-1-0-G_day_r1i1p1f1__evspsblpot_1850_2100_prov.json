@@ -1,0 +1,96 @@
+{
+    "collection": [
+        "COLLECTION__TIPPECC",
+        "COLLECTION__CMIP6"
+    ],
+    "processing": [
+        {
+            "label": "Calc pot. ET",
+            "description": "Calculate potential evapotranspiration with the FAO_PM98 method.",
+            "function": "FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+            "software": "SOFTWARE__XCLIM_0_49",
+            "function_call": "xclim.indicators.atmos.potential_evapotranspiration(tasmin=tasmin.tasmin, tasmax=tasmax.tasmax, hurs=hurs.hurs, rsds=rsds.rsds, rsus=rsus.rsus, rlus=rlus.rlus, rlds=rlds.rlds, sfcWind=sfcWind.sfcWind, method='FAO_PM98')",
+            "params": {
+                "tasmin": "tasmin.tasmin",
+                "tasmax": "tasmax.tasmax",
+                "hurs": "hurs.hurs",
+                "rsds": "rsds.rsds",
+                "rsus": "rsus.rsus",
+                "rlus": "rlus.rlus",
+                "rlds": "rlds.rlds",
+                "sfcWind": "sfcWind.sfcWind",
+                "method": "FAO_PM98"
+            },
+            "executed_by": "PERSON__ZANDER_FRANZISKA",
+            "on_behalf_of": "ORG__FSU",
+            "execution_time": "2025-01-24 19:15:17 CET+0100"
+        }
+    ],
+    "input_files": [
+        "/data/cmip6_raw/TIPPECC_KACE-1-0-G_day_r1i1p1f1_tasmax_1850_2100.nc",
+        "/data/cmip6_raw/TIPPECC_KACE-1-0-G_day_r1i1p1f1_tasmin_1850_2100.nc",
+        "/data/cmip6_raw/TIPPECC_KACE-1-0-G_day_r1i1p1f1_hurs_1850_2100.nc",
+        "/data/cmip6_raw/TIPPECC_KACE-1-0-G_day_r1i1p1f1_rsds_1850_2100.nc",
+        "/data/cmip6_raw/TIPPECC_KACE-1-0-G_day_r1i1p1f1_rsus_1850_2100.nc",
+        "/data/cmip6_raw/TIPPECC_KACE-1-0-G_day_r1i1p1f1_rlus_1850_2100.nc",
+        "/data/cmip6_raw/TIPPECC_KACE-1-0-G_day_r1i1p1f1_rlds_1850_2100.nc",
+        "/data/cmip6_raw/TIPPECC_KACE-1-0-G_day_r1i1p1f1_sfcWind_1850_2100.nc"
+    ],
+    "output_file": [
+        "/data/cmip6_raw_ind/TIPPECC_KACE-1-0-G_day_r1i1p1f1__evspsblpot_1850_2100.nc"
+    ],
+    "metadata": {
+        "file_size": 3765523276,
+        "last_modification_time": "2025-01-24 19:15:17 CET+0100",
+        "content": [
+            true,
+            {
+                "time#calendar": "360_day",
+                "time#units": "days since 1850-01-01",
+                "num_bands": 32768,
+                "min": 0.0,
+                "max": 0.0,
+                "varinfo": {
+                    "type": "Float64",
+                    "NETCDF_VARNAME": "evspsblpot",
+                    "standard_name": "water_potential_evapotranspiration_flux",
+                    "long_name": "Potential evapotranspiration (\"fao_pm98\" method)",
+                    "unit": "kg m-2 s-1"
+                },
+                "size": [
+                    84,
+                    62
+                ],
+                "cornerCoordinates": {
+                    "upperLeft": [
+                        10.0,
+                        -5.0
+                    ],
+                    "upperRight": [
+                        52.0,
+                        -5.0
+                    ],
+                    "lowerLeft": [
+                        10.0,
+                        -36.0
+                    ],
+                    "lowerRight": [
+                        52.0,
+                        -36.0
+                    ],
+                    "center": [
+                        31.0,
+                        -20.5
+                    ]
+                },
+                "extent": {
+                    "type": "Polygon",
+                    "coordinates": [
+                        []
+                    ]
+                }
+            }
+        ]
+    },
+    "_comment": "Used keys are defined in the prov_metadata.json file."
+}
