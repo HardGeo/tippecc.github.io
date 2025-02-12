@@ -18,7 +18,6 @@
 
     import data from '$lib/generate_rdfjson/article-prov.json'
 
-    import { createEntityFlow } from '$lib/components//dataProcessing'; // Adjust path as necessary
     import { createFlow } from './dataProcessing_minimalView';
     import {adjustPositions, adjustPositionsNotOrder} from "$lib/components/adjustPositions";
 

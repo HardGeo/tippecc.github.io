@@ -3,7 +3,7 @@
     import { detailInfo } from '$lib/store';
     import { onDestroy } from 'svelte';
 
-    let detailedData;
+    export let detailedData: any;
     const unsubscribe = detailInfo.subscribe((data) => {
         detailedData = data;
     });
@@ -17,7 +17,7 @@
         let dataToCopy = `
 Parameter;${detailedData.parameter}
 Unit;${detailedData.einheit}
-Timespan;${detailedData.zeitspranne.map(t => `${t.start} - ${t.end}`).join(',')}
+Timespan;${detailedData.zeitspranne.map((t:any) => `${t.start} - ${t.end}`).join(',')}
 Regional Model;${detailedData.regionalmodell}
 Global Model;${detailedData.globalmodell}
 Format;${detailedData.format}
@@ -39,6 +39,7 @@ Domain;${detailedData.domain}
 DOI;${detailedData.doi}
 Collection;${detailedData.collection}
 Variant;${detailedData.variant}
+Id;${detailedData.id}
 `.trim();
 
         // Use Clipboard API to copy the string
@@ -167,7 +168,7 @@ Source;${detailedData.source}
                             </td>
                         </tr>
                         <tr>
-                            <td ><strong>Timespan</strong></td>
+                            <td ><strong>Timespan</strong></td> 
                             <td >
                                 {#each detailedData.zeitspranne as timespan}
                                     <div>{timespan.start} - {timespan.end}</div>
@@ -340,6 +341,12 @@ Source;${detailedData.source}
                             <td ><strong>Collection</strong></td>
                             <td >
                                 {detailedData.collection}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td ><strong>Id</strong></td>
+                            <td >
+                                {detailedData.id}
                             </td>
                         </tr>
                     </tbody>

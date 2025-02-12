@@ -94,7 +94,6 @@ export function createEntityFlow(
             // Parse the timespans string
             const parsedTimespans = parseTimespans(timespans);
             
-            
             // EXTRACT BBOXES
             const Bboxes = dataset.entity[currentEntity]["dcterms:spatial"];
             // Regular expression to match numbers inside square brackets
@@ -104,7 +103,7 @@ export function createEntityFlow(
             const boundingBoxes = matches.map(match => match[1].split(', ').map(Number));
             const extent = boundingBoxes[0]
             const extent_orig = boundingBoxes[1]
-    
+
     
             // EXTRACT COLLECTION
             function findCollectionForEntity(currentEntity, hadMember) {

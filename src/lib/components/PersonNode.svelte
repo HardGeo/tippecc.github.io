@@ -33,6 +33,13 @@
         id={`${id}-right`}
         style="background-color: black; width: 10px; height: 10px; border-radius: 50%; position: absolute; right: -10px; top: 50%; transform: translateY(-50%);"
     />
+    <!-- Left Handle -->
+    <Handle
+        type="source"
+        position={Position.Left}
+        id={`${id}-left`}
+        style="background-color: black; width: 10px; height: 10px; border-radius: 50%; position: absolute; right: -10px; top: 50%; transform: translateY(-50%);"
+    />
 
     <!-- Person and ORCID Information -->
     <div class="flex flex-col space-y-3 w-full">

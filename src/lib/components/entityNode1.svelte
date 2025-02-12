@@ -17,6 +17,8 @@
 	export let positionAbsoluteY;
 	export let width;
 	export let height;
+    export let sourcePosition;
+    export let targetPosition;
 
 	export let data = {
 		parameter: '',
@@ -42,7 +44,8 @@
         contact: 'hendrik.feldmann@kit.edu',
         tracking_id: 'hdl:21.14103/0f700e74-9c64-4638-9fab-e7a2f3d26b26',
         doi: 'www.exampleDOI.com',
-        variant: "r1i1p1f1"
+        variant: "r1i1p1f1",
+        id: 0
 	}
 
     import { 
@@ -141,6 +144,22 @@
     <!-- Bottom Handle -->
     <Handle
         type="source"
+        position={Position.Bottom}
+        id={`${id}-bottom`}
+        style="background-color: black; width: 10px; height: 10px; border-radius: 50%; position: absolute; margin-bottom: -2px;"
+    />
+
+    <!-- Top Handle -->
+    <Handle
+    type="source"
+    position={Position.Top}
+    id={`${id}-top`}
+    style="background-color: black; width: 10px; height: 10px; border-radius: 50%; position: absolute; margin-top: -5px"
+    />
+
+    <!-- Bottom Handle -->
+    <Handle
+        type="target"
         position={Position.Bottom}
         id={`${id}-bottom`}
         style="background-color: black; width: 10px; height: 10px; border-radius: 50%; position: absolute; margin-bottom: -2px;"

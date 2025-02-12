@@ -1,9 +1,10 @@
 <script lang="ts">
     export let step: number = 1;
     export let activeRanges: { start: number; end: number }[] = [{ start: 1950, end: 2010 }];
+    
 
     // Define the fixed range for the entire timeline
-    const fixedBeginYear = 1900;
+    const fixedBeginYear = 1800;
     const fixedEndYear = 2100;
 
     let years: number[] = [];

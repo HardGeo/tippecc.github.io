@@ -4,6 +4,9 @@ import type { Node, Edge } from '@xyflow/svelte';
 export const nodes = writable<Node[]>([]);
 export const edges = writable<Edge[]>([]);
 
+export const nodes_det = writable<Node[]>([]);
+export const edges_det = writable<Edge[]>([]);
+
 export const detailInfo = writable(null);
 export const isSwitchOn = writable(false);
 
@@ -45,8 +48,8 @@ export const used_lb = writable("used");
 export const hadMember_lb = writable("hadMember");
 
 // Function to update labels based on switch state
-export const updateLabels = (switchState: boolean) => {
-    if (switchState) {
+export const updateLabels = (isSwitchOn: boolean) => {
+    if (isSwitchOn) {
         wasDerivedFrom_lb.set("wasDerivedFrom");
         wasInformedBy_lb.set("wasInformedBy");
         wasAttributedTo_lb.set("wasAttributedTo");

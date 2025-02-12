@@ -1,6 +1,7 @@
 <script lang="ts">
     import { SvelteFlow, Controls, Background, BackgroundVariant, MarkerType} from '@xyflow/svelte';
-    import { SvelteComponent } from 'svelte';
+    import { SvelteComponent, onMount } from 'svelte';
+    import * as d3 from 'd3'; // Import D3.js
     import '@xyflow/svelte/dist/style.css';
 
     import EntityNode from '$lib/components/entityNode1.svelte';
@@ -19,14 +20,16 @@
         wasAssociatedWith_lb, 
         wasGeneratedBy_lb, 
         used_lb,
-        nodes,
-        edges } from "$lib/store"; // Import the store
+        nodes_det,
+        edges_det } from "$lib/store"; // Import the store
 
-    import data from '$lib/generate_rdfjson/article-prov.json';
-    //import data from '$lib/generate_rdfjson/test.json'
+    //import data from '$lib/generate_rdfjson/article-prov.json';
+    import data from '$lib/generate_rdfjson_rev/ACCESS.json'
 
-    import { createActionFlow, createPeople, addSoftware, addEdgesOnly, createEntityFlow } from '$lib/components//dataProcessing'; // Adjust path as necessary
+    import { AddActions, createPeople, addSoftware, addEdgesOnly, AddEntities } from '$lib/components//dataProcessing'; // Adjust path as necessary
     import {adjustPositions, adjustPositionsNotOrder} from "$lib/components/adjustPositions";
+
+
 
     const defaultEdgeOptions = {
         style: 'stroke-width: 3; stroke: black; z-index: 1;',
@@ -37,7 +40,7 @@
         }
     };
     
-    let minZoom = 0.04;
+    let minZoom = 0.01;
 
     const nodeTypes: Record<string, typeof SvelteComponent> = {
         entityNode: EntityNode as unknown as typeof SvelteComponent,
@@ -45,107 +48,174 @@
         personNode: PersonNode as unknown as typeof SvelteComponent,
         softwareNode: SoftwareNode as unknown as typeof SvelteComponent,
     };
+
+
+    function initializeD3Layout(nodeData:any, edgeData:any) {
+        const simulation = d3.forceSimulation(nodeData)
+            .force('charge', d3.forceManyBody().strength(-5000))
+            .force('link', d3.forceLink(edgeData).id((d:any) => d.id).distance(800))
+            .force('center', d3.forceCenter(500, 300))
+            .alpha(1)
+            .alphaDecay(0.03); // Ensure smooth positioning over time
+
+        simulation.on("end", () => {
+            // Create a deep copy to trigger reactivity
+            nodes_det.set(nodeData.map((node:any) => ({
+                ...node,
+                position: { x: node.x, y: node.y }
+            })));
+
+            edges_det.set(edgeData.map((edge:any) => ({
+                ...edge,
+                source: edge.source.id ?? edge.source,  // Ensure the source ID is correctly mapped
+                target: edge.target.id ?? edge.target,  // Ensure the target ID is correctly mapped
+            })));
+
+            createPeople({
+                dataset: data, 
+                nodes: nodes_det,  
+                edges: edges_det, 
+                EdgeLabel: $wasAttributedTo_lb,
+                swapArrow: false,
+                edgeStyle: "stroke: #4B5563"
+            });
+            
+            AddActions(
+                data,
+                nodes_det, 
+                edges_det, 
+                $wasInformedBy_lb
+            );
+
+            //Add Edges for Used
+            addEdgesOnly({
+                dataset: data.used,  
+                edges: edges_det, 
+                EdgeLabel: $used_lb,
+                IdName: 'prov:activity',
+                EntityName: 'prov:entity',
+                swapArrow: false,
+                style: "stroke: #90CAF9;",
+                labelStyle: "color: black; font-size: 16px",
+                handle1: "right",
+                handle2: "left",
+                IdAppendix: "used"
+            });
+
+            // Add Edges for wasGeneratedBy
+            addEdgesOnly({
+                dataset: data.wasGeneratedBy,  
+                edges: edges_det, 
+                EdgeLabel: $wasGeneratedBy_lb,
+                IdName: 'prov:entity',
+                EntityName: 'prov:activity',
+                swapArrow: true,
+                style: "stroke: #A5D6A7;",
+                labelStyle: "color: black; font-size: 16px",
+                handle1: "right",
+                handle2: "left",
+                IdAppendix: "wasGeneratedBy",
+            });
+
+            //Add Software Nodes
+            addSoftware({
+                dataset: data,  
+                nodes: nodes_det, 
+                edges: edges_det, 
+                EdgeLabel: $wasAssociatedWith_lb,
+                IdName: 'prov:activity',
+                EntityName: 'prov:agent',
+                swapArrow: true,
+                edgestyle: "stroke: #CE93D8;"
+            });
+        
+        });
+
+        return simulation;
+    }
+
     $: {
-        // Adjust labels based on switch state
         updateLabels($isSwitchOn);
+    }
+
+    // Update edges with new labels whenever the label changes
+    $: {
+        edges_det.update((edges) => {
+            return edges.map((edge) => {
+                // Update the label based on the edge's existing label (edge.label)
+                let label;
+                switch (edge.label) {
+                    case 'derived from':
+                        label = $wasDerivedFrom_lb;
+                        break;
+                    case 'wasDerivedFrom':
+                        label = $wasDerivedFrom_lb;
+                        break;
+                    case 'followed by':
+                        label = $wasInformedBy_lb;
+                        break;
+                    case 'wasInformedBy':
+                        label = $wasInformedBy_lb;
+                        break;
+                    case 'resp. person':
+                        label = $wasAttributedTo_lb;
+                        break;
+                    case 'wasAttributedTo':
+                        label = $wasAttributedTo_lb;
+                        break;
+                    case 'part of software':
+                        label = $wasAssociatedWith_lb;
+                        break;
+                    case 'wasAssociatedWith':
+                        label = $wasAssociatedWith_lb;
+                        break;
+                    case 'generated by':
+                        label = $wasGeneratedBy_lb;
+                        break;
+                    case 'wasGeneratedBy':
+                        label = $wasGeneratedBy_lb;
+                        break;
+                    case 'used dataset':
+                        label = $used_lb;
+                        break;
+                    case 'used':
+                        label = $used_lb;
+                        break;
+                }
+
+                // Return the updated edge with the new label
+                return { ...edge, label };
+            });
+        });
+    }
+
+    onMount(() => {
+        // Adjust labels based on switch state
 
         // Clear the nodes and edges stores before repopulating them
-        nodes.set([]);
-        edges.set([]);
+        nodes_det.set([]);
+        edges_det.set([]);
 
         //const hadMember = data.hadMember;
+        AddEntities(data, nodes_det, edges_det, $wasDerivedFrom_lb);
 
 
-        // create all entity nodes and edges
-        createEntityFlow(
-            data,
-            nodes, 
-            edges, 
-            $wasDerivedFrom_lb,
-            false,
-        )
+        // Fetch node and edge data to use in the D3 simulation
+        let nodeArray;
+        let edgeArray;
+        nodes_det.subscribe(n => nodeArray = n);
+        edges_det.subscribe(e => edgeArray = e);
+
+        // Initialize D3 layout
+        initializeD3Layout(nodeArray, edgeArray);
 
 
-        createPeople({
-            dataset: data, 
-            nodes: nodes,  
-            edges: edges, 
-            EdgeLabel: $wasAttributedTo_lb,
-            //IdName: 'prov:agent',
-            //EntityName: 'prov:entity',
-            swapArrow: false,
-            edgeStyle: "stroke: #4B5563"
-        });
-
-
-        adjustPositions({
-            nodes: nodes,
-            edges: edges,
-            edgeToSelect: $wasAttributedTo_lb,
-            nodeTypeToAdjust: 'personNode',
-            minSpace: 400
-
-        });
-
-        // create Organisations
         /*
-        addOrga({
-            dataset: data, 
-            nodes: nodes,  
-            edges: edges, 
-            EdgeLabel: $actedOnBehalfOf_lb,
-            IdName: 'prov:responsible',
-            EntityName: 'prov:delegate',
-            swapArrow: false,
-            edgeStyle: "stroke: #e28743"
-        });
-        adjustPositions({
-            nodes: nodes,
-            edges: edges,
-            edgeToSelect: $actedOnBehalfOf_lb,
-            nodeTypeToAdjust: 'orgaNode',
-            minSpace: 400
-
-        });*/
 
 
-        //Add Software Nodes
-        addSoftware({
-            dataset: data,  
-            nodes: nodes, 
-            edges: edges, 
-            EdgeLabel: $wasAssociatedWith_lb,
-            IdName: 'prov:activity',
-            EntityName: 'prov:agent',
-            swapArrow: true,
-            edgestyle: "stroke: #4B5563;"
-        });
 
 
-        // Process all starting actions
-        createActionFlow(
-            data, 
-            nodes, 
-            edges, 
-            $wasInformedBy_lb,
-            false
-        );
-
-
-        //Add Edges for Used
-        addEdgesOnly({
-            dataset: data.used,  
-            edges: edges, 
-            EdgeLabel: $used_lb,
-            IdName: 'prov:activity',
-            EntityName: 'prov:entity',
-            swapArrow: false,
-            style: "stroke: #4B5563;",
-            labelStyle: "color: black; font-size: 16px",
-            handle1: "right",
-            handle2: "left"
-        });
-
+        
 
         adjustPositionsNotOrder({
             nodes: nodes,
@@ -165,29 +235,21 @@
         });
 
 
-        // Add Edges for wasGeneratedBy
-        addEdgesOnly({
-            dataset: data.wasGeneratedBy,  
-            edges: edges, 
-            EdgeLabel: $wasGeneratedBy_lb,
-            IdName: 'prov:entity',
-            EntityName: 'prov:activity',
-            swapArrow: true,
-            style: "stroke: #4B5563;",
-            labelStyle: "color: black; font-size: 16px",
-            handle1: "left",
-            handle2: "right"
-        });
 
-    }    
+        */
+
+    }) 
+ 
+
+
 
 </script>
 
-<div style="height: 2000px;">
+<div style="height: 1000px;">
     <SvelteFlow 
         {minZoom}
-        {nodes}
-        {edges}
+        nodes={nodes_det}
+        edges={edges_det}
         {defaultEdgeOptions}
         nodeTypes={nodeTypes}
         fitView
@@ -196,6 +258,6 @@
     <Controls/>
     <Background variant={BackgroundVariant.Dots} />
     </SvelteFlow>
-    <Sidebar title="Details" />
+    <Sidebar />
     
 </div>
