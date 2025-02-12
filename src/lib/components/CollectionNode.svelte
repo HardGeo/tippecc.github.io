@@ -7,13 +7,21 @@
 
 
 
-<div class="p-4 bg-[#EAF6EA] border-4 border-[#9CCEA0] rounded-lg shadow-lg mx-auto relative inline-block max-w">
+<div class="p-4 bg-[#FFA500] border-4 border-[#CC8400] rounded-lg shadow-lg mx-auto relative inline-block max-w">
 
     <!-- Right Handle -->
     <Handle
         type="source"
         position={Position.Right}
         id={`${id}-right`}
+        style="background-color: black; width: 10px; height: 10px; border-radius: 50%; position: absolute; right: -10px; top: 50%; transform: translateY(-50%);"
+    />
+
+    <!-- Left Handle -->
+    <Handle
+        type="source"
+        position={Position.Right}
+        id={`${id}-left`}
         style="background-color: black; width: 10px; height: 10px; border-radius: 50%; position: absolute; right: -10px; top: 50%; transform: translateY(-50%);"
     />
 

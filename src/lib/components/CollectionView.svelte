@@ -1,6 +1,7 @@
 <script lang="ts">
     import { SvelteFlow, Controls, Background, BackgroundVariant, MarkerType} from '@xyflow/svelte';
     import { SvelteComponent, onMount } from 'svelte';
+    import * as d3 from 'd3'; // Import D3.js
     import '@xyflow/svelte/dist/style.css';
 
 
@@ -13,13 +14,13 @@
         updateLabels, 
         wasDerivedFrom_lb, 
         hadMember_lb,
-        nodes,
-        edges } from "$lib/store"; // Import the store
+        nodes_col,
+        edges_col } from "$lib/store"; // Import the store
 
-    import data from '$lib/generate_rdfjson/article-prov.json'
+    import data from '$lib/generate_rdfjson_rev/ACCESS.json'
 
-    import { createFlow } from './dataProcessing_minimalView';
-    import {adjustPositions, adjustPositionsNotOrder} from "$lib/components/adjustPositions";
+    import { AddEntities, createCollection } from './dataProcessing';
+    import {adjustPositions} from "$lib/components/adjustPositions";
 
     const defaultEdgeOptions = {
         style: 'stroke-width: 3; stroke: black; z-index: 1;',
@@ -31,64 +32,138 @@
     };
     
     
-    let minZoom = 0.04;
+    let minZoom = 0.01;
 
     const nodeTypes: Record<string, typeof SvelteComponent> = {
         entityNode: EntityNode as unknown as typeof SvelteComponent,
         collectionNode: CollectionNode as unknown as typeof SvelteComponent
     };
     
-    $: {
-        // Adjust labels based on switch state
-        updateLabels($isSwitchOn);
-        // Clear the nodes and edges stores before repopulating them
-        nodes.set([]);
-        edges.set([]);
-        const hadMember = data.hadMember;
+    function initializeD3Layout(nodeData:any, edgeData:any) {
+        const simulation = d3.forceSimulation(nodeData)
+            .force('charge', d3.forceManyBody().strength(-5000))
+            .force('link', d3.forceLink(edgeData).id((d:any) => d.id).distance(800))
+            .force('center', d3.forceCenter(500, 300))
+            .alpha(1)
+            .alphaDecay(0.03); // Ensure smooth positioning over time
 
+        simulation.on("end", () => {
+            // Create a deep copy to trigger reactivity
+            nodes_col.set(nodeData.map((node:any) => ({
+                ...node,
+                position: { x: node.x, y: node.y }
+            })));
 
-        // create all entity nodes and edges
-        createEntityFlow(
-            data,
-            nodes, 
-            edges, 
-            $wasDerivedFrom_lb,
-            false,
-        );
+            edges_col.set(edgeData.map((edge:any) => ({
+                ...edge,
+                source: edge.source.id ?? edge.source,  // Ensure the source ID is correctly mapped
+                target: edge.target.id ?? edge.target,  // Ensure the target ID is correctly mapped
+            })));
+            
+            createCollection({
+                dataset: data, 
+                nodes: nodes_col, 
+                edges: edges_col,
+                EdgeLabel: $hadMember_lb,
+                swapArrow: false,
+                edgeStyle: "stroke: #FFA500"
+            });
 
+            adjustPositions({
+                edges: edges_col,
+                nodes: nodes_col,
+                edgeToSelect: $hadMember_lb,
+                nodeTypeToAdjust: "collectionNode",
+                minSpace: 400
+            });
 
-        // create all Collection edges and nodes
-        createFlow({
-            data:data,
-            dataset: hadMember, 
-            nodes: nodes,  
-            edges:edges,
-            EdgeLabel: $hadMember_lb,
-            IdName: 'prov:collection',
-            EntityName: 'prov:entity',
-            swapArrow: false,
-            edgeStyle: "stroke: #424242",
-            nodeType: 'collectionNode',
-            xPos: -800
+            /*
+            //Add Software Nodes
+            addSoftware({
+                dataset: data,  
+                nodes: nodes_col, 
+                edges: edges_col, 
+                EdgeLabel: $wasAssociatedWith_lb,
+                IdName: 'prov:activity',
+                EntityName: 'prov:agent',
+                swapArrow: true,
+                edgestyle: "stroke: #CE93D8;"
+            });
+
+            adjustPositions({
+                edges: edges_col,
+                nodes: nodes_col,
+                edgeToSelect: $wasAssociatedWith_lb,
+                nodeTypeToAdjust: "softwareNode",
+                minSpace: 400
+            });
+            */
         });
 
-        adjustPositions({
-            nodes: nodes,
-            edges: edges,
-            edgeToSelect: $hadMember_lb,
-            nodeTypeToAdjust: 'collectionNode',
-            minSpace: 400
+        return simulation;
+    }
 
+    $: {
+        updateLabels($isSwitchOn);
+    }
+
+    // Update edges with new labels whenever the label changes
+    $: {
+        edges_col.update((edges) => {
+            return edges.map((edge) => {
+                // Update the label based on the edge's existing label (edge.label)
+                let label;
+                switch (edge.label) {
+                    case 'derived from':
+                        label = $wasDerivedFrom_lb;
+                        break;
+                    case 'wasDerivedFrom':
+                        label = $wasDerivedFrom_lb;
+                        break;
+                    case 'part of collection':
+                        label = $hadMember_lb;
+                        break;
+                    case 'hadMember':
+                        label = $hadMember_lb;
+                        break;
+                }
+
+                // Return the updated edge with the new label
+                return { ...edge, label };
+            });
         });
     }
+
+    onMount(() => {
+        // Adjust labels based on switch state
+
+        // Clear the nodes and edges stores before repopulating them
+        nodes_col.set([]);
+        edges_col.set([]);
+
+        //const hadMember = data.hadMember;
+        AddEntities(data, nodes_col, edges_col, $wasDerivedFrom_lb, "entityNode");
+
+
+
+        // Fetch node and edge data to use in the D3 simulation
+        let nodeArray;
+        let edgeArray;
+        nodes_col.subscribe(n => nodeArray = n);
+        edges_col.subscribe(e => edgeArray = e);
+
+        // Initialize D3 layout
+        initializeD3Layout(nodeArray, edgeArray);
+
+    }) 
 
 </script>
 
 <div style="height: 2000px;">
     <SvelteFlow 
         {minZoom}
-        {nodes}
-        {edges}
+        nodes={nodes_col}
+        edges={edges_col}
         {defaultEdgeOptions}
         nodeTypes={nodeTypes}
         fitView
@@ -97,6 +172,6 @@
     <Controls/>
     <Background variant={BackgroundVariant.Dots} />
     </SvelteFlow>
-    <Sidebar title="Details" />
+    <Sidebar/>
     
 </div>

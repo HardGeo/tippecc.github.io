@@ -1,5 +1,8 @@
 import { get } from 'svelte/store';
 
+import type { Node, Edge } from '@xyflow/svelte';
+
+
 export function adjustPositions ({
     edges,
     nodes,
@@ -7,8 +10,8 @@ export function adjustPositions ({
     nodeTypeToAdjust,
     minSpace
 }:  {
-    edges:import('svelte/store').Readable<Edge[]>,
-    nodes:import('svelte/store').Readable<Edge[]>,
+    edges:import('svelte/store').Writable<Edge[]>,
+    nodes:import('svelte/store').Writable<Node[]>,
     edgeToSelect:string,
     nodeTypeToAdjust:string,
     minSpace: number
@@ -21,7 +24,7 @@ export function adjustPositions ({
     const attributedEdges = currentEdges.filter(edge => edge.label === edgeToSelect);
     //console.log(attributedEdges);
     // Group the filtered edges by the source
-    const groupedBySource: Record<string, Edge[]> = attributedEdges.reduce((acc, edge) => {
+    const groupedBySource: Record<string, Edge[]> = attributedEdges.reduce((acc: Record<string, Edge[]>, edge) => {
     // If the source doesn't exist in the accumulator, create an empty array for it
     if (!acc[edge.source]) {
         acc[edge.source] = [];
@@ -30,28 +33,34 @@ export function adjustPositions ({
     acc[edge.source].push(edge);
     return acc;
     }, {});
+    //console.log(groupedBySource);
 
-    const yPositionsBySource = {};
+    const yPositionsBySource: Record<string, number> = {};
+    const xPositionsBySource: Record<string, number> = {};
     // Now iterate through each group
     Object.keys(groupedBySource).forEach(source => {
         const group = groupedBySource[source];
         
         // Create a list to store y positions for this group
         const yPositions: number[] = [];
+        const xPositions: number[] = [];
         // Iterate through each edge in the group
         group.forEach(edge => {
             const targetId = edge.target;
 
             // Search for the node in currentNodes that matches the targetId
-            const targetNode = currentNodes.find(node => node.id === targetId);
+            const targetNode = currentNodes.find(node => node.id === targetId) as Node;
 
             // If targetNode is found, get its y position and add to the list
             if (targetNode) {
                 const yPosition = targetNode.position?.y; // Assuming `position` contains `y`
-                if (yPosition !== undefined) {
+                const xPosition = targetNode.position?.x; // Assuming `position` contains `y`
+                if (yPosition !== undefined && xPosition !== undefined) {
                     yPositions.push(yPosition);
+                    xPositions.push(xPosition);
                 } else {
                     yPositions.push(NaN);
+                    xPositions.push(NaN);
                 }
             } else {
                 //do nothing
@@ -75,20 +84,24 @@ export function adjustPositions ({
         };
 
         const yPositionsMean = calculateMean(yPositions);
+        const xPositionsMean = calculateMean(xPositions);
         // Store the y positions list for this source
         
         yPositionsBySource[source] = yPositionsMean;
+        xPositionsBySource[source] = xPositionsMean;
     });
 
     // Adjust y positions of personNodes based on yPositionsBySource
     currentNodes.forEach(node => {
         // Check if the node is a personNode and exists in yPositionsBySource
-        if (yPositionsBySource.hasOwnProperty(node.id)) {
+        if (yPositionsBySource.hasOwnProperty(node.id) && xPositionsBySource.hasOwnProperty(node.id)) {
             const newYPosition = yPositionsBySource[node.id];
+            const newXPosition = xPositionsBySource[node.id];
 
-            if (newYPosition !== null && !isNaN(newYPosition)) {
+            if (newYPosition !== null && !isNaN(newYPosition) && (newXPosition !== null && !isNaN(newXPosition)) ) {
                 // Update the node's y position
                 node.position.y = newYPosition;
+                node.position.x = newXPosition;
             } else {
                 // Handle nodes with null or NaN y positions (optional)
                 console.warn(`Skipping node with id ${node.id} due to invalid y position`);
@@ -96,53 +109,66 @@ export function adjustPositions ({
         }
     });
 
+    
     // Adjust y positions of personNodes ensuring minimum spacing and no duplication
-    const adjustYPositions = (nodes, minSpacing) => {
+    const adjustYPositions = (nodes: any, minSpacing: number) => {
         // Filter the nodes to adjust based on personNode type
-        const personNodes = nodes.filter(node => node.type === nodeTypeToAdjust);
+        const personNodes = nodes; // Alle Nodes berücksichtigen
 
         // Map nodes to include yPosition from yPositionsBySource and sort by it
         const sortedNodes = personNodes
-            .map(node => ({
+            .map((node:Node) => ({
                 ...node,
-                targetY: node.position?.y // Fallback to current position if undefined
+                targetY: node.position?.y, // Fallback to current position if undefined
+                targetX: node.position?.x, // X position
             }))
-            .sort((a, b) => (a.targetY || 0) - (b.targetY || 0)); // Sort by targetY
+            .sort((a:any, b:any) => (a.targetY || 0) - (b.targetY || 0)); // Sort by targetY
 
         // Track adjusted Y positions to ensure no duplication
-        const adjustedYPositions = new Set();
+        const adjustedPositions: Set<string> = new Set();
 
-        sortedNodes.forEach((node, index) => {
+        sortedNodes.forEach((node:any, index:number) => {
+            let adjustedX = node.targetX;
             let adjustedY = node.targetY;
 
             // Ensure no duplicates and maintain minimum spacing
             while (
-                adjustedYPositions.has(adjustedY) || // Prevent duplicate y positions
-                (index > 0 && adjustedY - [...adjustedYPositions].pop() < minSpacing) // Ensure spacing between nodes
+                adjustedPositions .has((`${adjustedX},${adjustedY}`)) || // Prevent duplicate y positions
+                (index > 0 && (() => {
+                    const lastEntry = [...adjustedPositions].values().next().value;
+                    if (!lastEntry) return false; // Skip if no previous positions
+                    const lastY = parseFloat(lastEntry.split(',')[1]);
+                    return adjustedY - lastY < minSpacing;
+                })())                
+
             ) {
                 adjustedY += minSpacing; // Increase y by minSpacing to avoid conflicts
+                adjustedX += minSpacing / 2;  // Slight shift in X to separate horizontally as well
             }
 
-            // Update node position with adjusted Y
+            // Update node position with adjusted Y and X
             node.position.y = adjustedY;
+            node.position.x = adjustedX;
 
-            // Add the adjusted y position to the set
-            adjustedYPositions.add(adjustedY);
+            // Add the adjusted xy position to the set
+            adjustedPositions.add(`${adjustedX},${adjustedY}`);
         });
 
         // Iterate through all person nodes again to check for duplicate Y positions
         let hasDuplicates = true;
         while (hasDuplicates) {
-            const seenYPositions = new Set();
+            const seenPositions  = new Set();
             hasDuplicates = false;
 
-            sortedNodes.forEach(node => {
-                if (seenYPositions.has(node.position.y)) {
+            sortedNodes.forEach((node:Node) => {
+                const positionKey = `${node.position.x},${node.position.y}`; // Key combining both X and Y
+                if (seenPositions.has(positionKey)) {
                     // Increment the y position if duplicate is found
                     node.position.y += minSpacing;
+                    node.position.x += minSpacing / 2; // Adjust X position as well, to prevent overlap horizontally
                     hasDuplicates = true;
                 } else {
-                    seenYPositions.add(node.position.y);
+                    seenPositions.add(positionKey);
                 }
             });
         }
@@ -155,107 +181,7 @@ export function adjustPositions ({
     const updatedNodes = adjustYPositions(currentNodes, minSpacing);
 
     // Log updated nodes
-    //console.log('Updated Nodes with Minimum Spacing:', updatedNodes);
+    //console.log('Updated Nodes with Minimum Spacing: ', nodeTypeToAdjust, updatedNodes);
+    
 
-}
-
-
-export function adjustPositionsNotOrder({
-    edges,
-    nodes,
-    edgeToSelect,
-    nodeTypeToAdjust,
-    minSpace
-}: {
-    edges: import('svelte/store').Readable<Edge[]>,
-    nodes: import('svelte/store').Readable<Node[]>,
-    edgeToSelect: string,
-    nodeTypeToAdjust: string,
-    minSpace: number
-}): void {
-    const currentEdges = get(edges); // Current edges in the flow
-    const currentNodes = get(nodes); // Current nodes in the flow
-
-    const attributedEdges = currentEdges.filter(edge => edge.label === edgeToSelect);
-
-    // Group the filtered edges by the source
-    const groupedBySource: Record<string, Edge[]> = attributedEdges.reduce((acc, edge) => {
-        if (!acc[edge.source]) {
-            acc[edge.source] = [];
-        }
-        acc[edge.source].push(edge);
-        return acc;
-    }, {});
-
-
-    const yPositionsBySource = {};
-
-    // Iterate through each group to calculate mean Y positions
-    Object.keys(groupedBySource).forEach(source => {
-        const group = groupedBySource[source];
-
-        // Collect y positions of target nodes
-        const yPositions: number[] = [];
-        group.forEach(edge => {
-            const targetId = edge.target;
-            const targetNode = currentNodes.find(node => node.id === targetId);
-
-            if (targetNode?.position?.y !== undefined) {
-                yPositions.push(targetNode.position.y);
-            }
-        });
-
-        const calculateMean = (positions: number[]) => {
-            const validPositions = positions.filter(pos => !isNaN(pos));
-            if (!validPositions.length) return NaN;
-
-            return validPositions.reduce((sum, pos) => sum + pos, 0) / validPositions.length;
-        };
-
-        const yMean = calculateMean(yPositions);
-        yPositionsBySource[source] = yMean;
-    });
-
-
-    // Adjust y positions based on calculated means
-    const adjustYPositionsPreservingOrder = (nodes, minSpacing) => {
-        // Filter nodes by type
-        const nodesToAdjust = nodes.filter(node => node.type === nodeTypeToAdjust);
-
-        // Preserve original order
-        const originalOrder = nodesToAdjust.map(node => node.id);
-
-        // Map nodes to include target Y positions
-        const mappedNodes = nodesToAdjust.map(node => ({
-            ...node,
-            targetY: yPositionsBySource[node.id] || node.position.y // Use yPositionsBySource if available
-        }));
-
-        // Adjust positions incrementally while preserving order
-        const adjustedNodes = [];
-        let lastAdjustedY = -Infinity;
-
-        originalOrder.forEach(id => {
-            const node = mappedNodes.find(n => n.id === id);
-            if (!node) return;
-
-            // Ensure minimum spacing and no overlaps
-            let adjustedY = Math.max(node.targetY, lastAdjustedY + minSpacing);
-            node.position.y = adjustedY;
-            lastAdjustedY = adjustedY;
-
-            adjustedNodes.push(node);
-        });
-
-        return nodes.map(node => {
-            const adjustedNode = adjustedNodes.find(adjusted => adjusted.id === node.id);
-            return adjustedNode ? adjustedNode : node;
-        });
-    };
-
-    // Call adjustment logic with min spacing
-    const updatedNodes = adjustYPositionsPreservingOrder(currentNodes, minSpace);
-
-    // Log the updated nodes
-    //console.log('Updated Nodes Preserving Original Order:', updatedNodes);
 }

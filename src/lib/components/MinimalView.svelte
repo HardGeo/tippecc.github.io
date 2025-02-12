@@ -17,7 +17,7 @@
         createEntityFlow,
         createFlow 
     } from './dataProcessing_minimalView';
-    import { adjustPositions, adjustPositionsNotOrder } from "$lib/components/adjustPositions";
+    import { adjustPositions } from "$lib/components/adjustPositions";
     import EntityNode from '$lib/components/entityNode_mini.svelte';
     import ActivityNode from "./ActivityNode.svelte";
     import SoftwareNode from "./SoftwareNode_mini.svelte";
@@ -186,14 +186,6 @@
             labelStyle: "color: black; font-size: 16px;",
             handle1: "right",
             handle2: "left"
-        });
-
-        adjustPositionsNotOrder({
-            nodes: nodes,
-            edges: edges,
-            edgeToSelect: $used_lb,
-            nodeTypeToAdjust: 'activityNode',
-            minSpace: 200
         });
 
         adjustPositions({

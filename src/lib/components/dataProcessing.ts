@@ -24,6 +24,31 @@ type WasInformedBy = {
         "prov:informant": string;
     };
 };
+type WasAttributedTo = {
+    [key: string]: {
+        "prov:agent": string;
+        "prov:entity": string;
+    };
+};
+
+type ActedOnBehalfOf = {
+    [key: string]: {
+        "prov:delegate": string;
+        "prov:responsible": string;
+    };
+};
+
+type WasAssociatedWith = {
+    [key: string]: {
+        [key: string]: string; // Allow indexing with any string key
+    };
+};
+
+type UsedGenerated = {
+    [key: string]: {
+        [key: string]: string; // Allow indexing with any string key
+    };
+};
 
 type Entity = {
     [key: string]: {
@@ -108,6 +133,7 @@ type Edge = {
 type Dataset = {
     wasDerivedFrom: WasDerivedFrom;
     wasInformedBy: WasInformedBy;
+    wasAttributedTo: WasAttributedTo;
     hadMember: HadMember;
     entity: Entity;
   };
@@ -119,9 +145,10 @@ type HadMember = {
         "prov:collection": string;
     };
 };
-    
+
+
 // Funktion, die die eindeutigen Entitäten extrahiert
-export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any): void {
+export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any, NodeType: string): void {
     const uniqueEntities = new Set<string>();
 
     Object.values(dataset.wasDerivedFrom).forEach(({ "prov:generatedEntity": gen, "prov:usedEntity": used }) => {
@@ -405,7 +432,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                 
                 n.push({
                     id: currentEntity,
-                    type: 'entityNode', // Specify the custom node type
+                    type: NodeType, // Specify the custom node type
                     data: {
                         parameter: name || "N/A",
                         zeitspranne: parsedTimespans  || [],
@@ -544,7 +571,6 @@ export function AddActions(dataset: Dataset, nodes: any, edges: any, label: any)
 }
 
 
-
 export function createPeople ({
     dataset,
     nodes,
@@ -563,12 +589,12 @@ export function createPeople ({
     const entityNodes = new Set(); 
     let yPosition = 0;
 
-    for (const [id, member] of Object.entries(dataset.wasAttributedTo)) {
+    for (const [id, member] of Object.entries(dataset.wasAttributedTo) as [string, WasAttributedTo[string]][]) {
         const personId = member["prov:agent"]; // Use full person identifier (e.g., people:Franzi)
         const entity = member["prov:entity"];
 
         // Find organization (orgaId) from actedOnBehalfOf
-        const actedOnBehalfOfEntry = Object.values(dataset.actedOnBehalfOf).find(
+        const actedOnBehalfOfEntry = Object.values(dataset.actedOnBehalfOf as ActedOnBehalfOf).find(
             (entry: any) => entry["prov:delegate"] === personId
         );
 
@@ -577,7 +603,7 @@ export function createPeople ({
 
         // Only add the person node if it hasn't been added yet
         if (!entityNodes.has(personId)) {
-            nodes.update(n => {
+            nodes.update((n:any) => {
                 n.push({
                     id: personId,
                     type: 'personNode',
@@ -601,7 +627,7 @@ export function createPeople ({
         const sourceHandle = swapArrow ? `${entity}-left` : `${personId}-right`;
         const targetHandle = swapArrow ? `${personId}-right` : `${entity}-left`;
 
-        edges.update(e => {
+        edges.update((e:any) => {
             e.push({
                 id: `${personId}-${entity}`,
                 source: source,
@@ -642,17 +668,18 @@ export function addSoftware({
     edgestyle: string
 }) {
     let yPosition = 0;
-    for (const member of Object.values(dataset.wasAssociatedWith)) {
+    for (const member of Object.values(dataset.wasAssociatedWith as WasAssociatedWith)) {
         const activityId = member[IdName];
         const agentId = member[EntityName];
         
         // Ensure agent node is added if not present
-        nodes.update(n => {
-            if (!n.some(node => node.id === agentId)) {
+        nodes.update((n:any) => {
+            if (!n.some((node:any) => node.id === agentId)) {
                 n.push({
                     id: agentId,
                     type: 'softwareNode',
                     data: {
+                        //TODO add Data
                         software: agentId  || "N/A",
                         source: dataset.agent[agentId]["dcterms:source"]  || "N/A",
                         version: dataset.agent[agentId]["sdo:version"]  || "N/A",
@@ -673,7 +700,7 @@ export function addSoftware({
         const targetHandle = swapArrow ? `${activityId}-right` : `${agentId}-left`; // Use the correct handle
         
         // Add edge between the activity and agent
-        edges.update(e => {
+        edges.update((e:any) => {
             e.push({
                 id: `${activityId}-${agentId}`,
                 source: source,
@@ -718,7 +745,7 @@ export function addEdgesOnly({
     handle2: string,
     IdAppendix: string
 }) {
-    for (const member of Object.values(dataset)) {
+    for (const member of Object.values(dataset as UsedGenerated)) {
         const activityId = member[IdName];
         const entityId = member[EntityName];
 
@@ -735,7 +762,7 @@ export function addEdgesOnly({
         //console.log(sourceHandle, targetHandle)
         
         // Add edge between activity and entity
-        edges.update(e => {
+        edges.update((e:any) => {
             e.push({
                 id: `${source}-${target}-${IdAppendix}`,
                 source: source,
@@ -752,3 +779,63 @@ export function addEdgesOnly({
     }
 }
 
+
+export function createCollection ({
+    dataset,
+    nodes,
+    edges,
+    EdgeLabel,
+    swapArrow,
+    edgeStyle
+}: {
+    dataset: any, 
+    nodes: any, 
+    edges: any,
+    EdgeLabel: string,
+    swapArrow: boolean,
+    edgeStyle: string
+}) {
+    const collectionNodes = new Set(); 
+    let yPosition = 0;
+
+    for (const [id, member] of Object.entries(dataset.hadMember) as [string, any][]) {
+        const collectionId = member["prov:collection"]; // Collection ID
+        const entityId = member["prov:entity"]; // Entity ID
+
+        // Only add the collection node if it hasn't been added yet
+        if (!collectionNodes.has(collectionId)) {
+            nodes.update((n: any) => {
+                n.push({
+                    id: collectionId,
+                    type: 'collectionNode',
+                    data: { id: collectionId },
+                    position: { x: -600, y: yPosition },
+                });
+                return n;
+            });
+            collectionNodes.add(collectionId);
+            yPosition += 400;
+        }
+
+        // Add edge between the collection and the corresponding entity
+        const source = swapArrow ? entityId : collectionId;
+        const target = swapArrow ? collectionId : entityId;
+        const sourceHandle = swapArrow ? `${entityId}-left` : `${collectionId}-right`;
+        const targetHandle = swapArrow ? `${collectionId}-right` : `${entityId}-left`;
+
+        edges.update((e: any) => {
+            e.push({
+                id: `${collectionId}-${entityId}`,
+                source: source,
+                target: target,
+                sourceHandle: sourceHandle,
+                targetHandle: targetHandle,
+                animated: false,
+                label: EdgeLabel,
+                style: edgeStyle,
+                labelStyle: 'color: black; font-size: 16px'
+            });
+            return e;
+        });
+    }
+}

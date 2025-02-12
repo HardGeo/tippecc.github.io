@@ -17,7 +17,7 @@
         wasDerivedFrom_lb, 
         wasInformedBy_lb, 
         wasAttributedTo_lb, 
-        wasAssociatedWith_lb, 
+        wasAssociatedWith_lb,
         wasGeneratedBy_lb, 
         used_lb,
         nodes_det,
@@ -27,7 +27,7 @@
     import data from '$lib/generate_rdfjson_rev/ACCESS.json'
 
     import { AddActions, createPeople, addSoftware, addEdgesOnly, AddEntities } from '$lib/components//dataProcessing'; // Adjust path as necessary
-    import {adjustPositions, adjustPositionsNotOrder} from "$lib/components/adjustPositions";
+    import {adjustPositions} from "$lib/components/adjustPositions";
 
 
 
@@ -70,23 +70,33 @@
                 source: edge.source.id ?? edge.source,  // Ensure the source ID is correctly mapped
                 target: edge.target.id ?? edge.target,  // Ensure the target ID is correctly mapped
             })));
+            
 
+            // OPTIONAL: TRANSFER People and Organisation to Entity
             createPeople({
                 dataset: data, 
                 nodes: nodes_det,  
                 edges: edges_det, 
                 EdgeLabel: $wasAttributedTo_lb,
                 swapArrow: false,
-                edgeStyle: "stroke: #4B5563"
+                edgeStyle: "stroke: #CC8400"
             });
             
+            adjustPositions({
+                edges: edges_det,
+                nodes: nodes_det,
+                edgeToSelect: $wasAttributedTo_lb,
+                nodeTypeToAdjust: "personNode",
+                minSpace: 400
+            });
+            /*
             AddActions(
                 data,
                 nodes_det, 
                 edges_det, 
                 $wasInformedBy_lb
             );
-
+            */
             //Add Edges for Used
             addEdgesOnly({
                 dataset: data.used,  
@@ -95,7 +105,7 @@
                 IdName: 'prov:activity',
                 EntityName: 'prov:entity',
                 swapArrow: false,
-                style: "stroke: #90CAF9;",
+                style: "stroke: #88BCE4;",
                 labelStyle: "color: black; font-size: 16px",
                 handle1: "right",
                 handle2: "left",
@@ -110,12 +120,20 @@
                 IdName: 'prov:entity',
                 EntityName: 'prov:activity',
                 swapArrow: true,
-                style: "stroke: #A5D6A7;",
+                style: "stroke: #6BAF74;",
                 labelStyle: "color: black; font-size: 16px",
                 handle1: "right",
                 handle2: "left",
                 IdAppendix: "wasGeneratedBy",
             });
+            /*
+            adjustPositions({
+                edges: edges_det,
+                nodes: nodes_det,
+                edgeToSelect: $used_lb,
+                nodeTypeToAdjust: "activityNode",
+                minSpace: 400
+            });*/
 
             //Add Software Nodes
             addSoftware({
@@ -127,6 +145,14 @@
                 EntityName: 'prov:agent',
                 swapArrow: true,
                 edgestyle: "stroke: #CE93D8;"
+            });
+
+            adjustPositions({
+                edges: edges_det,
+                nodes: nodes_det,
+                edgeToSelect: $wasAssociatedWith_lb,
+                nodeTypeToAdjust: "softwareNode",
+                minSpace: 400
             });
         
         });
@@ -197,7 +223,13 @@
         edges_det.set([]);
 
         //const hadMember = data.hadMember;
-        AddEntities(data, nodes_det, edges_det, $wasDerivedFrom_lb);
+        AddEntities(data, nodes_det, edges_det, $wasDerivedFrom_lb, "entityNode");
+        AddActions(
+                data,
+                nodes_det, 
+                edges_det, 
+                $wasInformedBy_lb
+        );
 
 
         // Fetch node and edge data to use in the D3 simulation
@@ -209,39 +241,7 @@
         // Initialize D3 layout
         initializeD3Layout(nodeArray, edgeArray);
 
-
-        /*
-
-
-
-
-        
-
-        adjustPositionsNotOrder({
-            nodes: nodes,
-            edges: edges,
-            edgeToSelect: $used_lb,
-            nodeTypeToAdjust: 'activityNode',
-            minSpace: 200
-
-        });
-        adjustPositions({
-            nodes: nodes,
-            edges: edges,
-            edgeToSelect: $wasAssociatedWith_lb,
-            nodeTypeToAdjust: 'softwareNode',
-            minSpace: 400
-
-        });
-
-
-
-        */
-
     }) 
- 
-
-
 
 </script>
 
