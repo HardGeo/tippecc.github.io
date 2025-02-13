@@ -1,5 +1,3 @@
-
-
 import { 
     changedPar, 
     changedUnit,  
@@ -91,6 +89,7 @@ type Node = {
         resolutionZeitlich: string;
         resolutionRaeumlich: string;
         spatialExtent: any;
+        spatialExtent_orig: any,
         dateigroesse: number;
         timestamp: string;
         project: string;
@@ -328,6 +327,9 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
         let temporalResolution_used: string ;
         let spatialResolution_used: string ;
         let size_used: number ;
+        let extent_used: any;
+
+        let extentList: [number, number, number, number][] = [];
 
         // Loop over usedEntitiesList
         usedEntitiesList.forEach((usedEntity) => {
@@ -337,7 +339,8 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                 unit_used = dataset.entity[usedEntity]["tippecc_data:units"] ?? "N/A";
                 temporalResolution_used =  dataset.entity[usedEntity]["tippecc_data:frequency"] ?? "N/A";
                 const upperLeft_used = (dataset.entity[usedEntity]["tippecc_data:upperLeft"] ?? "0, 0").split(", ").map(Number) as [number, number];
-                const lowerLeft_used = (dataset.entity[usedEntity]["tippecc_data:lowerRight"] ?? "0, 0").split(", ").map(Number) as [number, number];
+                const lowerLeft_used = (dataset.entity[usedEntity]["tippecc_data:lowerLeft"] ?? "0, 0").split(", ").map(Number) as [number, number];
+                const lowerRight_used = (dataset.entity[usedEntity]["tippecc_data:lowerRight"] ?? "0, 0").split(", ").map(Number) as [number, number];
                 const upperRight_used = (dataset.entity[usedEntity]["tippecc_data:upperRight"] ?? "0, 0").split(", ").map(Number) as [number, number];
                 const gridSize_used = (dataset.entity[usedEntity]["tippecc_data:size"] ?? "1, 1").split(", ").map(Number) as [number, number];
                 spatialResolution_used = calculateSpatialResolution(gridSize_used, upperLeft_used, upperRight_used, lowerLeft_used);
@@ -346,16 +349,24 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                 size_used = dataset.entity[usedEntity]["tippecc_data:file_size"]?.$ ?? 0;
                 globalmodel_used =  dataset.entity[usedEntity]["tippecc_data:source_id"] ?? "N/A";
                 regionalmodel_used =  "not defined";//dataset.entity[usedEntity]["tippecc_data:source"];
+
+                extent_used = [upperLeft_used[0], lowerRight_used[0], lowerRight_used[1], upperLeft_used[1]]
+                extentList.push(extent_used);
             }
             else{
                 name_used = "N/A";
                 unit_used = "N/A";
                 temporalResolution_used = "N/A";
+
                 const upperLeft_used = [0, 0] as [number, number];
                 const lowerLeft_used = [0, 0] as [number, number];
+                const lowerRight_used = [0, 0] as [number, number];
                 const upperRight_used = [0, 0] as [number, number];
                 const gridSize_used = [0, 0] as [number, number];
                 spatialResolution_used = calculateSpatialResolution(gridSize_used, upperLeft_used, upperRight_used, lowerLeft_used);
+                extent_used = [upperLeft_used[0], lowerRight_used[0], lowerRight_used[1], upperLeft_used[1]]
+                extentList.push(extent_used);
+
                 scenario_used =  "N/A";
                 format_used =  "N/A";
                 size_used = 0 ;
@@ -420,6 +431,13 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
     
         });
 
+        // Ensure extentList is not empty before calculating the average
+        const extentAverage: [number, number, number, number] = extentList.length > 0
+            ? extentList[0].map((_, i) => 
+                extentList.reduce((sum, ext) => sum + ext[i], 0) / extentList.length
+            ) as [number, number, number, number]
+            : [0, 0, 0, 0];  // Default fallback if no data
+
 
         xPos = Math.random() * 400;  // Zufälliger Wert zwischen 0 und 800
         yPos = Math.random() * 800;  // Zufälliger Wert zwischen 0 und 600
@@ -443,8 +461,9 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                         format: format  || "N/A",
                         resolutionZeitlich: temporalResolution  || "N/A",
                         resolutionRaeumlich: spatialResolution  || "N/A",
-                        spatialExtent: extent  || "N/A",
-                        //spatialExtent_orig: [0,0,0,0],
+                        //TODO
+                        spatialExtent: extent  || [0,0,0,0],
+                        spatialExtent_orig: extent || [0,0,0,0],
                         dateigroesse: size  || 0,
                         timestamp: timestamp || "N/A",
                         project: project  || "N/A",

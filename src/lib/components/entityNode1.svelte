@@ -225,16 +225,16 @@
                 />
 
                 {#if data.spatialExtent && data.spatialExtent.length === 4 && data.spatialExtent_orig && data.spatialExtent_orig.length === 4}
-                    <!-- Calculate the red outline for the current extent -->
-                    <rect 
-                        x={(data.spatialExtent[0] - data.spatialExtent_orig[0]) / (data.spatialExtent_orig[1] - data.spatialExtent_orig[0]) * 100}
-                        y={(data.spatialExtent[2] - data.spatialExtent_orig[2]) / (data.spatialExtent_orig[3] - data.spatialExtent_orig[2]) * 100}
-                        width={(data.spatialExtent[1] - data.spatialExtent[0]) / (data.spatialExtent_orig[1] - data.spatialExtent_orig[0]) * 100}
-                        height={(data.spatialExtent[3] - data.spatialExtent[2]) / (data.spatialExtent_orig[3] - data.spatialExtent_orig[2]) * 100}
-                        fill="none" 
-                        stroke="black" 
-                        stroke-width="2"
-                    />
+                <!-- Calculate the red outline for the current extent with fallback for divide by 0 -->
+                <rect 
+                    x={ (data.spatialExtent[0] - data.spatialExtent_orig[0]) / (data.spatialExtent_orig[1] - data.spatialExtent_orig[0]) * 100 || 0 }
+                    y={ (data.spatialExtent[2] - data.spatialExtent_orig[2]) / (data.spatialExtent_orig[3] - data.spatialExtent_orig[2]) * 100 || 0 }
+                    width={ (data.spatialExtent[1] - data.spatialExtent[0]) / (data.spatialExtent_orig[1] - data.spatialExtent_orig[0]) * 100 || 0 }
+                    height={ (data.spatialExtent[3] - data.spatialExtent[2]) / (data.spatialExtent_orig[3] - data.spatialExtent_orig[2]) * 100 || 0 }
+                    fill="none" 
+                    stroke="black" 
+                    stroke-width="2"
+                />
                 {/if}
             </svg>
 

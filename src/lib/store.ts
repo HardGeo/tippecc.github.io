@@ -10,6 +10,9 @@ export const edges_det = writable<Edge[]>([]);
 export const nodes_col = writable<Node[]>([]);
 export const edges_col = writable<Edge[]>([]);
 
+export const nodes_min = writable<Node[]>([]);
+export const edges_min = writable<Edge[]>([]);
+
 export const detailInfo = writable(null);
 export const isSwitchOn = writable(false);
 
