@@ -1,6 +1,6 @@
 {
     "CDI": "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)",
-    "history": "Fri Jan 24 15:01:33 2025: cdo -O -s -timmean -selyear,1981/2000 /data/cmip6_raw_ind/TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum.nc /data/cmip6_raw_ind/TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum_mean_1981_2000.nc\nFri Jan 24 15:01:12 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum.nc",
+    "history": "Mon Feb 10 10:50:51 2025: cdo -O -s -timmean -selyear,1981/2000 /data/cmip6_raw_ind/TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum.nc /data/cmip6_raw_ind/TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum_mean_1981_2000.nc\nMon Feb 10 10:50:23 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum.nc",
     "source": "AWI-ESM 1 REcoM (2024): \naerosol: none\natmos: ECHAM6.3.04p1 (T63L47 native atmosphere T63 gaussian grid; 192 x 96 longitude/latitude; 47 levels; top level 80 km)\natmosChem: none\nland: JSBACH 3.20 with dynamic vegetation\nlandIce: none\nocean: FESOM 1.4 (unstructured grid in the horizontal with 126859 wet nodes; 46 levels; top grid cell 0-5 m)\nocnBgchem: REcoM2 (same grid as ocean component)\nseaIce: FESOM 1.4 (same grid as ocean component)",
     "institution": "Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research, Am Handelshafen 12, 27570 Bremerhaven, Germany",
     "Conventions": "CF-1.7 CMIP-6.2",
@@ -46,7 +46,6 @@
     "license": "CMIP6 model data produced by Alfred Wegener Institute is licensed under a Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.",
     "cmor_version": "3.6.0",
     "CDO": "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)",
-    "time_bnds": {},
     "water_budget_from_tas": {
         "long_name": "Water budget (\"FAO_PM985\" method)",
         "units": "mmday",
@@ -56,7 +55,29 @@
         "method": "pr - evspsblpot "
     },
     "file": {
-        "file_size": 85453,
-        "last_modification_time": "2025-01-24 16:01:33 CET+0100"
+        "file_size": 88712,
+        "last_modification_time": "2025-02-10 11:50:51 CET+0100",
+        "birth_time": "2025-02-10 11:50:51 CET+0100",
+        "file_format": "netCDF",
+        "nominal_resolution": "50 km",
+        "geospatial_lat_min": "-35.75",
+        "geospatial_lat_max": "-5.25",
+        "geospatial_lon_min": "10.25",
+        "geospatial_lon_max": "10.75",
+        "time_coverage_start": "1991-01-01 00:00:00",
+        "time_coverage_end": "1991-01-01 00:00:00",
+        "frequency": "none",
+        "climatology_bounds": [
+            [
+                "1981-01-01 00:00:00",
+                "2000-01-01 00:00:00"
+            ]
+        ],
+        "climatology_bounds_details": null,
+        "num_time_steps": 1,
+        "time_units": "days since 1850-01-01",
+        "time_calendar": "proleptic_gregorian",
+        "global_min": -1662.2262174179511,
+        "global_max": 2130.916849818226
     }
 }

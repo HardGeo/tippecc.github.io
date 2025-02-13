@@ -24,7 +24,7 @@
         edges_det } from "$lib/store"; // Import the store
 
     //import data from '$lib/generate_rdfjson/article-prov.json';
-    import data from '$lib/generate_rdfjson_rev/ACCESS.json'
+    import data from '$lib/generate_rdfjson_rev/AWI.json'
 
     import { AddActions, createPeople, addSoftware, addEdgesOnly, AddEntities } from '$lib/components//dataProcessing'; // Adjust path as necessary
     import {adjustPositions} from "$lib/components/adjustPositions";

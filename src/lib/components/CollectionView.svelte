@@ -17,7 +17,7 @@
         nodes_col,
         edges_col } from "$lib/store"; // Import the store
 
-    import data from '$lib/generate_rdfjson_rev/ACCESS.json'
+    import data from '$lib/generate_rdfjson_rev/AWI.json'
 
     import { AddEntities, createCollection } from './dataProcessing';
     import {adjustPositions} from "$lib/components/adjustPositions";

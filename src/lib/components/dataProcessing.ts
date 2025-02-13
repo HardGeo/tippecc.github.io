@@ -50,20 +50,19 @@ type UsedGenerated = {
 
 type Entity = {
     [key: string]: {
-        "tippecc_data:variable_id"?: string;
+        "tippecc_data:long_name"?: string;
         "tippecc_data:units"?: string;
-        "tippecc_data:upperLeft"?: string;
-        "tippecc_data:lowerRight"?: string;
-        "tippecc_data:lowerLeft"?: string;
-        "tippecc_data:upperRight"?: string;
-        "tippecc_data:size"?: string;
+        "tippecc_data:geospatial_lat_min": string,
+        "tippecc_data:geospatial_lat_max": string,
+        "tippecc_data:geospatial_lon_min": string,
+        "tippecc_data:geospatial_lon_max": string,
+        "tippecc_data:nominal_resolution"?: string;
         "tippecc_data:source_id"?: string;
-        "tippecc_data:scenario"?: string;
-        "tippecc_data:format"?: string; 
+        "tippecc_data:file_format"?: string; 
         "tippecc_data:frequency"?: string;
         "tippecc_data:file_size"?: { "$": number};
         "tippecc_data:creation_date"?: string;
-        "tippecc_data:activity_id"?: string;
+        "tippecc_data:project_id"?: string;
         "tippecc_data:experiment_id"?: string;
         "tippecc_data:Conventions"?: string;
         "tippecc_data:institution"?: string;
@@ -71,6 +70,11 @@ type Entity = {
         "tippecc_data:contact"?: string;
         "tippecc_data:tracking_id"?: string;
         "tippecc_data:parent_variant_label"?: string;
+        "tippecc_data:license"?: string;
+        "tippecc_data:time_coverage_start": string;
+        "tippecc_data:time_coverage_end": string;
+        "tippecc_data:climatology_bounds": string;
+        "tippecc_data:climatology_bounds_details": string;
         [key: string]: any;
     };
 };
@@ -161,6 +165,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
         const entry = Object.values(hadMember).find(member => member["prov:entity"] === currentEntity);
         return entry ? entry["prov:collection"] : "No Collection defined";
     }
+    /*
 
     function calculateSpatialResolution(
         gridSize: [number, number], 
@@ -178,7 +183,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
         const latResolution = latitudeRange / height;  // 31.0 / 62 = 0.5°
 
         return `${lonResolution.toFixed(1)}° x ${latResolution.toFixed(1)}°`;
-    }
+    }*/
 
     let name: string ;
     let unit: string ;
@@ -191,7 +196,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
     let temporalResolution: string ;
     let spatialResolution: string ;
     let size: number ;
-    let parsedTimespans: any ;
+    let parsedTimespans: { start: number, end: number }[] = [];
     let timestamp: string ;
     let project: string ;
     let experiment: string ;
@@ -202,6 +207,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
     let domain: string ;
     let contact: string ;
     let tracking_id: string ;
+    let references: string;
     let doi: string ;
     let variant: string ;
     let xPos: number;
@@ -212,70 +218,102 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
         if (dataset.entity[currentEntity]) {
             
             // EXTRACT PARAMTER NAME
-            // Split the string at ", ", find the part starting with "name:", and extract the value
-            name = dataset.entity[currentEntity]["tippecc_data:variable_id"] ?? "N/A";
+            name = dataset.entity[currentEntity]["tippecc_data:long_name"] ?? "N/A";
             //EXTRACT UNIT
             unit = dataset.entity[currentEntity]["tippecc_data:units"] ?? "N/A";
             //EXTRACT BOUNDS
-            const upperLeft = (dataset.entity[currentEntity]["tippecc_data:upperLeft"] ?? "0, 0").split(", ").map(Number) as [number, number];
-            const lowerRight = (dataset.entity[currentEntity]["tippecc_data:lowerRight"] ?? "0, 0").split(", ").map(Number) as [number, number];
-            const lowerLeft = (dataset.entity[currentEntity]["tippecc_data:lowerLeft"] ?? "0, 0").split(", ").map(Number) as [number, number];
-            const upperRight = (dataset.entity[currentEntity]["tippecc_data:upperRight"] ?? "0, 0").split(", ").map(Number) as [number, number];
-            const gridSize = (dataset.entity[currentEntity]["tippecc_data:size"] ?? "1, 1").split(", ").map(Number) as [number, number];
-            extent = [upperLeft[0], lowerRight[0], lowerRight[1], upperLeft[1]]
+            const lat_min = Number(dataset.entity[currentEntity]["tippecc_data:geospatial_lat_min"]);
+            const lat_max = Number(dataset.entity[currentEntity]["tippecc_data:geospatial_lat_max"]);
+            const lon_min = Number(dataset.entity[currentEntity]["tippecc_data:geospatial_lon_min"]);
+            const lon_max = Number(dataset.entity[currentEntity]["tippecc_data:geospatial_lon_max"]);
+            extent = [lat_min, lat_max, lon_min, lon_max]
             // EXTRACT COLLECTION
             collection = findCollectionForEntity(currentEntity, dataset.hadMember);
             // EXTRACT REGIONAL MODEL TODO
-            regionalmodel =  "not defined";//dataset.entity[currentEntity]["tippecc_data:source"];
+            regionalmodel =  dataset.entity[currentEntity]["tippecc_data:source_id"] ?? "N/A";
             // EXTRACT Global MODEL
             globalmodel =  dataset.entity[currentEntity]["tippecc_data:source_id"] ?? "N/A";
             // EXTRACT scenario TODO
-            scenario =  dataset.entity[currentEntity]["tippecc_data:scenario"] ?? "N/A";
-            //EXTRACT File Format TODO
-            format =  dataset.entity[currentEntity]["tippecc_data:format"] ?? "N/A";
+            scenario =  dataset.entity[currentEntity]["tippecc_data:experiment_id"] ?? "N/A";
+            //EXTRACT File Format
+            format =  dataset.entity[currentEntity]["tippecc_data:file_format"] ?? "N/A";
             //EXTRACT temp res
             temporalResolution =  dataset.entity[currentEntity]["tippecc_data:frequency"] ?? "N/A";
             //EXTRACT spat res
-            spatialResolution = calculateSpatialResolution(gridSize, upperLeft, upperRight, lowerLeft);
+            spatialResolution = dataset.entity[currentEntity]["tippecc_data:nominal_resolution"] ?? "N/A";
             //EXTRACT File Size
             size = dataset.entity[currentEntity]["tippecc_data:file_size"]?.$ ?? 0 ;
-            //TODO
-            parsedTimespans = [ { start: 1910, end: 1960 }, { start: 1980, end: 2050 } ];
+            
+
+            // Extract TIMESPAN
+            const climatologyBoundsDetails = dataset.entity[currentEntity]["tippecc_data:climatology_bounds_details"];
+            const climatologyBounds = dataset.entity[currentEntity]["tippecc_data:climatology_bounds"];
+            const timeCoverageStart = dataset.entity[currentEntity]["tippecc_data:time_coverage_start"];
+            const timeCoverageEnd = dataset.entity[currentEntity]["tippecc_data:time_coverage_end"];
+
+            // Function to parse a time range string into { start, end } objects
+            const parseTimeRanges = (timeString: string): { start: number, end: number }[] => {
+                return [...timeString.matchAll(/\d{4}/g)]
+                    .map(match => parseInt(match[0], 10))
+                    .reduce((acc, year, index, arr) => {
+                        if (index % 2 === 0 && arr[index + 1] !== undefined) {
+                            acc.push({ start: year, end: arr[index + 1] });
+                        }
+                        return acc;
+                    }, [] as { start: number, end: number }[]);
+            };
+
+            // Determine the parsedTimespans based on available data
+            if (climatologyBoundsDetails) {
+                parsedTimespans = parseTimeRanges(climatologyBoundsDetails);
+            } else if (climatologyBounds) {
+                parsedTimespans = parseTimeRanges(climatologyBounds);
+            } else if (timeCoverageStart && timeCoverageEnd) {
+                parsedTimespans = [{ start: parseInt(timeCoverageStart.substring(0, 4), 10), end: parseInt(timeCoverageEnd.substring(0, 4), 10) }];
+            }
+
+            //parsedTimespans = [ { start: 1910, end: 1960 }, { start: 1980, end: 2050 } ];
+
             //EXTRACT Timestamp
             timestamp = dataset.entity[currentEntity]["tippecc_data:creation_date"] ?? "N/A";
-            // EXTRACT Project TODO
-            project = dataset.entity[currentEntity]["tippecc_data:activity_id"] ?? "N/A";
-            // EXTRACT experiment
+            // EXTRACT Project
+            project = dataset.entity[currentEntity]["tippecc_data:project_id"] ?? "N/A";
+            // EXTRACT experiment TODO
             experiment = dataset.entity[currentEntity]["tippecc_data:experiment_id"] ?? "N/A";
             // EXTRACT Standard
             standard = dataset.entity[currentEntity]["tippecc_data:Conventions"] ?? "N/A";
             //EXTRACT Bias TODO
             bias = "Yes";
-            //EXTRACT source TODO
-            source = "Climate Limited-area Modelling Community (CLM-Community)";
             //EXTRACT institution
             institution = dataset.entity[currentEntity]["tippecc_data:institution"] ?? "N/A";
-            //EXTRACT domain TODO
+            //EXTRACT domain
             domain = dataset.entity[currentEntity]["tippecc_data:realm"] ?? "N/A";
             //EXTRACT contact
             contact = dataset.entity[currentEntity]["tippecc_data:contact"] ?? "N/A";
             //EXTRACT tracking_id
             tracking_id = dataset.entity[currentEntity]["tippecc_data:tracking_id"] ?? "N/A";
             //EXTRACT doi
-            doi = "doi:example"//dataset.entity[currentEntity]["tippecc_data:references"];
+            references = dataset.entity[currentEntity]["tippecc_data:references"] ?? "N/A";
+            doi = references
+                .split(",")
+                .map(ref => ref.trim()) // Remove any leading/trailing spaces
+                .filter(ref => ref.toLowerCase().includes("doi")) // Select only those containing "doi"
+                .join(", "); // Concatenate back into a single string
             //EXTRACT variant
             variant = dataset.entity[currentEntity]["tippecc_data:parent_variant_label"] ?? "N/A";
+            //EXTRACT source
+            source = dataset.entity[currentEntity]["tippecc_data:license"] ?? "N/A";
 
         } else {
 
             name =  "N/A";
             unit = "N/A";
-            const upperLeft = [0, 0] as [number, number];
-            const lowerRight = [0, 0] as [number, number];
-            const lowerLeft = [0, 0] as [number, number];
-            const upperRight = [0, 0] as [number, number];
-            const gridSize = [0, 0] as [number, number];
-            extent = [upperLeft[0], lowerRight[0], lowerRight[1], upperLeft[1]];
+            const lat_min = 0;
+            const lat_max = 0;
+            const lon_min = 0;
+            const lon_max = 0;
+
+            extent = [lat_min, lat_max, lon_min, lon_max];
             try{
                 collection = findCollectionForEntity(currentEntity, dataset.hadMember);
             }
@@ -287,7 +325,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
             scenario =  "N/A";
             format =  "N/A";
             temporalResolution =  "N/A";
-            spatialResolution = calculateSpatialResolution(gridSize, upperLeft, upperRight, lowerLeft);
+            spatialResolution = "N/A";
             size = 0;
             parsedTimespans = [];
             timestamp = "N/A";
@@ -335,22 +373,22 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
         usedEntitiesList.forEach((usedEntity) => {
 
             if (dataset.entity[usedEntity]) {
-                name_used = dataset.entity[usedEntity]["tippecc_data:variable_id"] ?? "N/A";
+                name_used = dataset.entity[usedEntity]["tippecc_data:long_name"] ?? "N/A";
                 unit_used = dataset.entity[usedEntity]["tippecc_data:units"] ?? "N/A";
                 temporalResolution_used =  dataset.entity[usedEntity]["tippecc_data:frequency"] ?? "N/A";
-                const upperLeft_used = (dataset.entity[usedEntity]["tippecc_data:upperLeft"] ?? "0, 0").split(", ").map(Number) as [number, number];
-                const lowerLeft_used = (dataset.entity[usedEntity]["tippecc_data:lowerLeft"] ?? "0, 0").split(", ").map(Number) as [number, number];
-                const lowerRight_used = (dataset.entity[usedEntity]["tippecc_data:lowerRight"] ?? "0, 0").split(", ").map(Number) as [number, number];
-                const upperRight_used = (dataset.entity[usedEntity]["tippecc_data:upperRight"] ?? "0, 0").split(", ").map(Number) as [number, number];
-                const gridSize_used = (dataset.entity[usedEntity]["tippecc_data:size"] ?? "1, 1").split(", ").map(Number) as [number, number];
-                spatialResolution_used = calculateSpatialResolution(gridSize_used, upperLeft_used, upperRight_used, lowerLeft_used);
-                scenario_used =  dataset.entity[usedEntity]["tippecc_data:scenario"] ?? "N/A";
-                format_used =  dataset.entity[usedEntity]["tippecc_data:format"] ?? "N/A";
+                const lat_min_used = Number(dataset.entity[usedEntity]["tippecc_data:geospatial_lat_min"]);
+                const lat_max_used = Number(dataset.entity[usedEntity]["tippecc_data:geospatial_lat_max"]);
+                const lon_min_used = Number(dataset.entity[usedEntity]["tippecc_data:geospatial_lon_min"]);
+                const lon_max_used = Number(dataset.entity[usedEntity]["tippecc_data:geospatial_lon_max"]);
+
+                spatialResolution_used = dataset.entity[usedEntity]["tippecc_data:nominal_resolution"] ?? "N/A";
+                scenario_used =  dataset.entity[usedEntity]["tippecc_data:experiment_id"] ?? "N/A";
+                format_used =  dataset.entity[usedEntity]["tippecc_data:file_format"] ?? "N/A";
                 size_used = dataset.entity[usedEntity]["tippecc_data:file_size"]?.$ ?? 0;
                 globalmodel_used =  dataset.entity[usedEntity]["tippecc_data:source_id"] ?? "N/A";
-                regionalmodel_used =  "not defined";//dataset.entity[usedEntity]["tippecc_data:source"];
+                regionalmodel_used = dataset.entity[usedEntity]["tippecc_data:source_id"] ?? "N/A";
 
-                extent_used = [upperLeft_used[0], lowerRight_used[0], lowerRight_used[1], upperLeft_used[1]]
+                extent_used = [lat_min_used, lat_max_used, lon_min_used, lon_max_used]
                 extentList.push(extent_used);
             }
             else{
@@ -358,13 +396,15 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                 unit_used = "N/A";
                 temporalResolution_used = "N/A";
 
-                const upperLeft_used = [0, 0] as [number, number];
-                const lowerLeft_used = [0, 0] as [number, number];
-                const lowerRight_used = [0, 0] as [number, number];
-                const upperRight_used = [0, 0] as [number, number];
-                const gridSize_used = [0, 0] as [number, number];
-                spatialResolution_used = calculateSpatialResolution(gridSize_used, upperLeft_used, upperRight_used, lowerLeft_used);
-                extent_used = [upperLeft_used[0], lowerRight_used[0], lowerRight_used[1], upperLeft_used[1]]
+                const lat_min_used = 0;
+                const lat_max_used = 0;
+                const lon_min_used = 0;
+                const lon_max_used = 0;
+    
+                extent_used = [lat_min_used, lat_max_used, lon_min_used, lon_max_used];
+
+                spatialResolution_used = "N/A";
+
                 extentList.push(extent_used);
 
                 scenario_used =  "N/A";
@@ -461,9 +501,8 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                         format: format  || "N/A",
                         resolutionZeitlich: temporalResolution  || "N/A",
                         resolutionRaeumlich: spatialResolution  || "N/A",
-                        //TODO
                         spatialExtent: extent  || [0,0,0,0],
-                        spatialExtent_orig: extent || [0,0,0,0],
+                        spatialExtent_orig: extentAverage || [0,0,0,0],
                         dateigroesse: size  || 0,
                         timestamp: timestamp || "N/A",
                         project: project  || "N/A",

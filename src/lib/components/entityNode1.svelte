@@ -15,8 +15,6 @@
 	export let isConnectable;
 	export let positionAbsoluteX;
 	export let positionAbsoluteY;
-	export let width;
-	export let height;
     export let sourcePosition;
     export let targetPosition;
 
@@ -121,6 +119,31 @@
         unsubscribeRegMod();
     });
 
+    let x = 0;
+    let y = 0;
+    let width = 0; 
+    let height = 0;
+
+    $: if (data?.spatialExtent?.length === 4 && data?.spatialExtent_orig?.length === 4) {
+    const x_diff = data.spatialExtent_orig[1] - data.spatialExtent_orig[0];
+    const y_diff = data.spatialExtent_orig[3] - data.spatialExtent_orig[2];
+
+    if (x_diff !== 0 && y_diff !== 0) {
+        x = ((data.spatialExtent[0] - data.spatialExtent_orig[0]) / x_diff) * 100;
+        y = ((data.spatialExtent[2] - data.spatialExtent_orig[2]) / y_diff) * 100;
+        width = ((data.spatialExtent[1] - data.spatialExtent[0]) / x_diff) * 100;
+        height = ((data.spatialExtent[3] - data.spatialExtent[2]) / y_diff) * 100;
+    } else {
+        console.warn("Division by 0: check spatialExtent_orig");
+        x = 0;
+        y = 0;
+        width = 0;
+        height = 0;
+    }
+
+    console.log("x:", x, "y:", y, "width:", width, "height:", height);
+    }
+
 </script>
 
 
@@ -224,26 +247,25 @@
                     stroke-width="3"
                 />
 
-                {#if data.spatialExtent && data.spatialExtent.length === 4 && data.spatialExtent_orig && data.spatialExtent_orig.length === 4}
-                <!-- Calculate the red outline for the current extent with fallback for divide by 0 -->
+                {#if data.spatialExtent && data.spatialExtent_orig 
+                && JSON.stringify(data.spatialExtent) !== JSON.stringify(data.spatialExtent_orig)}
                 <rect 
-                    x={ (data.spatialExtent[0] - data.spatialExtent_orig[0]) / (data.spatialExtent_orig[1] - data.spatialExtent_orig[0]) * 100 || 0 }
-                    y={ (data.spatialExtent[2] - data.spatialExtent_orig[2]) / (data.spatialExtent_orig[3] - data.spatialExtent_orig[2]) * 100 || 0 }
-                    width={ (data.spatialExtent[1] - data.spatialExtent[0]) / (data.spatialExtent_orig[1] - data.spatialExtent_orig[0]) * 100 || 0 }
-                    height={ (data.spatialExtent[3] - data.spatialExtent[2]) / (data.spatialExtent_orig[3] - data.spatialExtent_orig[2]) * 100 || 0 }
-                    fill="none" 
-                    stroke="black" 
-                    stroke-width="2"
+                  x={x}
+                  y={y}
+                  width={width}
+                  height={height}
+                  fill="none" 
+                  stroke="black" 
+                  stroke-width="2"
                 />
                 {/if}
+                
             </svg>
 
 			<!-- Hover Text -->
 			<div class="absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-75 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2">
 				<!-- First line for xmin and xmax -->
-				<div>{data.spatialExtent[0]}, {data.spatialExtent[1]}</div>
-				<!-- Second line for ymin and ymax -->
-				<div>{data.spatialExtent[2]}, {data.spatialExtent[3]}</div>
+				<div>{data.spatialExtent[0]}, {data.spatialExtent[1]}, {data.spatialExtent[2]}, {data.spatialExtent[3]}</div>
 			</div>
 		</div>
 

@@ -105,7 +105,7 @@ added_agents = set()
 activities = []
 # Iterate over all files in the directory
 for filename in os.listdir(prov_path):
-    if filename.endswith('.json') and filename.startswith("TIPPECC"):  # Check if the file has a .json extension
+    if filename.endswith('.json') and filename.startswith("TIPPECC_AWI"):  # Check if the file has a .json extension
         if filename.endswith("prov_metadata.json"):
             continue
 
@@ -135,12 +135,12 @@ for filename in os.listdir(prov_path):
         entity = d1.entity(entity_id, meta_data)
 
         #TODO Add Metadata from prov to entity
-        prov_sec_meta_content = flatten_meta_data(prov_data['metadata']['content'][1])
+        #prov_sec_meta_content = flatten_meta_data(prov_data['metadata']['content'][1])
         #prov_sec_meta = flatten_meta_data(prov_data['metadata'])
         #print(prov_sec_meta)
-        for key, value in prov_sec_meta_content.items():
+        #for key, value in prov_sec_meta_content.items():
             #print(key, value)
-            entity.add_attributes({key: value})
+            #entity.add_attributes({key: value})
 
         
         # Add person
@@ -253,4 +253,4 @@ for i in range(1, len(activities)):
 # visualize and export the graph
 dot = prov_to_dot(d1)
 #dot.write_png(os.path.join(base_dir, 'test.png'))
-d1.serialize(os.path.join(base_dir, 'test.json'), format='json')
+d1.serialize(os.path.join(base_dir, 'AWI.json'), format='json')
