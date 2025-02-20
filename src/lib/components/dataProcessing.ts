@@ -575,7 +575,7 @@ export function AddActions(dataset: Dataset, nodes: any, edges: any, label: any)
     
 
     uniqueEntities.forEach((currentEntity) => {
-
+        //
         xPos = Math.random() * 400;  // Zufälliger Wert zwischen 0 und 800
         yPos = Math.random() * 800;  // Zufälliger Wert zwischen 0 und 600
 
