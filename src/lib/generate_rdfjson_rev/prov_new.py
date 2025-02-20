@@ -33,6 +33,7 @@ def flatten_meta_data(meta_data, parent_key=""):
     return dict(items)
 
 
+
 def get_prov_metadata(key, prov_path, namespace="tippecc_data:"):
     prov_metadata_path = os.path.join(prov_path, "prov_metadata_template.json")
     with open(prov_metadata_path, 'r', encoding='utf-8') as file:
@@ -57,8 +58,6 @@ def get_prov_metadata(key, prov_path, namespace="tippecc_data:"):
         updated_metadata[k] = v
     
     return f"{namespace}{key}", updated_metadata
-
-
 
 
 
@@ -105,7 +104,7 @@ added_agents = set()
 activities = []
 # Iterate over all files in the directory
 for filename in os.listdir(prov_path):
-    if filename.endswith('.json') and filename.startswith("TIPPECC_AWI"):  # Check if the file has a .json extension
+    if filename.endswith('.json') and filename.startswith("TIPPECC"):  # Check if the file has a .json extension
         if filename.endswith("prov_metadata.json"):
             continue
 
@@ -212,7 +211,11 @@ for filename in os.listdir(prov_path):
 
         #ADD wasDerivedFrom
         for derivation in prov_data['input_files']:
-            derivation = f"{entity_namespace}:{derivation.split('/')[-1]}".replace(".nc","_prov.nc")
+            if derivation.endswith(".nc"):
+                derivation = f"{entity_namespace}:{derivation.split('/')[-1]}".replace(".nc","_prov.nc")
+            else:
+                derivation = f"{entity_namespace}:{derivation.split('/')[-1]}" + "_prov.nc"
+                
             #json_file = derivation.split(":")[1].replace(".nc", ".json")
             #if json_file in os.listdir(prov_path):
             d1.wasDerivedFrom(entity_id, derivation)
@@ -233,7 +236,7 @@ for filename in os.listdir(prov_path):
             for key, value in activity_metadata.items():
                 activity.add_attributes({key: value})
             d1.wasAssociatedWith(activity_id, software_id)
-            d1.generation(entity_id, activity_id, time)
+            
             added_agents.add(activity_id)
             activities.append({'id': activity_id, 'start_time': time, 'metadata': activity_metadata})
 
@@ -241,7 +244,7 @@ for filename in os.listdir(prov_path):
 
         # Add USED information
         d1.used(activity_id, entity_id)
-
+        d1.generation(entity_id, activity_id, time)
 
 activities.sort(key=lambda x: x['start_time'])  # Sort by earliest start time
 # Add `wasInformedBy` relationships
@@ -253,4 +256,4 @@ for i in range(1, len(activities)):
 # visualize and export the graph
 dot = prov_to_dot(d1)
 #dot.write_png(os.path.join(base_dir, 'test.png'))
-d1.serialize(os.path.join(base_dir, 'AWI.json'), format='json')
+d1.serialize(os.path.join(base_dir, 'GRAPH.json'), format='json')

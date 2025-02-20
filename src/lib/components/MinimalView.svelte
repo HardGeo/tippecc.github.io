@@ -25,7 +25,7 @@
         edges_min } from "$lib/store"; // Import the store
 
     //import data from '$lib/generate_rdfjson/article-prov.json';
-    import data from '$lib/generate_rdfjson_rev/AWI.json'
+    import data from '$lib/generate_rdfjson_rev/subgraphs/TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__ai__mm_1850_2100__yearsum_mean_1981_2000-2080_2099_prov.nc.json'
 
     import { AddActions, createPeople, addSoftware, addEdgesOnly, AddEntities } from '$lib/components//dataProcessing'; // Adjust path as necessary
     import {adjustPositions} from "$lib/components/adjustPositions";
