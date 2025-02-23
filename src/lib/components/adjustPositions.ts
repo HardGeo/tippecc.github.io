@@ -57,11 +57,13 @@ export function adjustPositionSoftware({
 export function adjustPositionPersons({
     edges,
     nodes,
-    EdgeLabel
+    EdgeLabel,
+    NodeType
 }: {
     edges: import('svelte/store').Readable<Edge[]>;
     nodes: import('svelte/store').Readable<Node[]>;
     EdgeLabel: string;
+    NodeType: string
 }): void {
     const currentNodes = get(nodes);
     const currentEdges = get(edges);
@@ -103,7 +105,7 @@ export function adjustPositionPersons({
     });
 
     // Adjust x position for personNodes based on entityNodes
-    const personNodes = currentNodes.filter(node => node.type === "personNode");
+    const personNodes = currentNodes.filter(node => node.type === NodeType);
     personNodes.forEach(personNode => {
         const relatedEdges = currentEdges.filter(edge => edge.source === personNode.id || edge.target === personNode.id);
         const entityNodes = relatedEdges.map(edge => currentNodes.find(node => node.id === (edge.source === personNode.id ? edge.target : edge.source)))

@@ -192,7 +192,8 @@
         adjustPositionPersons({
             edges: edges_min,
             nodes: nodes_min,
-            EdgeLabel: $wasAttributedTo_lb
+            EdgeLabel: $wasAttributedTo_lb,
+            NodeType: "personNode"
         })  
 
     }) 

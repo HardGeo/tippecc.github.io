@@ -20,7 +20,7 @@
     import data from '$lib/generate_rdfjson_rev/subgraphs/TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__ai__mm_1850_2100__yearsum_mean_1981_2000-2080_2099_prov.nc.json'
 
     import { AddEntities, createCollection } from './dataProcessing';
-    import {adjustPositionSoftware} from "$lib/components/adjustPositions";
+    import {adjustPositionPersons} from "$lib/components/adjustPositions";
 
     const defaultEdgeOptions = {
         style: 'stroke-width: 3; stroke: black; z-index: 1;',
@@ -89,10 +89,11 @@
                 edgeStyle: "stroke: #FFA500"
         });
 
-        adjustPositionSoftware({
+        adjustPositionPersons({
             edges: edges_col,
             nodes: nodes_col,
-            EdgeLabel: $hadMember_lb
+            EdgeLabel: $hadMember_lb,
+            NodeType: "collectionNode"
         })
 
     }) 
