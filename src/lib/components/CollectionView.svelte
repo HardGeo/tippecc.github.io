@@ -20,7 +20,7 @@
     import data from '$lib/generate_rdfjson_rev/subgraphs/TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__ai__mm_1850_2100__yearsum_mean_1981_2000-2080_2099_prov.nc.json'
 
     import { AddEntities, createCollection } from './dataProcessing';
-    import {adjustPositions} from "$lib/components/adjustPositions";
+    import {adjustPositionSoftware} from "$lib/components/adjustPositions";
 
     const defaultEdgeOptions = {
         style: 'stroke-width: 3; stroke: black; z-index: 1;',
@@ -39,69 +39,6 @@
         collectionNode: CollectionNode as unknown as typeof SvelteComponent
     };
     
-    function initializeD3Layout(nodeData:any, edgeData:any) {
-        const simulation = d3.forceSimulation(nodeData)
-            .force('charge', d3.forceManyBody().strength(-5000))
-            .force('link', d3.forceLink(edgeData).id((d:any) => d.id).distance(800))
-            .force('center', d3.forceCenter(500, 300))
-            .alpha(1)
-            .alphaDecay(0.03); // Ensure smooth positioning over time
-
-        simulation.on("end", () => {
-            // Create a deep copy to trigger reactivity
-            nodes_col.set(nodeData.map((node:any) => ({
-                ...node,
-                position: { x: node.x, y: node.y }
-            })));
-
-            edges_col.set(edgeData.map((edge:any) => ({
-                ...edge,
-                source: edge.source.id ?? edge.source,  // Ensure the source ID is correctly mapped
-                target: edge.target.id ?? edge.target,  // Ensure the target ID is correctly mapped
-            })));
-            
-            createCollection({
-                dataset: data, 
-                nodes: nodes_col, 
-                edges: edges_col,
-                EdgeLabel: $hadMember_lb,
-                swapArrow: false,
-                edgeStyle: "stroke: #FFA500"
-            });
-
-            adjustPositions({
-                edges: edges_col,
-                nodes: nodes_col,
-                edgeToSelect: $hadMember_lb,
-                nodeTypeToAdjust: "collectionNode",
-                minSpace: 400
-            });
-
-            /*
-            //Add Software Nodes
-            addSoftware({
-                dataset: data,  
-                nodes: nodes_col, 
-                edges: edges_col, 
-                EdgeLabel: $wasAssociatedWith_lb,
-                IdName: 'prov:activity',
-                EntityName: 'prov:agent',
-                swapArrow: true,
-                edgestyle: "stroke: #CE93D8;"
-            });
-
-            adjustPositions({
-                edges: edges_col,
-                nodes: nodes_col,
-                edgeToSelect: $wasAssociatedWith_lb,
-                nodeTypeToAdjust: "softwareNode",
-                minSpace: 400
-            });
-            */
-        });
-
-        return simulation;
-    }
 
     $: {
         updateLabels($isSwitchOn);
@@ -143,23 +80,26 @@
 
         //const hadMember = data.hadMember;
         AddEntities(data, nodes_col, edges_col, $wasDerivedFrom_lb, "entityNode");
+        createCollection({
+                dataset: data, 
+                nodes: nodes_col, 
+                edges: edges_col,
+                EdgeLabel: $hadMember_lb,
+                swapArrow: false,
+                edgeStyle: "stroke: #FFA500"
+        });
 
-
-
-        // Fetch node and edge data to use in the D3 simulation
-        let nodeArray;
-        let edgeArray;
-        nodes_col.subscribe(n => nodeArray = n);
-        edges_col.subscribe(e => edgeArray = e);
-
-        // Initialize D3 layout
-        initializeD3Layout(nodeArray, edgeArray);
+        adjustPositionSoftware({
+            edges: edges_col,
+            nodes: nodes_col,
+            EdgeLabel: $hadMember_lb
+        })
 
     }) 
 
 </script>
 
-<div style="height: 2000px;">
+<div style="height: 1000px;">
     <SvelteFlow 
         {minZoom}
         nodes={nodes_col}

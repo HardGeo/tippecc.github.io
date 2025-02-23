@@ -74,11 +74,6 @@ for target_id in targets:
     output_file = os.path.join(base_dir, "subgraphs", target_id+".json")
     
     target_id = "tippecc_data:" + target_id
-    # IDs sammeln, die die Ziel-ID in prov:generatedEntity haben
-    matching_ids = [
-        key for key, entry in data.get("wasDerivedFrom", {}).items()
-        if entry.get("prov:generatedEntity") == target_id
-    ]
     
     
     # Starte die Suche und ersetze die Daten

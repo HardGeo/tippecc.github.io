@@ -26,9 +26,8 @@
 
     //import data from '$lib/generate_rdfjson/article-prov.json';
     import data from '$lib/generate_rdfjson_rev/subgraphs/TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__ai__mm_1850_2100__yearsum_mean_1981_2000-2080_2099_prov.nc.json'
-
     import { AddActions, createPeople, addSoftware, addEdgesOnly, AddEntities } from '$lib/components//dataProcessing'; // Adjust path as necessary
-    import {adjustPositions} from "$lib/components/adjustPositions";
+    import {adjustPositionSoftware, adjustPositionPersons} from "$lib/components/adjustPositions";
 
 
 
@@ -50,116 +49,6 @@
         softwareNode: SoftwareNode as unknown as typeof SvelteComponent,
     };
 
-
-    function initializeD3Layout(nodeData:any, edgeData:any) {
-        const simulation = d3.forceSimulation(nodeData)
-            .force('charge', d3.forceManyBody().strength(-5000))
-            .force('link', d3.forceLink(edgeData).id((d:any) => d.id).distance(800))
-            .force('center', d3.forceCenter(500, 300))
-            .alpha(1)
-            .alphaDecay(0.03); // Ensure smooth positioning over time
-
-        simulation.on("end", () => {
-            // Create a deep copy to trigger reactivity
-            nodes_min.set(nodeData.map((node:any) => ({
-                ...node,
-                position: { x: node.x, y: node.y }
-            })));
-
-            edges_min.set(edgeData.map((edge:any) => ({
-                ...edge,
-                source: edge.source.id ?? edge.source,  // Ensure the source ID is correctly mapped
-                target: edge.target.id ?? edge.target,  // Ensure the target ID is correctly mapped
-            })));
-            
-
-            // OPTIONAL: TRANSFER People and Organisation to Entity
-            createPeople({
-                dataset: data, 
-                nodes: nodes_min,  
-                edges: edges_min, 
-                EdgeLabel: $wasAttributedTo_lb,
-                swapArrow: false,
-                edgeStyle: "stroke: #CC8400"
-            });
-            
-            adjustPositions({
-                edges: edges_min,
-                nodes: nodes_min,
-                edgeToSelect: $wasAttributedTo_lb,
-                nodeTypeToAdjust: "personNode",
-                minSpace: 400
-            });
-            /*
-            AddActions(
-                data,
-                nodes_min, 
-                edges_min, 
-                $wasInformedBy_lb
-            );
-            */
-            //Add Edges for Used
-            addEdgesOnly({
-                dataset: data.used,  
-                edges: edges_min, 
-                EdgeLabel: $used_lb,
-                IdName: 'prov:activity',
-                EntityName: 'prov:entity',
-                swapArrow: false,
-                style: "stroke: #88BCE4;",
-                labelStyle: "color: black; font-size: 16px",
-                handle1: "right",
-                handle2: "left",
-                IdAppendix: "used"
-            });
-
-            // Add Edges for wasGeneratedBy
-            addEdgesOnly({
-                dataset: data.wasGeneratedBy,  
-                edges: edges_min, 
-                EdgeLabel: $wasGeneratedBy_lb,
-                IdName: 'prov:entity',
-                EntityName: 'prov:activity',
-                swapArrow: true,
-                style: "stroke: #6BAF74;",
-                labelStyle: "color: black; font-size: 16px",
-                handle1: "right",
-                handle2: "left",
-                IdAppendix: "wasGeneratedBy",
-            });
-            /*
-            adjustPositions({
-                edges: edges_min,
-                nodes: nodes_min,
-                edgeToSelect: $used_lb,
-                nodeTypeToAdjust: "activityNode",
-                minSpace: 400
-            });*/
-
-            //Add Software Nodes
-            addSoftware({
-                dataset: data,  
-                nodes: nodes_min, 
-                edges: edges_min, 
-                EdgeLabel: $wasAssociatedWith_lb,
-                IdName: 'prov:activity',
-                EntityName: 'prov:agent',
-                swapArrow: true,
-                edgestyle: "stroke: #CE93D8;"
-            });
-
-            adjustPositions({
-                edges: edges_min,
-                nodes: nodes_min,
-                edgeToSelect: $wasAssociatedWith_lb,
-                nodeTypeToAdjust: "softwareNode",
-                minSpace: 400
-            });
-        
-        });
-
-        return simulation;
-    }
 
     $: {
         updateLabels($isSwitchOn);
@@ -231,22 +120,80 @@
 
         //const hadMember = data.hadMember;
         AddEntities(data, nodes_min, edges_min, $wasDerivedFrom_lb, "entityNode");
+    
         AddActions(
                 data,
                 nodes_min, 
                 edges_min, 
                 $wasInformedBy_lb
         );
+        
 
+        // OPTIONAL: TRANSFER People and Organisation to Entity
+        createPeople({
+            dataset: data, 
+            nodes: nodes_min,  
+            edges: edges_min, 
+            EdgeLabel: $wasAttributedTo_lb,
+            swapArrow: false,
+            edgeStyle: "stroke: #CC8400"
+        });
+        
 
-        // Fetch node and edge data to use in the D3 simulation
-        let nodeArray;
-        let edgeArray;
-        nodes_min.subscribe(n => nodeArray = n);
-        edges_min.subscribe(e => edgeArray = e);
+        //Add Edges for Used
+        addEdgesOnly({
+            dataset: data.used,  
+            edges: edges_min, 
+            EdgeLabel: $used_lb,
+            IdName: 'prov:activity',
+            EntityName: 'prov:entity',
+            swapArrow: false,
+            style: "stroke: #88BCE4;",
+            labelStyle: "color: black; font-size: 16px",
+            handle1: "right",
+            handle2: "left",
+            IdAppendix: "used"
+        });
+        
+        // Add Edges for wasGeneratedBy
+        addEdgesOnly({
+            dataset: data.wasGeneratedBy,  
+            edges: edges_min, 
+            EdgeLabel: $wasGeneratedBy_lb,
+            IdName: 'prov:entity',
+            EntityName: 'prov:activity',
+            swapArrow: true,
+            style: "stroke: #6BAF74;",
+            labelStyle: "color: black; font-size: 16px",
+            handle1: "right",
+            handle2: "left",
+            IdAppendix: "wasGeneratedBy",
+        });
 
-        // Initialize D3 layout
-        initializeD3Layout(nodeArray, edgeArray);
+    
+        //Add Software Nodes
+        addSoftware({
+            dataset: data,  
+            nodes: nodes_min, 
+            edges: edges_min, 
+            EdgeLabel: $wasAssociatedWith_lb,
+            IdName: 'prov:activity',
+            EntityName: 'prov:agent',
+            swapArrow: true,
+            edgestyle: "stroke: #CE93D8;"
+        });
+
+        adjustPositionSoftware({
+            edges: edges_min,
+            nodes: nodes_min,
+            EdgeLabel: $wasAssociatedWith_lb
+        })
+
+        adjustPositionPersons({
+            edges: edges_min,
+            nodes: nodes_min,
+            EdgeLabel: $wasAttributedTo_lb
+        })  
 
     }) 
 
