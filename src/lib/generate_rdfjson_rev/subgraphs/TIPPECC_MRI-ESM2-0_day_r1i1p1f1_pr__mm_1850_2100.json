@@ -102,11 +102,11 @@
         "software:S": {}
     },
     "hadMember": {
-        "_:id2847": {
+        "_:id3873": {
             "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
             "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_pr__mm_1850_2100"
         },
-        "_:id2848": {
+        "_:id3874": {
             "prov:collection": "tippecc_data:COLLECTION__CMIP6",
             "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_pr__mm_1850_2100"
         }
@@ -118,15 +118,9 @@
         }
     },
     "wasAttributedTo": {
-        "_:id2849": {
+        "_:id3875": {
             "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_pr__mm_1850_2100",
             "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
-        }
-    },
-    "wasDerivedFrom": {
-        "_:id2850": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_pr__mm_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_pr_1850_2100"
         }
     },
     "activity": {
@@ -138,26 +132,86 @@
             "sdo:description": "Convert a mathematical expression into a value with the same units as a DataArray.",
             "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.convert_units_to",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
+        },
+        "exe:FUNCTION__CDO_YEARSUM": {
+            "prov:startTime": "2025-01-24T15:41:06-01:00",
+            "exe:@id": "FUNCTION__CDO_YEARSUM",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "Year sum",
+            "sdo:description": "This module computes the sum of the input field over a year.",
+            "sdo:targetProduct": "SOFTWARE__CDO"
+        },
+        "exe:FUNCTION__XCLIM_WATER_BUDGET": {
+            "prov:startTime": "2025-01-24T15:36:56-01:00",
+            "exe:@id": "FUNCTION__XCLIM_WATER_BUDGET",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "Water budget",
+            "sdo:description": "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget.",
+            "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.water_budget",
+            "sdo:targetProduct": "SOFTWARE__XCLIM"
         }
     },
     "wasAssociatedWith": {
-        "_:id6": {
+        "_:id5": {
             "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS",
+            "prov:agent": "software:S"
+        },
+        "_:id41": {
+            "prov:activity": "exe:FUNCTION__CDO_YEARSUM",
+            "prov:agent": "software:S"
+        },
+        "_:id162": {
+            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET",
             "prov:agent": "software:S"
         }
     },
+    "wasDerivedFrom": {
+        "_:id3876": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_pr__mm_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_pr_1850_2100"
+        }
+    },
     "used": {
-        "_:id2851": {
+        "_:id3877": {
+            "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS",
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_pr_1850_2100"
+        },
+        "_:id3879": {
             "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS",
             "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_pr__mm_1850_2100"
+        },
+        "_:id3910": {
+            "prov:activity": "exe:FUNCTION__CDO_YEARSUM",
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_pr__mm_1850_2100"
+        },
+        "_:id4028": {
+            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET",
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_pr_1850_2100"
         }
     },
     "wasGeneratedBy": {
-        "_:id2852": {
+        "_:id3878": {
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_pr_1850_2100",
+            "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS"
+        },
+        "_:id3880": {
             "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_pr__mm_1850_2100",
             "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS",
             "prov:time": "2025-01-24T21:00:57-01:00"
+        },
+        "_:id3911": {
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_pr__mm_1850_2100",
+            "prov:activity": "exe:FUNCTION__CDO_YEARSUM"
+        },
+        "_:id4029": {
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_pr_1850_2100",
+            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET"
         }
     },
-    "wasInformedBy": {}
+    "wasInformedBy": {
+        "_:id5521": {
+            "prov:informed": "exe:FUNCTION__CDO_YEARSUM",
+            "prov:informant": "exe:FUNCTION__XCLIM_CONVERT_UNITS"
+        }
+    }
 }

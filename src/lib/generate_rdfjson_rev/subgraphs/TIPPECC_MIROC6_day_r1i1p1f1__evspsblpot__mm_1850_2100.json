@@ -156,19 +156,19 @@
         "software:S": {}
     },
     "hadMember": {
-        "_:id2179": {
+        "_:id2967": {
             "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
             "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100"
         },
-        "_:id2180": {
+        "_:id2968": {
             "prov:collection": "tippecc_data:COLLECTION__CMIP6",
             "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100"
         },
-        "_:id2192": {
+        "_:id2996": {
             "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
             "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot__mm_1850_2100"
         },
-        "_:id2193": {
+        "_:id2997": {
             "prov:collection": "tippecc_data:COLLECTION__CMIP6",
             "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot__mm_1850_2100"
         }
@@ -180,51 +180,13 @@
         }
     },
     "wasAttributedTo": {
-        "_:id2181": {
+        "_:id2969": {
             "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
             "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
         },
-        "_:id2194": {
+        "_:id2998": {
             "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot__mm_1850_2100",
             "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
-        }
-    },
-    "wasDerivedFrom": {
-        "_:id2195": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot__mm_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100"
-        },
-        "_:id2182": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_tasmax_1850_2100"
-        },
-        "_:id2183": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_tasmin_1850_2100"
-        },
-        "_:id2184": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_hurs_1850_2100"
-        },
-        "_:id2185": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rsds_1850_2100"
-        },
-        "_:id2186": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rsus_1850_2100"
-        },
-        "_:id2187": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rlus_1850_2100"
-        },
-        "_:id2188": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rlds_1850_2100"
-        },
-        "_:id2189": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_sfcWind_1850_2100"
         }
     },
     "activity": {
@@ -237,6 +199,14 @@
             "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.convert_units_to",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
         },
+        "exe:FUNCTION__CDO_YEARSUM": {
+            "prov:startTime": "2025-01-24T15:41:06-01:00",
+            "exe:@id": "FUNCTION__CDO_YEARSUM",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "Year sum",
+            "sdo:description": "This module computes the sum of the input field over a year.",
+            "sdo:targetProduct": "SOFTWARE__CDO"
+        },
         "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION": {
             "prov:startTime": "2025-01-24T15:35:39-01:00",
             "exe:@id": "FUNCTION__XCLIM_EVAPOTRANSPIRATION",
@@ -245,39 +215,191 @@
             "sdo:description": "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with a given method.",
             "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.potential_evapotranspiration",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
+        },
+        "exe:FUNCTION__XCLIM_WATER_BUDGET": {
+            "prov:startTime": "2025-01-24T15:36:56-01:00",
+            "exe:@id": "FUNCTION__XCLIM_WATER_BUDGET",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "Water budget",
+            "sdo:description": "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget.",
+            "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.water_budget",
+            "sdo:targetProduct": "SOFTWARE__XCLIM"
         }
     },
     "wasAssociatedWith": {
-        "_:id6": {
+        "_:id5": {
             "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS",
             "prov:agent": "software:S"
         },
-        "_:id79": {
+        "_:id41": {
+            "prov:activity": "exe:FUNCTION__CDO_YEARSUM",
+            "prov:agent": "software:S"
+        },
+        "_:id91": {
             "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
             "prov:agent": "software:S"
+        },
+        "_:id162": {
+            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET",
+            "prov:agent": "software:S"
+        }
+    },
+    "wasDerivedFrom": {
+        "_:id2999": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot__mm_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100"
+        },
+        "_:id2970": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_tasmax_1850_2100"
+        },
+        "_:id2973": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_tasmin_1850_2100"
+        },
+        "_:id2976": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_hurs_1850_2100"
+        },
+        "_:id2979": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rsds_1850_2100"
+        },
+        "_:id2982": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rsus_1850_2100"
+        },
+        "_:id2985": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rlus_1850_2100"
+        },
+        "_:id2988": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rlds_1850_2100"
+        },
+        "_:id2991": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_sfcWind_1850_2100"
         }
     },
     "used": {
-        "_:id2190": {
+        "_:id2971": {
+            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_tasmax_1850_2100"
+        },
+        "_:id2974": {
+            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_tasmin_1850_2100"
+        },
+        "_:id2977": {
+            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_hurs_1850_2100"
+        },
+        "_:id2980": {
+            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rsds_1850_2100"
+        },
+        "_:id2983": {
+            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rsus_1850_2100"
+        },
+        "_:id2986": {
+            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rlus_1850_2100"
+        },
+        "_:id2989": {
+            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rlds_1850_2100"
+        },
+        "_:id2992": {
+            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_sfcWind_1850_2100"
+        },
+        "_:id2994": {
             "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
             "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100"
         },
-        "_:id2196": {
+        "_:id3000": {
+            "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS",
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100"
+        },
+        "_:id3002": {
             "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS",
             "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot__mm_1850_2100"
+        },
+        "_:id3033": {
+            "prov:activity": "exe:FUNCTION__CDO_YEARSUM",
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot__mm_1850_2100"
+        },
+        "_:id3044": {
+            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET",
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100"
         }
     },
     "wasGeneratedBy": {
-        "_:id2191": {
+        "_:id2972": {
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_tasmax_1850_2100",
+            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
+        },
+        "_:id2975": {
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_tasmin_1850_2100",
+            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
+        },
+        "_:id2978": {
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_hurs_1850_2100",
+            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
+        },
+        "_:id2981": {
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rsds_1850_2100",
+            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
+        },
+        "_:id2984": {
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rsus_1850_2100",
+            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
+        },
+        "_:id2987": {
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rlus_1850_2100",
+            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
+        },
+        "_:id2990": {
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rlds_1850_2100",
+            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
+        },
+        "_:id2993": {
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_sfcWind_1850_2100",
+            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
+        },
+        "_:id2995": {
             "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
             "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
             "prov:time": "2025-01-24T20:03:54-01:00"
         },
-        "_:id2197": {
+        "_:id3001": {
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS"
+        },
+        "_:id3003": {
             "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot__mm_1850_2100",
             "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS",
             "prov:time": "2025-01-24T20:10:24-01:00"
+        },
+        "_:id3034": {
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot__mm_1850_2100",
+            "prov:activity": "exe:FUNCTION__CDO_YEARSUM"
+        },
+        "_:id3045": {
+            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET"
         }
     },
-    "wasInformedBy": {}
+    "wasInformedBy": {
+        "_:id5518": {
+            "prov:informed": "exe:FUNCTION__XCLIM_WATER_BUDGET",
+            "prov:informant": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
+        },
+        "_:id5521": {
+            "prov:informed": "exe:FUNCTION__CDO_YEARSUM",
+            "prov:informant": "exe:FUNCTION__XCLIM_CONVERT_UNITS"
+        }
+    }
 }

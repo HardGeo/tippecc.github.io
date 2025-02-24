@@ -208,22 +208,6 @@ for filename in os.listdir(prov_path):
 
 
 
-
-        #ADD wasDerivedFrom
-        for derivation in prov_data['input_files']:
-            if derivation.endswith(".nc"):
-                derivation = f"{entity_namespace}:{derivation.split('/')[-1]}".replace(".nc","")
-            else:
-                derivation = f"{entity_namespace}:{derivation.split('/')[-1]}"
-                
-            #json_file = derivation.split(":")[1].replace(".nc", ".json")
-            #if json_file in os.listdir(prov_path):
-            d1.wasDerivedFrom(entity_id, derivation)
-
-
-
-
-
         #add activities and wasAssociatedWith and generation
         activity_id = prov_data['processing'][0]['function']
         activity_id, activity_metadata = get_prov_metadata (activity_id, "\\".join(prov_path.split("\\")[:-1]), f"{exe_namespace}:")
@@ -242,9 +226,24 @@ for filename in os.listdir(prov_path):
 
 
 
-        # Add USED information //
-        d1.used(activity_id, entity_id)
-        d1.generation(entity_id, activity_id, time)
+        #ADD wasDerivedFrom
+        for derivation in prov_data['input_files']:
+            if derivation.endswith(".nc"):
+                derivation = f"{entity_namespace}:{derivation.split('/')[-1]}".replace(".nc","")
+            else:
+                derivation = f"{entity_namespace}:{derivation.split('/')[-1]}"
+                
+            d1.wasDerivedFrom(entity_id, derivation)
+            if (activity_id, derivation) not in added_agents:
+                d1.used(activity_id, derivation)
+                d1.generation(derivation, activity_id)
+                added_agents.add((activity_id, derivation))
+
+        if (activity_id, entity) not in added_agents:
+            # Add USED information //
+            d1.used(activity_id, entity_id)
+            d1.generation(entity_id, activity_id, time)
+            added_agents.add((activity_id, entity_id))
 
 activities.sort(key=lambda x: x['start_time'])  # Sort by earliest start time
 # Add `wasInformedBy` relationships
