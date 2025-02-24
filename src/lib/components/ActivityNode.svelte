@@ -1,7 +1,14 @@
-<script>
+<script lang="ts">
     import { Handle, Position } from '@xyflow/svelte';
 
     export let id;
+    function extractBaseString(input: string): string {
+        const match = input.match(/^(.*?)(?:_\d+)?$/);
+        return match ? match[1] : input;
+    }
+
+    const id_new = extractBaseString(id);
+    console.log(id_new);
 
 </script>
 
@@ -72,6 +79,6 @@
 
     <!-- Display Main Information with exact background size -->
     <div class="bg-[#E9F5FB] text-[#424242] border-4 border-[#88BCE4] font-bold px-4 py-2 rounded-md text-lg inline-block">
-        {id}
+        {id_new}
     </div>
 </div>
