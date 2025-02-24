@@ -242,7 +242,7 @@ for filename in os.listdir(prov_path):
 
 
 
-        # Add USED information
+        # Add USED information //
         d1.used(activity_id, entity_id)
         d1.generation(entity_id, activity_id, time)
 
