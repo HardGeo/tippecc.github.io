@@ -127,7 +127,7 @@ for filename in os.listdir(prov_path):
         
         
         # Create an entity
-        entity_id = f"{entity_namespace}:{filename}".replace('.json', '.nc')
+        entity_id = f"{entity_namespace}:{filename}".replace('_prov.json', '')
         meta_data = flatten_meta_data(meta_data)
 
         #prov_data = flatten_meta_data(prov_data)
@@ -212,9 +212,9 @@ for filename in os.listdir(prov_path):
         #ADD wasDerivedFrom
         for derivation in prov_data['input_files']:
             if derivation.endswith(".nc"):
-                derivation = f"{entity_namespace}:{derivation.split('/')[-1]}".replace(".nc","_prov.nc")
+                derivation = f"{entity_namespace}:{derivation.split('/')[-1]}".replace(".nc","")
             else:
-                derivation = f"{entity_namespace}:{derivation.split('/')[-1]}" + "_prov.nc"
+                derivation = f"{entity_namespace}:{derivation.split('/')[-1]}"
                 
             #json_file = derivation.split(":")[1].replace(".nc", ".json")
             #if json_file in os.listdir(prov_path):

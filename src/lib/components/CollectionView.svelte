@@ -17,7 +17,7 @@
         nodes_col,
         edges_col } from "$lib/store"; // Import the store
 
-    import data from '$lib/generate_rdfjson_rev/subgraphs/TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__ai__mm_1850_2100__yearsum_mean_1981_2000-2080_2099_prov.nc.json'
+    import data from '$lib/generate_rdfjson_rev/subgraphs/TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__ai__mm_1850_2100__yearsum_mean_1981_2000-2080_2099.json'
 
     import { AddEntities, createCollection } from './dataProcessing';
     import {adjustPositionPersons} from "$lib/components/adjustPositions";
