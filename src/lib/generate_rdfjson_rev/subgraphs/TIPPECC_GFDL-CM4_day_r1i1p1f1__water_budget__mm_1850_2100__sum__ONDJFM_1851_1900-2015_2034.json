@@ -281,204 +281,303 @@
             "sdo:name": "Friedrich Schiller University of Jena",
             "wd:P6782": "https://ror.org/05qpz1x62"
         },
-        "software:S": {}
-    },
-    "hadMember": {
-        "_:id1764": {
-            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900-2015_2034"
-        },
-        "_:id1765": {
-            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900-2015_2034"
-        },
-        "_:id1775": {
-            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900"
-        },
-        "_:id1776": {
-            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900"
-        },
-        "_:id1783": {
-            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
-        },
-        "_:id1784": {
-            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
-        },
-        "_:id1791": {
-            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034"
-        },
-        "_:id1792": {
-            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034"
-        }
-    },
-    "actedOnBehalfOf": {
-        "_:id3": {
-            "prov:delegate": "people:PERSON__ZANDER_FRANZISKA",
-            "prov:responsible": "orgs:ORG__FSU"
-        }
-    },
-    "wasAttributedTo": {
-        "_:id1766": {
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900-2015_2034",
-            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
-        },
-        "_:id1777": {
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900",
-            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
-        },
-        "_:id1785": {
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
-            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
-        },
-        "_:id1793": {
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034",
-            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
+        "software:SOFTWARE__CDO_1_9_3": {
+            "software:@id": "SOFTWARE__CDO_1_9_3",
+            "software:@type": "SoftwareApplication",
+            "sdo:softwareVersion": "1.9.3",
+            "sdo:targetProduct": "SOFTWARE__CDO"
         }
     },
     "activity": {
-        "exe:FUNCTION__CDO_SUB": {
-            "prov:startTime": "2025-01-24T15:41:22-01:00",
+        "exe:Calc abs. change_276": {
+            "prov:startTime": "2025-01-24T18:15:58-01:00",
             "exe:@id": "FUNCTION__CDO_SUB",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "sub - subtract two fields",
             "sdo:description": "This module performs simple arithmetic of two datasets. The number of fields in ifile1 should be the same as in ifile2. One of the input files can contain only one timestep or one variable. The fields in ofile inherit the meta data from ifile1 or ifile2.",
             "sdo:targetProduct": "SOFTWARE__CDO"
         },
-        "exe:FUNCTION__CDO_SELYEAR": {
-            "prov:startTime": "2025-01-24T15:41:12-01:00",
+        "exe:Slice ref. period_277": {
+            "prov:startTime": "2025-01-24T18:15:41-01:00",
             "exe:@id": "FUNCTION__CDO_SELYEAR",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "selyear - select a year range",
             "sdo:description": "This module selects a year range in the input field.",
             "sdo:targetProduct": "SOFTWARE__CDO"
         },
-        "exe:FUNCTION__CDO_SELTIMESTEP": {
-            "prov:startTime": "2025-02-10T11:54:20-01:00",
+        "exe:Calc mean_278": {
+            "prov:startTime": "2025-01-24T18:15:41-01:00",
+            "exe:@id": "FUNCTION__CDO_TIMMEAN",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "timmean - time mean",
+            "sdo:description": "This module computes the temporal mean of the input field.",
+            "sdo:targetProduct": "SOFTWARE__CDO"
+        },
+        "exe:Delete first & last timesteps_279": {
+            "prov:startTime": "2025-01-24T18:15:31-01:00",
             "exe:@id": "FUNCTION__CDO_SELTIMESTEP",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "Select a time step",
             "sdo:description": "This module selects a time step in the input field.",
             "sdo:targetProduct": "SOFTWARE__CDO"
+        },
+        "exe:Slice ref. period_280": {
+            "prov:startTime": "2025-01-24T18:15:49-01:00",
+            "exe:@id": "FUNCTION__CDO_SELYEAR",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "selyear - select a year range",
+            "sdo:description": "This module selects a year range in the input field.",
+            "sdo:targetProduct": "SOFTWARE__CDO"
+        },
+        "exe:Calc mean_281": {
+            "prov:startTime": "2025-01-24T18:15:49-01:00",
+            "exe:@id": "FUNCTION__CDO_TIMMEAN",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "timmean - time mean",
+            "sdo:description": "This module computes the temporal mean of the input field.",
+            "sdo:targetProduct": "SOFTWARE__CDO"
         }
     },
     "wasAssociatedWith": {
-        "_:id14": {
-            "prov:activity": "exe:FUNCTION__CDO_SUB",
-            "prov:agent": "software:S"
+        "_:id2467": {
+            "prov:activity": "exe:Calc abs. change_276",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
         },
-        "_:id26": {
-            "prov:activity": "exe:FUNCTION__CDO_SELYEAR",
-            "prov:agent": "software:S"
+        "_:id2479": {
+            "prov:activity": "exe:Slice ref. period_277",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
         },
-        "_:id469": {
-            "prov:activity": "exe:FUNCTION__CDO_SELTIMESTEP",
-            "prov:agent": "software:S"
+        "_:id2485": {
+            "prov:activity": "exe:Calc mean_278",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        },
+        "_:id2493": {
+            "prov:activity": "exe:Delete first & last timesteps_279",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        },
+        "_:id2502": {
+            "prov:activity": "exe:Slice ref. period_280",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        },
+        "_:id2508": {
+            "prov:activity": "exe:Calc mean_281",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        }
+    },
+    "used": {
+        "_:id2468": {
+            "prov:activity": "exe:Calc abs. change_276",
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900-2015_2034"
+        },
+        "_:id2471": {
+            "prov:activity": "exe:Calc abs. change_276",
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034"
+        },
+        "_:id2474": {
+            "prov:activity": "exe:Calc abs. change_276",
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900"
+        },
+        "_:id2480": {
+            "prov:activity": "exe:Slice ref. period_277",
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900"
+        },
+        "_:id2483": {
+            "prov:activity": "exe:Slice ref. period_277",
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
+        },
+        "_:id2486": {
+            "prov:activity": "exe:Calc mean_278",
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900"
+        },
+        "_:id2488": {
+            "prov:activity": "exe:Calc mean_278",
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
+        },
+        "_:id2494": {
+            "prov:activity": "exe:Delete first & last timesteps_279",
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
+        },
+        "_:id2497": {
+            "prov:activity": "exe:Delete first & last timesteps_279",
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM"
+        },
+        "_:id2503": {
+            "prov:activity": "exe:Slice ref. period_280",
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034"
+        },
+        "_:id2506": {
+            "prov:activity": "exe:Slice ref. period_280",
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
+        },
+        "_:id2509": {
+            "prov:activity": "exe:Calc mean_281",
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034"
+        },
+        "_:id2511": {
+            "prov:activity": "exe:Calc mean_281",
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id2469": {
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900-2015_2034",
+            "prov:activity": "exe:Calc abs. change_276",
+            "prov:time": "2025-01-24T18:15:58-01:00"
+        },
+        "_:id2472": {
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034",
+            "prov:activity": "exe:Calc abs. change_276"
+        },
+        "_:id2475": {
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900",
+            "prov:activity": "exe:Calc abs. change_276"
+        },
+        "_:id2481": {
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900",
+            "prov:activity": "exe:Slice ref. period_277",
+            "prov:time": "2025-01-24T18:15:41-01:00"
+        },
+        "_:id2484": {
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
+            "prov:activity": "exe:Slice ref. period_277"
+        },
+        "_:id2487": {
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900",
+            "prov:activity": "exe:Calc mean_278",
+            "prov:time": "2025-01-24T18:15:41-01:00"
+        },
+        "_:id2489": {
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
+            "prov:activity": "exe:Calc mean_278"
+        },
+        "_:id2495": {
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
+            "prov:activity": "exe:Delete first & last timesteps_279",
+            "prov:time": "2025-01-24T18:15:31-01:00"
+        },
+        "_:id2498": {
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM",
+            "prov:activity": "exe:Delete first & last timesteps_279"
+        },
+        "_:id2504": {
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034",
+            "prov:activity": "exe:Slice ref. period_280",
+            "prov:time": "2025-01-24T18:15:49-01:00"
+        },
+        "_:id2507": {
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
+            "prov:activity": "exe:Slice ref. period_280"
+        },
+        "_:id2510": {
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034",
+            "prov:activity": "exe:Calc mean_281",
+            "prov:time": "2025-01-24T18:15:49-01:00"
+        },
+        "_:id2512": {
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
+            "prov:activity": "exe:Calc mean_281"
         }
     },
     "wasDerivedFrom": {
-        "_:id1767": {
+        "_:id2470": {
             "prov:generatedEntity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900-2015_2034",
             "prov:usedEntity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034"
         },
-        "_:id1770": {
+        "_:id2473": {
             "prov:generatedEntity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900-2015_2034",
             "prov:usedEntity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900"
         },
-        "_:id1794": {
+        "_:id2505": {
             "prov:generatedEntity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034",
             "prov:usedEntity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
         },
-        "_:id1778": {
+        "_:id2482": {
             "prov:generatedEntity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900",
             "prov:usedEntity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
         },
-        "_:id1786": {
+        "_:id2496": {
             "prov:generatedEntity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
             "prov:usedEntity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM"
         }
     },
-    "used": {
-        "_:id1768": {
-            "prov:activity": "exe:FUNCTION__CDO_SUB",
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034"
-        },
-        "_:id1771": {
-            "prov:activity": "exe:FUNCTION__CDO_SUB",
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900"
-        },
-        "_:id1773": {
-            "prov:activity": "exe:FUNCTION__CDO_SUB",
+    "hadMember": {
+        "_:id2476": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
             "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900-2015_2034"
         },
-        "_:id1779": {
-            "prov:activity": "exe:FUNCTION__CDO_SELYEAR",
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
+        "_:id2477": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900-2015_2034"
         },
-        "_:id1781": {
-            "prov:activity": "exe:FUNCTION__CDO_SELYEAR",
+        "_:id2490": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
             "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900"
         },
-        "_:id1787": {
-            "prov:activity": "exe:FUNCTION__CDO_SELTIMESTEP",
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM"
+        "_:id2491": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900"
         },
-        "_:id1789": {
-            "prov:activity": "exe:FUNCTION__CDO_SELTIMESTEP",
+        "_:id2499": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
             "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
         },
-        "_:id1795": {
-            "prov:activity": "exe:FUNCTION__CDO_SELYEAR",
+        "_:id2500": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
+        },
+        "_:id2513": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034"
+        },
+        "_:id2514": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
             "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034"
         }
     },
-    "wasGeneratedBy": {
-        "_:id1769": {
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034",
-            "prov:activity": "exe:FUNCTION__CDO_SUB"
-        },
-        "_:id1772": {
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900",
-            "prov:activity": "exe:FUNCTION__CDO_SUB"
-        },
-        "_:id1774": {
+    "actedOnBehalfOf": {
+        "_:id9": {
+            "prov:delegate": "people:PERSON__ZANDER_FRANZISKA",
+            "prov:responsible": "orgs:ORG__FSU"
+        }
+    },
+    "wasAttributedTo": {
+        "_:id2478": {
             "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900-2015_2034",
-            "prov:activity": "exe:FUNCTION__CDO_SUB",
-            "prov:time": "2025-01-24T18:15:58-01:00"
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
         },
-        "_:id1780": {
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
-            "prov:activity": "exe:FUNCTION__CDO_SELYEAR"
-        },
-        "_:id1782": {
+        "_:id2492": {
             "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_1900",
-            "prov:activity": "exe:FUNCTION__CDO_SELYEAR",
-            "prov:time": "2025-01-24T18:15:41-01:00"
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
         },
-        "_:id1788": {
-            "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM",
-            "prov:activity": "exe:FUNCTION__CDO_SELTIMESTEP"
-        },
-        "_:id1790": {
+        "_:id2501": {
             "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
-            "prov:activity": "exe:FUNCTION__CDO_SELTIMESTEP",
-            "prov:time": "2025-01-24T18:15:31-01:00"
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
         },
-        "_:id1796": {
+        "_:id2515": {
             "prov:entity": "tippecc_data:TIPPECC_GFDL-CM4_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034",
-            "prov:activity": "exe:FUNCTION__CDO_SELYEAR",
-            "prov:time": "2025-01-24T18:15:49-01:00"
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
         }
     },
     "wasInformedBy": {
-        "_:id5523": {
-            "prov:informed": "exe:FUNCTION__CDO_SUB",
-            "prov:informant": "exe:FUNCTION__CDO_SELYEAR"
+        "_:id8014": {
+            "prov:informed": "exe:Slice ref. period_277",
+            "prov:informant": "exe:Delete first & last timesteps_279"
+        },
+        "_:id8015": {
+            "prov:informed": "exe:Calc mean_278",
+            "prov:informant": "exe:Slice ref. period_277"
+        },
+        "_:id8016": {
+            "prov:informed": "exe:Slice ref. period_280",
+            "prov:informant": "exe:Calc mean_278"
+        },
+        "_:id8017": {
+            "prov:informed": "exe:Calc mean_281",
+            "prov:informant": "exe:Slice ref. period_280"
+        },
+        "_:id8018": {
+            "prov:informed": "exe:Calc abs. change_276",
+            "prov:informant": "exe:Calc mean_281"
         }
     }
 }

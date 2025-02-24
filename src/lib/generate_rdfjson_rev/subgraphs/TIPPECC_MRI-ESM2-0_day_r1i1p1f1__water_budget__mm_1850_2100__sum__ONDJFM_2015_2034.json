@@ -155,142 +155,232 @@
             "sdo:name": "Friedrich Schiller University of Jena",
             "wd:P6782": "https://ror.org/05qpz1x62"
         },
-        "software:S": {}
-    },
-    "hadMember": {
-        "_:id4126": {
-            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
-            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
-        },
-        "_:id4127": {
-            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
-            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
-        },
-        "_:id4134": {
-            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
-            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034"
-        },
-        "_:id4135": {
-            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
-            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034"
-        }
-    },
-    "actedOnBehalfOf": {
-        "_:id3": {
-            "prov:delegate": "people:PERSON__ZANDER_FRANZISKA",
-            "prov:responsible": "orgs:ORG__FSU"
-        }
-    },
-    "wasAttributedTo": {
-        "_:id4128": {
-            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
-            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
-        },
-        "_:id4136": {
-            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034",
-            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
+        "software:SOFTWARE__CDO_1_9_3": {
+            "software:@id": "SOFTWARE__CDO_1_9_3",
+            "software:@type": "SoftwareApplication",
+            "sdo:softwareVersion": "1.9.3",
+            "sdo:targetProduct": "SOFTWARE__CDO"
         }
     },
     "activity": {
-        "exe:FUNCTION__CDO_SUB": {
-            "prov:startTime": "2025-01-24T15:41:22-01:00",
+        "exe:Calc abs. change_649": {
+            "prov:startTime": "2025-01-24T21:07:28-01:00",
             "exe:@id": "FUNCTION__CDO_SUB",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "sub - subtract two fields",
             "sdo:description": "This module performs simple arithmetic of two datasets. The number of fields in ifile1 should be the same as in ifile2. One of the input files can contain only one timestep or one variable. The fields in ofile inherit the meta data from ifile1 or ifile2.",
             "sdo:targetProduct": "SOFTWARE__CDO"
         },
-        "exe:FUNCTION__CDO_SELYEAR": {
-            "prov:startTime": "2025-01-24T15:41:12-01:00",
+        "exe:Slice ref. period_650": {
+            "prov:startTime": "2025-01-24T21:07:07-01:00",
             "exe:@id": "FUNCTION__CDO_SELYEAR",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "selyear - select a year range",
             "sdo:description": "This module selects a year range in the input field.",
             "sdo:targetProduct": "SOFTWARE__CDO"
         },
-        "exe:FUNCTION__CDO_SELTIMESTEP": {
-            "prov:startTime": "2025-02-10T11:54:20-01:00",
+        "exe:Calc mean_651": {
+            "prov:startTime": "2025-01-24T21:07:07-01:00",
+            "exe:@id": "FUNCTION__CDO_TIMMEAN",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "timmean - time mean",
+            "sdo:description": "This module computes the temporal mean of the input field.",
+            "sdo:targetProduct": "SOFTWARE__CDO"
+        },
+        "exe:Delete first & last timesteps_652": {
+            "prov:startTime": "2025-01-24T21:06:56-01:00",
             "exe:@id": "FUNCTION__CDO_SELTIMESTEP",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "Select a time step",
             "sdo:description": "This module selects a time step in the input field.",
             "sdo:targetProduct": "SOFTWARE__CDO"
+        },
+        "exe:Slice ref. period_653": {
+            "prov:startTime": "2025-01-24T21:07:17-01:00",
+            "exe:@id": "FUNCTION__CDO_SELYEAR",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "selyear - select a year range",
+            "sdo:description": "This module selects a year range in the input field.",
+            "sdo:targetProduct": "SOFTWARE__CDO"
+        },
+        "exe:Calc mean_654": {
+            "prov:startTime": "2025-01-24T21:07:17-01:00",
+            "exe:@id": "FUNCTION__CDO_TIMMEAN",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "timmean - time mean",
+            "sdo:description": "This module computes the temporal mean of the input field.",
+            "sdo:targetProduct": "SOFTWARE__CDO"
         }
     },
     "wasAssociatedWith": {
-        "_:id14": {
-            "prov:activity": "exe:FUNCTION__CDO_SUB",
-            "prov:agent": "software:S"
+        "_:id5785": {
+            "prov:activity": "exe:Calc abs. change_649",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
         },
-        "_:id26": {
-            "prov:activity": "exe:FUNCTION__CDO_SELYEAR",
-            "prov:agent": "software:S"
+        "_:id5797": {
+            "prov:activity": "exe:Slice ref. period_650",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
         },
-        "_:id469": {
-            "prov:activity": "exe:FUNCTION__CDO_SELTIMESTEP",
-            "prov:agent": "software:S"
+        "_:id5803": {
+            "prov:activity": "exe:Calc mean_651",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        },
+        "_:id5811": {
+            "prov:activity": "exe:Delete first & last timesteps_652",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        },
+        "_:id5820": {
+            "prov:activity": "exe:Slice ref. period_653",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        },
+        "_:id5826": {
+            "prov:activity": "exe:Calc mean_654",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        }
+    },
+    "used": {
+        "_:id5789": {
+            "prov:activity": "exe:Calc abs. change_649",
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034"
+        },
+        "_:id5801": {
+            "prov:activity": "exe:Slice ref. period_650",
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
+        },
+        "_:id5806": {
+            "prov:activity": "exe:Calc mean_651",
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
+        },
+        "_:id5812": {
+            "prov:activity": "exe:Delete first & last timesteps_652",
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
+        },
+        "_:id5815": {
+            "prov:activity": "exe:Delete first & last timesteps_652",
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM"
+        },
+        "_:id5821": {
+            "prov:activity": "exe:Slice ref. period_653",
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034"
+        },
+        "_:id5824": {
+            "prov:activity": "exe:Slice ref. period_653",
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
+        },
+        "_:id5827": {
+            "prov:activity": "exe:Calc mean_654",
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034"
+        },
+        "_:id5829": {
+            "prov:activity": "exe:Calc mean_654",
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id5790": {
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034",
+            "prov:activity": "exe:Calc abs. change_649"
+        },
+        "_:id5802": {
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
+            "prov:activity": "exe:Slice ref. period_650"
+        },
+        "_:id5807": {
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
+            "prov:activity": "exe:Calc mean_651"
+        },
+        "_:id5813": {
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
+            "prov:activity": "exe:Delete first & last timesteps_652",
+            "prov:time": "2025-01-24T21:06:56-01:00"
+        },
+        "_:id5816": {
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM",
+            "prov:activity": "exe:Delete first & last timesteps_652"
+        },
+        "_:id5822": {
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034",
+            "prov:activity": "exe:Slice ref. period_653",
+            "prov:time": "2025-01-24T21:07:17-01:00"
+        },
+        "_:id5825": {
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
+            "prov:activity": "exe:Slice ref. period_653"
+        },
+        "_:id5828": {
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034",
+            "prov:activity": "exe:Calc mean_654",
+            "prov:time": "2025-01-24T21:07:17-01:00"
+        },
+        "_:id5830": {
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
+            "prov:activity": "exe:Calc mean_654"
         }
     },
     "wasDerivedFrom": {
-        "_:id4137": {
+        "_:id5823": {
             "prov:generatedEntity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034",
             "prov:usedEntity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
         },
-        "_:id4129": {
+        "_:id5814": {
             "prov:generatedEntity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
             "prov:usedEntity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM"
         }
     },
-    "used": {
-        "_:id4111": {
-            "prov:activity": "exe:FUNCTION__CDO_SUB",
+    "hadMember": {
+        "_:id5817": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
+        },
+        "_:id5818": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
+        },
+        "_:id5831": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
             "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034"
         },
-        "_:id4122": {
-            "prov:activity": "exe:FUNCTION__CDO_SELYEAR",
-            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
-        },
-        "_:id4130": {
-            "prov:activity": "exe:FUNCTION__CDO_SELTIMESTEP",
-            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM"
-        },
-        "_:id4132": {
-            "prov:activity": "exe:FUNCTION__CDO_SELTIMESTEP",
-            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
-        },
-        "_:id4138": {
-            "prov:activity": "exe:FUNCTION__CDO_SELYEAR",
+        "_:id5832": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
             "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034"
         }
     },
-    "wasGeneratedBy": {
-        "_:id4112": {
-            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034",
-            "prov:activity": "exe:FUNCTION__CDO_SUB"
-        },
-        "_:id4123": {
+    "actedOnBehalfOf": {
+        "_:id9": {
+            "prov:delegate": "people:PERSON__ZANDER_FRANZISKA",
+            "prov:responsible": "orgs:ORG__FSU"
+        }
+    },
+    "wasAttributedTo": {
+        "_:id5819": {
             "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
-            "prov:activity": "exe:FUNCTION__CDO_SELYEAR"
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
         },
-        "_:id4131": {
-            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM",
-            "prov:activity": "exe:FUNCTION__CDO_SELTIMESTEP"
-        },
-        "_:id4133": {
-            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
-            "prov:activity": "exe:FUNCTION__CDO_SELTIMESTEP",
-            "prov:time": "2025-01-24T21:06:56-01:00"
-        },
-        "_:id4139": {
+        "_:id5833": {
             "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034",
-            "prov:activity": "exe:FUNCTION__CDO_SELYEAR",
-            "prov:time": "2025-01-24T21:07:17-01:00"
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
         }
     },
     "wasInformedBy": {
-        "_:id5523": {
-            "prov:informed": "exe:FUNCTION__CDO_SUB",
-            "prov:informant": "exe:FUNCTION__CDO_SELYEAR"
+        "_:id8392": {
+            "prov:informed": "exe:Slice ref. period_650",
+            "prov:informant": "exe:Delete first & last timesteps_652"
+        },
+        "_:id8393": {
+            "prov:informed": "exe:Calc mean_651",
+            "prov:informant": "exe:Slice ref. period_650"
+        },
+        "_:id8394": {
+            "prov:informed": "exe:Slice ref. period_653",
+            "prov:informant": "exe:Calc mean_651"
+        },
+        "_:id8395": {
+            "prov:informed": "exe:Calc mean_654",
+            "prov:informant": "exe:Slice ref. period_653"
+        },
+        "_:id8396": {
+            "prov:informed": "exe:Calc abs. change_649",
+            "prov:informant": "exe:Calc mean_654"
         }
     }
 }

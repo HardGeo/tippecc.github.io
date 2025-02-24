@@ -98,42 +98,16 @@
             "sdo:name": "Friedrich Schiller University of Jena",
             "wd:P6782": "https://ror.org/05qpz1x62"
         },
-        "software:S": {}
-    },
-    "hadMember": {
-        "_:id1940": {
-            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
-            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100"
-        },
-        "_:id1941": {
-            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
-            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100"
-        }
-    },
-    "actedOnBehalfOf": {
-        "_:id3": {
-            "prov:delegate": "people:PERSON__ZANDER_FRANZISKA",
-            "prov:responsible": "orgs:ORG__FSU"
-        }
-    },
-    "wasAttributedTo": {
-        "_:id1942": {
-            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
-            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
+        "software:SOFTWARE__XCLIM_0_49": {
+            "software:@id": "SOFTWARE__XCLIM_0_49",
+            "software:@type": "SoftwareApplication",
+            "sdo:softwareVersion": "0.49.0",
+            "sdo:targetProduct": "SOFTWARE__XCLIM"
         }
     },
     "activity": {
-        "exe:FUNCTION__XCLIM_CONVERT_UNITS": {
-            "prov:startTime": "2025-01-24T15:39:54-01:00",
-            "exe:@id": "FUNCTION__XCLIM_CONVERT_UNITS",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Convert units",
-            "sdo:description": "Convert a mathematical expression into a value with the same units as a DataArray.",
-            "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.convert_units_to",
-            "sdo:targetProduct": "SOFTWARE__XCLIM"
-        },
-        "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION": {
-            "prov:startTime": "2025-01-24T15:35:39-01:00",
+        "exe:Calc pot. ET_307": {
+            "prov:startTime": "2025-01-24T18:22:47-01:00",
             "exe:@id": "FUNCTION__XCLIM_EVAPOTRANSPIRATION",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "Evapotranspiration",
@@ -141,8 +115,17 @@
             "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.potential_evapotranspiration",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
         },
-        "exe:FUNCTION__XCLIM_WATER_BUDGET": {
-            "prov:startTime": "2025-01-24T15:36:56-01:00",
+        "exe:Convert pot. ET to mm/day_308": {
+            "prov:startTime": "2025-01-24T18:29:32-01:00",
+            "exe:@id": "FUNCTION__XCLIM_CONVERT_UNITS",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "Convert units",
+            "sdo:description": "Convert a mathematical expression into a value with the same units as a DataArray.",
+            "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.convert_units_to",
+            "sdo:targetProduct": "SOFTWARE__XCLIM"
+        },
+        "exe:Calc water budget_315": {
+            "prov:startTime": "2025-01-24T18:24:24-01:00",
             "exe:@id": "FUNCTION__XCLIM_WATER_BUDGET",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "Water budget",
@@ -152,150 +135,172 @@
         }
     },
     "wasAssociatedWith": {
-        "_:id5": {
-            "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS",
-            "prov:agent": "software:S"
+        "_:id2728": {
+            "prov:activity": "exe:Calc pot. ET_307",
+            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         },
-        "_:id91": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
-            "prov:agent": "software:S"
+        "_:id2758": {
+            "prov:activity": "exe:Convert pot. ET to mm/day_308",
+            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         },
-        "_:id162": {
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET",
-            "prov:agent": "software:S"
-        }
-    },
-    "wasDerivedFrom": {
-        "_:id1943": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_tasmax_1850_2100"
-        },
-        "_:id1946": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_tasmin_1850_2100"
-        },
-        "_:id1949": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_hurs_1850_2100"
-        },
-        "_:id1952": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rsds_1850_2100"
-        },
-        "_:id1955": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rsus_1850_2100"
-        },
-        "_:id1958": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rlus_1850_2100"
-        },
-        "_:id1961": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rlds_1850_2100"
-        },
-        "_:id1964": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_sfcWind_1850_2100"
+        "_:id2816": {
+            "prov:activity": "exe:Calc water budget_315",
+            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         }
     },
     "used": {
-        "_:id1944": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+        "_:id2729": {
+            "prov:activity": "exe:Calc pot. ET_307",
+            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100"
+        },
+        "_:id2732": {
+            "prov:activity": "exe:Calc pot. ET_307",
             "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_tasmax_1850_2100"
         },
-        "_:id1947": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+        "_:id2735": {
+            "prov:activity": "exe:Calc pot. ET_307",
             "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_tasmin_1850_2100"
         },
-        "_:id1950": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+        "_:id2738": {
+            "prov:activity": "exe:Calc pot. ET_307",
             "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_hurs_1850_2100"
         },
-        "_:id1953": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+        "_:id2741": {
+            "prov:activity": "exe:Calc pot. ET_307",
             "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rsds_1850_2100"
         },
-        "_:id1956": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+        "_:id2744": {
+            "prov:activity": "exe:Calc pot. ET_307",
             "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rsus_1850_2100"
         },
-        "_:id1959": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+        "_:id2747": {
+            "prov:activity": "exe:Calc pot. ET_307",
             "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rlus_1850_2100"
         },
-        "_:id1962": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+        "_:id2750": {
+            "prov:activity": "exe:Calc pot. ET_307",
             "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rlds_1850_2100"
         },
-        "_:id1965": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+        "_:id2753": {
+            "prov:activity": "exe:Calc pot. ET_307",
             "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_sfcWind_1850_2100"
         },
-        "_:id1967": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+        "_:id2762": {
+            "prov:activity": "exe:Convert pot. ET to mm/day_308",
             "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100"
         },
-        "_:id1973": {
-            "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS",
-            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100"
-        },
-        "_:id2017": {
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET",
+        "_:id2823": {
+            "prov:activity": "exe:Calc water budget_315",
             "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100"
         }
     },
     "wasGeneratedBy": {
-        "_:id1945": {
-            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_tasmax_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id1948": {
-            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_tasmin_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id1951": {
-            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_hurs_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id1954": {
-            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rsds_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id1957": {
-            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rsus_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id1960": {
-            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rlus_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id1963": {
-            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rlds_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id1966": {
-            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_sfcWind_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id1968": {
+        "_:id2730": {
             "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+            "prov:activity": "exe:Calc pot. ET_307",
             "prov:time": "2025-01-24T18:22:47-01:00"
         },
-        "_:id1974": {
-            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS"
+        "_:id2733": {
+            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_tasmax_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_307"
         },
-        "_:id2018": {
+        "_:id2736": {
+            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_tasmin_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_307"
+        },
+        "_:id2739": {
+            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_hurs_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_307"
+        },
+        "_:id2742": {
+            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rsds_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_307"
+        },
+        "_:id2745": {
+            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rsus_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_307"
+        },
+        "_:id2748": {
+            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rlus_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_307"
+        },
+        "_:id2751": {
+            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rlds_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_307"
+        },
+        "_:id2754": {
+            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_sfcWind_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_307"
+        },
+        "_:id2763": {
             "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET"
+            "prov:activity": "exe:Convert pot. ET to mm/day_308"
+        },
+        "_:id2824": {
+            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
+            "prov:activity": "exe:Calc water budget_315"
+        }
+    },
+    "wasDerivedFrom": {
+        "_:id2731": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_tasmax_1850_2100"
+        },
+        "_:id2734": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_tasmin_1850_2100"
+        },
+        "_:id2737": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_hurs_1850_2100"
+        },
+        "_:id2740": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rsds_1850_2100"
+        },
+        "_:id2743": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rsus_1850_2100"
+        },
+        "_:id2746": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rlus_1850_2100"
+        },
+        "_:id2749": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_rlds_1850_2100"
+        },
+        "_:id2752": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_sfcWind_1850_2100"
+        }
+    },
+    "hadMember": {
+        "_:id2755": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100"
+        },
+        "_:id2756": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100"
+        }
+    },
+    "actedOnBehalfOf": {
+        "_:id9": {
+            "prov:delegate": "people:PERSON__ZANDER_FRANZISKA",
+            "prov:responsible": "orgs:ORG__FSU"
+        }
+    },
+    "wasAttributedTo": {
+        "_:id2757": {
+            "prov:entity": "tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__evspsblpot_1850_2100",
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
         }
     },
     "wasInformedBy": {
-        "_:id5518": {
-            "prov:informed": "exe:FUNCTION__XCLIM_WATER_BUDGET",
-            "prov:informant": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
+        "_:id8020": {
+            "prov:informed": "exe:Calc water budget_315",
+            "prov:informant": "exe:Calc pot. ET_307"
         }
     }
 }

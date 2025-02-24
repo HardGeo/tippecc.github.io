@@ -102,6 +102,7 @@ meta_path = r"C:\Users\jonas\svelte_scripts\tippecc.github.io\src\lib\prov_meta_
 
 added_agents = set()
 activities = []
+activity_counter = 0
 # Iterate over all files in the directory
 for filename in os.listdir(prov_path):
     if filename.endswith('.json') and filename.startswith("TIPPECC"):  # Check if the file has a .json extension
@@ -141,34 +142,99 @@ for filename in os.listdir(prov_path):
             #print(key, value)
             #entity.add_attributes({key: value})
 
-        
-        # Add person
-        person_id = prov_data['processing'][0]['executed_by']
-        person_id, person_metadata = get_prov_metadata (person_id, "\\".join(prov_path.split("\\")[:-1]), f"{people_namespace}:")
-        #print(person_id, person_metadata)
-        if person_id not in added_agents:
-            d1.agent(person_id, person_metadata)
-            added_agents.add(person_id)
+        for process in prov_data['processing']:
+
+            # Add person
+            person_id = process['executed_by']
+            person_id, person_metadata = get_prov_metadata (person_id, "\\".join(prov_path.split("\\")[:-1]), f"{people_namespace}:")
+            #print(person_id, person_metadata)
+            if person_id not in added_agents:
+                d1.agent(person_id, person_metadata)
+                added_agents.add(person_id)
+
+            # Add orga only if not already added
+            orga_id = process['on_behalf_of']
+            orga_id, orga_metadata = get_prov_metadata (orga_id, "\\".join(prov_path.split("\\")[:-1]), f"{orgs_namespace}:")
+            #print(orga_id, orga_metadata)
+            if orga_id not in added_agents:
+                d1.agent(orga_id, orga_metadata)
+                added_agents.add(orga_id)
+
+            # Add software
+            software_id = process['software']
+            try:
+                software_id, software_metadata = get_prov_metadata (software_id, "\\".join(prov_path.split("\\")[:-1]), f"{software_namespace}:")
+            except:
+                software_id = software_id[0]
+                software_id, software_metadata = get_prov_metadata (software_id, "\\".join(prov_path.split("\\")[:-1]), f"{software_namespace}:")
+
+            if software_id not in added_agents:
+                d1.agent(software_id, software_metadata)
+                added_agents.add(software_id)
+
+            #add activities and wasAssociatedWith and generation
+            try:
+                activity_id = process['label']
+            except:
+                activity_id = process['function']
+            
+            #append a number so every activity is unique
+            activity_id = f"{activity_id}_{activity_counter}"
+            activity_counter += 1  
+
+            activity_id, __ = get_prov_metadata (activity_id, "\\".join(prov_path.split("\\")[:-1]), f"{exe_namespace}:")
+            
+            try:
+                time = process['execution_time']
+            except:
+                time = "N/A"
+
+            function = process['function']
+            __, activity_metadata = get_prov_metadata (function, "\\".join(prov_path.split("\\")[:-1]), f"{exe_namespace}:")
 
 
+            try:
+                description = process['description']
+            except:
+                description = "N/A"
+            try:
+                params = process['params']
+            except:
+                params = "N/A"
 
-        # Add orga only if not already added
-        orga_id = prov_data['processing'][0]['on_behalf_of']
-        orga_id, orga_metadata = get_prov_metadata (orga_id, "\\".join(prov_path.split("\\")[:-1]), f"{orgs_namespace}:")
-        #print(orga_id, orga_metadata)
-        if orga_id not in added_agents:
-            d1.agent(orga_id, orga_metadata)
-            added_agents.add(orga_id)
 
+            #print(activity_id, activity_metadata, time)
+            if activity_id not in added_agents:
+                activity  = d1.activity(activity_id, time)
+                activities.append({'id': activity_id, 'start_time': time, 'metadata': activity_metadata, 'function':function, 'function':description, 'function':params})
+                # Add metadata to the activity
+                for key, value in activity_metadata.items():
+                    activity.add_attributes({key: value})
+                #activity.add_attributes({'id': activity_id, 'start_time': time, 'function':function, 'function':description, 'function':params})
+                d1.wasAssociatedWith(activity_id, software_id)
+                
+                added_agents.add(activity_id)
+                
 
+            if (activity_id, entity) not in added_agents:
+                # Add USED information //
+                d1.used(activity_id, entity_id)
+                d1.generation(entity_id, activity_id, time)
+                added_agents.add((activity_id, entity_id))
 
-        # Add software
-        software_id = prov_data['processing'][0]['software'][0]
-        software_id, software_metadata = get_prov_metadata (software_id, "\\".join(prov_path.split("\\")[:-1]), f"{software_namespace}:")
-        #print(software_id, software_metadata)
-        if software_id not in added_agents:
-            d1.agent(software_id, software_metadata)
-            added_agents.add(software_id)
+            #ADD wasDerivedFrom
+            for derivation in prov_data['input_files']:
+                if derivation.endswith(".nc"):
+                    derivation = f"{entity_namespace}:{derivation.split('/')[-1]}".replace(".nc","")
+                else:
+                    derivation = f"{entity_namespace}:{derivation.split('/')[-1]}"
+                if (entity_id, derivation) not in added_agents:    
+                    d1.wasDerivedFrom(entity_id, derivation)
+                    added_agents.add((entity_id, derivation))
+                if (activity_id, derivation) not in added_agents:
+                    d1.used(activity_id, derivation)
+                    d1.generation(derivation, activity_id)
+                    added_agents.add((activity_id, derivation))
 
 
 
@@ -208,42 +274,6 @@ for filename in os.listdir(prov_path):
 
 
 
-        #add activities and wasAssociatedWith and generation
-        activity_id = prov_data['processing'][0]['function']
-        activity_id, activity_metadata = get_prov_metadata (activity_id, "\\".join(prov_path.split("\\")[:-1]), f"{exe_namespace}:")
-        time = prov_data['processing'][0]['execution_time']
-
-        #print(activity_id, activity_metadata, time)
-        if activity_id not in added_agents:
-            activity  = d1.activity(activity_id, time)
-            # Add metadata to the activity
-            for key, value in activity_metadata.items():
-                activity.add_attributes({key: value})
-            d1.wasAssociatedWith(activity_id, software_id)
-            
-            added_agents.add(activity_id)
-            activities.append({'id': activity_id, 'start_time': time, 'metadata': activity_metadata})
-
-
-
-        #ADD wasDerivedFrom
-        for derivation in prov_data['input_files']:
-            if derivation.endswith(".nc"):
-                derivation = f"{entity_namespace}:{derivation.split('/')[-1]}".replace(".nc","")
-            else:
-                derivation = f"{entity_namespace}:{derivation.split('/')[-1]}"
-                
-            d1.wasDerivedFrom(entity_id, derivation)
-            if (activity_id, derivation) not in added_agents:
-                d1.used(activity_id, derivation)
-                d1.generation(derivation, activity_id)
-                added_agents.add((activity_id, derivation))
-
-        if (activity_id, entity) not in added_agents:
-            # Add USED information //
-            d1.used(activity_id, entity_id)
-            d1.generation(entity_id, activity_id, time)
-            added_agents.add((activity_id, entity_id))
 
 activities.sort(key=lambda x: x['start_time'])  # Sort by earliest start time
 # Add `wasInformedBy` relationships

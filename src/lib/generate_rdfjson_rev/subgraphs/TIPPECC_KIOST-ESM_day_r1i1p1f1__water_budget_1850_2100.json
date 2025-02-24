@@ -159,45 +159,16 @@
             "sdo:name": "Friedrich Schiller University of Jena",
             "wd:P6782": "https://ror.org/05qpz1x62"
         },
-        "software:S": {}
-    },
-    "hadMember": {
-        "_:id2846": {
-            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100"
-        },
-        "_:id2847": {
-            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100"
-        },
-        "_:id2875": {
-            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget_1850_2100"
-        },
-        "_:id2876": {
-            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget_1850_2100"
-        }
-    },
-    "actedOnBehalfOf": {
-        "_:id3": {
-            "prov:delegate": "people:PERSON__ZANDER_FRANZISKA",
-            "prov:responsible": "orgs:ORG__FSU"
-        }
-    },
-    "wasAttributedTo": {
-        "_:id2848": {
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
-        },
-        "_:id2877": {
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget_1850_2100",
-            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
+        "software:SOFTWARE__XCLIM_0_49": {
+            "software:@id": "SOFTWARE__XCLIM_0_49",
+            "software:@type": "SoftwareApplication",
+            "sdo:softwareVersion": "0.49.0",
+            "sdo:targetProduct": "SOFTWARE__XCLIM"
         }
     },
     "activity": {
-        "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION": {
-            "prov:startTime": "2025-01-24T15:35:39-01:00",
+        "exe:Calc pot. ET_453": {
+            "prov:startTime": "2025-01-24T19:32:38-01:00",
             "exe:@id": "FUNCTION__XCLIM_EVAPOTRANSPIRATION",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "Evapotranspiration",
@@ -205,8 +176,8 @@
             "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.potential_evapotranspiration",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
         },
-        "exe:FUNCTION__XCLIM_WATER_BUDGET": {
-            "prov:startTime": "2025-01-24T15:36:56-01:00",
+        "exe:Calc water budget_454": {
+            "prov:startTime": "2025-01-24T19:34:15-01:00",
             "exe:@id": "FUNCTION__XCLIM_WATER_BUDGET",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "Water budget",
@@ -216,163 +187,197 @@
         }
     },
     "wasAssociatedWith": {
-        "_:id91": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
-            "prov:agent": "software:S"
+        "_:id4018": {
+            "prov:activity": "exe:Calc pot. ET_453",
+            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         },
-        "_:id162": {
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET",
-            "prov:agent": "software:S"
+        "_:id4048": {
+            "prov:activity": "exe:Calc water budget_454",
+            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
+        }
+    },
+    "used": {
+        "_:id4019": {
+            "prov:activity": "exe:Calc pot. ET_453",
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100"
+        },
+        "_:id4022": {
+            "prov:activity": "exe:Calc pot. ET_453",
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_tasmax_1850_2100"
+        },
+        "_:id4025": {
+            "prov:activity": "exe:Calc pot. ET_453",
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_tasmin_1850_2100"
+        },
+        "_:id4028": {
+            "prov:activity": "exe:Calc pot. ET_453",
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_hurs_1850_2100"
+        },
+        "_:id4031": {
+            "prov:activity": "exe:Calc pot. ET_453",
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rsds_1850_2100"
+        },
+        "_:id4034": {
+            "prov:activity": "exe:Calc pot. ET_453",
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rsus_1850_2100"
+        },
+        "_:id4037": {
+            "prov:activity": "exe:Calc pot. ET_453",
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rlus_1850_2100"
+        },
+        "_:id4040": {
+            "prov:activity": "exe:Calc pot. ET_453",
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rlds_1850_2100"
+        },
+        "_:id4043": {
+            "prov:activity": "exe:Calc pot. ET_453",
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_sfcWind_1850_2100"
+        },
+        "_:id4049": {
+            "prov:activity": "exe:Calc water budget_454",
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget_1850_2100"
+        },
+        "_:id4052": {
+            "prov:activity": "exe:Calc water budget_454",
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_pr_1850_2100"
+        },
+        "_:id4055": {
+            "prov:activity": "exe:Calc water budget_454",
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id4020": {
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_453",
+            "prov:time": "2025-01-24T19:32:38-01:00"
+        },
+        "_:id4023": {
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_tasmax_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_453"
+        },
+        "_:id4026": {
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_tasmin_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_453"
+        },
+        "_:id4029": {
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_hurs_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_453"
+        },
+        "_:id4032": {
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rsds_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_453"
+        },
+        "_:id4035": {
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rsus_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_453"
+        },
+        "_:id4038": {
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rlus_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_453"
+        },
+        "_:id4041": {
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rlds_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_453"
+        },
+        "_:id4044": {
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_sfcWind_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_453"
+        },
+        "_:id4050": {
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget_1850_2100",
+            "prov:activity": "exe:Calc water budget_454",
+            "prov:time": "2025-01-24T19:34:15-01:00"
+        },
+        "_:id4053": {
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_pr_1850_2100",
+            "prov:activity": "exe:Calc water budget_454"
+        },
+        "_:id4056": {
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:activity": "exe:Calc water budget_454"
         }
     },
     "wasDerivedFrom": {
-        "_:id2878": {
+        "_:id4051": {
             "prov:generatedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget_1850_2100",
             "prov:usedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_pr_1850_2100"
         },
-        "_:id2881": {
+        "_:id4054": {
             "prov:generatedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget_1850_2100",
             "prov:usedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100"
         },
-        "_:id2849": {
+        "_:id4021": {
             "prov:generatedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100",
             "prov:usedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_tasmax_1850_2100"
         },
-        "_:id2852": {
+        "_:id4024": {
             "prov:generatedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100",
             "prov:usedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_tasmin_1850_2100"
         },
-        "_:id2855": {
+        "_:id4027": {
             "prov:generatedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100",
             "prov:usedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_hurs_1850_2100"
         },
-        "_:id2858": {
+        "_:id4030": {
             "prov:generatedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100",
             "prov:usedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rsds_1850_2100"
         },
-        "_:id2861": {
+        "_:id4033": {
             "prov:generatedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100",
             "prov:usedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rsus_1850_2100"
         },
-        "_:id2864": {
+        "_:id4036": {
             "prov:generatedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100",
             "prov:usedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rlus_1850_2100"
         },
-        "_:id2867": {
+        "_:id4039": {
             "prov:generatedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100",
             "prov:usedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rlds_1850_2100"
         },
-        "_:id2870": {
+        "_:id4042": {
             "prov:generatedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100",
             "prov:usedEntity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_sfcWind_1850_2100"
         }
     },
-    "used": {
-        "_:id2850": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_tasmax_1850_2100"
-        },
-        "_:id2853": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_tasmin_1850_2100"
-        },
-        "_:id2856": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_hurs_1850_2100"
-        },
-        "_:id2859": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rsds_1850_2100"
-        },
-        "_:id2862": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rsus_1850_2100"
-        },
-        "_:id2865": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rlus_1850_2100"
-        },
-        "_:id2868": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rlds_1850_2100"
-        },
-        "_:id2871": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_sfcWind_1850_2100"
-        },
-        "_:id2873": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+    "hadMember": {
+        "_:id4045": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
             "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100"
         },
-        "_:id2879": {
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET",
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_pr_1850_2100"
-        },
-        "_:id2882": {
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET",
+        "_:id4046": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
             "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100"
         },
-        "_:id2884": {
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET",
+        "_:id4057": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget_1850_2100"
+        },
+        "_:id4058": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
             "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget_1850_2100"
         }
     },
-    "wasGeneratedBy": {
-        "_:id2851": {
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_tasmax_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id2854": {
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_tasmin_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id2857": {
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_hurs_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id2860": {
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rsds_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id2863": {
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rsus_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id2866": {
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rlus_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id2869": {
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rlds_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id2872": {
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_sfcWind_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id2874": {
+    "actedOnBehalfOf": {
+        "_:id9": {
+            "prov:delegate": "people:PERSON__ZANDER_FRANZISKA",
+            "prov:responsible": "orgs:ORG__FSU"
+        }
+    },
+    "wasAttributedTo": {
+        "_:id4047": {
             "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
-            "prov:time": "2025-01-24T19:32:38-01:00"
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
         },
-        "_:id2880": {
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_pr_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET"
-        },
-        "_:id2883": {
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET"
-        },
-        "_:id2885": {
+        "_:id4059": {
             "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET",
-            "prov:time": "2025-01-24T19:34:15-01:00"
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
         }
     },
     "wasInformedBy": {
-        "_:id5518": {
-            "prov:informed": "exe:FUNCTION__XCLIM_WATER_BUDGET",
-            "prov:informant": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
+        "_:id8208": {
+            "prov:informed": "exe:Calc water budget_454",
+            "prov:informant": "exe:Calc pot. ET_453"
         }
     }
 }

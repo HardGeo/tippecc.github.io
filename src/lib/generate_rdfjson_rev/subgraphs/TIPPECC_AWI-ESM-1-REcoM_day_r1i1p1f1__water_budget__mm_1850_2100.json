@@ -286,57 +286,22 @@
             "sdo:name": "Friedrich Schiller University of Jena",
             "wd:P6782": "https://ror.org/05qpz1x62"
         },
-        "software:S": {}
-    },
-    "hadMember": {
-        "_:id294": {
-            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100"
+        "software:SOFTWARE__XCLIM_0_49": {
+            "software:@id": "SOFTWARE__XCLIM_0_49",
+            "software:@type": "SoftwareApplication",
+            "sdo:softwareVersion": "0.49.0",
+            "sdo:targetProduct": "SOFTWARE__XCLIM"
         },
-        "_:id295": {
-            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100"
-        },
-        "_:id364": {
-            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100"
-        },
-        "_:id365": {
-            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100"
-        },
-        "_:id375": {
-            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100"
-        },
-        "_:id376": {
-            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100"
-        }
-    },
-    "actedOnBehalfOf": {
-        "_:id3": {
-            "prov:delegate": "people:PERSON__ZANDER_FRANZISKA",
-            "prov:responsible": "orgs:ORG__FSU"
-        }
-    },
-    "wasAttributedTo": {
-        "_:id296": {
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
-        },
-        "_:id366": {
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100",
-            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
-        },
-        "_:id377": {
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100",
-            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
+        "software:SOFTWARE__CDO_1_9_3": {
+            "software:@id": "SOFTWARE__CDO_1_9_3",
+            "software:@type": "SoftwareApplication",
+            "sdo:softwareVersion": "1.9.3",
+            "sdo:targetProduct": "SOFTWARE__CDO"
         }
     },
     "activity": {
-        "exe:FUNCTION__XCLIM_CONVERT_UNITS": {
-            "prov:startTime": "2025-01-24T15:39:54-01:00",
+        "exe:Convert pr to mm_29": {
+            "prov:startTime": "2025-01-24T16:02:02-01:00",
             "exe:@id": "FUNCTION__XCLIM_CONVERT_UNITS",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "Convert units",
@@ -344,16 +309,8 @@
             "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.convert_units_to",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
         },
-        "exe:FUNCTION__CDO_YEARSUM": {
-            "prov:startTime": "2025-01-24T15:41:06-01:00",
-            "exe:@id": "FUNCTION__CDO_YEARSUM",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Year sum",
-            "sdo:description": "This module computes the sum of the input field over a year.",
-            "sdo:targetProduct": "SOFTWARE__CDO"
-        },
-        "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION": {
-            "prov:startTime": "2025-01-24T15:35:39-01:00",
+        "exe:Calc pot. ET_42": {
+            "prov:startTime": "2025-01-24T15:57:31-01:00",
             "exe:@id": "FUNCTION__XCLIM_EVAPOTRANSPIRATION",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "Evapotranspiration",
@@ -361,8 +318,17 @@
             "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.potential_evapotranspiration",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
         },
-        "exe:FUNCTION__XCLIM_WATER_BUDGET": {
-            "prov:startTime": "2025-01-24T15:36:56-01:00",
+        "exe:Convert pot. ET to mm/day_43": {
+            "prov:startTime": "2025-01-24T16:03:46-01:00",
+            "exe:@id": "FUNCTION__XCLIM_CONVERT_UNITS",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "Convert units",
+            "sdo:description": "Convert a mathematical expression into a value with the same units as a DataArray.",
+            "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.convert_units_to",
+            "sdo:targetProduct": "SOFTWARE__XCLIM"
+        },
+        "exe:Calc water budget_50": {
+            "prov:startTime": "2025-01-24T15:59:04-01:00",
             "exe:@id": "FUNCTION__XCLIM_WATER_BUDGET",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "Water budget",
@@ -370,243 +336,361 @@
             "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.water_budget",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
         },
-        "exe:FUNCTION__XCLIM_RATE2AMOUNT": {
-            "prov:startTime": "2025-01-24T15:38:07-01:00",
+        "exe:Convert water budget to mm/day_51": {
+            "prov:startTime": "2025-01-24T16:00:13-01:00",
             "exe:@id": "FUNCTION__XCLIM_RATE2AMOUNT",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "Rate to amount",
             "sdo:description": "Convert a rate variable to an amount by multiplying by the sampling period length.",
             "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.rate2amount",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
+        },
+        "exe:Calc season sum_57": {
+            "prov:startTime": "2025-02-10T11:52:32-01:00",
+            "exe:@id": "FUNCTION__CDO_YEARSUM",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "Year sum",
+            "sdo:description": "This module computes the sum of the input field over a year.",
+            "sdo:targetProduct": "SOFTWARE__CDO"
+        },
+        "exe:Calc season sum_63": {
+            "prov:startTime": "2025-02-10T11:53:27-01:00",
+            "exe:@id": "FUNCTION__CDO_YEARSUM",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "Year sum",
+            "sdo:description": "This module computes the sum of the input field over a year.",
+            "sdo:targetProduct": "SOFTWARE__CDO"
+        },
+        "exe:Calc season sum_75": {
+            "prov:startTime": "2025-02-10T11:52:59-01:00",
+            "exe:@id": "FUNCTION__CDO_YEARSUM",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "Year sum",
+            "sdo:description": "This module computes the sum of the input field over a year.",
+            "sdo:targetProduct": "SOFTWARE__CDO"
+        },
+        "exe:Calc year sum_81": {
+            "prov:startTime": "2025-02-10T11:50:43-01:00",
+            "exe:@id": "FUNCTION__CDO_YEARSUM",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "Year sum",
+            "sdo:description": "This module computes the sum of the input field over a year.",
+            "sdo:targetProduct": "SOFTWARE__CDO"
         }
     },
     "wasAssociatedWith": {
-        "_:id5": {
-            "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS",
-            "prov:agent": "software:S"
+        "_:id274": {
+            "prov:activity": "exe:Convert pr to mm_29",
+            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         },
-        "_:id41": {
-            "prov:activity": "exe:FUNCTION__CDO_YEARSUM",
-            "prov:agent": "software:S"
+        "_:id388": {
+            "prov:activity": "exe:Calc pot. ET_42",
+            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         },
-        "_:id91": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
-            "prov:agent": "software:S"
+        "_:id418": {
+            "prov:activity": "exe:Convert pot. ET to mm/day_43",
+            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         },
-        "_:id162": {
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET",
-            "prov:agent": "software:S"
+        "_:id476": {
+            "prov:activity": "exe:Calc water budget_50",
+            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         },
-        "_:id174": {
-            "prov:activity": "exe:FUNCTION__XCLIM_RATE2AMOUNT",
-            "prov:agent": "software:S"
-        }
-    },
-    "wasDerivedFrom": {
-        "_:id378": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100"
+        "_:id488": {
+            "prov:activity": "exe:Convert water budget to mm/day_51",
+            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         },
-        "_:id367": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr_1850_2100"
+        "_:id537": {
+            "prov:activity": "exe:Calc season sum_57",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
         },
-        "_:id370": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100"
+        "_:id586": {
+            "prov:activity": "exe:Calc season sum_63",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
         },
-        "_:id297": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_tasmax_1850_2100"
+        "_:id684": {
+            "prov:activity": "exe:Calc season sum_75",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
         },
-        "_:id300": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_tasmin_1850_2100"
-        },
-        "_:id303": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_hurs_1850_2100"
-        },
-        "_:id306": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rsds_1850_2100"
-        },
-        "_:id309": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rsus_1850_2100"
-        },
-        "_:id312": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rlus_1850_2100"
-        },
-        "_:id315": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rlds_1850_2100"
-        },
-        "_:id318": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_sfcWind_1850_2100"
+        "_:id733": {
+            "prov:activity": "exe:Calc year sum_81",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
         }
     },
     "used": {
-        "_:id217": {
-            "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS",
+        "_:id278": {
+            "prov:activity": "exe:Convert pr to mm_29",
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr_1850_2100"
         },
-        "_:id298": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+        "_:id389": {
+            "prov:activity": "exe:Calc pot. ET_42",
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100"
+        },
+        "_:id392": {
+            "prov:activity": "exe:Calc pot. ET_42",
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_tasmax_1850_2100"
         },
-        "_:id301": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+        "_:id395": {
+            "prov:activity": "exe:Calc pot. ET_42",
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_tasmin_1850_2100"
         },
-        "_:id304": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+        "_:id398": {
+            "prov:activity": "exe:Calc pot. ET_42",
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_hurs_1850_2100"
         },
-        "_:id307": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+        "_:id401": {
+            "prov:activity": "exe:Calc pot. ET_42",
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rsds_1850_2100"
         },
-        "_:id310": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+        "_:id404": {
+            "prov:activity": "exe:Calc pot. ET_42",
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rsus_1850_2100"
         },
-        "_:id313": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+        "_:id407": {
+            "prov:activity": "exe:Calc pot. ET_42",
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rlus_1850_2100"
         },
-        "_:id316": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+        "_:id410": {
+            "prov:activity": "exe:Calc pot. ET_42",
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rlds_1850_2100"
         },
-        "_:id319": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+        "_:id413": {
+            "prov:activity": "exe:Calc pot. ET_42",
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_sfcWind_1850_2100"
         },
-        "_:id321": {
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+        "_:id422": {
+            "prov:activity": "exe:Convert pot. ET to mm/day_43",
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100"
         },
-        "_:id327": {
-            "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS",
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100"
+        "_:id477": {
+            "prov:activity": "exe:Calc water budget_50",
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100"
         },
-        "_:id368": {
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET",
+        "_:id480": {
+            "prov:activity": "exe:Calc water budget_50",
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr_1850_2100"
         },
-        "_:id371": {
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET",
+        "_:id483": {
+            "prov:activity": "exe:Calc water budget_50",
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100"
         },
-        "_:id373": {
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET",
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100"
-        },
-        "_:id379": {
-            "prov:activity": "exe:FUNCTION__XCLIM_RATE2AMOUNT",
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100"
-        },
-        "_:id381": {
-            "prov:activity": "exe:FUNCTION__XCLIM_RATE2AMOUNT",
+        "_:id489": {
+            "prov:activity": "exe:Convert water budget to mm/day_51",
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100"
         },
-        "_:id412": {
-            "prov:activity": "exe:FUNCTION__CDO_YEARSUM",
+        "_:id492": {
+            "prov:activity": "exe:Convert water budget to mm/day_51",
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100"
+        },
+        "_:id541": {
+            "prov:activity": "exe:Calc season sum_57",
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100"
+        },
+        "_:id590": {
+            "prov:activity": "exe:Calc season sum_63",
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100"
+        },
+        "_:id688": {
+            "prov:activity": "exe:Calc season sum_75",
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100"
+        },
+        "_:id737": {
+            "prov:activity": "exe:Calc year sum_81",
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100"
         }
     },
     "wasGeneratedBy": {
-        "_:id218": {
+        "_:id279": {
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS"
+            "prov:activity": "exe:Convert pr to mm_29"
         },
-        "_:id299": {
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_tasmax_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id302": {
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_tasmin_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id305": {
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_hurs_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id308": {
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rsds_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id311": {
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rsus_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id314": {
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rlus_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id317": {
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rlds_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id320": {
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_sfcWind_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
-        },
-        "_:id322": {
+        "_:id390": {
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION",
+            "prov:activity": "exe:Calc pot. ET_42",
             "prov:time": "2025-01-24T15:57:31-01:00"
         },
-        "_:id328": {
+        "_:id393": {
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_tasmax_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_42"
+        },
+        "_:id396": {
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_tasmin_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_42"
+        },
+        "_:id399": {
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_hurs_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_42"
+        },
+        "_:id402": {
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rsds_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_42"
+        },
+        "_:id405": {
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rsus_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_42"
+        },
+        "_:id408": {
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rlus_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_42"
+        },
+        "_:id411": {
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rlds_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_42"
+        },
+        "_:id414": {
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_sfcWind_1850_2100",
+            "prov:activity": "exe:Calc pot. ET_42"
+        },
+        "_:id423": {
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS"
+            "prov:activity": "exe:Convert pot. ET to mm/day_43"
         },
-        "_:id369": {
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET"
-        },
-        "_:id372": {
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET"
-        },
-        "_:id374": {
+        "_:id478": {
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET",
+            "prov:activity": "exe:Calc water budget_50",
             "prov:time": "2025-01-24T15:59:04-01:00"
         },
-        "_:id380": {
-            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_RATE2AMOUNT"
+        "_:id481": {
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr_1850_2100",
+            "prov:activity": "exe:Calc water budget_50"
         },
-        "_:id382": {
+        "_:id484": {
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:activity": "exe:Calc water budget_50"
+        },
+        "_:id490": {
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_RATE2AMOUNT",
+            "prov:activity": "exe:Convert water budget to mm/day_51",
             "prov:time": "2025-01-24T16:00:13-01:00"
         },
-        "_:id413": {
+        "_:id493": {
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100",
+            "prov:activity": "exe:Convert water budget to mm/day_51"
+        },
+        "_:id542": {
             "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100",
-            "prov:activity": "exe:FUNCTION__CDO_YEARSUM"
+            "prov:activity": "exe:Calc season sum_57"
+        },
+        "_:id591": {
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100",
+            "prov:activity": "exe:Calc season sum_63"
+        },
+        "_:id689": {
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100",
+            "prov:activity": "exe:Calc season sum_75"
+        },
+        "_:id738": {
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100",
+            "prov:activity": "exe:Calc year sum_81"
+        }
+    },
+    "wasDerivedFrom": {
+        "_:id491": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100"
+        },
+        "_:id479": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr_1850_2100"
+        },
+        "_:id482": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100"
+        },
+        "_:id391": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_tasmax_1850_2100"
+        },
+        "_:id394": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_tasmin_1850_2100"
+        },
+        "_:id397": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_hurs_1850_2100"
+        },
+        "_:id400": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rsds_1850_2100"
+        },
+        "_:id403": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rsus_1850_2100"
+        },
+        "_:id406": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rlus_1850_2100"
+        },
+        "_:id409": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_rlds_1850_2100"
+        },
+        "_:id412": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_sfcWind_1850_2100"
+        }
+    },
+    "hadMember": {
+        "_:id415": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100"
+        },
+        "_:id416": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100"
+        },
+        "_:id485": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100"
+        },
+        "_:id486": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100"
+        },
+        "_:id494": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100"
+        },
+        "_:id495": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100"
+        }
+    },
+    "actedOnBehalfOf": {
+        "_:id9": {
+            "prov:delegate": "people:PERSON__ZANDER_FRANZISKA",
+            "prov:responsible": "orgs:ORG__FSU"
+        }
+    },
+    "wasAttributedTo": {
+        "_:id417": {
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot_1850_2100",
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
+        },
+        "_:id487": {
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget_1850_2100",
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
+        },
+        "_:id496": {
+            "prov:entity": "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__water_budget__mm_1850_2100",
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
         }
     },
     "wasInformedBy": {
-        "_:id5518": {
-            "prov:informed": "exe:FUNCTION__XCLIM_WATER_BUDGET",
-            "prov:informant": "exe:FUNCTION__XCLIM_EVAPOTRANSPIRATION"
+        "_:id7827": {
+            "prov:informed": "exe:Calc water budget_50",
+            "prov:informant": "exe:Calc pot. ET_42"
         },
-        "_:id5519": {
-            "prov:informed": "exe:FUNCTION__XCLIM_RATE2AMOUNT",
-            "prov:informant": "exe:FUNCTION__XCLIM_WATER_BUDGET"
+        "_:id7828": {
+            "prov:informed": "exe:Convert water budget to mm/day_51",
+            "prov:informant": "exe:Calc water budget_50"
         },
-        "_:id5520": {
-            "prov:informed": "exe:FUNCTION__XCLIM_CONVERT_UNITS",
-            "prov:informant": "exe:FUNCTION__XCLIM_RATE2AMOUNT"
+        "_:id7829": {
+            "prov:informed": "exe:Convert pr to mm_29",
+            "prov:informant": "exe:Convert water budget to mm/day_51"
         },
-        "_:id5521": {
-            "prov:informed": "exe:FUNCTION__CDO_YEARSUM",
-            "prov:informant": "exe:FUNCTION__XCLIM_CONVERT_UNITS"
+        "_:id7830": {
+            "prov:informed": "exe:Convert pot. ET to mm/day_43",
+            "prov:informant": "exe:Convert pr to mm_29"
         }
     }
 }

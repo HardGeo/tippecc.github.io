@@ -231,7 +231,18 @@
             "sdo:name": "Friedrich Schiller University of Jena",
             "wd:P6782": "https://ror.org/05qpz1x62"
         },
-        "software:S": {},
+        "software:SOFTWARE__XCLIM_0_49": {
+            "software:@id": "SOFTWARE__XCLIM_0_49",
+            "software:@type": "SoftwareApplication",
+            "sdo:softwareVersion": "0.49.0",
+            "sdo:targetProduct": "SOFTWARE__XCLIM"
+        },
+        "software:SOFTWARE__CDO_1_9_3": {
+            "software:@id": "SOFTWARE__CDO_1_9_3",
+            "software:@type": "SoftwareApplication",
+            "sdo:softwareVersion": "1.9.3",
+            "sdo:targetProduct": "SOFTWARE__CDO"
+        },
         "software:SOFTWARE__XARRAY_2024_10_0": {
             "software:@id": "SOFTWARE__XARRAY_2024_10_0",
             "software:@type": "SoftwareApplication",
@@ -239,55 +250,9 @@
             "sdo:targetProduct": "SOFTWARE__XARRAY"
         }
     },
-    "hadMember": {
-        "_:id2517": {
-            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100"
-        },
-        "_:id2518": {
-            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100"
-        },
-        "_:id2536": {
-            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000"
-        },
-        "_:id2537": {
-            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000"
-        },
-        "_:id2550": {
-            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum"
-        },
-        "_:id2551": {
-            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum"
-        }
-    },
-    "actedOnBehalfOf": {
-        "_:id3": {
-            "prov:delegate": "people:PERSON__ZANDER_FRANZISKA",
-            "prov:responsible": "orgs:ORG__FSU"
-        }
-    },
-    "wasAttributedTo": {
-        "_:id2519": {
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100",
-            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
-        },
-        "_:id2538": {
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000",
-            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
-        },
-        "_:id2552": {
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum",
-            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
-        }
-    },
     "activity": {
-        "exe:FUNCTION__XCLIM_CONVERT_UNITS": {
-            "prov:startTime": "2025-01-24T15:39:54-01:00",
+        "exe:Convert pr to mm_400": {
+            "prov:startTime": "2025-01-24T19:19:46-01:00",
             "exe:@id": "FUNCTION__XCLIM_CONVERT_UNITS",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "Convert units",
@@ -295,40 +260,64 @@
             "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.convert_units_to",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
         },
-        "exe:FUNCTION__CDO_SUB": {
-            "prov:startTime": "2025-01-24T15:41:22-01:00",
+        "exe:Calc abs. change_401": {
+            "prov:startTime": "2025-01-24T19:21:09-01:00",
             "exe:@id": "FUNCTION__CDO_SUB",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "sub - subtract two fields",
             "sdo:description": "This module performs simple arithmetic of two datasets. The number of fields in ifile1 should be the same as in ifile2. One of the input files can contain only one timestep or one variable. The fields in ofile inherit the meta data from ifile1 or ifile2.",
             "sdo:targetProduct": "SOFTWARE__CDO"
         },
-        "exe:FUNCTION__CDO_SELYEAR": {
-            "prov:startTime": "2025-01-24T15:41:12-01:00",
+        "exe:Slice ref. period_402": {
+            "prov:startTime": "2025-01-24T19:20:59-01:00",
             "exe:@id": "FUNCTION__CDO_SELYEAR",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "selyear - select a year range",
             "sdo:description": "This module selects a year range in the input field.",
             "sdo:targetProduct": "SOFTWARE__CDO"
         },
-        "exe:FUNCTION__CDO_YEARSUM": {
-            "prov:startTime": "2025-01-24T15:41:06-01:00",
+        "exe:Calc mean_403": {
+            "prov:startTime": "2025-01-24T19:20:59-01:00",
+            "exe:@id": "FUNCTION__CDO_TIMMEAN",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "timmean - time mean",
+            "sdo:description": "This module computes the temporal mean of the input field.",
+            "sdo:targetProduct": "SOFTWARE__CDO"
+        },
+        "exe:Slice ref. period_404": {
+            "prov:startTime": "2025-01-24T19:21:04-01:00",
+            "exe:@id": "FUNCTION__CDO_SELYEAR",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "selyear - select a year range",
+            "sdo:description": "This module selects a year range in the input field.",
+            "sdo:targetProduct": "SOFTWARE__CDO"
+        },
+        "exe:Calc mean_405": {
+            "prov:startTime": "2025-01-24T19:21:04-01:00",
+            "exe:@id": "FUNCTION__CDO_TIMMEAN",
+            "exe:@type": "SoftwareSourceCode",
+            "sdo:name": "timmean - time mean",
+            "sdo:description": "This module computes the temporal mean of the input field.",
+            "sdo:targetProduct": "SOFTWARE__CDO"
+        },
+        "exe:Calc year sum_406": {
+            "prov:startTime": "2025-01-24T19:20:54-01:00",
             "exe:@id": "FUNCTION__CDO_YEARSUM",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "Year sum",
             "sdo:description": "This module computes the sum of the input field over a year.",
             "sdo:targetProduct": "SOFTWARE__CDO"
         },
-        "exe:FUNCTION__XARRAY_ARIDITY_INDEX": {
-            "prov:startTime": "2025-01-27T20:30:30-01:00",
+        "exe:FUNCTION__XARRAY_ARIDITY_INDEX_412": {
+            "prov:startTime": "2025-01-27T20:33:32-01:00",
             "exe:@id": "FUNCTION__XARRAY_ARIDITY_INDEX",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "Aridity index",
             "sdo:description": "This module computes the aridity index.",
             "sdo:targetProduct": "SOFTWARE__XARRAY"
         },
-        "exe:FUNCTION__XCLIM_WATER_BUDGET": {
-            "prov:startTime": "2025-01-24T15:36:56-01:00",
+        "exe:Calc water budget_421": {
+            "prov:startTime": "2025-01-24T19:16:48-01:00",
             "exe:@id": "FUNCTION__XCLIM_WATER_BUDGET",
             "exe:@type": "SoftwareSourceCode",
             "sdo:name": "Water budget",
@@ -338,140 +327,239 @@
         }
     },
     "wasAssociatedWith": {
-        "_:id5": {
-            "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS",
-            "prov:agent": "software:S"
+        "_:id3550": {
+            "prov:activity": "exe:Convert pr to mm_400",
+            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         },
-        "_:id14": {
-            "prov:activity": "exe:FUNCTION__CDO_SUB",
-            "prov:agent": "software:S"
+        "_:id3559": {
+            "prov:activity": "exe:Calc abs. change_401",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
         },
-        "_:id26": {
-            "prov:activity": "exe:FUNCTION__CDO_SELYEAR",
-            "prov:agent": "software:S"
+        "_:id3571": {
+            "prov:activity": "exe:Slice ref. period_402",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
         },
-        "_:id41": {
-            "prov:activity": "exe:FUNCTION__CDO_YEARSUM",
-            "prov:agent": "software:S"
+        "_:id3577": {
+            "prov:activity": "exe:Calc mean_403",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
         },
-        "_:id79": {
-            "prov:activity": "exe:FUNCTION__XARRAY_ARIDITY_INDEX",
+        "_:id3585": {
+            "prov:activity": "exe:Slice ref. period_404",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        },
+        "_:id3591": {
+            "prov:activity": "exe:Calc mean_405",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        },
+        "_:id3599": {
+            "prov:activity": "exe:Calc year sum_406",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        },
+        "_:id3651": {
+            "prov:activity": "exe:FUNCTION__XARRAY_ARIDITY_INDEX_412",
             "prov:agent": "software:SOFTWARE__XARRAY_2024_10_0"
         },
-        "_:id162": {
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET",
-            "prov:agent": "software:S"
-        }
-    },
-    "wasDerivedFrom": {
-        "_:id2539": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000",
-            "prov:usedEntity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum"
-        },
-        "_:id2553": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum",
-            "prov:usedEntity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100"
-        },
-        "_:id2520": {
-            "prov:generatedEntity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100",
-            "prov:usedEntity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr_1850_2100"
+        "_:id3752": {
+            "prov:activity": "exe:Calc water budget_421",
+            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         }
     },
     "used": {
-        "_:id2521": {
-            "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS",
+        "_:id3551": {
+            "prov:activity": "exe:Convert pr to mm_400",
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100"
+        },
+        "_:id3554": {
+            "prov:activity": "exe:Convert pr to mm_400",
             "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr_1850_2100"
         },
-        "_:id2523": {
-            "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS",
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100"
-        },
-        "_:id2532": {
-            "prov:activity": "exe:FUNCTION__CDO_SUB",
+        "_:id3566": {
+            "prov:activity": "exe:Calc abs. change_401",
             "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000"
         },
-        "_:id2540": {
-            "prov:activity": "exe:FUNCTION__CDO_SELYEAR",
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum"
-        },
-        "_:id2542": {
-            "prov:activity": "exe:FUNCTION__CDO_SELYEAR",
+        "_:id3572": {
+            "prov:activity": "exe:Slice ref. period_402",
             "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000"
         },
-        "_:id2554": {
-            "prov:activity": "exe:FUNCTION__CDO_YEARSUM",
+        "_:id3575": {
+            "prov:activity": "exe:Slice ref. period_402",
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum"
+        },
+        "_:id3578": {
+            "prov:activity": "exe:Calc mean_403",
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000"
+        },
+        "_:id3580": {
+            "prov:activity": "exe:Calc mean_403",
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum"
+        },
+        "_:id3589": {
+            "prov:activity": "exe:Slice ref. period_404",
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum"
+        },
+        "_:id3594": {
+            "prov:activity": "exe:Calc mean_405",
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum"
+        },
+        "_:id3600": {
+            "prov:activity": "exe:Calc year sum_406",
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum"
+        },
+        "_:id3603": {
+            "prov:activity": "exe:Calc year sum_406",
             "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100"
         },
-        "_:id2556": {
-            "prov:activity": "exe:FUNCTION__CDO_YEARSUM",
+        "_:id3655": {
+            "prov:activity": "exe:FUNCTION__XARRAY_ARIDITY_INDEX_412",
             "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum"
         },
-        "_:id2591": {
-            "prov:activity": "exe:FUNCTION__XARRAY_ARIDITY_INDEX",
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum"
-        },
-        "_:id2672": {
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET",
+        "_:id3756": {
+            "prov:activity": "exe:Calc water budget_421",
             "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr_1850_2100"
         }
     },
     "wasGeneratedBy": {
-        "_:id2522": {
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS"
-        },
-        "_:id2524": {
+        "_:id3552": {
             "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_CONVERT_UNITS",
+            "prov:activity": "exe:Convert pr to mm_400",
             "prov:time": "2025-01-24T19:19:46-01:00"
         },
-        "_:id2533": {
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000",
-            "prov:activity": "exe:FUNCTION__CDO_SUB"
+        "_:id3555": {
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr_1850_2100",
+            "prov:activity": "exe:Convert pr to mm_400"
         },
-        "_:id2541": {
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum",
-            "prov:activity": "exe:FUNCTION__CDO_SELYEAR"
-        },
-        "_:id2543": {
+        "_:id3567": {
             "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000",
-            "prov:activity": "exe:FUNCTION__CDO_SELYEAR",
+            "prov:activity": "exe:Calc abs. change_401"
+        },
+        "_:id3573": {
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000",
+            "prov:activity": "exe:Slice ref. period_402",
             "prov:time": "2025-01-24T19:20:59-01:00"
         },
-        "_:id2555": {
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100",
-            "prov:activity": "exe:FUNCTION__CDO_YEARSUM"
-        },
-        "_:id2557": {
+        "_:id3576": {
             "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum",
-            "prov:activity": "exe:FUNCTION__CDO_YEARSUM",
+            "prov:activity": "exe:Slice ref. period_402"
+        },
+        "_:id3579": {
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000",
+            "prov:activity": "exe:Calc mean_403",
+            "prov:time": "2025-01-24T19:20:59-01:00"
+        },
+        "_:id3581": {
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum",
+            "prov:activity": "exe:Calc mean_403"
+        },
+        "_:id3590": {
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum",
+            "prov:activity": "exe:Slice ref. period_404"
+        },
+        "_:id3595": {
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum",
+            "prov:activity": "exe:Calc mean_405"
+        },
+        "_:id3601": {
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum",
+            "prov:activity": "exe:Calc year sum_406",
             "prov:time": "2025-01-24T19:20:54-01:00"
         },
-        "_:id2592": {
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum",
-            "prov:activity": "exe:FUNCTION__XARRAY_ARIDITY_INDEX"
+        "_:id3604": {
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100",
+            "prov:activity": "exe:Calc year sum_406"
         },
-        "_:id2673": {
+        "_:id3656": {
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum",
+            "prov:activity": "exe:FUNCTION__XARRAY_ARIDITY_INDEX_412"
+        },
+        "_:id3757": {
             "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr_1850_2100",
-            "prov:activity": "exe:FUNCTION__XCLIM_WATER_BUDGET"
+            "prov:activity": "exe:Calc water budget_421"
+        }
+    },
+    "wasDerivedFrom": {
+        "_:id3574": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000",
+            "prov:usedEntity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum"
+        },
+        "_:id3602": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum",
+            "prov:usedEntity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100"
+        },
+        "_:id3553": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr_1850_2100"
+        }
+    },
+    "hadMember": {
+        "_:id3556": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100"
+        },
+        "_:id3557": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100"
+        },
+        "_:id3582": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000"
+        },
+        "_:id3583": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000"
+        },
+        "_:id3605": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum"
+        },
+        "_:id3606": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum"
+        }
+    },
+    "actedOnBehalfOf": {
+        "_:id9": {
+            "prov:delegate": "people:PERSON__ZANDER_FRANZISKA",
+            "prov:responsible": "orgs:ORG__FSU"
+        }
+    },
+    "wasAttributedTo": {
+        "_:id3558": {
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100",
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
+        },
+        "_:id3584": {
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000",
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
+        },
+        "_:id3607": {
+            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum",
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
         }
     },
     "wasInformedBy": {
-        "_:id5521": {
-            "prov:informed": "exe:FUNCTION__CDO_YEARSUM",
-            "prov:informant": "exe:FUNCTION__XCLIM_CONVERT_UNITS"
+        "_:id8170": {
+            "prov:informed": "exe:Calc year sum_406",
+            "prov:informant": "exe:Convert pr to mm_400"
         },
-        "_:id5522": {
-            "prov:informed": "exe:FUNCTION__CDO_SELYEAR",
-            "prov:informant": "exe:FUNCTION__CDO_YEARSUM"
+        "_:id8171": {
+            "prov:informed": "exe:Slice ref. period_402",
+            "prov:informant": "exe:Calc year sum_406"
         },
-        "_:id5523": {
-            "prov:informed": "exe:FUNCTION__CDO_SUB",
-            "prov:informant": "exe:FUNCTION__CDO_SELYEAR"
+        "_:id8172": {
+            "prov:informed": "exe:Calc mean_403",
+            "prov:informant": "exe:Slice ref. period_402"
         },
-        "_:id5524": {
-            "prov:informed": "exe:FUNCTION__XARRAY_ARIDITY_INDEX",
-            "prov:informant": "exe:FUNCTION__CDO_SUB"
+        "_:id8173": {
+            "prov:informed": "exe:Slice ref. period_404",
+            "prov:informant": "exe:Calc mean_403"
+        },
+        "_:id8174": {
+            "prov:informed": "exe:Calc mean_405",
+            "prov:informant": "exe:Slice ref. period_404"
+        },
+        "_:id8175": {
+            "prov:informed": "exe:Calc abs. change_401",
+            "prov:informant": "exe:Calc mean_405"
         }
     }
 }
