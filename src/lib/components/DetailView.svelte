@@ -27,7 +27,7 @@
     import data from '$lib/generate_rdfjson_rev/subgraphs/TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__ai__mm_1850_2100__yearsum_mean_1981_2000-2080_2099.json'
 
     import { AddActions, createPeople, addSoftware, addEdgesOnly, AddEntities } from '$lib/components//dataProcessing'; // Adjust path as necessary
-    import {adjustPositionSoftware, adjustPositionPersons} from "$lib/components/adjustPositions";
+    import {adjustPositionSoftware, adjustPositionPersons, adjustPositionActivities} from "$lib/components/adjustPositions";
 
 
 
@@ -177,6 +177,13 @@
             swapArrow: true,
             edgestyle: "stroke: #CE93D8;"
         });
+
+        adjustPositionActivities({
+            edges: edges_det,
+            nodes: nodes_det,
+            EdgeLabel: $used_lb,
+            NodeType: "activityNode"
+        })
 
         adjustPositionSoftware({
             edges: edges_det,

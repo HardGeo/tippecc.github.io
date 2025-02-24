@@ -18,6 +18,18 @@ type WasDerivedFrom = {
     };
 };
 
+type Activity = {
+    [key: string]: {
+        "prov:startTime": string,
+        "exe:@id": string,
+        "exe:@type": string,
+        "sdo:name": string,
+        "sdo:description": string,
+        "sdo:url": string,
+        "sdo:targetProduct": string
+    };
+};
+
 type WasInformedBy = {
     [key: string]: {
         "prov:informed": string;
@@ -141,6 +153,7 @@ type Dataset = {
     wasAttributedTo: WasAttributedTo;
     hadMember: HadMember;
     entity: Entity;
+    activity: Activity
   };
 
 
@@ -707,9 +720,23 @@ export function AddActions(dataset: Dataset, nodes: any, edges: any, label: any)
     let yPos: number = 0;
     const length = executionOrder.length - 1;
     const spacing = (maxY-minY) / length;
+
+    const activity = Object.values(dataset.activity) as {
+        "prov:startTime": string,
+        "exe:@id": string,
+        "exe:@type": string,
+        "sdo:name": string,
+        "sdo:description": string,
+        "sdo:url": string,
+        "sdo:targetProduct": string
+    }[];
+    
+
     
     executionOrder.forEach((currentEntity) => {
-
+        
+        const currentActivity = dataset.activity[currentEntity];
+        //console.log(currentActivity["sdo:name"]);
         // Add node for currentEntity
         nodes.update((n: NodeActivity[]) => {
 
@@ -720,7 +747,13 @@ export function AddActions(dataset: Dataset, nodes: any, edges: any, label: any)
                     id: currentEntity,
                     type: 'activityNode', // Specify the custom node type
                     data: {
-                        id: currentEntity
+                        id: currentEntity,
+                        startTime: currentActivity["prov:startTime"],
+                        type: currentActivity["exe:@type"],
+                        name: currentActivity["sdo:name"],
+                        description: currentActivity["sdo:description"],
+                        url: currentActivity["sdo:url"],
+                        targetProduct: currentActivity["sdo:targetProduct"]
                     },
                     position: { x: xPos, y: yPos },
                 });
@@ -745,7 +778,8 @@ export function AddActions(dataset: Dataset, nodes: any, edges: any, label: any)
                 animated: false, // Set animated to false
                 label: label, // Add a label if necessary
                 type: 'default', // Specify the edge type
-                labelStyle: 'color: black; font-size: 16px; z-index: 2; pointer-events: none;' // Styling for the label
+                labelStyle: 'color: black; font-size: 16px; z-index: 2; pointer-events: none;', // Styling for the label
+                style: "stroke:rgb(2, 1, 2);"
             };
         });
     
@@ -877,7 +911,7 @@ export function addSoftware({
                         repository: dataset.agent[agentId]["sdo:codeRepository"]  || "N/A",
                         license: dataset.agent[agentId]["sdo:license"]  || "N/A"
                      },
-                    position: { x: 2200, y: yPosition }, // Adjust as needed
+                    position: { x: 1200, y: yPosition }, // Adjust as needed
                 });
             }
             return n;

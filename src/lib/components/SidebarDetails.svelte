@@ -95,6 +95,32 @@ Source;${detailedData.source}
                 alert('Failed to copy data. Please try again.');
             });
     }
+
+
+
+    function copyActivityData() {
+        // Format data to copy, you can adjust this string based on what you need
+        let dataToCopy = `
+Id:;${detailedData.id}
+StartTime;${detailedData.startTime}
+Type;${detailedData.type}
+Name;${detailedData.name}
+Description;${detailedData.description}
+Url;${detailedData.url}
+TargetProduct;${detailedData.targetProduct}
+`.trim();
+
+        // Use Clipboard API to copy the string
+        navigator.clipboard.writeText(dataToCopy)
+            .then(() => {
+                console.log('Data copied to clipboard');
+                alert('Data copied to clipboard!');
+            })
+            .catch(err => {
+                console.error('Failed to copy: ', err);
+                alert('Failed to copy data. Please try again.');
+            });
+    }
 </script>
 
 <style>
@@ -452,6 +478,68 @@ Source;${detailedData.source}
                         <tr>
                             <td ><strong>Source</strong></td>
                             <td >{detailedData.source}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {/if}
+
+
+    {#if detailedData?.id}
+        <div class="relative"> <!-- Ensure relative positioning -->
+            
+            <button
+                on:click={copySoftwareData}
+                class="bg-gray-200 p-2 rounded-md shadow-md hover:bg-gray-200 mt-4"
+                title="Copy to Clipboard"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-600 hover:text-gray-800" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M14 2H9a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2zM9 4h6v12H9V4z" />
+                    <path d="M4 6a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 11-2 0V7H6v2a1 1 0 01-2 0V6z" />
+                </svg>
+            </button>
+            <h2>{"Activity Details"}</h2>
+            <div class="triangle absolute left-1/2 -top-2 transform -translate-x-1/2"></div>
+            
+            <div class="table-container">
+                <!-- Table layout with adjusted column spacing -->
+                <table class="w-full">
+                    <tbody>
+                        <tr>
+                            <td ><strong>Id</strong></td> 
+                            <td >
+                                {detailedData.id}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td ><strong>StartTime</strong></td>
+                            <td >
+                                {detailedData.startTime}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td ><strong>Type</strong></td>
+                            <td >{detailedData.type}</td>
+                        </tr>
+                        <tr>
+                            <td ><strong>Name</strong></td>
+                            <td >{detailedData.name}</td>
+                        </tr>
+
+                        <tr>
+                            <td ><strong>Description</strong></td>
+                            <td >{detailedData.description}</td>
+                        </tr>
+
+                        <tr>
+                            <td ><strong>Url</strong></td>
+                            <td >{detailedData.url}</td>
+                        </tr>
+
+                        <tr>
+                            <td ><strong>TargetProduct</strong></td>
+                            <td >{detailedData.targetProduct}</td>
                         </tr>
                     </tbody>
                 </table>

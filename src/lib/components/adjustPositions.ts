@@ -117,3 +117,81 @@ export function adjustPositionPersons({
     });
 }
 
+
+
+export function adjustPositionActivities({
+    edges,
+    nodes,
+    EdgeLabel,
+    NodeType,
+    minDistance = 50 // Minimum allowed distance between nodes
+}: {
+    edges: import('svelte/store').Readable<Edge[]>;
+    nodes: import('svelte/store').Readable<Node[]>;
+    EdgeLabel: string;
+    NodeType: string;
+    minDistance?: number; // Minimum allowed distance between nodes
+}): void {
+    const currentNodes = get(nodes);
+    const currentEdges = get(edges);
+
+    // Get all activity edges matching the given label
+    const activityEdges = currentEdges.filter(edge => edge.label === EdgeLabel);
+
+    if (activityEdges.length === 0) {
+        console.warn("No matching activity edges found, skipping adjustment.");
+        return;
+    }
+
+    // Group edges by source (activity nodes)
+    const groupedBySource = activityEdges.reduce((acc, edge) => {
+        (acc[edge.source] = acc[edge.source] || []).push(edge);
+        return acc;
+    }, {} as Record<string, Edge[]>);
+
+    // Maps to store adjusted positions
+    const adjustedYPositions = new Map<string, number>();
+    const adjustedXPositions = new Map<string, number>();
+
+    // Adjust position for each activity node
+    Object.entries(groupedBySource).forEach(([sourceId, edges]) => {
+        const targetNodes = edges.map(edge => currentNodes.find(node => node.id === edge.target)).filter(Boolean) as Node[];
+        if (targetNodes.length === 0) return;
+
+
+        // Calculate the average X and Y positions of the connected entity nodes
+        let avgX = targetNodes.reduce((sum, node) => sum + node.position.x, 0) / targetNodes.length;
+        let avgY = targetNodes.reduce((sum, node) => sum + node.position.y, 0) / targetNodes.length;
+
+        // Ensure a minimum spacing between nodes (avoid overlap)
+        while ([...adjustedXPositions.values()].some(x => Math.abs(x - avgX) < minDistance)) {
+            avgX += minDistance; // Push right if needed
+        }
+        while ([...adjustedYPositions.values()].some(y => Math.abs(y - avgY) < minDistance)) {
+            avgY += minDistance; // Push down if needed
+        }
+
+        // Store new positions
+        adjustedXPositions.set(sourceId, avgX);
+        adjustedYPositions.set(sourceId, avgY);
+
+        // Update activity node with the computed average position
+        const sourceNode = currentNodes.find(node => node.id === sourceId);
+        if (sourceNode) {
+            sourceNode.position = { x: avgX, y: avgY };
+        }
+    });
+
+    // Update the nodes in the store
+    nodes.update(n => 
+        n.map(node => 
+            adjustedXPositions.has(node.id) || adjustedYPositions.has(node.id)
+            ? { ...node, position: { 
+                x: adjustedXPositions.get(node.id) ?? node.position.x, 
+                y: adjustedYPositions.get(node.id) ?? node.position.y 
+            } }
+            : node
+        )
+    );
+}
+

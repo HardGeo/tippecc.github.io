@@ -1,18 +1,37 @@
 <script lang="ts">
     import { Handle, Position } from '@xyflow/svelte';
+    import { showDetails, handleKeyDown } from '$lib/store';
 
     export let id;
+
+    export let data = {
+        id: "",
+        startTime: "",
+        type: "",
+        name: "",
+        description: "",
+        url: "",
+        targetProduct: ""
+	}
+
     function extractBaseString(input: string): string {
         const match = input.match(/^(.*?)(?:_\d+)?$/);
         return match ? match[1] : input;
     }
 
     const id_new = extractBaseString(id);
-    console.log(id_new);
 
 </script>
 
-<div class="bg-[#90CAF9] rounded-lg shadow-lg relative inline-block" style="z-index: 1;">
+<div 
+    class="bg-[#90CAF9] rounded-lg shadow-lg relative inline-block" 
+    style="z-index: 1;"
+    role="button"
+    tabindex="0"
+    aria-label="Show details"
+    on:click={() => showDetails(data)}
+    on:keydown={(event) => handleKeyDown(event, data)}
+>
     <!-- Top Handle -->
     <Handle
         type="target"
