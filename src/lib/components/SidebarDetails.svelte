@@ -486,7 +486,7 @@ TargetProduct;${detailedData.targetProduct}
     {/if}
 
 
-    {#if detailedData?.id}
+    {#if detailedData?.name}
         <div class="relative"> <!-- Ensure relative positioning -->
             
             <button
