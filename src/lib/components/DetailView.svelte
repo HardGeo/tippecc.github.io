@@ -134,7 +134,7 @@
             edgeStyle: "stroke: #CC8400"
         });
         
-
+        /*
         //Add Edges for Used
         addEdgesOnly({
             dataset: data.used,  
@@ -148,7 +148,7 @@
             handle1: "right",
             handle2: "left",
             IdAppendix: "used"
-        });
+        });*/
         
         // Add Edges for wasGeneratedBy
         addEdgesOnly({
@@ -181,7 +181,7 @@
         adjustPositionActivities({
             edges: edges_det,
             nodes: nodes_det,
-            EdgeLabel: $used_lb,
+            EdgeLabel: $wasGeneratedBy_lb,
             NodeType: "activityNode"
         })
 

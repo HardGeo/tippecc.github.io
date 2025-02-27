@@ -132,6 +132,12 @@ type NodeActivity = {
     type: string;
     data: {
         id: string;
+        startTime: string;
+        type: string;
+        name: string;
+        description: string;
+        url: string;
+        targetProduct: string;
     };
     position: { x: number; y: number };
 };
@@ -633,7 +639,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                 target: usedEntity, // Target is the used entity
                 animated: false, // Set animated to false
                 label: label, // Add a label if necessary
-                type: 'default', // Specify the edge type
+                type: 'step', // Specify the edge type
                 labelStyle: 'color: black; font-size: 16px; z-index: 2; pointer-events: none;' // Styling for the label
             };
         });
@@ -763,7 +769,7 @@ export function AddActions(dataset: Dataset, nodes: any, edges: any, label: any)
         });
         yPos += -spacing;
     })
-
+    /*
     edges.update((e: Edge[]) => {
         const newEdges = Object.keys(dataset.wasInformedBy).map(id => {
             const generatedEntity = dataset.wasInformedBy[id]["prov:informed"];
@@ -777,7 +783,7 @@ export function AddActions(dataset: Dataset, nodes: any, edges: any, label: any)
                 target: usedEntity, // Target is the used entity
                 animated: false, // Set animated to false
                 label: label, // Add a label if necessary
-                type: 'default', // Specify the edge type
+                type: 'step', // Specify the edge type
                 labelStyle: 'color: black; font-size: 16px; z-index: 2; pointer-events: none;', // Styling for the label
                 style: "stroke:rgb(2, 1, 2);"
             };
@@ -790,7 +796,7 @@ export function AddActions(dataset: Dataset, nodes: any, edges: any, label: any)
 
         // Return the updated edges list
         return e;
-    });
+    });*/
 
 }
 
