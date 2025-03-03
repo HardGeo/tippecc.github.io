@@ -2,7 +2,7 @@
 
 import os
 import json
-from collections import Counter
+from collections import Counter, defaultdict
 
 # Funktion zur rekursiven Rückverfolgung der Provenance eines Datensatzes
 """
@@ -134,14 +134,19 @@ for target_id in targets:
         if value.get("prov:entity") in unique_values
     }
 
-    # Zähle die Häufigkeit der Entities
-    wasGeneratedBy_counts = Counter(entry["prov:activity"] for entry in filtered_wasGeneratedBy.values())
-    #if target_id == "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum":
-        #print(target_id, wasGeneratedBy_counts)
+    # Zähle die Häufigkeit der "prov:activity"
+    activity_counts = Counter(entry["prov:activity"] for entry in filtered_wasGeneratedBy.values())
 
-    # Filtere nur die Einträge, deren prov:entity mehr als einmal vorkommt
-    filtered_wasGeneratedBy = {key: value for key, value in filtered_wasGeneratedBy.items() if wasGeneratedBy_counts[value["prov:activity"]] > 1}
+    # Gruppiere die Einträge nach "prov:activity"
+    grouped_by_activity = defaultdict(list)
+    for key, value in filtered_wasGeneratedBy.items():
+        grouped_by_activity[value["prov:activity"]].append((key, value))
 
+    # Behalte nur Gruppen, wo die "prov:activity" mehrfach vorkommt
+    filtered_wasGeneratedBy = {
+        key: value for activity, entries in grouped_by_activity.items() if activity_counts[activity] > 1
+        for key, value in entries
+    }
     
     data["wasGeneratedBy"] = filtered_wasGeneratedBy
     
@@ -156,11 +161,19 @@ for target_id in targets:
         if value.get("prov:entity") in unique_values
     }
 
-        # Zähle die Häufigkeit der Entities
+    # Zähle die Häufigkeit der "prov:activity"
     used_counts = Counter(entry["prov:activity"] for entry in filtered_used.values())
 
-    # Filtere nur die Einträge, deren prov:entity mehr als einmal vorkommt
-    filtered_used = {key: value for key, value in filtered_used.items() if used_counts[value["prov:activity"]] > 1}
+    # Gruppiere die Einträge nach "prov:activity"
+    grouped_by_activity_used = defaultdict(list)
+    for key, value in filtered_used.items():
+        grouped_by_activity_used[value["prov:activity"]].append((key, value))
+
+    # Behalte nur Gruppen, wo die "prov:activity" mehrfach vorkommt
+    filtered_used = {
+        key: value for activity, entries in grouped_by_activity_used.items() if used_counts[activity] > 1
+        for key, value in entries
+    }
 
     
     data["used"] = filtered_used
