@@ -154,7 +154,7 @@
             handle2: "left",
             IdAppendix: "used"
         });*/
-        
+
         // Add Edges for wasGeneratedBy
         addEdgesOnly({
             dataset: data.wasGeneratedBy,  

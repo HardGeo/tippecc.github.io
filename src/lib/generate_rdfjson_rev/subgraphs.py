@@ -2,6 +2,7 @@
 
 import os
 import json
+from collections import Counter
 
 # Funktion zur rekursiven Rückverfolgung der Provenance eines Datensatzes
 """
@@ -132,8 +133,19 @@ for target_id in targets:
         key: value for key, value in wasGeneratedBy.items()
         if value.get("prov:entity") in unique_values
     }
+
+    # Zähle die Häufigkeit der Entities
+    wasGeneratedBy_counts = Counter(entry["prov:activity"] for entry in filtered_wasGeneratedBy.values())
+    #if target_id == "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum":
+        #print(target_id, wasGeneratedBy_counts)
+
+    # Filtere nur die Einträge, deren prov:entity mehr als einmal vorkommt
+    filtered_wasGeneratedBy = {key: value for key, value in filtered_wasGeneratedBy.items() if wasGeneratedBy_counts[value["prov:activity"]] > 1}
+
     
     data["wasGeneratedBy"] = filtered_wasGeneratedBy
+    
+
     
     #___________________________________________________________
     # Die gesamte "used"-Struktur
@@ -143,6 +155,13 @@ for target_id in targets:
         key: value for key, value in used.items()
         if value.get("prov:entity") in unique_values
     }
+
+        # Zähle die Häufigkeit der Entities
+    used_counts = Counter(entry["prov:activity"] for entry in filtered_used.values())
+
+    # Filtere nur die Einträge, deren prov:entity mehr als einmal vorkommt
+    filtered_used = {key: value for key, value in filtered_used.items() if used_counts[value["prov:activity"]] > 1}
+
     
     data["used"] = filtered_used
     
@@ -239,7 +258,7 @@ for target_id in targets:
     with open(output_file, "w") as f:
         json.dump(data, f, indent=4)
 
-    print(f"File {target_id} written succesfully to: {base_dir}")
+    #print(f"File {target_id} written succesfully to: {base_dir}")
 
 
 

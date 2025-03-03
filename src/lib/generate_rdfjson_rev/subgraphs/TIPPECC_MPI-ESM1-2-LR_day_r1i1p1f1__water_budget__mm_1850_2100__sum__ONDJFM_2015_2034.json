@@ -169,30 +169,6 @@
         }
     },
     "activity": {
-        "exe:Calc abs. change_596": {
-            "prov:startTime": "2025-01-24T20:49:33-01:00",
-            "exe:@id": "FUNCTION__CDO_SUB",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "sub - subtract two fields",
-            "sdo:description": "This module performs simple arithmetic of two datasets. The number of fields in ifile1 should be the same as in ifile2. One of the input files can contain only one timestep or one variable. The fields in ofile inherit the meta data from ifile1 or ifile2.",
-            "sdo:targetProduct": "SOFTWARE__CDO"
-        },
-        "exe:Slice ref. period_597": {
-            "prov:startTime": "2025-01-24T20:49:23-01:00",
-            "exe:@id": "FUNCTION__CDO_SELYEAR",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "selyear - select a year range",
-            "sdo:description": "This module selects a year range in the input field.",
-            "sdo:targetProduct": "SOFTWARE__CDO"
-        },
-        "exe:Calc mean_598": {
-            "prov:startTime": "2025-01-24T20:49:23-01:00",
-            "exe:@id": "FUNCTION__CDO_TIMMEAN",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "timmean - time mean",
-            "sdo:description": "This module computes the temporal mean of the input field.",
-            "sdo:targetProduct": "SOFTWARE__CDO"
-        },
         "exe:Delete first & last timesteps_599": {
             "prov:startTime": "2025-01-24T20:49:18-01:00",
             "exe:@id": "FUNCTION__CDO_SELTIMESTEP",
@@ -219,18 +195,6 @@
         }
     },
     "wasAssociatedWith": {
-        "_:id5317": {
-            "prov:activity": "exe:Calc abs. change_596",
-            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
-        },
-        "_:id5329": {
-            "prov:activity": "exe:Slice ref. period_597",
-            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
-        },
-        "_:id5335": {
-            "prov:activity": "exe:Calc mean_598",
-            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
-        },
         "_:id5343": {
             "prov:activity": "exe:Delete first & last timesteps_599",
             "prov:agent": "software:SOFTWARE__CDO_1_9_3"
@@ -245,18 +209,6 @@
         }
     },
     "used": {
-        "_:id5321": {
-            "prov:activity": "exe:Calc abs. change_596",
-            "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034"
-        },
-        "_:id5333": {
-            "prov:activity": "exe:Slice ref. period_597",
-            "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
-        },
-        "_:id5338": {
-            "prov:activity": "exe:Calc mean_598",
-            "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
-        },
         "_:id5344": {
             "prov:activity": "exe:Delete first & last timesteps_599",
             "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
@@ -283,18 +235,6 @@
         }
     },
     "wasGeneratedBy": {
-        "_:id5322": {
-            "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_2015_2034",
-            "prov:activity": "exe:Calc abs. change_596"
-        },
-        "_:id5334": {
-            "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
-            "prov:activity": "exe:Slice ref. period_597"
-        },
-        "_:id5339": {
-            "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
-            "prov:activity": "exe:Calc mean_598"
-        },
         "_:id5345": {
             "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
             "prov:activity": "exe:Delete first & last timesteps_599",
@@ -368,25 +308,9 @@
         }
     },
     "wasInformedBy": {
-        "_:id8345": {
-            "prov:informed": "exe:Slice ref. period_597",
-            "prov:informant": "exe:Delete first & last timesteps_599"
-        },
-        "_:id8346": {
-            "prov:informed": "exe:Calc mean_598",
-            "prov:informant": "exe:Slice ref. period_597"
-        },
-        "_:id8347": {
-            "prov:informed": "exe:Slice ref. period_600",
-            "prov:informant": "exe:Calc mean_598"
-        },
         "_:id8348": {
             "prov:informed": "exe:Calc mean_601",
             "prov:informant": "exe:Slice ref. period_600"
-        },
-        "_:id8349": {
-            "prov:informed": "exe:Calc abs. change_596",
-            "prov:informant": "exe:Calc mean_601"
         }
     }
 }

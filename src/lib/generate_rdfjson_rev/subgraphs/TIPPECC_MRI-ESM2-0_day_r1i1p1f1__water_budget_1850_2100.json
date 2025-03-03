@@ -161,15 +161,6 @@
         }
     },
     "activity": {
-        "exe:Convert pr to mm_614": {
-            "prov:startTime": "2025-01-24T21:00:57-01:00",
-            "exe:@id": "FUNCTION__XCLIM_CONVERT_UNITS",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Convert units",
-            "sdo:description": "Convert a mathematical expression into a value with the same units as a DataArray.",
-            "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.convert_units_to",
-            "sdo:targetProduct": "SOFTWARE__XCLIM"
-        },
         "exe:Calc pot. ET_627": {
             "prov:startTime": "2025-01-24T20:56:38-01:00",
             "exe:@id": "FUNCTION__XCLIM_EVAPOTRANSPIRATION",
@@ -177,15 +168,6 @@
             "sdo:name": "Evapotranspiration",
             "sdo:description": "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with a given method.",
             "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.potential_evapotranspiration",
-            "sdo:targetProduct": "SOFTWARE__XCLIM"
-        },
-        "exe:Convert pot. ET to mm/day_628": {
-            "prov:startTime": "2025-01-24T21:02:39-01:00",
-            "exe:@id": "FUNCTION__XCLIM_CONVERT_UNITS",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Convert units",
-            "sdo:description": "Convert a mathematical expression into a value with the same units as a DataArray.",
-            "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.convert_units_to",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
         },
         "exe:Calc water budget_635": {
@@ -196,44 +178,19 @@
             "sdo:description": "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget.",
             "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.water_budget",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
-        },
-        "exe:Convert water budget to mm/day_636": {
-            "prov:startTime": "2025-01-24T20:59:13-01:00",
-            "exe:@id": "FUNCTION__XCLIM_RATE2AMOUNT",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Rate to amount",
-            "sdo:description": "Convert a rate variable to an amount by multiplying by the sampling period length.",
-            "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.rate2amount",
-            "sdo:targetProduct": "SOFTWARE__XCLIM"
         }
     },
     "wasAssociatedWith": {
-        "_:id5464": {
-            "prov:activity": "exe:Convert pr to mm_614",
-            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
-        },
         "_:id5578": {
             "prov:activity": "exe:Calc pot. ET_627",
-            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
-        },
-        "_:id5608": {
-            "prov:activity": "exe:Convert pot. ET to mm/day_628",
             "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         },
         "_:id5666": {
             "prov:activity": "exe:Calc water budget_635",
             "prov:agent": "software:SOFTWARE__XCLIM_0_49"
-        },
-        "_:id5678": {
-            "prov:activity": "exe:Convert water budget to mm/day_636",
-            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         }
     },
     "used": {
-        "_:id5468": {
-            "prov:activity": "exe:Convert pr to mm_614",
-            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_pr_1850_2100"
-        },
         "_:id5579": {
             "prov:activity": "exe:Calc pot. ET_627",
             "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__evspsblpot_1850_2100"
@@ -270,10 +227,6 @@
             "prov:activity": "exe:Calc pot. ET_627",
             "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_sfcWind_1850_2100"
         },
-        "_:id5612": {
-            "prov:activity": "exe:Convert pot. ET to mm/day_628",
-            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__evspsblpot_1850_2100"
-        },
         "_:id5667": {
             "prov:activity": "exe:Calc water budget_635",
             "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget_1850_2100"
@@ -285,17 +238,9 @@
         "_:id5673": {
             "prov:activity": "exe:Calc water budget_635",
             "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__evspsblpot_1850_2100"
-        },
-        "_:id5682": {
-            "prov:activity": "exe:Convert water budget to mm/day_636",
-            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget_1850_2100"
         }
     },
     "wasGeneratedBy": {
-        "_:id5469": {
-            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_pr_1850_2100",
-            "prov:activity": "exe:Convert pr to mm_614"
-        },
         "_:id5580": {
             "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__evspsblpot_1850_2100",
             "prov:activity": "exe:Calc pot. ET_627",
@@ -333,10 +278,6 @@
             "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1_sfcWind_1850_2100",
             "prov:activity": "exe:Calc pot. ET_627"
         },
-        "_:id5613": {
-            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:activity": "exe:Convert pot. ET to mm/day_628"
-        },
         "_:id5668": {
             "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget_1850_2100",
             "prov:activity": "exe:Calc water budget_635",
@@ -349,10 +290,6 @@
         "_:id5674": {
             "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__evspsblpot_1850_2100",
             "prov:activity": "exe:Calc water budget_635"
-        },
-        "_:id5683": {
-            "prov:entity": "tippecc_data:TIPPECC_MRI-ESM2-0_day_r1i1p1f1__water_budget_1850_2100",
-            "prov:activity": "exe:Convert water budget to mm/day_636"
         }
     },
     "wasDerivedFrom": {
@@ -435,10 +372,6 @@
         "_:id8351": {
             "prov:informed": "exe:Calc water budget_635",
             "prov:informant": "exe:Calc pot. ET_627"
-        },
-        "_:id8352": {
-            "prov:informed": "exe:Convert water budget to mm/day_636",
-            "prov:informant": "exe:Calc water budget_635"
         }
     }
 }

@@ -114,24 +114,11 @@
             "sdo:description": "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with a given method.",
             "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.potential_evapotranspiration",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
-        },
-        "exe:Calc water budget_454": {
-            "prov:startTime": "2025-01-24T19:34:15-01:00",
-            "exe:@id": "FUNCTION__XCLIM_WATER_BUDGET",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Water budget",
-            "sdo:description": "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget.",
-            "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.water_budget",
-            "sdo:targetProduct": "SOFTWARE__XCLIM"
         }
     },
     "wasAssociatedWith": {
         "_:id4018": {
             "prov:activity": "exe:Calc pot. ET_453",
-            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
-        },
-        "_:id4048": {
-            "prov:activity": "exe:Calc water budget_454",
             "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         }
     },
@@ -171,10 +158,6 @@
         "_:id4043": {
             "prov:activity": "exe:Calc pot. ET_453",
             "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_sfcWind_1850_2100"
-        },
-        "_:id4055": {
-            "prov:activity": "exe:Calc water budget_454",
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100"
         }
     },
     "wasGeneratedBy": {
@@ -214,10 +197,6 @@
         "_:id4044": {
             "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_sfcWind_1850_2100",
             "prov:activity": "exe:Calc pot. ET_453"
-        },
-        "_:id4056": {
-            "prov:entity": "tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:activity": "exe:Calc water budget_454"
         }
     },
     "wasDerivedFrom": {
@@ -276,10 +255,5 @@
             "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
         }
     },
-    "wasInformedBy": {
-        "_:id8208": {
-            "prov:informed": "exe:Calc water budget_454",
-            "prov:informant": "exe:Calc pot. ET_453"
-        }
-    }
+    "wasInformedBy": {}
 }

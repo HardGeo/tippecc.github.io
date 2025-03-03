@@ -372,12 +372,6 @@
             "software:@type": "SoftwareApplication",
             "sdo:softwareVersion": "1.9.3",
             "sdo:targetProduct": "SOFTWARE__CDO"
-        },
-        "software:SOFTWARE__XARRAY_2024_10_0": {
-            "software:@id": "SOFTWARE__XARRAY_2024_10_0",
-            "software:@type": "SoftwareApplication",
-            "sdo:version": "2024.10.0",
-            "sdo:targetProduct": "SOFTWARE__XARRAY"
         }
     },
     "activity": {
@@ -437,23 +431,6 @@
             "sdo:name": "Year sum",
             "sdo:description": "This module computes the sum of the input field over a year.",
             "sdo:targetProduct": "SOFTWARE__CDO"
-        },
-        "exe:FUNCTION__XARRAY_ARIDITY_INDEX_412": {
-            "prov:startTime": "2025-01-27T20:33:32-01:00",
-            "exe:@id": "FUNCTION__XARRAY_ARIDITY_INDEX",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Aridity index",
-            "sdo:description": "This module computes the aridity index.",
-            "sdo:targetProduct": "SOFTWARE__XARRAY"
-        },
-        "exe:Calc water budget_421": {
-            "prov:startTime": "2025-01-24T19:16:48-01:00",
-            "exe:@id": "FUNCTION__XCLIM_WATER_BUDGET",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Water budget",
-            "sdo:description": "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget.",
-            "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.water_budget",
-            "sdo:targetProduct": "SOFTWARE__XCLIM"
         }
     },
     "wasAssociatedWith": {
@@ -484,14 +461,6 @@
         "_:id3599": {
             "prov:activity": "exe:Calc year sum_406",
             "prov:agent": "software:SOFTWARE__CDO_1_9_3"
-        },
-        "_:id3651": {
-            "prov:activity": "exe:FUNCTION__XARRAY_ARIDITY_INDEX_412",
-            "prov:agent": "software:SOFTWARE__XARRAY_2024_10_0"
-        },
-        "_:id3752": {
-            "prov:activity": "exe:Calc water budget_421",
-            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         }
     },
     "used": {
@@ -554,14 +523,6 @@
         "_:id3603": {
             "prov:activity": "exe:Calc year sum_406",
             "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100"
-        },
-        "_:id3655": {
-            "prov:activity": "exe:FUNCTION__XARRAY_ARIDITY_INDEX_412",
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum"
-        },
-        "_:id3756": {
-            "prov:activity": "exe:Calc water budget_421",
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr_1850_2100"
         }
     },
     "wasGeneratedBy": {
@@ -631,14 +592,6 @@
         "_:id3604": {
             "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100",
             "prov:activity": "exe:Calc year sum_406"
-        },
-        "_:id3656": {
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum",
-            "prov:activity": "exe:FUNCTION__XARRAY_ARIDITY_INDEX_412"
-        },
-        "_:id3757": {
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr_1850_2100",
-            "prov:activity": "exe:Calc water budget_421"
         }
     },
     "wasDerivedFrom": {

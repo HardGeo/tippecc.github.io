@@ -318,23 +318,9 @@
             "software:@type": "SoftwareApplication",
             "sdo:softwareVersion": "1.9.3",
             "sdo:targetProduct": "SOFTWARE__CDO"
-        },
-        "software:SOFTWARE__XARRAY_2024_10_0": {
-            "software:@id": "SOFTWARE__XARRAY_2024_10_0",
-            "software:@type": "SoftwareApplication",
-            "sdo:version": "2024.10.0",
-            "sdo:targetProduct": "SOFTWARE__XARRAY"
         }
     },
     "activity": {
-        "exe:FUNCTION__XARRAY_ARIDITY_INDEX_785": {
-            "prov:startTime": "2025-01-27T20:35:54-01:00",
-            "exe:@id": "FUNCTION__XARRAY_ARIDITY_INDEX",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Aridity index",
-            "sdo:description": "This module computes the aridity index.",
-            "sdo:targetProduct": "SOFTWARE__XARRAY"
-        },
         "exe:Calc pot. ET_786": {
             "prov:startTime": "2025-01-24T21:53:40-01:00",
             "exe:@id": "FUNCTION__XCLIM_EVAPOTRANSPIRATION",
@@ -353,14 +339,6 @@
             "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.convert_units_to",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
         },
-        "exe:Calc abs. change_788": {
-            "prov:startTime": "2025-01-24T22:01:43-01:00",
-            "exe:@id": "FUNCTION__CDO_SUB",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "sub - subtract two fields",
-            "sdo:description": "This module performs simple arithmetic of two datasets. The number of fields in ifile1 should be the same as in ifile2. One of the input files can contain only one timestep or one variable. The fields in ofile inherit the meta data from ifile1 or ifile2.",
-            "sdo:targetProduct": "SOFTWARE__CDO"
-        },
         "exe:Slice ref. period_789": {
             "prov:startTime": "2025-01-24T22:01:32-01:00",
             "exe:@id": "FUNCTION__CDO_SELYEAR",
@@ -377,22 +355,6 @@
             "sdo:description": "This module computes the temporal mean of the input field.",
             "sdo:targetProduct": "SOFTWARE__CDO"
         },
-        "exe:Slice ref. period_791": {
-            "prov:startTime": "2025-01-24T22:01:37-01:00",
-            "exe:@id": "FUNCTION__CDO_SELYEAR",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "selyear - select a year range",
-            "sdo:description": "This module selects a year range in the input field.",
-            "sdo:targetProduct": "SOFTWARE__CDO"
-        },
-        "exe:Calc mean_792": {
-            "prov:startTime": "2025-01-24T22:01:37-01:00",
-            "exe:@id": "FUNCTION__CDO_TIMMEAN",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "timmean - time mean",
-            "sdo:description": "This module computes the temporal mean of the input field.",
-            "sdo:targetProduct": "SOFTWARE__CDO"
-        },
         "exe:Calc year sum_793": {
             "prov:startTime": "2025-01-24T22:01:27-01:00",
             "exe:@id": "FUNCTION__CDO_YEARSUM",
@@ -400,22 +362,9 @@
             "sdo:name": "Year sum",
             "sdo:description": "This module computes the sum of the input field over a year.",
             "sdo:targetProduct": "SOFTWARE__CDO"
-        },
-        "exe:Calc water budget_794": {
-            "prov:startTime": "2025-01-24T21:55:13-01:00",
-            "exe:@id": "FUNCTION__XCLIM_WATER_BUDGET",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Water budget",
-            "sdo:description": "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget.",
-            "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.water_budget",
-            "sdo:targetProduct": "SOFTWARE__XCLIM"
         }
     },
     "wasAssociatedWith": {
-        "_:id6969": {
-            "prov:activity": "exe:FUNCTION__XARRAY_ARIDITY_INDEX_785",
-            "prov:agent": "software:SOFTWARE__XARRAY_2024_10_0"
-        },
         "_:id6982": {
             "prov:activity": "exe:Calc pot. ET_786",
             "prov:agent": "software:SOFTWARE__XCLIM_0_49"
@@ -423,10 +372,6 @@
         "_:id7012": {
             "prov:activity": "exe:Convert pot. ET to mm/day_787",
             "prov:agent": "software:SOFTWARE__XCLIM_0_49"
-        },
-        "_:id7021": {
-            "prov:activity": "exe:Calc abs. change_788",
-            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
         },
         "_:id7033": {
             "prov:activity": "exe:Slice ref. period_789",
@@ -436,28 +381,12 @@
             "prov:activity": "exe:Calc mean_790",
             "prov:agent": "software:SOFTWARE__CDO_1_9_3"
         },
-        "_:id7047": {
-            "prov:activity": "exe:Slice ref. period_791",
-            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
-        },
-        "_:id7053": {
-            "prov:activity": "exe:Calc mean_792",
-            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
-        },
         "_:id7061": {
             "prov:activity": "exe:Calc year sum_793",
             "prov:agent": "software:SOFTWARE__CDO_1_9_3"
-        },
-        "_:id7070": {
-            "prov:activity": "exe:Calc water budget_794",
-            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         }
     },
     "used": {
-        "_:id6976": {
-            "prov:activity": "exe:FUNCTION__XARRAY_ARIDITY_INDEX_785",
-            "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum"
-        },
         "_:id6983": {
             "prov:activity": "exe:Calc pot. ET_786",
             "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot_1850_2100"
@@ -502,10 +431,6 @@
             "prov:activity": "exe:Convert pot. ET to mm/day_787",
             "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot_1850_2100"
         },
-        "_:id7028": {
-            "prov:activity": "exe:Calc abs. change_788",
-            "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum_mean_1981_2000"
-        },
         "_:id7034": {
             "prov:activity": "exe:Slice ref. period_789",
             "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum_mean_1981_2000"
@@ -522,14 +447,6 @@
             "prov:activity": "exe:Calc mean_790",
             "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum"
         },
-        "_:id7051": {
-            "prov:activity": "exe:Slice ref. period_791",
-            "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum"
-        },
-        "_:id7056": {
-            "prov:activity": "exe:Calc mean_792",
-            "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum"
-        },
         "_:id7062": {
             "prov:activity": "exe:Calc year sum_793",
             "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum"
@@ -537,17 +454,9 @@
         "_:id7065": {
             "prov:activity": "exe:Calc year sum_793",
             "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot__mm_1850_2100"
-        },
-        "_:id7077": {
-            "prov:activity": "exe:Calc water budget_794",
-            "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot_1850_2100"
         }
     },
     "wasGeneratedBy": {
-        "_:id6977": {
-            "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum",
-            "prov:activity": "exe:FUNCTION__XARRAY_ARIDITY_INDEX_785"
-        },
         "_:id6984": {
             "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot_1850_2100",
             "prov:activity": "exe:Calc pot. ET_786",
@@ -594,10 +503,6 @@
             "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot_1850_2100",
             "prov:activity": "exe:Convert pot. ET to mm/day_787"
         },
-        "_:id7029": {
-            "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum_mean_1981_2000",
-            "prov:activity": "exe:Calc abs. change_788"
-        },
         "_:id7035": {
             "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum_mean_1981_2000",
             "prov:activity": "exe:Slice ref. period_789",
@@ -616,14 +521,6 @@
             "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum",
             "prov:activity": "exe:Calc mean_790"
         },
-        "_:id7052": {
-            "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum",
-            "prov:activity": "exe:Slice ref. period_791"
-        },
-        "_:id7057": {
-            "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum",
-            "prov:activity": "exe:Calc mean_792"
-        },
         "_:id7063": {
             "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum",
             "prov:activity": "exe:Calc year sum_793",
@@ -632,10 +529,6 @@
         "_:id7066": {
             "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot__mm_1850_2100",
             "prov:activity": "exe:Calc year sum_793"
-        },
-        "_:id7078": {
-            "prov:entity": "tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:activity": "exe:Calc water budget_794"
         }
     },
     "wasDerivedFrom": {
@@ -743,10 +636,6 @@
         }
     },
     "wasInformedBy": {
-        "_:id8492": {
-            "prov:informed": "exe:Calc water budget_794",
-            "prov:informant": "exe:Calc pot. ET_786"
-        },
         "_:id8508": {
             "prov:informed": "exe:Calc year sum_793",
             "prov:informant": "exe:Convert pot. ET to mm/day_787"
@@ -758,18 +647,6 @@
         "_:id8510": {
             "prov:informed": "exe:Calc mean_790",
             "prov:informant": "exe:Slice ref. period_789"
-        },
-        "_:id8511": {
-            "prov:informed": "exe:Slice ref. period_791",
-            "prov:informant": "exe:Calc mean_790"
-        },
-        "_:id8512": {
-            "prov:informed": "exe:Calc mean_792",
-            "prov:informant": "exe:Slice ref. period_791"
-        },
-        "_:id8513": {
-            "prov:informed": "exe:Calc abs. change_788",
-            "prov:informant": "exe:Calc mean_792"
         }
     }
 }

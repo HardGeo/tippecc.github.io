@@ -113,37 +113,11 @@
             "sdo:description": "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with a given method.",
             "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.potential_evapotranspiration",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
-        },
-        "exe:Convert pot. ET to mm/day_414": {
-            "prov:startTime": "2025-01-24T19:21:30-01:00",
-            "exe:@id": "FUNCTION__XCLIM_CONVERT_UNITS",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Convert units",
-            "sdo:description": "Convert a mathematical expression into a value with the same units as a DataArray.",
-            "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.convert_units_to",
-            "sdo:targetProduct": "SOFTWARE__XCLIM"
-        },
-        "exe:Calc water budget_421": {
-            "prov:startTime": "2025-01-24T19:16:48-01:00",
-            "exe:@id": "FUNCTION__XCLIM_WATER_BUDGET",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Water budget",
-            "sdo:description": "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget.",
-            "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.water_budget",
-            "sdo:targetProduct": "SOFTWARE__XCLIM"
         }
     },
     "wasAssociatedWith": {
         "_:id3664": {
             "prov:activity": "exe:Calc pot. ET_413",
-            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
-        },
-        "_:id3694": {
-            "prov:activity": "exe:Convert pot. ET to mm/day_414",
-            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
-        },
-        "_:id3752": {
-            "prov:activity": "exe:Calc water budget_421",
             "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         }
     },
@@ -183,14 +157,6 @@
         "_:id3689": {
             "prov:activity": "exe:Calc pot. ET_413",
             "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_sfcWind_1850_2100"
-        },
-        "_:id3698": {
-            "prov:activity": "exe:Convert pot. ET to mm/day_414",
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1__evspsblpot_1850_2100"
-        },
-        "_:id3759": {
-            "prov:activity": "exe:Calc water budget_421",
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1__evspsblpot_1850_2100"
         }
     },
     "wasGeneratedBy": {
@@ -230,14 +196,6 @@
         "_:id3690": {
             "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_sfcWind_1850_2100",
             "prov:activity": "exe:Calc pot. ET_413"
-        },
-        "_:id3699": {
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:activity": "exe:Convert pot. ET to mm/day_414"
-        },
-        "_:id3760": {
-            "prov:entity": "tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:activity": "exe:Calc water budget_421"
         }
     },
     "wasDerivedFrom": {
@@ -296,10 +254,5 @@
             "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
         }
     },
-    "wasInformedBy": {
-        "_:id8161": {
-            "prov:informed": "exe:Calc water budget_421",
-            "prov:informant": "exe:Calc pot. ET_413"
-        }
-    }
+    "wasInformedBy": {}
 }

@@ -424,23 +424,9 @@
             "software:@type": "SoftwareApplication",
             "sdo:softwareVersion": "1.9.3",
             "sdo:targetProduct": "SOFTWARE__CDO"
-        },
-        "software:SOFTWARE__XARRAY_2024_10_0": {
-            "software:@id": "SOFTWARE__XARRAY_2024_10_0",
-            "software:@type": "SoftwareApplication",
-            "sdo:version": "2024.10.0",
-            "sdo:targetProduct": "SOFTWARE__XARRAY"
         }
     },
     "activity": {
-        "exe:FUNCTION__XARRAY_ARIDITY_INDEX_147": {
-            "prov:startTime": "2025-01-27T20:31:11-01:00",
-            "exe:@id": "FUNCTION__XARRAY_ARIDITY_INDEX",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Aridity index",
-            "sdo:description": "This module computes the aridity index.",
-            "sdo:targetProduct": "SOFTWARE__XARRAY"
-        },
         "exe:Calc pot. ET_148": {
             "prov:startTime": "2025-01-24T16:14:27-01:00",
             "exe:@id": "FUNCTION__XCLIM_EVAPOTRANSPIRATION",
@@ -506,22 +492,9 @@
             "sdo:name": "Year sum",
             "sdo:description": "This module computes the sum of the input field over a year.",
             "sdo:targetProduct": "SOFTWARE__CDO"
-        },
-        "exe:Calc water budget_156": {
-            "prov:startTime": "2025-01-24T16:16:00-01:00",
-            "exe:@id": "FUNCTION__XCLIM_WATER_BUDGET",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Water budget",
-            "sdo:description": "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget.",
-            "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.water_budget",
-            "sdo:targetProduct": "SOFTWARE__XCLIM"
         }
     },
     "wasAssociatedWith": {
-        "_:id1311": {
-            "prov:activity": "exe:FUNCTION__XARRAY_ARIDITY_INDEX_147",
-            "prov:agent": "software:SOFTWARE__XARRAY_2024_10_0"
-        },
         "_:id1324": {
             "prov:activity": "exe:Calc pot. ET_148",
             "prov:agent": "software:SOFTWARE__XCLIM_0_49"
@@ -553,17 +526,9 @@
         "_:id1403": {
             "prov:activity": "exe:Calc year sum_155",
             "prov:agent": "software:SOFTWARE__CDO_1_9_3"
-        },
-        "_:id1412": {
-            "prov:activity": "exe:Calc water budget_156",
-            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         }
     },
     "used": {
-        "_:id1318": {
-            "prov:activity": "exe:FUNCTION__XARRAY_ARIDITY_INDEX_147",
-            "prov:entity": "tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum"
-        },
         "_:id1325": {
             "prov:activity": "exe:Calc pot. ET_148",
             "prov:entity": "tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__evspsblpot_1850_2100"
@@ -659,17 +624,9 @@
         "_:id1407": {
             "prov:activity": "exe:Calc year sum_155",
             "prov:entity": "tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__evspsblpot__mm_1850_2100"
-        },
-        "_:id1419": {
-            "prov:activity": "exe:Calc water budget_156",
-            "prov:entity": "tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__evspsblpot_1850_2100"
         }
     },
     "wasGeneratedBy": {
-        "_:id1319": {
-            "prov:entity": "tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum",
-            "prov:activity": "exe:FUNCTION__XARRAY_ARIDITY_INDEX_147"
-        },
         "_:id1326": {
             "prov:entity": "tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__evspsblpot_1850_2100",
             "prov:activity": "exe:Calc pot. ET_148",
@@ -773,10 +730,6 @@
         "_:id1408": {
             "prov:entity": "tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__evspsblpot__mm_1850_2100",
             "prov:activity": "exe:Calc year sum_155"
-        },
-        "_:id1420": {
-            "prov:entity": "tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:activity": "exe:Calc water budget_156"
         }
     },
     "wasDerivedFrom": {
@@ -920,10 +873,6 @@
         }
     },
     "wasInformedBy": {
-        "_:id7832": {
-            "prov:informed": "exe:Calc water budget_156",
-            "prov:informant": "exe:Calc pot. ET_148"
-        },
         "_:id7848": {
             "prov:informed": "exe:Calc year sum_155",
             "prov:informant": "exe:Convert pot. ET to mm/day_149"

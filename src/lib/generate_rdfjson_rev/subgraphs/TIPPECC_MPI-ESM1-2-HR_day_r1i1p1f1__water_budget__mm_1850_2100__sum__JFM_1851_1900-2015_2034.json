@@ -482,15 +482,6 @@
         }
     },
     "activity": {
-        "exe:Convert pr to mm_508": {
-            "prov:startTime": "2025-01-24T20:26:10-01:00",
-            "exe:@id": "FUNCTION__XCLIM_CONVERT_UNITS",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Convert units",
-            "sdo:description": "Convert a mathematical expression into a value with the same units as a DataArray.",
-            "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.convert_units_to",
-            "sdo:targetProduct": "SOFTWARE__XCLIM"
-        },
         "exe:Calc pot. ET_521": {
             "prov:startTime": "2025-01-24T20:21:40-01:00",
             "exe:@id": "FUNCTION__XCLIM_EVAPOTRANSPIRATION",
@@ -498,15 +489,6 @@
             "sdo:name": "Evapotranspiration",
             "sdo:description": "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with a given method.",
             "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.potential_evapotranspiration",
-            "sdo:targetProduct": "SOFTWARE__XCLIM"
-        },
-        "exe:Convert pot. ET to mm/day_522": {
-            "prov:startTime": "2025-01-24T20:27:59-01:00",
-            "exe:@id": "FUNCTION__XCLIM_CONVERT_UNITS",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Convert units",
-            "sdo:description": "Convert a mathematical expression into a value with the same units as a DataArray.",
-            "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.convert_units_to",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
         },
         "exe:Calc water budget_529": {
@@ -526,14 +508,6 @@
             "sdo:description": "Convert a rate variable to an amount by multiplying by the sampling period length.",
             "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.rate2amount",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
-        },
-        "exe:Calc season sum_536": {
-            "prov:startTime": "2025-01-24T20:29:39-01:00",
-            "exe:@id": "FUNCTION__CDO_YEARSUM",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Year sum",
-            "sdo:description": "This module computes the sum of the input field over a year.",
-            "sdo:targetProduct": "SOFTWARE__CDO"
         },
         "exe:Calc abs. change_537": {
             "prov:startTime": "2025-01-24T20:30:47-01:00",
@@ -582,35 +556,11 @@
             "sdo:name": "Year sum",
             "sdo:description": "This module computes the sum of the input field over a year.",
             "sdo:targetProduct": "SOFTWARE__CDO"
-        },
-        "exe:Calc season sum_554": {
-            "prov:startTime": "2025-01-24T20:30:05-01:00",
-            "exe:@id": "FUNCTION__CDO_YEARSUM",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Year sum",
-            "sdo:description": "This module computes the sum of the input field over a year.",
-            "sdo:targetProduct": "SOFTWARE__CDO"
-        },
-        "exe:Calc year sum_560": {
-            "prov:startTime": "2025-01-24T20:25:35-01:00",
-            "exe:@id": "FUNCTION__CDO_YEARSUM",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Year sum",
-            "sdo:description": "This module computes the sum of the input field over a year.",
-            "sdo:targetProduct": "SOFTWARE__CDO"
         }
     },
     "wasAssociatedWith": {
-        "_:id4528": {
-            "prov:activity": "exe:Convert pr to mm_508",
-            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
-        },
         "_:id4642": {
             "prov:activity": "exe:Calc pot. ET_521",
-            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
-        },
-        "_:id4672": {
-            "prov:activity": "exe:Convert pot. ET to mm/day_522",
             "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         },
         "_:id4730": {
@@ -620,10 +570,6 @@
         "_:id4742": {
             "prov:activity": "exe:Convert water budget to mm/day_530",
             "prov:agent": "software:SOFTWARE__XCLIM_0_49"
-        },
-        "_:id4791": {
-            "prov:activity": "exe:Calc season sum_536",
-            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
         },
         "_:id4800": {
             "prov:activity": "exe:Calc abs. change_537",
@@ -648,21 +594,9 @@
         "_:id4840": {
             "prov:activity": "exe:Calc season sum_542",
             "prov:agent": "software:SOFTWARE__CDO_1_9_3"
-        },
-        "_:id4938": {
-            "prov:activity": "exe:Calc season sum_554",
-            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
-        },
-        "_:id4987": {
-            "prov:activity": "exe:Calc year sum_560",
-            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
         }
     },
     "used": {
-        "_:id4532": {
-            "prov:activity": "exe:Convert pr to mm_508",
-            "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1_pr_1850_2100"
-        },
         "_:id4643": {
             "prov:activity": "exe:Calc pot. ET_521",
             "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1__evspsblpot_1850_2100"
@@ -699,10 +633,6 @@
             "prov:activity": "exe:Calc pot. ET_521",
             "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1_sfcWind_1850_2100"
         },
-        "_:id4676": {
-            "prov:activity": "exe:Convert pot. ET to mm/day_522",
-            "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1__evspsblpot_1850_2100"
-        },
         "_:id4731": {
             "prov:activity": "exe:Calc water budget_529",
             "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1__water_budget_1850_2100"
@@ -722,10 +652,6 @@
         "_:id4746": {
             "prov:activity": "exe:Convert water budget to mm/day_530",
             "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1__water_budget_1850_2100"
-        },
-        "_:id4795": {
-            "prov:activity": "exe:Calc season sum_536",
-            "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1__water_budget__mm_1850_2100"
         },
         "_:id4801": {
             "prov:activity": "exe:Calc abs. change_537",
@@ -778,21 +704,9 @@
         "_:id4844": {
             "prov:activity": "exe:Calc season sum_542",
             "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1__water_budget__mm_1850_2100"
-        },
-        "_:id4942": {
-            "prov:activity": "exe:Calc season sum_554",
-            "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1__water_budget__mm_1850_2100"
-        },
-        "_:id4991": {
-            "prov:activity": "exe:Calc year sum_560",
-            "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1__water_budget__mm_1850_2100"
         }
     },
     "wasGeneratedBy": {
-        "_:id4533": {
-            "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1_pr_1850_2100",
-            "prov:activity": "exe:Convert pr to mm_508"
-        },
         "_:id4644": {
             "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1__evspsblpot_1850_2100",
             "prov:activity": "exe:Calc pot. ET_521",
@@ -830,10 +744,6 @@
             "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1_sfcWind_1850_2100",
             "prov:activity": "exe:Calc pot. ET_521"
         },
-        "_:id4677": {
-            "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:activity": "exe:Convert pot. ET to mm/day_522"
-        },
         "_:id4732": {
             "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1__water_budget_1850_2100",
             "prov:activity": "exe:Calc water budget_529",
@@ -855,10 +765,6 @@
         "_:id4747": {
             "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1__water_budget_1850_2100",
             "prov:activity": "exe:Convert water budget to mm/day_530"
-        },
-        "_:id4796": {
-            "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1__water_budget__mm_1850_2100",
-            "prov:activity": "exe:Calc season sum_536"
         },
         "_:id4802": {
             "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__JFM_1851_1900-2015_2034",
@@ -917,14 +823,6 @@
         "_:id4845": {
             "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1__water_budget__mm_1850_2100",
             "prov:activity": "exe:Calc season sum_542"
-        },
-        "_:id4943": {
-            "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1__water_budget__mm_1850_2100",
-            "prov:activity": "exe:Calc season sum_554"
-        },
-        "_:id4992": {
-            "prov:entity": "tippecc_data:TIPPECC_MPI-ESM1-2-HR_day_r1i1p1f1__water_budget__mm_1850_2100",
-            "prov:activity": "exe:Calc year sum_560"
         }
     },
     "wasDerivedFrom": {
@@ -1095,10 +993,6 @@
         "_:id8258": {
             "prov:informed": "exe:Convert water budget to mm/day_530",
             "prov:informant": "exe:Calc water budget_529"
-        },
-        "_:id8259": {
-            "prov:informed": "exe:Calc year sum_560",
-            "prov:informant": "exe:Convert water budget to mm/day_530"
         },
         "_:id8292": {
             "prov:informed": "exe:Slice ref. period_538",

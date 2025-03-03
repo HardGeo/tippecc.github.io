@@ -110,22 +110,6 @@
         }
     },
     "activity": {
-        "exe:Slice ref. period_383": {
-            "prov:startTime": "2025-01-24T19:07:56-01:00",
-            "exe:@id": "FUNCTION__CDO_SELYEAR",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "selyear - select a year range",
-            "sdo:description": "This module selects a year range in the input field.",
-            "sdo:targetProduct": "SOFTWARE__CDO"
-        },
-        "exe:Calc mean_384": {
-            "prov:startTime": "2025-01-24T19:07:56-01:00",
-            "exe:@id": "FUNCTION__CDO_TIMMEAN",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "timmean - time mean",
-            "sdo:description": "This module computes the temporal mean of the input field.",
-            "sdo:targetProduct": "SOFTWARE__CDO"
-        },
         "exe:Delete first & last timesteps_385": {
             "prov:startTime": "2025-01-24T19:07:51-01:00",
             "exe:@id": "FUNCTION__CDO_SELTIMESTEP",
@@ -133,55 +117,15 @@
             "sdo:name": "Select a time step",
             "sdo:description": "This module selects a time step in the input field.",
             "sdo:targetProduct": "SOFTWARE__CDO"
-        },
-        "exe:Slice ref. period_386": {
-            "prov:startTime": "2025-01-24T19:08:02-01:00",
-            "exe:@id": "FUNCTION__CDO_SELYEAR",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "selyear - select a year range",
-            "sdo:description": "This module selects a year range in the input field.",
-            "sdo:targetProduct": "SOFTWARE__CDO"
-        },
-        "exe:Calc mean_387": {
-            "prov:startTime": "2025-01-24T19:08:02-01:00",
-            "exe:@id": "FUNCTION__CDO_TIMMEAN",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "timmean - time mean",
-            "sdo:description": "This module computes the temporal mean of the input field.",
-            "sdo:targetProduct": "SOFTWARE__CDO"
         }
     },
     "wasAssociatedWith": {
-        "_:id3415": {
-            "prov:activity": "exe:Slice ref. period_383",
-            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
-        },
-        "_:id3421": {
-            "prov:activity": "exe:Calc mean_384",
-            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
-        },
         "_:id3429": {
             "prov:activity": "exe:Delete first & last timesteps_385",
-            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
-        },
-        "_:id3438": {
-            "prov:activity": "exe:Slice ref. period_386",
-            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
-        },
-        "_:id3444": {
-            "prov:activity": "exe:Calc mean_387",
             "prov:agent": "software:SOFTWARE__CDO_1_9_3"
         }
     },
     "used": {
-        "_:id3419": {
-            "prov:activity": "exe:Slice ref. period_383",
-            "prov:entity": "tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
-        },
-        "_:id3424": {
-            "prov:activity": "exe:Calc mean_384",
-            "prov:entity": "tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
-        },
         "_:id3430": {
             "prov:activity": "exe:Delete first & last timesteps_385",
             "prov:entity": "tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
@@ -189,25 +133,9 @@
         "_:id3433": {
             "prov:activity": "exe:Delete first & last timesteps_385",
             "prov:entity": "tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM"
-        },
-        "_:id3442": {
-            "prov:activity": "exe:Slice ref. period_386",
-            "prov:entity": "tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
-        },
-        "_:id3447": {
-            "prov:activity": "exe:Calc mean_387",
-            "prov:entity": "tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100"
         }
     },
     "wasGeneratedBy": {
-        "_:id3420": {
-            "prov:entity": "tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
-            "prov:activity": "exe:Slice ref. period_383"
-        },
-        "_:id3425": {
-            "prov:entity": "tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
-            "prov:activity": "exe:Calc mean_384"
-        },
         "_:id3431": {
             "prov:entity": "tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
             "prov:activity": "exe:Delete first & last timesteps_385",
@@ -216,14 +144,6 @@
         "_:id3434": {
             "prov:entity": "tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM",
             "prov:activity": "exe:Delete first & last timesteps_385"
-        },
-        "_:id3443": {
-            "prov:entity": "tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
-            "prov:activity": "exe:Slice ref. period_386"
-        },
-        "_:id3448": {
-            "prov:entity": "tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1__water_budget__mm_1850_2100__sum__ONDJFM_1851_2100",
-            "prov:activity": "exe:Calc mean_387"
         }
     },
     "wasDerivedFrom": {
@@ -254,22 +174,5 @@
             "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
         }
     },
-    "wasInformedBy": {
-        "_:id8155": {
-            "prov:informed": "exe:Slice ref. period_383",
-            "prov:informant": "exe:Delete first & last timesteps_385"
-        },
-        "_:id8156": {
-            "prov:informed": "exe:Calc mean_384",
-            "prov:informant": "exe:Slice ref. period_383"
-        },
-        "_:id8157": {
-            "prov:informed": "exe:Slice ref. period_386",
-            "prov:informant": "exe:Calc mean_384"
-        },
-        "_:id8158": {
-            "prov:informed": "exe:Calc mean_387",
-            "prov:informant": "exe:Slice ref. period_386"
-        }
-    }
+    "wasInformedBy": {}
 }

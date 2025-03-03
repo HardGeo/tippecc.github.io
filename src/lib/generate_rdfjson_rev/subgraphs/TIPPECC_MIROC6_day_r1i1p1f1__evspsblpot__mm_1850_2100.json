@@ -158,12 +158,6 @@
             "software:@type": "SoftwareApplication",
             "sdo:softwareVersion": "0.49.0",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
-        },
-        "software:SOFTWARE__CDO_1_9_3": {
-            "software:@id": "SOFTWARE__CDO_1_9_3",
-            "software:@type": "SoftwareApplication",
-            "sdo:softwareVersion": "1.9.3",
-            "sdo:targetProduct": "SOFTWARE__CDO"
         }
     },
     "activity": {
@@ -184,23 +178,6 @@
             "sdo:description": "Convert a mathematical expression into a value with the same units as a DataArray.",
             "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.convert_units_to",
             "sdo:targetProduct": "SOFTWARE__XCLIM"
-        },
-        "exe:Calc year sum_475": {
-            "prov:startTime": "2025-01-24T20:11:38-01:00",
-            "exe:@id": "FUNCTION__CDO_YEARSUM",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Year sum",
-            "sdo:description": "This module computes the sum of the input field over a year.",
-            "sdo:targetProduct": "SOFTWARE__CDO"
-        },
-        "exe:Calc water budget_476": {
-            "prov:startTime": "2025-01-24T20:05:25-01:00",
-            "exe:@id": "FUNCTION__XCLIM_WATER_BUDGET",
-            "exe:@type": "SoftwareSourceCode",
-            "sdo:name": "Water budget",
-            "sdo:description": "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget.",
-            "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.water_budget",
-            "sdo:targetProduct": "SOFTWARE__XCLIM"
         }
     },
     "wasAssociatedWith": {
@@ -210,14 +187,6 @@
         },
         "_:id4204": {
             "prov:activity": "exe:Convert pot. ET to mm/day_469",
-            "prov:agent": "software:SOFTWARE__XCLIM_0_49"
-        },
-        "_:id4253": {
-            "prov:activity": "exe:Calc year sum_475",
-            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
-        },
-        "_:id4262": {
-            "prov:activity": "exe:Calc water budget_476",
             "prov:agent": "software:SOFTWARE__XCLIM_0_49"
         }
     },
@@ -264,14 +233,6 @@
         },
         "_:id4208": {
             "prov:activity": "exe:Convert pot. ET to mm/day_469",
-            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100"
-        },
-        "_:id4257": {
-            "prov:activity": "exe:Calc year sum_475",
-            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot__mm_1850_2100"
-        },
-        "_:id4269": {
-            "prov:activity": "exe:Calc water budget_476",
             "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100"
         }
     },
@@ -321,14 +282,6 @@
         "_:id4209": {
             "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
             "prov:activity": "exe:Convert pot. ET to mm/day_469"
-        },
-        "_:id4258": {
-            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot__mm_1850_2100",
-            "prov:activity": "exe:Calc year sum_475"
-        },
-        "_:id4270": {
-            "prov:entity": "tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100",
-            "prov:activity": "exe:Calc water budget_476"
         }
     },
     "wasDerivedFrom": {
@@ -403,14 +356,5 @@
             "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
         }
     },
-    "wasInformedBy": {
-        "_:id8210": {
-            "prov:informed": "exe:Calc water budget_476",
-            "prov:informant": "exe:Calc pot. ET_468"
-        },
-        "_:id8226": {
-            "prov:informed": "exe:Calc year sum_475",
-            "prov:informant": "exe:Convert pot. ET to mm/day_469"
-        }
-    }
+    "wasInformedBy": {}
 }
