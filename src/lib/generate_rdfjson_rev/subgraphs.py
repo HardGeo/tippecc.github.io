@@ -67,6 +67,9 @@ for entry in was_derived_from.values():
     
 targets = [target.split(":")[1] for target in targets]
 #---------------------------------------------------------------------------------------------------------
+
+
+
 #----------------------------------------------------------------------------------------------------------
 # for every entity create a subgraph
 for target_id in targets:
@@ -80,19 +83,18 @@ for target_id in targets:
     # Starte die Suche und ersetze die Daten
     chain = find_derivation_chain(target_id)
     data["wasDerivedFrom"] = chain
-
     
     #________________________________________________________
     # Die gesamte "Entity"-Struktur
     entities = data.get("entity", {})
-
+    
     # Extract unique values from chain
     unique_values = set()
     
     for entry in chain.values():
         unique_values.add(entry["prov:generatedEntity"])
         unique_values.add(entry["prov:usedEntity"])
-
+    
     
     # Filter entities based on unique_values_list
     filtered_entities = {
@@ -124,7 +126,7 @@ for target_id in targets:
     }
     
     data["wasAttributedTo"] = filtered_wasAttributedTo
-    
+
     #_________________________________________________________
     # Die gesamte "wasGeneratedBy"-Struktur
     wasGeneratedBy = data.get("wasGeneratedBy", {})
@@ -133,25 +135,26 @@ for target_id in targets:
         key: value for key, value in wasGeneratedBy.items()
         if value.get("prov:entity") in unique_values
     }
-
-    # Zähle die Häufigkeit der "prov:activity"
-    activity_counts = Counter(entry["prov:activity"] for entry in filtered_wasGeneratedBy.values())
-
-    # Gruppiere die Einträge nach "prov:activity"
+    
+    # Gruppiere nach "prov:activity"
     grouped_by_activity = defaultdict(list)
     for key, value in filtered_wasGeneratedBy.items():
-        grouped_by_activity[value["prov:activity"]].append((key, value))
+        grouped_by_activity[value["prov:activity"]].append((key, value["prov:entity"]))
+    
+    #if target_id == "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__ai__mm_1850_2100__yearsum_mean_1981_2000-2080_2099":
+        #print(grouped_by_activity)
+    
+    # Behalte nur die IDs, bei denen es mehrere verschiedene "prov:entity" innerhalb einer Activity gibt
+    selected_ids_generated = {}
+    for activity, entries in grouped_by_activity.items():
+        unique_entities = {entity for _, entity in entries}  # Einzigartige Entities in der Gruppe
+        if len(unique_entities) > 1:  # Prüfe, ob es mehr als eine einzigartige Entity gibt
+            for key, entity in entries:
+                selected_ids_generated[key] = wasGeneratedBy[key]
+    
+    # Speichere das gefilterte Dictionary zurück in data
+    data["wasGeneratedBy"] = selected_ids_generated
 
-    # Behalte nur Gruppen, wo die "prov:activity" mehrfach vorkommt
-    filtered_wasGeneratedBy = {
-        key: value for activity, entries in grouped_by_activity.items() if activity_counts[activity] > 1
-        for key, value in entries
-    }
-    
-    data["wasGeneratedBy"] = filtered_wasGeneratedBy
-    
-
-    
     #___________________________________________________________
     # Die gesamte "used"-Struktur
     used = data.get("used", {})
@@ -160,47 +163,46 @@ for target_id in targets:
         key: value for key, value in used.items()
         if value.get("prov:entity") in unique_values
     }
-
-    # Zähle die Häufigkeit der "prov:activity"
-    used_counts = Counter(entry["prov:activity"] for entry in filtered_used.values())
-
-    # Gruppiere die Einträge nach "prov:activity"
-    grouped_by_activity_used = defaultdict(list)
+    
+    # Gruppiere nach "prov:activity"
+    grouped_by_activity = defaultdict(list)
     for key, value in filtered_used.items():
-        grouped_by_activity_used[value["prov:activity"]].append((key, value))
+        grouped_by_activity[value["prov:activity"]].append((key, value["prov:entity"]))
+    
+    # Behalte nur die IDs, bei denen es mehrere verschiedene "prov:entity" innerhalb einer Activity gibt
+    selected_ids_used = {}
+    for activity, entries in grouped_by_activity.items():
+        unique_entities = {entity for _, entity in entries}  # Einzigartige Entities in der Gruppe
+        if len(unique_entities) > 1:  # Prüfe, ob es mehr als eine einzigartige Entity gibt
+            for key, entity in entries:
+                selected_ids_used[key] = used[key]
+    
+    # Speichere das gefilterte Dictionary zurück in data
+    data["used"] = selected_ids_used
 
-    # Behalte nur Gruppen, wo die "prov:activity" mehrfach vorkommt
-    filtered_used = {
-        key: value for activity, entries in grouped_by_activity_used.items() if used_counts[activity] > 1
-        for key, value in entries
-    }
 
-    
-    data["used"] = filtered_used
-    
-    
     #_______________________________________________________________
     #get new activities unique values
     unique_exe = set()
     
-    for entry in filtered_used.values():
+    for entry in selected_ids_used.values():
         unique_exe.add(entry["prov:activity"])
-    for entry in filtered_wasGeneratedBy.values():
+    
+    for entry in selected_ids_generated.values():
         unique_exe.add(entry["prov:activity"])
+    
     
     #_________________________________________________________________
     # Die gesamte "wasInformedBy"-Struktur
     wasInformedBy = data.get("wasInformedBy", {})
-    
+    #print(wasInformedBy)
     filtered_wasInformedBy = {
         key: value for key, value in wasInformedBy.items()
         if value.get("prov:informed") in unique_exe
         and value.get("prov:informant") in unique_exe
+        
     }
-    
     data["wasInformedBy"] = filtered_wasInformedBy
-    
-    
     #_________________________________________________________________
     # Die gesamte "wasAssociatedWith"-Struktur
     wasAssociatedWith = data.get("wasAssociatedWith", {})
@@ -229,7 +231,7 @@ for target_id in targets:
     }
     
     data["actedOnBehalfOf"] = filtered_actedOnBehalfOf
-    
+
     #_______________________________________________________
     #get new software unique values
     unique_software = set()
@@ -254,7 +256,7 @@ for target_id in targets:
     }
     
     data["agent"] = filtered_agent
-    
+
     #_______________________________________________
     # Die gesamte "agent"-Struktur
     activity = data.get("activity", {})
@@ -265,13 +267,11 @@ for target_id in targets:
     }
     
     data["activity"] = filtered_activity
-    
+    #if target_id == "tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__ai__mm_1850_2100__yearsum_mean_1981_2000-2080_2099":
+        #print(len(filtered_activity))
     
     # Aktualisierte JSON-Datei speichern
     with open(output_file, "w") as f:
         json.dump(data, f, indent=4)
-
-    #print(f"File {target_id} written succesfully to: {base_dir}")
-
-
-
+    
+    print(f"File {target_id} written succesfully to: {base_dir}")
