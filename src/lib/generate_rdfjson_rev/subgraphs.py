@@ -193,13 +193,15 @@ for target_id in targets:
     
     
     #_________________________________________________________________
+    # FRAGE: and oder or ??? Wie soll wasInformedBy gebaut werden?
+    # AKtuell spielt es für die Visualisierung keine Rolle mehr 
     # Die gesamte "wasInformedBy"-Struktur
     wasInformedBy = data.get("wasInformedBy", {})
     #print(wasInformedBy)
     filtered_wasInformedBy = {
         key: value for key, value in wasInformedBy.items()
         if value.get("prov:informed") in unique_exe
-        and value.get("prov:informant") in unique_exe
+        or value.get("prov:informant") in unique_exe
         
     }
     data["wasInformedBy"] = filtered_wasInformedBy

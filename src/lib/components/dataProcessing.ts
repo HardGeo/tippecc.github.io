@@ -661,7 +661,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
 
 
 export function AddActions(dataset: Dataset, nodes: any, edges: any, label: any): void {
-
+    /*
     function findExecutionOrder(dataset: any): string[] {
         const wasInformedBy = Object.values(dataset.wasInformedBy) as {
             "prov:informed": string;
@@ -705,6 +705,20 @@ export function AddActions(dataset: Dataset, nodes: any, edges: any, label: any)
     
         return executionOrder;
     }
+    */
+
+    function findActivities(dataset: any): string[] { 
+        const used = Object.values(dataset.used) as { 
+            "prov:activity": string;
+            "prov:entity": string; 
+        }[];
+    
+        // Extract all "prov:activity" values and store them in a Set to ensure uniqueness
+        const uniqueActivities = new Set(used.map(entry => entry["prov:activity"]));
+    
+        // Convert the Set back to an array and return it
+        return Array.from(uniqueActivities);
+    }
 
     const currentNodes:any = get(nodes); // Get all nodes in the flow
 
@@ -721,7 +735,9 @@ export function AddActions(dataset: Dataset, nodes: any, edges: any, label: any)
     const maxY = Math.max(...entityNodes.map((node:any) => node.position.y));
     
     // Beispielaufruf mit deinem JSON-Dataset
-    const executionOrder = findExecutionOrder(dataset);
+    //const executionOrder = findExecutionOrder(dataset);
+    const executionOrder = findActivities(dataset);
+
     let xPos: number = 1500;
     let yPos: number = 0;
     const length = executionOrder.length - 1;
