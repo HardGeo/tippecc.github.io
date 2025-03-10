@@ -11,7 +11,7 @@
 </style>
     
 <div class="sidebar">
-    <h2>Legend</h2>
+    <h2></h2>
     <img src="/legende.png" alt="Legend">
 </div>
     

@@ -173,7 +173,7 @@ TargetProduct;${detailedData.targetProduct}
                     <path d="M4 6a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 11-2 0V7H6v2a1 1 0 01-2 0V6z" />
                 </svg>
             </button>
-            <h2>{"Entity Details"}</h2>
+            <h2>{""}</h2>
             <div class="triangle absolute left-1/2 -top-2 transform -translate-x-1/2"></div>
             
             <div class="table-container">

@@ -26,7 +26,7 @@ a {
 </style>
 
 <div class="sidebar">
-    <h2>Explanation</h2>
+    <h2></h2>
     <p>This is a Provenance visualization Tool for the TIPPECC and WaRisCo Projects. Infos about the projects can be found here:</p>
     <p><a href="https://www.climate-service-center.de/science/projects/detail/107781/index.php.de" target="_blank">Climate Service Center</a></p>
     <p><a href="http://www.warisco.uni-jena.de" target="_blank">Warisco Uni Jena</a></p>
