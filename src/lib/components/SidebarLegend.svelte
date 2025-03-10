@@ -8,9 +8,10 @@
         margin-bottom: 1rem;
         margin-top: 1rem;
     }
-    </style>
+</style>
     
-    <div class="sidebar">
-        <h2>Legend</h2>
-        <p>This is the legend content.</p>
-    </div>
+<div class="sidebar">
+    <h2>Legend</h2>
+    <img src="/legende.png" alt="Legend">
+</div>
+    
