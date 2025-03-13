@@ -490,7 +490,7 @@ TargetProduct;${detailedData.targetProduct}
         <div class="relative"> <!-- Ensure relative positioning -->
             
             <button
-                on:click={copySoftwareData}
+                on:click={copyActivityData}
                 class="bg-gray-200 p-2 rounded-md shadow-md hover:bg-gray-200 mt-4"
                 title="Copy to Clipboard"
             >

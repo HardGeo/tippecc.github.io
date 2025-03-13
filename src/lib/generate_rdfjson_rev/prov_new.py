@@ -35,6 +35,32 @@ def flatten_meta_data(meta_data, parent_key=""):
 
 
 def get_prov_metadata(key, prov_path, namespace="tippecc_data:"):
+    """
+    Retrieves and processes provenance metadata for a given key.
+
+    Args:
+        key (str): The metadata key to look up in the provenance metadata file.
+        prov_path (str): The path to the directory containing the "prov_metadata_template.json" file.
+        namespace (str, optional): The namespace to prepend to keys that do not already contain a colon (':').
+                                   Defaults to "tippecc_data:".
+
+    Returns:
+        tuple: A tuple containing:
+            - str: The namespaced version of the input key.
+            - dict: A dictionary of processed metadata where:
+                - Keys are prefixed with the namespace if they did not contain a colon.
+                - Values are extracted from nested dictionaries if they contain "@key" or "@id".
+    
+    Process:
+        1. The function constructs the full path to the metadata JSON file.
+        2. It opens and loads the JSON file into a dictionary.
+        3. It extracts the metadata associated with the given key, defaulting to an empty dictionary if not found.
+        4. It iterates over the extracted metadata:
+            - If a key does not contain a colon, the provided namespace is prepended.
+            - If a value is a dictionary and contains "@key", the function replaces the value with "@key"'s content.
+            - If a value is a dictionary and contains "@id", the function replaces the value with "@id"'s content.
+        5. The function returns the namespaced key and the processed metadata dictionary.
+    """
     prov_metadata_path = os.path.join(prov_path, "prov_metadata_template.json")
     with open(prov_metadata_path, 'r', encoding='utf-8') as file:
         prov_metadata = json.load(file)
