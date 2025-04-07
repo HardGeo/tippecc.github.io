@@ -1,7 +1,7 @@
 <script lang="ts">
     import { SvelteFlow, Controls, Background, BackgroundVariant, MarkerType} from '@xyflow/svelte';
     import { SvelteComponent, onMount } from 'svelte';
-    import * as d3 from 'd3'; // Import D3.js
+    //import * as d3 from 'd3'; // Import D3.js
     import '@xyflow/svelte/dist/style.css';
 
 
