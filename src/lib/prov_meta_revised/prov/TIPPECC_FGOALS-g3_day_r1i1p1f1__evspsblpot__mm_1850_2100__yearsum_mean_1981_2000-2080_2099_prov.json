@@ -1,0 +1,34 @@
+{
+    "collection": [
+        "COLLECTION__TIPPECC",
+        "COLLECTION__CMIP6"
+    ],
+    "processing": [
+        {
+            "label": "Calc abs. change",
+            "description": "Calculate absolute change for the time period 2080-2099 relative to\u00a01981-2000.",
+            "function": "FUNCTION__CDO_SUB",
+            "software": "SOFTWARE__CDO_1_9_3",
+            "function_call": "cdo.sub(input=/data/cmip6_raw_ind/TIPPECC_FGOALS-g3_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum_mean_2080_2099.nc /data/cmip6_raw_ind/TIPPECC_FGOALS-g3_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum_mean_1981_2000.nc, output=/data/cmip6_raw_ind/TIPPECC_FGOALS-g3_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum_mean_1981_2000-2080_2099.nc, options='-f nc4')",
+            "executed_by": "PERSON__ZANDER_FRANZISKA",
+            "on_behalf_of": "ORG__FSU",
+            "execution_time": "2025-03-04 20:57:36 CET+0100"
+        }
+    ],
+    "input_files": [
+        "/data/cmip6_raw_ind/TIPPECC_FGOALS-g3_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum_mean_2080_2099.nc",
+        "/data/cmip6_raw_ind/TIPPECC_FGOALS-g3_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum_mean_1981_2000.nc"
+    ],
+    "output_file": [
+        "/data/cmip6_raw_ind/TIPPECC_FGOALS-g3_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum_mean_1981_2000-2080_2099.nc"
+    ],
+    "metadata": {
+        "file_size": 91017,
+        "last_modification_time": "2025-03-04 20:57:36 CET+0100",
+        "content": [
+            false,
+            ""
+        ]
+    },
+    "_comment": "Used keys are defined in the prov_metadata.json file."
+}

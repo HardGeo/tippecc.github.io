@@ -1,0 +1,107 @@
+{
+    "CDI": "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)",
+    "Conventions": "CF-1.7 CMIP-6.2",
+    "history": "Wed Mar 05 12:46:17 2025: cdo -O -s -sub /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3__ai__mm_1850_2100__yearsum_mean_2080_2099.nc /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3__ai__mm_1850_2100__yearsum_mean_1981_2000.nc /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3__ai__mm_1850_2100__yearsum_mean_1981_2000-2080_2099.nc\nWed Mar 05 12:46:09 2025: cdo -O -s -timmean -selyear,2080/2099 /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3__ai__mm_1850_2100__yearsum.nc /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3__ai__mm_1850_2100__yearsum_mean_2080_2099.nc\nTue Mar 04 17:30:17 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3__evspsblpot__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3__evspsblpot__mm_1850_2100__yearsum.nc",
+    "source": "HadGEM3-GC31-LL (2016): \naerosol: UKCA-GLOMAP-mode\natmos: MetUM-HadGEM3-GA7.1 (N96; 192 x 144 longitude/latitude; 85 levels; top level 85 km)\natmosChem: none\nland: JULES-HadGEM3-GL7.1\nlandIce: none\nocean: NEMO-HadGEM3-GO6.0 (eORCA1 tripolar primarily 1 deg with meridional refinement down to 1/3 degree in the tropics; 360 x 330 longitude/latitude; 75 levels; top grid cell 0-1 m)\nocnBgchem: none\nseaIce: CICE-HadGEM3-GSI8 (eORCA1 tripolar primarily 1 deg; 360 x 330 longitude/latitude)",
+    "institution": "Met Office Hadley Centre, Fitzroy Road, Exeter, Devon, EX1 3PB, UK",
+    "activity_id": "CMIP",
+    "branch_method": "standard",
+    "branch_time_in_child": 0.0,
+    "branch_time_in_parent": 0.0,
+    "creation_date": "2025-03-04T18:28:29Z",
+    "cv_version": "6.2.20.1",
+    "data_specs_version": "01.00.29",
+    "experiment": "all-forcing simulation of the recent past",
+    "experiment_id": "historical",
+    "external_variables": "areacella",
+    "forcing_index": null,
+    "frequency": "year",
+    "further_info_url": "https://furtherinfo.es-doc.org/CMIP6.MOHC.HadGEM3-GC31-LL.historical.none.r1i1p1f3",
+    "grid": "Native N96 grid; 192 x 144 longitude/latitude",
+    "grid_label": "gn",
+    "initialization_index": null,
+    "institution_id": "MOHC",
+    "mip_era": "CMIP6",
+    "mo_runid": "u-bg466",
+    "nominal_resolution": "250 km",
+    "parent_activity_id": "CMIP",
+    "parent_experiment_id": "piControl",
+    "parent_mip_era": "CMIP6",
+    "parent_source_id": "HadGEM3-GC31-LL",
+    "parent_time_units": "days since 1850-01-01-00-00-00",
+    "parent_variant_label": "r1i1p1f1",
+    "physics_index": null,
+    "product": "model-output",
+    "realization_index": null,
+    "realm": "atmos",
+    "source_id": "HadGEM3-GC31-LL",
+    "source_type": "AOGCM AER",
+    "sub_experiment": "none",
+    "sub_experiment_id": "none",
+    "table_id": "day",
+    "table_info": "Creation Date:(13 December 2018) MD5:2b12b5db6db112aa8b8b0d6c1645b121",
+    "title": "HadGEM3-GC31-LL output prepared for CMIP6",
+    "variant_label": "r1i1p1f3",
+    "license": "CMIP6 model data produced by the Met Office Hadley Centre is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https://ukesm.ac.uk/cmip6. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.",
+    "cmor_version": "3.4.0",
+    "CDO": "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)",
+    "aridity_index": {
+        "long_name": "Aridity Index",
+        "units": "dimensionless",
+        "description": "Calculated from precipitation and potential evapotranspiration.",
+        "comment": "Aridity index is the ratio of precipitation to potential evapotranspiration. It is a measure of the degree of dryness of the climate at a given location. A value of 1 indicates that precipitation is equal to potential evapotranspiration, values greater than 1 indicate that precipitation is greater than potential evapotranspiration, and values less than 1 indicate that precipitation is less than potential evapotranspiration."
+    },
+    "file": {
+        "file_size": 49112,
+        "last_modification_time": "2025-03-05 13:46:18 CET+0100",
+        "birth_time": "2025-04-06 14:15:35 CEST+0200",
+        "file_format": "netCDF",
+        "nominal_resolution": "50 km",
+        "geospatial_lat_min": "-35.75",
+        "geospatial_lat_max": "-5.25",
+        "geospatial_lon_min": "10.25",
+        "geospatial_lon_max": "51.75",
+        "time_coverage_start": "2090-01-01 00:00:00",
+        "time_coverage_end": "2090-01-01 00:00:00",
+        "frequency": "none",
+        "climatology_bounds": [
+            [
+                "1979-02-14 00:00:00",
+                "2095-06-05 00:00:00"
+            ]
+        ],
+        "climatology_bounds_details": [
+            [
+                "1979-02-14 00:00:00",
+                "1997-11-06 00:00:00"
+            ],
+            [
+                "2076-09-12 00:00:00",
+                "2095-06-05 00:00:00"
+            ]
+        ],
+        "num_time_steps": 1,
+        "time_units": "days since 1850-01-01",
+        "time_calendar": "360_day",
+        "short_variable_name": "aridity_index",
+        "long_name": "Aridity Index",
+        "global_min": "-0.5409463678496194",
+        "global_max": "0.11863970391231693",
+        "unit": "dimensionless",
+        "experiment_id": "historical+ssp585",
+        "global_model": "HadGEM3-GC31-LL",
+        "variant": "r1i1p1f1",
+        "citation_historical_source": {
+            "doi": "https://doi.org/10.22033/ESGF/CMIP6.6109",
+            "license": "CC BY 4.0",
+            "short_data_reference": "Ridley, Jeff et al. (2019). MOHC HadGEM3-GC31-LL model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.6109"
+        },
+        "citation_scenario_source": {
+            "doi": "https://doi.org/10.22033/ESGF/CMIP6.10901",
+            "license": "CC BY 4.0",
+            "short_data_reference": "Good, Peter (2020). MOHC HadGEM3-GC31-LL model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.10901"
+        },
+        "bias_correction": "no",
+        "indicator": "yes"
+    }
+}

@@ -7,7 +7,7 @@
     },
     "SOFTWARE__XCLIM_0_49": {
         "@id": "SOFTWARE__XCLIM_0_49",
-        "@type": "SoftwareApplication",
+        "@type": "sdo:SoftwareApplication",
         "sdo:softwareVersion": "0.49.0",
         "sdo:targetProduct": {
             "@id": "SOFTWARE__XCLIM"
@@ -15,7 +15,7 @@
     },
     "SOFTWARE__XCLIM": {
         "@id": "SOFTWARE__XCLIM",
-        "@type": "SoftwareApplication",
+        "@type": "sdo:SoftwareApplication",
         "sdo:name": "xclim",
         "sdo:description": "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask.",
         "sdo:license": "MIT",
@@ -23,7 +23,7 @@
     },
     "SOFTWARE__XARRAY_2024_10_0": {
         "@id": "SOFTWARE__XARRAY_2024_10_0",
-        "@type": "SoftwareApplication",
+        "@type": "sdo:SoftwareApplication",
         "sdo:version": "2024.10.0",
         "sdo:targetProduct": {
             "@id": "SOFTWARE__XARRAY"
@@ -31,7 +31,7 @@
     },
     "SOFTWARE__XARRAY": {
         "@id": "SOFTWARE__XARRAY",
-        "@type": "SoftwareApplication",
+        "@type": "sdo:SoftwareApplication",
         "sdo:name": "xarray",
         "sdo:description": "xarray is an open source project and Python package that makes working with labelled multi-dimensional arrays simple, efficient, and fun!",
         "sdo:license": "Apache-2.0",
@@ -39,15 +39,23 @@
     },
     "SOFTWARE__CDO_1_9_3": {
         "@id": "SOFTWARE__CDO_1_9_3",
-        "@type": "SoftwareApplication",
+        "@type": "sdo:SoftwareApplication",
         "sdo:softwareVersion": "1.9.3",
+        "sdo:targetProduct": {
+            "@id": "SOFTWARE__CDO"
+        }
+    },
+    "SOFTWARE__CDO_1_9_8": {
+        "@id": "SOFTWARE__CDO_1_9_8",
+        "@type": "sdo:SoftwareApplication",
+        "sdo:softwareVersion": "1.9.8",
         "sdo:targetProduct": {
             "@id": "SOFTWARE__CDO"
         }
     },
     "SOFTWARE__CDO": {
         "@id": "SOFTWARE__CDO",
-        "@type": "SoftwareApplication",
+        "@type": "sdo:SoftwareApplication",
         "sdo:name": "Climate Data Operators",
         "sdo:description": "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data.",
         "sdo:license": "GPL-2.0",
@@ -55,7 +63,7 @@
     },
     "FUNCTION__CDO_SUB": {
         "@id": "FUNCTION__CDO_SUB",
-        "@type": "SoftwareSourceCode",
+        "@type": "sdo:SoftwareSourceCode",
         "sdo:name": "sub - subtract two fields",
         "sdo:description": "This module performs simple arithmetic of two datasets. The number of fields in ifile1 should be the same as in ifile2. One of the input files can contain only one timestep or one variable. The fields in ofile inherit the meta data from ifile1 or ifile2.",
         "sdo:targetProduct": {
@@ -64,7 +72,7 @@
     },
     "FUNCTION__CDO_SELYEAR": {
         "@id": "FUNCTION__CDO_SELYEAR",
-        "@type": "SoftwareSourceCode",
+        "@type": "sdo:SoftwareSourceCode",
         "sdo:name": "selyear - select a year range",
         "sdo:description": "This module selects a year range in the input field.",
         "sdo:targetProduct": {
@@ -73,7 +81,7 @@
     },
     "FUNCTION__CDO_TIMMEAN": {
         "@id": "FUNCTION__CDO_TIMMEAN",
-        "@type": "SoftwareSourceCode",
+        "@type": "sdo:SoftwareSourceCode",
         "sdo:name": "timmean - time mean",
         "sdo:description": "This module computes the temporal mean of the input field.",
         "sdo:targetProduct": {
@@ -82,7 +90,7 @@
     },
     "FUNCTION__CDO_SELLONLATBOX": {
         "@id": "FUNCTION__CDO_SELLONLATBOX",
-        "@type": "SoftwareSourceCode",
+        "@type": "sdo:SoftwareSourceCode",
         "sdo:name": "sellonlatbox - select a region",
         "sdo:description": "This module selects a region in the input field.",
         "sdo:targetProduct": {
@@ -91,7 +99,7 @@
     },
     "FUNCTION__EXTRACT_JAMS_FILES": {
         "@id": "FUNCTION__EXTRACT_JAMS_FILES",
-        "@type": "SoftwareSourceCode",
+        "@type": "sdo:SoftwareSourceCode",
         "sdo:name": "Extract JAMS files",
         "sdo:description": "This module extracts JAMS files from a given netCDF file. They are stored as .dat files.",
         "sdo:softwareVersion": "0.0.2",
@@ -102,16 +110,25 @@
     },
     "FUNCTION__XARRAY_ARIDITY_INDEX": {
         "@id": "FUNCTION__XARRAY_ARIDITY_INDEX",
-        "@type": "SoftwareSourceCode",
+        "@type": "sdo:SoftwareSourceCode",
         "sdo:name": "Aridity index",
         "sdo:description": "This module computes the aridity index.",
         "sdo:targetProduct": {
             "@id": "SOFTWARE__XARRAY"
         }
     },
+    "FUNCTION__XARRAY_SLICE": {
+        "@id": "FUNCTION__XARRAY_SLICE",
+        "@type": "sdo:SoftwareSourceCode",
+        "sdo:name": "SLICE",
+        "sdo:description": "Reduces a dataset by area and time.",
+        "sdo:targetProduct": {
+            "@id": "SOFTWARE__XARRAY"
+        }
+    },
     "FUNCTION__XCLIM_EVAPOTRANSPIRATION": {
         "@id": "FUNCTION__XCLIM_EVAPOTRANSPIRATION",
-        "@type": "SoftwareSourceCode",
+        "@type": "sdo:SoftwareSourceCode",
         "sdo:name": "Evapotranspiration",
         "sdo:description": "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with a given method.",
         "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.potential_evapotranspiration",
@@ -121,7 +138,7 @@
     },
     "FUNCTION__XCLIM_WATER_BUDGET": {
         "@id": "FUNCTION__XCLIM_WATER_BUDGET",
-        "@type": "SoftwareSourceCode",
+        "@type": "sdo:SoftwareSourceCode",
         "sdo:name": "Water budget",
         "sdo:description": "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget.",
         "sdo:url": "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.water_budget",
@@ -131,7 +148,7 @@
     },
     "FUNCTION__XCLIM_CONVERT_UNITS": {
         "@id": "FUNCTION__XCLIM_CONVERT_UNITS",
-        "@type": "SoftwareSourceCode",
+        "@type": "sdo:SoftwareSourceCode",
         "sdo:name": "Convert units",
         "sdo:description": "Convert a mathematical expression into a value with the same units as a DataArray.",
         "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.convert_units_to",
@@ -141,7 +158,7 @@
     },
     "FUNCTION__XCLIM_RATE2AMOUNT": {
         "@id": "FUNCTION__XCLIM_RATE2AMOUNT",
-        "@type": "SoftwareSourceCode",
+        "@type": "sdo:SoftwareSourceCode",
         "sdo:name": "Rate to amount",
         "sdo:description": "Convert a rate variable to an amount by multiplying by the sampling period length.",
         "sdo:url": "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.rate2amount",
@@ -149,9 +166,27 @@
             "@id": "SOFTWARE__XCLIM"
         }
     },
+    "FUNCTION__XCLIM_FIRE_INDICES": {
+        "@id": "FUNCTION__XCLIM_FIRE_INDICES",
+        "@type": "sdo:SoftwareSourceCode",
+        "sdo:name": "Fire indices",
+        "sdo:description": "This module computes fire indices.",
+        "sdo:targetProduct": {
+            "@id": "SOFTWARE__XCLIM"
+        }
+    },
+    "FUNCTION__XCLIM_SPI": {
+        "@id": "FUNCTION_XCLIM_SPI",
+        "@type": "sdo:SoftwareSourceCode",
+        "sdo:name": "SPI",
+        "sdo:description": "This module computes the Standardized Precipitation Index.",
+        "sdo:targetProduct": {
+            "@id": "SOFTWARE__XCLIM"
+        }
+    },
     "FUNCTION__CDO_MERGE": {
         "@id": "FUNCTION__CDO_MERGE",
-        "@type": "SoftwareSourceCode",
+        "@type": "sdo:SoftwareSourceCode",
         "sdo:name": "Merge two fields",
         "sdo:description": "This module merges two fields.",
         "sdo:targetProduct": {
@@ -160,7 +195,7 @@
     },
     "FUNCTION__CDO_YEARSUM": {
         "@id": "FUNCTION__CDO_YEARSUM",
-        "@type": "SoftwareSourceCode",
+        "@type": "sdo:SoftwareSourceCode",
         "sdo:name": "Year sum",
         "sdo:description": "This module computes the sum of the input field over a year.",
         "sdo:targetProduct": {
@@ -169,7 +204,7 @@
     },
     "FUNCTION__CDO_SELTIME": {
         "@id": "FUNCTION__CDO_SELTIME",
-        "@type": "SoftwareSourceCode",
+        "@type": "sdo:SoftwareSourceCode",
         "sdo:name": "Select a time range",
         "sdo:description": "This module selects a time range in the input field.",
         "sdo:targetProduct": {
@@ -178,7 +213,7 @@
     },
     "FUNCTION__CDO_YEARSUM_SHIFTTIME": {
         "@id": "FUNCTION__CDO_YEARSUM_SHIFTTIME",
-        "@type": "SoftwareSourceCode",
+        "@type": "sdo:SoftwareSourceCode",
         "sdo:name": "Year sum and shift time",
         "sdo:description": "This module computes the sum of the input field over a year and shifts the time.",
         "sdo:targetProduct": {
@@ -187,9 +222,18 @@
     },
     "FUNCTION__CDO_SELTIMESTEP": {
         "@id": "FUNCTION__CDO_SELTIMESTEP",
-        "@type": "SoftwareSourceCode",
+        "@type": "sdo:SoftwareSourceCode",
         "sdo:name": "Select a time step",
         "sdo:description": "This module selects a time step in the input field.",
+        "sdo:targetProduct": {
+            "@id": "SOFTWARE__CDO"
+        }
+    },
+    "FUNCTION__CDO_REMAPBIL": {
+        "@id": "FUNCTION__CDO_REMAPBIL",
+        "@type": "sdo:SoftwareSourceCode",
+        "sdo:name": "Remap bilinear",
+        "sdo:description": "This module remaps the input field using bilinear interpolation.",
         "sdo:targetProduct": {
             "@id": "SOFTWARE__CDO"
         }
@@ -202,7 +246,7 @@
         "foaf:familyName": "Zander",
         "wd:P496": "0000-0001-6892-7046",
         "sdo:affiliation": {
-            "@key": "ORG__FSU"
+            "@id": "ORG__FSU"
         }
     },
     "PERSON__KRALISCH_SVEN": {
@@ -213,7 +257,49 @@
         "foaf:familyName": "Kralisch",
         "wd:P496": "0000-0003-2895-540X",
         "sdo:affiliation": {
-            "@key": "ORG__FSU"
+            "@id": "ORG__FSU"
+        }
+    },
+    "PERSON__FABIAN_SCHREITER": {
+        "@id": "PERSON__FABIAN_SCHREITER",
+        "prov:type": "prov:Person",
+        "prov:label": "Fabian Schreiter",
+        "foaf:givenName": "Fabian",
+        "foaf:familyName": "Schreiter",
+        "sdo:affiliation": {
+            "@id": "ORG__FSU"
+        }
+    },
+    "PERSON__JONATHAN_PADAVATAN": {
+        "@id": "PERSON_JONATHAN_PADAVATAN",
+        "prov:type": "prov:Person",
+        "prov:label": "Jonathan Padavatan",
+        "foaf:givenName": "Jonathan",
+        "foaf:familyName": "Padavatan",
+        "sdo:affiliation": {
+            "@id": "ORG__WITS"
+        }
+    },
+    "PERSON__FRANCOIS_ENGELBRECHT": {
+        "@id": "PERSON__FRANCOIS_ENGELBRECHT",
+        "prov:type": "prov:Person",
+        "prov:label": "Francois Engelbrecht",
+        "foaf:givenName": "Francois",
+        "foaf:familyName": "Engelbrecht",
+        "wd:P496": "0000-0002-9189-6556",
+        "sdo:affiliation": {
+            "@id": "ORG__WITS"
+        }
+    },
+    "PERSON__JESSICA_STEINKOPF": {
+        "@id": "PERSON__JESSICA_STEINKOPF",
+        "prov:type": "prov:Person",
+        "prov:label": "Jessica Steinkopf",
+        "foaf:givenName": "Jessica",
+        "foaf:familyName": "Steinkopf",
+        "wd:P496": "0000-0002-9189-6556",
+        "sdo:affiliation": {
+            "@id": "ORG__WITS"
         }
     },
     "ORG__FSU": {
@@ -240,6 +326,11 @@
         "sdo:name": "CMIP5 (bias adjusted)",
         "sdo:description": "CMIP5 is a climate model intercomparison project. This collection contains bias adjusted data."
     },
+    "COLLECTION__CORDEX_CORE": {
+        "prov:type": "prov:Collection",
+        "sdo:name": "CORDEX CORE",
+        "sdo:description": "CORDEX is a ...."
+    },
     "COLLECTION__CMIP5": {
         "prov:type": "prov:Collection",
         "sdo:name": "CMIP5",
@@ -254,5 +345,25 @@
         "prov:type": "prov:Collection",
         "sdo:name": "CMIP6 (bias adjusted)",
         "sdo:description": "CMIP6 is a climate model intercomparison project. This collection contains bias adjusted data."
+    },
+    "COLLECTION__ERA5": {
+        "prov:type": "prov:Collection",
+        "sdo:name": "ERA5",
+        "sdo:description": "ERA5 is a reanalysis dataset."
+    },
+    "COLLECTION__WARISCO": {
+        "prov:type": "prov:Collection",
+        "sdo:name": "WARISCO",
+        "sdo:description": "WARISCO is a ...."
+    },
+    "COLLECTION__VAAL": {
+        "prov:type": "prov:Collection",
+        "sdo:name": "Vaal",
+        "sdo:description": "Vaal catchment data."
+    },
+    "COLLECTION__CHIRPS": {
+        "prov:type": "prov:Collection",
+        "sdo:name": "CHIRPS",
+        "sdo:description": "CHIRPS is a ...."
     }
 }

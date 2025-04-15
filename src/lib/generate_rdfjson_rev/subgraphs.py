@@ -198,12 +198,21 @@ for target_id in targets:
     # Die gesamte "wasInformedBy"-Struktur
     wasInformedBy = data.get("wasInformedBy", {})
     #print(wasInformedBy)
-    filtered_wasInformedBy = {
-        key: value for key, value in wasInformedBy.items()
-        if value.get("prov:informed") in unique_exe
-        or value.get("prov:informant") in unique_exe
-        
-    }
+
+    filtered_wasInformedBy = {}
+
+    for key, value in wasInformedBy.items():
+        # Normalize to a list of dicts
+        items = value if isinstance(value, list) else [value]
+
+        for item in items:
+            if (
+                item.get("prov:informed") in unique_exe
+                or item.get("prov:informant") in unique_exe
+            ):
+                print(item)  # 👈 print each matching value
+                filtered_wasInformedBy.setdefault(key, []).append(item)
+
     data["wasInformedBy"] = filtered_wasInformedBy
     #_________________________________________________________________
     # Die gesamte "wasAssociatedWith"-Struktur

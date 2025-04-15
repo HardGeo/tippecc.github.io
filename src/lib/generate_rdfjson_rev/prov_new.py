@@ -1,13 +1,11 @@
 import os
 import json
 import os.path as path
-import urllib
 
 import prov
 import xmltodict as xmltodict
 from prov.model import ProvDocument
-from prov.dot import prov_to_dot
-
+from rdflib import Namespace
 import sys
 
 
@@ -51,7 +49,22 @@ def flatten_meta_data(meta_data, parent_key=""):
 
     return dict(items)
 
-
+def qualify_metadata_values(metadata: dict, d1, people_namespace, orgs_namespace, software_namespace):
+    qualified = {}
+    for k, v in metadata.items():
+        if isinstance(v, str):
+            raw = v.strip()
+            if raw.startswith("ORG__"):
+                qualified[k] = d1.valid_qualified_name(f"{orgs_namespace}:{raw}")
+            elif raw.startswith("SOFTWARE__"):
+                qualified[k] = d1.valid_qualified_name(f"{software_namespace}:{raw}")
+            elif raw.startswith("PERSON__"):
+                qualified[k] = d1.valid_qualified_name(f"{people_namespace}:{raw}")
+            else:
+                qualified[k] = raw
+        else:
+            qualified[k] = v  # Optional: du kannst hier auch weiter rekursiv durch Dictionaries gehen
+    return qualified
 
 def get_prov_metadata(key, prov_path, namespace="tippecc_data:"):
     """
@@ -82,39 +95,52 @@ def get_prov_metadata(key, prov_path, namespace="tippecc_data:"):
     """
 
 
-    # Extract the metadata for the given key
     metadata = prov_metadata.get(key, {})
-
-    # Process the metadata
     updated_metadata = {}
+
     for k, v in metadata.items():
-        # Add namespace if the key does not already contain ':'
+        # Ergänze default namespace, falls kein Präfix vorhanden
         if ':' not in k:
             k = f"{namespace}{k}"
 
-        # If the value is a nested dict with "@key" or "@id", extract its value
-        # TODO Add correct namespace otherwise it is a string and not relation
-        if isinstance(v, dict) and "@key" in v:
-            v = v["@key"]
-        if isinstance(v, dict) and "@id" in v:
-            v = v["@id"]
+        # Spezialbehandlung für dict-Werte
+        if isinstance(v, dict):
+            if "@id" in v:
+                raw_id = v["@id"]
+                # Rate den passenden Namespace anhand des ID-Musters
+                if raw_id.startswith("ORG__"):
+                    v = d1.valid_qualified_name(f"{orgs_namespace}:{raw_id}")
+                elif raw_id.startswith("SOFTWARE__"):
+                    v = d1.valid_qualified_name(f"{software_namespace}:{raw_id}")
+                elif raw_id.startswith("PERSON__"):
+                    v = d1.valid_qualified_name(f"{people_namespace}:{raw_id}")
+                else:
+                    v = d1.valid_qualified_name(f"{namespace}{raw_id}")
+            elif "@key" in v:
+                v = v["@key"]
 
+        # String-Präfixe erkennen und Namespaces zuweisen
+        elif isinstance(v, str):
+            if v.startswith("ORG__"):
+                v = d1.valid_qualified_name(f"{orgs_namespace}:{v}")
+            elif v.startswith("SOFTWARE__"):
+                v = d1.valid_qualified_name(f"{software_namespace}:{v}")
+            elif v.startswith("PERSON__"):
+                v = d1.valid_qualified_name(f"{people_namespace}:{v}")
 
+        # Korrigiere "@type"-Schlüssel zur richtigen Form
         if "@type" in k:
             if ':' in v:
                 namespace_type = v.split(":")[0]
             else:
-                namespace_type = "tippecc_data" # TODO default namespace, but should be replaced with the actual namespace
-
+                namespace_type = "tippecc_data"
             k = namespace_type + ':type'
 
+        # Vermeide "@id" direkt als Schlüssel
         if "@id" not in k:
             updated_metadata[k] = v
 
-    #print(updated_metadata)
     return f"{namespace}{key}", updated_metadata
-
-
 
 # Ensure the directory exists
 os.makedirs(dir, exist_ok=True)
@@ -127,6 +153,7 @@ people_namespace = "people"
 orgs_namespace = "orgs"
 software_namespace = "software"
 exe_namespace = "exe"
+
 
 # Declaring namespaces for various prefixes used in the example
 # todo replace provbook with the actual domain / our namespace
@@ -151,7 +178,6 @@ d1.add_namespace('foaf', 'http://xmlns.com/foaf/0.1/')
 
 
 
-
 added_agents = set()
 activities = []
 activity_counter = 0
@@ -160,32 +186,33 @@ activities_added = []
 excluded_activities = []
 # Iterate over all files in the directory
 for filename in os.listdir(prov_path):
-    if filename.endswith('.json') and filename.startswith("TIPPECC"):  # Check if the file has a .json extension
+    if filename.endswith('.json'):  # Check if the file has a .json extension
         if filename.endswith("prov_metadata.json"):
             continue
-
         prov_file = os.path.join(prov_path, "_".join(filename.split("_")[:-1]) + "_prov.json")
         meta_file = os.path.join(meta_path, "_".join(filename.split("_")[:-1]) + "_metadata.json")
 
         try:
-            # Try to read the provenance file
+            # Versuche, die prov-Datei zu lesen (obligatorisch)
             with open(prov_file, 'r', encoding='utf-8') as file:
                 prov_data = json.load(file)
-
-            # Try to read the metadata file
+        except FileNotFoundError as e:
+            #print(f"Skipping {filename} due to missing provenance file: {e}")
+            continue  # prov fehlt → skip alles
+    
+        try:
+            # Versuche, die metadata-Datei zu lesen (optional)
             with open(meta_file, 'r', encoding='utf-8') as file:
                 meta_data = json.load(file)
-
-            #print(f"{filename} processed")
-        except FileNotFoundError as e:
-            #print(f"Skipping {filename} due to missing file: {e}")
-            continue  # Skip to the next file
+        except FileNotFoundError:
+            meta_data = {}
+            #print(f"Metadata file missing for {filename}, using empty metadata.")
 
 
         # Create an entity
         entity_id = f"{entity_namespace}:{filename}".replace('_prov.json', '')
         meta_data = flatten_meta_data(meta_data)
-
+        
         #prov_data = flatten_meta_data(prov_data)
         entity = d1.entity(entity_id, meta_data)
         #entity = d1.entity(entity_id)
@@ -208,6 +235,10 @@ for filename in os.listdir(prov_path):
             # Add person
             person_id = process['executed_by']
             person_id, person_metadata = get_prov_metadata (person_id, prov_base, f"{people_namespace}:")
+            # Qualifiziere alle relevanten Werte in den Metadaten
+            person_metadata = qualify_metadata_values(person_metadata, d1, people_namespace, orgs_namespace, software_namespace)
+            
+            #print(json.dumps(person_metadata, indent=2, ensure_ascii=False))
             #print(person_id, person_metadata)
             if person_id not in added_agents:
                 d1.agent(person_id, person_metadata)
@@ -222,7 +253,11 @@ for filename in os.listdir(prov_path):
                 added_agents.add(orga_id)
 
             # Add software
-            software_id = process['software']
+            
+            try:
+                software_id = process['software']
+            except:
+                pass
             try:
                 software_id, software_metadata = get_prov_metadata (software_id, prov_base, f"{software_namespace}:")
             except:
@@ -230,6 +265,7 @@ for filename in os.listdir(prov_path):
                 software_id, software_metadata = get_prov_metadata (software_id, prov_base, f"{software_namespace}:")
 
             if software_id not in added_agents:
+                
                 d1.agent(software_id, software_metadata)
                 added_agents.add(software_id)
 
@@ -252,7 +288,11 @@ for filename in os.listdir(prov_path):
             except:
                 time = "N/A"
 
-            function = process['function']
+            try:
+                function = process['function']
+            except:
+                function = None
+
             __, activity_metadata = get_prov_metadata (function, prov_base, f"{exe_namespace}:")
 
 
@@ -293,9 +333,18 @@ for filename in os.listdir(prov_path):
                 d1.generation(entity_id, activity_id, time)
                 added_agents.add((activity_id, entity_id))
 
+            input_files = prov_data.get("input_files", [])
+
+            # Prüfen, ob wir eine Liste von Listen oder eine flache Liste haben
+            if input_files and isinstance(input_files[0], list):
+                files_to_iterate = input_files[0]
+            else:
+                files_to_iterate = input_files
+
 
             #ADD wasDerivedFrom
-            for derivation in prov_data['input_files']:
+            for derivation in files_to_iterate:
+                #print(derivation)
                 if derivation.endswith(".nc"):
                     derivation = f"{entity_namespace}:{derivation.split('/')[-1]}".replace(".nc","")
                 else:
@@ -312,6 +361,7 @@ for filename in os.listdir(prov_path):
                     added_agents.add((activity_id, derivation))
                 #if first:
                 input_files_wasInformedBy.append({"result_id": entity_id, "entity_id":derivation, "activity_id":activity_id})
+
 
             first = False
             # Collect activities
@@ -333,25 +383,28 @@ for filename in os.listdir(prov_path):
 
 
         # Add collections
-        for collection_id in prov_data['collection']:
-            raw_collection_id, collection_metadata = get_prov_metadata(
-                collection_id, prov_base, f"{collection_namespace}:"
-            )
+        try:
+            for collection_id in prov_data['collection']:
+                raw_collection_id, collection_metadata = get_prov_metadata(
+                    collection_id, prov_base, f"{collection_namespace}:"
+                )
 
-            # Ensure the namespace is not duplicated
-            if ":" in raw_collection_id:
-                collection_id = raw_collection_id  # Keep original if already namespaced
-            else:
-                collection_id = f"{collection_namespace}:{raw_collection_id}"
+                # Ensure the namespace is not duplicated
+                if ":" in raw_collection_id:
+                    collection_id = raw_collection_id  # Keep original if already namespaced
+                else:
+                    collection_id = f"{collection_namespace}:{raw_collection_id}"
 
-            if collection_id not in added_agents:
-                d1.collection(collection_id)
-                #print(collection_id)
-                added_agents.add(collection_id)
+                if collection_id not in added_agents:
+                    d1.collection(collection_id)
+                    #print(collection_id)
+                    added_agents.add(collection_id)
 
-            if (collection_id, entity_id) not in added_agents:
-                d1.hadMember(collection_id, entity)
-                added_agents.add((collection_id, entity_id))
+                if (collection_id, entity_id) not in added_agents:
+                    d1.hadMember(collection_id, entity)
+                    added_agents.add((collection_id, entity_id))
+        except:
+            pass
 
 
 
@@ -368,21 +421,29 @@ for filename in os.listdir(prov_path):
 # search first for all activities relted to a entity_id (based on result_id) and then add the wasInformedBy relationships
 #print(activities_added)
 
-for input_file in input_files_wasInformedBy:
+total = len(input_files_wasInformedBy)
+informed_pairs_added = set()  # Set zum Tracken der Paare
+for idx, input_file in enumerate(input_files_wasInformedBy, start=1):
+    print(f"{idx}/{total}", end="\r")
+
     source = input_file['entity_id']
     source_activity = input_file['activity_id']
-    # find this id in result_id
-    # if not in activities_
+
     for input_file2 in input_files_wasInformedBy:
         if input_file2['result_id'] == source:
             destination = input_file2['activity_id']
-            #print(source_activity, destination)
-            if destination not in activities_added and source_activity not in excluded_activities: # check if source_activity is in activities_
-                #print("added")
-                d1.wasInformedBy( source_activity, destination  )
+            pair = (source_activity, destination)
+
+            if (
+                pair not in informed_pairs_added
+                and destination not in activities_added
+                and source_activity not in excluded_activities
+            ):
+                d1.wasInformedBy(source_activity, destination)
+                informed_pairs_added.add(pair)
 
 
-activities.sort(key=lambda x: x['start_time'])  # Sort by earliest start time
+#activities.sort(key=lambda x: x['start_time'])  # Sort by earliest start time
 
 # export the graph
 d1.serialize(os.path.join(dir, 'GRAPH_new.json'), format='json')

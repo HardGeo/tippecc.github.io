@@ -1,0 +1,59 @@
+# SPARQL Query to extract all entities used to create the target entity
+sparql_query = f"""
+    PREFIX prov: <http://www.w3.org/ns/prov#>
+    PREFIX tippecc_data: <http://www.provbook.org/tippecc/data/>
+
+    SELECT DISTINCT *
+    WHERE {{
+
+      <{target_entity}> prov:wasGeneratedBy ?baseActivity .
+      ?baseActivity prov:wasInformedBy* ?activity .
+
+      OPTIONAL {{
+        ?activity prov:wasInformedBy ?parent ;
+                  ?rel ?att ;
+      }}
+
+    }}
+ """
+
+
+sparql_query12 = f"""
+    PREFIX prov: <http://www.w3.org/ns/prov#>
+    PREFIX tippecc_data: <http://www.provbook.org/tippecc/data/>
+
+    SELECT DISTINCT  ?activity ?entity
+    WHERE {{
+
+      <{target_entity}> prov:qualifiedGeneration/prov:activity ?baseActivity .
+      ?baseActivity prov:wasInformedBy* ?activity .
+      OPTIONAL {{
+      ?activity prov:used ?entity .
+      }}
+
+
+    }}
+ """
+# TODO add missing entites
+sparql_query1 = f"""
+    PREFIX prov: <http://www.w3.org/ns/prov#>
+    PREFIX tippecc_data: <http://www.provbook.org/tippecc/data/>
+
+    CONSTRUCT {{
+      ?activity ?p ?o .
+      ?entity ?p2 ?o2 .
+      ?entity prov:qualifiedGeneration ?gen .
+      ?gen ?p3 ?o3 .
+    }}
+    WHERE {{
+      <{target_entity}> prov:qualifiedGeneration/prov:activity ?baseActivity .
+      ?baseActivity prov:wasInformedBy* ?activity .
+      OPTIONAL {{
+        ?activity ?p ?o .
+        ?activity prov:used ?entity .
+        ?entity ?p2 ?o2 .
+        ?entity prov:qualifiedGeneration ?gen .
+        ?gen ?p3 ?o3 .
+      }}
+    }}
+"""

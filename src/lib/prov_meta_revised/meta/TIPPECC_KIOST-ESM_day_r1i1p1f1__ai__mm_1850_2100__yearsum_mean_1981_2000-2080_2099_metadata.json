@@ -1,0 +1,90 @@
+{
+    "CDI": "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)",
+    "Conventions": "CF-1.7 CMIP-6.2",
+    "history": "Tue Feb 11 08:33:58 2025: cdo -O -s -sub /data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__ai__mm_1850_2100__yearsum_mean_2080_2099.nc /data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__ai__mm_1850_2100__yearsum_mean_1981_2000.nc /data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__ai__mm_1850_2100__yearsum_mean_1981_2000-2080_2099.nc\nTue Feb 11 08:33:53 2025: cdo -O -s -timmean -selyear,2080/2099 /data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__ai__mm_1850_2100__yearsum.nc /data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__ai__mm_1850_2100__yearsum_mean_2080_2099.nc\nSun Feb 09 18:52:33 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum.nc",
+    "source": "KIOST-ESM (2018): \naerosol: none\natmos: GFDL-AM2.0 (cubed sphere (C48); 192 x 96 longitude/latitude; 32 vertical levels; top level 2 hPa)\natmosChem: Simple carbon aerosol model (emission type)\nland: NCAR-CLM4\nlandIce: NCAR-CLM4\nocean: GFDL-MOM5.0 (tripolar - nominal 1.0 deg; 360 x 200 longitude/latitude; 52 levels; top grid cell 0-2 m; NK mixed layer scheme)\nocnBgchem: TOPAZ2\nseaIce: GFDL-SIS",
+    "institution": "Korea Institute of Ocean Science & Technology, Busan 49111, Republic of Korea",
+    "activity_id": "CMIP",
+    "branch_method": "standard",
+    "branch_time_in_child": 0.0,
+    "branch_time_in_parent": 485782.0,
+    "contact": "YoungHo Kim (yhokim@pknu.ac.kr & yhkimstar@gmail.com)",
+    "creation_date": "2025-02-03T17:45:01Z",
+    "data_specs_version": "01.00.30",
+    "experiment": "all-forcing simulation of the recent past",
+    "experiment_id": "historical",
+    "external_variables": "areacella",
+    "forcing_index": null,
+    "frequency": "year",
+    "further_info_url": "https://furtherinfo.es-doc.org/CMIP6.KIOST.KIOST-ESM.historical.none.r1i1p1f1",
+    "grid": "atmos data regridded from Cubed-sphere (c48) to 94X192",
+    "grid_label": "gr1",
+    "initialization_index": null,
+    "institution_id": "KIOST",
+    "mip_era": "CMIP6",
+    "nominal_resolution": "250 km",
+    "parent_activity_id": "CMIP",
+    "parent_experiment_id": "piControl",
+    "parent_mip_era": "CMIP6",
+    "parent_source_id": "KIOST-ESM",
+    "parent_time_units": "days since 1850-01-01",
+    "parent_variant_label": "r1i1p1f1",
+    "physics_index": null,
+    "product": "model-output",
+    "realization_index": null,
+    "realm": "atmos",
+    "references": "Model described by Pak et al. (Ocean Science Journal, to be submitted).",
+    "run_variant": "3rd realization",
+    "source_id": "KIOST-ESM",
+    "source_type": "AOGCM BGC",
+    "sub_experiment": "none",
+    "sub_experiment_id": "none",
+    "table_id": "day",
+    "table_info": "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87",
+    "title": "KIOST-ESM output prepared for CMIP6",
+    "variant_label": "r1i1p1f1",
+    "license": "CMIP6 model data produced by Lawrence Livermore KIOST is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.",
+    "cmor_version": "3.5.0",
+    "CDO": "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)",
+    "aridity_index": {
+        "long_name": "Aridity Index",
+        "units": "dimensionless",
+        "description": "Calculated from precipitation and potential evapotranspiration.",
+        "comment": "Aridity index is the ratio of precipitation to potential evapotranspiration. It is a measure of the degree of dryness of the climate at a given location. A value of 1 indicates that precipitation is equal to potential evapotranspiration, values greater than 1 indicate that precipitation is greater than potential evapotranspiration, and values less than 1 indicate that precipitation is less than potential evapotranspiration."
+    },
+    "file": {
+        "file_size": 48872,
+        "last_modification_time": "2025-02-11 09:33:59 CET+0100",
+        "birth_time": "2025-02-11 09:33:59 CET+0100",
+        "file_format": "netCDF",
+        "nominal_resolution": "50 km",
+        "geospatial_lat_min": "-35.75",
+        "geospatial_lat_max": "-5.25",
+        "geospatial_lon_min": "10.25",
+        "geospatial_lon_max": "10.75",
+        "time_coverage_start": "2089-12-31 12:00:00",
+        "time_coverage_end": "2089-12-31 12:00:00",
+        "frequency": "none",
+        "climatology_bounds": [
+            [
+                "1980-11-30 00:00:00",
+                "2098-11-01 00:00:00"
+            ]
+        ],
+        "climatology_bounds_details": [
+            [
+                "1980-11-30 00:00:00",
+                "1999-11-26 00:00:00"
+            ],
+            [
+                "2079-11-06 00:00:00",
+                "2098-11-01 00:00:00"
+            ]
+        ],
+        "num_time_steps": 1,
+        "time_units": "days since 1850-01-01",
+        "time_calendar": "365_day",
+        "global_min": "-0.3061218166421307",
+        "global_max": "0.10795560694089434"
+    }
+}

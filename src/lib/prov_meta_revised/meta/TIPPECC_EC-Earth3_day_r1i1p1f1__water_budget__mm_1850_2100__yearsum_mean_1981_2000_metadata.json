@@ -1,6 +1,6 @@
 {
     "CDI": "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)",
-    "history": "Fri Jan 24 15:55:37 2025: cdo -O -s -timmean -selyear,1981/2000 /data/cmip6_raw_ind/TIPPECC_EC-Earth3_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum.nc /data/cmip6_raw_ind/TIPPECC_EC-Earth3_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum_mean_1981_2000.nc\nFri Jan 24 15:55:16 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_EC-Earth3_day_r1i1p1f1__water_budget__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_EC-Earth3_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum.nc",
+    "history": "Mon Feb 10 10:38:04 2025: cdo -O -s -timmean -selyear,1981/2000 /data/cmip6_raw_ind/TIPPECC_EC-Earth3_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum.nc /data/cmip6_raw_ind/TIPPECC_EC-Earth3_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum_mean_1981_2000.nc\nMon Feb 10 10:37:41 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_EC-Earth3_day_r1i1p1f1__water_budget__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_EC-Earth3_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum.nc",
     "source": "EC-Earth3 (2019): \naerosol: none\natmos: IFS cy36r4 (TL255, linearly reduced Gaussian grid equivalent to 512 x 256 longitude/latitude; 91 levels; top level 0.01 hPa)\natmosChem: none\nland: HTESSEL (land surface scheme built in IFS)\nlandIce: none\nocean: NEMO3.6 (ORCA1 tripolar primarily 1 deg with meridional refinement down to 1/3 degree in the tropics; 362 x 292 longitude/latitude; 75 levels; top grid cell 0-1 m)\nocnBgchem: none\nseaIce: LIM3",
     "institution": "AEMET, Spain; BSC, Spain; CNR-ISAC, Italy; DMI, Denmark; ENEA, Italy; FMI, Finland; Geomar, Germany; ICHEC, Ireland; ICTP, Italy; IDL, Portugal; IMAU, The Netherlands; IPMA, Portugal; KIT, Karlsruhe, Germany; KNMI, The Netherlands; Lund University, Sweden; Met Eireann, Ireland; NLeSC, The Netherlands; NTNU, Norway; Oxford University, UK; surfSARA, The Netherlands; SMHI, Sweden; Stockholm University, Sweden; Unite ASTR, Belgium; University College Dublin, Ireland; University of Bergen, Norway; University of Copenhagen, Denmark; University of Helsinki, Finland; University of Santiago de Compostela, Spain; Uppsala University, Sweden; Utrecht University, The Netherlands; Vrije Universiteit Amsterdam, the Netherlands; Wageningen University, The Netherlands. Mailing address: EC-Earth consortium, Rossby Center, Swedish Meteorological and Hydrological Institute/SMHI, SE-601 76 Norrkoping, Sweden",
     "Conventions": "CF-1.7 CMIP-6.2",
@@ -46,7 +46,6 @@
     "branch_time_in_child": "0.0D",
     "branch_time_in_parent": "149749.0D",
     "CDO": "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)",
-    "time_bnds": {},
     "water_budget_from_tas": {
         "long_name": "Water budget (\"FAO_PM985\" method)",
         "units": "mmday",
@@ -56,7 +55,47 @@
         "method": "pr - evspsblpot "
     },
     "file": {
-        "file_size": 83774,
-        "last_modification_time": "2025-01-24 16:55:37 CET+0100"
+        "file_size": 87033,
+        "last_modification_time": "2025-02-10 11:38:05 CET+0100",
+        "birth_time": "2025-02-10 11:38:05 CET+0100",
+        "file_format": "netCDF",
+        "nominal_resolution": "50 km",
+        "geospatial_lat_min": "-35.75",
+        "geospatial_lat_max": "-5.25",
+        "geospatial_lon_min": "10.25",
+        "geospatial_lon_max": "51.75",
+        "time_coverage_start": "1991-01-01 00:00:00",
+        "time_coverage_end": "1991-01-01 00:00:00",
+        "frequency": "none",
+        "climatology_bounds": [
+            [
+                "1981-01-01 00:00:00",
+                "2000-01-01 00:00:00"
+            ]
+        ],
+        "climatology_bounds_details": null,
+        "num_time_steps": 1,
+        "time_units": "days since 1850-01-01",
+        "time_calendar": "proleptic_gregorian",
+        "short_variable_name": "water_budget_from_tas",
+        "long_name": "Water budget (\"FAO_PM985\" method)",
+        "global_min": "-1605.240555758957",
+        "global_max": "1501.6575590469772",
+        "unit": "mmday",
+        "experiment_id": "historical+ssp585",
+        "global_model": "EC-Earth3",
+        "variant": "r1i1p1f1",
+        "citation_historical_source": {
+            "doi": "https://doi.org/10.22033/ESGF/CMIP6.4700",
+            "license": "CC BY 4.0",
+            "short_data_reference": "EC-Earth Consortium (EC-Earth) (2019). EC-Earth-Consortium EC-Earth3 model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.4700"
+        },
+        "citation_scenario_source": {
+            "doi": "https://doi.org/10.22033/ESGF/CMIP6.4912",
+            "license": "CC BY 4.0",
+            "short_data_reference": "EC-Earth Consortium (EC-Earth) (2019). EC-Earth-Consortium EC-Earth3 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.4912"
+        },
+        "bias_correction": "no",
+        "indicator": "yes"
     }
 }

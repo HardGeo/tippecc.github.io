@@ -1,0 +1,78 @@
+{
+    "collection": [
+        "COLLECTION__TIPPECC",
+        "COLLECTION__CMIP6"
+    ],
+    "processing": [
+        {
+            "label": "Calc year sum",
+            "description": "Calculate the sum of the years.",
+            "function": "FUNCTION__CDO_YEARSUM",
+            "software": "SOFTWARE__CDO_1_9_3",
+            "function_call": "cdo.yearsum(input=/data/cmip6_raw_ind/TIPPECC_FGOALS-g3_day_r1i1p1f1__evspsblpot__mm_1850_2100.nc, output=/data/cmip6_raw_ind/TIPPECC_FGOALS-g3_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum.nc, options='-f nc4')",
+            "executed_by": "PERSON__ZANDER_FRANZISKA",
+            "on_behalf_of": "ORG__FSU",
+            "execution_time": "2025-03-04 20:57:18 CET+0100"
+        }
+    ],
+    "input_files": [
+        "/data/cmip6_raw_ind/TIPPECC_FGOALS-g3_day_r1i1p1f1__evspsblpot__mm_1850_2100.nc"
+    ],
+    "output_file": [
+        "/data/cmip6_raw_ind/TIPPECC_FGOALS-g3_day_r1i1p1f1__evspsblpot__mm_1850_2100__yearsum.nc"
+    ],
+    "metadata": {
+        "file_size": 10529897,
+        "last_modification_time": "2025-03-04 20:57:18 CET+0100",
+        "content": [
+            true,
+            {
+                "time#calendar": "365_day",
+                "time#units": "days since 1850-01-01",
+                "num_bands": 251,
+                "min": 958.434,
+                "max": 2744.733,
+                "varinfo": {
+                    "type": "Float64",
+                    "NETCDF_VARNAME": "evspsblpot",
+                    "standard_name": "water_potential_evapotranspiration_amount",
+                    "long_name": "Potential evapotranspiration (\"fao_pm98\" method)",
+                    "unit": "mmday"
+                },
+                "size": [
+                    84,
+                    62
+                ],
+                "cornerCoordinates": {
+                    "upperLeft": [
+                        10.0,
+                        -5.0
+                    ],
+                    "upperRight": [
+                        52.0,
+                        -5.0
+                    ],
+                    "lowerLeft": [
+                        10.0,
+                        -36.0
+                    ],
+                    "lowerRight": [
+                        52.0,
+                        -36.0
+                    ],
+                    "center": [
+                        31.0,
+                        -20.5
+                    ]
+                },
+                "extent": {
+                    "type": "Polygon",
+                    "coordinates": [
+                        []
+                    ]
+                }
+            }
+        ]
+    },
+    "_comment": "Used keys are defined in the prov_metadata.json file."
+}

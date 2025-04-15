@@ -1,0 +1,78 @@
+@prefix exe: <http://www.provbook.org/tippecc/exe/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix orgs: <http://www.provbook.org/tippecc/orgs/> .
+@prefix people: <http://www.provbook.org/tippecc/people/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <http://schema.org/> .
+@prefix software: <http://www.provbook.org/tippecc/software/> .
+@prefix tippecc_data: <http://www.provbook.org/tippecc/data/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+tippecc_data:COLLECTION__CMIP6 prov:hadMember tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:COLLECTION__TIPPECC prov:hadMember tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_1850_2014 .
+
+exe:Remap_bilinear_154 a prov:Activity ;
+    rdfs:label "Remap bilinear"^^xsd:string ;
+    prov:description "Remap the dataset to the TIPPECC area."^^xsd:string ;
+    prov:function "FUNCTION__CDO_REMAPBIL"^^xsd:string ;
+    prov:params "N/A"^^xsd:string ;
+    prov:startedAtTime "2024-12-19T16:09:48"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_574 .
+
+people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
+        "prov:Person"^^xsd:string ;
+    rdfs:label "Jonathan Padavatan"^^xsd:string ;
+    sdo:affiliation orgs:ORG__WITS ;
+    prov:actedOnBehalfOf orgs:ORG__WITS ;
+    foaf:familyName "Padavatan"^^xsd:string ;
+    foaf:givenName "Jonathan"^^xsd:string .
+
+software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+    sdo:softwareVersion "1.9.3"^^xsd:string ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareApplication"^^xsd:string .
+
+tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_574 ;
+            prov:atTime "2024-12-19T16:07:01"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_18500101-18541231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_18550101-18591231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_18600101-18641231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_18650101-18691231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_18700101-18741231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_18750101-18791231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_18800101-18841231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_18850101-18891231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_18900101-18941231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_18950101-18991231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19000101-19041231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19050101-19091231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19100101-19141231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19150101-19191231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19200101-19241231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19250101-19291231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19300101-19341231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19350101-19391231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19400101-19441231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19450101-19491231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19500101-19541231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19550101-19591231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19600101-19641231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19650101-19691231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19700101-19741231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19750101-19791231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19800101-19841231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19850101-19891231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19900101-19941231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_19950101-19991231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_20000101-20041231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_20050101-20091231,
+        tippecc_data:sfcWind_day_MPI-ESM1-2-HR_historical_r1i1p1f1_gn_20100101-20141231 .
+

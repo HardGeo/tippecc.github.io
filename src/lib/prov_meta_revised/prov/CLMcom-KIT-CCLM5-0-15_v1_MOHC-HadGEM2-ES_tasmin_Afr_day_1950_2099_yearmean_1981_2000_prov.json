@@ -1,0 +1,92 @@
+{
+    "collection": [
+        "COLLECTION__TIPPECC",
+        "COLLECTION__CORDEX_CORE"
+    ],
+    "processing": [
+        {
+            "label": "Slice ref. period",
+            "description": "Slice a reference period from the dataset between 1981 and 2000.",
+            "function": "FUNCTION__CDO_SELYEAR",
+            "software": "SOFTWARE__CDO_1_9_3",
+            "function_call": "",
+            "params": {
+                "start_year": "1981",
+                "end_year": "2000"
+            },
+            "executed_by": "PERSON__ZANDER_FRANZISKA",
+            "on_behalf_of": "ORG__FSU",
+            "execution_time": "2025-02-19 16:55:35 CET+0100"
+        },
+        {
+            "label": "Calc year sum",
+            "description": "Calculate the sum of the years.",
+            "function": "FUNCTION__CDO_YEARSUM",
+            "software": "SOFTWARE__CDO_1_9_3",
+            "function_call": "cdo.yearsum(input=/data/WITS_raw/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_MOHC-HadGEM2-ES_tasmin_Afr_day_1950_2099.nc, output=/data/cmip6_raw_ind/CLMcom-KIT-CCLM5-0-15_v1_MOHC-HadGEM2-ES_tasmin_Afr_day_1950_2099_yearmean_1981_2000.nc, options='-f nc4')",
+            "executed_by": "PERSON__ZANDER_FRANZISKA",
+            "on_behalf_of": "ORG__FSU",
+            "execution_time": "2025-02-19 16:55:35 CET+0100"
+        }
+    ],
+    "input_files": [
+        "/data/WITS_raw/TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_MOHC-HadGEM2-ES_tasmin_Afr_day_1950_2099.nc"
+    ],
+    "output_file": [
+        "/data/cmip6_raw_ind/CLMcom-KIT-CCLM5-0-15_v1_MOHC-HadGEM2-ES_tasmin_Afr_day_1950_2099_yearmean_1981_2000.nc"
+    ],
+    "metadata": {
+        "file_size": 16217051,
+        "last_modification_time": "2025-02-19 16:55:35 CET+0100",
+        "content": [
+            true,
+            {
+                "time#calendar": "360_day",
+                "time#units": "days since 1950-01-01T00:00:00Z",
+                "num_bands": 150,
+                "min": 98729.078,
+                "max": 109254.742,
+                "varinfo": {
+                    "type": "Float32",
+                    "NETCDF_VARNAME": "tasmin",
+                    "standard_name": "air_temperature",
+                    "long_name": "Daily Minimum Near-Surface Air Temperature",
+                    "unit": "K"
+                },
+                "size": [
+                    191,
+                    141
+                ],
+                "cornerCoordinates": {
+                    "upperLeft": [
+                        9.9,
+                        -5.06
+                    ],
+                    "upperRight": [
+                        51.92,
+                        -5.06
+                    ],
+                    "lowerLeft": [
+                        9.9,
+                        -36.08
+                    ],
+                    "lowerRight": [
+                        51.92,
+                        -36.08
+                    ],
+                    "center": [
+                        30.91,
+                        -20.57
+                    ]
+                },
+                "extent": {
+                    "type": "Polygon",
+                    "coordinates": [
+                        []
+                    ]
+                }
+            }
+        ]
+    },
+    "_comment": "Used keys are defined in the prov_metadata.json file."
+}

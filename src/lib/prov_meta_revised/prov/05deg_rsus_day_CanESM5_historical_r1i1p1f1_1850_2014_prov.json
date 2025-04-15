@@ -1,0 +1,28 @@
+{
+    "collection": [
+        "COLLECTION__TIPPECC",
+        "COLLECTION__CMIP6"
+    ],
+    "processing": [
+        {
+            "label": "Remap bilinear",
+            "description": "Remap the dataset to the TIPPECC area.",
+            "function": "FUNCTION__CDO_REMAPBIL",
+            "software": "SOFTWARE__CDO_1_9_3",
+            "function_call": "cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsus/rsus_day_CanESM5_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsus/05deg_rsus_day_CanESM5_historical_r1i1p1f1_1850_2014.nc",
+            "execution_time": "2024-12-20 18:20:33",
+            "executed_by": "PERSON__JONATHAN_PADAVATAN",
+            "on_behalf_of": "ORG__WITS"
+        }
+    ],
+    "input_files": [
+        [
+            "africa05.txt",
+            "rsus_day_CanESM5_historical_r1i1p1f1_1850_2014.nc"
+        ]
+    ],
+    "output_file": [
+        "/dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsus/05deg_rsus_day_CanESM5_historical_r1i1p1f1_1850_2014.nc"
+    ],
+    "_comment": "Used keys are defined in the prov_metadata.json file."
+}

@@ -141,7 +141,7 @@
         height = 0;
     }
 
-    console.log("x:", x, "y:", y, "width:", width, "height:", height);
+    //console.log("x:", x, "y:", y, "width:", width, "height:", height);
     }
 
 </script>

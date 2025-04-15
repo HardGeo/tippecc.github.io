@@ -1,0 +1,39 @@
+{
+    "collection": [
+        "COLLECTION__TIPPECC",
+        "COLLECTION__CORDEX_CORE_BIAS"
+    ],
+    "processing": [
+        {
+            "label": "Slice ref. period",
+            "description": "Slice a reference period from the dataset between 2080 and 2099.",
+            "function": "FUNCTION__CDO_SELYEAR",
+            "software": "SOFTWARE__CDO_1_9_3",
+            "function_call": "",
+            "params": {
+                "start_year": "2080",
+                "end_year": "2099"
+            },
+            "executed_by": "PERSON__ZANDER_FRANZISKA",
+            "on_behalf_of": "ORG__FSU",
+            "execution_time": "2025-04-06 14:36:38 CEST+0200"
+        },
+        {
+            "label": "Calc mean",
+            "description": "Calculate the mean of the dataset between 2080 and 2099.",
+            "function": "FUNCTION__CDO_TIMMEAN",
+            "software": "SOFTWARE__CDO_1_9_3",
+            "function_call": "cdo.timmean(input='-selyear,2080/2099 /data/CMIP6_raw_ind/TIPPECC_EC-Earth3_day_r1i1p1f1__ai_1850_2100__yearsum.nc', output=/data/CMIP6_raw_ind/TIPPECC_EC-Earth3_day_r1i1p1f1__ai_1850_2100__yearsum_mean_2080_2099.nc, options='-f nc4')",
+            "executed_by": "PERSON__ZANDER_FRANZISKA",
+            "on_behalf_of": "ORG__FSU",
+            "execution_time": "2025-04-06 14:36:38 CEST+0200"
+        }
+    ],
+    "input_files": [
+        "/data/CMIP6_raw_ind/TIPPECC_EC-Earth3_day_r1i1p1f1__ai_1850_2100__yearsum.nc"
+    ],
+    "output_file": [
+        "/data/CMIP6_raw_ind/TIPPECC_EC-Earth3_day_r1i1p1f1__ai_1850_2100__yearsum_mean_2080_2099.nc"
+    ],
+    "_comment": "Used keys are defined in the prov_metadata.json file."
+}

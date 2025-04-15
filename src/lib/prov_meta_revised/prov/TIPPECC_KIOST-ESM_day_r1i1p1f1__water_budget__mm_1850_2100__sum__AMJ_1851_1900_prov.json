@@ -1,0 +1,47 @@
+{
+    "collection": [
+        "COLLECTION__TIPPECC",
+        "COLLECTION__CMIP6"
+    ],
+    "processing": [
+        {
+            "label": "Slice ref. period",
+            "description": "Slice a reference period from the dataset between 1851 and 1900.",
+            "function": "FUNCTION__CDO_SELYEAR",
+            "software": "SOFTWARE__CDO_1_9_3",
+            "function_call": "",
+            "params": {
+                "start_year": "1851",
+                "end_year": "1900"
+            },
+            "executed_by": "PERSON__ZANDER_FRANZISKA",
+            "on_behalf_of": "ORG__FSU",
+            "execution_time": "2025-03-12 22:17:55 CET+0100"
+        },
+        {
+            "label": "Calc mean",
+            "description": "Calculate the mean of the dataset between 1851 and 1900.",
+            "function": "FUNCTION__CDO_TIMMEAN",
+            "software": "SOFTWARE__CDO_1_9_3",
+            "function_call": "cdo.timmean(input='-selyear,1851/1900 /data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget__mm_1850_2100__sum__AMJ.nc', output=/data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget__mm_1850_2100__sum__AMJ_1851_1900.nc, options='-f nc4')",
+            "executed_by": "PERSON__ZANDER_FRANZISKA",
+            "on_behalf_of": "ORG__FSU",
+            "execution_time": "2025-03-12 22:17:55 CET+0100"
+        }
+    ],
+    "input_files": [
+        "/data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget__mm_1850_2100__sum__AMJ.nc"
+    ],
+    "output_file": [
+        "/data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget__mm_1850_2100__sum__AMJ_1851_1900.nc"
+    ],
+    "metadata": {
+        "file_size": 83556,
+        "last_modification_time": "2025-03-12 22:17:55 CET+0100",
+        "content": [
+            false,
+            ""
+        ]
+    },
+    "_comment": "Used keys are defined in the prov_metadata.json file."
+}

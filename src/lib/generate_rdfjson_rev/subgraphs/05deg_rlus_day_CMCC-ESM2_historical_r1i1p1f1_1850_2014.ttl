@@ -1,0 +1,52 @@
+@prefix exe: <http://www.provbook.org/tippecc/exe/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix orgs: <http://www.provbook.org/tippecc/orgs/> .
+@prefix people: <http://www.provbook.org/tippecc/people/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <http://schema.org/> .
+@prefix software: <http://www.provbook.org/tippecc/software/> .
+@prefix tippecc_data: <http://www.provbook.org/tippecc/data/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+tippecc_data:COLLECTION__CMIP6 prov:hadMember tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:COLLECTION__TIPPECC prov:hadMember tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 .
+
+exe:Remap_bilinear_73 a prov:Activity ;
+    rdfs:label "Remap bilinear"^^xsd:string ;
+    prov:description "Remap the dataset to the TIPPECC area."^^xsd:string ;
+    prov:function "FUNCTION__CDO_REMAPBIL"^^xsd:string ;
+    prov:params "N/A"^^xsd:string ;
+    prov:startedAtTime "2024-12-20T17:25:26"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_493 .
+
+people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
+        "prov:Person"^^xsd:string ;
+    rdfs:label "Jonathan Padavatan"^^xsd:string ;
+    sdo:affiliation orgs:ORG__WITS ;
+    prov:actedOnBehalfOf orgs:ORG__WITS ;
+    foaf:familyName "Padavatan"^^xsd:string ;
+    foaf:givenName "Jonathan"^^xsd:string .
+
+software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+    sdo:softwareVersion "1.9.3"^^xsd:string ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareApplication"^^xsd:string .
+
+tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_493 ;
+            prov:atTime "2024-12-20T17:23:43"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 .
+

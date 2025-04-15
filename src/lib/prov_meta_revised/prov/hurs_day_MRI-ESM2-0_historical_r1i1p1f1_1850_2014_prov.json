@@ -1,0 +1,30 @@
+{
+    "collection": [
+        "COLLECTION__TIPPECC",
+        "COLLECTION__CMIP6"
+    ],
+    "processing": [
+        {
+            "label": "Merge datasets",
+            "description": "Merge the datasets into one file by time.",
+            "function": "FUNCTION__CDO_MERGE",
+            "software": "SOFTWARE__CDO_1_9_3",
+            "function_call": "cdo mergetime hurs_day_MRI-ESM2-0_historical_r1i1p1f1_gn_18500101-18991231.nc hurs_day_MRI-ESM2-0_historical_r1i1p1f1_gn_19000101-19491231.nc hurs_day_MRI-ESM2-0_historical_r1i1p1f1_gn_19500101-19991231.nc hurs_day_MRI-ESM2-0_historical_r1i1p1f1_gn_20000101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/hurs/hurs_day_MRI-ESM2-0_historical_r1i1p1f1_1850_2014.nc",
+            "execution_time": "2024-12-19 08:50:48",
+            "executed_by": "PERSON__JONATHAN_PADAVATAN",
+            "on_behalf_of": "ORG__WITS"
+        }
+    ],
+    "input_files": [
+        [
+            "hurs_day_MRI-ESM2-0_historical_r1i1p1f1_gn_18500101-18991231.nc",
+            "hurs_day_MRI-ESM2-0_historical_r1i1p1f1_gn_19000101-19491231.nc",
+            "hurs_day_MRI-ESM2-0_historical_r1i1p1f1_gn_19500101-19991231.nc",
+            "hurs_day_MRI-ESM2-0_historical_r1i1p1f1_gn_20000101-20141231.nc"
+        ]
+    ],
+    "output_file": [
+        "/dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/hurs/hurs_day_MRI-ESM2-0_historical_r1i1p1f1_1850_2014.nc"
+    ],
+    "_comment": "Used keys are defined in the prov_metadata.json file."
+}

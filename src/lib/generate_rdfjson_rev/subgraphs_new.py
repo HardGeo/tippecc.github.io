@@ -1,3 +1,4 @@
+import time
 import json
 import os.path as path
 from rdflib import Graph, Namespace
@@ -15,8 +16,6 @@ graph_dir = path.join( dir, "GRAPH.ttl" )
 
 g.parse(graph_dir, format="ttl")
 
-
-
 # Check if the graph is loaded correctly
 if len(g) == 0:
     print("The graph is empty. Please check the input file.")
@@ -28,90 +27,105 @@ else:
 # Define PROV Namespace
 PROV = Namespace("http://www.w3.org/ns/prov#")
 TIPPECC = Namespace("http://www.provbook.org/tippecc/data/")
-
-# Define the entity to extract the subgraph for
-target_entity = TIPPECC["TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_1981_2000-2080_2099"]
-
-# SPARQL Query to extract all entities used to create the target entity
-sparql_query = f"""
-    PREFIX prov: <http://www.w3.org/ns/prov#>
-    PREFIX tippecc_data: <http://www.provbook.org/tippecc/data/>
-
-    SELECT DISTINCT *
-    WHERE {{
-
-      <{target_entity}> prov:wasGeneratedBy ?baseActivity .
-      ?baseActivity prov:wasInformedBy* ?activity .
-
-      OPTIONAL {{
-        ?activity prov:wasInformedBy ?parent ;
-                  ?rel ?att ;
-      }}
-
-    }}
- """
+SCHEMA = Namespace("http://schema.org/")
+WIKIDATA = Namespace("http://www.wikidata.org/entity/")
+RDFS = Namespace("http://www.w3.org/2000/01/rdf-schema#")
+XSD = Namespace("http://www.w3.org/2001/XMLSchema#")
+FOAF = Namespace("http://xmlns.com/foaf/0.1/")
+EXE = Namespace("http://www.provbook.org/tippecc/exe/")
+ORGS = Namespace("http://www.provbook.org/tippecc/orgs/")
+PEOPLE = Namespace("http://www.provbook.org/tippecc/people/")
+SOFTWARE = Namespace("http://www.provbook.org/tippecc/software/")
+TIPPECC_DATA = Namespace("http://www.provbook.org/tippecc/data/")
 
 
-sparql_query12 = f"""
-    PREFIX prov: <http://www.w3.org/ns/prov#>
-    PREFIX tippecc_data: <http://www.provbook.org/tippecc/data/>
+sparql_entities = """
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX tippecc_data: <http://www.provbook.org/tippecc/data/>
 
-    SELECT DISTINCT  ?activity ?entity
-    WHERE {{
+SELECT ?entity WHERE {
+  ?entity a prov:Entity .
+}
+"""
+# Execute the query
+results = g.query(sparql_entities)
+print([str(row[0]).split("/")[-1] for row in results])
+# Extract all the entity URIs into a list
+entity_list = [str(row[0]).split("/")[-1] for row in results if not str(row[0]).split("/")[-1].startswith("COLLECTION")]
+#print(len(entity_list))
+import sys
+sys.exit()
+for entity in entity_list:
+  start = time.perf_counter()
+  # Define the entity to extract the subgraph for
+  target_entity = TIPPECC[entity]
 
-      <{target_entity}> prov:qualifiedGeneration/prov:activity ?baseActivity .
-      ?baseActivity prov:wasInformedBy* ?activity .
-      OPTIONAL {{
-      ?activity prov:used ?entity .
-      }}
-
-
-    }}
- """
-# TODO add missing entites
-sparql_query1 = f"""
-    PREFIX prov: <http://www.w3.org/ns/prov#>
-    PREFIX tippecc_data: <http://www.provbook.org/tippecc/data/>
-
-    CONSTRUCT {{
-      ?activity ?p ?o .
-      ?entity ?p2 ?o2 .
-      ?entity prov:qualifiedGeneration ?gen .
-      ?gen ?p3 ?o3 .
-    }}
-    WHERE {{
-      <{target_entity}> prov:qualifiedGeneration/prov:activity ?baseActivity .
-      ?baseActivity prov:wasInformedBy* ?activity .
-      OPTIONAL {{
+  sparql_query1 = f"""
+      PREFIX prov: <http://www.w3.org/ns/prov#>
+      PREFIX tippecc_data: <http://www.provbook.org/tippecc/data/>
+      CONSTRUCT {{
         ?activity ?p ?o .
-        ?activity prov:used ?entity .
         ?entity ?p2 ?o2 .
         ?entity prov:qualifiedGeneration ?gen .
         ?gen ?p3 ?o3 .
+        ?entity prov:wasAttributedTo ?agent .
+        ?agent ?p4 ?o4 .
+        ?activity prov:wasAssociatedWith ?software .
+        ?software ?p5 ?o5 .
+        ?collection prov:hadMember ?entity .
       }}
-    }}
-"""
+      WHERE {{
+        <{target_entity}> prov:qualifiedGeneration/prov:activity ?baseActivity .
+        ?baseActivity prov:wasInformedBy* ?activity .
+        OPTIONAL {{
+          ?activity ?p ?o .
+          ?activity prov:used ?entity .
+          ?entity ?p2 ?o2 .
+          ?entity prov:qualifiedGeneration ?gen .
+          ?gen ?p3 ?o3 .
+          ?entity prov:wasAttributedTo ?agent .
+          ?agent ?p4 ?o4 .
+          ?activity prov:wasAssociatedWith ?software .
+          ?software ?p5 ?o5 .
+          ?collection prov:hadMember ?entity .
+        }}
+      }}"""
 
+  # Execute SPARQL Query
+  subgraph_rdf = g.query(sparql_query1)
 
-# Execute SPARQL Query
-subgraph_rdf = g.query(sparql_query1)
+  # Create a new graph for the subgraph
+  subgraph = Graph()
+  for stmt in subgraph_rdf:
+      subgraph.add(stmt)
 
-# Create a new graph for the subgraph
-subgraph = Graph()
-for stmt in subgraph_rdf:
-    subgraph.add(stmt)
+  # Save the subgraph to a new TTL file
 
-# Save the subgraph to a new TTL file
+  subgraph.bind("prov", PROV) 
+  subgraph.bind("tippecc", TIPPECC)
+  subgraph.bind("wd", WIKIDATA)
+  subgraph.bind("sdo", SCHEMA)
+  subgraph.bind("rdfs", RDFS)
+  subgraph.bind("xsd", XSD)
+  subgraph.bind("foaf", FOAF)
+  subgraph.bind("exe", EXE)
+  subgraph.bind("orgs", ORGS)
+  subgraph.bind("people", PEOPLE)
+  subgraph.bind("software", SOFTWARE)
+  subgraph.bind("tippecc_data", TIPPECC_DATA)
 
-subgraph.serialize(path.join(dir, "subgraph.ttl"), format="ttl")
+  subgraph.serialize(path.join(dir, "subgraphs", entity + ".ttl"), format="ttl")
 
-
-graph = prov.read(path.join(dir, "subgraph.ttl"), format="rdf")
-graph.serialize(path.join(dir, "subgraph.json"), format="json")
-
-
+  graph = prov.read(path.join(dir, "subgraphs", entity + ".ttl"), format="rdf")
+  graph.serialize(path.join(dir, "subgraphs", entity + ".json"), format="json")
+  end = time.perf_counter()
+  print(f"\n✅ {entity} finished in {end - start:.2f} seconds")
 
 # Print the results
+
+
+
+"""
 for row in subgraph_rdf:
     print( row )
 
@@ -135,3 +149,4 @@ nx.draw(G, pos, labels=labels, with_labels=True, node_size=3000, node_color="lig
 
 # Optional: Save the graph as an image
 # plt.savefig("subgraph.png")
+"""

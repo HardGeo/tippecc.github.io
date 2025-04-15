@@ -1,0 +1,65 @@
+{
+    "collection": [
+        "COLLECTION__TIPPECC",
+        "COLLECTION__CMIP6"
+    ],
+    "processing": [
+        {
+            "label": "Merge datasets",
+            "description": "Merge the datasets into one file by time.",
+            "function": "FUNCTION__CDO_MERGE",
+            "software": "SOFTWARE__CDO_1_9_3",
+            "function_call": "cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rlds/05deg_rlds_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/rlds/05deg_rlds_day_MPI-ESM1-2-LR_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/rlds/05deg_rlds_day_MPI-ESM1-2-LR_r1i1p1f1_1850_2100.nc",
+            "execution_time": "2025-01-17 19:20:25",
+            "executed_by": "PERSON__JONATHAN_PADAVATAN",
+            "on_behalf_of": "ORG__WITS"
+        },
+        {
+            "label": "Slice years",
+            "description": "Slice the dataset between 1850 and 2100.",
+            "function": "FUNCTION__CDO_SELYEAR",
+            "software": "SOFTWARE__CDO_1_9_3",
+            "function_call": "cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/rlds/05deg_rlds_day_MPI-ESM1-2-LR_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rlds_day_MPI-ESM1-2-LR_r1i1p1f1_1850_2100.nc",
+            "params": {
+                "start_year": "1850",
+                "end_year": "2100"
+            },
+            "execution_time": "2025-01-21 14:16:36",
+            "executed_by": "PERSON__JONATHAN_PADAVATAN",
+            "on_behalf_of": "ORG__WITS"
+        },
+        {
+            "label": "Slice TIPPECC area",
+            "description": "Slice the dataset to the TIPPECC area.",
+            "function": "FUNCTION__CDO_SELLONLATBOX",
+            "software": "SOFTWARE__CDO_1_9_3",
+            "params": {
+                "lonmin": 10.0,
+                "lonmax": 51.81,
+                "latmin": -35.97,
+                "latmax": -4.95
+            },
+            "function_call": "cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rlds_day_MPI-ESM1-2-LR_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_MPI-ESM1-2-LR_rlds_day_r1i1p1f1_1850_2100.nc",
+            "execution_time": "2025-01-21 14:19:32",
+            "executed_by": "PERSON__JONATHAN_PADAVATAN",
+            "on_behalf_of": "ORG__WITS"
+        },
+        {
+            "label": "Rename/Metadata",
+            "description": "Rename the dataset and adjust metadata.",
+            "executed_by": "PERSON__ZANDER_FRANZISKA",
+            "on_behalf_of": "ORG__FSU",
+            "execution_time": "2025-01-21 13:20:20 CET+0100"
+        }
+    ],
+    "input_files": [
+        [
+            "05deg_rlds_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014.nc",
+            "05deg_rlds_day_MPI-ESM1-2-LR_ssp585_r1i1p1f1_2015_2100.nc"
+        ]
+    ],
+    "output_file": [
+        "/data/CMIP6_raw/TIPPECC_MPI-ESM1-2-LR_day_r1i1p1f1_rlds_1850_2100.nc"
+    ],
+    "_comment": "Used keys are defined in the prov_metadata.json file."
+}

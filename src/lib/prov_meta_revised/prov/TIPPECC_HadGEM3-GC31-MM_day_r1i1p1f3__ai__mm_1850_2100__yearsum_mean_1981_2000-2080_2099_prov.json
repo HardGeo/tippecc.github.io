@@ -1,8 +1,7 @@
 {
     "collection": [
         "COLLECTION__TIPPECC",
-        "COLLECTION__CMIP6_BIAS",
-        "COLLECTION__CMIP6"
+        "COLLECTION__CORDEX_CORE_BIAS"
     ],
     "processing": [
         {
@@ -13,7 +12,7 @@
             "function_call": "cdo.sub(input=/data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__ai__mm_1850_2100__yearsum_mean_2080_2099.nc /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__ai__mm_1850_2100__yearsum_mean_1981_2000.nc, output=/data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__ai__mm_1850_2100__yearsum_mean_1981_2000-2080_2099.nc, options='-f nc4')",
             "executed_by": "PERSON__ZANDER_FRANZISKA",
             "on_behalf_of": "ORG__FSU",
-            "execution_time": "2025-01-27 20:32:49 CET+0100"
+            "execution_time": "2025-03-05 13:46:37 CET+0100"
         }
     ],
     "input_files": [
@@ -24,56 +23,11 @@
         "/data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__ai__mm_1850_2100__yearsum_mean_1981_2000-2080_2099.nc"
     ],
     "metadata": {
-        "file_size": 48656,
-        "last_modification_time": "2025-01-27 20:32:49 CET+0100",
+        "file_size": 49100,
+        "last_modification_time": "2025-03-05 13:46:37 CET+0100",
         "content": [
-            true,
-            {
-                "time#calendar": "360_day",
-                "time#units": "days since 1850-01-01",
-                "num_bands": 1,
-                "min": -0.719,
-                "max": 0.21,
-                "varinfo": {
-                    "type": "Float64",
-                    "NETCDF_VARNAME": "aridity_index",
-                    "standard_name": null,
-                    "long_name": "Aridity Index",
-                    "unit": "dimensionless"
-                },
-                "size": [
-                    84,
-                    62
-                ],
-                "cornerCoordinates": {
-                    "upperLeft": [
-                        10.0,
-                        -5.0
-                    ],
-                    "upperRight": [
-                        52.0,
-                        -5.0
-                    ],
-                    "lowerLeft": [
-                        10.0,
-                        -36.0
-                    ],
-                    "lowerRight": [
-                        52.0,
-                        -36.0
-                    ],
-                    "center": [
-                        31.0,
-                        -20.5
-                    ]
-                },
-                "extent": {
-                    "type": "Polygon",
-                    "coordinates": [
-                        []
-                    ]
-                }
-            }
+            false,
+            ""
         ]
     },
     "_comment": "Used keys are defined in the prov_metadata.json file."

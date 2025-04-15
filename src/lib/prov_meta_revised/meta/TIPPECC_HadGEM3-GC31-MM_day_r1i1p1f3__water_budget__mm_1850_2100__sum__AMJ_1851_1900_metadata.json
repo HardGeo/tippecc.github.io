@@ -1,6 +1,6 @@
 {
     "CDI": "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)",
-    "history": "Fri Jan 24 17:31:22 2025: cdo -O -s -timmean -selyear,1851/1900 /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__water_budget__mm_1850_2100__sum__AMJ.nc /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__water_budget__mm_1850_2100__sum__AMJ_1851_1900.nc\nFri Jan 24 17:31:09 2025: cdo -O -s -yearsum -selmon,4,5,6 /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__water_budget__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__water_budget__mm_1850_2100__sum__AMJ.nc",
+    "history": "Tue Mar 04 18:24:18 2025: cdo -O -s -timmean -selyear,1851/1900 /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__water_budget__mm_1850_2100__sum__AMJ.nc /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__water_budget__mm_1850_2100__sum__AMJ_1851_1900.nc\nTue Mar 04 18:23:17 2025: cdo -O -s -yearsum -selmon,4,5,6 /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__water_budget__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3__water_budget__mm_1850_2100__sum__AMJ.nc",
     "source": "HadGEM3-GC31-MM (2016): \naerosol: UKCA-GLOMAP-mode\natmos: MetUM-HadGEM3-GA7.1 (N216; 432 x 324 longitude/latitude; 85 levels; top level 85 km)\natmosChem: none\nland: JULES-HadGEM3-GL7.1\nlandIce: none\nocean: NEMO-HadGEM3-GO6.0 (eORCA025 tripolar primarily 0.25 deg; 1440 x 1205 longitude/latitude; 75 levels; top grid cell 0-1 m)\nocnBgchem: none\nseaIce: CICE-HadGEM3-GSI8 (eORCA025 tripolar primarily 0.25 deg; 1440 x 1205 longitude/latitude)",
     "institution": "Met Office Hadley Centre, Fitzroy Road, Exeter, Devon, EX1 3PB, UK",
     "Conventions": "CF-1.7 CMIP-6.2",
@@ -8,7 +8,7 @@
     "branch_method": "standard",
     "branch_time_in_child": 0.0,
     "branch_time_in_parent": 0.0,
-    "creation_date": "2025-01-24T18:25:33Z",
+    "creation_date": "2025-03-04T19:10:26Z",
     "cv_version": "6.2.37.5",
     "data_specs_version": "01.00.29",
     "experiment": "all-forcing simulation of the recent past",
@@ -46,17 +46,56 @@
     "license": "CMIP6 model data produced by the Met Office Hadley Centre is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https://ukesm.ac.uk/cmip6. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.",
     "cmor_version": "3.4.0",
     "CDO": "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)",
-    "time_bnds": {},
     "water_budget_from_tas": {
         "long_name": "Water budget (\"FAO_PM985\" method)",
         "units": "mmday",
         "cell_methods": "pr: area: time: mean evspsblpot: tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean",
-        "history": "pr: 2019-09-17T21:08:29Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).\nevspsblpot: tasmin: 2019-09-17T21:13:36Z altered by CMOR: Treated scalar dimension: 'height'. 2019-09-17T21:13:36Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).\ntasmax: 2019-09-17T21:13:16Z altered by CMOR: Treated scalar dimension: 'height'. 2019-09-17T21:13:16Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).\nhurs: 2019-09-17T21:05:49Z altered by CMOR: Treated scalar dimension: 'height'. 2019-09-17T21:05:49Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).\nrsds: 2019-09-17T21:09:36Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).\nrsus: 2019-09-17T21:09:50Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).\nrlds: 2019-09-17T21:09:07Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).\nrlus: 2019-09-17T21:09:21Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).\nsfcWind: 2019-09-17T21:09:59Z altered by CMOR: Treated scalar dimension: 'height'. 2019-09-17T21:09:59Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).\n[2025-01-24 18:22:39] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0\n[2025-01-24 18:24:16] water_budget_from_tas: WATER_BUDGET_FROM_TAS(pr=pr, evspsblpot=evspsblpot, method='BR65') - xclim version: 0.49.0",
+        "history": "pr: 2019-09-17T21:08:29Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).\nevspsblpot: tasmin: 2019-09-17T21:13:36Z altered by CMOR: Treated scalar dimension: 'height'. 2019-09-17T21:13:36Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).\ntasmax: 2019-09-17T21:13:16Z altered by CMOR: Treated scalar dimension: 'height'. 2019-09-17T21:13:16Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).\nhurs: 2019-09-17T21:05:49Z altered by CMOR: Treated scalar dimension: 'height'. 2019-09-17T21:05:49Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).\nrsds: 2019-09-17T21:09:36Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).\nrsus: 2019-09-17T21:09:50Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).\nrlds: 2019-09-17T21:09:07Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).\nrlus: 2019-09-17T21:09:21Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).\nsfcWind: 2019-09-17T21:09:59Z altered by CMOR: Treated scalar dimension: 'height'. 2019-09-17T21:09:59Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).\n[2025-03-04 19:04:47] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0\n[2025-03-04 19:08:31] water_budget_from_tas: WATER_BUDGET_FROM_TAS(pr=pr, evspsblpot=evspsblpot, method='BR65') - xclim version: 0.49.0",
         "description": "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget, where the potential evapotranspiration is calculated with the FAO_PM985 method.",
         "method": "pr - evspsblpot "
     },
     "file": {
-        "file_size": 80625,
-        "last_modification_time": "2025-01-24 18:31:22 CET+0100"
+        "file_size": 83771,
+        "last_modification_time": "2025-03-04 19:24:19 CET+0100",
+        "birth_time": "2025-03-04 19:24:19 CET+0100",
+        "file_format": "netCDF",
+        "nominal_resolution": "50 km",
+        "geospatial_lat_min": "-35.75",
+        "geospatial_lat_max": "-5.25",
+        "geospatial_lon_min": "10.25",
+        "geospatial_lon_max": "51.75",
+        "time_coverage_start": "1875-11-16 00:00:00",
+        "time_coverage_end": "1875-11-16 00:00:00",
+        "frequency": "none",
+        "climatology_bounds": [
+            [
+                "1851-01-01 00:00:00",
+                "1900-01-01 00:00:00"
+            ]
+        ],
+        "climatology_bounds_details": null,
+        "num_time_steps": 1,
+        "time_units": "days since 1850-01-01",
+        "time_calendar": "360_day",
+        "short_variable_name": "water_budget_from_tas",
+        "long_name": "Water budget (\"FAO_PM985\" method)",
+        "global_min": "-450.2110038596114",
+        "global_max": "1030.1071497800265",
+        "unit": "mmday",
+        "experiment_id": "historical+ssp585",
+        "global_model": "HadGEM3-GC31-MM",
+        "variant": "r1i1p1f1",
+        "citation_historical_source": {
+            "doi": "https://doi.org/10.22033/ESGF/CMIP6.6112",
+            "license": "CC BY 4.0",
+            "short_data_reference": "Ridley, Jeff et al. (2019). MOHC HadGEM3-GC31-MM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.6112"
+        },
+        "citation_scenario_source": {
+            "doi": "https://doi.org/10.22033/ESGF/CMIP6.10902",
+            "license": "CC BY 4.0",
+            "short_data_reference": "Jackson, Laura (2020). MOHC HadGEM3-GC31-MM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.10902"
+        },
+        "bias_correction": "no",
+        "indicator": "yes"
     }
 }

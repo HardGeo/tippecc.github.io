@@ -1,0 +1,92 @@
+{
+    "collection": [
+        "COLLECTION__TIPPECC",
+        "COLLECTION__CORDEX_CORE"
+    ],
+    "processing": [
+        {
+            "label": "Slice ref. period",
+            "description": "Slice a reference period from the dataset between 1981 and 2000.",
+            "function": "FUNCTION__CDO_SELYEAR",
+            "software": "SOFTWARE__CDO_1_9_3",
+            "function_call": "",
+            "params": {
+                "start_year": "1981",
+                "end_year": "2000"
+            },
+            "executed_by": "PERSON__ZANDER_FRANZISKA",
+            "on_behalf_of": "ORG__FSU",
+            "execution_time": "2025-02-19 21:27:13 CET+0100"
+        },
+        {
+            "label": "Calc year sum",
+            "description": "Calculate the sum of the years.",
+            "function": "FUNCTION__CDO_YEARSUM",
+            "software": "SOFTWARE__CDO_1_9_3",
+            "function_call": "cdo.yearsum(input=/data/WITS_bias_adjusted_new/TIPPECC_ICTP-RegCM4-7_v0_MPI-M-MPI-ESM-MR_pr_Afr_day_b_1970_2099.nc, output=/data/cmip6_raw_ind/ICTP-RegCM4-7_v0_MPI-M-MPI-ESM-MR_pr_Afr_day_b_1970_2099_yearmean_1981_2000.nc, options='-f nc4')",
+            "executed_by": "PERSON__ZANDER_FRANZISKA",
+            "on_behalf_of": "ORG__FSU",
+            "execution_time": "2025-02-19 21:27:13 CET+0100"
+        }
+    ],
+    "input_files": [
+        "/data/WITS_bias_adjusted_new/TIPPECC_ICTP-RegCM4-7_v0_MPI-M-MPI-ESM-MR_pr_Afr_day_b_1970_2099.nc"
+    ],
+    "output_file": [
+        "/data/cmip6_raw_ind/ICTP-RegCM4-7_v0_MPI-M-MPI-ESM-MR_pr_Afr_day_b_1970_2099_yearmean_1981_2000.nc"
+    ],
+    "metadata": {
+        "file_size": 28084307,
+        "last_modification_time": "2025-02-19 21:27:13 CET+0100",
+        "content": [
+            true,
+            {
+                "time#calendar": "proleptic_gregorian",
+                "time#units": "days since 1970-01-01",
+                "num_bands": 130,
+                "min": 0.0,
+                "max": 0.075,
+                "varinfo": {
+                    "type": "Float64",
+                    "NETCDF_VARNAME": "pr",
+                    "standard_name": "precipitation_flux",
+                    "long_name": "Precipitation",
+                    "unit": "kg m-2 s-1"
+                },
+                "size": [
+                    191,
+                    141
+                ],
+                "cornerCoordinates": {
+                    "upperLeft": [
+                        9.9,
+                        -5.06
+                    ],
+                    "upperRight": [
+                        51.92,
+                        -5.06
+                    ],
+                    "lowerLeft": [
+                        9.9,
+                        -36.08
+                    ],
+                    "lowerRight": [
+                        51.92,
+                        -36.08
+                    ],
+                    "center": [
+                        30.91,
+                        -20.57
+                    ]
+                },
+                "extent": {
+                    "type": "Polygon",
+                    "coordinates": [
+                        []
+                    ]
+                }
+            }
+        ]
+    },
+    "_comment": "Used keys are defined in the prov_metadata.json file."
+}

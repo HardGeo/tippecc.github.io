@@ -1,0 +1,81 @@
+{
+    "collection": [
+        "COLLECTION__TIPPECC",
+        "COLLECTION__CMIP6"
+    ],
+    "processing": [
+        {
+            "label": "Convert pot. ET to mm/day",
+            "description": "Convert potential evapotranspiration from kg m-2 s-1 to mm day-1.",
+            "function": "FUNCTION__XCLIM_CONVERT_UNITS",
+            "software": "SOFTWARE__XCLIM_0_49",
+            "function_call": "units.convert_units_to(ds.evspsblpot, 'mmday')",
+            "params": {
+                "unit": "mmday"
+            },
+            "executed_by": "PERSON__ZANDER_FRANZISKA",
+            "on_behalf_of": "ORG__FSU",
+            "execution_time": "2025-03-04 18:28:40 CET+0100"
+        }
+    ],
+    "input_files": [
+        "/data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3__evspsblpot_1850_2100"
+    ],
+    "output_file": [
+        "/data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3__evspsblpot__mm_1850_2100.nc"
+    ],
+    "metadata": {
+        "file_size": 3765523147,
+        "last_modification_time": "2025-03-04 18:28:40 CET+0100",
+        "content": [
+            true,
+            {
+                "time#calendar": "360_day",
+                "time#units": "days since 1850-01-01",
+                "num_bands": 32768,
+                "min": -0.756,
+                "max": 12.104,
+                "varinfo": {
+                    "type": "Float64",
+                    "NETCDF_VARNAME": "evspsblpot",
+                    "standard_name": "water_potential_evapotranspiration_amount",
+                    "long_name": "Potential evapotranspiration (\"fao_pm98\" method)",
+                    "unit": "mmday"
+                },
+                "size": [
+                    84,
+                    62
+                ],
+                "cornerCoordinates": {
+                    "upperLeft": [
+                        10.0,
+                        -5.0
+                    ],
+                    "upperRight": [
+                        52.0,
+                        -5.0
+                    ],
+                    "lowerLeft": [
+                        10.0,
+                        -36.0
+                    ],
+                    "lowerRight": [
+                        52.0,
+                        -36.0
+                    ],
+                    "center": [
+                        31.0,
+                        -20.5
+                    ]
+                },
+                "extent": {
+                    "type": "Polygon",
+                    "coordinates": [
+                        []
+                    ]
+                }
+            }
+        ]
+    },
+    "_comment": "Used keys are defined in the prov_metadata.json file."
+}

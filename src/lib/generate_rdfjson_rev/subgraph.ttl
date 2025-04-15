@@ -1,561 +1,98 @@
-@prefix ns1: <http://www.provbook.org/tippecc/data/> .
+@prefix exe: <http://www.provbook.org/tippecc/exe/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix orgs: <http://www.provbook.org/tippecc/orgs/> .
+@prefix people: <http://www.provbook.org/tippecc/people/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <http://schema.org/> .
+@prefix software: <http://www.provbook.org/tippecc/software/> .
+@prefix tippecc_data: <http://www.provbook.org/tippecc/data/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://www.provbook.org/tippecc/exe/Calc_abs._change_7> a prov:Activity ;
+tippecc_data:COLLECTION__CMIP6 prov:hadMember tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_1981_2000,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_2080_2099,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot_1950_2100,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100__yearsum,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100__yearsum .
+
+tippecc_data:COLLECTION__CMIP6_BIAS prov:hadMember tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_1981_2000,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_2080_2099 .
+
+tippecc_data:COLLECTION__TIPPECC prov:hadMember tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_1981_2000,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_2080_2099,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot_1950_2100,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100__yearsum,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100__yearsum .
+
+exe:Calc_abs._change_7 a prov:Activity ;
     rdfs:label "Calc abs. change"^^xsd:string ;
     prov:description "Calculate absolute change for the time period 2080-2099 relative to 1981-2000."^^xsd:string ;
     prov:function "FUNCTION__CDO_SUB"^^xsd:string ;
     prov:params "N/A"^^xsd:string ;
     prov:startedAtTime "2025-01-27T20:30:49-01:00"^^xsd:dateTime ;
-    prov:used ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_1981_2000,
-        ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_2080_2099 ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/SOFTWARE__CDO_1_9_3> ;
-    prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Calc_mean_11>,
-        <http://www.provbook.org/tippecc/exe/Calc_mean_9> .
+    prov:used tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_1981_2000,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_2080_2099 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Calc_mean_11,
+        exe:Calc_mean_9 .
 
-ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_1981_2000 a prov:Entity ;
-    ns1:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)"^^xsd:string ;
-    ns1:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)"^^xsd:string ;
-    ns1:Conventions "CF-1.7 CMIP-6.2"^^xsd:string ;
-    ns1:activity_id "CMIP"^^xsd:string ;
-    ns1:branch_method "standard"^^xsd:string ;
-    ns1:branch_time_in_child 0e+00 ;
-    ns1:branch_time_in_parent 2.1915e+04 ;
-    ns1:cmor_version "3.4.0"^^xsd:string ;
-    ns1:comment "Aridity index is the ratio of precipitation to potential evapotranspiration. It is a measure of the degree of dryness of the climate at a given location. A value of 1 indicates that precipitation is equal to potential evapotranspiration, values greater than 1 indicate that precipitation is greater than potential evapotranspiration, and values less than 1 indicate that precipitation is less than potential evapotranspiration."^^xsd:string ;
-    ns1:creation_date "2025-01-24T15:41:31Z"^^xsd:string ;
-    ns1:data_specs_version "01.00.30"^^xsd:string ;
-    ns1:description "Calculated from precipitation and potential evapotranspiration."^^xsd:string ;
-    ns1:experiment "all-forcing simulation of the recent past"^^xsd:string ;
-    ns1:experiment_id "historical"^^xsd:string ;
-    ns1:external_variables "areacella"^^xsd:string ;
-    ns1:file_size "48352"^^xsd:int ;
-    ns1:frequency "year"^^xsd:string ;
-    ns1:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CSIRO.ACCESS-ESM1-5.historical.none.r1i1p1f1"^^xsd:string ;
-    ns1:grid "native atmosphere N96 grid (145x192 latxlon)"^^xsd:string ;
-    ns1:grid_label "gn"^^xsd:string ;
-    ns1:history """Mon Jan 27 19:30:36 2025: cdo -O -s -timmean -selyear,1981/2000 /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum.nc /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_1981_2000.nc
-Fri Jan 24 14:42:40 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100.nc /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100__yearsum.nc"""^^xsd:string ;
-    ns1:institution "Commonwealth Scientific and Industrial Research Organisation, Aspendale, Victoria 3195, Australia"^^xsd:string ;
-    ns1:institution_id "CSIRO"^^xsd:string ;
-    ns1:last_modification_time "2025-01-27 20:30:36 CET+0100"^^xsd:string ;
-    ns1:license "CMIP6 model data produced by CSIRO is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/).  Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment.  Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file).  The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."^^xsd:string ;
-    ns1:long_name "Aridity Index"^^xsd:string ;
-    ns1:mip_era "CMIP6"^^xsd:string ;
-    ns1:nominal_resolution "250 km"^^xsd:string ;
-    ns1:notes "Exp: ESM-historical; Local ID: HI-05; Variable: tasmax (['fld_s03i236_max'])"^^xsd:string ;
-    ns1:parent_activity_id "CMIP"^^xsd:string ;
-    ns1:parent_experiment_id "piControl"^^xsd:string ;
-    ns1:parent_mip_era "CMIP6"^^xsd:string ;
-    ns1:parent_source_id "ACCESS-ESM1-5"^^xsd:string ;
-    ns1:parent_time_units "days since 0101-1-1"^^xsd:string ;
-    ns1:parent_variant_label "r1i1p1f1"^^xsd:string ;
-    ns1:product "model-output"^^xsd:string ;
-    ns1:realm "atmos"^^xsd:string ;
-    ns1:run_variant "forcing: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG = CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)"^^xsd:string ;
-    ns1:source """ACCESS-ESM1.5 (2019): 
-aerosol: CLASSIC (v1.0)
-atmos: HadGAM2 (r1.1, N96; 192 x 145 longitude/latitude; 38 levels; top level 39255 m)
-atmosChem: none
-land: CABLE2.4
-landIce: none
-ocean: ACCESS-OM2 (MOM5, tripolar primarily 1deg; 360 x 300 longitude/latitude; 50 levels; top grid cell 0-10 m)
-ocnBgchem: WOMBAT (same grid as ocean)
-seaIce: CICE4.1 (same grid as ocean)"""^^xsd:string ;
-    ns1:source_id "ACCESS-ESM1-5"^^xsd:string ;
-    ns1:source_type "AOGCM"^^xsd:string ;
-    ns1:sub_experiment "none"^^xsd:string ;
-    ns1:sub_experiment_id "none"^^xsd:string ;
-    ns1:table_id "day"^^xsd:string ;
-    ns1:table_info "Creation Date:(30 April 2019) MD5:e14f55f257cceafb2523e41244962371"^^xsd:string ;
-    ns1:time_bnds ""^^xsd:string ;
-    ns1:title "ACCESS-ESM1-5 output prepared for CMIP6"^^xsd:string ;
-    ns1:units "dimensionless"^^xsd:string ;
-    ns1:variant_label "r1i1p1f1"^^xsd:string ;
-    ns1:version "v20191115"^^xsd:string ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Slice_ref._period_8> ;
-            prov:atTime "2025-01-27T20:30:36-01:00"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Calc_mean_9> ;
-            prov:atTime "2025-01-27T20:30:36-01:00"^^xsd:dateTime ] ;
-    prov:wasAttributedTo <http://www.provbook.org/tippecc/people/PERSON__ZANDER_FRANZISKA> ;
-    prov:wasDerivedFrom ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum .
-
-ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_2080_2099 a prov:Entity ;
-    ns1:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)"^^xsd:string ;
-    ns1:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)"^^xsd:string ;
-    ns1:Conventions "CF-1.7 CMIP-6.2"^^xsd:string ;
-    ns1:activity_id "CMIP"^^xsd:string ;
-    ns1:branch_method "standard"^^xsd:string ;
-    ns1:branch_time_in_child 0e+00 ;
-    ns1:branch_time_in_parent 2.1915e+04 ;
-    ns1:cmor_version "3.4.0"^^xsd:string ;
-    ns1:comment "Aridity index is the ratio of precipitation to potential evapotranspiration. It is a measure of the degree of dryness of the climate at a given location. A value of 1 indicates that precipitation is equal to potential evapotranspiration, values greater than 1 indicate that precipitation is greater than potential evapotranspiration, and values less than 1 indicate that precipitation is less than potential evapotranspiration."^^xsd:string ;
-    ns1:creation_date "2025-01-24T15:41:31Z"^^xsd:string ;
-    ns1:data_specs_version "01.00.30"^^xsd:string ;
-    ns1:description "Calculated from precipitation and potential evapotranspiration."^^xsd:string ;
-    ns1:experiment "all-forcing simulation of the recent past"^^xsd:string ;
-    ns1:experiment_id "historical"^^xsd:string ;
-    ns1:external_variables "areacella"^^xsd:string ;
-    ns1:file_size "48352"^^xsd:int ;
-    ns1:frequency "year"^^xsd:string ;
-    ns1:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CSIRO.ACCESS-ESM1-5.historical.none.r1i1p1f1"^^xsd:string ;
-    ns1:grid "native atmosphere N96 grid (145x192 latxlon)"^^xsd:string ;
-    ns1:grid_label "gn"^^xsd:string ;
-    ns1:history """Mon Jan 27 19:30:42 2025: cdo -O -s -timmean -selyear,2080/2099 /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum.nc /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_2080_2099.nc
-Fri Jan 24 14:42:40 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100.nc /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100__yearsum.nc"""^^xsd:string ;
-    ns1:institution "Commonwealth Scientific and Industrial Research Organisation, Aspendale, Victoria 3195, Australia"^^xsd:string ;
-    ns1:institution_id "CSIRO"^^xsd:string ;
-    ns1:last_modification_time "2025-01-27 20:30:42 CET+0100"^^xsd:string ;
-    ns1:license "CMIP6 model data produced by CSIRO is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/).  Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment.  Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file).  The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."^^xsd:string ;
-    ns1:long_name "Aridity Index"^^xsd:string ;
-    ns1:mip_era "CMIP6"^^xsd:string ;
-    ns1:nominal_resolution "250 km"^^xsd:string ;
-    ns1:notes "Exp: ESM-historical; Local ID: HI-05; Variable: tasmax (['fld_s03i236_max'])"^^xsd:string ;
-    ns1:parent_activity_id "CMIP"^^xsd:string ;
-    ns1:parent_experiment_id "piControl"^^xsd:string ;
-    ns1:parent_mip_era "CMIP6"^^xsd:string ;
-    ns1:parent_source_id "ACCESS-ESM1-5"^^xsd:string ;
-    ns1:parent_time_units "days since 0101-1-1"^^xsd:string ;
-    ns1:parent_variant_label "r1i1p1f1"^^xsd:string ;
-    ns1:product "model-output"^^xsd:string ;
-    ns1:realm "atmos"^^xsd:string ;
-    ns1:run_variant "forcing: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG = CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)"^^xsd:string ;
-    ns1:source """ACCESS-ESM1.5 (2019): 
-aerosol: CLASSIC (v1.0)
-atmos: HadGAM2 (r1.1, N96; 192 x 145 longitude/latitude; 38 levels; top level 39255 m)
-atmosChem: none
-land: CABLE2.4
-landIce: none
-ocean: ACCESS-OM2 (MOM5, tripolar primarily 1deg; 360 x 300 longitude/latitude; 50 levels; top grid cell 0-10 m)
-ocnBgchem: WOMBAT (same grid as ocean)
-seaIce: CICE4.1 (same grid as ocean)"""^^xsd:string ;
-    ns1:source_id "ACCESS-ESM1-5"^^xsd:string ;
-    ns1:source_type "AOGCM"^^xsd:string ;
-    ns1:sub_experiment "none"^^xsd:string ;
-    ns1:sub_experiment_id "none"^^xsd:string ;
-    ns1:table_id "day"^^xsd:string ;
-    ns1:table_info "Creation Date:(30 April 2019) MD5:e14f55f257cceafb2523e41244962371"^^xsd:string ;
-    ns1:time_bnds ""^^xsd:string ;
-    ns1:title "ACCESS-ESM1-5 output prepared for CMIP6"^^xsd:string ;
-    ns1:units "dimensionless"^^xsd:string ;
-    ns1:variant_label "r1i1p1f1"^^xsd:string ;
-    ns1:version "v20191115"^^xsd:string ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Calc_mean_11> ;
-            prov:atTime "2025-01-27T20:30:42-01:00"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Slice_ref._period_10> ;
-            prov:atTime "2025-01-27T20:30:42-01:00"^^xsd:dateTime ] ;
-    prov:wasAttributedTo <http://www.provbook.org/tippecc/people/PERSON__ZANDER_FRANZISKA> ;
-    prov:wasDerivedFrom ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum .
-
-<http://www.provbook.org/tippecc/exe/Slice_ref._period_10> a prov:Activity ;
+exe:Slice_ref._period_10 a prov:Activity ;
     rdfs:label "Slice ref. period"^^xsd:string ;
     prov:description "Slice a reference period from the dataset between 2080 and 2099."^^xsd:string ;
     prov:function "FUNCTION__CDO_SELYEAR"^^xsd:string ;
     prov:params "{'start_year': '2080', 'end_year': '2099'}"^^xsd:string ;
     prov:startedAtTime "2025-01-27T20:30:42-01:00"^^xsd:dateTime ;
-    prov:used ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/SOFTWARE__CDO_1_9_3> ;
-    prov:wasInformedBy <http://www.provbook.org/tippecc/exe/FUNCTION__XARRAY_ARIDITY_INDEX_12> .
+    prov:used tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:FUNCTION__XARRAY_ARIDITY_INDEX_12 .
 
-<http://www.provbook.org/tippecc/exe/Slice_ref._period_8> a prov:Activity ;
+exe:Slice_ref._period_8 a prov:Activity ;
     rdfs:label "Slice ref. period"^^xsd:string ;
     prov:description "Slice a reference period from the dataset between 1981 and 2000."^^xsd:string ;
     prov:function "FUNCTION__CDO_SELYEAR"^^xsd:string ;
     prov:params "{'start_year': '1981', 'end_year': '2000'}"^^xsd:string ;
     prov:startedAtTime "2025-01-27T20:30:36-01:00"^^xsd:dateTime ;
-    prov:used ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/SOFTWARE__CDO_1_9_3> ;
-    prov:wasInformedBy <http://www.provbook.org/tippecc/exe/FUNCTION__XARRAY_ARIDITY_INDEX_12> .
+    prov:used tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:FUNCTION__XARRAY_ARIDITY_INDEX_12 .
 
-ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot_1950_2100 a prov:Entity ;
-    ns1:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)"^^xsd:string ;
-    ns1:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)"^^xsd:string ;
-    ns1:Conventions "CF-1.7 CMIP-6.2"^^xsd:string ;
-    ns1:activity_id "CMIP"^^xsd:string ;
-    ns1:branch_method "standard"^^xsd:string ;
-    ns1:branch_time_in_child 0e+00 ;
-    ns1:branch_time_in_parent 2.1915e+04 ;
-    ns1:cell_methods "tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean"^^xsd:string ;
-    ns1:cmor_version "3.4.0"^^xsd:string ;
-    ns1:creation_date "2025-01-24T15:35:36Z"^^xsd:string ;
-    ns1:data_specs_version "01.00.30"^^xsd:string ;
-    ns1:description "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with the fao_pm98 method."^^xsd:string ;
-    ns1:experiment "all-forcing simulation of the recent past"^^xsd:string ;
-    ns1:experiment_id "historical"^^xsd:string ;
-    ns1:external_variables "areacella"^^xsd:string ;
-    ns1:file_size "2298332229"^^xsd:int ;
-    ns1:frequency "day"^^xsd:string ;
-    ns1:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CSIRO.ACCESS-ESM1-5.historical.none.r1i1p1f1"^^xsd:string ;
-    ns1:grid "native atmosphere N96 grid (145x192 latxlon)"^^xsd:string ;
-    ns1:grid_label "gn"^^xsd:string ;
-    ns1:history """tasmin: 2019-11-15T17:28:12Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:28:12Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-tasmax: 2019-11-15T17:28:16Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:28:16Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-hurs: 2019-11-15T17:34:34Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:34:34Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-rsds: 2019-11-15T17:49:11Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-rsus: 2019-11-15T17:50:08Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-rlds: 2019-11-15T17:48:07Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-rlus: 2019-11-15T17:49:01Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-sfcWind: 2019-11-15T17:34:16Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:34:16Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-[2025-01-24 15:35:36] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0"""^^xsd:string ;
-    ns1:institution "Commonwealth Scientific and Industrial Research Organisation, Aspendale, Victoria 3195, Australia"^^xsd:string ;
-    ns1:institution_id "CSIRO"^^xsd:string ;
-    ns1:last_modification_time "2025-01-24 15:35:39 CET+0100"^^xsd:string ;
-    ns1:license "CMIP6 model data produced by CSIRO is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/).  Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment.  Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file).  The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."^^xsd:string ;
-    ns1:long_name "Potential evapotranspiration (\"fao_pm98\" method)"^^xsd:string ;
-    ns1:mip_era "CMIP6"^^xsd:string ;
-    ns1:nominal_resolution "250 km"^^xsd:string ;
-    ns1:notes "Exp: ESM-historical; Local ID: HI-05; Variable: tasmax (['fld_s03i236_max'])"^^xsd:string ;
-    ns1:parent_activity_id "CMIP"^^xsd:string ;
-    ns1:parent_experiment_id "piControl"^^xsd:string ;
-    ns1:parent_mip_era "CMIP6"^^xsd:string ;
-    ns1:parent_source_id "ACCESS-ESM1-5"^^xsd:string ;
-    ns1:parent_time_units "days since 0101-1-1"^^xsd:string ;
-    ns1:parent_variant_label "r1i1p1f1"^^xsd:string ;
-    ns1:product "model-output"^^xsd:string ;
-    ns1:realm "atmos"^^xsd:string ;
-    ns1:run_variant "forcing: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG = CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)"^^xsd:string ;
-    ns1:source """ACCESS-ESM1.5 (2019): 
-aerosol: CLASSIC (v1.0)
-atmos: HadGAM2 (r1.1, N96; 192 x 145 longitude/latitude; 38 levels; top level 39255 m)
-atmosChem: none
-land: CABLE2.4
-landIce: none
-ocean: ACCESS-OM2 (MOM5, tripolar primarily 1deg; 360 x 300 longitude/latitude; 50 levels; top grid cell 0-10 m)
-ocnBgchem: WOMBAT (same grid as ocean)
-seaIce: CICE4.1 (same grid as ocean)"""^^xsd:string ;
-    ns1:source_id "ACCESS-ESM1-5"^^xsd:string ;
-    ns1:source_type "AOGCM"^^xsd:string ;
-    ns1:standard_name "water_potential_evapotranspiration_flux"^^xsd:string ;
-    ns1:sub_experiment "none"^^xsd:string ;
-    ns1:sub_experiment_id "none"^^xsd:string ;
-    ns1:table_id "day"^^xsd:string ;
-    ns1:table_info "Creation Date:(30 April 2019) MD5:e14f55f257cceafb2523e41244962371"^^xsd:string ;
-    ns1:title "ACCESS-ESM1-5 output prepared for CMIP6"^^xsd:string ;
-    ns1:units "kg m-2 s-1"^^xsd:string ;
-    ns1:variant_label "r1i1p1f1"^^xsd:string ;
-    ns1:version "v20191115"^^xsd:string ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Calc_pot._ET_13> ;
-            prov:atTime "2025-01-24T15:35:39-01:00"^^xsd:dateTime ] ;
-    prov:wasAttributedTo <http://www.provbook.org/tippecc/people/PERSON__ZANDER_FRANZISKA> ;
-    prov:wasDerivedFrom ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_hurs_1950_2100,
-        ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_rlds_1950_2100,
-        ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_rlus_1950_2100,
-        ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_rsds_1950_2100,
-        ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_rsus_1950_2100,
-        ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_sfcWind_1950_2100,
-        ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_tasmax_1950_2100,
-        ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_tasmin_1950_2100 .
+software:SOFTWARE__XARRAY_2024_10_0 a prov:Agent ;
+    sdo:targetProduct software:SOFTWARE__XARRAY ;
+    sdo:version "2024.10.0"^^xsd:string ;
+    tippecc_data:type "SoftwareApplication"^^xsd:string .
 
-ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100 a prov:Entity ;
-    ns1:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)"^^xsd:string ;
-    ns1:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)"^^xsd:string ;
-    ns1:Conventions "CF-1.7 CMIP-6.2"^^xsd:string ;
-    ns1:activity_id "CMIP"^^xsd:string ;
-    ns1:branch_method "standard"^^xsd:string ;
-    ns1:branch_time_in_child 0e+00 ;
-    ns1:branch_time_in_parent 2.1915e+04 ;
-    ns1:cell_methods "tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean"^^xsd:string ;
-    ns1:cmor_version "3.4.0"^^xsd:string ;
-    ns1:creation_date "2025-01-24T15:41:31Z"^^xsd:string ;
-    ns1:data_specs_version "01.00.30"^^xsd:string ;
-    ns1:description "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with the fao_pm98 method."^^xsd:string ;
-    ns1:experiment "all-forcing simulation of the recent past"^^xsd:string ;
-    ns1:experiment_id "historical"^^xsd:string ;
-    ns1:external_variables "areacella"^^xsd:string ;
-    ns1:file_size "2298332226"^^xsd:int ;
-    ns1:frequency "day"^^xsd:string ;
-    ns1:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CSIRO.ACCESS-ESM1-5.historical.none.r1i1p1f1"^^xsd:string ;
-    ns1:grid "native atmosphere N96 grid (145x192 latxlon)"^^xsd:string ;
-    ns1:grid_label "gn"^^xsd:string ;
-    ns1:history """tasmin: 2019-11-15T17:28:12Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:28:12Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-tasmax: 2019-11-15T17:28:16Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:28:16Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-hurs: 2019-11-15T17:34:34Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:34:34Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-rsds: 2019-11-15T17:49:11Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-rsus: 2019-11-15T17:50:08Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-rlds: 2019-11-15T17:48:07Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-rlus: 2019-11-15T17:49:01Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-sfcWind: 2019-11-15T17:34:16Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:34:16Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-[2025-01-24 15:35:36] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0"""^^xsd:string ;
-    ns1:institution "Commonwealth Scientific and Industrial Research Organisation, Aspendale, Victoria 3195, Australia"^^xsd:string ;
-    ns1:institution_id "CSIRO"^^xsd:string ;
-    ns1:last_modification_time "2025-01-24 15:41:33 CET+0100"^^xsd:string ;
-    ns1:license "CMIP6 model data produced by CSIRO is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/).  Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment.  Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file).  The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."^^xsd:string ;
-    ns1:long_name "Potential evapotranspiration (\"fao_pm98\" method)"^^xsd:string ;
-    ns1:mip_era "CMIP6"^^xsd:string ;
-    ns1:nominal_resolution "250 km"^^xsd:string ;
-    ns1:notes "Exp: ESM-historical; Local ID: HI-05; Variable: tasmax (['fld_s03i236_max'])"^^xsd:string ;
-    ns1:parent_activity_id "CMIP"^^xsd:string ;
-    ns1:parent_experiment_id "piControl"^^xsd:string ;
-    ns1:parent_mip_era "CMIP6"^^xsd:string ;
-    ns1:parent_source_id "ACCESS-ESM1-5"^^xsd:string ;
-    ns1:parent_time_units "days since 0101-1-1"^^xsd:string ;
-    ns1:parent_variant_label "r1i1p1f1"^^xsd:string ;
-    ns1:product "model-output"^^xsd:string ;
-    ns1:realm "atmos"^^xsd:string ;
-    ns1:run_variant "forcing: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG = CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)"^^xsd:string ;
-    ns1:source """ACCESS-ESM1.5 (2019): 
-aerosol: CLASSIC (v1.0)
-atmos: HadGAM2 (r1.1, N96; 192 x 145 longitude/latitude; 38 levels; top level 39255 m)
-atmosChem: none
-land: CABLE2.4
-landIce: none
-ocean: ACCESS-OM2 (MOM5, tripolar primarily 1deg; 360 x 300 longitude/latitude; 50 levels; top grid cell 0-10 m)
-ocnBgchem: WOMBAT (same grid as ocean)
-seaIce: CICE4.1 (same grid as ocean)"""^^xsd:string ;
-    ns1:source_id "ACCESS-ESM1-5"^^xsd:string ;
-    ns1:source_type "AOGCM"^^xsd:string ;
-    ns1:standard_name "water_potential_evapotranspiration_amount"^^xsd:string ;
-    ns1:sub_experiment "none"^^xsd:string ;
-    ns1:sub_experiment_id "none"^^xsd:string ;
-    ns1:table_id "day"^^xsd:string ;
-    ns1:table_info "Creation Date:(30 April 2019) MD5:e14f55f257cceafb2523e41244962371"^^xsd:string ;
-    ns1:title "ACCESS-ESM1-5 output prepared for CMIP6"^^xsd:string ;
-    ns1:units "mmday"^^xsd:string ;
-    ns1:variant_label "r1i1p1f1"^^xsd:string ;
-    ns1:version "v20191115"^^xsd:string ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Convert_pot._ET_to_mm/day_14> ;
-            prov:atTime "2025-01-24T15:41:33-01:00"^^xsd:dateTime ] ;
-    prov:wasAttributedTo <http://www.provbook.org/tippecc/people/PERSON__ZANDER_FRANZISKA> ;
-    prov:wasDerivedFrom ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot_1950_2100 .
+software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
+    sdo:softwareVersion "0.49.0"^^xsd:string ;
+    sdo:targetProduct software:SOFTWARE__XCLIM ;
+    tippecc_data:type "SoftwareApplication"^^xsd:string .
 
-ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100__yearsum a prov:Entity ;
-    ns1:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)"^^xsd:string ;
-    ns1:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)"^^xsd:string ;
-    ns1:Conventions "CF-1.7 CMIP-6.2"^^xsd:string ;
-    ns1:activity_id "CMIP"^^xsd:string ;
-    ns1:branch_method "standard"^^xsd:string ;
-    ns1:branch_time_in_child 0e+00 ;
-    ns1:branch_time_in_parent 2.1915e+04 ;
-    ns1:cell_methods "tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean"^^xsd:string ;
-    ns1:cmor_version "3.4.0"^^xsd:string ;
-    ns1:creation_date "2025-01-24T15:41:31Z"^^xsd:string ;
-    ns1:data_specs_version "01.00.30"^^xsd:string ;
-    ns1:description "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with the fao_pm98 method."^^xsd:string ;
-    ns1:experiment "all-forcing simulation of the recent past"^^xsd:string ;
-    ns1:experiment_id "historical"^^xsd:string ;
-    ns1:external_variables "areacella"^^xsd:string ;
-    ns1:file_size "6349789"^^xsd:int ;
-    ns1:frequency "year"^^xsd:string ;
-    ns1:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CSIRO.ACCESS-ESM1-5.historical.none.r1i1p1f1"^^xsd:string ;
-    ns1:grid "native atmosphere N96 grid (145x192 latxlon)"^^xsd:string ;
-    ns1:grid_label "gn"^^xsd:string ;
-    ns1:history """tasmin: 2019-11-15T17:28:12Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:28:12Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-tasmax: 2019-11-15T17:28:16Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:28:16Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-hurs: 2019-11-15T17:34:34Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:34:34Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-rsds: 2019-11-15T17:49:11Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-rsus: 2019-11-15T17:50:08Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-rlds: 2019-11-15T17:48:07Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-rlus: 2019-11-15T17:49:01Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-sfcWind: 2019-11-15T17:34:16Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:34:16Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
-[2025-01-24 15:35:36] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0"""^^xsd:string ;
-    ns1:institution "Commonwealth Scientific and Industrial Research Organisation, Aspendale, Victoria 3195, Australia"^^xsd:string ;
-    ns1:institution_id "CSIRO"^^xsd:string ;
-    ns1:last_modification_time "2025-01-24 15:42:48 CET+0100"^^xsd:string ;
-    ns1:license "CMIP6 model data produced by CSIRO is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/).  Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment.  Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file).  The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."^^xsd:string ;
-    ns1:long_name "Potential evapotranspiration (\"fao_pm98\" method)"^^xsd:string ;
-    ns1:mip_era "CMIP6"^^xsd:string ;
-    ns1:nominal_resolution "250 km"^^xsd:string ;
-    ns1:notes "Exp: ESM-historical; Local ID: HI-05; Variable: tasmax (['fld_s03i236_max'])"^^xsd:string ;
-    ns1:parent_activity_id "CMIP"^^xsd:string ;
-    ns1:parent_experiment_id "piControl"^^xsd:string ;
-    ns1:parent_mip_era "CMIP6"^^xsd:string ;
-    ns1:parent_source_id "ACCESS-ESM1-5"^^xsd:string ;
-    ns1:parent_time_units "days since 0101-1-1"^^xsd:string ;
-    ns1:parent_variant_label "r1i1p1f1"^^xsd:string ;
-    ns1:product "model-output"^^xsd:string ;
-    ns1:realm "atmos"^^xsd:string ;
-    ns1:run_variant "forcing: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG = CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)"^^xsd:string ;
-    ns1:source """ACCESS-ESM1.5 (2019): 
-aerosol: CLASSIC (v1.0)
-atmos: HadGAM2 (r1.1, N96; 192 x 145 longitude/latitude; 38 levels; top level 39255 m)
-atmosChem: none
-land: CABLE2.4
-landIce: none
-ocean: ACCESS-OM2 (MOM5, tripolar primarily 1deg; 360 x 300 longitude/latitude; 50 levels; top grid cell 0-10 m)
-ocnBgchem: WOMBAT (same grid as ocean)
-seaIce: CICE4.1 (same grid as ocean)"""^^xsd:string ;
-    ns1:source_id "ACCESS-ESM1-5"^^xsd:string ;
-    ns1:source_type "AOGCM"^^xsd:string ;
-    ns1:standard_name "water_potential_evapotranspiration_amount"^^xsd:string ;
-    ns1:sub_experiment "none"^^xsd:string ;
-    ns1:sub_experiment_id "none"^^xsd:string ;
-    ns1:table_id "day"^^xsd:string ;
-    ns1:table_info "Creation Date:(30 April 2019) MD5:e14f55f257cceafb2523e41244962371"^^xsd:string ;
-    ns1:time_bnds ""^^xsd:string ;
-    ns1:title "ACCESS-ESM1-5 output prepared for CMIP6"^^xsd:string ;
-    ns1:units "mmday"^^xsd:string ;
-    ns1:variant_label "r1i1p1f1"^^xsd:string ;
-    ns1:version "v20191115"^^xsd:string ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Calc_year_sum_20> ;
-            prov:atTime "2025-01-24T15:42:48-01:00"^^xsd:dateTime ] ;
-    prov:wasAttributedTo <http://www.provbook.org/tippecc/people/PERSON__ZANDER_FRANZISKA> ;
-    prov:wasDerivedFrom ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100 .
-
-ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100 a prov:Entity ;
-    ns1:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)"^^xsd:string ;
-    ns1:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)"^^xsd:string ;
-    ns1:Conventions "CF-1.7 CMIP-6.2"^^xsd:string ;
-    ns1:activity_id "CMIP"^^xsd:string ;
-    ns1:branch_method "standard"^^xsd:string ;
-    ns1:branch_time_in_child 0e+00 ;
-    ns1:branch_time_in_parent 2.1915e+04 ;
-    ns1:cell_measures "area: areacella"^^xsd:string ;
-    ns1:cell_methods "area: time: mean"^^xsd:string ;
-    ns1:cmor_version "3.4.0"^^xsd:string ;
-    ns1:comment "includes both liquid and solid phases"^^xsd:string ;
-    ns1:creation_date "2019-11-15T17:33:19Z"^^xsd:string ;
-    ns1:data_specs_version "01.00.30"^^xsd:string ;
-    ns1:experiment "all-forcing simulation of the recent past"^^xsd:string ;
-    ns1:experiment_id "historical"^^xsd:string ;
-    ns1:external_variables "areacella"^^xsd:string ;
-    ns1:file_size "2298332783"^^xsd:int ;
-    ns1:frequency "day"^^xsd:string ;
-    ns1:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CSIRO.ACCESS-ESM1-5.historical.none.r1i1p1f1"^^xsd:string ;
-    ns1:grid "native atmosphere N96 grid (145x192 latxlon)"^^xsd:string ;
-    ns1:grid_label "gn"^^xsd:string ;
-    ns1:history "2019-11-15T17:33:19Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20)."^^xsd:string ;
-    ns1:institution "Commonwealth Scientific and Industrial Research Organisation, Aspendale, Victoria 3195, Australia"^^xsd:string ;
-    ns1:institution_id "CSIRO"^^xsd:string ;
-    ns1:last_modification_time "2025-01-24 15:39:54 CET+0100"^^xsd:string ;
-    ns1:license "CMIP6 model data produced by CSIRO is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/).  Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment.  Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file).  The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."^^xsd:string ;
-    ns1:long_name "Precipitation"^^xsd:string ;
-    ns1:mip_era "CMIP6"^^xsd:string ;
-    ns1:nominal_resolution "250 km"^^xsd:string ;
-    ns1:notes "Exp: ESM-historical; Local ID: HI-05; Variable: pr (['fld_s05i216'])"^^xsd:string ;
-    ns1:parent_activity_id "CMIP"^^xsd:string ;
-    ns1:parent_experiment_id "piControl"^^xsd:string ;
-    ns1:parent_mip_era "CMIP6"^^xsd:string ;
-    ns1:parent_source_id "ACCESS-ESM1-5"^^xsd:string ;
-    ns1:parent_time_units "days since 0101-1-1"^^xsd:string ;
-    ns1:parent_variant_label "r1i1p1f1"^^xsd:string ;
-    ns1:product "model-output"^^xsd:string ;
-    ns1:realm "atmos"^^xsd:string ;
-    ns1:run_variant "forcing: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG = CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)"^^xsd:string ;
-    ns1:source """ACCESS-ESM1.5 (2019): 
-aerosol: CLASSIC (v1.0)
-atmos: HadGAM2 (r1.1, N96; 192 x 145 longitude/latitude; 38 levels; top level 39255 m)
-atmosChem: none
-land: CABLE2.4
-landIce: none
-ocean: ACCESS-OM2 (MOM5, tripolar primarily 1deg; 360 x 300 longitude/latitude; 50 levels; top grid cell 0-10 m)
-ocnBgchem: WOMBAT (same grid as ocean)
-seaIce: CICE4.1 (same grid as ocean)"""^^xsd:string ;
-    ns1:source_id "ACCESS-ESM1-5"^^xsd:string ;
-    ns1:source_type "AOGCM"^^xsd:string ;
-    ns1:standard_name "precipitation_amount"^^xsd:string ;
-    ns1:sub_experiment "none"^^xsd:string ;
-    ns1:sub_experiment_id "none"^^xsd:string ;
-    ns1:table_id "day"^^xsd:string ;
-    ns1:table_info "Creation Date:(30 April 2019) MD5:e14f55f257cceafb2523e41244962371"^^xsd:string ;
-    ns1:title "ACCESS-ESM1-5 output prepared for CMIP6"^^xsd:string ;
-    ns1:tracking_id "hdl:21.14100/6c93c39c-158b-4585-891e-8e011c7fde01"^^xsd:string ;
-    ns1:units "mm"^^xsd:string ;
-    ns1:variable_id "pr"^^xsd:string ;
-    ns1:variant_label "r1i1p1f1"^^xsd:string ;
-    ns1:version "v20191115"^^xsd:string ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Convert_pr_to_mm_0> ;
-            prov:atTime "2025-01-24T15:39:54-01:00"^^xsd:dateTime ] ;
-    prov:wasAttributedTo <http://www.provbook.org/tippecc/people/PERSON__ZANDER_FRANZISKA> ;
-    prov:wasDerivedFrom ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr_1950_2100 .
-
-ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100__yearsum a prov:Entity ;
-    ns1:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)"^^xsd:string ;
-    ns1:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)"^^xsd:string ;
-    ns1:Conventions "CF-1.7 CMIP-6.2"^^xsd:string ;
-    ns1:activity_id "CMIP"^^xsd:string ;
-    ns1:branch_method "standard"^^xsd:string ;
-    ns1:branch_time_in_child 0e+00 ;
-    ns1:branch_time_in_parent 2.1915e+04 ;
-    ns1:cell_measures "area: areacella"^^xsd:string ;
-    ns1:cell_methods "area: time: mean"^^xsd:string ;
-    ns1:cmor_version "3.4.0"^^xsd:string ;
-    ns1:comment "includes both liquid and solid phases"^^xsd:string ;
-    ns1:creation_date "2019-11-15T17:33:19Z"^^xsd:string ;
-    ns1:data_specs_version "01.00.30"^^xsd:string ;
-    ns1:experiment "all-forcing simulation of the recent past"^^xsd:string ;
-    ns1:experiment_id "historical"^^xsd:string ;
-    ns1:external_variables "areacella"^^xsd:string ;
-    ns1:file_size "6351932"^^xsd:int ;
-    ns1:frequency "year"^^xsd:string ;
-    ns1:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CSIRO.ACCESS-ESM1-5.historical.none.r1i1p1f1"^^xsd:string ;
-    ns1:grid "native atmosphere N96 grid (145x192 latxlon)"^^xsd:string ;
-    ns1:grid_label "gn"^^xsd:string ;
-    ns1:history "2019-11-15T17:33:19Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20)."^^xsd:string ;
-    ns1:institution "Commonwealth Scientific and Industrial Research Organisation, Aspendale, Victoria 3195, Australia"^^xsd:string ;
-    ns1:institution_id "CSIRO"^^xsd:string ;
-    ns1:last_modification_time "2025-01-24 15:41:06 CET+0100"^^xsd:string ;
-    ns1:license "CMIP6 model data produced by CSIRO is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/).  Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment.  Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file).  The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."^^xsd:string ;
-    ns1:long_name "Precipitation"^^xsd:string ;
-    ns1:mip_era "CMIP6"^^xsd:string ;
-    ns1:nominal_resolution "250 km"^^xsd:string ;
-    ns1:notes "Exp: ESM-historical; Local ID: HI-05; Variable: pr (['fld_s05i216'])"^^xsd:string ;
-    ns1:parent_activity_id "CMIP"^^xsd:string ;
-    ns1:parent_experiment_id "piControl"^^xsd:string ;
-    ns1:parent_mip_era "CMIP6"^^xsd:string ;
-    ns1:parent_source_id "ACCESS-ESM1-5"^^xsd:string ;
-    ns1:parent_time_units "days since 0101-1-1"^^xsd:string ;
-    ns1:parent_variant_label "r1i1p1f1"^^xsd:string ;
-    ns1:product "model-output"^^xsd:string ;
-    ns1:realm "atmos"^^xsd:string ;
-    ns1:run_variant "forcing: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG = CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)"^^xsd:string ;
-    ns1:source """ACCESS-ESM1.5 (2019): 
-aerosol: CLASSIC (v1.0)
-atmos: HadGAM2 (r1.1, N96; 192 x 145 longitude/latitude; 38 levels; top level 39255 m)
-atmosChem: none
-land: CABLE2.4
-landIce: none
-ocean: ACCESS-OM2 (MOM5, tripolar primarily 1deg; 360 x 300 longitude/latitude; 50 levels; top grid cell 0-10 m)
-ocnBgchem: WOMBAT (same grid as ocean)
-seaIce: CICE4.1 (same grid as ocean)"""^^xsd:string ;
-    ns1:source_id "ACCESS-ESM1-5"^^xsd:string ;
-    ns1:source_type "AOGCM"^^xsd:string ;
-    ns1:standard_name "precipitation_amount"^^xsd:string ;
-    ns1:sub_experiment "none"^^xsd:string ;
-    ns1:sub_experiment_id "none"^^xsd:string ;
-    ns1:table_id "day"^^xsd:string ;
-    ns1:table_info "Creation Date:(30 April 2019) MD5:e14f55f257cceafb2523e41244962371"^^xsd:string ;
-    ns1:time_bnds ""^^xsd:string ;
-    ns1:title "ACCESS-ESM1-5 output prepared for CMIP6"^^xsd:string ;
-    ns1:tracking_id "hdl:21.14100/6c93c39c-158b-4585-891e-8e011c7fde01"^^xsd:string ;
-    ns1:units "mm"^^xsd:string ;
-    ns1:variable_id "pr"^^xsd:string ;
-    ns1:variant_label "r1i1p1f1"^^xsd:string ;
-    ns1:version "v20191115"^^xsd:string ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Calc_year_sum_6> ;
-            prov:atTime "2025-01-24T15:41:06-01:00"^^xsd:dateTime ] ;
-    prov:wasAttributedTo <http://www.provbook.org/tippecc/people/PERSON__ZANDER_FRANZISKA> ;
-    prov:wasDerivedFrom ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100 .
-
-<http://www.provbook.org/tippecc/exe/Calc_year_sum_20> a prov:Activity ;
+exe:Calc_year_sum_20 a prov:Activity ;
     rdfs:label "Calc year sum"^^xsd:string ;
     prov:description "Calculate the sum of the years."^^xsd:string ;
     prov:function "FUNCTION__CDO_YEARSUM"^^xsd:string ;
     prov:params "N/A"^^xsd:string ;
     prov:startedAtTime "2025-01-24T15:42:48-01:00"^^xsd:dateTime ;
-    prov:used ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100 ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/SOFTWARE__CDO_1_9_3> ;
+    prov:used tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Convert_pot._ET_to_mm/day_14> .
 
-<http://www.provbook.org/tippecc/exe/Calc_year_sum_6> a prov:Activity ;
+exe:Calc_year_sum_6 a prov:Activity ;
     rdfs:label "Calc year sum"^^xsd:string ;
     prov:description "Calculate the sum of the years."^^xsd:string ;
     prov:function "FUNCTION__CDO_YEARSUM"^^xsd:string ;
     prov:params "N/A"^^xsd:string ;
     prov:startedAtTime "2025-01-24T15:41:06-01:00"^^xsd:dateTime ;
-    prov:used ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100 ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/SOFTWARE__CDO_1_9_3> ;
-    prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Convert_pr_to_mm_0> .
+    prov:used tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Convert_pr_to_mm_0 .
 
 <http://www.provbook.org/tippecc/exe/Convert_pot._ET_to_mm/day_14> a prov:Activity ;
     rdfs:label "Convert pot. ET to mm/day"^^xsd:string ;
@@ -563,62 +100,63 @@ seaIce: CICE4.1 (same grid as ocean)"""^^xsd:string ;
     prov:function "FUNCTION__XCLIM_CONVERT_UNITS"^^xsd:string ;
     prov:params "{'unit': 'mmday'}"^^xsd:string ;
     prov:startedAtTime "2025-01-24T15:41:33-01:00"^^xsd:dateTime ;
-    prov:used ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot_1950_2100 ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/SOFTWARE__XCLIM_0_49> ;
-    prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Calc_pot._ET_13> .
+    prov:used tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot_1950_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__XCLIM_0_49 ;
+    prov:wasInformedBy exe:Calc_pot._ET_13 .
 
-<http://www.provbook.org/tippecc/exe/FUNCTION__XARRAY_ARIDITY_INDEX_12> a prov:Activity ;
+exe:FUNCTION__XARRAY_ARIDITY_INDEX_12 a prov:Activity ;
     rdfs:label "Calc mean"^^xsd:string ;
     prov:description "N/A"^^xsd:string ;
     prov:function "FUNCTION__XARRAY_ARIDITY_INDEX"^^xsd:string ;
     prov:params "N/A"^^xsd:string ;
     prov:startedAtTime "2025-01-27T20:30:30-01:00"^^xsd:dateTime ;
-    prov:used ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100__yearsum,
-        ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100__yearsum ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/SOFTWARE__XARRAY_2024_10_0> ;
-    prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Calc_year_sum_20>,
-        <http://www.provbook.org/tippecc/exe/Calc_year_sum_6> .
+    prov:used tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100__yearsum,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100__yearsum ;
+    prov:wasAssociatedWith software:SOFTWARE__XARRAY_2024_10_0 ;
+    prov:wasInformedBy exe:Calc_year_sum_20,
+        exe:Calc_year_sum_6 .
 
-ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum a prov:Entity ;
-    ns1:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)"^^xsd:string ;
-    ns1:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)"^^xsd:string ;
-    ns1:Conventions "CF-1.7 CMIP-6.2"^^xsd:string ;
-    ns1:activity_id "CMIP"^^xsd:string ;
-    ns1:branch_method "standard"^^xsd:string ;
-    ns1:branch_time_in_child 0e+00 ;
-    ns1:branch_time_in_parent 2.1915e+04 ;
-    ns1:cmor_version "3.4.0"^^xsd:string ;
-    ns1:comment "Aridity index is the ratio of precipitation to potential evapotranspiration. It is a measure of the degree of dryness of the climate at a given location. A value of 1 indicates that precipitation is equal to potential evapotranspiration, values greater than 1 indicate that precipitation is greater than potential evapotranspiration, and values less than 1 indicate that precipitation is less than potential evapotranspiration."^^xsd:string ;
-    ns1:creation_date "2025-01-24T15:41:31Z"^^xsd:string ;
-    ns1:data_specs_version "01.00.30"^^xsd:string ;
-    ns1:description "Calculated from precipitation and potential evapotranspiration."^^xsd:string ;
-    ns1:experiment "all-forcing simulation of the recent past"^^xsd:string ;
-    ns1:experiment_id "historical"^^xsd:string ;
-    ns1:external_variables "areacella"^^xsd:string ;
-    ns1:file_size "6298916"^^xsd:int ;
-    ns1:frequency "year"^^xsd:string ;
-    ns1:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CSIRO.ACCESS-ESM1-5.historical.none.r1i1p1f1"^^xsd:string ;
-    ns1:grid "native atmosphere N96 grid (145x192 latxlon)"^^xsd:string ;
-    ns1:grid_label "gn"^^xsd:string ;
-    ns1:history "Fri Jan 24 14:42:40 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100.nc /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100__yearsum.nc"^^xsd:string ;
-    ns1:institution "Commonwealth Scientific and Industrial Research Organisation, Aspendale, Victoria 3195, Australia"^^xsd:string ;
-    ns1:institution_id "CSIRO"^^xsd:string ;
-    ns1:last_modification_time "2025-01-27 20:30:30 CET+0100"^^xsd:string ;
-    ns1:license "CMIP6 model data produced by CSIRO is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/).  Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment.  Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file).  The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."^^xsd:string ;
-    ns1:long_name "Aridity Index"^^xsd:string ;
-    ns1:mip_era "CMIP6"^^xsd:string ;
-    ns1:nominal_resolution "250 km"^^xsd:string ;
-    ns1:notes "Exp: ESM-historical; Local ID: HI-05; Variable: tasmax (['fld_s03i236_max'])"^^xsd:string ;
-    ns1:parent_activity_id "CMIP"^^xsd:string ;
-    ns1:parent_experiment_id "piControl"^^xsd:string ;
-    ns1:parent_mip_era "CMIP6"^^xsd:string ;
-    ns1:parent_source_id "ACCESS-ESM1-5"^^xsd:string ;
-    ns1:parent_time_units "days since 0101-1-1"^^xsd:string ;
-    ns1:parent_variant_label "r1i1p1f1"^^xsd:string ;
-    ns1:product "model-output"^^xsd:string ;
-    ns1:realm "atmos"^^xsd:string ;
-    ns1:run_variant "forcing: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG = CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)"^^xsd:string ;
-    ns1:source """ACCESS-ESM1.5 (2019): 
+tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_1981_2000 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)"^^xsd:string ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)"^^xsd:string ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2"^^xsd:string ;
+    tippecc_data:activity_id "CMIP"^^xsd:string ;
+    tippecc_data:branch_method "standard"^^xsd:string ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 2.1915e+04 ;
+    tippecc_data:cmor_version "3.4.0"^^xsd:string ;
+    tippecc_data:comment "Aridity index is the ratio of precipitation to potential evapotranspiration. It is a measure of the degree of dryness of the climate at a given location. A value of 1 indicates that precipitation is equal to potential evapotranspiration, values greater than 1 indicate that precipitation is greater than potential evapotranspiration, and values less than 1 indicate that precipitation is less than potential evapotranspiration."^^xsd:string ;
+    tippecc_data:creation_date "2025-01-24T15:41:31Z"^^xsd:string ;
+    tippecc_data:data_specs_version "01.00.30"^^xsd:string ;
+    tippecc_data:description "Calculated from precipitation and potential evapotranspiration."^^xsd:string ;
+    tippecc_data:experiment "all-forcing simulation of the recent past"^^xsd:string ;
+    tippecc_data:experiment_id "historical"^^xsd:string ;
+    tippecc_data:external_variables "areacella"^^xsd:string ;
+    tippecc_data:file_size "48352"^^xsd:int ;
+    tippecc_data:frequency "year"^^xsd:string ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CSIRO.ACCESS-ESM1-5.historical.none.r1i1p1f1"^^xsd:string ;
+    tippecc_data:grid "native atmosphere N96 grid (145x192 latxlon)"^^xsd:string ;
+    tippecc_data:grid_label "gn"^^xsd:string ;
+    tippecc_data:history """Mon Jan 27 19:30:36 2025: cdo -O -s -timmean -selyear,1981/2000 /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum.nc /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_1981_2000.nc
+Fri Jan 24 14:42:40 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100.nc /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100__yearsum.nc"""^^xsd:string ;
+    tippecc_data:institution "Commonwealth Scientific and Industrial Research Organisation, Aspendale, Victoria 3195, Australia"^^xsd:string ;
+    tippecc_data:institution_id "CSIRO"^^xsd:string ;
+    tippecc_data:last_modification_time "2025-01-27 20:30:36 CET+0100"^^xsd:string ;
+    tippecc_data:license "CMIP6 model data produced by CSIRO is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/).  Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment.  Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file).  The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."^^xsd:string ;
+    tippecc_data:long_name "Aridity Index"^^xsd:string ;
+    tippecc_data:mip_era "CMIP6"^^xsd:string ;
+    tippecc_data:nominal_resolution "250 km"^^xsd:string ;
+    tippecc_data:notes "Exp: ESM-historical; Local ID: HI-05; Variable: tasmax (['fld_s03i236_max'])"^^xsd:string ;
+    tippecc_data:parent_activity_id "CMIP"^^xsd:string ;
+    tippecc_data:parent_experiment_id "piControl"^^xsd:string ;
+    tippecc_data:parent_mip_era "CMIP6"^^xsd:string ;
+    tippecc_data:parent_source_id "ACCESS-ESM1-5"^^xsd:string ;
+    tippecc_data:parent_time_units "days since 0101-1-1"^^xsd:string ;
+    tippecc_data:parent_variant_label "r1i1p1f1"^^xsd:string ;
+    tippecc_data:product "model-output"^^xsd:string ;
+    tippecc_data:realm "atmos"^^xsd:string ;
+    tippecc_data:run_variant "forcing: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG = CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)"^^xsd:string ;
+    tippecc_data:source """ACCESS-ESM1.5 (2019): 
 aerosol: CLASSIC (v1.0)
 atmos: HadGAM2 (r1.1, N96; 192 x 145 longitude/latitude; 38 levels; top level 39255 m)
 atmosChem: none
@@ -627,20 +165,535 @@ landIce: none
 ocean: ACCESS-OM2 (MOM5, tripolar primarily 1deg; 360 x 300 longitude/latitude; 50 levels; top grid cell 0-10 m)
 ocnBgchem: WOMBAT (same grid as ocean)
 seaIce: CICE4.1 (same grid as ocean)"""^^xsd:string ;
-    ns1:source_id "ACCESS-ESM1-5"^^xsd:string ;
-    ns1:source_type "AOGCM"^^xsd:string ;
-    ns1:sub_experiment "none"^^xsd:string ;
-    ns1:sub_experiment_id "none"^^xsd:string ;
-    ns1:table_id "day"^^xsd:string ;
-    ns1:table_info "Creation Date:(30 April 2019) MD5:e14f55f257cceafb2523e41244962371"^^xsd:string ;
-    ns1:title "ACCESS-ESM1-5 output prepared for CMIP6"^^xsd:string ;
-    ns1:units "dimensionless"^^xsd:string ;
-    ns1:variant_label "r1i1p1f1"^^xsd:string ;
-    ns1:version "v20191115"^^xsd:string ;
+    tippecc_data:source_id "ACCESS-ESM1-5"^^xsd:string ;
+    tippecc_data:source_type "AOGCM"^^xsd:string ;
+    tippecc_data:sub_experiment "none"^^xsd:string ;
+    tippecc_data:sub_experiment_id "none"^^xsd:string ;
+    tippecc_data:table_id "day"^^xsd:string ;
+    tippecc_data:table_info "Creation Date:(30 April 2019) MD5:e14f55f257cceafb2523e41244962371"^^xsd:string ;
+    tippecc_data:time_bnds ""^^xsd:string ;
+    tippecc_data:title "ACCESS-ESM1-5 output prepared for CMIP6"^^xsd:string ;
+    tippecc_data:units "dimensionless"^^xsd:string ;
+    tippecc_data:variant_label "r1i1p1f1"^^xsd:string ;
+    tippecc_data:version "v20191115"^^xsd:string ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/FUNCTION__XARRAY_ARIDITY_INDEX_12> ;
+            prov:activity exe:Slice_ref._period_8 ;
+            prov:atTime "2025-01-27T20:30:36-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Calc_mean_9 ;
+            prov:atTime "2025-01-27T20:30:36-01:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum .
+
+tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_2080_2099 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)"^^xsd:string ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)"^^xsd:string ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2"^^xsd:string ;
+    tippecc_data:activity_id "CMIP"^^xsd:string ;
+    tippecc_data:branch_method "standard"^^xsd:string ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 2.1915e+04 ;
+    tippecc_data:cmor_version "3.4.0"^^xsd:string ;
+    tippecc_data:comment "Aridity index is the ratio of precipitation to potential evapotranspiration. It is a measure of the degree of dryness of the climate at a given location. A value of 1 indicates that precipitation is equal to potential evapotranspiration, values greater than 1 indicate that precipitation is greater than potential evapotranspiration, and values less than 1 indicate that precipitation is less than potential evapotranspiration."^^xsd:string ;
+    tippecc_data:creation_date "2025-01-24T15:41:31Z"^^xsd:string ;
+    tippecc_data:data_specs_version "01.00.30"^^xsd:string ;
+    tippecc_data:description "Calculated from precipitation and potential evapotranspiration."^^xsd:string ;
+    tippecc_data:experiment "all-forcing simulation of the recent past"^^xsd:string ;
+    tippecc_data:experiment_id "historical"^^xsd:string ;
+    tippecc_data:external_variables "areacella"^^xsd:string ;
+    tippecc_data:file_size "48352"^^xsd:int ;
+    tippecc_data:frequency "year"^^xsd:string ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CSIRO.ACCESS-ESM1-5.historical.none.r1i1p1f1"^^xsd:string ;
+    tippecc_data:grid "native atmosphere N96 grid (145x192 latxlon)"^^xsd:string ;
+    tippecc_data:grid_label "gn"^^xsd:string ;
+    tippecc_data:history """Mon Jan 27 19:30:42 2025: cdo -O -s -timmean -selyear,2080/2099 /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum.nc /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum_mean_2080_2099.nc
+Fri Jan 24 14:42:40 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100.nc /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100__yearsum.nc"""^^xsd:string ;
+    tippecc_data:institution "Commonwealth Scientific and Industrial Research Organisation, Aspendale, Victoria 3195, Australia"^^xsd:string ;
+    tippecc_data:institution_id "CSIRO"^^xsd:string ;
+    tippecc_data:last_modification_time "2025-01-27 20:30:42 CET+0100"^^xsd:string ;
+    tippecc_data:license "CMIP6 model data produced by CSIRO is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/).  Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment.  Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file).  The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."^^xsd:string ;
+    tippecc_data:long_name "Aridity Index"^^xsd:string ;
+    tippecc_data:mip_era "CMIP6"^^xsd:string ;
+    tippecc_data:nominal_resolution "250 km"^^xsd:string ;
+    tippecc_data:notes "Exp: ESM-historical; Local ID: HI-05; Variable: tasmax (['fld_s03i236_max'])"^^xsd:string ;
+    tippecc_data:parent_activity_id "CMIP"^^xsd:string ;
+    tippecc_data:parent_experiment_id "piControl"^^xsd:string ;
+    tippecc_data:parent_mip_era "CMIP6"^^xsd:string ;
+    tippecc_data:parent_source_id "ACCESS-ESM1-5"^^xsd:string ;
+    tippecc_data:parent_time_units "days since 0101-1-1"^^xsd:string ;
+    tippecc_data:parent_variant_label "r1i1p1f1"^^xsd:string ;
+    tippecc_data:product "model-output"^^xsd:string ;
+    tippecc_data:realm "atmos"^^xsd:string ;
+    tippecc_data:run_variant "forcing: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG = CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)"^^xsd:string ;
+    tippecc_data:source """ACCESS-ESM1.5 (2019): 
+aerosol: CLASSIC (v1.0)
+atmos: HadGAM2 (r1.1, N96; 192 x 145 longitude/latitude; 38 levels; top level 39255 m)
+atmosChem: none
+land: CABLE2.4
+landIce: none
+ocean: ACCESS-OM2 (MOM5, tripolar primarily 1deg; 360 x 300 longitude/latitude; 50 levels; top grid cell 0-10 m)
+ocnBgchem: WOMBAT (same grid as ocean)
+seaIce: CICE4.1 (same grid as ocean)"""^^xsd:string ;
+    tippecc_data:source_id "ACCESS-ESM1-5"^^xsd:string ;
+    tippecc_data:source_type "AOGCM"^^xsd:string ;
+    tippecc_data:sub_experiment "none"^^xsd:string ;
+    tippecc_data:sub_experiment_id "none"^^xsd:string ;
+    tippecc_data:table_id "day"^^xsd:string ;
+    tippecc_data:table_info "Creation Date:(30 April 2019) MD5:e14f55f257cceafb2523e41244962371"^^xsd:string ;
+    tippecc_data:time_bnds ""^^xsd:string ;
+    tippecc_data:title "ACCESS-ESM1-5 output prepared for CMIP6"^^xsd:string ;
+    tippecc_data:units "dimensionless"^^xsd:string ;
+    tippecc_data:variant_label "r1i1p1f1"^^xsd:string ;
+    tippecc_data:version "v20191115"^^xsd:string ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Calc_mean_11 ;
+            prov:atTime "2025-01-27T20:30:42-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_ref._period_10 ;
+            prov:atTime "2025-01-27T20:30:42-01:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum .
+
+tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot_1950_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)"^^xsd:string ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)"^^xsd:string ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2"^^xsd:string ;
+    tippecc_data:activity_id "CMIP"^^xsd:string ;
+    tippecc_data:branch_method "standard"^^xsd:string ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 2.1915e+04 ;
+    tippecc_data:cell_methods "tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean"^^xsd:string ;
+    tippecc_data:cmor_version "3.4.0"^^xsd:string ;
+    tippecc_data:creation_date "2025-01-24T15:35:36Z"^^xsd:string ;
+    tippecc_data:data_specs_version "01.00.30"^^xsd:string ;
+    tippecc_data:description "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with the fao_pm98 method."^^xsd:string ;
+    tippecc_data:experiment "all-forcing simulation of the recent past"^^xsd:string ;
+    tippecc_data:experiment_id "historical"^^xsd:string ;
+    tippecc_data:external_variables "areacella"^^xsd:string ;
+    tippecc_data:file_size "2298332229"^^xsd:int ;
+    tippecc_data:frequency "day"^^xsd:string ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CSIRO.ACCESS-ESM1-5.historical.none.r1i1p1f1"^^xsd:string ;
+    tippecc_data:grid "native atmosphere N96 grid (145x192 latxlon)"^^xsd:string ;
+    tippecc_data:grid_label "gn"^^xsd:string ;
+    tippecc_data:history """tasmin: 2019-11-15T17:28:12Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:28:12Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+tasmax: 2019-11-15T17:28:16Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:28:16Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+hurs: 2019-11-15T17:34:34Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:34:34Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+rsds: 2019-11-15T17:49:11Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+rsus: 2019-11-15T17:50:08Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+rlds: 2019-11-15T17:48:07Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+rlus: 2019-11-15T17:49:01Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+sfcWind: 2019-11-15T17:34:16Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:34:16Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+[2025-01-24 15:35:36] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0"""^^xsd:string ;
+    tippecc_data:institution "Commonwealth Scientific and Industrial Research Organisation, Aspendale, Victoria 3195, Australia"^^xsd:string ;
+    tippecc_data:institution_id "CSIRO"^^xsd:string ;
+    tippecc_data:last_modification_time "2025-01-24 15:35:39 CET+0100"^^xsd:string ;
+    tippecc_data:license "CMIP6 model data produced by CSIRO is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/).  Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment.  Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file).  The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."^^xsd:string ;
+    tippecc_data:long_name "Potential evapotranspiration (\"fao_pm98\" method)"^^xsd:string ;
+    tippecc_data:mip_era "CMIP6"^^xsd:string ;
+    tippecc_data:nominal_resolution "250 km"^^xsd:string ;
+    tippecc_data:notes "Exp: ESM-historical; Local ID: HI-05; Variable: tasmax (['fld_s03i236_max'])"^^xsd:string ;
+    tippecc_data:parent_activity_id "CMIP"^^xsd:string ;
+    tippecc_data:parent_experiment_id "piControl"^^xsd:string ;
+    tippecc_data:parent_mip_era "CMIP6"^^xsd:string ;
+    tippecc_data:parent_source_id "ACCESS-ESM1-5"^^xsd:string ;
+    tippecc_data:parent_time_units "days since 0101-1-1"^^xsd:string ;
+    tippecc_data:parent_variant_label "r1i1p1f1"^^xsd:string ;
+    tippecc_data:product "model-output"^^xsd:string ;
+    tippecc_data:realm "atmos"^^xsd:string ;
+    tippecc_data:run_variant "forcing: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG = CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)"^^xsd:string ;
+    tippecc_data:source """ACCESS-ESM1.5 (2019): 
+aerosol: CLASSIC (v1.0)
+atmos: HadGAM2 (r1.1, N96; 192 x 145 longitude/latitude; 38 levels; top level 39255 m)
+atmosChem: none
+land: CABLE2.4
+landIce: none
+ocean: ACCESS-OM2 (MOM5, tripolar primarily 1deg; 360 x 300 longitude/latitude; 50 levels; top grid cell 0-10 m)
+ocnBgchem: WOMBAT (same grid as ocean)
+seaIce: CICE4.1 (same grid as ocean)"""^^xsd:string ;
+    tippecc_data:source_id "ACCESS-ESM1-5"^^xsd:string ;
+    tippecc_data:source_type "AOGCM"^^xsd:string ;
+    tippecc_data:standard_name "water_potential_evapotranspiration_flux"^^xsd:string ;
+    tippecc_data:sub_experiment "none"^^xsd:string ;
+    tippecc_data:sub_experiment_id "none"^^xsd:string ;
+    tippecc_data:table_id "day"^^xsd:string ;
+    tippecc_data:table_info "Creation Date:(30 April 2019) MD5:e14f55f257cceafb2523e41244962371"^^xsd:string ;
+    tippecc_data:title "ACCESS-ESM1-5 output prepared for CMIP6"^^xsd:string ;
+    tippecc_data:units "kg m-2 s-1"^^xsd:string ;
+    tippecc_data:variant_label "r1i1p1f1"^^xsd:string ;
+    tippecc_data:version "v20191115"^^xsd:string ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Calc_pot._ET_13 ;
+            prov:atTime "2025-01-24T15:35:39-01:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_hurs_1950_2100,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_rlds_1950_2100,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_rlus_1950_2100,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_rsds_1950_2100,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_rsus_1950_2100,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_sfcWind_1950_2100,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_tasmax_1950_2100,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_tasmin_1950_2100 .
+
+tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)"^^xsd:string ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)"^^xsd:string ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2"^^xsd:string ;
+    tippecc_data:activity_id "CMIP"^^xsd:string ;
+    tippecc_data:branch_method "standard"^^xsd:string ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 2.1915e+04 ;
+    tippecc_data:cell_methods "tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean"^^xsd:string ;
+    tippecc_data:cmor_version "3.4.0"^^xsd:string ;
+    tippecc_data:creation_date "2025-01-24T15:41:31Z"^^xsd:string ;
+    tippecc_data:data_specs_version "01.00.30"^^xsd:string ;
+    tippecc_data:description "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with the fao_pm98 method."^^xsd:string ;
+    tippecc_data:experiment "all-forcing simulation of the recent past"^^xsd:string ;
+    tippecc_data:experiment_id "historical"^^xsd:string ;
+    tippecc_data:external_variables "areacella"^^xsd:string ;
+    tippecc_data:file_size "2298332226"^^xsd:int ;
+    tippecc_data:frequency "day"^^xsd:string ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CSIRO.ACCESS-ESM1-5.historical.none.r1i1p1f1"^^xsd:string ;
+    tippecc_data:grid "native atmosphere N96 grid (145x192 latxlon)"^^xsd:string ;
+    tippecc_data:grid_label "gn"^^xsd:string ;
+    tippecc_data:history """tasmin: 2019-11-15T17:28:12Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:28:12Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+tasmax: 2019-11-15T17:28:16Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:28:16Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+hurs: 2019-11-15T17:34:34Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:34:34Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+rsds: 2019-11-15T17:49:11Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+rsus: 2019-11-15T17:50:08Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+rlds: 2019-11-15T17:48:07Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+rlus: 2019-11-15T17:49:01Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+sfcWind: 2019-11-15T17:34:16Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:34:16Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+[2025-01-24 15:35:36] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0"""^^xsd:string ;
+    tippecc_data:institution "Commonwealth Scientific and Industrial Research Organisation, Aspendale, Victoria 3195, Australia"^^xsd:string ;
+    tippecc_data:institution_id "CSIRO"^^xsd:string ;
+    tippecc_data:last_modification_time "2025-01-24 15:41:33 CET+0100"^^xsd:string ;
+    tippecc_data:license "CMIP6 model data produced by CSIRO is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/).  Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment.  Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file).  The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."^^xsd:string ;
+    tippecc_data:long_name "Potential evapotranspiration (\"fao_pm98\" method)"^^xsd:string ;
+    tippecc_data:mip_era "CMIP6"^^xsd:string ;
+    tippecc_data:nominal_resolution "250 km"^^xsd:string ;
+    tippecc_data:notes "Exp: ESM-historical; Local ID: HI-05; Variable: tasmax (['fld_s03i236_max'])"^^xsd:string ;
+    tippecc_data:parent_activity_id "CMIP"^^xsd:string ;
+    tippecc_data:parent_experiment_id "piControl"^^xsd:string ;
+    tippecc_data:parent_mip_era "CMIP6"^^xsd:string ;
+    tippecc_data:parent_source_id "ACCESS-ESM1-5"^^xsd:string ;
+    tippecc_data:parent_time_units "days since 0101-1-1"^^xsd:string ;
+    tippecc_data:parent_variant_label "r1i1p1f1"^^xsd:string ;
+    tippecc_data:product "model-output"^^xsd:string ;
+    tippecc_data:realm "atmos"^^xsd:string ;
+    tippecc_data:run_variant "forcing: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG = CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)"^^xsd:string ;
+    tippecc_data:source """ACCESS-ESM1.5 (2019): 
+aerosol: CLASSIC (v1.0)
+atmos: HadGAM2 (r1.1, N96; 192 x 145 longitude/latitude; 38 levels; top level 39255 m)
+atmosChem: none
+land: CABLE2.4
+landIce: none
+ocean: ACCESS-OM2 (MOM5, tripolar primarily 1deg; 360 x 300 longitude/latitude; 50 levels; top grid cell 0-10 m)
+ocnBgchem: WOMBAT (same grid as ocean)
+seaIce: CICE4.1 (same grid as ocean)"""^^xsd:string ;
+    tippecc_data:source_id "ACCESS-ESM1-5"^^xsd:string ;
+    tippecc_data:source_type "AOGCM"^^xsd:string ;
+    tippecc_data:standard_name "water_potential_evapotranspiration_amount"^^xsd:string ;
+    tippecc_data:sub_experiment "none"^^xsd:string ;
+    tippecc_data:sub_experiment_id "none"^^xsd:string ;
+    tippecc_data:table_id "day"^^xsd:string ;
+    tippecc_data:table_info "Creation Date:(30 April 2019) MD5:e14f55f257cceafb2523e41244962371"^^xsd:string ;
+    tippecc_data:title "ACCESS-ESM1-5 output prepared for CMIP6"^^xsd:string ;
+    tippecc_data:units "mmday"^^xsd:string ;
+    tippecc_data:variant_label "r1i1p1f1"^^xsd:string ;
+    tippecc_data:version "v20191115"^^xsd:string ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Convert_pot._ET_to_mm/day_14> ;
+            prov:atTime "2025-01-24T15:41:33-01:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot_1950_2100 .
+
+tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100__yearsum a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)"^^xsd:string ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)"^^xsd:string ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2"^^xsd:string ;
+    tippecc_data:activity_id "CMIP"^^xsd:string ;
+    tippecc_data:branch_method "standard"^^xsd:string ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 2.1915e+04 ;
+    tippecc_data:cell_methods "tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean"^^xsd:string ;
+    tippecc_data:cmor_version "3.4.0"^^xsd:string ;
+    tippecc_data:creation_date "2025-01-24T15:41:31Z"^^xsd:string ;
+    tippecc_data:data_specs_version "01.00.30"^^xsd:string ;
+    tippecc_data:description "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with the fao_pm98 method."^^xsd:string ;
+    tippecc_data:experiment "all-forcing simulation of the recent past"^^xsd:string ;
+    tippecc_data:experiment_id "historical"^^xsd:string ;
+    tippecc_data:external_variables "areacella"^^xsd:string ;
+    tippecc_data:file_size "6349789"^^xsd:int ;
+    tippecc_data:frequency "year"^^xsd:string ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CSIRO.ACCESS-ESM1-5.historical.none.r1i1p1f1"^^xsd:string ;
+    tippecc_data:grid "native atmosphere N96 grid (145x192 latxlon)"^^xsd:string ;
+    tippecc_data:grid_label "gn"^^xsd:string ;
+    tippecc_data:history """tasmin: 2019-11-15T17:28:12Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:28:12Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+tasmax: 2019-11-15T17:28:16Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:28:16Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+hurs: 2019-11-15T17:34:34Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:34:34Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+rsds: 2019-11-15T17:49:11Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+rsus: 2019-11-15T17:50:08Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+rlds: 2019-11-15T17:48:07Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+rlus: 2019-11-15T17:49:01Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+sfcWind: 2019-11-15T17:34:16Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T17:34:16Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20).
+[2025-01-24 15:35:36] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0"""^^xsd:string ;
+    tippecc_data:institution "Commonwealth Scientific and Industrial Research Organisation, Aspendale, Victoria 3195, Australia"^^xsd:string ;
+    tippecc_data:institution_id "CSIRO"^^xsd:string ;
+    tippecc_data:last_modification_time "2025-01-24 15:42:48 CET+0100"^^xsd:string ;
+    tippecc_data:license "CMIP6 model data produced by CSIRO is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/).  Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment.  Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file).  The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."^^xsd:string ;
+    tippecc_data:long_name "Potential evapotranspiration (\"fao_pm98\" method)"^^xsd:string ;
+    tippecc_data:mip_era "CMIP6"^^xsd:string ;
+    tippecc_data:nominal_resolution "250 km"^^xsd:string ;
+    tippecc_data:notes "Exp: ESM-historical; Local ID: HI-05; Variable: tasmax (['fld_s03i236_max'])"^^xsd:string ;
+    tippecc_data:parent_activity_id "CMIP"^^xsd:string ;
+    tippecc_data:parent_experiment_id "piControl"^^xsd:string ;
+    tippecc_data:parent_mip_era "CMIP6"^^xsd:string ;
+    tippecc_data:parent_source_id "ACCESS-ESM1-5"^^xsd:string ;
+    tippecc_data:parent_time_units "days since 0101-1-1"^^xsd:string ;
+    tippecc_data:parent_variant_label "r1i1p1f1"^^xsd:string ;
+    tippecc_data:product "model-output"^^xsd:string ;
+    tippecc_data:realm "atmos"^^xsd:string ;
+    tippecc_data:run_variant "forcing: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG = CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)"^^xsd:string ;
+    tippecc_data:source """ACCESS-ESM1.5 (2019): 
+aerosol: CLASSIC (v1.0)
+atmos: HadGAM2 (r1.1, N96; 192 x 145 longitude/latitude; 38 levels; top level 39255 m)
+atmosChem: none
+land: CABLE2.4
+landIce: none
+ocean: ACCESS-OM2 (MOM5, tripolar primarily 1deg; 360 x 300 longitude/latitude; 50 levels; top grid cell 0-10 m)
+ocnBgchem: WOMBAT (same grid as ocean)
+seaIce: CICE4.1 (same grid as ocean)"""^^xsd:string ;
+    tippecc_data:source_id "ACCESS-ESM1-5"^^xsd:string ;
+    tippecc_data:source_type "AOGCM"^^xsd:string ;
+    tippecc_data:standard_name "water_potential_evapotranspiration_amount"^^xsd:string ;
+    tippecc_data:sub_experiment "none"^^xsd:string ;
+    tippecc_data:sub_experiment_id "none"^^xsd:string ;
+    tippecc_data:table_id "day"^^xsd:string ;
+    tippecc_data:table_info "Creation Date:(30 April 2019) MD5:e14f55f257cceafb2523e41244962371"^^xsd:string ;
+    tippecc_data:time_bnds ""^^xsd:string ;
+    tippecc_data:title "ACCESS-ESM1-5 output prepared for CMIP6"^^xsd:string ;
+    tippecc_data:units "mmday"^^xsd:string ;
+    tippecc_data:variant_label "r1i1p1f1"^^xsd:string ;
+    tippecc_data:version "v20191115"^^xsd:string ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Calc_year_sum_20 ;
+            prov:atTime "2025-01-24T15:42:48-01:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100 .
+
+tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)"^^xsd:string ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)"^^xsd:string ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2"^^xsd:string ;
+    tippecc_data:activity_id "CMIP"^^xsd:string ;
+    tippecc_data:branch_method "standard"^^xsd:string ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 2.1915e+04 ;
+    tippecc_data:cell_measures "area: areacella"^^xsd:string ;
+    tippecc_data:cell_methods "area: time: mean"^^xsd:string ;
+    tippecc_data:cmor_version "3.4.0"^^xsd:string ;
+    tippecc_data:comment "includes both liquid and solid phases"^^xsd:string ;
+    tippecc_data:creation_date "2019-11-15T17:33:19Z"^^xsd:string ;
+    tippecc_data:data_specs_version "01.00.30"^^xsd:string ;
+    tippecc_data:experiment "all-forcing simulation of the recent past"^^xsd:string ;
+    tippecc_data:experiment_id "historical"^^xsd:string ;
+    tippecc_data:external_variables "areacella"^^xsd:string ;
+    tippecc_data:file_size "2298332783"^^xsd:int ;
+    tippecc_data:frequency "day"^^xsd:string ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CSIRO.ACCESS-ESM1-5.historical.none.r1i1p1f1"^^xsd:string ;
+    tippecc_data:grid "native atmosphere N96 grid (145x192 latxlon)"^^xsd:string ;
+    tippecc_data:grid_label "gn"^^xsd:string ;
+    tippecc_data:history "2019-11-15T17:33:19Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20)."^^xsd:string ;
+    tippecc_data:institution "Commonwealth Scientific and Industrial Research Organisation, Aspendale, Victoria 3195, Australia"^^xsd:string ;
+    tippecc_data:institution_id "CSIRO"^^xsd:string ;
+    tippecc_data:last_modification_time "2025-01-24 15:39:54 CET+0100"^^xsd:string ;
+    tippecc_data:license "CMIP6 model data produced by CSIRO is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/).  Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment.  Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file).  The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."^^xsd:string ;
+    tippecc_data:long_name "Precipitation"^^xsd:string ;
+    tippecc_data:mip_era "CMIP6"^^xsd:string ;
+    tippecc_data:nominal_resolution "250 km"^^xsd:string ;
+    tippecc_data:notes "Exp: ESM-historical; Local ID: HI-05; Variable: pr (['fld_s05i216'])"^^xsd:string ;
+    tippecc_data:parent_activity_id "CMIP"^^xsd:string ;
+    tippecc_data:parent_experiment_id "piControl"^^xsd:string ;
+    tippecc_data:parent_mip_era "CMIP6"^^xsd:string ;
+    tippecc_data:parent_source_id "ACCESS-ESM1-5"^^xsd:string ;
+    tippecc_data:parent_time_units "days since 0101-1-1"^^xsd:string ;
+    tippecc_data:parent_variant_label "r1i1p1f1"^^xsd:string ;
+    tippecc_data:product "model-output"^^xsd:string ;
+    tippecc_data:realm "atmos"^^xsd:string ;
+    tippecc_data:run_variant "forcing: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG = CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)"^^xsd:string ;
+    tippecc_data:source """ACCESS-ESM1.5 (2019): 
+aerosol: CLASSIC (v1.0)
+atmos: HadGAM2 (r1.1, N96; 192 x 145 longitude/latitude; 38 levels; top level 39255 m)
+atmosChem: none
+land: CABLE2.4
+landIce: none
+ocean: ACCESS-OM2 (MOM5, tripolar primarily 1deg; 360 x 300 longitude/latitude; 50 levels; top grid cell 0-10 m)
+ocnBgchem: WOMBAT (same grid as ocean)
+seaIce: CICE4.1 (same grid as ocean)"""^^xsd:string ;
+    tippecc_data:source_id "ACCESS-ESM1-5"^^xsd:string ;
+    tippecc_data:source_type "AOGCM"^^xsd:string ;
+    tippecc_data:standard_name "precipitation_amount"^^xsd:string ;
+    tippecc_data:sub_experiment "none"^^xsd:string ;
+    tippecc_data:sub_experiment_id "none"^^xsd:string ;
+    tippecc_data:table_id "day"^^xsd:string ;
+    tippecc_data:table_info "Creation Date:(30 April 2019) MD5:e14f55f257cceafb2523e41244962371"^^xsd:string ;
+    tippecc_data:title "ACCESS-ESM1-5 output prepared for CMIP6"^^xsd:string ;
+    tippecc_data:tracking_id "hdl:21.14100/6c93c39c-158b-4585-891e-8e011c7fde01"^^xsd:string ;
+    tippecc_data:units "mm"^^xsd:string ;
+    tippecc_data:variable_id "pr"^^xsd:string ;
+    tippecc_data:variant_label "r1i1p1f1"^^xsd:string ;
+    tippecc_data:version "v20191115"^^xsd:string ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Convert_pr_to_mm_0 ;
+            prov:atTime "2025-01-24T15:39:54-01:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr_1950_2100 .
+
+tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100__yearsum a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)"^^xsd:string ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)"^^xsd:string ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2"^^xsd:string ;
+    tippecc_data:activity_id "CMIP"^^xsd:string ;
+    tippecc_data:branch_method "standard"^^xsd:string ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 2.1915e+04 ;
+    tippecc_data:cell_measures "area: areacella"^^xsd:string ;
+    tippecc_data:cell_methods "area: time: mean"^^xsd:string ;
+    tippecc_data:cmor_version "3.4.0"^^xsd:string ;
+    tippecc_data:comment "includes both liquid and solid phases"^^xsd:string ;
+    tippecc_data:creation_date "2019-11-15T17:33:19Z"^^xsd:string ;
+    tippecc_data:data_specs_version "01.00.30"^^xsd:string ;
+    tippecc_data:experiment "all-forcing simulation of the recent past"^^xsd:string ;
+    tippecc_data:experiment_id "historical"^^xsd:string ;
+    tippecc_data:external_variables "areacella"^^xsd:string ;
+    tippecc_data:file_size "6351932"^^xsd:int ;
+    tippecc_data:frequency "year"^^xsd:string ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CSIRO.ACCESS-ESM1-5.historical.none.r1i1p1f1"^^xsd:string ;
+    tippecc_data:grid "native atmosphere N96 grid (145x192 latxlon)"^^xsd:string ;
+    tippecc_data:grid_label "gn"^^xsd:string ;
+    tippecc_data:history "2019-11-15T17:33:19Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20)."^^xsd:string ;
+    tippecc_data:institution "Commonwealth Scientific and Industrial Research Organisation, Aspendale, Victoria 3195, Australia"^^xsd:string ;
+    tippecc_data:institution_id "CSIRO"^^xsd:string ;
+    tippecc_data:last_modification_time "2025-01-24 15:41:06 CET+0100"^^xsd:string ;
+    tippecc_data:license "CMIP6 model data produced by CSIRO is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/).  Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment.  Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file).  The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."^^xsd:string ;
+    tippecc_data:long_name "Precipitation"^^xsd:string ;
+    tippecc_data:mip_era "CMIP6"^^xsd:string ;
+    tippecc_data:nominal_resolution "250 km"^^xsd:string ;
+    tippecc_data:notes "Exp: ESM-historical; Local ID: HI-05; Variable: pr (['fld_s05i216'])"^^xsd:string ;
+    tippecc_data:parent_activity_id "CMIP"^^xsd:string ;
+    tippecc_data:parent_experiment_id "piControl"^^xsd:string ;
+    tippecc_data:parent_mip_era "CMIP6"^^xsd:string ;
+    tippecc_data:parent_source_id "ACCESS-ESM1-5"^^xsd:string ;
+    tippecc_data:parent_time_units "days since 0101-1-1"^^xsd:string ;
+    tippecc_data:parent_variant_label "r1i1p1f1"^^xsd:string ;
+    tippecc_data:product "model-output"^^xsd:string ;
+    tippecc_data:realm "atmos"^^xsd:string ;
+    tippecc_data:run_variant "forcing: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG = CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)"^^xsd:string ;
+    tippecc_data:source """ACCESS-ESM1.5 (2019): 
+aerosol: CLASSIC (v1.0)
+atmos: HadGAM2 (r1.1, N96; 192 x 145 longitude/latitude; 38 levels; top level 39255 m)
+atmosChem: none
+land: CABLE2.4
+landIce: none
+ocean: ACCESS-OM2 (MOM5, tripolar primarily 1deg; 360 x 300 longitude/latitude; 50 levels; top grid cell 0-10 m)
+ocnBgchem: WOMBAT (same grid as ocean)
+seaIce: CICE4.1 (same grid as ocean)"""^^xsd:string ;
+    tippecc_data:source_id "ACCESS-ESM1-5"^^xsd:string ;
+    tippecc_data:source_type "AOGCM"^^xsd:string ;
+    tippecc_data:standard_name "precipitation_amount"^^xsd:string ;
+    tippecc_data:sub_experiment "none"^^xsd:string ;
+    tippecc_data:sub_experiment_id "none"^^xsd:string ;
+    tippecc_data:table_id "day"^^xsd:string ;
+    tippecc_data:table_info "Creation Date:(30 April 2019) MD5:e14f55f257cceafb2523e41244962371"^^xsd:string ;
+    tippecc_data:time_bnds ""^^xsd:string ;
+    tippecc_data:title "ACCESS-ESM1-5 output prepared for CMIP6"^^xsd:string ;
+    tippecc_data:tracking_id "hdl:21.14100/6c93c39c-158b-4585-891e-8e011c7fde01"^^xsd:string ;
+    tippecc_data:units "mm"^^xsd:string ;
+    tippecc_data:variable_id "pr"^^xsd:string ;
+    tippecc_data:variant_label "r1i1p1f1"^^xsd:string ;
+    tippecc_data:version "v20191115"^^xsd:string ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Calc_year_sum_6 ;
+            prov:atTime "2025-01-24T15:41:06-01:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100 .
+
+software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+    sdo:softwareVersion "1.9.3"^^xsd:string ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    tippecc_data:type "SoftwareApplication"^^xsd:string .
+
+tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__ai__mm_1950_2100__yearsum a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)"^^xsd:string ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)"^^xsd:string ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2"^^xsd:string ;
+    tippecc_data:activity_id "CMIP"^^xsd:string ;
+    tippecc_data:branch_method "standard"^^xsd:string ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 2.1915e+04 ;
+    tippecc_data:cmor_version "3.4.0"^^xsd:string ;
+    tippecc_data:comment "Aridity index is the ratio of precipitation to potential evapotranspiration. It is a measure of the degree of dryness of the climate at a given location. A value of 1 indicates that precipitation is equal to potential evapotranspiration, values greater than 1 indicate that precipitation is greater than potential evapotranspiration, and values less than 1 indicate that precipitation is less than potential evapotranspiration."^^xsd:string ;
+    tippecc_data:creation_date "2025-01-24T15:41:31Z"^^xsd:string ;
+    tippecc_data:data_specs_version "01.00.30"^^xsd:string ;
+    tippecc_data:description "Calculated from precipitation and potential evapotranspiration."^^xsd:string ;
+    tippecc_data:experiment "all-forcing simulation of the recent past"^^xsd:string ;
+    tippecc_data:experiment_id "historical"^^xsd:string ;
+    tippecc_data:external_variables "areacella"^^xsd:string ;
+    tippecc_data:file_size "6298916"^^xsd:int ;
+    tippecc_data:frequency "year"^^xsd:string ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CSIRO.ACCESS-ESM1-5.historical.none.r1i1p1f1"^^xsd:string ;
+    tippecc_data:grid "native atmosphere N96 grid (145x192 latxlon)"^^xsd:string ;
+    tippecc_data:grid_label "gn"^^xsd:string ;
+    tippecc_data:history "Fri Jan 24 14:42:40 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100.nc /data/cmip6_raw_ind/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100__yearsum.nc"^^xsd:string ;
+    tippecc_data:institution "Commonwealth Scientific and Industrial Research Organisation, Aspendale, Victoria 3195, Australia"^^xsd:string ;
+    tippecc_data:institution_id "CSIRO"^^xsd:string ;
+    tippecc_data:last_modification_time "2025-01-27 20:30:30 CET+0100"^^xsd:string ;
+    tippecc_data:license "CMIP6 model data produced by CSIRO is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/).  Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment.  Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file).  The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."^^xsd:string ;
+    tippecc_data:long_name "Aridity Index"^^xsd:string ;
+    tippecc_data:mip_era "CMIP6"^^xsd:string ;
+    tippecc_data:nominal_resolution "250 km"^^xsd:string ;
+    tippecc_data:notes "Exp: ESM-historical; Local ID: HI-05; Variable: tasmax (['fld_s03i236_max'])"^^xsd:string ;
+    tippecc_data:parent_activity_id "CMIP"^^xsd:string ;
+    tippecc_data:parent_experiment_id "piControl"^^xsd:string ;
+    tippecc_data:parent_mip_era "CMIP6"^^xsd:string ;
+    tippecc_data:parent_source_id "ACCESS-ESM1-5"^^xsd:string ;
+    tippecc_data:parent_time_units "days since 0101-1-1"^^xsd:string ;
+    tippecc_data:parent_variant_label "r1i1p1f1"^^xsd:string ;
+    tippecc_data:product "model-output"^^xsd:string ;
+    tippecc_data:realm "atmos"^^xsd:string ;
+    tippecc_data:run_variant "forcing: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG = CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)"^^xsd:string ;
+    tippecc_data:source """ACCESS-ESM1.5 (2019): 
+aerosol: CLASSIC (v1.0)
+atmos: HadGAM2 (r1.1, N96; 192 x 145 longitude/latitude; 38 levels; top level 39255 m)
+atmosChem: none
+land: CABLE2.4
+landIce: none
+ocean: ACCESS-OM2 (MOM5, tripolar primarily 1deg; 360 x 300 longitude/latitude; 50 levels; top grid cell 0-10 m)
+ocnBgchem: WOMBAT (same grid as ocean)
+seaIce: CICE4.1 (same grid as ocean)"""^^xsd:string ;
+    tippecc_data:source_id "ACCESS-ESM1-5"^^xsd:string ;
+    tippecc_data:source_type "AOGCM"^^xsd:string ;
+    tippecc_data:sub_experiment "none"^^xsd:string ;
+    tippecc_data:sub_experiment_id "none"^^xsd:string ;
+    tippecc_data:table_id "day"^^xsd:string ;
+    tippecc_data:table_info "Creation Date:(30 April 2019) MD5:e14f55f257cceafb2523e41244962371"^^xsd:string ;
+    tippecc_data:title "ACCESS-ESM1-5 output prepared for CMIP6"^^xsd:string ;
+    tippecc_data:units "dimensionless"^^xsd:string ;
+    tippecc_data:variant_label "r1i1p1f1"^^xsd:string ;
+    tippecc_data:version "v20191115"^^xsd:string ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:FUNCTION__XARRAY_ARIDITY_INDEX_12 ;
             prov:atTime "2025-01-27T20:30:30-01:00"^^xsd:dateTime ] ;
-    prov:wasAttributedTo <http://www.provbook.org/tippecc/people/PERSON__ZANDER_FRANZISKA> ;
-    prov:wasDerivedFrom ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100__yearsum,
-        ns1:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100__yearsum .
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1__evspsblpot__mm_1950_2100__yearsum,
+        tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100__yearsum .
+
+people:PERSON__ZANDER_FRANZISKA a prov:Agent,
+        "prov:Person"^^xsd:string ;
+    rdfs:label "Franziska Zander"^^xsd:string ;
+    sdo:affiliation orgs:ORG__FSU ;
+    prov:actedOnBehalfOf orgs:ORG__FSU ;
+    wd:P496 "0000-0001-6892-7046"^^xsd:string ;
+    foaf:familyName "Zander"^^xsd:string ;
+    foaf:givenName "Franziska"^^xsd:string .
 

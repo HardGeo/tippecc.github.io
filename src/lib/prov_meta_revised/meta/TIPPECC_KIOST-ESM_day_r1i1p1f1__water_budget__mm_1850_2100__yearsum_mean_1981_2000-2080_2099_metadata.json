@@ -1,0 +1,110 @@
+{
+    "CDI": "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)",
+    "history": "Wed Mar 12 21:13:51 2025: cdo -O -s -sub /data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum_mean_2080_2099.nc /data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum_mean_1981_2000.nc /data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum_mean_1981_2000-2080_2099.nc\nWed Mar 12 21:13:42 2025: cdo -O -s -timmean -selyear,2080/2099 /data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum.nc /data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum_mean_2080_2099.nc\nWed Mar 12 21:13:16 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum.nc",
+    "source": "KIOST-ESM (2018): \naerosol: none\natmos: GFDL-AM2.0 (cubed sphere (C48); 192 x 96 longitude/latitude; 32 vertical levels; top level 2 hPa)\natmosChem: Simple carbon aerosol model (emission type)\nland: NCAR-CLM4\nlandIce: NCAR-CLM4\nocean: GFDL-MOM5.0 (tripolar - nominal 1.0 deg; 360 x 200 longitude/latitude; 52 levels; top grid cell 0-2 m; NK mixed layer scheme)\nocnBgchem: TOPAZ2\nseaIce: GFDL-SIS",
+    "institution": "Korea Institute of Ocean Science & Technology, Busan 49111, Republic of Korea",
+    "Conventions": "CF-1.7 CMIP-6.2",
+    "activity_id": "CMIP",
+    "branch_method": "standard",
+    "branch_time_in_child": 0.0,
+    "branch_time_in_parent": 485782.0,
+    "contact": "YoungHo Kim (yhokim@pknu.ac.kr & yhkimstar@gmail.com)",
+    "creation_date": "2025-03-12T22:12:05Z",
+    "data_specs_version": "01.00.30",
+    "experiment": "all-forcing simulation of the recent past",
+    "experiment_id": "historical",
+    "external_variables": "areacella",
+    "forcing_index": null,
+    "frequency": "year",
+    "further_info_url": "https://furtherinfo.es-doc.org/CMIP6.KIOST.KIOST-ESM.historical.none.r1i1p1f1",
+    "grid": "atmos data regridded from Cubed-sphere (c48) to 94X192",
+    "grid_label": "gr1",
+    "initialization_index": null,
+    "institution_id": "KIOST",
+    "mip_era": "CMIP6",
+    "nominal_resolution": "250 km",
+    "parent_activity_id": "CMIP",
+    "parent_experiment_id": "piControl",
+    "parent_mip_era": "CMIP6",
+    "parent_source_id": "KIOST-ESM",
+    "parent_time_units": "days since 1850-01-01",
+    "parent_variant_label": "r1i1p1f1",
+    "physics_index": null,
+    "product": "model-output",
+    "realization_index": null,
+    "realm": "atmos",
+    "references": "Model described by Pak et al. (Ocean Science Journal, to be submitted).",
+    "run_variant": "3rd realization",
+    "source_id": "KIOST-ESM",
+    "source_type": "AOGCM BGC",
+    "sub_experiment": "none",
+    "sub_experiment_id": "none",
+    "table_id": "day",
+    "table_info": "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87",
+    "title": "KIOST-ESM output prepared for CMIP6",
+    "variant_label": "r1i1p1f1",
+    "license": "CMIP6 model data produced by Lawrence Livermore KIOST is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.",
+    "cmor_version": "3.5.0",
+    "CDO": "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)",
+    "water_budget_from_tas": {
+        "long_name": "Water budget (\"FAO_PM985\" method)",
+        "units": "mmday",
+        "cell_methods": "pr: area: time: mean evspsblpot: tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean",
+        "history": "pr: \nevspsblpot: tasmin: 2019-11-04T04:12:56Z altered by CMOR: Treated scalar dimension: 'height'.\ntasmax: 2019-11-04T03:12:08Z altered by CMOR: Treated scalar dimension: 'height'.\nhurs: 2019-11-04T06:12:17Z altered by CMOR: Treated scalar dimension: 'height'.\nrsds: \nrsus: \nrlds: \nrlus: \nsfcWind: 2019-11-04T09:43:08Z altered by CMOR: Treated scalar dimension: 'height'.\n[2025-03-12 22:08:56] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0\n[2025-03-12 22:10:44] water_budget_from_tas: WATER_BUDGET_FROM_TAS(pr=pr, evspsblpot=evspsblpot, method='BR65') - xclim version: 0.49.0",
+        "description": "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget, where the potential evapotranspiration is calculated with the FAO_PM985 method.",
+        "method": "pr - evspsblpot "
+    },
+    "file": {
+        "file_size": 86955,
+        "last_modification_time": "2025-03-12 22:13:52 CET+0100",
+        "birth_time": "2025-03-12 22:13:52 CET+0100",
+        "file_format": "netCDF",
+        "nominal_resolution": "50 km",
+        "geospatial_lat_min": "-35.75",
+        "geospatial_lat_max": "-5.25",
+        "geospatial_lon_min": "10.25",
+        "geospatial_lon_max": "51.75",
+        "time_coverage_start": "2089-12-31 12:00:00",
+        "time_coverage_end": "2089-12-31 12:00:00",
+        "frequency": "none",
+        "climatology_bounds": [
+            [
+                "1980-11-30 00:00:00",
+                "2098-11-01 00:00:00"
+            ]
+        ],
+        "climatology_bounds_details": [
+            [
+                "1980-11-30 00:00:00",
+                "1999-11-26 00:00:00"
+            ],
+            [
+                "2079-11-06 00:00:00",
+                "2098-11-01 00:00:00"
+            ]
+        ],
+        "num_time_steps": 1,
+        "time_units": "days since 1850-01-01",
+        "time_calendar": "365_day",
+        "short_variable_name": "water_budget_from_tas",
+        "long_name": "Water budget (\"FAO_PM985\" method)",
+        "global_min": "-530.947022242714",
+        "global_max": "132.22209505625358",
+        "unit": "mmday",
+        "experiment_id": "historical+ssp585",
+        "global_model": "KIOST-ESM",
+        "variant": "r1i1p1f1",
+        "citation_historical_source": {
+            "doi": "https://doi.org/10.22033/ESGF/CMIP6.5296",
+            "license": "CC BY 4.0",
+            "short_data_reference": "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5296"
+        },
+        "citation_scenario_source": {
+            "doi": "https://doi.org/10.22033/ESGF/CMIP6.11249",
+            "license": "CC BY 4.0",
+            "short_data_reference": "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249"
+        },
+        "bias_correction": "no",
+        "indicator": "yes"
+    }
+}
