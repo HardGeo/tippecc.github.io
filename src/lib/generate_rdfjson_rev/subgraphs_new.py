@@ -49,13 +49,12 @@ SELECT ?entity WHERE {
 """
 # Execute the query
 results = g.query(sparql_entities)
-print([str(row[0]).split("/")[-1] for row in results])
+
 # Extract all the entity URIs into a list
 entity_list = [str(row[0]).split("/")[-1] for row in results if not str(row[0]).split("/")[-1].startswith("COLLECTION")]
-#print(len(entity_list))
-import sys
-sys.exit()
+
 for entity in entity_list:
+  print(entity)
   start = time.perf_counter()
   # Define the entity to extract the subgraph for
   target_entity = TIPPECC[entity]
