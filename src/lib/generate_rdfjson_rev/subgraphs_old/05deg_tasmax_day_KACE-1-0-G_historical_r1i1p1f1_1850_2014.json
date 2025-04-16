@@ -1,0 +1,132 @@
+{
+    "prefix": {
+        "tippecc": "http://www.provbook.org/tippecc/",
+        "people": "http://www.provbook.org/tippecc/people/",
+        "orgs": "http://www.provbook.org/tippecc/orgs/",
+        "software": "http://www.provbook.org/tippecc/software/",
+        "tippecc_data": "http://www.provbook.org/tippecc/data/",
+        "esgf_portal": "http://www.provbook.org/tippecc/esgf_portal/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "datacite": "https://datacite-metadata-schema.readthedocs.io/en/4.6/",
+        "wd": "http://www.wikidata.org/entity/",
+        "sdo": "http://schema.org/",
+        "cf": "https://cfconventions.org/cf-conventions/cf-conventions.html",
+        "nerc": "http://vocab.nerc.ac.uk/collection/P07/current/",
+        "orcid": "http://www.orcid.org/",
+        "ror": "https://ror.org/",
+        "exe": "http://www.provbook.org/tippecc/exe/",
+        "foaf": "http://xmlns.com/foaf/0.1/"
+    },
+    "entity": {
+        "tippecc_data:05deg_tasmax_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014": {},
+        "tippecc_data:tasmax_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014": {}
+    },
+    "agent": {
+        "people:PERSON__JONATHAN_PADAVATAN": {
+            "prov:type": "prov:Person",
+            "prov:label": "Jonathan Padavatan",
+            "foaf:givenName": "Jonathan",
+            "foaf:familyName": "Padavatan",
+            "sdo:affiliation": {
+                "$": "orgs:ORG__WITS",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        },
+        "orgs:ORG__WITS": {
+            "prov:type": "prov:Organization",
+            "prov:label": "University of the Witwatersrand",
+            "sdo:name": "University of the Witwatersrand",
+            "wd:P6782": "https://ror.org/03rp50x72"
+        },
+        "software:SOFTWARE__CDO_1_9_3": {
+            "sdo:type": "sdo:SoftwareApplication",
+            "sdo:softwareVersion": "1.9.3",
+            "sdo:targetProduct": {
+                "$": "software:SOFTWARE__CDO",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        }
+    },
+    "activity": {
+        "exe:Remap_bilinear_172": {
+            "prov:startTime": "2024-12-19T18:22:30",
+            "prov:label": "Remap bilinear",
+            "prov:description": "Remap the dataset to the TIPPECC area.",
+            "prov:function": "FUNCTION__CDO_REMAPBIL",
+            "prov:params": "N/A"
+        }
+    },
+    "wasAssociatedWith": {
+        "_:id1550": {
+            "prov:activity": "exe:Remap_bilinear_172",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id1551": {
+            "prov:entity": "tippecc_data:05deg_tasmax_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014",
+            "prov:activity": "exe:Remap_bilinear_172",
+            "prov:time": "2024-12-19T18:22:30"
+        }
+    },
+    "wasDerivedFrom": {
+        "_:id1552": {
+            "prov:generatedEntity": "tippecc_data:05deg_tasmax_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:africa05.txt"
+        },
+        "_:id1554": {
+            "prov:generatedEntity": "tippecc_data:05deg_tasmax_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tasmax_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id16541": {
+            "prov:generatedEntity": "tippecc_data:tasmax_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tasmax_day_KACE-1-0-G_historical_r1i1p1f1_gr_18500101-20141230"
+        }
+    },
+    "used": {
+        "_:id1553": {
+            "prov:activity": "exe:Remap_bilinear_172",
+            "prov:entity": "tippecc_data:africa05.txt"
+        },
+        "_:id1555": {
+            "prov:activity": "exe:Remap_bilinear_172",
+            "prov:entity": "tippecc_data:tasmax_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014"
+        }
+    },
+    "hadMember": {
+        "_:id1556": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:05deg_tasmax_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id1557": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:05deg_tasmax_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id16543": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:tasmax_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id16544": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:tasmax_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014"
+        }
+    },
+    "actedOnBehalfOf": {
+        "_:id9": {
+            "prov:delegate": "people:PERSON__JONATHAN_PADAVATAN",
+            "prov:responsible": "orgs:ORG__WITS"
+        }
+    },
+    "wasAttributedTo": {
+        "_:id1558": {
+            "prov:entity": "tippecc_data:05deg_tasmax_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        },
+        "_:id16545": {
+            "prov:entity": "tippecc_data:tasmax_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        }
+    },
+    "wasInformedBy": {}
+}

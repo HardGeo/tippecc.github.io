@@ -1,0 +1,782 @@
+{
+    "prefix": {
+        "tippecc": "http://www.provbook.org/tippecc/",
+        "people": "http://www.provbook.org/tippecc/people/",
+        "orgs": "http://www.provbook.org/tippecc/orgs/",
+        "software": "http://www.provbook.org/tippecc/software/",
+        "tippecc_data": "http://www.provbook.org/tippecc/data/",
+        "esgf_portal": "http://www.provbook.org/tippecc/esgf_portal/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "datacite": "https://datacite-metadata-schema.readthedocs.io/en/4.6/",
+        "wd": "http://www.wikidata.org/entity/",
+        "sdo": "http://schema.org/",
+        "cf": "https://cfconventions.org/cf-conventions/cf-conventions.html",
+        "nerc": "http://vocab.nerc.ac.uk/collection/P07/current/",
+        "orcid": "http://www.orcid.org/",
+        "ror": "https://ror.org/",
+        "exe": "http://www.provbook.org/tippecc/exe/",
+        "foaf": "http://xmlns.com/foaf/0.1/"
+    },
+    "entity": {
+        "tippecc_data:05deg_pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014": {},
+        "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014": {},
+        "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr_1850_2100": {
+            "tippecc_data:CDI": "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)",
+            "tippecc_data:history": "2019-08-15T15:44:08Z altered by CMOR: Converted type from 'd' to 'f'.",
+            "tippecc_data:source": "NorESM2-LM (2017): \naerosol: OsloAero\natmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)\natmosChem: OsloChemSimp\nland: CLM\nlandIce: CISM\nocean: MICOM (1 degree resolution; 360 x 384; 70 levels; top grid cell minimum 0-2.5 m [native model uses hybrid density and generic upper-layer coordinate interpolated to z-level for contributed data])\nocnBgchem: HAMOCC\nseaIce: CICE",
+            "tippecc_data:institution": "NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway",
+            "tippecc_data:Conventions": "CF-1.7 CMIP-6.2",
+            "tippecc_data:activity_id": "CMIP",
+            "tippecc_data:branch_method": "Hybrid-restart from year 1600-01-01 of piControl",
+            "tippecc_data:branch_time": {
+                "$": 0.0,
+                "type": "xsd:double"
+            },
+            "tippecc_data:branch_time_in_child": {
+                "$": 0.0,
+                "type": "xsd:double"
+            },
+            "tippecc_data:branch_time_in_parent": {
+                "$": 430335.0,
+                "type": "xsd:double"
+            },
+            "tippecc_data:contact": "Please send any requests or bug reports to noresm-ncc@met.no.",
+            "tippecc_data:creation_date": "2019-08-15T15:44:08Z",
+            "tippecc_data:data_specs_version": "01.00.31",
+            "tippecc_data:experiment": "all-forcing simulation of the recent past",
+            "tippecc_data:experiment_id": "historical+ssp585",
+            "tippecc_data:external_variables": "areacella",
+            "tippecc_data:frequency": "day",
+            "tippecc_data:further_info_url": "https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r1i1p1f1",
+            "tippecc_data:grid": "finite-volume grid with 1.9x2.5 degree lat/lon resolution",
+            "tippecc_data:grid_label": "gn",
+            "tippecc_data:institution_id": "NCC",
+            "tippecc_data:mip_era": "CMIP6",
+            "tippecc_data:model_id": "NorESM2-LM",
+            "tippecc_data:nominal_resolution": "50 km",
+            "tippecc_data:parent_activity_id": "CMIP",
+            "tippecc_data:parent_experiment_id": "piControl",
+            "tippecc_data:parent_mip_era": "CMIP6",
+            "tippecc_data:parent_source_id": "NorESM2-LM",
+            "tippecc_data:parent_sub_experiment_id": "none",
+            "tippecc_data:parent_time_units": "days since 0421-01-01",
+            "tippecc_data:parent_variant_label": "r1i1p1f1",
+            "tippecc_data:product": "model-output",
+            "tippecc_data:realm": "atmos",
+            "tippecc_data:run_variant": "N/A",
+            "tippecc_data:source_id": "NorESM2-LM",
+            "tippecc_data:source_type": "AOGCM",
+            "tippecc_data:sub_experiment": "none",
+            "tippecc_data:sub_experiment_id": "none",
+            "tippecc_data:table_id": "day",
+            "tippecc_data:table_info": "Creation Date:(24 July 2019) MD5:08e314340b9dd440c36c1b8e484514f4",
+            "tippecc_data:title": "NorESM2-LM output prepared for CMIP6",
+            "tippecc_data:variable_id": "pr",
+            "tippecc_data:variant_label": "r1i1p1f1",
+            "tippecc_data:license": "CC BY 4.0",
+            "tippecc_data:cmor_version": "3.5.0",
+            "tippecc_data:tracking_id": "hdl:21.14100/8d533054-8032-4114-bacf-07af729a9880",
+            "tippecc_data:CDO": "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)",
+            "tippecc_data:standard_name": "precipitation_flux",
+            "tippecc_data:long_name": "Precipitation",
+            "tippecc_data:units": "kg m-2 s-1",
+            "tippecc_data:comment": "includes both liquid and solid phases",
+            "tippecc_data:original_name": "PRECT",
+            "tippecc_data:cell_methods": "area: time: mean",
+            "tippecc_data:cell_measures": "area: areacella",
+            "tippecc_data:file_size": {
+                "$": 1920183804,
+                "type": "xsd:int"
+            },
+            "tippecc_data:last_modification_time": "2025-01-21 12:08:40 CET+0100",
+            "tippecc_data:birth_time": "2025-02-23 16:47:44 CET+0100",
+            "tippecc_data:file_format": "netCDF",
+            "tippecc_data:geospatial_lat_min": "-35.75",
+            "tippecc_data:geospatial_lat_max": "-5.25",
+            "tippecc_data:geospatial_lon_min": "10.25",
+            "tippecc_data:geospatial_lon_max": "51.75",
+            "tippecc_data:time_coverage_start": "1850-01-01 00:00:00",
+            "tippecc_data:time_coverage_end": "2100-12-31 00:00:00",
+            "tippecc_data:num_time_steps": {
+                "$": 91615,
+                "type": "xsd:int"
+            },
+            "tippecc_data:time_units": "days since 0001-01-01 00:00:00",
+            "tippecc_data:time_calendar": "365_day",
+            "tippecc_data:short_variable_name": "pr",
+            "tippecc_data:global_min": "0.0",
+            "tippecc_data:global_max": "0.0016249348",
+            "tippecc_data:unit": "kg m-2 s-1",
+            "tippecc_data:global_model": "NorESM2-LM",
+            "tippecc_data:variant": "r1i1p1f1",
+            "tippecc_data:doi": "https://doi.org/10.22033/ESGF/CMIP6.8319",
+            "tippecc_data:short_data_reference": "Seland, \u00d8yvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319",
+            "tippecc_data:bias_correction": "no",
+            "tippecc_data:indicator": "no"
+        },
+        "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr__mm_1850_2100": {
+            "tippecc_data:CDI": "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)",
+            "tippecc_data:history": "2019-08-15T15:44:08Z altered by CMOR: Converted type from 'd' to 'f'.",
+            "tippecc_data:source": "NorESM2-LM (2017): \naerosol: OsloAero\natmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)\natmosChem: OsloChemSimp\nland: CLM\nlandIce: CISM\nocean: MICOM (1 degree resolution; 360 x 384; 70 levels; top grid cell minimum 0-2.5 m [native model uses hybrid density and generic upper-layer coordinate interpolated to z-level for contributed data])\nocnBgchem: HAMOCC\nseaIce: CICE",
+            "tippecc_data:institution": "NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway",
+            "tippecc_data:Conventions": "CF-1.7 CMIP-6.2",
+            "tippecc_data:activity_id": "CMIP",
+            "tippecc_data:branch_method": "Hybrid-restart from year 1600-01-01 of piControl",
+            "tippecc_data:branch_time": {
+                "$": 0.0,
+                "type": "xsd:double"
+            },
+            "tippecc_data:branch_time_in_child": {
+                "$": 0.0,
+                "type": "xsd:double"
+            },
+            "tippecc_data:branch_time_in_parent": {
+                "$": 430335.0,
+                "type": "xsd:double"
+            },
+            "tippecc_data:contact": "Please send any requests or bug reports to noresm-ncc@met.no.",
+            "tippecc_data:creation_date": "2019-08-15T15:44:08Z",
+            "tippecc_data:data_specs_version": "01.00.31",
+            "tippecc_data:experiment": "all-forcing simulation of the recent past",
+            "tippecc_data:experiment_id": "historical+ssp585",
+            "tippecc_data:external_variables": "areacella",
+            "tippecc_data:frequency": "day",
+            "tippecc_data:further_info_url": "https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r1i1p1f1",
+            "tippecc_data:grid": "finite-volume grid with 1.9x2.5 degree lat/lon resolution",
+            "tippecc_data:grid_label": "gn",
+            "tippecc_data:institution_id": "NCC",
+            "tippecc_data:mip_era": "CMIP6",
+            "tippecc_data:model_id": "NorESM2-LM",
+            "tippecc_data:nominal_resolution": "50 km",
+            "tippecc_data:parent_activity_id": "CMIP",
+            "tippecc_data:parent_experiment_id": "piControl",
+            "tippecc_data:parent_mip_era": "CMIP6",
+            "tippecc_data:parent_source_id": "NorESM2-LM",
+            "tippecc_data:parent_sub_experiment_id": "none",
+            "tippecc_data:parent_time_units": "days since 0421-01-01",
+            "tippecc_data:parent_variant_label": "r1i1p1f1",
+            "tippecc_data:product": "model-output",
+            "tippecc_data:realm": "atmos",
+            "tippecc_data:run_variant": "N/A",
+            "tippecc_data:source_id": "NorESM2-LM",
+            "tippecc_data:source_type": "AOGCM",
+            "tippecc_data:sub_experiment": "none",
+            "tippecc_data:sub_experiment_id": "none",
+            "tippecc_data:table_id": "day",
+            "tippecc_data:table_info": "Creation Date:(24 July 2019) MD5:08e314340b9dd440c36c1b8e484514f4",
+            "tippecc_data:title": "NorESM2-LM output prepared for CMIP6",
+            "tippecc_data:variable_id": "pr",
+            "tippecc_data:variant_label": "r1i1p1f1",
+            "tippecc_data:license": "CC BY 4.0",
+            "tippecc_data:cmor_version": "3.5.0",
+            "tippecc_data:tracking_id": "hdl:21.14100/8d533054-8032-4114-bacf-07af729a9880",
+            "tippecc_data:CDO": "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)",
+            "tippecc_data:standard_name": "precipitation_amount",
+            "tippecc_data:long_name": "Precipitation",
+            "tippecc_data:units": "mm",
+            "tippecc_data:comment": "includes both liquid and solid phases",
+            "tippecc_data:original_name": "PRECT",
+            "tippecc_data:cell_methods": "area: time: mean",
+            "tippecc_data:cell_measures": "area: areacella",
+            "tippecc_data:file_size": {
+                "$": 3817826391,
+                "type": "xsd:int"
+            },
+            "tippecc_data:last_modification_time": "2025-01-24 21:20:56 CET+0100",
+            "tippecc_data:birth_time": "2025-01-24 21:20:56 CET+0100",
+            "tippecc_data:file_format": "netCDF",
+            "tippecc_data:geospatial_lat_min": "-35.75",
+            "tippecc_data:geospatial_lat_max": "-5.25",
+            "tippecc_data:geospatial_lon_min": "10.25",
+            "tippecc_data:geospatial_lon_max": "51.75",
+            "tippecc_data:time_coverage_start": "1850-01-01 00:00:00",
+            "tippecc_data:time_coverage_end": "2100-12-31 00:00:00",
+            "tippecc_data:num_time_steps": {
+                "$": 91615,
+                "type": "xsd:int"
+            },
+            "tippecc_data:time_units": "days since 0001-01-01",
+            "tippecc_data:time_calendar": "365_day",
+            "tippecc_data:short_variable_name": "pr",
+            "tippecc_data:global_min": "0.0",
+            "tippecc_data:global_max": "140.3943702578545",
+            "tippecc_data:unit": "mm",
+            "tippecc_data:global_model": "NorESM2-LM",
+            "tippecc_data:variant": "r1i1p1f1",
+            "tippecc_data:doi": "https://doi.org/10.22033/ESGF/CMIP6.8319",
+            "tippecc_data:short_data_reference": "Seland, \u00d8yvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319",
+            "tippecc_data:bias_correction": "no",
+            "tippecc_data:indicator": "yes"
+        },
+        "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000": {
+            "tippecc_data:CDI": "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)",
+            "tippecc_data:history": "2019-08-15T15:44:08Z altered by CMOR: Converted type from 'd' to 'f'.",
+            "tippecc_data:source": "NorESM2-LM (2017): \naerosol: OsloAero\natmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)\natmosChem: OsloChemSimp\nland: CLM\nlandIce: CISM\nocean: MICOM (1 degree resolution; 360 x 384; 70 levels; top grid cell minimum 0-2.5 m [native model uses hybrid density and generic upper-layer coordinate interpolated to z-level for contributed data])\nocnBgchem: HAMOCC\nseaIce: CICE",
+            "tippecc_data:institution": "NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway",
+            "tippecc_data:Conventions": "CF-1.7 CMIP-6.2",
+            "tippecc_data:activity_id": "CMIP",
+            "tippecc_data:branch_method": "Hybrid-restart from year 1600-01-01 of piControl",
+            "tippecc_data:branch_time": {
+                "$": 0.0,
+                "type": "xsd:double"
+            },
+            "tippecc_data:branch_time_in_child": {
+                "$": 0.0,
+                "type": "xsd:double"
+            },
+            "tippecc_data:branch_time_in_parent": {
+                "$": 430335.0,
+                "type": "xsd:double"
+            },
+            "tippecc_data:contact": "Please send any requests or bug reports to noresm-ncc@met.no.",
+            "tippecc_data:creation_date": "2019-08-15T15:44:08Z",
+            "tippecc_data:data_specs_version": "01.00.31",
+            "tippecc_data:experiment": "all-forcing simulation of the recent past",
+            "tippecc_data:experiment_id": "historical+ssp585",
+            "tippecc_data:external_variables": "areacella",
+            "tippecc_data:frequency": "none",
+            "tippecc_data:further_info_url": "https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r1i1p1f1",
+            "tippecc_data:grid": "finite-volume grid with 1.9x2.5 degree lat/lon resolution",
+            "tippecc_data:grid_label": "gn",
+            "tippecc_data:institution_id": "NCC",
+            "tippecc_data:mip_era": "CMIP6",
+            "tippecc_data:model_id": "NorESM2-LM",
+            "tippecc_data:nominal_resolution": "50 km",
+            "tippecc_data:parent_activity_id": "CMIP",
+            "tippecc_data:parent_experiment_id": "piControl",
+            "tippecc_data:parent_mip_era": "CMIP6",
+            "tippecc_data:parent_source_id": "NorESM2-LM",
+            "tippecc_data:parent_sub_experiment_id": "none",
+            "tippecc_data:parent_time_units": "days since 0421-01-01",
+            "tippecc_data:parent_variant_label": "r1i1p1f1",
+            "tippecc_data:product": "model-output",
+            "tippecc_data:realm": "atmos",
+            "tippecc_data:run_variant": "N/A",
+            "tippecc_data:source_id": "NorESM2-LM",
+            "tippecc_data:source_type": "AOGCM",
+            "tippecc_data:sub_experiment": "none",
+            "tippecc_data:sub_experiment_id": "none",
+            "tippecc_data:table_id": "day",
+            "tippecc_data:table_info": "Creation Date:(24 July 2019) MD5:08e314340b9dd440c36c1b8e484514f4",
+            "tippecc_data:title": "NorESM2-LM output prepared for CMIP6",
+            "tippecc_data:variable_id": "pr",
+            "tippecc_data:variant_label": "r1i1p1f1",
+            "tippecc_data:license": "CC BY 4.0",
+            "tippecc_data:cmor_version": "3.5.0",
+            "tippecc_data:tracking_id": "hdl:21.14100/8d533054-8032-4114-bacf-07af729a9880",
+            "tippecc_data:CDO": "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)",
+            "tippecc_data:standard_name": "precipitation_amount",
+            "tippecc_data:long_name": "Precipitation",
+            "tippecc_data:units": "mm",
+            "tippecc_data:comment": "includes both liquid and solid phases",
+            "tippecc_data:original_name": "PRECT",
+            "tippecc_data:cell_methods": "area: time: mean",
+            "tippecc_data:cell_measures": "area: areacella",
+            "tippecc_data:file_size": {
+                "$": 84986,
+                "type": "xsd:int"
+            },
+            "tippecc_data:last_modification_time": "2025-01-24 21:22:21 CET+0100",
+            "tippecc_data:birth_time": "2025-01-24 21:22:21 CET+0100",
+            "tippecc_data:file_format": "netCDF",
+            "tippecc_data:geospatial_lat_min": "-35.75",
+            "tippecc_data:geospatial_lat_max": "-5.25",
+            "tippecc_data:geospatial_lon_min": "10.25",
+            "tippecc_data:geospatial_lon_max": "51.75",
+            "tippecc_data:time_coverage_start": "1991-01-01 00:00:00",
+            "tippecc_data:time_coverage_end": "1991-01-01 00:00:00",
+            "tippecc_data:num_time_steps": {
+                "$": 1,
+                "type": "xsd:int"
+            },
+            "tippecc_data:time_units": "days since 0001-01-01",
+            "tippecc_data:time_calendar": "365_day",
+            "tippecc_data:short_variable_name": "pr",
+            "tippecc_data:global_min": "29.741373956480977",
+            "tippecc_data:global_max": "2034.6061106395057",
+            "tippecc_data:unit": "mm",
+            "tippecc_data:global_model": "NorESM2-LM",
+            "tippecc_data:variant": "r1i1p1f1",
+            "tippecc_data:doi": "https://doi.org/10.22033/ESGF/CMIP6.8319",
+            "tippecc_data:short_data_reference": "Seland, \u00d8yvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319",
+            "tippecc_data:bias_correction": "no",
+            "tippecc_data:indicator": "yes"
+        },
+        "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr__mm_1850_2100__yearsum": {
+            "tippecc_data:CDI": "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)",
+            "tippecc_data:history": "2019-08-15T15:44:08Z altered by CMOR: Converted type from 'd' to 'f'.",
+            "tippecc_data:source": "NorESM2-LM (2017): \naerosol: OsloAero\natmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)\natmosChem: OsloChemSimp\nland: CLM\nlandIce: CISM\nocean: MICOM (1 degree resolution; 360 x 384; 70 levels; top grid cell minimum 0-2.5 m [native model uses hybrid density and generic upper-layer coordinate interpolated to z-level for contributed data])\nocnBgchem: HAMOCC\nseaIce: CICE",
+            "tippecc_data:institution": "NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway",
+            "tippecc_data:Conventions": "CF-1.7 CMIP-6.2",
+            "tippecc_data:activity_id": "CMIP",
+            "tippecc_data:branch_method": "Hybrid-restart from year 1600-01-01 of piControl",
+            "tippecc_data:branch_time": {
+                "$": 0.0,
+                "type": "xsd:double"
+            },
+            "tippecc_data:branch_time_in_child": {
+                "$": 0.0,
+                "type": "xsd:double"
+            },
+            "tippecc_data:branch_time_in_parent": {
+                "$": 430335.0,
+                "type": "xsd:double"
+            },
+            "tippecc_data:contact": "Please send any requests or bug reports to noresm-ncc@met.no.",
+            "tippecc_data:creation_date": "2019-08-15T15:44:08Z",
+            "tippecc_data:data_specs_version": "01.00.31",
+            "tippecc_data:experiment": "all-forcing simulation of the recent past",
+            "tippecc_data:experiment_id": "historical+ssp585",
+            "tippecc_data:external_variables": "areacella",
+            "tippecc_data:frequency": "year",
+            "tippecc_data:further_info_url": "https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r1i1p1f1",
+            "tippecc_data:grid": "finite-volume grid with 1.9x2.5 degree lat/lon resolution",
+            "tippecc_data:grid_label": "gn",
+            "tippecc_data:institution_id": "NCC",
+            "tippecc_data:mip_era": "CMIP6",
+            "tippecc_data:model_id": "NorESM2-LM",
+            "tippecc_data:nominal_resolution": "50 km",
+            "tippecc_data:parent_activity_id": "CMIP",
+            "tippecc_data:parent_experiment_id": "piControl",
+            "tippecc_data:parent_mip_era": "CMIP6",
+            "tippecc_data:parent_source_id": "NorESM2-LM",
+            "tippecc_data:parent_sub_experiment_id": "none",
+            "tippecc_data:parent_time_units": "days since 0421-01-01",
+            "tippecc_data:parent_variant_label": "r1i1p1f1",
+            "tippecc_data:product": "model-output",
+            "tippecc_data:realm": "atmos",
+            "tippecc_data:run_variant": "N/A",
+            "tippecc_data:source_id": "NorESM2-LM",
+            "tippecc_data:source_type": "AOGCM",
+            "tippecc_data:sub_experiment": "none",
+            "tippecc_data:sub_experiment_id": "none",
+            "tippecc_data:table_id": "day",
+            "tippecc_data:table_info": "Creation Date:(24 July 2019) MD5:08e314340b9dd440c36c1b8e484514f4",
+            "tippecc_data:title": "NorESM2-LM output prepared for CMIP6",
+            "tippecc_data:variable_id": "pr",
+            "tippecc_data:variant_label": "r1i1p1f1",
+            "tippecc_data:license": "CC BY 4.0",
+            "tippecc_data:cmor_version": "3.5.0",
+            "tippecc_data:tracking_id": "hdl:21.14100/8d533054-8032-4114-bacf-07af729a9880",
+            "tippecc_data:CDO": "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)",
+            "tippecc_data:standard_name": "precipitation_amount",
+            "tippecc_data:long_name": "Precipitation",
+            "tippecc_data:units": "mm",
+            "tippecc_data:comment": "includes both liquid and solid phases",
+            "tippecc_data:original_name": "PRECT",
+            "tippecc_data:cell_methods": "area: time: mean",
+            "tippecc_data:cell_measures": "area: areacella",
+            "tippecc_data:file_size": {
+                "$": 10533601,
+                "type": "xsd:int"
+            },
+            "tippecc_data:last_modification_time": "2025-01-24 21:22:12 CET+0100",
+            "tippecc_data:birth_time": "2025-01-24 21:22:12 CET+0100",
+            "tippecc_data:file_format": "netCDF",
+            "tippecc_data:geospatial_lat_min": "-35.75",
+            "tippecc_data:geospatial_lat_max": "-5.25",
+            "tippecc_data:geospatial_lon_min": "10.25",
+            "tippecc_data:geospatial_lon_max": "51.75",
+            "tippecc_data:time_coverage_start": "1850-01-01 00:00:00",
+            "tippecc_data:time_coverage_end": "2100-01-01 00:00:00",
+            "tippecc_data:num_time_steps": {
+                "$": 251,
+                "type": "xsd:int"
+            },
+            "tippecc_data:num_years": {
+                "$": 251,
+                "type": "xsd:int"
+            },
+            "tippecc_data:time_units": "days since 0001-01-01",
+            "tippecc_data:time_calendar": "365_day",
+            "tippecc_data:short_variable_name": "pr",
+            "tippecc_data:global_min": "4.61250387954705",
+            "tippecc_data:global_max": "2500.8477177952955",
+            "tippecc_data:unit": "mm",
+            "tippecc_data:global_model": "NorESM2-LM",
+            "tippecc_data:variant": "r1i1p1f1",
+            "tippecc_data:doi": "https://doi.org/10.22033/ESGF/CMIP6.8319",
+            "tippecc_data:short_data_reference": "Seland, \u00d8yvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319",
+            "tippecc_data:bias_correction": "no",
+            "tippecc_data:indicator": "yes"
+        }
+    },
+    "agent": {
+        "people:PERSON__JONATHAN_PADAVATAN": {
+            "prov:type": "prov:Person",
+            "prov:label": "Jonathan Padavatan",
+            "foaf:givenName": "Jonathan",
+            "foaf:familyName": "Padavatan",
+            "sdo:affiliation": {
+                "$": "orgs:ORG__WITS",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        },
+        "orgs:ORG__WITS": {
+            "prov:type": "prov:Organization",
+            "prov:label": "University of the Witwatersrand",
+            "sdo:name": "University of the Witwatersrand",
+            "wd:P6782": "https://ror.org/03rp50x72"
+        },
+        "software:SOFTWARE__CDO_1_9_3": {
+            "sdo:type": "sdo:SoftwareApplication",
+            "sdo:softwareVersion": "1.9.3",
+            "sdo:targetProduct": {
+                "$": "software:SOFTWARE__CDO",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        },
+        "people:PERSON__ZANDER_FRANZISKA": {
+            "prov:type": "prov:Person",
+            "prov:label": "Franziska Zander",
+            "foaf:givenName": "Franziska",
+            "foaf:familyName": "Zander",
+            "wd:P496": "0000-0001-6892-7046",
+            "sdo:affiliation": {
+                "$": "orgs:ORG__FSU",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        },
+        "orgs:ORG__FSU": {
+            "prov:type": "prov:Organization",
+            "prov:label": "Friedrich Schiller University of Jena",
+            "sdo:name": "Friedrich Schiller University of Jena",
+            "wd:P6782": "https://ror.org/05qpz1x62"
+        }
+    },
+    "activity": {
+        "exe:Remap_bilinear_42": {
+            "prov:startTime": "2024-12-19T10:13:07",
+            "prov:label": "Remap bilinear",
+            "prov:description": "Remap the dataset to the TIPPECC area.",
+            "prov:function": "FUNCTION__CDO_REMAPBIL",
+            "prov:params": "N/A"
+        },
+        "exe:Merge_datasets_462": {
+            "prov:startTime": "2024-12-19T10:11:59",
+            "prov:label": "Merge datasets",
+            "prov:description": "Merge the datasets into one file by time.",
+            "prov:function": "FUNCTION__CDO_MERGE",
+            "prov:params": "N/A"
+        },
+        "exe:Merge_datasets_2528": {
+            "prov:startTime": "2025-01-17T18:21:46",
+            "prov:label": "Merge datasets",
+            "prov:description": "Merge the datasets into one file by time.",
+            "prov:function": "FUNCTION__CDO_MERGE",
+            "prov:params": "N/A"
+        }
+    },
+    "wasAssociatedWith": {
+        "_:id380": {
+            "prov:activity": "exe:Remap_bilinear_42",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        },
+        "_:id6523": {
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        },
+        "_:id31783": {
+            "prov:activity": "exe:Merge_datasets_2528",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id381": {
+            "prov:entity": "tippecc_data:05deg_pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:activity": "exe:Remap_bilinear_42",
+            "prov:time": "2024-12-19T10:13:07"
+        },
+        "_:id6524": {
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:time": "2024-12-19T10:11:59"
+        },
+        "_:id31784": {
+            "prov:entity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr_1850_2100",
+            "prov:activity": "exe:Merge_datasets_2528",
+            "prov:time": "2025-01-17T18:21:46"
+        }
+    },
+    "wasDerivedFrom": {
+        "_:id31819": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000",
+            "prov:usedEntity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr__mm_1850_2100__yearsum"
+        },
+        "_:id31839": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr__mm_1850_2100__yearsum",
+            "prov:usedEntity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr__mm_1850_2100"
+        },
+        "_:id31803": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr__mm_1850_2100",
+            "prov:usedEntity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr_1850_2100"
+        },
+        "_:id31785": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr_1850_2100",
+            "prov:usedEntity": "tippecc_data:05deg_pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id31787": {
+            "prov:generatedEntity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr_1850_2100",
+            "prov:usedEntity": "tippecc_data:05deg_pr_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100"
+        },
+        "_:id382": {
+            "prov:generatedEntity": "tippecc_data:05deg_pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:africa05.txt"
+        },
+        "_:id384": {
+            "prov:generatedEntity": "tippecc_data:05deg_pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id6525": {
+            "prov:generatedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_18500101-18591231"
+        },
+        "_:id6527": {
+            "prov:generatedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_18600101-18691231"
+        },
+        "_:id6529": {
+            "prov:generatedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_18700101-18791231"
+        },
+        "_:id6531": {
+            "prov:generatedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_18800101-18891231"
+        },
+        "_:id6533": {
+            "prov:generatedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_18900101-18991231"
+        },
+        "_:id6535": {
+            "prov:generatedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19000101-19091231"
+        },
+        "_:id6537": {
+            "prov:generatedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19100101-19191231"
+        },
+        "_:id6539": {
+            "prov:generatedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19200101-19291231"
+        },
+        "_:id6541": {
+            "prov:generatedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19300101-19391231"
+        },
+        "_:id6543": {
+            "prov:generatedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19400101-19491231"
+        },
+        "_:id6545": {
+            "prov:generatedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19500101-19591231"
+        },
+        "_:id6547": {
+            "prov:generatedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19600101-19691231"
+        },
+        "_:id6549": {
+            "prov:generatedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19700101-19791231"
+        },
+        "_:id6551": {
+            "prov:generatedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19800101-19891231"
+        },
+        "_:id6553": {
+            "prov:generatedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19900101-19991231"
+        },
+        "_:id6555": {
+            "prov:generatedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_20000101-20091231"
+        },
+        "_:id6557": {
+            "prov:generatedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231"
+        }
+    },
+    "used": {
+        "_:id383": {
+            "prov:activity": "exe:Remap_bilinear_42",
+            "prov:entity": "tippecc_data:africa05.txt"
+        },
+        "_:id385": {
+            "prov:activity": "exe:Remap_bilinear_42",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id6526": {
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_18500101-18591231"
+        },
+        "_:id6528": {
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_18600101-18691231"
+        },
+        "_:id6530": {
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_18700101-18791231"
+        },
+        "_:id6532": {
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_18800101-18891231"
+        },
+        "_:id6534": {
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_18900101-18991231"
+        },
+        "_:id6536": {
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19000101-19091231"
+        },
+        "_:id6538": {
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19100101-19191231"
+        },
+        "_:id6540": {
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19200101-19291231"
+        },
+        "_:id6542": {
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19300101-19391231"
+        },
+        "_:id6544": {
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19400101-19491231"
+        },
+        "_:id6546": {
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19500101-19591231"
+        },
+        "_:id6548": {
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19600101-19691231"
+        },
+        "_:id6550": {
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19700101-19791231"
+        },
+        "_:id6552": {
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19800101-19891231"
+        },
+        "_:id6554": {
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_19900101-19991231"
+        },
+        "_:id6556": {
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_20000101-20091231"
+        },
+        "_:id6558": {
+            "prov:activity": "exe:Merge_datasets_462",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231"
+        },
+        "_:id31786": {
+            "prov:activity": "exe:Merge_datasets_2528",
+            "prov:entity": "tippecc_data:05deg_pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id31788": {
+            "prov:activity": "exe:Merge_datasets_2528",
+            "prov:entity": "tippecc_data:05deg_pr_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100"
+        }
+    },
+    "hadMember": {
+        "_:id386": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:05deg_pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id387": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:05deg_pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id6559": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id6560": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id31798": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr_1850_2100"
+        },
+        "_:id31799": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr_1850_2100"
+        },
+        "_:id31805": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr__mm_1850_2100"
+        },
+        "_:id31806": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr__mm_1850_2100"
+        },
+        "_:id31824": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000"
+        },
+        "_:id31825": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000"
+        },
+        "_:id31841": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr__mm_1850_2100__yearsum"
+        },
+        "_:id31842": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr__mm_1850_2100__yearsum"
+        }
+    },
+    "actedOnBehalfOf": {
+        "_:id9": {
+            "prov:delegate": "people:PERSON__JONATHAN_PADAVATAN",
+            "prov:responsible": "orgs:ORG__WITS"
+        },
+        "_:id2081": {
+            "prov:delegate": "people:PERSON__ZANDER_FRANZISKA",
+            "prov:responsible": "orgs:ORG__FSU"
+        }
+    },
+    "wasAttributedTo": {
+        "_:id388": {
+            "prov:entity": "tippecc_data:05deg_pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        },
+        "_:id6561": {
+            "prov:entity": "tippecc_data:pr_day_NorESM2-LM_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        },
+        "_:id31800": {
+            "prov:entity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr_1850_2100",
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
+        },
+        "_:id31807": {
+            "prov:entity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr__mm_1850_2100",
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
+        },
+        "_:id31826": {
+            "prov:entity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000",
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
+        },
+        "_:id31843": {
+            "prov:entity": "tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_pr__mm_1850_2100__yearsum",
+            "prov:agent": "people:PERSON__ZANDER_FRANZISKA"
+        }
+    },
+    "wasInformedBy": {
+        "_:id34087": {
+            "prov:informed": "exe:Remap_bilinear_42",
+            "prov:informant": "exe:Merge_datasets_462"
+        },
+        "_:id35595": {
+            "prov:informed": "exe:Merge_datasets_2528",
+            "prov:informant": "exe:Remap_bilinear_42"
+        }
+    }
+}

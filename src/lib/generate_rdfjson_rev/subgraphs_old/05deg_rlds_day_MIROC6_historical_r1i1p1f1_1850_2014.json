@@ -1,0 +1,285 @@
+{
+    "prefix": {
+        "tippecc": "http://www.provbook.org/tippecc/",
+        "people": "http://www.provbook.org/tippecc/people/",
+        "orgs": "http://www.provbook.org/tippecc/orgs/",
+        "software": "http://www.provbook.org/tippecc/software/",
+        "tippecc_data": "http://www.provbook.org/tippecc/data/",
+        "esgf_portal": "http://www.provbook.org/tippecc/esgf_portal/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "datacite": "https://datacite-metadata-schema.readthedocs.io/en/4.6/",
+        "wd": "http://www.wikidata.org/entity/",
+        "sdo": "http://schema.org/",
+        "cf": "https://cfconventions.org/cf-conventions/cf-conventions.html",
+        "nerc": "http://vocab.nerc.ac.uk/collection/P07/current/",
+        "orcid": "http://www.orcid.org/",
+        "ror": "https://ror.org/",
+        "exe": "http://www.provbook.org/tippecc/exe/",
+        "foaf": "http://xmlns.com/foaf/0.1/"
+    },
+    "entity": {
+        "tippecc_data:05deg_rlds_day_MIROC6_historical_r1i1p1f1_1850_2014": {},
+        "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014": {}
+    },
+    "agent": {
+        "people:PERSON__JONATHAN_PADAVATAN": {
+            "prov:type": "prov:Person",
+            "prov:label": "Jonathan Padavatan",
+            "foaf:givenName": "Jonathan",
+            "foaf:familyName": "Padavatan",
+            "sdo:affiliation": {
+                "$": "orgs:ORG__WITS",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        },
+        "orgs:ORG__WITS": {
+            "prov:type": "prov:Organization",
+            "prov:label": "University of the Witwatersrand",
+            "sdo:name": "University of the Witwatersrand",
+            "wd:P6782": "https://ror.org/03rp50x72"
+        },
+        "software:SOFTWARE__CDO_1_9_3": {
+            "sdo:type": "sdo:SoftwareApplication",
+            "sdo:softwareVersion": "1.9.3",
+            "sdo:targetProduct": {
+                "$": "software:SOFTWARE__CDO",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        }
+    },
+    "activity": {
+        "exe:Remap_bilinear_61": {
+            "prov:startTime": "2024-12-19T11:12:18",
+            "prov:label": "Remap bilinear",
+            "prov:description": "Remap the dataset to the TIPPECC area.",
+            "prov:function": "FUNCTION__CDO_REMAPBIL",
+            "prov:params": "N/A"
+        },
+        "exe:Merge_datasets_481": {
+            "prov:startTime": "2024-12-19T11:09:57",
+            "prov:label": "Merge datasets",
+            "prov:description": "Merge the datasets into one file by time.",
+            "prov:function": "FUNCTION__CDO_MERGE",
+            "prov:params": "N/A"
+        }
+    },
+    "wasAssociatedWith": {
+        "_:id551": {
+            "prov:activity": "exe:Remap_bilinear_61",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        },
+        "_:id8182": {
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id552": {
+            "prov:entity": "tippecc_data:05deg_rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:activity": "exe:Remap_bilinear_61",
+            "prov:time": "2024-12-19T11:12:18"
+        },
+        "_:id8183": {
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:time": "2024-12-19T11:09:57"
+        }
+    },
+    "wasDerivedFrom": {
+        "_:id553": {
+            "prov:generatedEntity": "tippecc_data:05deg_rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:africa05.txt"
+        },
+        "_:id555": {
+            "prov:generatedEntity": "tippecc_data:05deg_rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id8184": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231"
+        },
+        "_:id8186": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231"
+        },
+        "_:id8188": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231"
+        },
+        "_:id8190": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231"
+        },
+        "_:id8192": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231"
+        },
+        "_:id8194": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231"
+        },
+        "_:id8196": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231"
+        },
+        "_:id8198": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231"
+        },
+        "_:id8200": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231"
+        },
+        "_:id8202": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231"
+        },
+        "_:id8204": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231"
+        },
+        "_:id8206": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231"
+        },
+        "_:id8208": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231"
+        },
+        "_:id8210": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231"
+        },
+        "_:id8212": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231"
+        },
+        "_:id8214": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231"
+        },
+        "_:id8216": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231"
+        }
+    },
+    "used": {
+        "_:id554": {
+            "prov:activity": "exe:Remap_bilinear_61",
+            "prov:entity": "tippecc_data:africa05.txt"
+        },
+        "_:id556": {
+            "prov:activity": "exe:Remap_bilinear_61",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id8185": {
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231"
+        },
+        "_:id8187": {
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231"
+        },
+        "_:id8189": {
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231"
+        },
+        "_:id8191": {
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231"
+        },
+        "_:id8193": {
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231"
+        },
+        "_:id8195": {
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231"
+        },
+        "_:id8197": {
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231"
+        },
+        "_:id8199": {
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231"
+        },
+        "_:id8201": {
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231"
+        },
+        "_:id8203": {
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231"
+        },
+        "_:id8205": {
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231"
+        },
+        "_:id8207": {
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231"
+        },
+        "_:id8209": {
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231"
+        },
+        "_:id8211": {
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231"
+        },
+        "_:id8213": {
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231"
+        },
+        "_:id8215": {
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231"
+        },
+        "_:id8217": {
+            "prov:activity": "exe:Merge_datasets_481",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231"
+        }
+    },
+    "hadMember": {
+        "_:id557": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:05deg_rlds_day_MIROC6_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id558": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:05deg_rlds_day_MIROC6_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id8218": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id8219": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014"
+        }
+    },
+    "actedOnBehalfOf": {
+        "_:id9": {
+            "prov:delegate": "people:PERSON__JONATHAN_PADAVATAN",
+            "prov:responsible": "orgs:ORG__WITS"
+        }
+    },
+    "wasAttributedTo": {
+        "_:id559": {
+            "prov:entity": "tippecc_data:05deg_rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        },
+        "_:id8220": {
+            "prov:entity": "tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        }
+    },
+    "wasInformedBy": {
+        "_:id34106": {
+            "prov:informed": "exe:Remap_bilinear_61",
+            "prov:informant": "exe:Merge_datasets_481"
+        }
+    }
+}

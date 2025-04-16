@@ -1,0 +1,285 @@
+{
+    "prefix": {
+        "tippecc": "http://www.provbook.org/tippecc/",
+        "people": "http://www.provbook.org/tippecc/people/",
+        "orgs": "http://www.provbook.org/tippecc/orgs/",
+        "software": "http://www.provbook.org/tippecc/software/",
+        "tippecc_data": "http://www.provbook.org/tippecc/data/",
+        "esgf_portal": "http://www.provbook.org/tippecc/esgf_portal/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "datacite": "https://datacite-metadata-schema.readthedocs.io/en/4.6/",
+        "wd": "http://www.wikidata.org/entity/",
+        "sdo": "http://schema.org/",
+        "cf": "https://cfconventions.org/cf-conventions/cf-conventions.html",
+        "nerc": "http://vocab.nerc.ac.uk/collection/P07/current/",
+        "orcid": "http://www.orcid.org/",
+        "ror": "https://ror.org/",
+        "exe": "http://www.provbook.org/tippecc/exe/",
+        "foaf": "http://xmlns.com/foaf/0.1/"
+    },
+    "entity": {
+        "tippecc_data:05deg_hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014": {},
+        "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014": {}
+    },
+    "agent": {
+        "people:PERSON__JONATHAN_PADAVATAN": {
+            "prov:type": "prov:Person",
+            "prov:label": "Jonathan Padavatan",
+            "foaf:givenName": "Jonathan",
+            "foaf:familyName": "Padavatan",
+            "sdo:affiliation": {
+                "$": "orgs:ORG__WITS",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        },
+        "orgs:ORG__WITS": {
+            "prov:type": "prov:Organization",
+            "prov:label": "University of the Witwatersrand",
+            "sdo:name": "University of the Witwatersrand",
+            "wd:P6782": "https://ror.org/03rp50x72"
+        },
+        "software:SOFTWARE__CDO_1_9_3": {
+            "sdo:type": "sdo:SoftwareApplication",
+            "sdo:softwareVersion": "1.9.3",
+            "sdo:targetProduct": {
+                "$": "software:SOFTWARE__CDO",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        }
+    },
+    "activity": {
+        "exe:Remap_bilinear_20": {
+            "prov:startTime": "2024-12-19T09:03:46",
+            "prov:label": "Remap bilinear",
+            "prov:description": "Remap the dataset to the TIPPECC area.",
+            "prov:function": "FUNCTION__CDO_REMAPBIL",
+            "prov:params": "N/A"
+        },
+        "exe:Merge_datasets_392": {
+            "prov:startTime": "2024-12-19T08:59:20",
+            "prov:label": "Merge datasets",
+            "prov:description": "Merge the datasets into one file by time.",
+            "prov:function": "FUNCTION__CDO_MERGE",
+            "prov:params": "N/A"
+        }
+    },
+    "wasAssociatedWith": {
+        "_:id182": {
+            "prov:activity": "exe:Remap_bilinear_20",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        },
+        "_:id4509": {
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id183": {
+            "prov:entity": "tippecc_data:05deg_hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:activity": "exe:Remap_bilinear_20",
+            "prov:time": "2024-12-19T09:03:46"
+        },
+        "_:id4510": {
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:time": "2024-12-19T08:59:20"
+        }
+    },
+    "wasDerivedFrom": {
+        "_:id184": {
+            "prov:generatedEntity": "tippecc_data:05deg_hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:africa05.txt"
+        },
+        "_:id186": {
+            "prov:generatedEntity": "tippecc_data:05deg_hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id4511": {
+            "prov:generatedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_18500101-18591231"
+        },
+        "_:id4513": {
+            "prov:generatedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_18600101-18691231"
+        },
+        "_:id4515": {
+            "prov:generatedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_18700101-18791231"
+        },
+        "_:id4517": {
+            "prov:generatedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_18800101-18891231"
+        },
+        "_:id4519": {
+            "prov:generatedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_18900101-18991231"
+        },
+        "_:id4521": {
+            "prov:generatedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19000101-19091231"
+        },
+        "_:id4523": {
+            "prov:generatedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19100101-19191231"
+        },
+        "_:id4525": {
+            "prov:generatedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19200101-19291231"
+        },
+        "_:id4527": {
+            "prov:generatedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19300101-19391231"
+        },
+        "_:id4529": {
+            "prov:generatedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19400101-19491231"
+        },
+        "_:id4531": {
+            "prov:generatedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19500101-19591231"
+        },
+        "_:id4533": {
+            "prov:generatedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19600101-19691231"
+        },
+        "_:id4535": {
+            "prov:generatedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19700101-19791231"
+        },
+        "_:id4537": {
+            "prov:generatedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19800101-19891231"
+        },
+        "_:id4539": {
+            "prov:generatedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19900101-19991231"
+        },
+        "_:id4541": {
+            "prov:generatedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_20000101-20091231"
+        },
+        "_:id4543": {
+            "prov:generatedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_20100101-20141231"
+        }
+    },
+    "used": {
+        "_:id185": {
+            "prov:activity": "exe:Remap_bilinear_20",
+            "prov:entity": "tippecc_data:africa05.txt"
+        },
+        "_:id187": {
+            "prov:activity": "exe:Remap_bilinear_20",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id4512": {
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_18500101-18591231"
+        },
+        "_:id4514": {
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_18600101-18691231"
+        },
+        "_:id4516": {
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_18700101-18791231"
+        },
+        "_:id4518": {
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_18800101-18891231"
+        },
+        "_:id4520": {
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_18900101-18991231"
+        },
+        "_:id4522": {
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19000101-19091231"
+        },
+        "_:id4524": {
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19100101-19191231"
+        },
+        "_:id4526": {
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19200101-19291231"
+        },
+        "_:id4528": {
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19300101-19391231"
+        },
+        "_:id4530": {
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19400101-19491231"
+        },
+        "_:id4532": {
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19500101-19591231"
+        },
+        "_:id4534": {
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19600101-19691231"
+        },
+        "_:id4536": {
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19700101-19791231"
+        },
+        "_:id4538": {
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19800101-19891231"
+        },
+        "_:id4540": {
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_19900101-19991231"
+        },
+        "_:id4542": {
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_20000101-20091231"
+        },
+        "_:id4544": {
+            "prov:activity": "exe:Merge_datasets_392",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_gn_20100101-20141231"
+        }
+    },
+    "hadMember": {
+        "_:id188": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:05deg_hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id189": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:05deg_hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id4545": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id4546": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014"
+        }
+    },
+    "actedOnBehalfOf": {
+        "_:id9": {
+            "prov:delegate": "people:PERSON__JONATHAN_PADAVATAN",
+            "prov:responsible": "orgs:ORG__WITS"
+        }
+    },
+    "wasAttributedTo": {
+        "_:id190": {
+            "prov:entity": "tippecc_data:05deg_hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        },
+        "_:id4547": {
+            "prov:entity": "tippecc_data:hurs_day_NorESM2-MM_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        }
+    },
+    "wasInformedBy": {
+        "_:id34065": {
+            "prov:informed": "exe:Remap_bilinear_20",
+            "prov:informant": "exe:Merge_datasets_392"
+        }
+    }
+}

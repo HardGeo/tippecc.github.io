@@ -1,0 +1,221 @@
+{
+    "prefix": {
+        "tippecc": "http://www.provbook.org/tippecc/",
+        "people": "http://www.provbook.org/tippecc/people/",
+        "orgs": "http://www.provbook.org/tippecc/orgs/",
+        "software": "http://www.provbook.org/tippecc/software/",
+        "tippecc_data": "http://www.provbook.org/tippecc/data/",
+        "esgf_portal": "http://www.provbook.org/tippecc/esgf_portal/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "datacite": "https://datacite-metadata-schema.readthedocs.io/en/4.6/",
+        "wd": "http://www.wikidata.org/entity/",
+        "sdo": "http://schema.org/",
+        "cf": "https://cfconventions.org/cf-conventions/cf-conventions.html",
+        "nerc": "http://vocab.nerc.ac.uk/collection/P07/current/",
+        "orcid": "http://www.orcid.org/",
+        "ror": "https://ror.org/",
+        "exe": "http://www.provbook.org/tippecc/exe/",
+        "foaf": "http://xmlns.com/foaf/0.1/"
+    },
+    "entity": {
+        "tippecc_data:05deg_sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014": {},
+        "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014": {}
+    },
+    "agent": {
+        "people:PERSON__JONATHAN_PADAVATAN": {
+            "prov:type": "prov:Person",
+            "prov:label": "Jonathan Padavatan",
+            "foaf:givenName": "Jonathan",
+            "foaf:familyName": "Padavatan",
+            "sdo:affiliation": {
+                "$": "orgs:ORG__WITS",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        },
+        "orgs:ORG__WITS": {
+            "prov:type": "prov:Organization",
+            "prov:label": "University of the Witwatersrand",
+            "sdo:name": "University of the Witwatersrand",
+            "wd:P6782": "https://ror.org/03rp50x72"
+        },
+        "software:SOFTWARE__CDO_1_9_3": {
+            "sdo:type": "sdo:SoftwareApplication",
+            "sdo:softwareVersion": "1.9.3",
+            "sdo:targetProduct": {
+                "$": "software:SOFTWARE__CDO",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        }
+    },
+    "activity": {
+        "exe:Remap_bilinear_145": {
+            "prov:startTime": "2025-01-17T12:33:17",
+            "prov:label": "Remap bilinear",
+            "prov:description": "Remap the dataset to the TIPPECC area.",
+            "prov:function": "FUNCTION__CDO_REMAPBIL",
+            "prov:params": "N/A"
+        },
+        "exe:Merge_datasets_565": {
+            "prov:startTime": "2025-01-17T12:28:25",
+            "prov:label": "Merge datasets",
+            "prov:description": "Merge the datasets into one file by time.",
+            "prov:function": "FUNCTION__CDO_MERGE",
+            "prov:params": "N/A"
+        }
+    },
+    "wasAssociatedWith": {
+        "_:id1307": {
+            "prov:activity": "exe:Remap_bilinear_145",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        },
+        "_:id14614": {
+            "prov:activity": "exe:Merge_datasets_565",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id1308": {
+            "prov:entity": "tippecc_data:05deg_sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:activity": "exe:Remap_bilinear_145",
+            "prov:time": "2025-01-17T12:33:17"
+        },
+        "_:id14615": {
+            "prov:entity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:activity": "exe:Merge_datasets_565",
+            "prov:time": "2025-01-17T12:28:25"
+        }
+    },
+    "wasDerivedFrom": {
+        "_:id1309": {
+            "prov:generatedEntity": "tippecc_data:05deg_sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:africa05.txt"
+        },
+        "_:id1311": {
+            "prov:generatedEntity": "tippecc_data:05deg_sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id14616": {
+            "prov:generatedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_gr1_18500101-18691231"
+        },
+        "_:id14618": {
+            "prov:generatedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_gr1_18700101-18891231"
+        },
+        "_:id14620": {
+            "prov:generatedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_gr1_18900101-19091231"
+        },
+        "_:id14622": {
+            "prov:generatedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_gr1_19100101-19291231"
+        },
+        "_:id14624": {
+            "prov:generatedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_gr1_19300101-19491231"
+        },
+        "_:id14626": {
+            "prov:generatedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_gr1_19500101-19691231"
+        },
+        "_:id14628": {
+            "prov:generatedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_gr1_19700101-19891231"
+        },
+        "_:id14630": {
+            "prov:generatedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_gr1_19900101-20091231"
+        },
+        "_:id14632": {
+            "prov:generatedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_gr1_20100101-20141231"
+        }
+    },
+    "used": {
+        "_:id1310": {
+            "prov:activity": "exe:Remap_bilinear_145",
+            "prov:entity": "tippecc_data:africa05.txt"
+        },
+        "_:id1312": {
+            "prov:activity": "exe:Remap_bilinear_145",
+            "prov:entity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id14617": {
+            "prov:activity": "exe:Merge_datasets_565",
+            "prov:entity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_gr1_18500101-18691231"
+        },
+        "_:id14619": {
+            "prov:activity": "exe:Merge_datasets_565",
+            "prov:entity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_gr1_18700101-18891231"
+        },
+        "_:id14621": {
+            "prov:activity": "exe:Merge_datasets_565",
+            "prov:entity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_gr1_18900101-19091231"
+        },
+        "_:id14623": {
+            "prov:activity": "exe:Merge_datasets_565",
+            "prov:entity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_gr1_19100101-19291231"
+        },
+        "_:id14625": {
+            "prov:activity": "exe:Merge_datasets_565",
+            "prov:entity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_gr1_19300101-19491231"
+        },
+        "_:id14627": {
+            "prov:activity": "exe:Merge_datasets_565",
+            "prov:entity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_gr1_19500101-19691231"
+        },
+        "_:id14629": {
+            "prov:activity": "exe:Merge_datasets_565",
+            "prov:entity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_gr1_19700101-19891231"
+        },
+        "_:id14631": {
+            "prov:activity": "exe:Merge_datasets_565",
+            "prov:entity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_gr1_19900101-20091231"
+        },
+        "_:id14633": {
+            "prov:activity": "exe:Merge_datasets_565",
+            "prov:entity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_gr1_20100101-20141231"
+        }
+    },
+    "hadMember": {
+        "_:id1313": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:05deg_sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id1314": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:05deg_sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id14634": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id14635": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014"
+        }
+    },
+    "actedOnBehalfOf": {
+        "_:id9": {
+            "prov:delegate": "people:PERSON__JONATHAN_PADAVATAN",
+            "prov:responsible": "orgs:ORG__WITS"
+        }
+    },
+    "wasAttributedTo": {
+        "_:id1315": {
+            "prov:entity": "tippecc_data:05deg_sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        },
+        "_:id14636": {
+            "prov:entity": "tippecc_data:sfcWind_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        }
+    },
+    "wasInformedBy": {
+        "_:id34190": {
+            "prov:informed": "exe:Remap_bilinear_145",
+            "prov:informant": "exe:Merge_datasets_565"
+        }
+    }
+}

@@ -1,0 +1,285 @@
+{
+    "prefix": {
+        "tippecc": "http://www.provbook.org/tippecc/",
+        "people": "http://www.provbook.org/tippecc/people/",
+        "orgs": "http://www.provbook.org/tippecc/orgs/",
+        "software": "http://www.provbook.org/tippecc/software/",
+        "tippecc_data": "http://www.provbook.org/tippecc/data/",
+        "esgf_portal": "http://www.provbook.org/tippecc/esgf_portal/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "datacite": "https://datacite-metadata-schema.readthedocs.io/en/4.6/",
+        "wd": "http://www.wikidata.org/entity/",
+        "sdo": "http://schema.org/",
+        "cf": "https://cfconventions.org/cf-conventions/cf-conventions.html",
+        "nerc": "http://vocab.nerc.ac.uk/collection/P07/current/",
+        "orcid": "http://www.orcid.org/",
+        "ror": "https://ror.org/",
+        "exe": "http://www.provbook.org/tippecc/exe/",
+        "foaf": "http://xmlns.com/foaf/0.1/"
+    },
+    "entity": {
+        "tippecc_data:05deg_tas_day_MIROC6_historical_r1i1p1f1_1850_2014": {},
+        "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014": {}
+    },
+    "agent": {
+        "people:PERSON__JONATHAN_PADAVATAN": {
+            "prov:type": "prov:Person",
+            "prov:label": "Jonathan Padavatan",
+            "foaf:givenName": "Jonathan",
+            "foaf:familyName": "Padavatan",
+            "sdo:affiliation": {
+                "$": "orgs:ORG__WITS",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        },
+        "orgs:ORG__WITS": {
+            "prov:type": "prov:Organization",
+            "prov:label": "University of the Witwatersrand",
+            "sdo:name": "University of the Witwatersrand",
+            "wd:P6782": "https://ror.org/03rp50x72"
+        },
+        "software:SOFTWARE__CDO_1_9_3": {
+            "sdo:type": "sdo:SoftwareApplication",
+            "sdo:softwareVersion": "1.9.3",
+            "sdo:targetProduct": {
+                "$": "software:SOFTWARE__CDO",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        }
+    },
+    "activity": {
+        "exe:Remap_bilinear_222": {
+            "prov:startTime": "2024-12-19T17:16:16",
+            "prov:label": "Remap bilinear",
+            "prov:description": "Remap the dataset to the TIPPECC area.",
+            "prov:function": "FUNCTION__CDO_REMAPBIL",
+            "prov:params": "N/A"
+        },
+        "exe:Merge_datasets_642": {
+            "prov:startTime": "2024-12-19T17:14:30",
+            "prov:label": "Merge datasets",
+            "prov:description": "Merge the datasets into one file by time.",
+            "prov:function": "FUNCTION__CDO_MERGE",
+            "prov:params": "N/A"
+        }
+    },
+    "wasAssociatedWith": {
+        "_:id2000": {
+            "prov:activity": "exe:Remap_bilinear_222",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        },
+        "_:id20849": {
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id2001": {
+            "prov:entity": "tippecc_data:05deg_tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:activity": "exe:Remap_bilinear_222",
+            "prov:time": "2024-12-19T17:16:16"
+        },
+        "_:id20850": {
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:time": "2024-12-19T17:14:30"
+        }
+    },
+    "wasDerivedFrom": {
+        "_:id2002": {
+            "prov:generatedEntity": "tippecc_data:05deg_tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:africa05.txt"
+        },
+        "_:id2004": {
+            "prov:generatedEntity": "tippecc_data:05deg_tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id20851": {
+            "prov:generatedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231"
+        },
+        "_:id20853": {
+            "prov:generatedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231"
+        },
+        "_:id20855": {
+            "prov:generatedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231"
+        },
+        "_:id20857": {
+            "prov:generatedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231"
+        },
+        "_:id20859": {
+            "prov:generatedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231"
+        },
+        "_:id20861": {
+            "prov:generatedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231"
+        },
+        "_:id20863": {
+            "prov:generatedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231"
+        },
+        "_:id20865": {
+            "prov:generatedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231"
+        },
+        "_:id20867": {
+            "prov:generatedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231"
+        },
+        "_:id20869": {
+            "prov:generatedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231"
+        },
+        "_:id20871": {
+            "prov:generatedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231"
+        },
+        "_:id20873": {
+            "prov:generatedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231"
+        },
+        "_:id20875": {
+            "prov:generatedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231"
+        },
+        "_:id20877": {
+            "prov:generatedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231"
+        },
+        "_:id20879": {
+            "prov:generatedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231"
+        },
+        "_:id20881": {
+            "prov:generatedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231"
+        },
+        "_:id20883": {
+            "prov:generatedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231"
+        }
+    },
+    "used": {
+        "_:id2003": {
+            "prov:activity": "exe:Remap_bilinear_222",
+            "prov:entity": "tippecc_data:africa05.txt"
+        },
+        "_:id2005": {
+            "prov:activity": "exe:Remap_bilinear_222",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id20852": {
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231"
+        },
+        "_:id20854": {
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231"
+        },
+        "_:id20856": {
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231"
+        },
+        "_:id20858": {
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231"
+        },
+        "_:id20860": {
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231"
+        },
+        "_:id20862": {
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231"
+        },
+        "_:id20864": {
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231"
+        },
+        "_:id20866": {
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231"
+        },
+        "_:id20868": {
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231"
+        },
+        "_:id20870": {
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231"
+        },
+        "_:id20872": {
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231"
+        },
+        "_:id20874": {
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231"
+        },
+        "_:id20876": {
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231"
+        },
+        "_:id20878": {
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231"
+        },
+        "_:id20880": {
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231"
+        },
+        "_:id20882": {
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231"
+        },
+        "_:id20884": {
+            "prov:activity": "exe:Merge_datasets_642",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231"
+        }
+    },
+    "hadMember": {
+        "_:id2006": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:05deg_tas_day_MIROC6_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id2007": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:05deg_tas_day_MIROC6_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id20885": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id20886": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014"
+        }
+    },
+    "actedOnBehalfOf": {
+        "_:id9": {
+            "prov:delegate": "people:PERSON__JONATHAN_PADAVATAN",
+            "prov:responsible": "orgs:ORG__WITS"
+        }
+    },
+    "wasAttributedTo": {
+        "_:id2008": {
+            "prov:entity": "tippecc_data:05deg_tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        },
+        "_:id20887": {
+            "prov:entity": "tippecc_data:tas_day_MIROC6_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        }
+    },
+    "wasInformedBy": {
+        "_:id34267": {
+            "prov:informed": "exe:Remap_bilinear_222",
+            "prov:informant": "exe:Merge_datasets_642"
+        }
+    }
+}

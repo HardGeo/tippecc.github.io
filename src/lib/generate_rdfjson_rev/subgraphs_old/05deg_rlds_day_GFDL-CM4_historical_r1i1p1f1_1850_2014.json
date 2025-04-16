@@ -1,0 +1,221 @@
+{
+    "prefix": {
+        "tippecc": "http://www.provbook.org/tippecc/",
+        "people": "http://www.provbook.org/tippecc/people/",
+        "orgs": "http://www.provbook.org/tippecc/orgs/",
+        "software": "http://www.provbook.org/tippecc/software/",
+        "tippecc_data": "http://www.provbook.org/tippecc/data/",
+        "esgf_portal": "http://www.provbook.org/tippecc/esgf_portal/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "datacite": "https://datacite-metadata-schema.readthedocs.io/en/4.6/",
+        "wd": "http://www.wikidata.org/entity/",
+        "sdo": "http://schema.org/",
+        "cf": "https://cfconventions.org/cf-conventions/cf-conventions.html",
+        "nerc": "http://vocab.nerc.ac.uk/collection/P07/current/",
+        "orcid": "http://www.orcid.org/",
+        "ror": "https://ror.org/",
+        "exe": "http://www.provbook.org/tippecc/exe/",
+        "foaf": "http://xmlns.com/foaf/0.1/"
+    },
+    "entity": {
+        "tippecc_data:05deg_rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014": {},
+        "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014": {}
+    },
+    "agent": {
+        "people:PERSON__JONATHAN_PADAVATAN": {
+            "prov:type": "prov:Person",
+            "prov:label": "Jonathan Padavatan",
+            "foaf:givenName": "Jonathan",
+            "foaf:familyName": "Padavatan",
+            "sdo:affiliation": {
+                "$": "orgs:ORG__WITS",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        },
+        "orgs:ORG__WITS": {
+            "prov:type": "prov:Organization",
+            "prov:label": "University of the Witwatersrand",
+            "sdo:name": "University of the Witwatersrand",
+            "wd:P6782": "https://ror.org/03rp50x72"
+        },
+        "software:SOFTWARE__CDO_1_9_3": {
+            "sdo:type": "sdo:SoftwareApplication",
+            "sdo:softwareVersion": "1.9.3",
+            "sdo:targetProduct": {
+                "$": "software:SOFTWARE__CDO",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        }
+    },
+    "activity": {
+        "exe:Remap_bilinear_53": {
+            "prov:startTime": "2025-01-17T12:05:30",
+            "prov:label": "Remap bilinear",
+            "prov:description": "Remap the dataset to the TIPPECC area.",
+            "prov:function": "FUNCTION__CDO_REMAPBIL",
+            "prov:params": "N/A"
+        },
+        "exe:Merge_datasets_473": {
+            "prov:startTime": "2025-01-17T12:01:08",
+            "prov:label": "Merge datasets",
+            "prov:description": "Merge the datasets into one file by time.",
+            "prov:function": "FUNCTION__CDO_MERGE",
+            "prov:params": "N/A"
+        }
+    },
+    "wasAssociatedWith": {
+        "_:id479": {
+            "prov:activity": "exe:Remap_bilinear_53",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        },
+        "_:id7386": {
+            "prov:activity": "exe:Merge_datasets_473",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id480": {
+            "prov:entity": "tippecc_data:05deg_rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:activity": "exe:Remap_bilinear_53",
+            "prov:time": "2025-01-17T12:05:30"
+        },
+        "_:id7387": {
+            "prov:entity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:activity": "exe:Merge_datasets_473",
+            "prov:time": "2025-01-17T12:01:08"
+        }
+    },
+    "wasDerivedFrom": {
+        "_:id481": {
+            "prov:generatedEntity": "tippecc_data:05deg_rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:africa05.txt"
+        },
+        "_:id483": {
+            "prov:generatedEntity": "tippecc_data:05deg_rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id7388": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_18500101-18691231"
+        },
+        "_:id7390": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_18700101-18891231"
+        },
+        "_:id7392": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_18900101-19091231"
+        },
+        "_:id7394": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_19100101-19291231"
+        },
+        "_:id7396": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_19300101-19491231"
+        },
+        "_:id7398": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_19500101-19691231"
+        },
+        "_:id7400": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_19700101-19891231"
+        },
+        "_:id7402": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_19900101-20091231"
+        },
+        "_:id7404": {
+            "prov:generatedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_20100101-20141231"
+        }
+    },
+    "used": {
+        "_:id482": {
+            "prov:activity": "exe:Remap_bilinear_53",
+            "prov:entity": "tippecc_data:africa05.txt"
+        },
+        "_:id484": {
+            "prov:activity": "exe:Remap_bilinear_53",
+            "prov:entity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id7389": {
+            "prov:activity": "exe:Merge_datasets_473",
+            "prov:entity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_18500101-18691231"
+        },
+        "_:id7391": {
+            "prov:activity": "exe:Merge_datasets_473",
+            "prov:entity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_18700101-18891231"
+        },
+        "_:id7393": {
+            "prov:activity": "exe:Merge_datasets_473",
+            "prov:entity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_18900101-19091231"
+        },
+        "_:id7395": {
+            "prov:activity": "exe:Merge_datasets_473",
+            "prov:entity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_19100101-19291231"
+        },
+        "_:id7397": {
+            "prov:activity": "exe:Merge_datasets_473",
+            "prov:entity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_19300101-19491231"
+        },
+        "_:id7399": {
+            "prov:activity": "exe:Merge_datasets_473",
+            "prov:entity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_19500101-19691231"
+        },
+        "_:id7401": {
+            "prov:activity": "exe:Merge_datasets_473",
+            "prov:entity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_19700101-19891231"
+        },
+        "_:id7403": {
+            "prov:activity": "exe:Merge_datasets_473",
+            "prov:entity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_19900101-20091231"
+        },
+        "_:id7405": {
+            "prov:activity": "exe:Merge_datasets_473",
+            "prov:entity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_20100101-20141231"
+        }
+    },
+    "hadMember": {
+        "_:id485": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:05deg_rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id486": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:05deg_rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id7406": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id7407": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014"
+        }
+    },
+    "actedOnBehalfOf": {
+        "_:id9": {
+            "prov:delegate": "people:PERSON__JONATHAN_PADAVATAN",
+            "prov:responsible": "orgs:ORG__WITS"
+        }
+    },
+    "wasAttributedTo": {
+        "_:id487": {
+            "prov:entity": "tippecc_data:05deg_rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        },
+        "_:id7408": {
+            "prov:entity": "tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        }
+    },
+    "wasInformedBy": {
+        "_:id34098": {
+            "prov:informed": "exe:Remap_bilinear_53",
+            "prov:informant": "exe:Merge_datasets_473"
+        }
+    }
+}

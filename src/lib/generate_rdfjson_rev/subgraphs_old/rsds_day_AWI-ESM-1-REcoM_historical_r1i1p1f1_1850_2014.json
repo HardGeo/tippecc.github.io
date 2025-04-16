@@ -1,0 +1,171 @@
+{
+    "prefix": {
+        "tippecc": "http://www.provbook.org/tippecc/",
+        "people": "http://www.provbook.org/tippecc/people/",
+        "orgs": "http://www.provbook.org/tippecc/orgs/",
+        "software": "http://www.provbook.org/tippecc/software/",
+        "tippecc_data": "http://www.provbook.org/tippecc/data/",
+        "esgf_portal": "http://www.provbook.org/tippecc/esgf_portal/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "datacite": "https://datacite-metadata-schema.readthedocs.io/en/4.6/",
+        "wd": "http://www.wikidata.org/entity/",
+        "sdo": "http://schema.org/",
+        "cf": "https://cfconventions.org/cf-conventions/cf-conventions.html",
+        "nerc": "http://vocab.nerc.ac.uk/collection/P07/current/",
+        "orcid": "http://www.orcid.org/",
+        "ror": "https://ror.org/",
+        "exe": "http://www.provbook.org/tippecc/exe/",
+        "foaf": "http://xmlns.com/foaf/0.1/"
+    },
+    "entity": {
+        "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014": {}
+    },
+    "agent": {
+        "people:PERSON__JONATHAN_PADAVATAN": {
+            "prov:type": "prov:Person",
+            "prov:label": "Jonathan Padavatan",
+            "foaf:givenName": "Jonathan",
+            "foaf:familyName": "Padavatan",
+            "sdo:affiliation": {
+                "$": "orgs:ORG__WITS",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        },
+        "orgs:ORG__WITS": {
+            "prov:type": "prov:Organization",
+            "prov:label": "University of the Witwatersrand",
+            "sdo:name": "University of the Witwatersrand",
+            "wd:P6782": "https://ror.org/03rp50x72"
+        },
+        "software:SOFTWARE__CDO_1_9_3": {
+            "sdo:type": "sdo:SoftwareApplication",
+            "sdo:softwareVersion": "1.9.3",
+            "sdo:targetProduct": {
+                "$": "software:SOFTWARE__CDO",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        }
+    },
+    "activity": {
+        "exe:Merge_datasets_514": {
+            "prov:startTime": "2024-12-20T17:48:53",
+            "prov:label": "Merge datasets",
+            "prov:description": "Merge the datasets into one file by time.",
+            "prov:function": "FUNCTION__CDO_MERGE",
+            "prov:params": "N/A"
+        }
+    },
+    "wasAssociatedWith": {
+        "_:id10277": {
+            "prov:activity": "exe:Merge_datasets_514",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id10278": {
+            "prov:entity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014",
+            "prov:activity": "exe:Merge_datasets_514",
+            "prov:time": "2024-12-20T17:48:53"
+        }
+    },
+    "wasDerivedFrom": {
+        "_:id10279": {
+            "prov:generatedEntity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_18500101-18691231"
+        },
+        "_:id10281": {
+            "prov:generatedEntity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_18700101-18891231"
+        },
+        "_:id10283": {
+            "prov:generatedEntity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_18900101-19091231"
+        },
+        "_:id10285": {
+            "prov:generatedEntity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19100101-19291231"
+        },
+        "_:id10287": {
+            "prov:generatedEntity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19300101-19491231"
+        },
+        "_:id10289": {
+            "prov:generatedEntity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19500101-19691231"
+        },
+        "_:id10291": {
+            "prov:generatedEntity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19700101-19891231"
+        },
+        "_:id10293": {
+            "prov:generatedEntity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19900101-20091231"
+        },
+        "_:id10295": {
+            "prov:generatedEntity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_20100101-20141231"
+        }
+    },
+    "used": {
+        "_:id10280": {
+            "prov:activity": "exe:Merge_datasets_514",
+            "prov:entity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_18500101-18691231"
+        },
+        "_:id10282": {
+            "prov:activity": "exe:Merge_datasets_514",
+            "prov:entity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_18700101-18891231"
+        },
+        "_:id10284": {
+            "prov:activity": "exe:Merge_datasets_514",
+            "prov:entity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_18900101-19091231"
+        },
+        "_:id10286": {
+            "prov:activity": "exe:Merge_datasets_514",
+            "prov:entity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19100101-19291231"
+        },
+        "_:id10288": {
+            "prov:activity": "exe:Merge_datasets_514",
+            "prov:entity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19300101-19491231"
+        },
+        "_:id10290": {
+            "prov:activity": "exe:Merge_datasets_514",
+            "prov:entity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19500101-19691231"
+        },
+        "_:id10292": {
+            "prov:activity": "exe:Merge_datasets_514",
+            "prov:entity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19700101-19891231"
+        },
+        "_:id10294": {
+            "prov:activity": "exe:Merge_datasets_514",
+            "prov:entity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19900101-20091231"
+        },
+        "_:id10296": {
+            "prov:activity": "exe:Merge_datasets_514",
+            "prov:entity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_20100101-20141231"
+        }
+    },
+    "hadMember": {
+        "_:id10297": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id10298": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014"
+        }
+    },
+    "actedOnBehalfOf": {
+        "_:id9": {
+            "prov:delegate": "people:PERSON__JONATHAN_PADAVATAN",
+            "prov:responsible": "orgs:ORG__WITS"
+        }
+    },
+    "wasAttributedTo": {
+        "_:id10299": {
+            "prov:entity": "tippecc_data:rsds_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        }
+    },
+    "wasInformedBy": {}
+}

@@ -1,0 +1,221 @@
+{
+    "prefix": {
+        "tippecc": "http://www.provbook.org/tippecc/",
+        "people": "http://www.provbook.org/tippecc/people/",
+        "orgs": "http://www.provbook.org/tippecc/orgs/",
+        "software": "http://www.provbook.org/tippecc/software/",
+        "tippecc_data": "http://www.provbook.org/tippecc/data/",
+        "esgf_portal": "http://www.provbook.org/tippecc/esgf_portal/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "datacite": "https://datacite-metadata-schema.readthedocs.io/en/4.6/",
+        "wd": "http://www.wikidata.org/entity/",
+        "sdo": "http://schema.org/",
+        "cf": "https://cfconventions.org/cf-conventions/cf-conventions.html",
+        "nerc": "http://vocab.nerc.ac.uk/collection/P07/current/",
+        "orcid": "http://www.orcid.org/",
+        "ror": "https://ror.org/",
+        "exe": "http://www.provbook.org/tippecc/exe/",
+        "foaf": "http://xmlns.com/foaf/0.1/"
+    },
+    "entity": {
+        "tippecc_data:05deg_tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014": {},
+        "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014": {}
+    },
+    "agent": {
+        "people:PERSON__JONATHAN_PADAVATAN": {
+            "prov:type": "prov:Person",
+            "prov:label": "Jonathan Padavatan",
+            "foaf:givenName": "Jonathan",
+            "foaf:familyName": "Padavatan",
+            "sdo:affiliation": {
+                "$": "orgs:ORG__WITS",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        },
+        "orgs:ORG__WITS": {
+            "prov:type": "prov:Organization",
+            "prov:label": "University of the Witwatersrand",
+            "sdo:name": "University of the Witwatersrand",
+            "wd:P6782": "https://ror.org/03rp50x72"
+        },
+        "software:SOFTWARE__CDO_1_9_3": {
+            "sdo:type": "sdo:SoftwareApplication",
+            "sdo:softwareVersion": "1.9.3",
+            "sdo:targetProduct": {
+                "$": "software:SOFTWARE__CDO",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        }
+    },
+    "activity": {
+        "exe:Remap_bilinear_201": {
+            "prov:startTime": "2024-12-19T19:47:34",
+            "prov:label": "Remap bilinear",
+            "prov:description": "Remap the dataset to the TIPPECC area.",
+            "prov:function": "FUNCTION__CDO_REMAPBIL",
+            "prov:params": "N/A"
+        },
+        "exe:Merge_datasets_621": {
+            "prov:startTime": "2024-12-19T19:46:50",
+            "prov:label": "Merge datasets",
+            "prov:description": "Merge the datasets into one file by time.",
+            "prov:function": "FUNCTION__CDO_MERGE",
+            "prov:params": "N/A"
+        }
+    },
+    "wasAssociatedWith": {
+        "_:id1811": {
+            "prov:activity": "exe:Remap_bilinear_201",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        },
+        "_:id19146": {
+            "prov:activity": "exe:Merge_datasets_621",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id1812": {
+            "prov:entity": "tippecc_data:05deg_tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014",
+            "prov:activity": "exe:Remap_bilinear_201",
+            "prov:time": "2024-12-19T19:47:34"
+        },
+        "_:id19147": {
+            "prov:entity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014",
+            "prov:activity": "exe:Merge_datasets_621",
+            "prov:time": "2024-12-19T19:46:50"
+        }
+    },
+    "wasDerivedFrom": {
+        "_:id1813": {
+            "prov:generatedEntity": "tippecc_data:05deg_tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:africa05.txt"
+        },
+        "_:id1815": {
+            "prov:generatedEntity": "tippecc_data:05deg_tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id19148": {
+            "prov:generatedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_gn_18500101-18691231"
+        },
+        "_:id19150": {
+            "prov:generatedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_gn_18700101-18891231"
+        },
+        "_:id19152": {
+            "prov:generatedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_gn_18900101-19091231"
+        },
+        "_:id19154": {
+            "prov:generatedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_gn_19100101-19291231"
+        },
+        "_:id19156": {
+            "prov:generatedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_gn_19300101-19491231"
+        },
+        "_:id19158": {
+            "prov:generatedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_gn_19500101-19691231"
+        },
+        "_:id19160": {
+            "prov:generatedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_gn_19700101-19891231"
+        },
+        "_:id19162": {
+            "prov:generatedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_gn_19900101-20091231"
+        },
+        "_:id19164": {
+            "prov:generatedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_gn_20100101-20141231"
+        }
+    },
+    "used": {
+        "_:id1814": {
+            "prov:activity": "exe:Remap_bilinear_201",
+            "prov:entity": "tippecc_data:africa05.txt"
+        },
+        "_:id1816": {
+            "prov:activity": "exe:Remap_bilinear_201",
+            "prov:entity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id19149": {
+            "prov:activity": "exe:Merge_datasets_621",
+            "prov:entity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_gn_18500101-18691231"
+        },
+        "_:id19151": {
+            "prov:activity": "exe:Merge_datasets_621",
+            "prov:entity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_gn_18700101-18891231"
+        },
+        "_:id19153": {
+            "prov:activity": "exe:Merge_datasets_621",
+            "prov:entity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_gn_18900101-19091231"
+        },
+        "_:id19155": {
+            "prov:activity": "exe:Merge_datasets_621",
+            "prov:entity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_gn_19100101-19291231"
+        },
+        "_:id19157": {
+            "prov:activity": "exe:Merge_datasets_621",
+            "prov:entity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_gn_19300101-19491231"
+        },
+        "_:id19159": {
+            "prov:activity": "exe:Merge_datasets_621",
+            "prov:entity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_gn_19500101-19691231"
+        },
+        "_:id19161": {
+            "prov:activity": "exe:Merge_datasets_621",
+            "prov:entity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_gn_19700101-19891231"
+        },
+        "_:id19163": {
+            "prov:activity": "exe:Merge_datasets_621",
+            "prov:entity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_gn_19900101-20091231"
+        },
+        "_:id19165": {
+            "prov:activity": "exe:Merge_datasets_621",
+            "prov:entity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_gn_20100101-20141231"
+        }
+    },
+    "hadMember": {
+        "_:id1817": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:05deg_tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id1818": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:05deg_tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id19166": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id19167": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014"
+        }
+    },
+    "actedOnBehalfOf": {
+        "_:id9": {
+            "prov:delegate": "people:PERSON__JONATHAN_PADAVATAN",
+            "prov:responsible": "orgs:ORG__WITS"
+        }
+    },
+    "wasAttributedTo": {
+        "_:id1819": {
+            "prov:entity": "tippecc_data:05deg_tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        },
+        "_:id19168": {
+            "prov:entity": "tippecc_data:tasmin_day_MPI-ESM1-2-LR_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        }
+    },
+    "wasInformedBy": {
+        "_:id34246": {
+            "prov:informed": "exe:Remap_bilinear_201",
+            "prov:informant": "exe:Merge_datasets_621"
+        }
+    }
+}

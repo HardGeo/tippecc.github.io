@@ -1,0 +1,181 @@
+{
+    "prefix": {
+        "tippecc": "http://www.provbook.org/tippecc/",
+        "people": "http://www.provbook.org/tippecc/people/",
+        "orgs": "http://www.provbook.org/tippecc/orgs/",
+        "software": "http://www.provbook.org/tippecc/software/",
+        "tippecc_data": "http://www.provbook.org/tippecc/data/",
+        "esgf_portal": "http://www.provbook.org/tippecc/esgf_portal/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "datacite": "https://datacite-metadata-schema.readthedocs.io/en/4.6/",
+        "wd": "http://www.wikidata.org/entity/",
+        "sdo": "http://schema.org/",
+        "cf": "https://cfconventions.org/cf-conventions/cf-conventions.html",
+        "nerc": "http://vocab.nerc.ac.uk/collection/P07/current/",
+        "orcid": "http://www.orcid.org/",
+        "ror": "https://ror.org/",
+        "exe": "http://www.provbook.org/tippecc/exe/",
+        "foaf": "http://xmlns.com/foaf/0.1/"
+    },
+    "entity": {
+        "tippecc_data:05deg_tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014": {},
+        "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014": {}
+    },
+    "agent": {
+        "people:PERSON__JONATHAN_PADAVATAN": {
+            "prov:type": "prov:Person",
+            "prov:label": "Jonathan Padavatan",
+            "foaf:givenName": "Jonathan",
+            "foaf:familyName": "Padavatan",
+            "sdo:affiliation": {
+                "$": "orgs:ORG__WITS",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        },
+        "orgs:ORG__WITS": {
+            "prov:type": "prov:Organization",
+            "prov:label": "University of the Witwatersrand",
+            "sdo:name": "University of the Witwatersrand",
+            "wd:P6782": "https://ror.org/03rp50x72"
+        },
+        "software:SOFTWARE__CDO_1_9_3": {
+            "sdo:type": "sdo:SoftwareApplication",
+            "sdo:softwareVersion": "1.9.3",
+            "sdo:targetProduct": {
+                "$": "software:SOFTWARE__CDO",
+                "type": "prov:QUALIFIED_NAME"
+            }
+        }
+    },
+    "activity": {
+        "exe:Remap_bilinear_185": {
+            "prov:startTime": "2024-12-20T20:00:08",
+            "prov:label": "Remap bilinear",
+            "prov:description": "Remap the dataset to the TIPPECC area.",
+            "prov:function": "FUNCTION__CDO_REMAPBIL",
+            "prov:params": "N/A"
+        },
+        "exe:Merge_datasets_605": {
+            "prov:startTime": "2024-12-20T19:57:52",
+            "prov:label": "Merge datasets",
+            "prov:description": "Merge the datasets into one file by time.",
+            "prov:function": "FUNCTION__CDO_MERGE",
+            "prov:params": "N/A"
+        }
+    },
+    "wasAssociatedWith": {
+        "_:id1667": {
+            "prov:activity": "exe:Remap_bilinear_185",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        },
+        "_:id17508": {
+            "prov:activity": "exe:Merge_datasets_605",
+            "prov:agent": "software:SOFTWARE__CDO_1_9_3"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:id1668": {
+            "prov:entity": "tippecc_data:05deg_tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014",
+            "prov:activity": "exe:Remap_bilinear_185",
+            "prov:time": "2024-12-20T20:00:08"
+        },
+        "_:id17509": {
+            "prov:entity": "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014",
+            "prov:activity": "exe:Merge_datasets_605",
+            "prov:time": "2024-12-20T19:57:52"
+        }
+    },
+    "wasDerivedFrom": {
+        "_:id1669": {
+            "prov:generatedEntity": "tippecc_data:05deg_tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:africa05.txt"
+        },
+        "_:id1671": {
+            "prov:generatedEntity": "tippecc_data:05deg_tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id17510": {
+            "prov:generatedEntity": "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_gn_18500101-18991231"
+        },
+        "_:id17512": {
+            "prov:generatedEntity": "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_gn_19000101-19491231"
+        },
+        "_:id17514": {
+            "prov:generatedEntity": "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_gn_19500101-19991231"
+        },
+        "_:id17516": {
+            "prov:generatedEntity": "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014",
+            "prov:usedEntity": "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_gn_20000101-20141231"
+        }
+    },
+    "used": {
+        "_:id1670": {
+            "prov:activity": "exe:Remap_bilinear_185",
+            "prov:entity": "tippecc_data:africa05.txt"
+        },
+        "_:id1672": {
+            "prov:activity": "exe:Remap_bilinear_185",
+            "prov:entity": "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id17511": {
+            "prov:activity": "exe:Merge_datasets_605",
+            "prov:entity": "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_gn_18500101-18991231"
+        },
+        "_:id17513": {
+            "prov:activity": "exe:Merge_datasets_605",
+            "prov:entity": "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_gn_19000101-19491231"
+        },
+        "_:id17515": {
+            "prov:activity": "exe:Merge_datasets_605",
+            "prov:entity": "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_gn_19500101-19991231"
+        },
+        "_:id17517": {
+            "prov:activity": "exe:Merge_datasets_605",
+            "prov:entity": "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_gn_20000101-20141231"
+        }
+    },
+    "hadMember": {
+        "_:id1673": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:05deg_tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id1674": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:05deg_tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id17518": {
+            "prov:collection": "tippecc_data:COLLECTION__TIPPECC",
+            "prov:entity": "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014"
+        },
+        "_:id17519": {
+            "prov:collection": "tippecc_data:COLLECTION__CMIP6",
+            "prov:entity": "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014"
+        }
+    },
+    "actedOnBehalfOf": {
+        "_:id9": {
+            "prov:delegate": "people:PERSON__JONATHAN_PADAVATAN",
+            "prov:responsible": "orgs:ORG__WITS"
+        }
+    },
+    "wasAttributedTo": {
+        "_:id1675": {
+            "prov:entity": "tippecc_data:05deg_tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        },
+        "_:id17520": {
+            "prov:entity": "tippecc_data:tasmin_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014",
+            "prov:agent": "people:PERSON__JONATHAN_PADAVATAN"
+        }
+    },
+    "wasInformedBy": {
+        "_:id34230": {
+            "prov:informed": "exe:Remap_bilinear_185",
+            "prov:informant": "exe:Merge_datasets_605"
+        }
+    }
+}
