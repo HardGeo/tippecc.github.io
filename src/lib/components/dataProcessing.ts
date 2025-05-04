@@ -7,7 +7,8 @@ import {
     changedFormat, 
     changedSize, 
     changedGlobMod, 
-    changedRegMod} from '$lib/store';
+    changedRegMod,
+    changedBounds} from '$lib/store';
 
 import { get } from 'svelte/store';
 
@@ -21,12 +22,10 @@ type WasDerivedFrom = {
 type Activity = {
     [key: string]: {
         "prov:startTime": string,
-        "exe:@id": string,
-        "exe:@type": string,
-        "sdo:name": string,
-        "sdo:description": string,
-        "sdo:url": string,
-        "sdo:targetProduct": string
+        "prov:params": string,
+        "prov:label": string,
+        "prov:description": string,
+        "prov:function": string,
     };
 };
 
@@ -128,18 +127,17 @@ type Node = {
 };
 
 type NodeActivity = {
-    id: string;
-    type: string;
+    id: string,
+    type: string, // Specify the custom node type
     data: {
-        id: string;
-        startTime: string;
-        type: string;
-        name: string;
-        description: string;
-        url: string;
-        targetProduct: string;
-    };
-    position: { x: number; y: number };
+        id: string,
+        startTime: string,
+        params: unknown,
+        label: string,
+        description: string,
+        function: string
+    },
+    position: { x: number, y: number },
 };
 
 type Edge = {
@@ -321,6 +319,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                 const lon_min = Number(dataset.entity[currentEntity]["tippecc_data:geospatial_lon_min"]);
                 const lon_max = Number(dataset.entity[currentEntity]["tippecc_data:geospatial_lon_max"]);
                 extent = [lat_min, lat_max, lon_min, lon_max]
+
                 // EXTRACT COLLECTION
                 collection = findCollectionForEntity(currentEntity, dataset.hadMember);
                 // EXTRACT REGIONAL MODEL TODO
@@ -562,7 +561,34 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                         return new Set(set); // Return a new Set to trigger reactivity
                     });
                 }
-        
+
+                function arraysEqual(a:any, b:any) {
+                    if (!Array.isArray(a) || !Array.isArray(b)) return false;
+                    if (a.length !== b.length) return false;
+                
+                    return a.every((val, index) => {
+                        const otherVal = b[index];
+                
+                        // Handle NaN values explicitly
+                        const bothNaN = typeof val === "number" && typeof otherVal === "number" && isNaN(val) && isNaN(otherVal);
+                        if (bothNaN) return true;
+                
+                        // Tolerance-based number comparison
+                        if (typeof val === "number" && typeof otherVal === "number") {
+                            return Math.abs(val - otherVal) < 1e-6;
+                        }
+                
+                        // Fallback: strict equality
+                        return val === otherVal;
+                    });
+                }
+
+                if (!arraysEqual(extent, extent_used)) {
+                    changedBounds.update(set => {
+                        set.add(usedEntity);
+                        return new Set(set);
+                    });
+                }
             });
 
             // Ensure extentList is not empty before calculating the average
@@ -743,22 +769,12 @@ export function AddActions(dataset: Dataset, nodes: any, edges: any, label: any)
     const length = executionOrder.length - 1;
     const spacing = (maxY-minY) / length;
 
-    const activity = Object.values(dataset.activity) as {
-        "prov:startTime": string,
-        "exe:@id": string,
-        "exe:@type": string,
-        "sdo:name": string,
-        "sdo:description": string,
-        "sdo:url": string,
-        "sdo:targetProduct": string
-    }[];
     
 
     //console.log(executionOrder);
     executionOrder.forEach((currentEntity) => {
         
         const currentActivity = dataset.activity[currentEntity];
-        //console.log(currentActivity["sdo:name"]);
         // Add node for currentEntity
         nodes.update((n: NodeActivity[]) => {
 
@@ -771,11 +787,10 @@ export function AddActions(dataset: Dataset, nodes: any, edges: any, label: any)
                     data: {
                         id: currentEntity,
                         startTime: currentActivity["prov:startTime"],
-                        type: currentActivity["exe:@type"],
-                        name: currentActivity["sdo:name"],
-                        description: currentActivity["sdo:description"],
-                        url: currentActivity["sdo:url"],
-                        targetProduct: currentActivity["sdo:targetProduct"]
+                        params: currentActivity["prov:params"],
+                        label: currentActivity["prov:label"],
+                        description: currentActivity["prov:description"],
+                        function: currentActivity["prov:function"]
                     },
                     position: { x: xPos, y: yPos },
                 });
@@ -785,7 +800,7 @@ export function AddActions(dataset: Dataset, nodes: any, edges: any, label: any)
         });
         yPos += -spacing;
     })
-    /*
+    
     edges.update((e: Edge[]) => {
         const newEdges = Object.keys(dataset.wasInformedBy).map(id => {
             const generatedEntity = dataset.wasInformedBy[id]["prov:informed"];
@@ -795,8 +810,8 @@ export function AddActions(dataset: Dataset, nodes: any, edges: any, label: any)
             // Create a new edge object
             return {
                 id: `${generatedEntity}-${usedEntity}`, // Unique edge id using generated and used entities
-                source: generatedEntity, // Source is the generated entity
-                target: usedEntity, // Target is the used entity
+                source: usedEntity, // Source is the generated entity
+                target: generatedEntity, // Target is the used entity
                 animated: false, // Set animated to false
                 label: label, // Add a label if necessary
                 type: 'step', // Specify the edge type
@@ -812,7 +827,7 @@ export function AddActions(dataset: Dataset, nodes: any, edges: any, label: any)
 
         // Return the updated edges list
         return e;
-    });*/
+    });
 
 }
 
@@ -928,10 +943,9 @@ export function addSoftware({
                     data: {
                         //TODO add Data
                         software: agentId  || "N/A",
-                        source: dataset.agent[agentId]["dcterms:source"]  || "N/A",
-                        version: dataset.agent[agentId]["sdo:version"]  || "N/A",
-                        repository: dataset.agent[agentId]["sdo:codeRepository"]  || "N/A",
-                        license: dataset.agent[agentId]["sdo:license"]  || "N/A"
+                        software_name: dataset.agent[agentId]["sdo:targetProduct"]?.["$"] || "N/A",
+                        version: dataset.agent[agentId]["sdo:softwareVersion"]  || "N/A",
+                        type: dataset.agent[agentId]["sdo:type"]  || "N/A",
                      },
                     position: { x: 1200, y: yPosition }, // Adjust as needed
                 });
@@ -1049,13 +1063,20 @@ export function createCollection ({
         const collectionId = member["prov:collection"]; // Collection ID
         const entityId = member["prov:entity"]; // Entity ID
 
+        const collectionData = dataset.entity[collectionId];
+
         // Only add the collection node if it hasn't been added yet
         if (!collectionNodes.has(collectionId)) {
             nodes.update((n: any) => {
                 n.push({
                     id: collectionId,
                     type: 'collectionNode',
-                    data: { id: collectionId },
+                    data: { 
+                        id: collectionId,
+                        type: collectionData["prov:type"][1],
+                        description: collectionData["sdo:description"],
+                        collection_name: collectionData["sdo:name"]
+                    },
                     position: { x: 600, y: yPosition },
                 });
                 return n;

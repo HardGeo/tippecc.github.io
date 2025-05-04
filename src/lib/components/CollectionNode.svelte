@@ -1,13 +1,31 @@
 <script>
     import { Handle, Position } from '@xyflow/svelte';
+
+    import { 
+    showDetails, 
+    handleKeyDown} from '$lib/store';
     
     export let id;
+    export let data = {
+        id: "",
+        type: "",
+        description: "",
+        collection_name: ""
+	}
 
 </script>
 
 
 
-<div class="p-4 bg-[#FFA500] border-4 border-[#CC8400] rounded-lg shadow-lg mx-auto relative inline-block max-w">
+<div 
+class="p-4 bg-[#FFA500] border-4 border-[#CC8400] rounded-lg shadow-lg mx-auto relative inline-block max-w"
+style="z-index: 1;"
+role="button"
+tabindex="0"
+aria-label="Show details"
+on:click={() => showDetails(data)}
+on:keydown={(event) => handleKeyDown(event, data)}
+>
 
     <!-- Right Handle -->
     <Handle

@@ -25,8 +25,8 @@
         edges_min } from "$lib/store"; // Import the store
 
     //import data from '$lib/generate_rdfjson/article-prov.json';
-    import data from '$lib/generate_rdfjson_rev/subgraphs_old/TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__ai__mm_1850_2100__yearsum_mean_1981_2000-2080_2099.json'
-    //TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__ai__mm_1850_2100__yearsum_mean_1981_2000-2080_2099.json
+    import data from '$lib/generate_rdfjson_rev/subgraphs/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100__yearsum_mean_1981_2000-2080_2099.json'
+    //TIPPECC_ACCESS-CM2_day_r1i1p1f1__ai_1950_2100__yearsum_mean_1981_2000-2080_2099.json'
     
     import { AddActions, createPeople, addSoftware, addEdgesOnly, AddEntities } from '$lib/components//dataProcessing'; // Adjust path as necessary
     import {adjustPositionSoftware, adjustPositionPersons, adjustPositionActivities} from "$lib/components/adjustPositions";
@@ -141,7 +141,7 @@
             edgeStyle: "stroke: #CC8400"
         });
         
-        /*
+        
         //Add Edges for Used
         addEdgesOnly({
             dataset: data.used,  
@@ -155,7 +155,7 @@
             handle1: "right",
             handle2: "left",
             IdAppendix: "used"
-        });*/
+        });
 
         // Add Edges for wasGeneratedBy
         addEdgesOnly({
@@ -189,7 +189,7 @@
             edges: edges_min,
             nodes: nodes_min,
             EdgeLabel: $wasGeneratedBy_lb,
-            NodeType: "activityNode"
+            EdgeLabel2: $used_lb
         })
 
         adjustPositionSoftware({

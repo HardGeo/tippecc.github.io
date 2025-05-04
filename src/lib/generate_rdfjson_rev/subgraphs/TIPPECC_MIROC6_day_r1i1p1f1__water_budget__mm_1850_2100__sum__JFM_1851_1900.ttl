@@ -1,0 +1,2768 @@
+@prefix exe: <http://www.provbook.org/tippecc/exe/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix orgs: <http://www.provbook.org/tippecc/orgs/> .
+@prefix people: <http://www.provbook.org/tippecc/people/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <http://schema.org/> .
+@prefix software: <http://www.provbook.org/tippecc/software/> .
+@prefix tippecc_data: <http://www.provbook.org/tippecc/data/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+tippecc_data:COLLECTION__CMIP6 a prov:Collection,
+        prov:Entity,
+        "prov:Collection" ;
+    sdo:description "CMIP6 is a climate model intercomparison project." ;
+    sdo:name "CMIP6" ;
+    prov:hadMember tippecc_data:05deg_hurs_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_pr_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rlds_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rlus_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rsds_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rsus_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_sfcWind_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_tasmax_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_tasmin_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__water_budget_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__water_budget__mm_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__water_budget__mm_1850_2100__sum__JFM,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_hurs_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_pr_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rlds_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rlus_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rsds_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rsus_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_sfcWind_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_tasmax_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_tasmin_1850_2100,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:COLLECTION__TIPPECC a prov:Collection,
+        prov:Entity,
+        "prov:Collection" ;
+    sdo:description "TIPPECC is a ....." ;
+    sdo:name "TIPPECC" ;
+    prov:hadMember tippecc_data:05deg_hurs_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_pr_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rlds_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rlus_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rsds_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rsus_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_sfcWind_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_tasmax_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_tasmin_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__water_budget_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__water_budget__mm_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__water_budget__mm_1850_2100__sum__JFM,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_hurs_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_pr_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rlds_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rlus_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rsds_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rsus_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_sfcWind_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_tasmax_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_tasmin_1850_2100,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_1850_2014 .
+
+exe:Calc_mean_2201 a prov:Activity ;
+    rdfs:label "Calc mean" ;
+    prov:description "Calculate the mean of the dataset between 1851 and 1900." ;
+    prov:function "FUNCTION__CDO_TIMMEAN" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-24T20:13:09-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_ref._period_2200 .
+
+exe:Slice_ref._period_2200 a prov:Activity ;
+    rdfs:label "Slice ref. period" ;
+    prov:description "Slice a reference period from the dataset between 1851 and 1900." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1851', 'end_year': '1900'}" ;
+    prov:startedAtTime "2025-01-24T20:13:09-01:00"^^xsd:dateTime ;
+    prov:used tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__water_budget__mm_1850_2100__sum__JFM ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Calc_season_sum_2204 .
+
+tippecc_data:05deg_hurs_day_MIROC6_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:05deg_pr_day_MIROC6_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:05deg_rlds_day_MIROC6_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:05deg_rlus_day_MIROC6_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:05deg_rsds_day_MIROC6_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:05deg_rsus_day_MIROC6_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:05deg_sfcWind_day_MIROC6_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:05deg_tasmax_day_MIROC6_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:05deg_tasmin_day_MIROC6_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231 a prov:Entity .
+
+tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231 a prov:Entity .
+
+tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231 a prov:Entity .
+
+tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231 a prov:Entity .
+
+tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231 a prov:Entity .
+
+tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231 a prov:Entity .
+
+tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231 a prov:Entity .
+
+tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231 a prov:Entity .
+
+tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231 a prov:Entity .
+
+tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231 a prov:Entity .
+
+tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231 a prov:Entity .
+
+tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231 a prov:Entity .
+
+tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231 a prov:Entity .
+
+tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231 a prov:Entity .
+
+tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231 a prov:Entity .
+
+tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231 a prov:Entity .
+
+tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 a prov:Entity .
+
+tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231 a prov:Entity .
+
+tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231 a prov:Entity .
+
+tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231 a prov:Entity .
+
+tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231 a prov:Entity .
+
+tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231 a prov:Entity .
+
+tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231 a prov:Entity .
+
+tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231 a prov:Entity .
+
+tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231 a prov:Entity .
+
+tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231 a prov:Entity .
+
+tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231 a prov:Entity .
+
+tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231 a prov:Entity .
+
+tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231 a prov:Entity .
+
+tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231 a prov:Entity .
+
+tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231 a prov:Entity .
+
+tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231 a prov:Entity .
+
+tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231 a prov:Entity .
+
+tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 a prov:Entity .
+
+tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231 a prov:Entity .
+
+tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231 a prov:Entity .
+
+tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231 a prov:Entity .
+
+tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231 a prov:Entity .
+
+tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231 a prov:Entity .
+
+tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231 a prov:Entity .
+
+tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231 a prov:Entity .
+
+tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231 a prov:Entity .
+
+tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231 a prov:Entity .
+
+tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231 a prov:Entity .
+
+tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231 a prov:Entity .
+
+tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231 a prov:Entity .
+
+tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231 a prov:Entity .
+
+tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231 a prov:Entity .
+
+tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231 a prov:Entity .
+
+tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231 a prov:Entity .
+
+tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 a prov:Entity .
+
+tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231 a prov:Entity .
+
+tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231 a prov:Entity .
+
+tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231 a prov:Entity .
+
+tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231 a prov:Entity .
+
+tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231 a prov:Entity .
+
+tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231 a prov:Entity .
+
+tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231 a prov:Entity .
+
+tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231 a prov:Entity .
+
+tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231 a prov:Entity .
+
+tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231 a prov:Entity .
+
+tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231 a prov:Entity .
+
+tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231 a prov:Entity .
+
+tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231 a prov:Entity .
+
+tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231 a prov:Entity .
+
+tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231 a prov:Entity .
+
+tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231 a prov:Entity .
+
+tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 a prov:Entity .
+
+tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231 a prov:Entity .
+
+tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231 a prov:Entity .
+
+tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231 a prov:Entity .
+
+tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231 a prov:Entity .
+
+tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231 a prov:Entity .
+
+tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231 a prov:Entity .
+
+tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231 a prov:Entity .
+
+tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231 a prov:Entity .
+
+tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231 a prov:Entity .
+
+tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231 a prov:Entity .
+
+tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231 a prov:Entity .
+
+tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231 a prov:Entity .
+
+tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231 a prov:Entity .
+
+tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231 a prov:Entity .
+
+tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231 a prov:Entity .
+
+tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231 a prov:Entity .
+
+tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 a prov:Entity .
+
+tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231 a prov:Entity .
+
+tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231 a prov:Entity .
+
+tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231 a prov:Entity .
+
+tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231 a prov:Entity .
+
+tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231 a prov:Entity .
+
+tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231 a prov:Entity .
+
+tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231 a prov:Entity .
+
+tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231 a prov:Entity .
+
+tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231 a prov:Entity .
+
+tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231 a prov:Entity .
+
+tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231 a prov:Entity .
+
+tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231 a prov:Entity .
+
+tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231 a prov:Entity .
+
+tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231 a prov:Entity .
+
+tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231 a prov:Entity .
+
+tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231 a prov:Entity .
+
+tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 a prov:Entity .
+
+tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231 a prov:Entity .
+
+tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231 a prov:Entity .
+
+tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231 a prov:Entity .
+
+tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231 a prov:Entity .
+
+tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231 a prov:Entity .
+
+tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231 a prov:Entity .
+
+tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231 a prov:Entity .
+
+tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231 a prov:Entity .
+
+tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231 a prov:Entity .
+
+tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231 a prov:Entity .
+
+tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231 a prov:Entity .
+
+tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231 a prov:Entity .
+
+tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231 a prov:Entity .
+
+tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231 a prov:Entity .
+
+tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231 a prov:Entity .
+
+tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231 a prov:Entity .
+
+tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 a prov:Entity .
+
+tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231 a prov:Entity .
+
+tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231 a prov:Entity .
+
+tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231 a prov:Entity .
+
+tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231 a prov:Entity .
+
+tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231 a prov:Entity .
+
+tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231 a prov:Entity .
+
+tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231 a prov:Entity .
+
+tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231 a prov:Entity .
+
+tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231 a prov:Entity .
+
+tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231 a prov:Entity .
+
+tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231 a prov:Entity .
+
+tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231 a prov:Entity .
+
+tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231 a prov:Entity .
+
+tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231 a prov:Entity .
+
+tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231 a prov:Entity .
+
+tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231 a prov:Entity .
+
+tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 a prov:Entity .
+
+tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231 a prov:Entity .
+
+tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231 a prov:Entity .
+
+tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231 a prov:Entity .
+
+tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231 a prov:Entity .
+
+tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231 a prov:Entity .
+
+tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231 a prov:Entity .
+
+tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231 a prov:Entity .
+
+tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231 a prov:Entity .
+
+tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231 a prov:Entity .
+
+tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231 a prov:Entity .
+
+tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231 a prov:Entity .
+
+tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231 a prov:Entity .
+
+tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231 a prov:Entity .
+
+tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231 a prov:Entity .
+
+tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231 a prov:Entity .
+
+tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231 a prov:Entity .
+
+tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 a prov:Entity .
+
+exe:Calc_pot._ET_2183 a prov:Activity ;
+    rdfs:label "Calc pot. ET" ;
+    prov:description "Calculate potential evapotranspiration with the FAO_PM98 method." ;
+    prov:function "FUNCTION__XCLIM_EVAPOTRANSPIRATION" ;
+    prov:params "{'tasmin': 'tasmin.tasmin', 'tasmax': 'tasmax.tasmax', 'hurs': 'hurs.hurs', 'rsds': 'rsds.rsds', 'rsus': 'rsus.rsus', 'rlus': 'rlus.rlus', 'rlds': 'rlds.rlds', 'sfcWind': 'sfcWind.sfcWind', 'method': 'FAO_PM98'}" ;
+    prov:startedAtTime "2025-01-24T20:03:54-01:00"^^xsd:dateTime ;
+    prov:used tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_hurs_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rlds_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rlus_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rsds_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rsus_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_sfcWind_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_tasmax_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_tasmin_1850_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__XCLIM_0_49 ;
+    prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Rename/Metadata_2127>,
+        <http://www.provbook.org/tippecc/exe/Rename/Metadata_2142>,
+        <http://www.provbook.org/tippecc/exe/Rename/Metadata_2146>,
+        <http://www.provbook.org/tippecc/exe/Rename/Metadata_2150>,
+        <http://www.provbook.org/tippecc/exe/Rename/Metadata_2154>,
+        <http://www.provbook.org/tippecc/exe/Rename/Metadata_2158>,
+        <http://www.provbook.org/tippecc/exe/Rename/Metadata_2162>,
+        <http://www.provbook.org/tippecc/exe/Rename/Metadata_2166> .
+
+exe:Calc_season_sum_2204 a prov:Activity ;
+    rdfs:label "Calc season sum" ;
+    prov:description "Calculate the sum of the selected months (1,2,3)." ;
+    prov:function "FUNCTION__CDO_YEARSUM" ;
+    prov:params "{'months': '1,2,3'}" ;
+    prov:startedAtTime "2025-01-24T20:13:03-01:00"^^xsd:dateTime ;
+    prov:used tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__water_budget__mm_1850_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Convert_water_budget_to_mm/day_2192> .
+
+exe:Calc_water_budget_2191 a prov:Activity ;
+    rdfs:label "Calc water budget" ;
+    prov:description "Calculate the water budget as the difference between precipitation and potential evapotranspiration." ;
+    prov:function "FUNCTION__XCLIM_WATER_BUDGET" ;
+    prov:params "{'pr': 'pr.pr', 'evspsblpot': 'evapo.evspsblpot'}" ;
+    prov:startedAtTime "2025-01-24T20:05:25-01:00"^^xsd:dateTime ;
+    prov:used tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_pr_1850_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__XCLIM_0_49 ;
+    prov:wasInformedBy exe:Calc_pot._ET_2183,
+        <http://www.provbook.org/tippecc/exe/Rename/Metadata_2131> .
+
+<http://www.provbook.org/tippecc/exe/Convert_water_budget_to_mm/day_2192> a prov:Activity ;
+    rdfs:label "Convert water budget to mm/day" ;
+    prov:description "Convert the water budget from a rate to an amount." ;
+    prov:function "FUNCTION__XCLIM_RATE2AMOUNT" ;
+    prov:params "{'sampling_rate_from_coord': True}" ;
+    prov:startedAtTime "2025-01-24T20:06:38-01:00"^^xsd:dateTime ;
+    prov:used tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__water_budget_1850_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__XCLIM_0_49 ;
+    prov:wasInformedBy exe:Calc_water_budget_2191 .
+
+exe:Merge_datasets_2124 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-17T17:05:35"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_hurs_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_hurs_day_MIROC6_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_15 .
+
+exe:Merge_datasets_2128 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-17T18:09:32"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_pr_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_pr_day_MIROC6_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_38 .
+
+exe:Merge_datasets_2139 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-17T19:14:20"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_rlds_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rlds_day_MIROC6_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_61 .
+
+exe:Merge_datasets_2143 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-17T20:21:21"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_rlus_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rlus_day_MIROC6_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_84 .
+
+exe:Merge_datasets_2147 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-17T21:27:50"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_rsds_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rsds_day_MIROC6_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_107 .
+
+exe:Merge_datasets_2151 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-17T22:30:59"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_rsus_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rsus_day_MIROC6_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_130 .
+
+exe:Merge_datasets_2155 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-17T23:34:12"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_sfcWind_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_sfcWind_day_MIROC6_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_153 .
+
+exe:Merge_datasets_2159 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-18T01:43:47"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_tasmax_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_tasmax_day_MIROC6_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_176 .
+
+exe:Merge_datasets_2163 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-18T02:53:02"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_tasmin_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_tasmin_day_MIROC6_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_199 .
+
+exe:Merge_datasets_387 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T08:38:51"^^xsd:dateTime ;
+    prov:used tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Merge_datasets_458 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T09:52:43"^^xsd:dateTime ;
+    prov:used tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Merge_datasets_481 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T11:09:57"^^xsd:dateTime ;
+    prov:used tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Merge_datasets_504 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T12:22:27"^^xsd:dateTime ;
+    prov:used tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Merge_datasets_527 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T13:33:39"^^xsd:dateTime ;
+    prov:used tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Merge_datasets_550 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T14:48:41"^^xsd:dateTime ;
+    prov:used tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Merge_datasets_573 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T16:02:54"^^xsd:dateTime ;
+    prov:used tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Merge_datasets_596 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T18:25:20"^^xsd:dateTime ;
+    prov:used tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Merge_datasets_619 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T19:39:06"^^xsd:dateTime ;
+    prov:used tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Remap_bilinear_107 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T13:36:08"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_527 .
+
+exe:Remap_bilinear_130 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T14:51:13"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_550 .
+
+exe:Remap_bilinear_15 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T08:41:21"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_387 .
+
+exe:Remap_bilinear_153 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T16:05:22"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_573 .
+
+exe:Remap_bilinear_176 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T18:27:17"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_596 .
+
+exe:Remap_bilinear_199 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T19:40:54"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_619 .
+
+exe:Remap_bilinear_38 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T09:55:41"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_458 .
+
+exe:Remap_bilinear_61 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T11:12:18"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_481 .
+
+exe:Remap_bilinear_84 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T12:24:40"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_504 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_2127> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T10:32:54-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_2126 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_2131> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T11:53:03-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_2130 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_2142> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T13:12:37-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_2141 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_2146> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T14:32:40-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_2145 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_2150> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T15:52:27-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_2149 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_2154> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T17:08:08-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_2153 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_2158> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T18:25:04-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_2157 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_2162> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T21:04:30-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_2161 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_2166> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T22:27:15-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_2165 .
+
+exe:Slice_TIPPECC_area_2126 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T11:31:57"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_2125 .
+
+exe:Slice_TIPPECC_area_2130 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T12:51:56"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_2129 .
+
+exe:Slice_TIPPECC_area_2141 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T14:11:26"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_2140 .
+
+exe:Slice_TIPPECC_area_2145 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T15:32:05"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_2144 .
+
+exe:Slice_TIPPECC_area_2149 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T16:51:39"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_2148 .
+
+exe:Slice_TIPPECC_area_2153 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T18:07:22"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_2152 .
+
+exe:Slice_TIPPECC_area_2157 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T19:24:17"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_2156 .
+
+exe:Slice_TIPPECC_area_2161 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T22:03:25"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_2160 .
+
+exe:Slice_TIPPECC_area_2165 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T23:26:24"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_2164 .
+
+exe:Slice_years_2125 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T11:28:58"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_2124 .
+
+exe:Slice_years_2129 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T12:49:03"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_2128 .
+
+exe:Slice_years_2140 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T14:08:31"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_2139 .
+
+exe:Slice_years_2144 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T15:29:09"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_2143 .
+
+exe:Slice_years_2148 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T16:48:43"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_2147 .
+
+exe:Slice_years_2152 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T18:04:27"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_2151 .
+
+exe:Slice_years_2156 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T19:21:21"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_2155 .
+
+exe:Slice_years_2160 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T22:00:30"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_2159 .
+
+exe:Slice_years_2164 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T23:23:27"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_2163 .
+
+tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__water_budget__mm_1850_2100__sum__JFM a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-01-24 20:13:03 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_methods "pr: area: time: mean evspsblpot: tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean" ;
+    tippecc_data:cmor_version "3.4.0" ;
+    tippecc_data:creation_date "2025-01-24T20:06:35Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:description "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget, where the potential evapotranspiration is calculated with the FAO_PM985 method." ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "10533113"^^xsd:int ;
+    tippecc_data:frequency "year" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC6.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "2400.7924916844786" ;
+    tippecc_data:global_min "-902.293878832152" ;
+    tippecc_data:global_model "MIROC6" ;
+    tippecc_data:grid "native atmosphere T85 Gaussian grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history """pr: 2019-08-30T09:02:30Z altered by CMOR: Converted units from 'kg/m**2/s' to 'kg m-2 s-1'. 2019-08-30T09:02:30Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:02:30Z altered by CMOR: Inverted axis: lat.
+evspsblpot: tasmin: 2019-08-30T08:01:35Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-30T08:01:35Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T08:01:35Z altered by CMOR: Inverted axis: lat.
+tasmax: 2019-08-30T08:07:03Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-30T08:07:03Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T08:07:03Z altered by CMOR: Inverted axis: lat.
+hurs: 2019-08-30T08:12:36Z altered by CMOR: Converted units from '' to '%'. 2019-08-30T08:12:36Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-30T08:12:36Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T08:12:36Z altered by CMOR: Inverted axis: lat.
+rsds: 2019-08-30T09:48:14Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:48:14Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:48:14Z altered by CMOR: Inverted axis: lat.
+rsus: 2019-08-30T09:42:16Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:42:16Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:42:16Z altered by CMOR: Inverted axis: lat.
+rlds: 2019-08-30T09:37:06Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:37:06Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:37:06Z altered by CMOR: Inverted axis: lat.
+rlus: 2019-08-30T09:31:42Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:31:42Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:31:42Z altered by CMOR: Inverted axis: lat.
+sfcWind: 2020-08-03T08:43:24Z altered by CMOR: Converted units from 'm/s' to 'm s-1'. 2020-08-03T08:43:24Z altered by CMOR: Treated scalar dimension: 'height'. 2020-08-03T08:43:24Z altered by CMOR: replaced missing value flag (-999) and corresponding data with standard missing value (1e+20). 2020-08-03T08:43:24Z altered by CMOR: Inverted axis: lat.
+[2025-01-24 20:03:49] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0
+[2025-01-24 20:05:21] water_budget_from_tas: WATER_BUDGET_FROM_TAS(pr=pr, evspsblpot=evspsblpot, method='BR65') - xclim version: 0.49.0""" ;
+    tippecc_data:indicator "yes" ;
+    tippecc_data:institution "JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)" ;
+    tippecc_data:institution_id "MIROC" ;
+    tippecc_data:last_modification_time "2025-01-24 20:13:03 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Water budget (\"FAO_PM985\" method)" ;
+    tippecc_data:method "pr - evspsblpot " ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "251"^^xsd:int ;
+    tippecc_data:num_years "251"^^xsd:int ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "MIROC6" ;
+    tippecc_data:parent_time_units "days since 3200-1-1" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:short_data_reference "Shiogama, Hideo et al. (2019). MIROC MIROC6 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:short_variable_name "water_budget_from_tas" ;
+    tippecc_data:source """MIROC6 (2017): 
+aerosol: SPRINTARS6.0
+atmos: CCSR AGCM (T85; 256 x 128 longitude/latitude; 81 levels; top level 0.004 hPa)
+atmosChem: none
+land: MATSIRO6.0
+landIce: none
+ocean: COCO4.9 (tripolar primarily 1deg; 360 x 256 longitude/latitude; 63 levels; top grid cell 0-2 m)
+ocnBgchem: none
+seaIce: COCO4.9""" ;
+    tippecc_data:source_id "MIROC6" ;
+    tippecc_data:source_type "AOGCM AER" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(22 July 2019) MD5:b4cefb4b6dbb146fea9677a552a00934" ;
+    tippecc_data:time_calendar "gregorian" ;
+    tippecc_data:time_coverage_end "2100-01-01 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:title "MIROC6 output prepared for CMIP6" ;
+    tippecc_data:unit "mmday" ;
+    tippecc_data:units "mmday" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Calc_season_sum_2204 ;
+            prov:atTime "2025-01-24T20:13:03-01:00"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__water_budget__mm_1850_2100 .
+
+software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:targetProduct software:SOFTWARE__XCLIM ;
+    sdo:type "sdo:SoftwareApplication" .
+
+tippecc_data:05deg_hurs_day_MIROC6_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_15 ;
+            prov:atTime "2024-12-19T08:41:21"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:05deg_pr_day_MIROC6_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_38 ;
+            prov:atTime "2024-12-19T09:55:41"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:05deg_rlds_day_MIROC6_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_61 ;
+            prov:atTime "2024-12-19T11:12:18"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:05deg_rlus_day_MIROC6_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_84 ;
+            prov:atTime "2024-12-19T12:24:40"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:05deg_rsds_day_MIROC6_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_107 ;
+            prov:atTime "2024-12-19T13:36:08"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:05deg_rsus_day_MIROC6_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_130 ;
+            prov:atTime "2024-12-19T14:51:13"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:05deg_sfcWind_day_MIROC6_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_153 ;
+            prov:atTime "2024-12-19T16:05:22"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:05deg_tasmax_day_MIROC6_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_176 ;
+            prov:atTime "2024-12-19T18:27:17"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:05deg_tasmin_day_MIROC6_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_199 ;
+            prov:atTime "2024-12-19T19:40:54"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-01-24 20:03:54 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_methods "tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean" ;
+    tippecc_data:cmor_version "3.4.0" ;
+    tippecc_data:creation_date "2025-01-24T20:03:49Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:description "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with the fao_pm98 method." ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "3820370421"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC6.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "0.00021085357002448288" ;
+    tippecc_data:global_min "-8.309309123433193e-06" ;
+    tippecc_data:global_model "MIROC6" ;
+    tippecc_data:grid "native atmosphere T85 Gaussian grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history """tasmin: 2019-08-30T08:01:35Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-30T08:01:35Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T08:01:35Z altered by CMOR: Inverted axis: lat.
+tasmax: 2019-08-30T08:07:03Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-30T08:07:03Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T08:07:03Z altered by CMOR: Inverted axis: lat.
+hurs: 2019-08-30T08:12:36Z altered by CMOR: Converted units from '' to '%'. 2019-08-30T08:12:36Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-30T08:12:36Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T08:12:36Z altered by CMOR: Inverted axis: lat.
+rsds: 2019-08-30T09:48:14Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:48:14Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:48:14Z altered by CMOR: Inverted axis: lat.
+rsus: 2019-08-30T09:42:16Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:42:16Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:42:16Z altered by CMOR: Inverted axis: lat.
+rlds: 2019-08-30T09:37:06Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:37:06Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:37:06Z altered by CMOR: Inverted axis: lat.
+rlus: 2019-08-30T09:31:42Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:31:42Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:31:42Z altered by CMOR: Inverted axis: lat.
+sfcWind: 2020-08-03T08:43:24Z altered by CMOR: Converted units from 'm/s' to 'm s-1'. 2020-08-03T08:43:24Z altered by CMOR: Treated scalar dimension: 'height'. 2020-08-03T08:43:24Z altered by CMOR: replaced missing value flag (-999) and corresponding data with standard missing value (1e+20). 2020-08-03T08:43:24Z altered by CMOR: Inverted axis: lat.
+[2025-01-24 20:03:49] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0""" ;
+    tippecc_data:indicator "yes" ;
+    tippecc_data:institution "JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)" ;
+    tippecc_data:institution_id "MIROC" ;
+    tippecc_data:last_modification_time "2025-01-24 20:03:54 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Potential evapotranspiration (\"fao_pm98\" method)" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91676"^^xsd:int ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "MIROC6" ;
+    tippecc_data:parent_time_units "days since 3200-1-1" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:short_data_reference "Shiogama, Hideo et al. (2019). MIROC MIROC6 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:short_variable_name "evspsblpot" ;
+    tippecc_data:source """MIROC6 (2017): 
+aerosol: SPRINTARS6.0
+atmos: CCSR AGCM (T85; 256 x 128 longitude/latitude; 81 levels; top level 0.004 hPa)
+atmosChem: none
+land: MATSIRO6.0
+landIce: none
+ocean: COCO4.9 (tripolar primarily 1deg; 360 x 256 longitude/latitude; 63 levels; top grid cell 0-2 m)
+ocnBgchem: none
+seaIce: COCO4.9""" ;
+    tippecc_data:source_id "MIROC6" ;
+    tippecc_data:source_type "AOGCM AER" ;
+    tippecc_data:standard_name "water_potential_evapotranspiration_flux" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(22 July 2019) MD5:b4cefb4b6dbb146fea9677a552a00934" ;
+    tippecc_data:time_calendar "gregorian" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:title "MIROC6 output prepared for CMIP6" ;
+    tippecc_data:unit "kg m-2 s-1" ;
+    tippecc_data:units "kg m-2 s-1" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Calc_pot._ET_2183 ;
+            prov:atTime "2025-01-24T20:03:54-01:00"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_hurs_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rlds_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rlus_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rsds_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rsus_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_sfcWind_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_tasmax_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_tasmin_1850_2100 .
+
+tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__water_budget_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-01-24 20:05:25 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_methods "pr: area: time: mean evspsblpot: tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean" ;
+    tippecc_data:cmor_version "3.4.0" ;
+    tippecc_data:creation_date "2025-01-24T20:05:21Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:description "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget, where the potential evapotranspiration is calculated with the FAO_PM985 method." ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "3820370854"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC6.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "0.004479797921703721" ;
+    tippecc_data:global_min "-0.00021072629263585438" ;
+    tippecc_data:global_model "MIROC6" ;
+    tippecc_data:grid "native atmosphere T85 Gaussian grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history """pr: 2019-08-30T09:02:30Z altered by CMOR: Converted units from 'kg/m**2/s' to 'kg m-2 s-1'. 2019-08-30T09:02:30Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:02:30Z altered by CMOR: Inverted axis: lat.
+evspsblpot: tasmin: 2019-08-30T08:01:35Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-30T08:01:35Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T08:01:35Z altered by CMOR: Inverted axis: lat.
+tasmax: 2019-08-30T08:07:03Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-30T08:07:03Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T08:07:03Z altered by CMOR: Inverted axis: lat.
+hurs: 2019-08-30T08:12:36Z altered by CMOR: Converted units from '' to '%'. 2019-08-30T08:12:36Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-30T08:12:36Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T08:12:36Z altered by CMOR: Inverted axis: lat.
+rsds: 2019-08-30T09:48:14Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:48:14Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:48:14Z altered by CMOR: Inverted axis: lat.
+rsus: 2019-08-30T09:42:16Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:42:16Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:42:16Z altered by CMOR: Inverted axis: lat.
+rlds: 2019-08-30T09:37:06Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:37:06Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:37:06Z altered by CMOR: Inverted axis: lat.
+rlus: 2019-08-30T09:31:42Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:31:42Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:31:42Z altered by CMOR: Inverted axis: lat.
+sfcWind: 2020-08-03T08:43:24Z altered by CMOR: Converted units from 'm/s' to 'm s-1'. 2020-08-03T08:43:24Z altered by CMOR: Treated scalar dimension: 'height'. 2020-08-03T08:43:24Z altered by CMOR: replaced missing value flag (-999) and corresponding data with standard missing value (1e+20). 2020-08-03T08:43:24Z altered by CMOR: Inverted axis: lat.
+[2025-01-24 20:03:49] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0
+[2025-01-24 20:05:21] water_budget_from_tas: WATER_BUDGET_FROM_TAS(pr=pr, evspsblpot=evspsblpot, method='BR65') - xclim version: 0.49.0""" ;
+    tippecc_data:indicator "yes" ;
+    tippecc_data:institution "JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)" ;
+    tippecc_data:institution_id "MIROC" ;
+    tippecc_data:last_modification_time "2025-01-24 20:05:25 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Water budget (\"FAO_PM985\" method)" ;
+    tippecc_data:method "pr - evspsblpot " ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91676"^^xsd:int ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "MIROC6" ;
+    tippecc_data:parent_time_units "days since 3200-1-1" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:short_data_reference "Shiogama, Hideo et al. (2019). MIROC MIROC6 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:short_variable_name "water_budget_from_tas" ;
+    tippecc_data:source """MIROC6 (2017): 
+aerosol: SPRINTARS6.0
+atmos: CCSR AGCM (T85; 256 x 128 longitude/latitude; 81 levels; top level 0.004 hPa)
+atmosChem: none
+land: MATSIRO6.0
+landIce: none
+ocean: COCO4.9 (tripolar primarily 1deg; 360 x 256 longitude/latitude; 63 levels; top grid cell 0-2 m)
+ocnBgchem: none
+seaIce: COCO4.9""" ;
+    tippecc_data:source_id "MIROC6" ;
+    tippecc_data:source_type "AOGCM AER" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(22 July 2019) MD5:b4cefb4b6dbb146fea9677a552a00934" ;
+    tippecc_data:time_calendar "gregorian" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:title "MIROC6 output prepared for CMIP6" ;
+    tippecc_data:unit "kg m-2 s-1" ;
+    tippecc_data:units "kg m-2 s-1" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Calc_water_budget_2191 ;
+            prov:atTime "2025-01-24T20:05:25-01:00"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__evspsblpot_1850_2100,
+        tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_pr_1850_2100 .
+
+tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__water_budget__mm_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-01-24 20:06:38 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_methods "pr: area: time: mean evspsblpot: tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean" ;
+    tippecc_data:cmor_version "3.4.0" ;
+    tippecc_data:creation_date "2025-01-24T20:06:35Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:description "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget, where the potential evapotranspiration is calculated with the FAO_PM985 method." ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "3820370849"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC6.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "387.0545404352015" ;
+    tippecc_data:global_min "-18.206751683737817" ;
+    tippecc_data:global_model "MIROC6" ;
+    tippecc_data:grid "native atmosphere T85 Gaussian grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history """pr: 2019-08-30T09:02:30Z altered by CMOR: Converted units from 'kg/m**2/s' to 'kg m-2 s-1'. 2019-08-30T09:02:30Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:02:30Z altered by CMOR: Inverted axis: lat.
+evspsblpot: tasmin: 2019-08-30T08:01:35Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-30T08:01:35Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T08:01:35Z altered by CMOR: Inverted axis: lat.
+tasmax: 2019-08-30T08:07:03Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-30T08:07:03Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T08:07:03Z altered by CMOR: Inverted axis: lat.
+hurs: 2019-08-30T08:12:36Z altered by CMOR: Converted units from '' to '%'. 2019-08-30T08:12:36Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-30T08:12:36Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T08:12:36Z altered by CMOR: Inverted axis: lat.
+rsds: 2019-08-30T09:48:14Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:48:14Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:48:14Z altered by CMOR: Inverted axis: lat.
+rsus: 2019-08-30T09:42:16Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:42:16Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:42:16Z altered by CMOR: Inverted axis: lat.
+rlds: 2019-08-30T09:37:06Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:37:06Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:37:06Z altered by CMOR: Inverted axis: lat.
+rlus: 2019-08-30T09:31:42Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:31:42Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:31:42Z altered by CMOR: Inverted axis: lat.
+sfcWind: 2020-08-03T08:43:24Z altered by CMOR: Converted units from 'm/s' to 'm s-1'. 2020-08-03T08:43:24Z altered by CMOR: Treated scalar dimension: 'height'. 2020-08-03T08:43:24Z altered by CMOR: replaced missing value flag (-999) and corresponding data with standard missing value (1e+20). 2020-08-03T08:43:24Z altered by CMOR: Inverted axis: lat.
+[2025-01-24 20:03:49] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0
+[2025-01-24 20:05:21] water_budget_from_tas: WATER_BUDGET_FROM_TAS(pr=pr, evspsblpot=evspsblpot, method='BR65') - xclim version: 0.49.0""" ;
+    tippecc_data:indicator "yes" ;
+    tippecc_data:institution "JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)" ;
+    tippecc_data:institution_id "MIROC" ;
+    tippecc_data:last_modification_time "2025-01-24 20:06:38 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Water budget (\"FAO_PM985\" method)" ;
+    tippecc_data:method "pr - evspsblpot " ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91676"^^xsd:int ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "MIROC6" ;
+    tippecc_data:parent_time_units "days since 3200-1-1" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:short_data_reference "Shiogama, Hideo et al. (2019). MIROC MIROC6 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:short_variable_name "water_budget_from_tas" ;
+    tippecc_data:source """MIROC6 (2017): 
+aerosol: SPRINTARS6.0
+atmos: CCSR AGCM (T85; 256 x 128 longitude/latitude; 81 levels; top level 0.004 hPa)
+atmosChem: none
+land: MATSIRO6.0
+landIce: none
+ocean: COCO4.9 (tripolar primarily 1deg; 360 x 256 longitude/latitude; 63 levels; top grid cell 0-2 m)
+ocnBgchem: none
+seaIce: COCO4.9""" ;
+    tippecc_data:source_id "MIROC6" ;
+    tippecc_data:source_type "AOGCM AER" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(22 July 2019) MD5:b4cefb4b6dbb146fea9677a552a00934" ;
+    tippecc_data:time_calendar "gregorian" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:title "MIROC6 output prepared for CMIP6" ;
+    tippecc_data:unit "mmday" ;
+    tippecc_data:units "mmday" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Convert_water_budget_to_mm/day_2192> ;
+            prov:atTime "2025-01-24T20:06:38-01:00"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1__water_budget_1850_2100 .
+
+tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_hurs_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:43 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: time: mean" ;
+    tippecc_data:cmor_version "3.4.0" ;
+    tippecc_data:comment "The relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C." ;
+    tippecc_data:creation_date "2019-08-30T08:12:36Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1921465861"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC6.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "101.4515" ;
+    tippecc_data:global_min "2.71321" ;
+    tippecc_data:global_model "MIROC6" ;
+    tippecc_data:grid "native atmosphere T85 Gaussian grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history "2019-08-30T08:12:36Z altered by CMOR: Converted units from '' to '%'. 2019-08-30T08:12:36Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-30T08:12:36Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T08:12:36Z altered by CMOR: Inverted axis: lat." ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)" ;
+    tippecc_data:institution_id "MIROC" ;
+    tippecc_data:last_modification_time "2025-01-21 10:32:54 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Near-Surface Relative Humidity" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91676"^^xsd:int ;
+    tippecc_data:original_name "RH2" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "MIROC6" ;
+    tippecc_data:parent_time_units "days since 3200-1-1" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:short_data_reference "Shiogama, Hideo et al. (2019). MIROC MIROC6 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:short_variable_name "hurs" ;
+    tippecc_data:source """MIROC6 (2017): 
+aerosol: SPRINTARS6.0
+atmos: CCSR AGCM (T85; 256 x 128 longitude/latitude; 81 levels; top level 0.004 hPa)
+atmosChem: none
+land: MATSIRO6.0
+landIce: none
+ocean: COCO4.9 (tripolar primarily 1deg; 360 x 256 longitude/latitude; 63 levels; top grid cell 0-2 m)
+ocnBgchem: none
+seaIce: COCO4.9""" ;
+    tippecc_data:source_id "MIROC6" ;
+    tippecc_data:source_type "AOGCM AER" ;
+    tippecc_data:standard_name "relative_humidity" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(22 July 2019) MD5:b4cefb4b6dbb146fea9677a552a00934" ;
+    tippecc_data:time_calendar "gregorian" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-1-1" ;
+    tippecc_data:title "MIROC6 output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/fe89be88-797e-44fc-9cba-d02b83cc8dd5" ;
+    tippecc_data:unit "%" ;
+    tippecc_data:units "%" ;
+    tippecc_data:variable_id "hurs" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_2124 ;
+            prov:atTime "2025-01-17T17:05:35"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2127> ;
+            prov:atTime "2025-01-21T10:32:54-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_2125 ;
+            prov:atTime "2025-01-21T11:28:58"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_2126 ;
+            prov:atTime "2025-01-21T11:31:57"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_hurs_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_hurs_day_MIROC6_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_pr_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:38 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: time: mean" ;
+    tippecc_data:cmor_version "3.4.0" ;
+    tippecc_data:comment "includes both liquid and solid phases" ;
+    tippecc_data:creation_date "2019-08-30T09:02:30Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1921464182"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC6.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "0.0044912305" ;
+    tippecc_data:global_min "2.46725e-37" ;
+    tippecc_data:global_model "MIROC6" ;
+    tippecc_data:grid "native atmosphere T85 Gaussian grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history "2019-08-30T09:02:30Z altered by CMOR: Converted units from 'kg/m**2/s' to 'kg m-2 s-1'. 2019-08-30T09:02:30Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:02:30Z altered by CMOR: Inverted axis: lat." ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)" ;
+    tippecc_data:institution_id "MIROC" ;
+    tippecc_data:last_modification_time "2025-01-21 11:53:03 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91676"^^xsd:int ;
+    tippecc_data:original_name "PRCP" ;
+    tippecc_data:original_units "kg/m**2/s" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "MIROC6" ;
+    tippecc_data:parent_time_units "days since 3200-1-1" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:short_data_reference "Shiogama, Hideo et al. (2019). MIROC MIROC6 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:short_variable_name "pr" ;
+    tippecc_data:source """MIROC6 (2017): 
+aerosol: SPRINTARS6.0
+atmos: CCSR AGCM (T85; 256 x 128 longitude/latitude; 81 levels; top level 0.004 hPa)
+atmosChem: none
+land: MATSIRO6.0
+landIce: none
+ocean: COCO4.9 (tripolar primarily 1deg; 360 x 256 longitude/latitude; 63 levels; top grid cell 0-2 m)
+ocnBgchem: none
+seaIce: COCO4.9""" ;
+    tippecc_data:source_id "MIROC6" ;
+    tippecc_data:source_type "AOGCM AER" ;
+    tippecc_data:standard_name "precipitation_flux" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(22 July 2019) MD5:b4cefb4b6dbb146fea9677a552a00934" ;
+    tippecc_data:time_calendar "gregorian" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-1-1" ;
+    tippecc_data:title "MIROC6 output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/34af2c05-2219-4771-be60-aa7e73f84ad9" ;
+    tippecc_data:unit "kg m-2 s-1" ;
+    tippecc_data:units "kg m-2 s-1" ;
+    tippecc_data:variable_id "pr" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_2128 ;
+            prov:atTime "2025-01-17T18:09:32"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_2129 ;
+            prov:atTime "2025-01-21T12:49:03"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_2130 ;
+            prov:atTime "2025-01-21T12:51:56"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2131> ;
+            prov:atTime "2025-01-21T11:53:03-01:00"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_pr_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_pr_day_MIROC6_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rlds_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:39 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: time: mean" ;
+    tippecc_data:cmor_version "3.4.0" ;
+    tippecc_data:comment "The surface called 'surface' means the lower boundary of the atmosphere. 'longwave' means longwave radiation. Downwelling radiation is radiation from above. It does not mean 'net downward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics." ;
+    tippecc_data:creation_date "2019-08-30T09:37:06Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1921465887"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC6.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "511.69794" ;
+    tippecc_data:global_min "208.86862" ;
+    tippecc_data:global_model "MIROC6" ;
+    tippecc_data:grid "native atmosphere T85 Gaussian grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history "2019-08-30T09:37:06Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:37:06Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:37:06Z altered by CMOR: Inverted axis: lat." ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)" ;
+    tippecc_data:institution_id "MIROC" ;
+    tippecc_data:last_modification_time "2025-01-21 13:12:37 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Surface Downwelling Longwave Radiation" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91676"^^xsd:int ;
+    tippecc_data:original_name "SLRD" ;
+    tippecc_data:original_units "W/m**2" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "MIROC6" ;
+    tippecc_data:parent_time_units "days since 3200-1-1" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:short_data_reference "Shiogama, Hideo et al. (2019). MIROC MIROC6 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:short_variable_name "rlds" ;
+    tippecc_data:source """MIROC6 (2017): 
+aerosol: SPRINTARS6.0
+atmos: CCSR AGCM (T85; 256 x 128 longitude/latitude; 81 levels; top level 0.004 hPa)
+atmosChem: none
+land: MATSIRO6.0
+landIce: none
+ocean: COCO4.9 (tripolar primarily 1deg; 360 x 256 longitude/latitude; 63 levels; top grid cell 0-2 m)
+ocnBgchem: none
+seaIce: COCO4.9""" ;
+    tippecc_data:source_id "MIROC6" ;
+    tippecc_data:source_type "AOGCM AER" ;
+    tippecc_data:standard_name "surface_downwelling_longwave_flux_in_air" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(22 July 2019) MD5:b4cefb4b6dbb146fea9677a552a00934" ;
+    tippecc_data:time_calendar "gregorian" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-1-1" ;
+    tippecc_data:title "MIROC6 output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/dd937d96-fdcb-4b7d-9d9a-95fe0c00f2fd" ;
+    tippecc_data:unit "W m-2" ;
+    tippecc_data:units "W m-2" ;
+    tippecc_data:variable_id "rlds" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Slice_years_2140 ;
+            prov:atTime "2025-01-21T14:08:31"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_2141 ;
+            prov:atTime "2025-01-21T14:11:26"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2142> ;
+            prov:atTime "2025-01-21T13:12:37-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_2139 ;
+            prov:atTime "2025-01-17T19:14:20"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_rlds_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rlds_day_MIROC6_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rlus_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:33 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: time: mean" ;
+    tippecc_data:cmor_version "3.4.0" ;
+    tippecc_data:comment "The surface called 'surface' means the lower boundary of the atmosphere. 'longwave' means longwave radiation. Upwelling radiation is radiation from below. It does not mean 'net upward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics." ;
+    tippecc_data:creation_date "2019-08-30T09:31:42Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1921465883"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC6.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "661.6323" ;
+    tippecc_data:global_min "310.84366" ;
+    tippecc_data:global_model "MIROC6" ;
+    tippecc_data:grid "native atmosphere T85 Gaussian grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history "2019-08-30T09:31:42Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:31:42Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:31:42Z altered by CMOR: Inverted axis: lat." ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)" ;
+    tippecc_data:institution_id "MIROC" ;
+    tippecc_data:last_modification_time "2025-01-21 14:32:40 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Surface Upwelling Longwave Radiation" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91676"^^xsd:int ;
+    tippecc_data:original_name "SLRU" ;
+    tippecc_data:original_units "W/m**2" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "MIROC6" ;
+    tippecc_data:parent_time_units "days since 3200-1-1" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:short_data_reference "Shiogama, Hideo et al. (2019). MIROC MIROC6 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:short_variable_name "rlus" ;
+    tippecc_data:source """MIROC6 (2017): 
+aerosol: SPRINTARS6.0
+atmos: CCSR AGCM (T85; 256 x 128 longitude/latitude; 81 levels; top level 0.004 hPa)
+atmosChem: none
+land: MATSIRO6.0
+landIce: none
+ocean: COCO4.9 (tripolar primarily 1deg; 360 x 256 longitude/latitude; 63 levels; top grid cell 0-2 m)
+ocnBgchem: none
+seaIce: COCO4.9""" ;
+    tippecc_data:source_id "MIROC6" ;
+    tippecc_data:source_type "AOGCM AER" ;
+    tippecc_data:standard_name "surface_upwelling_longwave_flux_in_air" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(22 July 2019) MD5:b4cefb4b6dbb146fea9677a552a00934" ;
+    tippecc_data:time_calendar "gregorian" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-1-1" ;
+    tippecc_data:title "MIROC6 output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/31d36b98-2b52-4d5e-a519-88d137a3e79f" ;
+    tippecc_data:unit "W m-2" ;
+    tippecc_data:units "W m-2" ;
+    tippecc_data:variable_id "rlus" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2146> ;
+            prov:atTime "2025-01-21T14:32:40-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_2143 ;
+            prov:atTime "2025-01-17T20:21:21"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_2144 ;
+            prov:atTime "2025-01-21T15:29:09"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_2145 ;
+            prov:atTime "2025-01-21T15:32:05"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_rlus_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rlus_day_MIROC6_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rsds_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:39 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: time: mean" ;
+    tippecc_data:cmor_version "3.4.0" ;
+    tippecc_data:comment "Surface solar irradiance for UV calculations." ;
+    tippecc_data:creation_date "2019-08-30T09:48:14Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1921464332"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC6.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "425.6166" ;
+    tippecc_data:global_min "4.464427" ;
+    tippecc_data:global_model "MIROC6" ;
+    tippecc_data:grid "native atmosphere T85 Gaussian grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history "2019-08-30T09:48:14Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:48:14Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:48:14Z altered by CMOR: Inverted axis: lat." ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)" ;
+    tippecc_data:institution_id "MIROC" ;
+    tippecc_data:last_modification_time "2025-01-21 15:52:27 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Surface Downwelling Shortwave Radiation" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91676"^^xsd:int ;
+    tippecc_data:original_name "SSRD" ;
+    tippecc_data:original_units "W/m**2" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "MIROC6" ;
+    tippecc_data:parent_time_units "days since 3200-1-1" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:short_data_reference "Shiogama, Hideo et al. (2019). MIROC MIROC6 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:short_variable_name "rsds" ;
+    tippecc_data:source """MIROC6 (2017): 
+aerosol: SPRINTARS6.0
+atmos: CCSR AGCM (T85; 256 x 128 longitude/latitude; 81 levels; top level 0.004 hPa)
+atmosChem: none
+land: MATSIRO6.0
+landIce: none
+ocean: COCO4.9 (tripolar primarily 1deg; 360 x 256 longitude/latitude; 63 levels; top grid cell 0-2 m)
+ocnBgchem: none
+seaIce: COCO4.9""" ;
+    tippecc_data:source_id "MIROC6" ;
+    tippecc_data:source_type "AOGCM AER" ;
+    tippecc_data:standard_name "surface_downwelling_shortwave_flux_in_air" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(22 July 2019) MD5:b4cefb4b6dbb146fea9677a552a00934" ;
+    tippecc_data:time_calendar "gregorian" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-1-1" ;
+    tippecc_data:title "MIROC6 output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/d04288c2-cec8-4eb7-b263-3991301f4a5b" ;
+    tippecc_data:unit "W m-2" ;
+    tippecc_data:units "W m-2" ;
+    tippecc_data:variable_id "rsds" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2150> ;
+            prov:atTime "2025-01-21T15:52:27-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_2148 ;
+            prov:atTime "2025-01-21T16:48:43"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_2147 ;
+            prov:atTime "2025-01-17T21:27:50"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_2149 ;
+            prov:atTime "2025-01-21T16:51:39"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_rsds_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rsds_day_MIROC6_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_rsus_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:43 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: time: mean" ;
+    tippecc_data:cmor_version "3.4.0" ;
+    tippecc_data:comment "The surface called 'surface' means the lower boundary of the atmosphere. 'shortwave' means shortwave radiation. Upwelling radiation is radiation from below. It does not mean 'net upward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics." ;
+    tippecc_data:creation_date "2019-08-30T09:42:16Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1921465885"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC6.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "111.2488" ;
+    tippecc_data:global_min "0.26765296" ;
+    tippecc_data:global_model "MIROC6" ;
+    tippecc_data:grid "native atmosphere T85 Gaussian grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history "2019-08-30T09:42:16Z altered by CMOR: Converted units from 'W/m**2' to 'W m-2'. 2019-08-30T09:42:16Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T09:42:16Z altered by CMOR: Inverted axis: lat." ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)" ;
+    tippecc_data:institution_id "MIROC" ;
+    tippecc_data:last_modification_time "2025-01-21 17:08:08 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Surface Upwelling Shortwave Radiation" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91676"^^xsd:int ;
+    tippecc_data:original_name "SSRU" ;
+    tippecc_data:original_units "W/m**2" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "MIROC6" ;
+    tippecc_data:parent_time_units "days since 3200-1-1" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:short_data_reference "Shiogama, Hideo et al. (2019). MIROC MIROC6 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:short_variable_name "rsus" ;
+    tippecc_data:source """MIROC6 (2017): 
+aerosol: SPRINTARS6.0
+atmos: CCSR AGCM (T85; 256 x 128 longitude/latitude; 81 levels; top level 0.004 hPa)
+atmosChem: none
+land: MATSIRO6.0
+landIce: none
+ocean: COCO4.9 (tripolar primarily 1deg; 360 x 256 longitude/latitude; 63 levels; top grid cell 0-2 m)
+ocnBgchem: none
+seaIce: COCO4.9""" ;
+    tippecc_data:source_id "MIROC6" ;
+    tippecc_data:source_type "AOGCM AER" ;
+    tippecc_data:standard_name "surface_upwelling_shortwave_flux_in_air" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(22 July 2019) MD5:b4cefb4b6dbb146fea9677a552a00934" ;
+    tippecc_data:time_calendar "gregorian" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-1-1" ;
+    tippecc_data:title "MIROC6 output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/b67d879c-835c-4952-8e28-940b0013345c" ;
+    tippecc_data:unit "W m-2" ;
+    tippecc_data:units "W m-2" ;
+    tippecc_data:variable_id "rsus" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_2153 ;
+            prov:atTime "2025-01-21T18:07:22"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2154> ;
+            prov:atTime "2025-01-21T17:08:08-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_2151 ;
+            prov:atTime "2025-01-17T22:30:59"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_2152 ;
+            prov:atTime "2025-01-21T18:04:27"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_rsus_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rsus_day_MIROC6_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_sfcWind_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:41 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: time: mean" ;
+    tippecc_data:cmor_version "3.5.0" ;
+    tippecc_data:comment "near-surface (usually, 10 meters) wind speed." ;
+    tippecc_data:creation_date "2020-08-03T08:43:24Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1921465914"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC6.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "34.29205" ;
+    tippecc_data:global_min "0.0017758877" ;
+    tippecc_data:global_model "MIROC6" ;
+    tippecc_data:grid "native atmosphere T85 Gaussian grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history "2020-08-03T08:43:24Z altered by CMOR: Converted units from 'm/s' to 'm s-1'. 2020-08-03T08:43:24Z altered by CMOR: Treated scalar dimension: 'height'. 2020-08-03T08:43:24Z altered by CMOR: replaced missing value flag (-999) and corresponding data with standard missing value (1e+20). 2020-08-03T08:43:24Z altered by CMOR: Inverted axis: lat." ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)" ;
+    tippecc_data:institution_id "MIROC" ;
+    tippecc_data:last_modification_time "2025-01-21 18:25:04 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Daily-Mean Near-Surface Wind Speed" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91676"^^xsd:int ;
+    tippecc_data:original_name "VABS10" ;
+    tippecc_data:original_units "m/s" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "MIROC6" ;
+    tippecc_data:parent_time_units "days since 3200-1-1" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:short_data_reference "Shiogama, Hideo et al. (2019). MIROC MIROC6 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:short_variable_name "sfcWind" ;
+    tippecc_data:source """MIROC6 (2017): 
+aerosol: SPRINTARS6.0
+atmos: CCSR AGCM (T85; 256 x 128 longitude/latitude; 81 levels; top level 0.004 hPa)
+atmosChem: none
+land: MATSIRO6.0
+landIce: none
+ocean: COCO4.9 (tripolar primarily 1deg; 360 x 256 longitude/latitude; 63 levels; top grid cell 0-2 m)
+ocnBgchem: none
+seaIce: COCO4.9""" ;
+    tippecc_data:source_id "MIROC6" ;
+    tippecc_data:source_type "AOGCM AER" ;
+    tippecc_data:standard_name "wind_speed" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(22 July 2019) MD5:b4cefb4b6dbb146fea9677a552a00934" ;
+    tippecc_data:time_calendar "gregorian" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-1-1" ;
+    tippecc_data:title "MIROC6 output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/8f7b559e-b19f-42a1-927e-1bea768dde0e" ;
+    tippecc_data:unit "m s-1" ;
+    tippecc_data:units "m s-1" ;
+    tippecc_data:variable_id "sfcWind" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Slice_years_2156 ;
+            prov:atTime "2025-01-21T19:21:21"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_2155 ;
+            prov:atTime "2025-01-17T23:34:12"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_2157 ;
+            prov:atTime "2025-01-21T19:24:17"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2158> ;
+            prov:atTime "2025-01-21T18:25:04-01:00"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_sfcWind_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_sfcWind_day_MIROC6_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_tasmax_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:10 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: mean time: maximum" ;
+    tippecc_data:cmor_version "3.4.0" ;
+    tippecc_data:comment "maximum near-surface (usually, 2 meter) air temperature (add cell_method attribute 'time: max')" ;
+    tippecc_data:creation_date "2019-08-30T08:07:03Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1921464902"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC6.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "342.31778" ;
+    tippecc_data:global_min "272.93185" ;
+    tippecc_data:global_model "MIROC6" ;
+    tippecc_data:grid "native atmosphere T85 Gaussian grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history "2019-08-30T08:07:03Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-30T08:07:03Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T08:07:03Z altered by CMOR: Inverted axis: lat." ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)" ;
+    tippecc_data:institution_id "MIROC" ;
+    tippecc_data:last_modification_time "2025-01-21 21:04:30 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Daily Maximum Near-Surface Air Temperature" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91676"^^xsd:int ;
+    tippecc_data:original_name "T2" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "MIROC6" ;
+    tippecc_data:parent_time_units "days since 3200-1-1" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:short_data_reference "Shiogama, Hideo et al. (2019). MIROC MIROC6 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:short_variable_name "tasmax" ;
+    tippecc_data:source """MIROC6 (2017): 
+aerosol: SPRINTARS6.0
+atmos: CCSR AGCM (T85; 256 x 128 longitude/latitude; 81 levels; top level 0.004 hPa)
+atmosChem: none
+land: MATSIRO6.0
+landIce: none
+ocean: COCO4.9 (tripolar primarily 1deg; 360 x 256 longitude/latitude; 63 levels; top grid cell 0-2 m)
+ocnBgchem: none
+seaIce: COCO4.9""" ;
+    tippecc_data:source_id "MIROC6" ;
+    tippecc_data:source_type "AOGCM AER" ;
+    tippecc_data:standard_name "air_temperature" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(22 July 2019) MD5:b4cefb4b6dbb146fea9677a552a00934" ;
+    tippecc_data:time_calendar "gregorian" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-1-1" ;
+    tippecc_data:title "MIROC6 output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/992b802b-946e-46b3-b294-5a1975eb4b20" ;
+    tippecc_data:unit "K" ;
+    tippecc_data:units "K" ;
+    tippecc_data:variable_id "tasmax" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2162> ;
+            prov:atTime "2025-01-21T21:04:30-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_2159 ;
+            prov:atTime "2025-01-18T01:43:47"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_2160 ;
+            prov:atTime "2025-01-21T22:00:30"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_2161 ;
+            prov:atTime "2025-01-21T22:03:25"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_tasmax_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_tasmax_day_MIROC6_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:TIPPECC_MIROC6_day_r1i1p1f1_tasmin_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:33 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: mean time: minimum" ;
+    tippecc_data:cmor_version "3.4.0" ;
+    tippecc_data:comment "minimum near-surface (usually, 2 meter) air temperature (add cell_method attribute 'time: min')" ;
+    tippecc_data:creation_date "2019-08-30T08:01:35Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1921464902"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC6.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "313.02966" ;
+    tippecc_data:global_min "269.9906" ;
+    tippecc_data:global_model "MIROC6" ;
+    tippecc_data:grid "native atmosphere T85 Gaussian grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history "2019-08-30T08:01:35Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-30T08:01:35Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2019-08-30T08:01:35Z altered by CMOR: Inverted axis: lat." ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)" ;
+    tippecc_data:institution_id "MIROC" ;
+    tippecc_data:last_modification_time "2025-01-21 22:27:15 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Daily Minimum Near-Surface Air Temperature" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91676"^^xsd:int ;
+    tippecc_data:original_name "T2" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "MIROC6" ;
+    tippecc_data:parent_time_units "days since 3200-1-1" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:short_data_reference "Shiogama, Hideo et al. (2019). MIROC MIROC6 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5771" ;
+    tippecc_data:short_variable_name "tasmin" ;
+    tippecc_data:source """MIROC6 (2017): 
+aerosol: SPRINTARS6.0
+atmos: CCSR AGCM (T85; 256 x 128 longitude/latitude; 81 levels; top level 0.004 hPa)
+atmosChem: none
+land: MATSIRO6.0
+landIce: none
+ocean: COCO4.9 (tripolar primarily 1deg; 360 x 256 longitude/latitude; 63 levels; top grid cell 0-2 m)
+ocnBgchem: none
+seaIce: COCO4.9""" ;
+    tippecc_data:source_id "MIROC6" ;
+    tippecc_data:source_type "AOGCM AER" ;
+    tippecc_data:standard_name "air_temperature" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(22 July 2019) MD5:b4cefb4b6dbb146fea9677a552a00934" ;
+    tippecc_data:time_calendar "gregorian" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-1-1" ;
+    tippecc_data:title "MIROC6 output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/0521ce77-962d-483c-b0bd-c2efae528c8d" ;
+    tippecc_data:unit "K" ;
+    tippecc_data:units "K" ;
+    tippecc_data:variable_id "tasmin" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_2165 ;
+            prov:atTime "2025-01-21T23:26:24"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_2164 ;
+            prov:atTime "2025-01-21T23:23:27"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2166> ;
+            prov:atTime "2025-01-21T22:27:15-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_2163 ;
+            prov:atTime "2025-01-18T02:53:02"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_tasmin_day_MIROC6_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_tasmin_day_MIROC6_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_387 ;
+            prov:atTime "2024-12-19T08:38:51"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231,
+        tippecc_data:hurs_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 .
+
+tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_458 ;
+            prov:atTime "2024-12-19T09:52:43"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231,
+        tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 .
+
+tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_481 ;
+            prov:atTime "2024-12-19T11:09:57"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231,
+        tippecc_data:rlds_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 .
+
+tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_504 ;
+            prov:atTime "2024-12-19T12:22:27"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231,
+        tippecc_data:rlus_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 .
+
+tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_527 ;
+            prov:atTime "2024-12-19T13:33:39"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231,
+        tippecc_data:rsds_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 .
+
+tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_550 ;
+            prov:atTime "2024-12-19T14:48:41"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231,
+        tippecc_data:rsus_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 .
+
+tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_573 ;
+            prov:atTime "2024-12-19T16:02:54"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231,
+        tippecc_data:sfcWind_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 .
+
+tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_596 ;
+            prov:atTime "2024-12-19T18:25:20"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231,
+        tippecc_data:tasmax_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 .
+
+tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_619 ;
+            prov:atTime "2024-12-19T19:39:06"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_18600101-18691231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_18700101-18791231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_18800101-18891231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_18900101-18991231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19000101-19091231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19100101-19191231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19200101-19291231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19300101-19391231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19400101-19491231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19500101-19591231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19600101-19691231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19700101-19791231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19800101-19891231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_19900101-19991231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_20000101-20091231,
+        tippecc_data:tasmin_day_MIROC6_historical_r1i1p1f1_gn_20100101-20141231 .
+
+<http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> a prov:Agent .
+
+people:PERSON__ZANDER_FRANZISKA a prov:Agent,
+        "prov:Person" ;
+    rdfs:label "Franziska Zander" ;
+    sdo:affiliation orgs:ORG__FSU ;
+    prov:actedOnBehalfOf orgs:ORG__FSU ;
+    wd:P496 "0000-0001-6892-7046" ;
+    foaf:familyName "Zander" ;
+    foaf:givenName "Franziska" .
+
+tippecc_data:africa05.txt a prov:Entity .
+
+people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
+        "prov:Person" ;
+    rdfs:label "Jonathan Padavatan" ;
+    sdo:affiliation orgs:ORG__WITS ;
+    prov:actedOnBehalfOf orgs:ORG__WITS ;
+    foaf:familyName "Padavatan" ;
+    foaf:givenName "Jonathan" .
+
+software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareApplication" .
+

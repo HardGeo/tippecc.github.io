@@ -1,1 +1,33 @@
+@prefix exe: <http://www.provbook.org/tippecc/exe/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <http://schema.org/> .
+@prefix software: <http://www.provbook.org/tippecc/software/> .
+@prefix tippecc_data: <http://www.provbook.org/tippecc/data/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+exe:Calc_year_sum_337 a prov:Activity ;
+    rdfs:label "Calc year sum" ;
+    prov:description "Calculate the sum of the years." ;
+    prov:function "FUNCTION__CDO_YEARSUM" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-02-19T21:00:55-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_ref._period_336 .
+
+tippecc_data:TIPPECC_GERICS-REMO2015_v1_MPI-M-MPI-ESM-LR_pr_Afr_day_1970_2100 a prov:Entity .
+
+exe:Slice_ref._period_336 a prov:Activity ;
+    rdfs:label "Slice ref. period" ;
+    prov:description "Slice a reference period from the dataset between 1981 and 2000." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1981', 'end_year': '2000'}" ;
+    prov:startedAtTime "2025-02-19T21:00:55-01:00"^^xsd:dateTime ;
+    prov:used tippecc_data:TIPPECC_GERICS-REMO2015_v1_MPI-M-MPI-ESM-LR_pr_Afr_day_1970_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareApplication" .
 

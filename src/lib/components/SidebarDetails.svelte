@@ -78,10 +78,10 @@ RORID;${detailedData.rorid}
     function copySoftwareData() {
         // Format data to copy, you can adjust this string based on what you need
         let dataToCopy = `
-Software:;${detailedData.software}
+Software;${detailedData.software}
+Software_name;${detailedData.software_name}
 Version;${detailedData.version}
-License;${detailedData.license}
-Source;${detailedData.source}
+Type;${detailedData.type}
 `.trim();
 
         // Use Clipboard API to copy the string
@@ -101,13 +101,34 @@ Source;${detailedData.source}
     function copyActivityData() {
         // Format data to copy, you can adjust this string based on what you need
         let dataToCopy = `
-Id:;${detailedData.id}
+Id;${detailedData.id}
 StartTime;${detailedData.startTime}
-Type;${detailedData.type}
-Name;${detailedData.name}
+Params;${detailedData.params}
+Label;${detailedData.label}
 Description;${detailedData.description}
-Url;${detailedData.url}
-TargetProduct;${detailedData.targetProduct}
+Function;${detailedData.function}
+`.trim();
+
+        // Use Clipboard API to copy the string
+        navigator.clipboard.writeText(dataToCopy)
+            .then(() => {
+                console.log('Data copied to clipboard');
+                alert('Data copied to clipboard!');
+            })
+            .catch(err => {
+                console.error('Failed to copy: ', err);
+                alert('Failed to copy data. Please try again.');
+            });
+    }
+
+
+function copyCollectionData() {
+        // Format data to copy, you can adjust this string based on what you need
+        let dataToCopy = `
+Id;${detailedData.id}
+Type;${detailedData.type}
+Description;${detailedData.description}
+Collection_name;${detailedData.collection_name}
 `.trim();
 
         // Use Clipboard API to copy the string
@@ -466,18 +487,18 @@ TargetProduct;${detailedData.targetProduct}
                             </td>
                         </tr>
                         <tr>
-                            <td ><strong>Version</strong></td>
+                            <td ><strong>Software Name</strong></td>
                             <td >
-                                {detailedData.version}
+                                {detailedData.software_name}
                             </td>
                         </tr>
                         <tr>
-                            <td ><strong>License</strong></td>
-                            <td >{detailedData.license}</td>
+                            <td ><strong>Version</strong></td>
+                            <td >{detailedData.version}</td>
                         </tr>
                         <tr>
-                            <td ><strong>Source</strong></td>
-                            <td >{detailedData.source}</td>
+                            <td ><strong>Type</strong></td>
+                            <td >{detailedData.type}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -486,7 +507,7 @@ TargetProduct;${detailedData.targetProduct}
     {/if}
 
 
-    {#if detailedData?.name}
+    {#if detailedData?.params}
         <div class="relative"> <!-- Ensure relative positioning -->
             
             <button
@@ -519,12 +540,12 @@ TargetProduct;${detailedData.targetProduct}
                             </td>
                         </tr>
                         <tr>
-                            <td ><strong>Type</strong></td>
-                            <td >{detailedData.type}</td>
+                            <td ><strong>Parameter</strong></td>
+                            <td >{detailedData.params}</td>
                         </tr>
                         <tr>
-                            <td ><strong>Name</strong></td>
-                            <td >{detailedData.name}</td>
+                            <td ><strong>Label</strong></td>
+                            <td >{detailedData.label}</td>
                         </tr>
 
                         <tr>
@@ -533,13 +554,56 @@ TargetProduct;${detailedData.targetProduct}
                         </tr>
 
                         <tr>
-                            <td ><strong>Url</strong></td>
-                            <td >{detailedData.url}</td>
+                            <td ><strong>Function</strong></td>
+                            <td >{detailedData.function}</td>
                         </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {/if}
 
+
+
+    {#if detailedData?.collection_name}
+        <div class="relative"> <!-- Ensure relative positioning -->
+            
+            <button
+                on:click={copyCollectionData}
+                class="bg-gray-200 p-2 rounded-md shadow-md hover:bg-gray-200 mt-4"
+                title="Copy to Clipboard"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-600 hover:text-gray-800" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M14 2H9a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2zM9 4h6v12H9V4z" />
+                    <path d="M4 6a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 11-2 0V7H6v2a1 1 0 01-2 0V6z" />
+                </svg>
+            </button>
+            <h2>{"Collection Details"}</h2>
+            <div class="triangle absolute left-1/2 -top-2 transform -translate-x-1/2"></div>
+            
+            <div class="table-container">
+                <!-- Table layout with adjusted column spacing -->
+                <table class="w-full">
+                    <tbody>
                         <tr>
-                            <td ><strong>TargetProduct</strong></td>
-                            <td >{detailedData.targetProduct}</td>
+                            <td ><strong>Id</strong></td> 
+                            <td >
+                                {detailedData.id}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td ><strong>Collection Name</strong></td>
+                            <td >
+                                {detailedData.collection_name}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td ><strong>Type</strong></td>
+                            <td >{detailedData.type}</td>
+                        </tr>
+                        <tr>
+                            <td ><strong>Description</strong></td>
+                            <td >{detailedData.description}</td>
                         </tr>
                     </tbody>
                 </table>

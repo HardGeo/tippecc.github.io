@@ -42,6 +42,7 @@ export const changedFormat = writable(new Set<string>());
 export const changedSize = writable(new Set<string>());
 export const changedGlobMod = writable(new Set<string>());
 export const changedRegMod = writable(new Set<string>());
+export const changedBounds = writable(new Set<string>());
 
 // Writable stores for the label states
 export const wasDerivedFrom_lb = writable("wasDerivedFrom");

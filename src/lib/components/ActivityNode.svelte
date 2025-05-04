@@ -7,13 +7,12 @@
     export let data = {
         id: "",
         startTime: "",
-        type: "",
-        name: "",
+        params: "",
+        label: "",
         description: "",
-        url: "",
-        targetProduct: ""
-	}
-
+        function: ""
+    }
+    
     function extractBaseString(input: string): string {
         const match = input.match(/^(.*?)(?:_\d+)?$/);
         return match ? match[1] : input;

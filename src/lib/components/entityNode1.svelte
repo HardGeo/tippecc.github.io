@@ -56,6 +56,7 @@
     changedSize, 
     changedGlobMod, 
     changedRegMod,
+    changedBounds,
     showDetails, 
     handleKeyDown} from '$lib/store';
 
@@ -107,6 +108,11 @@
         isChangedRegMod = set.has(id); // Check if this entity is in the changed set
     });
 
+    let isChangedBounds = false;
+    const unsubscribeBounds = changedBounds.subscribe(set => {
+        isChangedBounds = set.has(id); // Check if this entity is in the changed set;
+    });
+
     onDestroy(() => {
         unsubscribe();
         unsubscribeUnit();
@@ -117,32 +123,8 @@
         unsubscribeSize();
         unsubscribeGlobMod();
         unsubscribeRegMod();
+        unsubscribeBounds();
     });
-
-    let x = 0;
-    let y = 0;
-    let width = 0; 
-    let height = 0;
-
-    $: if (data?.spatialExtent?.length === 4 && data?.spatialExtent_orig?.length === 4) {
-    const x_diff = data.spatialExtent_orig[1] - data.spatialExtent_orig[0];
-    const y_diff = data.spatialExtent_orig[3] - data.spatialExtent_orig[2];
-
-    if (x_diff !== 0 && y_diff !== 0) {
-        x = ((data.spatialExtent[0] - data.spatialExtent_orig[0]) / x_diff) * 100;
-        y = ((data.spatialExtent[2] - data.spatialExtent_orig[2]) / y_diff) * 100;
-        width = ((data.spatialExtent[1] - data.spatialExtent[0]) / x_diff) * 100;
-        height = ((data.spatialExtent[3] - data.spatialExtent[2]) / y_diff) * 100;
-    } else {
-        console.warn("Division by 0: check spatialExtent_orig");
-        x = 0;
-        y = 0;
-        width = 0;
-        height = 0;
-    }
-
-    //console.log("x:", x, "y:", y, "width:", width, "height:", height);
-    }
 
 </script>
 
@@ -218,42 +200,14 @@
             {data.resolutionZeitlich}
         </div>
 
-        <!-- Spatial extent -->
-		<div class="relative group flex flex-col items-center space-y-2 bg-[#EAF6EA] border border-[#9CCEA0] rounded-md p-2 overflow-hidden flex-grow hover:bg-white transition-colors duration-200">
-            <!-- SVG map visualization -->
-            <svg class="w-14 h-14" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <!-- Black outline for original extent -->
-                <rect 
-                    x=0
-                    y=0 
-                    width=100
-                    height=100
-                    fill="#E0E0E0" 
-                    stroke="none" 
-                    stroke-width="3"
-                />
-
-                {#if data.spatialExtent && data.spatialExtent_orig 
-                && JSON.stringify(data.spatialExtent) !== JSON.stringify(data.spatialExtent_orig)}
-                <rect 
-                  x={x}
-                  y={y}
-                  width={width}
-                  height={height}
-                  fill="none" 
-                  stroke="black" 
-                  stroke-width="2"
-                />
-                {/if}
-                
-            </svg>
-
-			<!-- Hover Text -->
-			<div class="absolute inset-0 flex items-center justify-center bg-gray-600 bg-opacity-75 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2">
-				<!-- First line for xmin and xmax -->
-				<div>{data.spatialExtent[0]}, {data.spatialExtent[1]}, {data.spatialExtent[2]}, {data.spatialExtent[3]}</div>
-			</div>
-		</div>
+        <!-- Bounds Chip -->
+		<div 
+            class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 rounded-md inline-flex items-center justify-center inline-block text-sm flex-grow hover:bg-white transition-colors duration-200"
+            style="z-index: 1; border: {isChangedBounds ? '2px solid #7f1d1d' : 'none'};"
+            >
+            <!-- First line for xmin and xmax -->
+            <div>{data.spatialExtent[0]}, {data.spatialExtent[1]}, {data.spatialExtent[2]}, {data.spatialExtent[3]}</div>
+        </div>
 
         <!-- Spatial Resolution with Map -->
         <div 

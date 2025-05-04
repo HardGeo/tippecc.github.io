@@ -1,0 +1,507 @@
+@prefix exe: <http://www.provbook.org/tippecc/exe/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix orgs: <http://www.provbook.org/tippecc/orgs/> .
+@prefix people: <http://www.provbook.org/tippecc/people/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <http://schema.org/> .
+@prefix software: <http://www.provbook.org/tippecc/software/> .
+@prefix tippecc_data: <http://www.provbook.org/tippecc/data/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+tippecc_data:COLLECTION__CMIP6 a prov:Collection,
+        prov:Entity,
+        "prov:Collection" ;
+    sdo:description "CMIP6 is a climate model intercomparison project." ;
+    sdo:name "CMIP6" ;
+    prov:hadMember tippecc_data:05deg_pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014,
+        tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr_1850_2100,
+        tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr__mm_1850_2100,
+        tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr__mm_1850_2100__yearsum,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:COLLECTION__TIPPECC a prov:Collection,
+        prov:Entity,
+        "prov:Collection" ;
+    sdo:description "TIPPECC is a ....." ;
+    sdo:name "TIPPECC" ;
+    prov:hadMember tippecc_data:05deg_pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014,
+        tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr_1850_2100,
+        tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr__mm_1850_2100,
+        tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr__mm_1850_2100__yearsum,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014 .
+
+exe:Calc_mean_857 a prov:Activity ;
+    rdfs:label "Calc mean" ;
+    prov:description "Calculate the mean of the dataset between 1981 and 2000." ;
+    prov:function "FUNCTION__CDO_TIMMEAN" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-02-10T11:51:32-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_ref._period_856 .
+
+exe:Slice_ref._period_856 a prov:Activity ;
+    rdfs:label "Slice ref. period" ;
+    prov:description "Slice a reference period from the dataset between 1981 and 2000." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1981', 'end_year': '2000'}" ;
+    prov:startedAtTime "2025-02-10T11:51:32-01:00"^^xsd:dateTime ;
+    prov:used tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr__mm_1850_2100__yearsum ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Calc_year_sum_860 .
+
+software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:targetProduct software:SOFTWARE__XCLIM ;
+    sdo:type "sdo:SoftwareApplication" .
+
+<http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> a prov:Agent .
+
+tippecc_data:05deg_pr_day_AWI-ESM-1-REcoM_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:africa05.txt a prov:Entity .
+
+tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_18500101-18691231 a prov:Entity .
+
+tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_18700101-18891231 a prov:Entity .
+
+tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_18900101-19091231 a prov:Entity .
+
+tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19100101-19291231 a prov:Entity .
+
+tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19300101-19491231 a prov:Entity .
+
+tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19500101-19691231 a prov:Entity .
+
+tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19700101-19891231 a prov:Entity .
+
+tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19900101-20091231 a prov:Entity .
+
+tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_20100101-20141231 a prov:Entity .
+
+exe:Calc_year_sum_860 a prov:Activity ;
+    rdfs:label "Calc year sum" ;
+    prov:description "Calculate the sum of the years." ;
+    prov:function "FUNCTION__CDO_YEARSUM" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-02-10T11:51:26-01:00"^^xsd:dateTime ;
+    prov:used tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr__mm_1850_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Convert_pr_to_mm_854 .
+
+exe:Convert_pr_to_mm_854 a prov:Activity ;
+    rdfs:label "Convert pr to mm" ;
+    prov:description "Convert precipitation from kg m-2 s-1 to mm" ;
+    prov:function "FUNCTION__XCLIM_CONVERT_UNITS" ;
+    prov:params "{'unit': 'mm'}" ;
+    prov:startedAtTime "2025-01-24T16:02:02-01:00"^^xsd:dateTime ;
+    prov:used tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr_1850_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__XCLIM_0_49 ;
+    prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Rename/Metadata_853> .
+
+exe:Merge_datasets_445 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T16:31:37"^^xsd:dateTime ;
+    prov:used tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_18500101-18691231,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_18700101-18891231,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_18900101-19091231,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19100101-19291231,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19300101-19491231,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19500101-19691231,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19700101-19891231,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19900101-20091231,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_20100101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Merge_datasets_850 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-17T17:38:37"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_pr_day_AWI-ESM-1-REcoM_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_25 .
+
+exe:Remap_bilinear_25 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T16:32:30"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_445 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_853> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T11:12:43-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_852 .
+
+exe:Slice_TIPPECC_area_852 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T12:11:42"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_851 .
+
+exe:Slice_years_851 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T12:08:46"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_850 .
+
+people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
+        "prov:Person" ;
+    rdfs:label "Jonathan Padavatan" ;
+    sdo:affiliation orgs:ORG__WITS ;
+    prov:actedOnBehalfOf orgs:ORG__WITS ;
+    foaf:familyName "Padavatan" ;
+    foaf:givenName "Jonathan" .
+
+tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr__mm_1850_2100__yearsum a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-10 11:51:26 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 3.05343e+05 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: time: mean" ;
+    tippecc_data:cmor_version "3.6.0" ;
+    tippecc_data:comment "includes both liquid and solid phases" ;
+    tippecc_data:contact "mip-contact@awi.de" ;
+    tippecc_data:creation_date "2024-02-26T12:51:24Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.17763" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "10533155"^^xsd:int ;
+    tippecc_data:frequency "year" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.AWI.AWI-ESM-1-REcoM.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "4348.131045561846" ;
+    tippecc_data:global_min "26.08666522574276" ;
+    tippecc_data:global_model "AWI-ESM-1-REcoM" ;
+    tippecc_data:grid "All grid attributes are set for the native grid and based on information from attribute source." ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history "2024-02-26T12:51:24Z altered by CMOR: replaced missing value flag (-9e+33) and corresponding data with standard missing value (1e+20). 2024-02-26T12:51:24Z altered by CMOR: Inverted axis: lat." ;
+    tippecc_data:indicator "yes" ;
+    tippecc_data:institution "Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research, Am Handelshafen 12, 27570 Bremerhaven, Germany" ;
+    tippecc_data:institution_id "AWI" ;
+    tippecc_data:last_modification_time "2025-02-10 11:51:26 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "251"^^xsd:int ;
+    tippecc_data:num_years "251"^^xsd:int ;
+    tippecc_data:original_name "pr" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "AWI-ESM-1-REcoM" ;
+    tippecc_data:parent_time_units "days since 1850-1-1 00:00:00" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:project_id "CMIP6" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:references """Hauck, J., C. Völker, T. Wang, M. Hoppema, M. Losch, and D. A. Wolf-Gladrow (2013), Seasonally different carbon flux changes in the Southern Ocean in response to the southern annular mode, Global Biogeochem. Cycles, 27, 1236-1245, doi:10.1002/2013GB004600.
+Schourup-Kristensen, V., Sidorenko, D., Wolf-Gladrow, D. A., and Völker, C.: A skill assessment of the biogeochemical model REcoM2 coupled to the Finite Element Sea Ice–Ocean Model (FESOM 1.3), Geosci. Model Dev., 7, 2769–2802, https://doi.org/10.5194/gmd-7-2769-2014, 2014.
+Semmler, T., Danilov, S., Gierz, P., Goessling, H. F., Hegewald, J., Hinrichs, C., et al. (2020). Simulations for CMIP6 with the AWI climate model AWI-CM-1-1. Journal of Advances in Modeling Earth Systems, 12, e2019MS002009. https://doi.org/10.1029/2019MS002009""" ;
+    tippecc_data:short_data_reference "Danek, Christopher et al. (2023). AWI AWI-ESM1REcoM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.17763" ;
+    tippecc_data:short_variable_name "pr" ;
+    tippecc_data:source """AWI-ESM 1 REcoM (2024): 
+aerosol: none
+atmos: ECHAM6.3.04p1 (T63L47 native atmosphere T63 gaussian grid; 192 x 96 longitude/latitude; 47 levels; top level 80 km)
+atmosChem: none
+land: JSBACH 3.20 with dynamic vegetation
+landIce: none
+ocean: FESOM 1.4 (unstructured grid in the horizontal with 126859 wet nodes; 46 levels; top grid cell 0-5 m)
+ocnBgchem: REcoM2 (same grid as ocean component)
+seaIce: FESOM 1.4 (same grid as ocean component)""" ;
+    tippecc_data:source_id "AWI-ESM-1-REcoM" ;
+    tippecc_data:source_type "AOGCM BGC" ;
+    tippecc_data:standard_name "precipitation_amount" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(24 July 2019) MD5:816c2357f2fe98074c65bf22f7c9374e" ;
+    tippecc_data:time_calendar "proleptic_gregorian" ;
+    tippecc_data:time_coverage_end "2100-01-01 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:title "AWI-ESM-1-REcoM output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/8c31c2f8-54c9-40ab-8890-94e96c7f2017" ;
+    tippecc_data:unit "mm" ;
+    tippecc_data:units "mm" ;
+    tippecc_data:variable_id "pr" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Calc_year_sum_860 ;
+            prov:atTime "2025-02-10T11:51:26-01:00"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr__mm_1850_2100 .
+
+people:PERSON__ZANDER_FRANZISKA a prov:Agent,
+        "prov:Person" ;
+    rdfs:label "Franziska Zander" ;
+    sdo:affiliation orgs:ORG__FSU ;
+    prov:actedOnBehalfOf orgs:ORG__FSU ;
+    wd:P496 "0000-0001-6892-7046" ;
+    foaf:familyName "Zander" ;
+    foaf:givenName "Franziska" .
+
+tippecc_data:05deg_pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_25 ;
+            prov:atTime "2024-12-20T16:32:30"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:43 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 3.05343e+05 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: time: mean" ;
+    tippecc_data:cmor_version "3.6.0" ;
+    tippecc_data:comment "includes both liquid and solid phases" ;
+    tippecc_data:contact "mip-contact@awi.de" ;
+    tippecc_data:creation_date "2024-02-26T12:51:24Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.17763" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1921465180"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.AWI.AWI-ESM-1-REcoM.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "0.0016457974" ;
+    tippecc_data:global_min "1.0386786e-18" ;
+    tippecc_data:global_model "AWI-ESM-1-REcoM" ;
+    tippecc_data:grid "All grid attributes are set for the native grid and based on information from attribute source." ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history "2024-02-26T12:51:24Z altered by CMOR: replaced missing value flag (-9e+33) and corresponding data with standard missing value (1e+20). 2024-02-26T12:51:24Z altered by CMOR: Inverted axis: lat." ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research, Am Handelshafen 12, 27570 Bremerhaven, Germany" ;
+    tippecc_data:institution_id "AWI" ;
+    tippecc_data:last_modification_time "2025-01-21 11:12:43 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91676"^^xsd:int ;
+    tippecc_data:original_name "pr" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "AWI-ESM-1-REcoM" ;
+    tippecc_data:parent_time_units "days since 1850-1-1 00:00:00" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:project_id "CMIP6" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:references """Hauck, J., C. Völker, T. Wang, M. Hoppema, M. Losch, and D. A. Wolf-Gladrow (2013), Seasonally different carbon flux changes in the Southern Ocean in response to the southern annular mode, Global Biogeochem. Cycles, 27, 1236-1245, doi:10.1002/2013GB004600.
+Schourup-Kristensen, V., Sidorenko, D., Wolf-Gladrow, D. A., and Völker, C.: A skill assessment of the biogeochemical model REcoM2 coupled to the Finite Element Sea Ice–Ocean Model (FESOM 1.3), Geosci. Model Dev., 7, 2769–2802, https://doi.org/10.5194/gmd-7-2769-2014, 2014.
+Semmler, T., Danilov, S., Gierz, P., Goessling, H. F., Hegewald, J., Hinrichs, C., et al. (2020). Simulations for CMIP6 with the AWI climate model AWI-CM-1-1. Journal of Advances in Modeling Earth Systems, 12, e2019MS002009. https://doi.org/10.1029/2019MS002009""" ;
+    tippecc_data:short_data_reference "Danek, Christopher et al. (2023). AWI AWI-ESM1REcoM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.17763" ;
+    tippecc_data:short_variable_name "pr" ;
+    tippecc_data:source """AWI-ESM 1 REcoM (2024): 
+aerosol: none
+atmos: ECHAM6.3.04p1 (T63L47 native atmosphere T63 gaussian grid; 192 x 96 longitude/latitude; 47 levels; top level 80 km)
+atmosChem: none
+land: JSBACH 3.20 with dynamic vegetation
+landIce: none
+ocean: FESOM 1.4 (unstructured grid in the horizontal with 126859 wet nodes; 46 levels; top grid cell 0-5 m)
+ocnBgchem: REcoM2 (same grid as ocean component)
+seaIce: FESOM 1.4 (same grid as ocean component)""" ;
+    tippecc_data:source_id "AWI-ESM-1-REcoM" ;
+    tippecc_data:source_type "AOGCM BGC" ;
+    tippecc_data:standard_name "precipitation_flux" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(24 July 2019) MD5:816c2357f2fe98074c65bf22f7c9374e" ;
+    tippecc_data:time_calendar "proleptic_gregorian" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-1-1 00:00:00" ;
+    tippecc_data:title "AWI-ESM-1-REcoM output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/8c31c2f8-54c9-40ab-8890-94e96c7f2017" ;
+    tippecc_data:unit "kg m-2 s-1" ;
+    tippecc_data:units "kg m-2 s-1" ;
+    tippecc_data:variable_id "pr" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_850 ;
+            prov:atTime "2025-01-17T17:38:37"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_852 ;
+            prov:atTime "2025-01-21T12:11:42"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_853> ;
+            prov:atTime "2025-01-21T11:12:43-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_851 ;
+            prov:atTime "2025-01-21T12:08:46"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_pr_day_AWI-ESM-1-REcoM_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr__mm_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-01-24 16:02:02 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 3.05343e+05 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: time: mean" ;
+    tippecc_data:cmor_version "3.6.0" ;
+    tippecc_data:comment "includes both liquid and solid phases" ;
+    tippecc_data:contact "mip-contact@awi.de" ;
+    tippecc_data:creation_date "2024-02-26T12:51:24Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.17763" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "3820371205"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.AWI.AWI-ESM-1-REcoM.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "142.19689518213272" ;
+    tippecc_data:global_min "8.974183083837508e-14" ;
+    tippecc_data:global_model "AWI-ESM-1-REcoM" ;
+    tippecc_data:grid "All grid attributes are set for the native grid and based on information from attribute source." ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history "2024-02-26T12:51:24Z altered by CMOR: replaced missing value flag (-9e+33) and corresponding data with standard missing value (1e+20). 2024-02-26T12:51:24Z altered by CMOR: Inverted axis: lat." ;
+    tippecc_data:indicator "yes" ;
+    tippecc_data:institution "Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research, Am Handelshafen 12, 27570 Bremerhaven, Germany" ;
+    tippecc_data:institution_id "AWI" ;
+    tippecc_data:last_modification_time "2025-01-24 16:02:02 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91676"^^xsd:int ;
+    tippecc_data:original_name "pr" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "AWI-ESM-1-REcoM" ;
+    tippecc_data:parent_time_units "days since 1850-1-1 00:00:00" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:project_id "CMIP6" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:references """Hauck, J., C. Völker, T. Wang, M. Hoppema, M. Losch, and D. A. Wolf-Gladrow (2013), Seasonally different carbon flux changes in the Southern Ocean in response to the southern annular mode, Global Biogeochem. Cycles, 27, 1236-1245, doi:10.1002/2013GB004600.
+Schourup-Kristensen, V., Sidorenko, D., Wolf-Gladrow, D. A., and Völker, C.: A skill assessment of the biogeochemical model REcoM2 coupled to the Finite Element Sea Ice–Ocean Model (FESOM 1.3), Geosci. Model Dev., 7, 2769–2802, https://doi.org/10.5194/gmd-7-2769-2014, 2014.
+Semmler, T., Danilov, S., Gierz, P., Goessling, H. F., Hegewald, J., Hinrichs, C., et al. (2020). Simulations for CMIP6 with the AWI climate model AWI-CM-1-1. Journal of Advances in Modeling Earth Systems, 12, e2019MS002009. https://doi.org/10.1029/2019MS002009""" ;
+    tippecc_data:short_data_reference "Danek, Christopher et al. (2023). AWI AWI-ESM1REcoM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.17763" ;
+    tippecc_data:short_variable_name "pr" ;
+    tippecc_data:source """AWI-ESM 1 REcoM (2024): 
+aerosol: none
+atmos: ECHAM6.3.04p1 (T63L47 native atmosphere T63 gaussian grid; 192 x 96 longitude/latitude; 47 levels; top level 80 km)
+atmosChem: none
+land: JSBACH 3.20 with dynamic vegetation
+landIce: none
+ocean: FESOM 1.4 (unstructured grid in the horizontal with 126859 wet nodes; 46 levels; top grid cell 0-5 m)
+ocnBgchem: REcoM2 (same grid as ocean component)
+seaIce: FESOM 1.4 (same grid as ocean component)""" ;
+    tippecc_data:source_id "AWI-ESM-1-REcoM" ;
+    tippecc_data:source_type "AOGCM BGC" ;
+    tippecc_data:standard_name "precipitation_amount" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(24 July 2019) MD5:816c2357f2fe98074c65bf22f7c9374e" ;
+    tippecc_data:time_calendar "proleptic_gregorian" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:title "AWI-ESM-1-REcoM output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/8c31c2f8-54c9-40ab-8890-94e96c7f2017" ;
+    tippecc_data:unit "mm" ;
+    tippecc_data:units "mm" ;
+    tippecc_data:variable_id "pr" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Convert_pr_to_mm_854 ;
+            prov:atTime "2025-01-24T16:02:02-01:00"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr_1850_2100 .
+
+tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_445 ;
+            prov:atTime "2024-12-20T16:31:37"^^xsd:dateTime ],
+        [ ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_18500101-18691231,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_18700101-18891231,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_18900101-19091231,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19100101-19291231,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19300101-19491231,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19500101-19691231,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19700101-19891231,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_19900101-20091231,
+        tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_20100101-20141231 .
+
+software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareApplication" .
+

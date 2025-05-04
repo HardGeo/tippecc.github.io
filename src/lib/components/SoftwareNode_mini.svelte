@@ -8,10 +8,9 @@
 
     export let data = {
         software: 'software:cdo',
-        source: 'www.example.com',
+        software_name: 'www.example.com',
         version: '1.7',
-        repository: 'https://github.com/rue-a/provo?tab=readme-ov-file',
-        license: 'MIT'
+        type: '',
     };
 </script>
 

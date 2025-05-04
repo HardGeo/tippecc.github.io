@@ -351,6 +351,7 @@ for filename in os.listdir(prov_path):
                     derivation = f"{entity_namespace}:{derivation.split('/')[-1]}"
                 if (entity_id, derivation) not in added_agents:
                     d1.wasDerivedFrom(entity_id, derivation)
+                    d1.entity(derivation, {})
                     added_agents.add((entity_id, derivation))
                 if (activity_id, derivation) not in added_agents:
                     if first:
@@ -396,7 +397,7 @@ for filename in os.listdir(prov_path):
                     collection_id = f"{collection_namespace}:{raw_collection_id}"
 
                 if collection_id not in added_agents:
-                    d1.collection(collection_id)
+                    d1.collection(collection_id, collection_metadata)
                     #print(collection_id)
                     added_agents.add(collection_id)
 
@@ -446,7 +447,7 @@ for idx, input_file in enumerate(input_files_wasInformedBy, start=1):
 #activities.sort(key=lambda x: x['start_time'])  # Sort by earliest start time
 
 # export the graph
-d1.serialize(os.path.join(dir, 'GRAPH_new.json'), format='json')
+#d1.serialize(os.path.join(dir, 'GRAPH_new.json'), format='json')
 
 # save as RDF
 d1.serialize(os.path.join(dir, 'GRAPH.ttl'), format='rdf', rdf_format="turtle")

@@ -1,0 +1,82 @@
+@prefix exe: <http://www.provbook.org/tippecc/exe/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix orgs: <http://www.provbook.org/tippecc/orgs/> .
+@prefix people: <http://www.provbook.org/tippecc/people/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <http://schema.org/> .
+@prefix software: <http://www.provbook.org/tippecc/software/> .
+@prefix tippecc_data: <http://www.provbook.org/tippecc/data/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+tippecc_data:COLLECTION__CMIP6 a prov:Collection,
+        prov:Entity,
+        "prov:Collection" ;
+    sdo:description "CMIP6 is a climate model intercomparison project." ;
+    sdo:name "CMIP6" ;
+    prov:hadMember tippecc_data:tasmin_day_MRI-ESM2-0_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:COLLECTION__TIPPECC a prov:Collection,
+        prov:Entity,
+        "prov:Collection" ;
+    sdo:description "TIPPECC is a ....." ;
+    sdo:name "TIPPECC" ;
+    prov:hadMember tippecc_data:tasmin_day_MRI-ESM2-0_historical_r1i1p1f1_1850_2014 .
+
+exe:Remap_bilinear_202 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T19:52:46"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:tasmin_day_MRI-ESM2-0_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_622 .
+
+tippecc_data:africa05.txt a prov:Entity .
+
+people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
+        "prov:Person" ;
+    rdfs:label "Jonathan Padavatan" ;
+    sdo:affiliation orgs:ORG__WITS ;
+    prov:actedOnBehalfOf orgs:ORG__WITS ;
+    foaf:familyName "Padavatan" ;
+    foaf:givenName "Jonathan" .
+
+tippecc_data:tasmin_day_MRI-ESM2-0_historical_r1i1p1f1_gn_18500101-18991231 a prov:Entity .
+
+tippecc_data:tasmin_day_MRI-ESM2-0_historical_r1i1p1f1_gn_19000101-19491231 a prov:Entity .
+
+tippecc_data:tasmin_day_MRI-ESM2-0_historical_r1i1p1f1_gn_19500101-19991231 a prov:Entity .
+
+tippecc_data:tasmin_day_MRI-ESM2-0_historical_r1i1p1f1_gn_20000101-20141231 a prov:Entity .
+
+exe:Merge_datasets_622 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-19T19:49:09"^^xsd:dateTime ;
+    prov:used tippecc_data:tasmin_day_MRI-ESM2-0_historical_r1i1p1f1_gn_18500101-18991231,
+        tippecc_data:tasmin_day_MRI-ESM2-0_historical_r1i1p1f1_gn_19000101-19491231,
+        tippecc_data:tasmin_day_MRI-ESM2-0_historical_r1i1p1f1_gn_19500101-19991231,
+        tippecc_data:tasmin_day_MRI-ESM2-0_historical_r1i1p1f1_gn_20000101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareApplication" .
+
+tippecc_data:tasmin_day_MRI-ESM2-0_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_622 ;
+            prov:atTime "2024-12-19T19:49:09"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:tasmin_day_MRI-ESM2-0_historical_r1i1p1f1_gn_18500101-18991231,
+        tippecc_data:tasmin_day_MRI-ESM2-0_historical_r1i1p1f1_gn_19000101-19491231,
+        tippecc_data:tasmin_day_MRI-ESM2-0_historical_r1i1p1f1_gn_19500101-19991231,
+        tippecc_data:tasmin_day_MRI-ESM2-0_historical_r1i1p1f1_gn_20000101-20141231 .
+

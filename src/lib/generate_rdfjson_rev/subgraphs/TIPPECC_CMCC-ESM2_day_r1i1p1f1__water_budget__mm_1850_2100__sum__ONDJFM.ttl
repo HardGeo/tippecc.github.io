@@ -1,0 +1,2355 @@
+@prefix exe: <http://www.provbook.org/tippecc/exe/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix orgs: <http://www.provbook.org/tippecc/orgs/> .
+@prefix people: <http://www.provbook.org/tippecc/people/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <http://schema.org/> .
+@prefix software: <http://www.provbook.org/tippecc/software/> .
+@prefix tippecc_data: <http://www.provbook.org/tippecc/data/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+tippecc_data:COLLECTION__CMIP6 a prov:Collection,
+        prov:Entity,
+        "prov:Collection" ;
+    sdo:description "CMIP6 is a climate model intercomparison project." ;
+    sdo:name "CMIP6" ;
+    prov:hadMember tippecc_data:05deg_hurs_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rlds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rlus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rsds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rsus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_tasmax_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_tasmin_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__evspsblpot_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__water_budget_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__water_budget__mm_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_hurs_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rlds_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rlus_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rsds_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rsus_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_sfcWind_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_tasmax_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_tasmin_1850_2100,
+        tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:COLLECTION__TIPPECC a prov:Collection,
+        prov:Entity,
+        "prov:Collection" ;
+    sdo:description "TIPPECC is a ....." ;
+    sdo:name "TIPPECC" ;
+    prov:hadMember tippecc_data:05deg_hurs_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rlds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rlus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rsds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rsus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_tasmax_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_tasmin_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__evspsblpot_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__water_budget_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__water_budget__mm_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_hurs_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rlds_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rlus_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rsds_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rsus_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_sfcWind_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_tasmax_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_tasmin_1850_2100,
+        tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 .
+
+exe:Calc_month_sum_\(3_m_shift\)_1133 a prov:Activity ;
+    rdfs:label "Calc month sum (3 m shift)" ;
+    prov:description "Calculate the sum of the selected months (7,8,9,10,11,12) with a 3 month shift." ;
+    prov:function "FUNCTION__CDO_YEARSUM_SHIFTTIME" ;
+    prov:params "{'months': '7,8,9,10,11,12', 'shifttime': '-3mo'}" ;
+    prov:startedAtTime "2025-02-09T22:04:32-01:00"^^xsd:dateTime ;
+    prov:used tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__water_budget__mm_1850_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Convert_water_budget_to_mm/day_1114> .
+
+tippecc_data:05deg_hurs_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:05deg_pr_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:05deg_rlds_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:05deg_rlus_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:05deg_rsds_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:05deg_rsus_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:05deg_sfcWind_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:05deg_tasmax_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:05deg_tasmin_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
+
+tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231 a prov:Entity .
+
+tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231 a prov:Entity .
+
+tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231 a prov:Entity .
+
+tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231 a prov:Entity .
+
+tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231 a prov:Entity .
+
+tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231 a prov:Entity .
+
+tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 a prov:Entity .
+
+tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231 a prov:Entity .
+
+tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231 a prov:Entity .
+
+tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231 a prov:Entity .
+
+tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231 a prov:Entity .
+
+tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231 a prov:Entity .
+
+tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231 a prov:Entity .
+
+tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 a prov:Entity .
+
+tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231 a prov:Entity .
+
+tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231 a prov:Entity .
+
+tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231 a prov:Entity .
+
+tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231 a prov:Entity .
+
+tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231 a prov:Entity .
+
+tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231 a prov:Entity .
+
+tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 a prov:Entity .
+
+tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231 a prov:Entity .
+
+tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231 a prov:Entity .
+
+tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231 a prov:Entity .
+
+tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231 a prov:Entity .
+
+tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231 a prov:Entity .
+
+tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231 a prov:Entity .
+
+tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 a prov:Entity .
+
+tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231 a prov:Entity .
+
+tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231 a prov:Entity .
+
+tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231 a prov:Entity .
+
+tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231 a prov:Entity .
+
+tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231 a prov:Entity .
+
+tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231 a prov:Entity .
+
+tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 a prov:Entity .
+
+tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231 a prov:Entity .
+
+tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231 a prov:Entity .
+
+tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231 a prov:Entity .
+
+tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231 a prov:Entity .
+
+tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231 a prov:Entity .
+
+tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231 a prov:Entity .
+
+tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 a prov:Entity .
+
+tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231 a prov:Entity .
+
+tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231 a prov:Entity .
+
+tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231 a prov:Entity .
+
+tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231 a prov:Entity .
+
+tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231 a prov:Entity .
+
+tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231 a prov:Entity .
+
+tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 a prov:Entity .
+
+tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231 a prov:Entity .
+
+tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231 a prov:Entity .
+
+tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231 a prov:Entity .
+
+tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231 a prov:Entity .
+
+tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231 a prov:Entity .
+
+tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231 a prov:Entity .
+
+tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 a prov:Entity .
+
+tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231 a prov:Entity .
+
+tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231 a prov:Entity .
+
+tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231 a prov:Entity .
+
+tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231 a prov:Entity .
+
+tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231 a prov:Entity .
+
+tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231 a prov:Entity .
+
+tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 a prov:Entity .
+
+exe:Calc_pot._ET_1105 a prov:Activity ;
+    rdfs:label "Calc pot. ET" ;
+    prov:description "Calculate potential evapotranspiration with the FAO_PM98 method." ;
+    prov:function "FUNCTION__XCLIM_EVAPOTRANSPIRATION" ;
+    prov:params "{'tasmin': 'tasmin.tasmin', 'tasmax': 'tasmax.tasmax', 'hurs': 'hurs.hurs', 'rsds': 'rsds.rsds', 'rsus': 'rsus.rsus', 'rlus': 'rlus.rlus', 'rlds': 'rlds.rlds', 'sfcWind': 'sfcWind.sfcWind', 'method': 'FAO_PM98'}" ;
+    prov:startedAtTime "2025-01-24T16:14:27-01:00"^^xsd:dateTime ;
+    prov:used tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_hurs_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rlds_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rlus_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rsds_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rsus_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_sfcWind_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_tasmax_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_tasmin_1850_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__XCLIM_0_49 ;
+    prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Rename/Metadata_1049>,
+        <http://www.provbook.org/tippecc/exe/Rename/Metadata_1064>,
+        <http://www.provbook.org/tippecc/exe/Rename/Metadata_1068>,
+        <http://www.provbook.org/tippecc/exe/Rename/Metadata_1072>,
+        <http://www.provbook.org/tippecc/exe/Rename/Metadata_1076>,
+        <http://www.provbook.org/tippecc/exe/Rename/Metadata_1080>,
+        <http://www.provbook.org/tippecc/exe/Rename/Metadata_1084>,
+        <http://www.provbook.org/tippecc/exe/Rename/Metadata_1088> .
+
+exe:Calc_water_budget_1113 a prov:Activity ;
+    rdfs:label "Calc water budget" ;
+    prov:description "Calculate the water budget as the difference between precipitation and potential evapotranspiration." ;
+    prov:function "FUNCTION__XCLIM_WATER_BUDGET" ;
+    prov:params "{'pr': 'pr.pr', 'evspsblpot': 'evapo.evspsblpot'}" ;
+    prov:startedAtTime "2025-01-24T16:16:00-01:00"^^xsd:dateTime ;
+    prov:used tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__evspsblpot_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr_1850_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__XCLIM_0_49 ;
+    prov:wasInformedBy exe:Calc_pot._ET_1105,
+        <http://www.provbook.org/tippecc/exe/Rename/Metadata_1053> .
+
+<http://www.provbook.org/tippecc/exe/Convert_water_budget_to_mm/day_1114> a prov:Activity ;
+    rdfs:label "Convert water budget to mm/day" ;
+    prov:description "Convert the water budget from a rate to an amount." ;
+    prov:function "FUNCTION__XCLIM_RATE2AMOUNT" ;
+    prov:params "{'sampling_rate_from_coord': True}" ;
+    prov:startedAtTime "2025-01-24T16:17:16-01:00"^^xsd:dateTime ;
+    prov:used tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__water_budget_1850_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__XCLIM_0_49 ;
+    prov:wasInformedBy exe:Calc_water_budget_1113 .
+
+exe:Merge_datasets_1046 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-17T16:34:20"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_hurs_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_hurs_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_4 .
+
+exe:Merge_datasets_1050 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-17T17:41:40"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_pr_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_27 .
+
+exe:Merge_datasets_1061 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-17T18:42:59"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_rlds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rlds_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_50 .
+
+exe:Merge_datasets_1065 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-17T19:49:59"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_rlus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rlus_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_73 .
+
+exe:Merge_datasets_1069 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-17T20:57:10"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_rsds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rsds_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_96 .
+
+exe:Merge_datasets_1073 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-17T22:04:04"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_rsus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rsus_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_119 .
+
+exe:Merge_datasets_1077 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-17T23:06:54"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_sfcWind_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_142 .
+
+exe:Merge_datasets_1081 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-18T01:11:30"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_tasmax_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_tasmax_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_165 .
+
+exe:Merge_datasets_1085 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-18T02:20:17"^^xsd:dateTime ;
+    prov:used tippecc_data:05deg_tasmin_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_tasmin_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Remap_bilinear_188 .
+
+exe:Merge_datasets_376 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T16:06:20"^^xsd:dateTime ;
+    prov:used tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Merge_datasets_447 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T16:34:11"^^xsd:dateTime ;
+    prov:used tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Merge_datasets_470 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T16:56:04"^^xsd:dateTime ;
+    prov:used tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Merge_datasets_493 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T17:23:43"^^xsd:dateTime ;
+    prov:used tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Merge_datasets_516 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T17:50:25"^^xsd:dateTime ;
+    prov:used tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Merge_datasets_539 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T18:14:49"^^xsd:dateTime ;
+    prov:used tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Merge_datasets_562 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T18:47:41"^^xsd:dateTime ;
+    prov:used tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Merge_datasets_585 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T19:38:55"^^xsd:dateTime ;
+    prov:used tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Merge_datasets_608 a prov:Activity ;
+    rdfs:label "Merge datasets" ;
+    prov:description "Merge the datasets into one file by time." ;
+    prov:function "FUNCTION__CDO_MERGE" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T20:03:23"^^xsd:dateTime ;
+    prov:used tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+
+exe:Remap_bilinear_119 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T18:16:54"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_539 .
+
+exe:Remap_bilinear_142 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T18:49:23"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_562 .
+
+exe:Remap_bilinear_165 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T19:40:23"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_585 .
+
+exe:Remap_bilinear_188 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T20:04:47"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_608 .
+
+exe:Remap_bilinear_27 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T16:36:13"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_447 .
+
+exe:Remap_bilinear_4 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T16:08:04"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_376 .
+
+exe:Remap_bilinear_50 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T16:57:48"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_470 .
+
+exe:Remap_bilinear_73 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T17:25:26"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_493 .
+
+exe:Remap_bilinear_96 a prov:Activity ;
+    rdfs:label "Remap bilinear" ;
+    prov:description "Remap the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_REMAPBIL" ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2024-12-20T17:52:07"^^xsd:dateTime ;
+    prov:used tippecc_data:africa05.txt,
+        tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_516 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_1049> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T09:53:48-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_1048 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_1053> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T11:16:18-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_1052 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_1064> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T12:34:02-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_1063 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_1068> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T13:54:07-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_1067 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_1072> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T15:14:45-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_1071 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_1076> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T16:33:42-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_1075 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_1080> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T17:51:07-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_1079 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_1084> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T20:25:28-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_1083 .
+
+<http://www.provbook.org/tippecc/exe/Rename/Metadata_1088> a prov:Activity ;
+    rdfs:label "Rename/Metadata" ;
+    prov:description "Rename the dataset and adjust metadata." ;
+    prov:params "N/A" ;
+    prov:startedAtTime "2025-01-21T21:48:26-01:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasInformedBy exe:Slice_TIPPECC_area_1087 .
+
+exe:Slice_TIPPECC_area_1048 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T10:53:01"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_1047 .
+
+exe:Slice_TIPPECC_area_1052 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T12:15:44"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_1051 .
+
+exe:Slice_TIPPECC_area_1063 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T13:33:14"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_1062 .
+
+exe:Slice_TIPPECC_area_1067 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T14:53:05"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_1066 .
+
+exe:Slice_TIPPECC_area_1071 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T16:13:56"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_1070 .
+
+exe:Slice_TIPPECC_area_1075 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T17:32:41"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_1074 .
+
+exe:Slice_TIPPECC_area_1079 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T18:50:19"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_1078 .
+
+exe:Slice_TIPPECC_area_1083 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T21:24:40"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_1082 .
+
+exe:Slice_TIPPECC_area_1087 a prov:Activity ;
+    rdfs:label "Slice TIPPECC area" ;
+    prov:description "Slice the dataset to the TIPPECC area." ;
+    prov:function "FUNCTION__CDO_SELLONLATBOX" ;
+    prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
+    prov:startedAtTime "2025-01-21T22:47:36"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Slice_years_1086 .
+
+exe:Slice_years_1047 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T10:50:04"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_1046 .
+
+exe:Slice_years_1051 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T12:12:44"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_1050 .
+
+exe:Slice_years_1062 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T13:30:16"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_1061 .
+
+exe:Slice_years_1066 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T14:50:08"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_1065 .
+
+exe:Slice_years_1070 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T16:10:59"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_1069 .
+
+exe:Slice_years_1074 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T17:29:45"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_1073 .
+
+exe:Slice_years_1078 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T18:47:24"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_1077 .
+
+exe:Slice_years_1082 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T21:21:45"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_1081 .
+
+exe:Slice_years_1086 a prov:Activity ;
+    rdfs:label "Slice years" ;
+    prov:description "Slice the dataset between 1850 and 2100." ;
+    prov:function "FUNCTION__CDO_SELYEAR" ;
+    prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
+    prov:startedAtTime "2025-01-21T22:44:40"^^xsd:dateTime ;
+    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasInformedBy exe:Merge_datasets_1085 .
+
+tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__water_budget__mm_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-01-24 16:17:16 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_methods "pr: area: time: mean evspsblpot: tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean" ;
+    tippecc_data:cmor_version "3.6.0" ;
+    tippecc_data:comment "none" ;
+    tippecc_data:contact "T. Lovato" ;
+    tippecc_data:creation_date "2025-01-24T16:17:07Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:description "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget, where the potential evapotranspiration is calculated with the FAO_PM985 method." ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "3817819799"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CMCC.CMCC-ESM2.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "577.0217794430209" ;
+    tippecc_data:global_min "-13.687972963646187" ;
+    tippecc_data:global_model "CMCC-ESM2" ;
+    tippecc_data:grid "native atmosphere regular grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history """pr: 
+evspsblpot: tasmin: 2020-12-21T16:22:35Z altered by CMOR: Treated scalar dimension: 'height'.
+tasmax: 2020-12-21T16:22:34Z altered by CMOR: Treated scalar dimension: 'height'.
+hurs: 2020-12-21T16:15:19Z altered by CMOR: Treated scalar dimension: 'height'.
+rsds: 
+rsus: 
+rlds: 
+rlus: 
+sfcWind: 2020-12-21T16:20:23Z altered by CMOR: Treated scalar dimension: 'height'.
+[2025-01-24 16:14:19] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0
+[2025-01-24 16:15:52] water_budget_from_tas: WATER_BUDGET_FROM_TAS(pr=pr, evspsblpot=evspsblpot, method='BR65') - xclim version: 0.49.0""" ;
+    tippecc_data:indicator "yes" ;
+    tippecc_data:institution "Fondazione Centro Euro-Mediterraneo sui Cambiamenti Climatici, Lecce 73100, Italy" ;
+    tippecc_data:institution_id "CMCC" ;
+    tippecc_data:last_modification_time "2025-01-24 16:17:16 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Water budget (\"FAO_PM985\" method)" ;
+    tippecc_data:method "pr - evspsblpot " ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "CMCC-ESM2" ;
+    tippecc_data:parent_time_units "days since 1850-01-01" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:references "none" ;
+    tippecc_data:run_variant "1st realization" ;
+    tippecc_data:short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:short_variable_name "water_budget_from_tas" ;
+    tippecc_data:source """CMCC-ESM2 (2017): 
+aerosol: MAM3
+atmos: CAM5.3 (1deg; 288 x 192 longitude/latitude; 30 levels; top at ~2 hPa)
+atmosChem: none
+land: CLM4.5 (BGC mode)
+landIce: none
+ocean: NEMO3.6 (ORCA1 tripolar primarly 1 deg lat/lon with meridional refinement down to 1/3 degree in the tropics; 362 x 292 longitude/latitude; 50 vertical levels; top grid cell 0-1 m)
+ocnBgchem: BFM5.1
+seaIce: CICE4.0""" ;
+    tippecc_data:source_id "CMCC-ESM2" ;
+    tippecc_data:source_type "AOGCM" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(05 February 2020) MD5:6a248fd76c55aa6d6f7b3cc6866b5faf" ;
+    tippecc_data:time_calendar "365_day" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:title "CMCC-ESM2 output prepared for CMIP6" ;
+    tippecc_data:unit "mmday" ;
+    tippecc_data:units "mmday" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Convert_water_budget_to_mm/day_1114> ;
+            prov:atTime "2025-01-24T16:17:16-01:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__water_budget_1850_2100 .
+
+software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:targetProduct software:SOFTWARE__XCLIM ;
+    sdo:type "sdo:SoftwareApplication" .
+
+tippecc_data:05deg_hurs_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_4 ;
+            prov:atTime "2024-12-20T16:08:04"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:05deg_pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_27 ;
+            prov:atTime "2024-12-20T16:36:13"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:05deg_rlds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_50 ;
+            prov:atTime "2024-12-20T16:57:48"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:05deg_rlus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_73 ;
+            prov:atTime "2024-12-20T17:25:26"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:05deg_rsds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_96 ;
+            prov:atTime "2024-12-20T17:52:07"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:05deg_rsus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_119 ;
+            prov:atTime "2024-12-20T18:16:54"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:05deg_sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_142 ;
+            prov:atTime "2024-12-20T18:49:23"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:05deg_tasmax_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_165 ;
+            prov:atTime "2024-12-20T19:40:23"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:05deg_tasmin_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Remap_bilinear_188 ;
+            prov:atTime "2024-12-20T20:04:47"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:africa05.txt,
+        tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 .
+
+tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__evspsblpot_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-01-24 16:14:27 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_methods "tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean" ;
+    tippecc_data:cmor_version "3.6.0" ;
+    tippecc_data:comment "none" ;
+    tippecc_data:contact "T. Lovato" ;
+    tippecc_data:creation_date "2025-01-24T16:14:19Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:description "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with the fao_pm98 method." ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "3817819626"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CMCC.CMCC-ESM2.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "0.00015847181202843783" ;
+    tippecc_data:global_min "-7.995341547939459e-06" ;
+    tippecc_data:global_model "CMCC-ESM2" ;
+    tippecc_data:grid "native atmosphere regular grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history """tasmin: 2020-12-21T16:22:35Z altered by CMOR: Treated scalar dimension: 'height'.
+tasmax: 2020-12-21T16:22:34Z altered by CMOR: Treated scalar dimension: 'height'.
+hurs: 2020-12-21T16:15:19Z altered by CMOR: Treated scalar dimension: 'height'.
+rsds: 
+rsus: 
+rlds: 
+rlus: 
+sfcWind: 2020-12-21T16:20:23Z altered by CMOR: Treated scalar dimension: 'height'.
+[2025-01-24 16:14:19] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0""" ;
+    tippecc_data:indicator "yes" ;
+    tippecc_data:institution "Fondazione Centro Euro-Mediterraneo sui Cambiamenti Climatici, Lecce 73100, Italy" ;
+    tippecc_data:institution_id "CMCC" ;
+    tippecc_data:last_modification_time "2025-01-24 16:14:27 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Potential evapotranspiration (\"fao_pm98\" method)" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "CMCC-ESM2" ;
+    tippecc_data:parent_time_units "days since 1850-01-01" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:references "none" ;
+    tippecc_data:run_variant "1st realization" ;
+    tippecc_data:short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:short_variable_name "evspsblpot" ;
+    tippecc_data:source """CMCC-ESM2 (2017): 
+aerosol: MAM3
+atmos: CAM5.3 (1deg; 288 x 192 longitude/latitude; 30 levels; top at ~2 hPa)
+atmosChem: none
+land: CLM4.5 (BGC mode)
+landIce: none
+ocean: NEMO3.6 (ORCA1 tripolar primarly 1 deg lat/lon with meridional refinement down to 1/3 degree in the tropics; 362 x 292 longitude/latitude; 50 vertical levels; top grid cell 0-1 m)
+ocnBgchem: BFM5.1
+seaIce: CICE4.0""" ;
+    tippecc_data:source_id "CMCC-ESM2" ;
+    tippecc_data:source_type "AOGCM" ;
+    tippecc_data:standard_name "water_potential_evapotranspiration_flux" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(05 February 2020) MD5:6a248fd76c55aa6d6f7b3cc6866b5faf" ;
+    tippecc_data:time_calendar "365_day" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:title "CMCC-ESM2 output prepared for CMIP6" ;
+    tippecc_data:unit "kg m-2 s-1" ;
+    tippecc_data:units "kg m-2 s-1" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Calc_pot._ET_1105 ;
+            prov:atTime "2025-01-24T16:14:27-01:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_hurs_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rlds_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rlus_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rsds_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rsus_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_sfcWind_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_tasmax_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_tasmin_1850_2100 .
+
+tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__water_budget_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-01-24 16:16:00 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_methods "pr: area: time: mean evspsblpot: tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean" ;
+    tippecc_data:cmor_version "3.6.0" ;
+    tippecc_data:comment "none" ;
+    tippecc_data:contact "T. Lovato" ;
+    tippecc_data:creation_date "2025-01-24T16:15:52Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:description "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget, where the potential evapotranspiration is calculated with the FAO_PM985 method." ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "3817819804"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CMCC.CMCC-ESM2.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "0.006678492817627557" ;
+    tippecc_data:global_min "-0.0001584256130051642" ;
+    tippecc_data:global_model "CMCC-ESM2" ;
+    tippecc_data:grid "native atmosphere regular grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history """pr: 
+evspsblpot: tasmin: 2020-12-21T16:22:35Z altered by CMOR: Treated scalar dimension: 'height'.
+tasmax: 2020-12-21T16:22:34Z altered by CMOR: Treated scalar dimension: 'height'.
+hurs: 2020-12-21T16:15:19Z altered by CMOR: Treated scalar dimension: 'height'.
+rsds: 
+rsus: 
+rlds: 
+rlus: 
+sfcWind: 2020-12-21T16:20:23Z altered by CMOR: Treated scalar dimension: 'height'.
+[2025-01-24 16:14:19] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0
+[2025-01-24 16:15:52] water_budget_from_tas: WATER_BUDGET_FROM_TAS(pr=pr, evspsblpot=evspsblpot, method='BR65') - xclim version: 0.49.0""" ;
+    tippecc_data:indicator "yes" ;
+    tippecc_data:institution "Fondazione Centro Euro-Mediterraneo sui Cambiamenti Climatici, Lecce 73100, Italy" ;
+    tippecc_data:institution_id "CMCC" ;
+    tippecc_data:last_modification_time "2025-01-24 16:16:00 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Water budget (\"FAO_PM985\" method)" ;
+    tippecc_data:method "pr - evspsblpot " ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "CMCC-ESM2" ;
+    tippecc_data:parent_time_units "days since 1850-01-01" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:references "none" ;
+    tippecc_data:run_variant "1st realization" ;
+    tippecc_data:short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:short_variable_name "water_budget_from_tas" ;
+    tippecc_data:source """CMCC-ESM2 (2017): 
+aerosol: MAM3
+atmos: CAM5.3 (1deg; 288 x 192 longitude/latitude; 30 levels; top at ~2 hPa)
+atmosChem: none
+land: CLM4.5 (BGC mode)
+landIce: none
+ocean: NEMO3.6 (ORCA1 tripolar primarly 1 deg lat/lon with meridional refinement down to 1/3 degree in the tropics; 362 x 292 longitude/latitude; 50 vertical levels; top grid cell 0-1 m)
+ocnBgchem: BFM5.1
+seaIce: CICE4.0""" ;
+    tippecc_data:source_id "CMCC-ESM2" ;
+    tippecc_data:source_type "AOGCM" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(05 February 2020) MD5:6a248fd76c55aa6d6f7b3cc6866b5faf" ;
+    tippecc_data:time_calendar "365_day" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:title "CMCC-ESM2 output prepared for CMIP6" ;
+    tippecc_data:unit "kg m-2 s-1" ;
+    tippecc_data:units "kg m-2 s-1" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Calc_water_budget_1113 ;
+            prov:atTime "2025-01-24T16:16:00-01:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1__evspsblpot_1850_2100,
+        tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr_1850_2100 .
+
+tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_hurs_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:38 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: time: mean" ;
+    tippecc_data:cmor_version "3.6.0" ;
+    tippecc_data:comment "The relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C." ;
+    tippecc_data:contact "T. Lovato" ;
+    tippecc_data:creation_date "2020-12-21T16:16:00Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1920180942"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CMCC.CMCC-ESM2.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "101.51556" ;
+    tippecc_data:global_min "3.7426538" ;
+    tippecc_data:global_model "CMCC-ESM2" ;
+    tippecc_data:grid "native atmosphere regular grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history "2020-12-21T16:15:19Z altered by CMOR: Treated scalar dimension: 'height'." ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "Fondazione Centro Euro-Mediterraneo sui Cambiamenti Climatici, Lecce 73100, Italy" ;
+    tippecc_data:institution_id "CMCC" ;
+    tippecc_data:last_modification_time "2025-01-21 09:53:48 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Near-Surface Relative Humidity" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:original_name "RHREFHT" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "CMCC-ESM2" ;
+    tippecc_data:parent_time_units "days since 1850-01-01" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:references "none" ;
+    tippecc_data:run_variant "1st realization" ;
+    tippecc_data:short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:short_variable_name "hurs" ;
+    tippecc_data:source """CMCC-ESM2 (2017): 
+aerosol: MAM3
+atmos: CAM5.3 (1deg; 288 x 192 longitude/latitude; 30 levels; top at ~2 hPa)
+atmosChem: none
+land: CLM4.5 (BGC mode)
+landIce: none
+ocean: NEMO3.6 (ORCA1 tripolar primarly 1 deg lat/lon with meridional refinement down to 1/3 degree in the tropics; 362 x 292 longitude/latitude; 50 vertical levels; top grid cell 0-1 m)
+ocnBgchem: BFM5.1
+seaIce: CICE4.0""" ;
+    tippecc_data:source_id "CMCC-ESM2" ;
+    tippecc_data:source_type "AOGCM" ;
+    tippecc_data:standard_name "relative_humidity" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(05 February 2020) MD5:6a248fd76c55aa6d6f7b3cc6866b5faf" ;
+    tippecc_data:time_calendar "365_day" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:title "CMCC-ESM2 output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/de8ac9c5-55b3-4754-8d68-ddafcad1f93c" ;
+    tippecc_data:unit "%" ;
+    tippecc_data:units "%" ;
+    tippecc_data:variable_id "hurs" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1046 ;
+            prov:atTime "2025-01-17T16:34:20"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1049> ;
+            prov:atTime "2025-01-21T09:53:48-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_1048 ;
+            prov:atTime "2025-01-21T10:53:01"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_1047 ;
+            prov:atTime "2025-01-21T10:50:04"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_hurs_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_hurs_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:31 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: time: mean" ;
+    tippecc_data:cmor_version "3.6.0" ;
+    tippecc_data:comment "includes both liquid and solid phases" ;
+    tippecc_data:contact "T. Lovato" ;
+    tippecc_data:creation_date "2020-12-21T16:16:04Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1920180214"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CMCC.CMCC-ESM2.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "0.006684057" ;
+    tippecc_data:global_min "-1.492232e-17" ;
+    tippecc_data:global_model "CMCC-ESM2" ;
+    tippecc_data:grid "native atmosphere regular grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history """Tue Jan 21 12:15:44 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_CMCC-ESM2_pr_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 12:12:44 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc
+Fri Jan 17 17:41:40 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/pr/05deg_pr_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc
+Fri Dec 20 16:36:13 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc
+Fri Dec 20 16:34:11 2024: cdo mergetime pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc
+2020-12-21T16:16:04Z ;rewrote data to be consistent with CMIP for variable pr found in table day.;
+none""" ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "Fondazione Centro Euro-Mediterraneo sui Cambiamenti Climatici, Lecce 73100, Italy" ;
+    tippecc_data:institution_id "CMCC" ;
+    tippecc_data:last_modification_time "2025-01-21 11:16:18 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:original_name "PRECT" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "CMCC-ESM2" ;
+    tippecc_data:parent_time_units "days since 1850-01-01" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:references "none" ;
+    tippecc_data:run_variant "1st realization" ;
+    tippecc_data:short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:short_variable_name "pr" ;
+    tippecc_data:source """CMCC-ESM2 (2017): 
+aerosol: MAM3
+atmos: CAM5.3 (1deg; 288 x 192 longitude/latitude; 30 levels; top at ~2 hPa)
+atmosChem: none
+land: CLM4.5 (BGC mode)
+landIce: none
+ocean: NEMO3.6 (ORCA1 tripolar primarly 1 deg lat/lon with meridional refinement down to 1/3 degree in the tropics; 362 x 292 longitude/latitude; 50 vertical levels; top grid cell 0-1 m)
+ocnBgchem: BFM5.1
+seaIce: CICE4.0""" ;
+    tippecc_data:source_id "CMCC-ESM2" ;
+    tippecc_data:source_type "AOGCM" ;
+    tippecc_data:standard_name "precipitation_flux" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(05 February 2020) MD5:6a248fd76c55aa6d6f7b3cc6866b5faf" ;
+    tippecc_data:time_calendar "365_day" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:title "CMCC-ESM2 output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/93285402-04f9-4ce8-869b-233c1d64d22f" ;
+    tippecc_data:unit "kg m-2 s-1" ;
+    tippecc_data:units "kg m-2 s-1" ;
+    tippecc_data:variable_id "pr" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1050 ;
+            prov:atTime "2025-01-17T17:41:40"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_1052 ;
+            prov:atTime "2025-01-21T12:15:44"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1053> ;
+            prov:atTime "2025-01-21T11:16:18-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_1051 ;
+            prov:atTime "2025-01-21T12:12:44"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_pr_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rlds_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:44 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: time: mean" ;
+    tippecc_data:cmor_version "3.6.0" ;
+    tippecc_data:comment "The surface called 'surface' means the lower boundary of the atmosphere. 'longwave' means longwave radiation. Downwelling radiation is radiation from above. It does not mean 'net downward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics." ;
+    tippecc_data:contact "T. Lovato" ;
+    tippecc_data:creation_date "2020-12-21T16:19:40Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1920181649"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CMCC.CMCC-ESM2.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "512.6081" ;
+    tippecc_data:global_min "193.01942" ;
+    tippecc_data:global_model "CMCC-ESM2" ;
+    tippecc_data:grid "native atmosphere regular grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history """Tue Jan 21 13:33:14 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rlds_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_CMCC-ESM2_rlds_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 13:30:16 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/rlds/05deg_rlds_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rlds_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc
+Fri Jan 17 18:42:59 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rlds/05deg_rlds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/rlds/05deg_rlds_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/rlds/05deg_rlds_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc
+Fri Dec 20 16:57:48 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rlds/rlds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rlds/05deg_rlds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc
+Fri Dec 20 16:56:04 2024: cdo mergetime rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231.nc rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231.nc rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231.nc rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231.nc rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231.nc rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231.nc rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rlds/rlds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc
+2020-12-21T16:19:40Z ;rewrote data to be consistent with CMIP for variable rlds found in table day.;
+none""" ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "Fondazione Centro Euro-Mediterraneo sui Cambiamenti Climatici, Lecce 73100, Italy" ;
+    tippecc_data:institution_id "CMCC" ;
+    tippecc_data:last_modification_time "2025-01-21 12:34:02 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Surface Downwelling Longwave Radiation" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:original_name "FLDS" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "CMCC-ESM2" ;
+    tippecc_data:parent_time_units "days since 1850-01-01" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:references "none" ;
+    tippecc_data:run_variant "1st realization" ;
+    tippecc_data:short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:short_variable_name "rlds" ;
+    tippecc_data:source """CMCC-ESM2 (2017): 
+aerosol: MAM3
+atmos: CAM5.3 (1deg; 288 x 192 longitude/latitude; 30 levels; top at ~2 hPa)
+atmosChem: none
+land: CLM4.5 (BGC mode)
+landIce: none
+ocean: NEMO3.6 (ORCA1 tripolar primarly 1 deg lat/lon with meridional refinement down to 1/3 degree in the tropics; 362 x 292 longitude/latitude; 50 vertical levels; top grid cell 0-1 m)
+ocnBgchem: BFM5.1
+seaIce: CICE4.0""" ;
+    tippecc_data:source_id "CMCC-ESM2" ;
+    tippecc_data:source_type "AOGCM" ;
+    tippecc_data:standard_name "surface_downwelling_longwave_flux_in_air" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(05 February 2020) MD5:6a248fd76c55aa6d6f7b3cc6866b5faf" ;
+    tippecc_data:time_calendar "365_day" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:title "CMCC-ESM2 output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/f3e606eb-05fe-48b2-a6da-9ba0c7acdad1" ;
+    tippecc_data:unit "W m-2" ;
+    tippecc_data:units "W m-2" ;
+    tippecc_data:variable_id "rlds" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_1062 ;
+            prov:atTime "2025-01-21T13:30:16"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1061 ;
+            prov:atTime "2025-01-17T18:42:59"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_1063 ;
+            prov:atTime "2025-01-21T13:33:14"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1064> ;
+            prov:atTime "2025-01-21T12:34:02-01:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_rlds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rlds_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rlus_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:30 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: time: mean" ;
+    tippecc_data:cmor_version "3.6.0" ;
+    tippecc_data:comment "The surface called 'surface' means the lower boundary of the atmosphere. 'longwave' means longwave radiation. Upwelling radiation is radiation from below. It does not mean 'net upward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics." ;
+    tippecc_data:contact "T. Lovato" ;
+    tippecc_data:creation_date "2020-12-21T16:19:40Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1920181645"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CMCC.CMCC-ESM2.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "617.4288" ;
+    tippecc_data:global_min "297.15497" ;
+    tippecc_data:global_model "CMCC-ESM2" ;
+    tippecc_data:grid "native atmosphere regular grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history """Tue Jan 21 14:53:05 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rlus_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_CMCC-ESM2_rlus_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 14:50:08 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/rlus/05deg_rlus_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rlus_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc
+Fri Jan 17 19:49:59 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rlus/05deg_rlus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/rlus/05deg_rlus_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/rlus/05deg_rlus_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc
+Fri Dec 20 17:25:26 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rlus/rlus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rlus/05deg_rlus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc
+Fri Dec 20 17:23:43 2024: cdo mergetime rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231.nc rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231.nc rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231.nc rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231.nc rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231.nc rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231.nc rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rlus/rlus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc
+2020-12-21T16:19:40Z ;rewrote data to be consistent with CMIP for variable rlus found in table day.;
+none""" ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "Fondazione Centro Euro-Mediterraneo sui Cambiamenti Climatici, Lecce 73100, Italy" ;
+    tippecc_data:institution_id "CMCC" ;
+    tippecc_data:last_modification_time "2025-01-21 13:54:07 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Surface Upwelling Longwave Radiation" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:original_name "FLNS+FLDS" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "CMCC-ESM2" ;
+    tippecc_data:parent_time_units "days since 1850-01-01" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:references "none" ;
+    tippecc_data:run_variant "1st realization" ;
+    tippecc_data:short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:short_variable_name "rlus" ;
+    tippecc_data:source """CMCC-ESM2 (2017): 
+aerosol: MAM3
+atmos: CAM5.3 (1deg; 288 x 192 longitude/latitude; 30 levels; top at ~2 hPa)
+atmosChem: none
+land: CLM4.5 (BGC mode)
+landIce: none
+ocean: NEMO3.6 (ORCA1 tripolar primarly 1 deg lat/lon with meridional refinement down to 1/3 degree in the tropics; 362 x 292 longitude/latitude; 50 vertical levels; top grid cell 0-1 m)
+ocnBgchem: BFM5.1
+seaIce: CICE4.0""" ;
+    tippecc_data:source_id "CMCC-ESM2" ;
+    tippecc_data:source_type "AOGCM" ;
+    tippecc_data:standard_name "surface_upwelling_longwave_flux_in_air" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(05 February 2020) MD5:6a248fd76c55aa6d6f7b3cc6866b5faf" ;
+    tippecc_data:time_calendar "365_day" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:title "CMCC-ESM2 output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/345ad304-f9c6-4ef7-83b5-440192508161" ;
+    tippecc_data:unit "W m-2" ;
+    tippecc_data:units "W m-2" ;
+    tippecc_data:variable_id "rlus" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_1066 ;
+            prov:atTime "2025-01-21T14:50:08"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_1067 ;
+            prov:atTime "2025-01-21T14:53:05"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1065 ;
+            prov:atTime "2025-01-17T19:49:59"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1068> ;
+            prov:atTime "2025-01-21T13:54:07-01:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_rlus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rlus_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rsds_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:39 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: time: mean" ;
+    tippecc_data:cmor_version "3.6.0" ;
+    tippecc_data:comment "Surface solar irradiance for UV calculations." ;
+    tippecc_data:contact "T. Lovato" ;
+    tippecc_data:creation_date "2020-12-21T16:19:46Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1920180126"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CMCC.CMCC-ESM2.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "416.95593" ;
+    tippecc_data:global_min "1.8821551" ;
+    tippecc_data:global_model "CMCC-ESM2" ;
+    tippecc_data:grid "native atmosphere regular grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history """Tue Jan 21 16:13:56 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rsds_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_CMCC-ESM2_rsds_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 16:10:59 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/rsds/05deg_rsds_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rsds_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc
+Fri Jan 17 20:57:10 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsds/05deg_rsds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/rsds/05deg_rsds_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/rsds/05deg_rsds_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc
+Fri Dec 20 17:52:07 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsds/rsds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsds/05deg_rsds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc
+Fri Dec 20 17:50:25 2024: cdo mergetime rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231.nc rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231.nc rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231.nc rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231.nc rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231.nc rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231.nc rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsds/rsds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc
+2020-12-21T16:19:46Z ;rewrote data to be consistent with CMIP for variable rsds found in table day.;
+none""" ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "Fondazione Centro Euro-Mediterraneo sui Cambiamenti Climatici, Lecce 73100, Italy" ;
+    tippecc_data:institution_id "CMCC" ;
+    tippecc_data:last_modification_time "2025-01-21 15:14:45 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Surface Downwelling Shortwave Radiation" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:original_name "FSDS" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "CMCC-ESM2" ;
+    tippecc_data:parent_time_units "days since 1850-01-01" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:references "none" ;
+    tippecc_data:run_variant "1st realization" ;
+    tippecc_data:short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:short_variable_name "rsds" ;
+    tippecc_data:source """CMCC-ESM2 (2017): 
+aerosol: MAM3
+atmos: CAM5.3 (1deg; 288 x 192 longitude/latitude; 30 levels; top at ~2 hPa)
+atmosChem: none
+land: CLM4.5 (BGC mode)
+landIce: none
+ocean: NEMO3.6 (ORCA1 tripolar primarly 1 deg lat/lon with meridional refinement down to 1/3 degree in the tropics; 362 x 292 longitude/latitude; 50 vertical levels; top grid cell 0-1 m)
+ocnBgchem: BFM5.1
+seaIce: CICE4.0""" ;
+    tippecc_data:source_id "CMCC-ESM2" ;
+    tippecc_data:source_type "AOGCM" ;
+    tippecc_data:standard_name "surface_downwelling_shortwave_flux_in_air" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(05 February 2020) MD5:6a248fd76c55aa6d6f7b3cc6866b5faf" ;
+    tippecc_data:time_calendar "365_day" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:title "CMCC-ESM2 output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/7f6d2fff-87f6-482b-b999-42f3c19e3a0b" ;
+    tippecc_data:unit "W m-2" ;
+    tippecc_data:units "W m-2" ;
+    tippecc_data:variable_id "rsds" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_1070 ;
+            prov:atTime "2025-01-21T16:10:59"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1069 ;
+            prov:atTime "2025-01-17T20:57:10"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1072> ;
+            prov:atTime "2025-01-21T15:14:45-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_1071 ;
+            prov:atTime "2025-01-21T16:13:56"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_rsds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rsds_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_rsus_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:45 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: time: mean" ;
+    tippecc_data:cmor_version "3.6.0" ;
+    tippecc_data:comment "The surface called 'surface' means the lower boundary of the atmosphere. 'shortwave' means shortwave radiation. Upwelling radiation is radiation from below. It does not mean 'net upward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics." ;
+    tippecc_data:contact "T. Lovato" ;
+    tippecc_data:creation_date "2020-12-21T16:19:55Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1920181647"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CMCC.CMCC-ESM2.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "121.721634" ;
+    tippecc_data:global_min "0.19051614" ;
+    tippecc_data:global_model "CMCC-ESM2" ;
+    tippecc_data:grid "native atmosphere regular grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history """Tue Jan 21 17:32:41 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rsus_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_CMCC-ESM2_rsus_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 17:29:45 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/rsus/05deg_rsus_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rsus_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc
+Fri Jan 17 22:04:04 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsus/05deg_rsus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/rsus/05deg_rsus_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/rsus/05deg_rsus_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc
+Fri Dec 20 18:16:54 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsus/rsus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsus/05deg_rsus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc
+Fri Dec 20 18:14:49 2024: cdo mergetime rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231.nc rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231.nc rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231.nc rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231.nc rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231.nc rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231.nc rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsus/rsus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc
+2020-12-21T16:19:55Z ;rewrote data to be consistent with CMIP for variable rsus found in table day.;
+none""" ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "Fondazione Centro Euro-Mediterraneo sui Cambiamenti Climatici, Lecce 73100, Italy" ;
+    tippecc_data:institution_id "CMCC" ;
+    tippecc_data:last_modification_time "2025-01-21 16:33:42 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Surface Upwelling Shortwave Radiation" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:original_name "FSDS-FSNS" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "CMCC-ESM2" ;
+    tippecc_data:parent_time_units "days since 1850-01-01" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:references "none" ;
+    tippecc_data:run_variant "1st realization" ;
+    tippecc_data:short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:short_variable_name "rsus" ;
+    tippecc_data:source """CMCC-ESM2 (2017): 
+aerosol: MAM3
+atmos: CAM5.3 (1deg; 288 x 192 longitude/latitude; 30 levels; top at ~2 hPa)
+atmosChem: none
+land: CLM4.5 (BGC mode)
+landIce: none
+ocean: NEMO3.6 (ORCA1 tripolar primarly 1 deg lat/lon with meridional refinement down to 1/3 degree in the tropics; 362 x 292 longitude/latitude; 50 vertical levels; top grid cell 0-1 m)
+ocnBgchem: BFM5.1
+seaIce: CICE4.0""" ;
+    tippecc_data:source_id "CMCC-ESM2" ;
+    tippecc_data:source_type "AOGCM" ;
+    tippecc_data:standard_name "surface_upwelling_shortwave_flux_in_air" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(05 February 2020) MD5:6a248fd76c55aa6d6f7b3cc6866b5faf" ;
+    tippecc_data:time_calendar "365_day" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:title "CMCC-ESM2 output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/9332b5e5-cb22-4857-aaec-d261e47e3d95" ;
+    tippecc_data:unit "W m-2" ;
+    tippecc_data:units "W m-2" ;
+    tippecc_data:variable_id "rsus" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1076> ;
+            prov:atTime "2025-01-21T16:33:42-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_1074 ;
+            prov:atTime "2025-01-21T17:29:45"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_1075 ;
+            prov:atTime "2025-01-21T17:32:41"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1073 ;
+            prov:atTime "2025-01-17T22:04:04"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_rsus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_rsus_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_sfcWind_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:41 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: time: mean" ;
+    tippecc_data:cmor_version "3.6.0" ;
+    tippecc_data:comment "near-surface (usually, 10 meters) wind speed." ;
+    tippecc_data:contact "T. Lovato" ;
+    tippecc_data:creation_date "2020-12-21T16:21:04Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1920180962"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CMCC.CMCC-ESM2.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "27.91832" ;
+    tippecc_data:global_min "0.29536793" ;
+    tippecc_data:global_model "CMCC-ESM2" ;
+    tippecc_data:grid "native atmosphere regular grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history "2020-12-21T16:20:23Z altered by CMOR: Treated scalar dimension: 'height'." ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "Fondazione Centro Euro-Mediterraneo sui Cambiamenti Climatici, Lecce 73100, Italy" ;
+    tippecc_data:institution_id "CMCC" ;
+    tippecc_data:last_modification_time "2025-01-21 17:51:07 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Daily-Mean Near-Surface Wind Speed" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:original_name "U10" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "CMCC-ESM2" ;
+    tippecc_data:parent_time_units "days since 1850-01-01" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:references "none" ;
+    tippecc_data:run_variant "1st realization" ;
+    tippecc_data:short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:short_variable_name "sfcWind" ;
+    tippecc_data:source """CMCC-ESM2 (2017): 
+aerosol: MAM3
+atmos: CAM5.3 (1deg; 288 x 192 longitude/latitude; 30 levels; top at ~2 hPa)
+atmosChem: none
+land: CLM4.5 (BGC mode)
+landIce: none
+ocean: NEMO3.6 (ORCA1 tripolar primarly 1 deg lat/lon with meridional refinement down to 1/3 degree in the tropics; 362 x 292 longitude/latitude; 50 vertical levels; top grid cell 0-1 m)
+ocnBgchem: BFM5.1
+seaIce: CICE4.0""" ;
+    tippecc_data:source_id "CMCC-ESM2" ;
+    tippecc_data:source_type "AOGCM" ;
+    tippecc_data:standard_name "wind_speed" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(05 February 2020) MD5:6a248fd76c55aa6d6f7b3cc6866b5faf" ;
+    tippecc_data:time_calendar "365_day" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:title "CMCC-ESM2 output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/e48cfd1b-052d-4f3c-9090-ad934adf8a58" ;
+    tippecc_data:unit "m s-1" ;
+    tippecc_data:units "m s-1" ;
+    tippecc_data:variable_id "sfcWind" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1077 ;
+            prov:atTime "2025-01-17T23:06:54"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_1079 ;
+            prov:atTime "2025-01-21T18:50:19"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1080> ;
+            prov:atTime "2025-01-21T17:51:07-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_1078 ;
+            prov:atTime "2025-01-21T18:47:24"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_sfcWind_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_tasmax_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:09 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: mean time: maximum" ;
+    tippecc_data:cmor_version "3.6.0" ;
+    tippecc_data:comment "maximum near-surface (usually, 2 meter) air temperature (add cell_method attribute 'time: max')" ;
+    tippecc_data:contact "T. Lovato" ;
+    tippecc_data:creation_date "2020-12-21T16:23:16Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1920181001"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CMCC.CMCC-ESM2.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "325.778" ;
+    tippecc_data:global_min "272.4564" ;
+    tippecc_data:global_model "CMCC-ESM2" ;
+    tippecc_data:grid "native atmosphere regular grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history "2020-12-21T16:22:34Z altered by CMOR: Treated scalar dimension: 'height'." ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "Fondazione Centro Euro-Mediterraneo sui Cambiamenti Climatici, Lecce 73100, Italy" ;
+    tippecc_data:institution_id "CMCC" ;
+    tippecc_data:last_modification_time "2025-01-21 20:25:28 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Daily Maximum Near-Surface Air Temperature" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:original_name "TREFHTMX" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "CMCC-ESM2" ;
+    tippecc_data:parent_time_units "days since 1850-01-01" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:references "none" ;
+    tippecc_data:run_variant "1st realization" ;
+    tippecc_data:short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:short_variable_name "tasmax" ;
+    tippecc_data:source """CMCC-ESM2 (2017): 
+aerosol: MAM3
+atmos: CAM5.3 (1deg; 288 x 192 longitude/latitude; 30 levels; top at ~2 hPa)
+atmosChem: none
+land: CLM4.5 (BGC mode)
+landIce: none
+ocean: NEMO3.6 (ORCA1 tripolar primarly 1 deg lat/lon with meridional refinement down to 1/3 degree in the tropics; 362 x 292 longitude/latitude; 50 vertical levels; top grid cell 0-1 m)
+ocnBgchem: BFM5.1
+seaIce: CICE4.0""" ;
+    tippecc_data:source_id "CMCC-ESM2" ;
+    tippecc_data:source_type "AOGCM" ;
+    tippecc_data:standard_name "air_temperature" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(05 February 2020) MD5:6a248fd76c55aa6d6f7b3cc6866b5faf" ;
+    tippecc_data:time_calendar "365_day" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:title "CMCC-ESM2 output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/9a1c24e9-2749-48b5-aed0-63e1e9acf3fb" ;
+    tippecc_data:unit "K" ;
+    tippecc_data:units "K" ;
+    tippecc_data:variable_id "tasmax" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1084> ;
+            prov:atTime "2025-01-21T20:25:28-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_1083 ;
+            prov:atTime "2025-01-21T21:24:40"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_1082 ;
+            prov:atTime "2025-01-21T21:21:45"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1081 ;
+            prov:atTime "2025-01-18T01:11:30"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_tasmax_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_tasmax_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_tasmin_1850_2100 a prov:Entity ;
+    tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
+    tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
+    tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
+    tippecc_data:activity_id "CMIP" ;
+    tippecc_data:bias_correction "no" ;
+    tippecc_data:birth_time "2025-02-23 16:47:39 CET+0100" ;
+    tippecc_data:branch_method "standard" ;
+    tippecc_data:branch_time_in_child 0e+00 ;
+    tippecc_data:branch_time_in_parent 0e+00 ;
+    tippecc_data:cell_measures "area: areacella" ;
+    tippecc_data:cell_methods "area: mean time: minimum" ;
+    tippecc_data:cmor_version "3.6.0" ;
+    tippecc_data:comment "minimum near-surface (usually, 2 meter) air temperature (add cell_method attribute 'time: min')" ;
+    tippecc_data:contact "T. Lovato" ;
+    tippecc_data:creation_date "2020-12-21T16:23:16Z" ;
+    tippecc_data:data_specs_version "01.00.31" ;
+    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file_format "netCDF" ;
+    tippecc_data:file_size "1920181001"^^xsd:int ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CMCC.CMCC-ESM2.historical.none.r1i1p1f1" ;
+    tippecc_data:geospatial_lat_max "-5.25" ;
+    tippecc_data:geospatial_lat_min "-35.75" ;
+    tippecc_data:geospatial_lon_max "51.75" ;
+    tippecc_data:geospatial_lon_min "10.25" ;
+    tippecc_data:global_max "312.1432" ;
+    tippecc_data:global_min "260.042" ;
+    tippecc_data:global_model "CMCC-ESM2" ;
+    tippecc_data:grid "native atmosphere regular grid" ;
+    tippecc_data:grid_label "gn" ;
+    tippecc_data:history "2020-12-21T16:22:35Z altered by CMOR: Treated scalar dimension: 'height'." ;
+    tippecc_data:indicator "no" ;
+    tippecc_data:institution "Fondazione Centro Euro-Mediterraneo sui Cambiamenti Climatici, Lecce 73100, Italy" ;
+    tippecc_data:institution_id "CMCC" ;
+    tippecc_data:last_modification_time "2025-01-21 21:48:26 CET+0100" ;
+    tippecc_data:license "CC BY 4.0" ;
+    tippecc_data:long_name "Daily Minimum Near-Surface Air Temperature" ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "50 km" ;
+    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:original_name "TREFHTMN" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "CMCC-ESM2" ;
+    tippecc_data:parent_time_units "days since 1850-01-01" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:references "none" ;
+    tippecc_data:run_variant "1st realization" ;
+    tippecc_data:short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:short_variable_name "tasmin" ;
+    tippecc_data:source """CMCC-ESM2 (2017): 
+aerosol: MAM3
+atmos: CAM5.3 (1deg; 288 x 192 longitude/latitude; 30 levels; top at ~2 hPa)
+atmosChem: none
+land: CLM4.5 (BGC mode)
+landIce: none
+ocean: NEMO3.6 (ORCA1 tripolar primarly 1 deg lat/lon with meridional refinement down to 1/3 degree in the tropics; 362 x 292 longitude/latitude; 50 vertical levels; top grid cell 0-1 m)
+ocnBgchem: BFM5.1
+seaIce: CICE4.0""" ;
+    tippecc_data:source_id "CMCC-ESM2" ;
+    tippecc_data:source_type "AOGCM" ;
+    tippecc_data:standard_name "air_temperature" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(05 February 2020) MD5:6a248fd76c55aa6d6f7b3cc6866b5faf" ;
+    tippecc_data:time_calendar "365_day" ;
+    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:title "CMCC-ESM2 output prepared for CMIP6" ;
+    tippecc_data:tracking_id "hdl:21.14100/aa92a01f-80f4-4058-a034-cc9dd1f6fe5e" ;
+    tippecc_data:unit "K" ;
+    tippecc_data:units "K" ;
+    tippecc_data:variable_id "tasmin" ;
+    tippecc_data:variant "r1i1p1f1" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_1086 ;
+            prov:atTime "2025-01-21T22:44:40"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1085 ;
+            prov:atTime "2025-01-18T02:20:17"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_1087 ;
+            prov:atTime "2025-01-21T22:47:36"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1088> ;
+            prov:atTime "2025-01-21T21:48:26-01:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
+    prov:wasDerivedFrom tippecc_data:05deg_tasmin_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
+        tippecc_data:05deg_tasmin_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 .
+
+tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_376 ;
+            prov:atTime "2024-12-20T16:06:20"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:hurs_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 .
+
+tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_447 ;
+            prov:atTime "2024-12-20T16:34:11"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 .
+
+tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_470 ;
+            prov:atTime "2024-12-20T16:56:04"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:rlds_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 .
+
+tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_493 ;
+            prov:atTime "2024-12-20T17:23:43"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:rlus_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 .
+
+tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_516 ;
+            prov:atTime "2024-12-20T17:50:25"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:rsds_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 .
+
+tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_539 ;
+            prov:atTime "2024-12-20T18:14:49"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:rsus_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 .
+
+tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_562 ;
+            prov:atTime "2024-12-20T18:47:41"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:sfcWind_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 .
+
+tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_585 ;
+            prov:atTime "2024-12-20T19:38:55"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:tasmax_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 .
+
+tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_608 ;
+            prov:atTime "2024-12-20T20:03:23"^^xsd:dateTime ] ;
+    prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
+    prov:wasDerivedFrom tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231,
+        tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231,
+        tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231,
+        tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231,
+        tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
+        tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
+        tippecc_data:tasmin_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 .
+
+<http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> a prov:Agent .
+
+people:PERSON__ZANDER_FRANZISKA a prov:Agent,
+        "prov:Person" ;
+    rdfs:label "Franziska Zander" ;
+    sdo:affiliation orgs:ORG__FSU ;
+    prov:actedOnBehalfOf orgs:ORG__FSU ;
+    wd:P496 "0000-0001-6892-7046" ;
+    foaf:familyName "Zander" ;
+    foaf:givenName "Franziska" .
+
+tippecc_data:africa05.txt a prov:Entity .
+
+people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
+        "prov:Person" ;
+    rdfs:label "Jonathan Padavatan" ;
+    sdo:affiliation orgs:ORG__WITS ;
+    prov:actedOnBehalfOf orgs:ORG__WITS ;
+    foaf:familyName "Padavatan" ;
+    foaf:givenName "Jonathan" .
+
+software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareApplication" .
+

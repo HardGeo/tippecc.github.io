@@ -82,39 +82,33 @@ export function adjustPositionPersons({
         return acc;
     }, {} as Record<string, Edge[]>);
 
-    // Calculate average y-position for each group and ensure minimum spacing of 200
-    const adjustedYPositions = new Map<string, number>();
+    // Calculate average y and x position for each group and ensure minimum spacing of 200
+    const adjustedPositions = new Map<string, { x: number; y: number }>();
 
     Object.entries(groupedBySource).forEach(([sourceId, edges]) => {
         const targetNodes = edges.map(edge => currentNodes.find(node => node.id === edge.target)).filter(Boolean) as Node[];
         if (targetNodes.length === 0) return;
 
         let avgY = targetNodes.reduce((sum, node) => sum + node.position.y, 0) / targetNodes.length;
+        let avgX = targetNodes.reduce((sum, node) => sum + node.position.x, 0) / targetNodes.length;
 
-        // Ensure a minimum spacing of 200 between nodes
-        while ([...adjustedYPositions.values()].some(y => Math.abs(y - avgY) < 200)) {
+        // Ensure a minimum spacing of 200 between Y values
+        while ([...adjustedPositions.values()].some(pos => Math.abs(pos.y - avgY) < 200)) {
             avgY += 200;
         }
-        adjustedYPositions.set(sourceId, avgY);
+        while ([...adjustedPositions.values()].some(pos => Math.abs(pos.x - avgX) < 200)) {
+            avgX += 200;
+        }
 
-        // Update source node with the new y position
+        adjustedPositions.set(sourceId, { x: avgX, y: avgY });
+
+        // Update source node with the new x and y position
         const sourceNode = currentNodes.find(node => node.id === sourceId);
         if (sourceNode) {
-            sourceNode.position = { x: sourceNode.position.x, y: avgY };
+            sourceNode.position = { x: avgX, y: avgY };
         }
     });
 
-    // Adjust x position for personNodes based on entityNodes
-    const personNodes = currentNodes.filter(node => node.type === NodeType);
-    personNodes.forEach(personNode => {
-        const relatedEdges = currentEdges.filter(edge => edge.source === personNode.id || edge.target === personNode.id);
-        const entityNodes = relatedEdges.map(edge => currentNodes.find(node => node.id === (edge.source === personNode.id ? edge.target : edge.source)))
-                                       .filter(node => node && node.type === "entityNode") as Node[];
-        if (entityNodes.length === 0) return;
-
-        const minX = Math.min(...entityNodes.map(node => node.position.x));
-        personNode.position = { x: minX - 1000, y: personNode.position.y };
-    });
 }
 
 
@@ -123,20 +117,22 @@ export function adjustPositionActivities({
     edges,
     nodes,
     EdgeLabel,
-    NodeType,
+    EdgeLabel2,
     minDistance = 50 // Minimum allowed distance between nodes
 }: {
     edges: import('svelte/store').Readable<Edge[]>;
     nodes: import('svelte/store').Readable<Node[]>;
     EdgeLabel: string;
-    NodeType: string;
+    EdgeLabel2: string;
     minDistance?: number; // Minimum allowed distance between nodes
 }): void {
     const currentNodes = get(nodes);
     const currentEdges = get(edges);
 
     // Get all activity edges matching the given label
-    const activityEdges = currentEdges.filter(edge => edge.label === EdgeLabel);
+    const activityEdges = currentEdges.filter(
+        edge => edge.label === EdgeLabel || edge.label === EdgeLabel2
+    );
 
     if (activityEdges.length === 0) {
         console.warn("No matching activity edges found, skipping adjustment.");
