@@ -7,6 +7,7 @@
 @prefix sdo: <http://schema.org/> .
 @prefix software: <http://www.provbook.org/tippecc/software/> .
 @prefix tippecc_data: <http://www.provbook.org/tippecc/data/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 tippecc_data:COLLECTION__CMIP6 a prov:Collection,
@@ -185,6 +186,12 @@ exe:Remap_bilinear_85 a prov:Activity ;
         tippecc_data:rlus_day_MPI-ESM1-2-HR_historical_r1i1p1f1_1850_2014 ;
     prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_505 .
+
+orgs:ORG__WITS a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "University of the Witwatersrand" ;
+    sdo:name "University of the Witwatersrand" ;
+    wd:P6782 "https://ror.org/03rp50x72" .
 
 people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
         "prov:Person" ;

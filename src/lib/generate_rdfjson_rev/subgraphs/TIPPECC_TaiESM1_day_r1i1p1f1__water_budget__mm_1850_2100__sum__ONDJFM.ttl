@@ -1119,6 +1119,18 @@ exe:Slice_years_2764 a prov:Activity ;
     prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_2763 .
 
+orgs:ORG__FSU a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "Friedrich Schiller University of Jena" ;
+    sdo:name "Friedrich Schiller University of Jena" ;
+    wd:P6782 "https://ror.org/05qpz1x62" .
+
+orgs:ORG__WITS a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "University of the Witwatersrand" ;
+    sdo:name "University of the Witwatersrand" ;
+    wd:P6782 "https://ror.org/03rp50x72" .
+
 tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__water_budget__mm_1850_2100 a prov:Entity ;
     tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
@@ -1212,10 +1224,10 @@ seaIce: CICE4""" ;
     tippecc_data:units "mmday" ;
     tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Convert_water_budget_to_mm/day_2792> ;
-            prov:atTime "2025-01-24T21:56:30-01:00"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2025-01-24T21:56:30-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__water_budget_1850_2100 .
 
@@ -1225,82 +1237,82 @@ software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
     sdo:type "sdo:SoftwareApplication" .
 
 tippecc_data:05deg_hurs_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_21 ;
-            prov:atTime "2024-12-19T09:11:08"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T09:11:08"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:hurs_day_TaiESM1_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_pr_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_44 ;
-            prov:atTime "2024-12-19T10:27:25"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T10:27:25"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:pr_day_TaiESM1_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_rlds_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_67 ;
-            prov:atTime "2024-12-19T11:41:12"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T11:41:12"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:rlds_day_TaiESM1_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_rlus_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_90 ;
-            prov:atTime "2024-12-19T12:52:27"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T12:52:27"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:rlus_day_TaiESM1_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_rsds_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_113 ;
-            prov:atTime "2024-12-19T14:06:27"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T14:06:27"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:rsds_day_TaiESM1_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_rsus_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_136 ;
-            prov:atTime "2024-12-19T15:21:30"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T15:21:30"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:rsus_day_TaiESM1_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_sfcWind_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_159 ;
-            prov:atTime "2024-12-19T16:35:35"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T16:35:35"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:sfcWind_day_TaiESM1_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_tasmax_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_182 ;
-            prov:atTime "2024-12-19T18:56:12"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T18:56:12"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:tasmax_day_TaiESM1_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_tasmin_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_205 ;
-            prov:atTime "2024-12-19T20:06:54"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T20:06:54"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:tasmin_day_TaiESM1_historical_r1i1p1f1_1850_2014 .
@@ -1396,10 +1408,10 @@ seaIce: CICE4""" ;
     tippecc_data:units "kg m-2 s-1" ;
     tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Calc_pot._ET_2783 ;
-            prov:atTime "2025-01-24T21:53:40-01:00"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2025-01-24T21:53:40-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1_hurs_1850_2100,
         tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1_rlds_1850_2100,
@@ -1503,10 +1515,10 @@ seaIce: CICE4""" ;
     tippecc_data:units "kg m-2 s-1" ;
     tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Calc_water_budget_2791 ;
-            prov:atTime "2025-01-24T21:55:13-01:00"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2025-01-24T21:55:13-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1__evspsblpot_1850_2100,
         tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1_pr_1850_2100 .
@@ -1598,7 +1610,11 @@ seaIce: CICE4""" ;
     tippecc_data:variable_id "hurs" ;
     tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_2726 ;
             prov:atTime "2025-01-21T11:56:28"^^xsd:dateTime ],
         [ a prov:Generation ;
@@ -1609,11 +1625,7 @@ seaIce: CICE4""" ;
             prov:atTime "2025-01-17T17:26:30"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2727> ;
-            prov:atTime "2025-01-21T10:57:10-01:00"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-01-21T10:57:10-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_hurs_day_TaiESM1_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_hurs_day_TaiESM1_ssp585_r1i1p1f1_2015_2100 .
@@ -1705,7 +1717,11 @@ seaIce: CICE4""" ;
     tippecc_data:variable_id "pr" ;
     tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2731> ;
             prov:atTime "2025-01-21T12:16:13-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
@@ -1716,11 +1732,7 @@ seaIce: CICE4""" ;
             prov:atTime "2025-01-21T13:12:26"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Merge_datasets_2728 ;
-            prov:atTime "2025-01-17T18:27:47"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-01-17T18:27:47"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_pr_day_TaiESM1_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_TaiESM1_ssp585_r1i1p1f1_2015_2100 .
@@ -1813,7 +1825,11 @@ seaIce: CICE4""" ;
     tippecc_data:variable_id "rlds" ;
     tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_2741 ;
             prov:atTime "2025-01-21T14:35:52"^^xsd:dateTime ],
         [ a prov:Generation ;
@@ -1824,11 +1840,7 @@ seaIce: CICE4""" ;
             prov:atTime "2025-01-21T14:32:58"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2742> ;
-            prov:atTime "2025-01-21T13:36:41-01:00"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-01-21T13:36:41-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_rlds_day_TaiESM1_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rlds_day_TaiESM1_ssp585_r1i1p1f1_2015_2100 .
@@ -1921,7 +1933,11 @@ seaIce: CICE4""" ;
     tippecc_data:variable_id "rlus" ;
     tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_2743 ;
             prov:atTime "2025-01-17T20:42:05"^^xsd:dateTime ],
         [ a prov:Generation ;
@@ -1932,11 +1948,7 @@ seaIce: CICE4""" ;
             prov:atTime "2025-01-21T14:57:51-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_2744 ;
-            prov:atTime "2025-01-21T15:53:48"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-01-21T15:53:48"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_rlus_day_TaiESM1_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rlus_day_TaiESM1_ssp585_r1i1p1f1_2015_2100 .
@@ -2029,7 +2041,11 @@ seaIce: CICE4""" ;
     tippecc_data:variable_id "rsds" ;
     tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2750> ;
             prov:atTime "2025-01-21T16:16:22-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
@@ -2040,11 +2056,7 @@ seaIce: CICE4""" ;
             prov:atTime "2025-01-17T21:48:43"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_2749 ;
-            prov:atTime "2025-01-21T17:15:34"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-01-21T17:15:34"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_rsds_day_TaiESM1_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rsds_day_TaiESM1_ssp585_r1i1p1f1_2015_2100 .
@@ -2137,7 +2149,11 @@ seaIce: CICE4""" ;
     tippecc_data:variable_id "rsus" ;
     tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_2753 ;
             prov:atTime "2025-01-21T18:31:35"^^xsd:dateTime ],
         [ a prov:Generation ;
@@ -2148,11 +2164,7 @@ seaIce: CICE4""" ;
             prov:atTime "2025-01-21T18:28:40"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Merge_datasets_2751 ;
-            prov:atTime "2025-01-17T22:51:45"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-01-17T22:51:45"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_rsus_day_TaiESM1_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rsus_day_TaiESM1_ssp585_r1i1p1f1_2015_2100 .
@@ -2245,7 +2257,11 @@ seaIce: CICE4""" ;
     tippecc_data:variable_id "sfcWind" ;
     tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_2757 ;
             prov:atTime "2025-01-21T19:48:48"^^xsd:dateTime ],
         [ a prov:Generation ;
@@ -2256,11 +2272,7 @@ seaIce: CICE4""" ;
             prov:atTime "2025-01-21T19:45:54"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Merge_datasets_2755 ;
-            prov:atTime "2025-01-17T23:55:06"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-01-17T23:55:06"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_sfcWind_day_TaiESM1_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_sfcWind_day_TaiESM1_ssp585_r1i1p1f1_2015_2100 .
@@ -2352,7 +2364,11 @@ seaIce: CICE4""" ;
     tippecc_data:variable_id "tasmax" ;
     tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity exe:Slice_years_2760 ;
             prov:atTime "2025-01-21T22:25:33"^^xsd:dateTime ],
         [ a prov:Generation ;
@@ -2363,11 +2379,7 @@ seaIce: CICE4""" ;
             prov:atTime "2025-01-21T21:29:20-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_2761 ;
-            prov:atTime "2025-01-21T22:28:32"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-01-21T22:28:32"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_tasmax_day_TaiESM1_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_tasmax_day_TaiESM1_ssp585_r1i1p1f1_2015_2100 .
@@ -2459,7 +2471,11 @@ seaIce: CICE4""" ;
     tippecc_data:variable_id "tasmin" ;
     tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_2763 ;
             prov:atTime "2025-01-18T03:13:54"^^xsd:dateTime ],
         [ a prov:Generation ;
@@ -2470,20 +2486,16 @@ seaIce: CICE4""" ;
             prov:atTime "2025-01-21T22:51:28-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_2765 ;
-            prov:atTime "2025-01-21T23:50:53"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-01-21T23:50:53"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_tasmin_day_TaiESM1_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_tasmin_day_TaiESM1_ssp585_r1i1p1f1_2015_2100 .
 
 tippecc_data:hurs_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_393 ;
-            prov:atTime "2024-12-19T09:06:34"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T09:06:34"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:hurs_day_TaiESM1_historical_r1i1p1f1_gn_18500101-18591231,
         tippecc_data:hurs_day_TaiESM1_historical_r1i1p1f1_gn_18600101-18691231,
@@ -2504,10 +2516,10 @@ tippecc_data:hurs_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
         tippecc_data:hurs_day_TaiESM1_historical_r1i1p1f1_gn_20100101-20141231 .
 
 tippecc_data:pr_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_464 ;
-            prov:atTime "2024-12-19T10:21:56"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T10:21:56"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:pr_day_TaiESM1_historical_r1i1p1f1_gn_18500101-18591231,
         tippecc_data:pr_day_TaiESM1_historical_r1i1p1f1_gn_18600101-18691231,
@@ -2528,10 +2540,10 @@ tippecc_data:pr_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
         tippecc_data:pr_day_TaiESM1_historical_r1i1p1f1_gn_20100101-20141231 .
 
 tippecc_data:rlds_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_487 ;
-            prov:atTime "2024-12-19T11:36:32"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T11:36:32"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:rlds_day_TaiESM1_historical_r1i1p1f1_gn_18500101-18591231,
         tippecc_data:rlds_day_TaiESM1_historical_r1i1p1f1_gn_18600101-18691231,
@@ -2552,10 +2564,10 @@ tippecc_data:rlds_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
         tippecc_data:rlds_day_TaiESM1_historical_r1i1p1f1_gn_20100101-20141231 .
 
 tippecc_data:rlus_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_510 ;
-            prov:atTime "2024-12-19T12:48:10"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T12:48:10"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:rlus_day_TaiESM1_historical_r1i1p1f1_gn_18500101-18591231,
         tippecc_data:rlus_day_TaiESM1_historical_r1i1p1f1_gn_18600101-18691231,
@@ -2576,10 +2588,10 @@ tippecc_data:rlus_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
         tippecc_data:rlus_day_TaiESM1_historical_r1i1p1f1_gn_20100101-20141231 .
 
 tippecc_data:rsds_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_533 ;
-            prov:atTime "2024-12-19T14:01:42"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T14:01:42"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:rsds_day_TaiESM1_historical_r1i1p1f1_gn_18500101-18591231,
         tippecc_data:rsds_day_TaiESM1_historical_r1i1p1f1_gn_18600101-18691231,
@@ -2600,10 +2612,10 @@ tippecc_data:rsds_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
         tippecc_data:rsds_day_TaiESM1_historical_r1i1p1f1_gn_20100101-20141231 .
 
 tippecc_data:rsus_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_556 ;
-            prov:atTime "2024-12-19T15:16:27"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T15:16:27"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:rsus_day_TaiESM1_historical_r1i1p1f1_gn_18500101-18591231,
         tippecc_data:rsus_day_TaiESM1_historical_r1i1p1f1_gn_18600101-18691231,
@@ -2624,10 +2636,10 @@ tippecc_data:rsus_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
         tippecc_data:rsus_day_TaiESM1_historical_r1i1p1f1_gn_20100101-20141231 .
 
 tippecc_data:sfcWind_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_579 ;
-            prov:atTime "2024-12-19T16:30:36"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T16:30:36"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:sfcWind_day_TaiESM1_historical_r1i1p1f1_gn_18500101-18591231,
         tippecc_data:sfcWind_day_TaiESM1_historical_r1i1p1f1_gn_18600101-18691231,
@@ -2648,10 +2660,10 @@ tippecc_data:sfcWind_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
         tippecc_data:sfcWind_day_TaiESM1_historical_r1i1p1f1_gn_20100101-20141231 .
 
 tippecc_data:tasmax_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_602 ;
-            prov:atTime "2024-12-19T18:52:13"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T18:52:13"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:tasmax_day_TaiESM1_historical_r1i1p1f1_gn_18500101-18591231,
         tippecc_data:tasmax_day_TaiESM1_historical_r1i1p1f1_gn_18600101-18691231,
@@ -2672,10 +2684,10 @@ tippecc_data:tasmax_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
         tippecc_data:tasmax_day_TaiESM1_historical_r1i1p1f1_gn_20100101-20141231 .
 
 tippecc_data:tasmin_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_625 ;
-            prov:atTime "2024-12-19T20:03:30"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T20:03:30"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:tasmin_day_TaiESM1_historical_r1i1p1f1_gn_18500101-18591231,
         tippecc_data:tasmin_day_TaiESM1_historical_r1i1p1f1_gn_18600101-18691231,

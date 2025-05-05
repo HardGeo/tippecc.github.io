@@ -649,6 +649,18 @@ exe:Slice_ref._period_2044 a prov:Activity ;
     prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Calc_year_sum_2046 .
 
+orgs:ORG__FSU a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "Friedrich Schiller University of Jena" ;
+    sdo:name "Friedrich Schiller University of Jena" ;
+    wd:P6782 "https://ror.org/05qpz1x62" .
+
+orgs:ORG__WITS a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "University of the Witwatersrand" ;
+    sdo:name "University of the Witwatersrand" ;
+    wd:P6782 "https://ror.org/03rp50x72" .
+
 people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
         "prov:Person" ;
     rdfs:label "Jonathan Padavatan" ;
@@ -740,14 +752,14 @@ seaIce: COCO4.9""" ;
     tippecc_data:variable_id "pr" ;
     tippecc_data:variant "r1i1p1f2" ;
     tippecc_data:variant_label "r1i1p1f2" ;
-    prov:qualifiedGeneration [ ],
-        [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Calc_mean_2043 ;
             prov:atTime "2025-03-04T21:34:05-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_ref._period_2042 ;
-            prov:atTime "2025-03-04T21:34:05-01:00"^^xsd:dateTime ] ;
+            prov:atTime "2025-03-04T21:34:05-01:00"^^xsd:dateTime ],
+        [ ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_MIROC-ES2L_day_r1i1p1f2_pr__mm_1850_2100__yearsum .
 
@@ -834,14 +846,14 @@ seaIce: COCO4.9""" ;
     tippecc_data:variable_id "pr" ;
     tippecc_data:variant "r1i1p1f2" ;
     tippecc_data:variant_label "r1i1p1f2" ;
-    prov:qualifiedGeneration [ ],
-        [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Calc_mean_2045 ;
             prov:atTime "2025-03-04T21:34:11-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_ref._period_2044 ;
-            prov:atTime "2025-03-04T21:34:11-01:00"^^xsd:dateTime ] ;
+            prov:atTime "2025-03-04T21:34:11-01:00"^^xsd:dateTime ],
+        [ ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_MIROC-ES2L_day_r1i1p1f2_pr__mm_1850_2100__yearsum .
 
@@ -856,10 +868,10 @@ exe:Calc_year_sum_2046 a prov:Activity ;
     prov:wasInformedBy exe:Convert_pr_to_mm_2040 .
 
 tippecc_data:05deg_pr_day_MIROC-ES2L_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_37 ;
-            prov:atTime "2025-02-12T14:43:44"^^xsd:dateTime ] ;
+            prov:atTime "2025-02-12T14:43:44"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:pr_day_MIROC-ES2L_historical_r1i1p1f1_1850_2014 .
@@ -946,10 +958,7 @@ seaIce: COCO4.9""" ;
     tippecc_data:variable_id "pr" ;
     tippecc_data:variant "r1i1p1f2" ;
     tippecc_data:variant_label "r1i1p1f2" ;
-    prov:qualifiedGeneration [ ],
-        [ ],
-        [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_2038 ;
             prov:atTime "2025-02-19T15:44:34"^^xsd:dateTime ],
         [ a prov:Generation ;
@@ -957,7 +966,10 @@ seaIce: COCO4.9""" ;
             prov:atTime "2025-02-19T14:47:27-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Merge_datasets_2037 ;
-            prov:atTime "2025-02-14T11:11:11"^^xsd:dateTime ] ;
+            prov:atTime "2025-02-14T11:11:11"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_pr_day_MIROC-ES2L_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_MIROC-ES2L_ssp585_r1i1p1f1_2015_2100 .
@@ -1044,18 +1056,18 @@ seaIce: COCO4.9""" ;
     tippecc_data:variable_id "pr" ;
     tippecc_data:variant "r1i1p1f2" ;
     tippecc_data:variant_label "r1i1p1f2" ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Convert_pr_to_mm_2040 ;
-            prov:atTime "2025-03-04T21:32:41-01:00"^^xsd:dateTime ] ;
+            prov:atTime "2025-03-04T21:32:41-01:00"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_MIROC-ES2L_day_r1i1p1f2_pr_1850_2100 .
 
 tippecc_data:pr_day_MIROC-ES2L_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Merge_datasets_457 ;
-            prov:atTime "2025-02-12T14:43:19"^^xsd:dateTime ] ;
+            prov:atTime "2025-02-12T14:43:19"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:pr_day_MIROC-ES2L_historical_r1i1p1f2_gn_18500101-18501231,
         tippecc_data:pr_day_MIROC-ES2L_historical_r1i1p1f2_gn_18510101-18511231,
@@ -1315,10 +1327,10 @@ seaIce: COCO4.9""" ;
     tippecc_data:variable_id "pr" ;
     tippecc_data:variant "r1i1p1f2" ;
     tippecc_data:variant_label "r1i1p1f2" ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Calc_year_sum_2046 ;
-            prov:atTime "2025-03-04T21:33:59-01:00"^^xsd:dateTime ] ;
+            prov:atTime "2025-03-04T21:33:59-01:00"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_MIROC-ES2L_day_r1i1p1f2_pr__mm_1850_2100 .
 

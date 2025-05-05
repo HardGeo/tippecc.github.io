@@ -163,13 +163,14 @@ def subquery(entity):
     PREFIX tippecc_data: <http://www.provbook.org/tippecc/data/>
     CONSTRUCT {
         ?activity ?p ?o .
-
         ?entity prov:qualifiedGeneration ?gen .
         ?gen ?p3 ?o3 .
         ?entity prov:wasAttributedTo ?agent .
         ?agent ?p4 ?o4 .
         ?activity prov:wasAssociatedWith ?software .
         ?software ?p5 ?o5 .
+        ?activity prov:wasAssociatedWith ?function .
+        ?function ?pf ?of .
         ?collection prov:hadMember ?entity .
         ?agent prov:actedOnBehalfOf ?org .
         ?org ?p6 ?o6 .
@@ -182,6 +183,8 @@ def subquery(entity):
             OPTIONAL {
       			?activity prov:wasAssociatedWith ?software .
       			?software ?p5 ?o5 .
+                ?activity prov:wasAssociatedWith ?function .
+                ?function ?pf ?of .
     		}
     	}
   		OPTIONAL {
@@ -452,11 +455,10 @@ entity_list = [entry.split("/")[-1] for entry in entity_list if not entry.split(
 #result_entities(entity)
 
 total = len(entity_list)
-
-
+export_combined_turtle(entity)
+"""
 for idx, entity in enumerate(entity_list, start=1):
     print(f"Processing {idx}/{total}", end="\r")
     export_combined_turtle(entity)
-
-
+"""
 #activities(entity)

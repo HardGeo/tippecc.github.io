@@ -2,6 +2,7 @@ import os
 import json
 import os.path as path
 
+from collections import defaultdict
 import prov
 import xmltodict as xmltodict
 from prov.model import ProvDocument
@@ -23,31 +24,43 @@ with open(prov_metadata_path, 'r', encoding='utf-8') as file:
 
 
 
-def flatten_meta_data(meta_data, parent_key=""):
+def flatten_meta_data(meta_data, parent_key='', counter=None):
     """
     Flattens a nested dictionary:
-    - Brings all keys to the top level, prefixed by their parent key path.
-    - Adds 'tippecc_data:' as a prefix to every key **only if it does not already contain a colon (":")**.
-    - Replaces empty dictionaries {} with an empty string ''.
-    - Converts lists to a comma-separated string of their content.
+    - Keys become 'parent.child' (e.g., citation_scenario_source.doi).
+    - Adds 'tippecc_data:' if key doesn't already contain ':'.
+    - Appends _1, _2, ... to avoid duplicates.
+    - Lists are converted to comma-separated strings.
+    - Empty dicts become empty strings.
     """
+    if counter is None:
+        counter = defaultdict(int)
+
     items = []
 
     for key, value in meta_data.items():
-        # Add "tippecc_data:" only if the key does not already contain ":"
-        new_key = key if ":" in key else f"tippecc_data:{key}"
+        full_key = f"{parent_key}.{key}" if parent_key else key
+        base_key = full_key if ':' in full_key else f"tippecc_data:{full_key}"
 
         if isinstance(value, dict):
-            if not value:  # Replace empty dictionaries with ''
-                items.append((new_key, ''))
+            if not value:
+                items.append((make_unique_key(base_key, counter), ''))
             else:
-                items.extend(flatten_meta_data(value, parent_key=new_key).items())  # Recursive call
+                items.extend(flatten_meta_data(value, parent_key=full_key, counter=counter).items())
         elif isinstance(value, list):
-            items.append((new_key, ', '.join(map(str, value))))  # Convert list to comma-separated string
+            items.append((make_unique_key(base_key, counter), ', '.join(map(str, value))))
         else:
-            items.append((new_key, value))
+            items.append((make_unique_key(base_key, counter), value))
 
     return dict(items)
+
+
+def make_unique_key(key, counter):
+    count = counter[key]
+    counter[key] += 1
+    return key if count == 0 else f"{key}_{count}"
+
+
 
 def qualify_metadata_values(metadata: dict, d1, people_namespace, orgs_namespace, software_namespace):
     qualified = {}
@@ -96,6 +109,17 @@ def get_prov_metadata(key, prov_path, namespace="tippecc_data:"):
 
 
     metadata = prov_metadata.get(key, {})
+
+    # Lies Metadaten aus Software nicht aus Software mit Version Key
+    if isinstance(key, str) and key.startswith("SOFTWARE__") and isinstance(metadata.get("sdo:targetProduct"), dict):
+        target = metadata["sdo:targetProduct"]
+
+        if "@id" in target:
+            target_id = target["@id"]
+
+            if isinstance(target_id, str) and target_id.startswith("SOFTWARE__"):
+                metadata = prov_metadata.get(target_id, {})
+
     updated_metadata = {}
 
     for k, v in metadata.items():
@@ -252,22 +276,27 @@ for filename in os.listdir(prov_path):
                 d1.agent(orga_id, orga_metadata)
                 added_agents.add(orga_id)
 
-            # Add software
-            
+            # Add software and function
             try:
                 software_id = process['software']
+                function_id = process['function']
             except:
                 pass
             try:
                 software_id, software_metadata = get_prov_metadata (software_id, prov_base, f"{software_namespace}:")
+                function_id, function_metadata = get_prov_metadata (function_id, prov_base, f"{software_namespace}:")
             except:
                 software_id = software_id[0]
+                function_id = function_id[0]
                 software_id, software_metadata = get_prov_metadata (software_id, prov_base, f"{software_namespace}:")
+                function_id, function_metadata = get_prov_metadata (function_id, prov_base, f"{software_namespace}:")
 
             if software_id not in added_agents:
-                
                 d1.agent(software_id, software_metadata)
                 added_agents.add(software_id)
+            if function_id not in added_agents:
+                d1.agent(function_id, function_metadata)
+                added_agents.add(function_id)
 
             #add activities and wasAssociatedWith and generation
             try:
@@ -321,6 +350,7 @@ for filename in os.listdir(prov_path):
 
 
                 d1.wasAssociatedWith(activity_id, software_id)
+                d1.wasAssociatedWith(activity_id, function_id)
 
                 added_agents.add(activity_id)
 
