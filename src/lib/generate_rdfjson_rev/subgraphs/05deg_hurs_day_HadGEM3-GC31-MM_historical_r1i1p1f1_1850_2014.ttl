@@ -32,7 +32,8 @@ exe:Remap_bilinear_9 a prov:Activity ;
     prov:startedAtTime "2024-12-19T08:28:00"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:hurs_day_HadGEM3-GC31-MM_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_381 .
 
 tippecc_data:africa05.txt a prov:Entity .
@@ -44,6 +45,18 @@ people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
     prov:actedOnBehalfOf orgs:ORG__WITS ;
     foaf:familyName "Padavatan" ;
     foaf:givenName "Jonathan" .
+
+software:FUNCTION__CDO_MERGE a prov:Agent ;
+    sdo:description "This module merges two fields." ;
+    sdo:name "Merge two fields" ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareSourceCode" .
+
+software:FUNCTION__CDO_REMAPBIL a prov:Agent ;
+    sdo:description "This module remaps the input field using bilinear interpolation." ;
+    sdo:name "Remap bilinear" ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareSourceCode" .
 
 tippecc_data:hurs_day_HadGEM3-GC31-MM_historical_r1i1p1f3_gn_18500101-18541230 a prov:Entity .
 
@@ -153,7 +166,8 @@ exe:Merge_datasets_381 a prov:Activity ;
         tippecc_data:hurs_day_HadGEM3-GC31-MM_historical_r1i1p1f3_gn_20000101-20041230,
         tippecc_data:hurs_day_HadGEM3-GC31-MM_historical_r1i1p1f3_gn_20050101-20091230,
         tippecc_data:hurs_day_HadGEM3-GC31-MM_historical_r1i1p1f3_gn_20100101-20141230 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 orgs:ORG__WITS a prov:Agent,
         "prov:Organization" ;
@@ -162,9 +176,11 @@ orgs:ORG__WITS a prov:Agent,
     wd:P6782 "https://ror.org/03rp50x72" .
 
 software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
-    sdo:softwareVersion "1.9.3" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareApplication" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 tippecc_data:hurs_day_HadGEM3-GC31-MM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
     prov:qualifiedGeneration [ a prov:Generation ;

@@ -31,7 +31,8 @@ tippecc_data:COLLECTION__TIPPECC a prov:Collection,
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-23T23:56:20-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
+        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_662 .
 
 tippecc_data:05deg_pr_day_ACCESS-CM2_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
@@ -44,7 +45,8 @@ exe:Merge_datasets_660 a prov:Activity ;
     prov:startedAtTime "2025-01-17T17:32:29"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_pr_day_ACCESS-CM2_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_ACCESS-CM2_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_23 .
 
 exe:Slice_TIPPECC_area_662 a prov:Activity ;
@@ -53,7 +55,8 @@ exe:Slice_TIPPECC_area_662 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T12:03:56"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_661 .
 
 exe:Slice_years_661 a prov:Activity ;
@@ -62,8 +65,29 @@ exe:Slice_years_661 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T12:00:57"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_660 .
+
+software:FUNCTION__CDO_REMAPBIL a prov:Agent ;
+    sdo:description "This module remaps the input field using bilinear interpolation." ;
+    sdo:name "Remap bilinear" ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareSourceCode" .
+
+software:FUNCTION__CDO_SELLONLATBOX a prov:Agent ;
+    sdo:description "This module selects a region in the input field." ;
+    sdo:name "sellonlatbox - select a region" ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareSourceCode" .
+
+software:FUNCTION__CDO_SELYEAR a prov:Agent ;
+    sdo:description "This module selects a year range in the input field." ;
+    sdo:name "selyear - select a year range" ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareSourceCode" .
+
+<http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX> a prov:Agent .
 
 <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> a prov:Agent .
 
@@ -87,7 +111,8 @@ exe:Merge_datasets_443 a prov:Activity ;
         tippecc_data:pr_day_ACCESS-CM2_historical_r1i1p1f1_gn_19000101-19491231,
         tippecc_data:pr_day_ACCESS-CM2_historical_r1i1p1f1_gn_19500101-19991231,
         tippecc_data:pr_day_ACCESS-CM2_historical_r1i1p1f1_gn_20000101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Remap_bilinear_23 a prov:Activity ;
     rdfs:label "Remap bilinear" ;
@@ -97,7 +122,8 @@ exe:Remap_bilinear_23 a prov:Activity ;
     prov:startedAtTime "2024-12-20T16:25:45"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:pr_day_ACCESS-CM2_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_443 .
 
 orgs:ORG__WITS a prov:Agent,
@@ -114,20 +140,26 @@ people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
     foaf:familyName "Padavatan" ;
     foaf:givenName "Jonathan" .
 
+software:FUNCTION__CDO_MERGE a prov:Agent ;
+    sdo:description "This module merges two fields." ;
+    sdo:name "Merge two fields" ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareSourceCode" .
+
 tippecc_data:05deg_pr_day_ACCESS-CM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_23 ;
-            prov:atTime "2024-12-20T16:25:45"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-20T16:25:45"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:pr_day_ACCESS-CM2_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:pr_day_ACCESS-CM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Merge_datasets_443 ;
-            prov:atTime "2024-12-20T16:23:49"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-20T16:23:49"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:pr_day_ACCESS-CM2_historical_r1i1p1f1_gn_18500101-18991231,
         tippecc_data:pr_day_ACCESS-CM2_historical_r1i1p1f1_gn_19000101-19491231,
@@ -135,7 +167,9 @@ tippecc_data:pr_day_ACCESS-CM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
         tippecc_data:pr_day_ACCESS-CM2_historical_r1i1p1f1_gn_20000101-20141231 .
 
 software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
-    sdo:softwareVersion "1.9.3" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareApplication" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 

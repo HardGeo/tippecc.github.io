@@ -81,9 +81,11 @@ software:FUNCTION__XCLIM_CONVERT_UNITS a prov:Agent ;
     sdo:url "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.convert_units_to" .
 
 software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
-    sdo:softwareVersion "0.49.0" ;
-    sdo:targetProduct software:SOFTWARE__XCLIM ;
-    sdo:type "sdo:SoftwareApplication" .
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
 
 <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX> a prov:Agent .
 
@@ -354,14 +356,14 @@ seaIce: CICE4.1 (same grid as ocean)""" ;
     tippecc_data:variable_id "pr" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     tippecc_data:version "v20191115" ;
-    prov:qualifiedGeneration [ ],
-        [ ],
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Calc_mean_766 ;
+            prov:atTime "2025-02-10T11:40:43-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_ref._period_765 ;
             prov:atTime "2025-02-10T11:40:43-01:00"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Calc_mean_766 ;
-            prov:atTime "2025-02-10T11:40:43-01:00"^^xsd:dateTime ] ;
+        [ ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100__yearsum .
 
@@ -467,14 +469,14 @@ seaIce: CICE4.1 (same grid as ocean)""" ;
     tippecc_data:variable_id "pr" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     tippecc_data:version "v20191115" ;
-    prov:qualifiedGeneration [ ],
-        [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Slice_ref._period_767 ;
             prov:atTime "2025-02-10T11:40:49-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Calc_mean_768 ;
-            prov:atTime "2025-02-10T11:40:49-01:00"^^xsd:dateTime ] ;
+            prov:atTime "2025-02-10T11:40:49-01:00"^^xsd:dateTime ],
+        [ ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100__yearsum .
 
@@ -496,10 +498,10 @@ software:FUNCTION__CDO_SELYEAR a prov:Agent ;
     sdo:type "sdo:SoftwareSourceCode" .
 
 tippecc_data:05deg_pr_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_24 ;
-            prov:atTime "2024-12-20T16:29:34"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-20T16:29:34"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:pr_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014 .
@@ -603,22 +605,22 @@ seaIce: CICE4.1 (same grid as ocean)""" ;
     tippecc_data:variable_id "pr" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     tippecc_data:version "v20191115" ;
-    prov:qualifiedGeneration [ ],
-        [ ],
-        [ ],
-        [ ],
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_759 ;
+            prov:atTime "2025-01-17T17:35:33"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_760 ;
+            prov:atTime "2025-01-21T12:04:42"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_762> ;
             prov:atTime "2025-01-23T23:46:49-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_759 ;
-            prov:atTime "2025-01-17T17:35:33"^^xsd:dateTime ],
-        [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_761 ;
             prov:atTime "2025-01-21T12:07:36"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Slice_years_760 ;
-            prov:atTime "2025-01-21T12:04:42"^^xsd:dateTime ] ;
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_pr_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_ACCESS-ESM1-5_ssp585_r1i1p1f1_2015_2100 .
@@ -722,18 +724,18 @@ seaIce: CICE4.1 (same grid as ocean)""" ;
     tippecc_data:variable_id "pr" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     tippecc_data:version "v20191115" ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Convert_pr_to_mm_763 ;
-            prov:atTime "2025-01-24T15:39:54-01:00"^^xsd:dateTime ] ;
+            prov:atTime "2025-01-24T15:39:54-01:00"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr_1950_2100 .
 
 tippecc_data:pr_day_ACCESS-ESM1-5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Merge_datasets_444 ;
-            prov:atTime "2024-12-20T16:27:27"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-20T16:27:27"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:pr_day_ACCESS-ESM1-5_historical_r1i1p1f1_gn_18500101-18991231,
         tippecc_data:pr_day_ACCESS-ESM1-5_historical_r1i1p1f1_gn_19000101-19491231,
@@ -850,15 +852,17 @@ seaIce: CICE4.1 (same grid as ocean)""" ;
     tippecc_data:variable_id "pr" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     tippecc_data:version "v20191115" ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Calc_year_sum_769 ;
-            prov:atTime "2025-02-10T11:40:38-01:00"^^xsd:dateTime ] ;
+            prov:atTime "2025-02-10T11:40:38-01:00"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100 .
 
 software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
-    sdo:softwareVersion "1.9.3" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareApplication" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 

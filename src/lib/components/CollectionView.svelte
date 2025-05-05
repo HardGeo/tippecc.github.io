@@ -17,7 +17,7 @@
         nodes_col,
         edges_col } from "$lib/store"; // Import the store
 
-    import data from '$lib/generate_rdfjson_rev/subgraphs/TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100__yearsum_mean_1981_2000-2080_2099.json';
+    import data from '$lib/generate_rdfjson_rev/subgraphs/TIPPECC_ACCESS-CM2_day_r1i1p1f1__evspsblpot__mm_1950_2100__yearsum_mean_1981_2000-2080_2099.json';
     //TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1__ai__mm_1850_2100__yearsum_mean_1981_2000-2080_2099.json
     
     import { AddEntities, createCollection } from './dataProcessing';

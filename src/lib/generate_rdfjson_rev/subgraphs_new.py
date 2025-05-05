@@ -455,10 +455,10 @@ entity_list = [entry.split("/")[-1] for entry in entity_list if not entry.split(
 #result_entities(entity)
 
 total = len(entity_list)
-export_combined_turtle(entity)
-"""
+#export_combined_turtle(entity)
+
 for idx, entity in enumerate(entity_list, start=1):
     print(f"Processing {idx}/{total}", end="\r")
     export_combined_turtle(entity)
-"""
+
 #activities(entity)

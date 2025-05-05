@@ -63,31 +63,30 @@ type UsedGenerated = {
 
 type Entity = {
     [key: string]: {
-        "tippecc_data:long_name"?: string;
-        "tippecc_data:units"?: string;
-        "tippecc_data:geospatial_lat_min": string,
-        "tippecc_data:geospatial_lat_max": string,
-        "tippecc_data:geospatial_lon_min": string,
-        "tippecc_data:geospatial_lon_max": string,
-        "tippecc_data:nominal_resolution"?: string;
-        "tippecc_data:source_id"?: string;
-        "tippecc_data:file_format"?: string; 
-        "tippecc_data:frequency"?: string;
-        "tippecc_data:file_size"?: { "$": number};
-        "tippecc_data:creation_date"?: string;
+        "tippecc_data:file.long_name"?: string;
+        "tippecc_data:evspsblpot.units"?: string;
+        "tippecc_data:file.geospatial_lat_min": string,
+        "tippecc_data:file.geospatial_lat_max": string,
+        "tippecc_data:file.geospatial_lon_min": string,
+        "tippecc_data:file.geospatial_lon_max": string,
+        "tippecc_data:file.nominal_resolution"?: string;
+        "tippecc_data:file.global_model"?: string;
+        "tippecc_data:file.file_format"?: string; 
+        "tippecc_data:file.frequency"?: string;
+        "tippecc_data:file.file_size"?: { "$": number};
+        "tippecc_data:file.birth_time"?: string;
         "tippecc_data:project_id"?: string;
-        "tippecc_data:experiment_id"?: string;
+        "tippecc_data:file.experiment_id"?: string;
         "tippecc_data:Conventions"?: string;
         "tippecc_data:institution"?: string;
         "tippecc_data:realm"?: string;
         "tippecc_data:contact"?: string;
         "tippecc_data:tracking_id"?: string;
-        "tippecc_data:parent_variant_label"?: string;
+        "tippecc_data:file.variant"?: string;
         "tippecc_data:license"?: string;
-        "tippecc_data:time_coverage_start": string;
-        "tippecc_data:time_coverage_end": string;
-        "tippecc_data:climatology_bounds": string;
-        "tippecc_data:climatology_bounds_details": string;
+        "tippecc_data:file.time_coverage_start": string;
+        "tippecc_data:file.time_coverage_end": string;
+        "tippecc_data:file.climatology_bounds": string;
         [key: string]: any;
     };
 };
@@ -119,6 +118,7 @@ type Node = {
         contact: string;
         tracking_id: string;
         doi: string;
+        doi_hist: string,
         collection: string;
         variant: string;
         id: string;
@@ -311,7 +311,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
     let contact: string ;
     let tracking_id: string ;
     let references: string;
-    let doi: string ;
+    let references_hist: string ;
     let variant: string ;
     let yPos: number = 0;
     
@@ -321,40 +321,39 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
             if (dataset.entity[currentEntity]) {
                 
                 // EXTRACT PARAMTER NAME
-                name = dataset.entity[currentEntity]["tippecc_data:long_name"] ?? "N/A";
+                name = dataset.entity[currentEntity]["tippecc_data:file.long_name"] ?? "N/A";
                 //EXTRACT UNIT
-                unit = dataset.entity[currentEntity]["tippecc_data:units"] ?? "N/A";
+                unit = dataset.entity[currentEntity]["tippecc_data:evspsblpot.units"] ?? "N/A";
                 //EXTRACT BOUNDS
-                const lat_min = Number(dataset.entity[currentEntity]["tippecc_data:geospatial_lat_min"]);
-                const lat_max = Number(dataset.entity[currentEntity]["tippecc_data:geospatial_lat_max"]);
-                const lon_min = Number(dataset.entity[currentEntity]["tippecc_data:geospatial_lon_min"]);
-                const lon_max = Number(dataset.entity[currentEntity]["tippecc_data:geospatial_lon_max"]);
+                const lat_min = Number(dataset.entity[currentEntity]["tippecc_data:file.geospatial_lat_min"]);
+                const lat_max = Number(dataset.entity[currentEntity]["tippecc_data:file.geospatial_lat_max"]);
+                const lon_min = Number(dataset.entity[currentEntity]["tippecc_data:file.geospatial_lon_min"]);
+                const lon_max = Number(dataset.entity[currentEntity]["tippecc_data:file.geospatial_lon_max"]);
                 extent = [lat_min, lat_max, lon_min, lon_max]
 
                 // EXTRACT COLLECTION
                 collection = findCollectionForEntity(currentEntity, dataset.hadMember);
                 // EXTRACT REGIONAL MODEL TODO
-                regionalmodel =  dataset.entity[currentEntity]["tippecc_data:source_id"] ?? "N/A";
+                regionalmodel =  dataset.entity[currentEntity]["tippecc_data:file.regional_model"] ?? "N/A";
                 // EXTRACT Global MODEL
-                globalmodel =  dataset.entity[currentEntity]["tippecc_data:source_id"] ?? "N/A";
+                globalmodel =  dataset.entity[currentEntity]["tippecc_data:file.global_model"] ?? "N/A";
                 // EXTRACT scenario TODO
-                scenario =  dataset.entity[currentEntity]["tippecc_data:experiment_id"] ?? "N/A";
+                scenario =  dataset.entity[currentEntity]["tippecc_data:file.experiment_id"] ?? "N/A";
                 //EXTRACT File Format
-                format =  dataset.entity[currentEntity]["tippecc_data:file_format"] ?? "N/A";
+                format =  dataset.entity[currentEntity]["tippecc_data:file.file_format"] ?? "N/A";
                 
                 //EXTRACT temp res
-                temporalResolution =  dataset.entity[currentEntity]["tippecc_data:frequency"] ?? "N/A";
+                temporalResolution =  dataset.entity[currentEntity]["tippecc_data:file.frequency"] ?? "N/A";
                 //EXTRACT spat res
-                spatialResolution = dataset.entity[currentEntity]["tippecc_data:nominal_resolution"] ?? "N/A";
+                spatialResolution = dataset.entity[currentEntity]["tippecc_data:file.nominal_resolution"] ?? "N/A";
                 //EXTRACT File Size
-                size = formatFileSize(dataset.entity[currentEntity]["tippecc_data:file_size"]?.$ ?? 0 );
+                size = formatFileSize(dataset.entity[currentEntity]["tippecc_data:file.file_size"]?.$ ?? 0 );
 
 
                 // Extract TIMESPAN
-                const climatologyBoundsDetails = dataset.entity[currentEntity]["tippecc_data:climatology_bounds_details"];
-                const climatologyBounds = dataset.entity[currentEntity]["tippecc_data:climatology_bounds"];
-                const timeCoverageStart = dataset.entity[currentEntity]["tippecc_data:time_coverage_start"];
-                const timeCoverageEnd = dataset.entity[currentEntity]["tippecc_data:time_coverage_end"];
+                const climatologyBounds = dataset.entity[currentEntity]["tippecc_data:file.climatology_bounds"];
+                const timeCoverageStart = dataset.entity[currentEntity]["tippecc_data:file.time_coverage_start"];
+                const timeCoverageEnd = dataset.entity[currentEntity]["tippecc_data:file.time_coverage_end"];
 
                 // Function to parse a time range string into { start, end } objects
                 const parseTimeRanges = (timeString: string): { start: number, end: number }[] => {
@@ -369,9 +368,8 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                 };
 
                 // Determine the parsedTimespans based on available data
-                if (climatologyBoundsDetails) {
-                    parsedTimespans = parseTimeRanges(climatologyBoundsDetails);
-                } else if (climatologyBounds) {
+
+                if (climatologyBounds) {
                     parsedTimespans = parseTimeRanges(climatologyBounds);
                 } else if (timeCoverageStart && timeCoverageEnd) {
                     parsedTimespans = [{ start: parseInt(timeCoverageStart.substring(0, 4), 10), end: parseInt(timeCoverageEnd.substring(0, 4), 10) }];
@@ -380,11 +378,11 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                 //parsedTimespans = [ { start: 1910, end: 1960 }, { start: 1980, end: 2050 } ];
 
                 //EXTRACT Timestamp
-                timestamp = dataset.entity[currentEntity]["tippecc_data:creation_date"] ?? "N/A";
+                timestamp = dataset.entity[currentEntity]["tippecc_data:file.birth_time"] ?? "N/A";
                 // EXTRACT Project
                 project = dataset.entity[currentEntity]["tippecc_data:activity_id"] ?? "N/A";
                 // EXTRACT experiment TODO
-                experiment = dataset.entity[currentEntity]["tippecc_data:experiment_id"] ?? "N/A";
+                experiment = dataset.entity[currentEntity]["tippecc_data:file.experiment_id"] ?? "N/A";
                 // EXTRACT Standard
                 standard = dataset.entity[currentEntity]["tippecc_data:Conventions"] ?? "N/A";
                 //EXTRACT Bias TODO
@@ -394,13 +392,14 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                 //EXTRACT domain
                 domain = dataset.entity[currentEntity]["tippecc_data:realm"] ?? "N/A";
                 //EXTRACT contact
-                contact = dataset.entity[currentEntity]["tippecc_data:contact"] ?? "N/A";
+                contact = dataset.entity[currentEntity]["tippecc_data:file.contact"] ?? "N/A";
                 //EXTRACT tracking_id TODO
                 tracking_id = dataset.entity[currentEntity]["tippecc_data:tracking_id"] ?? "N/A";
                 //EXTRACT doi
-                references = dataset.entity[currentEntity]["tippecc_data:doi"] ?? "N/A";
+                references = dataset.entity[currentEntity]["tippecc_data:file.citation_scenario_source.doi"] ?? "N/A";
+                references_hist = dataset.entity[currentEntity]["tippecc_data:file.citation_historical_source.doi"] ?? "N/A";
                 //EXTRACT variant
-                variant = dataset.entity[currentEntity]["tippecc_data:parent_variant_label"] ?? "N/A";
+                variant = dataset.entity[currentEntity]["tippecc_data:file.variant"] ?? "N/A";
                 //EXTRACT source
                 source = dataset.entity[currentEntity]["tippecc_data:license"] ?? "N/A";
 
@@ -473,20 +472,20 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
             usedEntitiesList.forEach((usedEntity) => {
 
                 if (dataset.entity[usedEntity]) {
-                    name_used = dataset.entity[usedEntity]["tippecc_data:long_name"] ?? "N/A";
-                    unit_used = dataset.entity[usedEntity]["tippecc_data:units"] ?? "N/A";
-                    temporalResolution_used =  dataset.entity[usedEntity]["tippecc_data:frequency"] ?? "N/A";
-                    const lat_min_used = Number(dataset.entity[usedEntity]["tippecc_data:geospatial_lat_min"]);
-                    const lat_max_used = Number(dataset.entity[usedEntity]["tippecc_data:geospatial_lat_max"]);
-                    const lon_min_used = Number(dataset.entity[usedEntity]["tippecc_data:geospatial_lon_min"]);
-                    const lon_max_used = Number(dataset.entity[usedEntity]["tippecc_data:geospatial_lon_max"]);
+                    name_used = dataset.entity[usedEntity]["tippecc_data:file.long_name"] ?? "N/A";
+                    unit_used = dataset.entity[usedEntity]["tippecc_data:evspsblpot.units"] ?? "N/A";
+                    temporalResolution_used =  dataset.entity[usedEntity]["tippecc_data:file.frequency"] ?? "N/A";
+                    const lat_min_used = Number(dataset.entity[usedEntity]["tippecc_data:file.geospatial_lat_min"]);
+                    const lat_max_used = Number(dataset.entity[usedEntity]["tippecc_data:file.geospatial_lat_max"]);
+                    const lon_min_used = Number(dataset.entity[usedEntity]["tippecc_data:file.geospatial_lon_min"]);
+                    const lon_max_used = Number(dataset.entity[usedEntity]["tippecc_data:file.geospatial_lon_max"]);
 
-                    spatialResolution_used = dataset.entity[usedEntity]["tippecc_data:nominal_resolution"] ?? "N/A";
-                    scenario_used =  dataset.entity[usedEntity]["tippecc_data:experiment_id"] ?? "N/A";
-                    format_used =  dataset.entity[usedEntity]["tippecc_data:file_format"] ?? "N/A";
-                    size_used = formatFileSize(dataset.entity[usedEntity]["tippecc_data:file_size"]?.$ ?? 0);
-                    globalmodel_used =  dataset.entity[usedEntity]["tippecc_data:source_id"] ?? "N/A";
-                    regionalmodel_used = dataset.entity[usedEntity]["tippecc_data:source_id"] ?? "N/A";
+                    spatialResolution_used = dataset.entity[usedEntity]["tippecc_data:file.nominal_resolution"] ?? "N/A";
+                    scenario_used =  dataset.entity[usedEntity]["tippecc_data:file.experiment_id"] ?? "N/A";
+                    format_used =  dataset.entity[usedEntity]["tippecc_data:file.file_format"] ?? "N/A";
+                    size_used = formatFileSize(dataset.entity[usedEntity]["tippecc_data:file.file_size"]?.$ ?? 0);
+                    globalmodel_used =  dataset.entity[usedEntity]["tippecc_data:file.regional_model"] ?? "N/A";
+                    regionalmodel_used = dataset.entity[usedEntity]["tippecc_data:file.global_model"] ?? "N/A";
 
                     extent_used = [lat_min_used, lat_max_used, lon_min_used, lon_max_used]
                     extentList.push(extent_used);
@@ -642,6 +641,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                             contact: contact || "N/A",
                             tracking_id: tracking_id || "N/A",
                             doi: references || "N/A",
+                            doi_hist: references_hist || "N/A",
                             collection: collection  || "N/A",
                             variant: variant || "N/A",
                             id: currentEntity

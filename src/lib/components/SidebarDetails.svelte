@@ -33,10 +33,10 @@ Standard;${detailedData.standard}
 Bias;${detailedData.bias}
 Source;${detailedData.source}
 Institution;${detailedData.institution}
-Tracking ID;${detailedData.tracking_id}
 Contact;${detailedData.contact}
 Domain;${detailedData.domain}
 DOI;${detailedData.doi}
+DOI_hist;${detailedData.doi_hist}
 Collection;${detailedData.collection}
 Variant;${detailedData.variant}
 Id;${detailedData.id}
@@ -353,15 +353,7 @@ Collection_name;${detailedData.collection_name}
                             <td ><strong>Institution</strong></td>
                             <td >{detailedData.institution}</td>
                         </tr>
-                        <tr>
-                            <td ><strong>Tracking ID</strong></td>
-                            <td >
-                                {detailedData.tracking_id}
-                                <span class="info-icon" title="A Tracking ID is a Handle Identifier (HDL), a persistent digital identifier used to reference and locate datasets in repositories, ensuring long-term accessibility. You can resolve it via a Handle System resolver (e.g., https://hdl.handle.net/)."> 
-                                    <i class="fas fa-info-circle" aria-hidden="true"></i>
-                                </span>
-                            </td>
-                        </tr>
+
                         <tr>
                             <td ><strong>Contact</strong></td>
                             <td >{detailedData.contact}</td>
@@ -385,6 +377,7 @@ Collection_name;${detailedData.collection_name}
                                     class="text-blue-600 underline hover:text-blue-800"
                                 >
                                     {detailedData.doi}
+                                    {detailedData.doi_hist}
                                 </a>
                                 <span
                                     class="info-icon ml-2"
