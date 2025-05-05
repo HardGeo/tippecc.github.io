@@ -107,7 +107,7 @@ type Node = {
         resolutionRaeumlich: string;
         spatialExtent: any;
         spatialExtent_orig: any,
-        dateigroesse: number;
+        dateigroesse: string;
         timestamp: string;
         project: string;
         experiment: string;
@@ -257,6 +257,17 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
         const entry = Object.values(hadMember).find(member => member["prov:entity"] === currentEntity);
         return entry ? entry["prov:collection"] : "No Collection defined";
     }
+
+    function formatFileSize(bytes: number): string {
+        if (bytes === 0) return '0 B';
+        const sizes = ['B', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(1024));
+        const formatted = (bytes / Math.pow(1024, i)).toFixed(2);
+        return `${formatted} ${sizes[i]}`;
+    }
+
+
+
     /*
 
     function calculateSpatialResolution(
@@ -287,7 +298,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
     let format: string ;
     let temporalResolution: string ;
     let spatialResolution: string ;
-    let size: number ;
+    let size: string ;
     let parsedTimespans: { start: number, end: number }[] = [];
     let timestamp: string ;
     let project: string ;
@@ -330,13 +341,14 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                 scenario =  dataset.entity[currentEntity]["tippecc_data:experiment_id"] ?? "N/A";
                 //EXTRACT File Format
                 format =  dataset.entity[currentEntity]["tippecc_data:file_format"] ?? "N/A";
+                
                 //EXTRACT temp res
                 temporalResolution =  dataset.entity[currentEntity]["tippecc_data:frequency"] ?? "N/A";
                 //EXTRACT spat res
                 spatialResolution = dataset.entity[currentEntity]["tippecc_data:nominal_resolution"] ?? "N/A";
                 //EXTRACT File Size
-                size = dataset.entity[currentEntity]["tippecc_data:file_size"]?.$ ?? 0 ;
-                
+                size = formatFileSize(dataset.entity[currentEntity]["tippecc_data:file_size"]?.$ ?? 0 );
+
 
                 // Extract TIMESPAN
                 const climatologyBoundsDetails = dataset.entity[currentEntity]["tippecc_data:climatology_bounds_details"];
@@ -370,7 +382,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                 //EXTRACT Timestamp
                 timestamp = dataset.entity[currentEntity]["tippecc_data:creation_date"] ?? "N/A";
                 // EXTRACT Project
-                project = dataset.entity[currentEntity]["tippecc_data:project_id"] ?? "N/A";
+                project = dataset.entity[currentEntity]["tippecc_data:activity_id"] ?? "N/A";
                 // EXTRACT experiment TODO
                 experiment = dataset.entity[currentEntity]["tippecc_data:experiment_id"] ?? "N/A";
                 // EXTRACT Standard
@@ -386,12 +398,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                 //EXTRACT tracking_id TODO
                 tracking_id = dataset.entity[currentEntity]["tippecc_data:tracking_id"] ?? "N/A";
                 //EXTRACT doi
-                references = dataset.entity[currentEntity]["tippecc_data:references"] ?? "N/A";
-                doi = references
-                    .split(",")
-                    .map(ref => ref.trim()) // Remove any leading/trailing spaces
-                    .filter(ref => ref.toLowerCase().includes("doi")) // Select only those containing "doi"
-                    .join(", "); // Concatenate back into a single string
+                references = dataset.entity[currentEntity]["tippecc_data:doi"] ?? "N/A";
                 //EXTRACT variant
                 variant = dataset.entity[currentEntity]["tippecc_data:parent_variant_label"] ?? "N/A";
                 //EXTRACT source
@@ -419,7 +426,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                 format =  "N/A";
                 temporalResolution =  "N/A";
                 spatialResolution = "N/A";
-                size = 0;
+                size = "0 B";
                 parsedTimespans = [];
                 timestamp = "N/A";
                 project = "N/A";
@@ -431,7 +438,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                 domain = "N/A";
                 contact = "N/A";
                 tracking_id = "N/A";
-                doi = "N/A";
+                references = "N/A";
                 variant = "N/A";
             }
             function findUsedEntities(dataset:any, currentEntity:any) {
@@ -457,7 +464,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
             let format_used: string ;
             let temporalResolution_used: string ;
             let spatialResolution_used: string ;
-            let size_used: number ;
+            let size_used: string ;
             let extent_used: any;
 
             let extentList: [number, number, number, number][] = [];
@@ -477,7 +484,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                     spatialResolution_used = dataset.entity[usedEntity]["tippecc_data:nominal_resolution"] ?? "N/A";
                     scenario_used =  dataset.entity[usedEntity]["tippecc_data:experiment_id"] ?? "N/A";
                     format_used =  dataset.entity[usedEntity]["tippecc_data:file_format"] ?? "N/A";
-                    size_used = dataset.entity[usedEntity]["tippecc_data:file_size"]?.$ ?? 0;
+                    size_used = formatFileSize(dataset.entity[usedEntity]["tippecc_data:file_size"]?.$ ?? 0);
                     globalmodel_used =  dataset.entity[usedEntity]["tippecc_data:source_id"] ?? "N/A";
                     regionalmodel_used = dataset.entity[usedEntity]["tippecc_data:source_id"] ?? "N/A";
 
@@ -502,7 +509,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
 
                     scenario_used =  "N/A";
                     format_used =  "N/A";
-                    size_used = 0 ;
+                    size_used = "0 B";
                     globalmodel_used =  "N/A";
                     regionalmodel_used =  "not defined";//dataset.entity[usedEntity]["tippecc_data:source"];
                 }
@@ -623,7 +630,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                             resolutionRaeumlich: spatialResolution  || "N/A",
                             spatialExtent: extent  || [0,0,0,0],
                             spatialExtent_orig: extentAverage || [0,0,0,0],
-                            dateigroesse: size  || 0,
+                            dateigroesse: size  || "0 B",
                             timestamp: timestamp || "N/A",
                             project: project  || "N/A",
                             experiment: experiment  || "N/A",
@@ -634,7 +641,7 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
                             domain: domain || "N/A",
                             contact: contact || "N/A",
                             tracking_id: tracking_id || "N/A",
-                            doi: doi || "N/A",
+                            doi: references || "N/A",
                             collection: collection  || "N/A",
                             variant: variant || "N/A",
                             id: currentEntity

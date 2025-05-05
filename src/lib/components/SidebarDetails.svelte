@@ -299,7 +299,7 @@ Collection_name;${detailedData.collection_name}
                             <td ><strong>File Size</strong></td>
                             <td >
                                 {detailedData.dateigroesse}
-                                <span class="info-icon" title="File size in Byte."> 
+                                <span class="info-icon" title="File size of dataset."> 
                                     <i class="fas fa-info-circle" aria-hidden="true"></i>
                                 </span>
                             </td>
@@ -377,9 +377,19 @@ Collection_name;${detailedData.collection_name}
                         </tr>
                         <tr>
                             <td ><strong>DOI</strong></td>
-                            <td >
-                                {detailedData.doi}
-                                <span class="info-icon" title="A DOI (Digital Object Identifier) is a permanent and unique identifier assigned to digital documents, datasets, or publications to ensure persistent access and citation. It is defined by the International DOI Foundation (IDF) and can be resolved via doi.org."> 
+                            <td>
+                                <a
+                                    href={detailedData.doi.startsWith('http') ? detailedData.doi : `https://doi.org/${detailedData.doi}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-blue-600 underline hover:text-blue-800"
+                                >
+                                    {detailedData.doi}
+                                </a>
+                                <span
+                                    class="info-icon ml-2"
+                                    title="A DOI (Digital Object Identifier) is a permanent and unique identifier assigned to digital documents, datasets, or publications to ensure persistent access and citation. It is defined by the International DOI Foundation (IDF) and can be resolved via doi.org."
+                                >
                                     <i class="fas fa-info-circle" aria-hidden="true"></i>
                                 </span>
                             </td>
@@ -428,9 +438,23 @@ Collection_name;${detailedData.collection_name}
                         </tr>
                         <tr>
                             <td ><strong>ORCID</strong></td>
-                            <td >
-                                {detailedData.orcid}
-                                <span class="info-icon" title="ORCID (Open Researcher and Contributor ID) is a unique identifier assigned to researchers and scholars to distinguish them from others with similar names. It is widely used to track publications, grants, and other academic contributions. ORCID is defined and maintained by the ORCID organization, and researchers can register for a free ORCID iD at orcid.org."> 
+                            <td>
+                                {#if detailedData.orcid !== 'N/A'}
+                                    <a
+                                        href={`https://orcid.org/${detailedData.orcid}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-blue-600 underline hover:text-blue-800"
+                                    >
+                                        {detailedData.orcid}
+                                    </a>
+                                {:else}
+                                    <span>{detailedData.orcid}</span>
+                                {/if}
+                                <span
+                                    class="info-icon ml-2"
+                                    title="ORCID (Open Researcher and Contributor ID) is a unique identifier assigned to researchers and scholars to distinguish them from others with similar names. It is widely used to track publications, grants, and other academic contributions. ORCID is defined and maintained by the ORCID organization, and researchers can register for a free ORCID iD at orcid.org."
+                                >
                                     <i class="fas fa-info-circle" aria-hidden="true"></i>
                                 </span>
                             </td>
@@ -446,9 +470,19 @@ Collection_name;${detailedData.collection_name}
                         </tr>
                         <tr>
                             <td ><strong>RORID</strong></td>
-                            <td >
-                                {detailedData.rorid}
-                                <span class="info-icon" title="ROR (Research Organization Registry) is a global registry of unique identifiers for research organizations, such as universities, research institutes, and other entities involved in scholarly activities."> 
+                            <td>
+                                <a 
+                                    href={detailedData.rorid} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    class="text-blue-600 underline hover:text-blue-800"
+                                >
+                                    {detailedData.rorid}
+                                </a>
+                                <span 
+                                    class="info-icon" 
+                                    title="ROR (Research Organization Registry) is a global registry of unique identifiers for research organizations, such as universities, research institutes, and other entities involved in scholarly activities."
+                                >
                                     <i class="fas fa-info-circle" aria-hidden="true"></i>
                                 </span>
                             </td>

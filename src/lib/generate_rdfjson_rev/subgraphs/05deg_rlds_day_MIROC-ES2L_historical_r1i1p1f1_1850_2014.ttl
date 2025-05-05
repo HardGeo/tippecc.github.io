@@ -7,6 +7,7 @@
 @prefix sdo: <http://schema.org/> .
 @prefix software: <http://www.provbook.org/tippecc/software/> .
 @prefix tippecc_data: <http://www.provbook.org/tippecc/data/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 tippecc_data:COLLECTION__CMIP6 a prov:Collection,
@@ -547,16 +548,22 @@ exe:Merge_datasets_480 a prov:Activity ;
         tippecc_data:rlds_day_MIROC-ES2L_historical_r1i1p1f2_gn_20140101-20141231 ;
     prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
 
+orgs:ORG__WITS a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "University of the Witwatersrand" ;
+    sdo:name "University of the Witwatersrand" ;
+    wd:P6782 "https://ror.org/03rp50x72" .
+
 software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
     sdo:softwareVersion "1.9.3" ;
     sdo:targetProduct software:SOFTWARE__CDO ;
     sdo:type "sdo:SoftwareApplication" .
 
 tippecc_data:rlds_day_MIROC-ES2L_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Merge_datasets_480 ;
-            prov:atTime "2025-02-12T14:48:28"^^xsd:dateTime ] ;
+            prov:atTime "2025-02-12T14:48:28"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:rlds_day_MIROC-ES2L_historical_r1i1p1f2_gn_18500101-18501231,
         tippecc_data:rlds_day_MIROC-ES2L_historical_r1i1p1f2_gn_18510101-18511231,

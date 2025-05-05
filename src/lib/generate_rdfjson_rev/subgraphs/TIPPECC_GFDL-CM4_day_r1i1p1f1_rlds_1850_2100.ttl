@@ -7,6 +7,7 @@
 @prefix sdo: <http://schema.org/> .
 @prefix software: <http://www.provbook.org/tippecc/software/> .
 @prefix tippecc_data: <http://www.provbook.org/tippecc/data/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 tippecc_data:COLLECTION__CMIP6 a prov:Collection,
@@ -114,6 +115,12 @@ exe:Remap_bilinear_53 a prov:Activity ;
     prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_473 .
 
+orgs:ORG__WITS a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "University of the Witwatersrand" ;
+    sdo:name "University of the Witwatersrand" ;
+    wd:P6782 "https://ror.org/03rp50x72" .
+
 people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
         "prov:Person" ;
     rdfs:label "Jonathan Padavatan" ;
@@ -123,19 +130,19 @@ people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
     foaf:givenName "Jonathan" .
 
 tippecc_data:05deg_rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_53 ;
-            prov:atTime "2025-01-17T12:05:30"^^xsd:dateTime ] ;
+            prov:atTime "2025-01-17T12:05:30"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Merge_datasets_473 ;
-            prov:atTime "2025-01-17T12:01:08"^^xsd:dateTime ] ;
+            prov:atTime "2025-01-17T12:01:08"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_18500101-18691231,
         tippecc_data:rlds_day_GFDL-CM4_historical_r1i1p1f1_gr1_18700101-18891231,

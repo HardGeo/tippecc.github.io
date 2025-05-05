@@ -240,6 +240,18 @@ exe:Slice_years_1549 a prov:Activity ;
     prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_1548 .
 
+orgs:ORG__FSU a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "Friedrich Schiller University of Jena" ;
+    sdo:name "Friedrich Schiller University of Jena" ;
+    wd:P6782 "https://ror.org/05qpz1x62" .
+
+orgs:ORG__WITS a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "University of the Witwatersrand" ;
+    sdo:name "University of the Witwatersrand" ;
+    wd:P6782 "https://ror.org/03rp50x72" .
+
 people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
         "prov:Person" ;
     rdfs:label "Jonathan Padavatan" ;
@@ -333,10 +345,10 @@ seaIce: CICE-HadGEM3-GSI8 (eORCA025 tripolar primarily 0.25 deg; 1440 x 1205 lon
     tippecc_data:variable_name "pr" ;
     tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f3" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Calc_year_sum_1558 ;
-            prov:atTime "2025-03-04T19:16:46-01:00"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2025-03-04T19:16:46-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_pr__mm_1850_2100 .
 
@@ -350,10 +362,10 @@ people:PERSON__ZANDER_FRANZISKA a prov:Agent,
     foaf:givenName "Franziska" .
 
 tippecc_data:05deg_pr_day_HadGEM3-GC31-MM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_32 ;
-            prov:atTime "2024-12-19T09:40:36"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T09:40:36"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:pr_day_HadGEM3-GC31-MM_historical_r1i1p1f1_1850_2014 .
@@ -442,7 +454,11 @@ seaIce: CICE-HadGEM3-GSI8 (eORCA025 tripolar primarily 0.25 deg; 1440 x 1205 lon
     tippecc_data:variable_name "pr" ;
     tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f3" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_1548 ;
             prov:atTime "2025-01-17T18:00:27"^^xsd:dateTime ],
         [ a prov:Generation ;
@@ -453,11 +469,7 @@ seaIce: CICE-HadGEM3-GSI8 (eORCA025 tripolar primarily 0.25 deg; 1440 x 1205 lon
             prov:atTime "2025-02-19T15:26:56"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1551> ;
-            prov:atTime "2025-02-19T14:29:47-01:00"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-02-19T14:29:47-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_pr_day_HadGEM3-GC31-MM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_HadGEM3-GC31-MM_ssp585_r1i1p1f1_2015_2100 .
@@ -546,18 +558,18 @@ seaIce: CICE-HadGEM3-GSI8 (eORCA025 tripolar primarily 0.25 deg; 1440 x 1205 lon
     tippecc_data:variable_name "pr" ;
     tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f3" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Convert_pr_to_mm_1552 ;
-            prov:atTime "2025-03-04T19:14:26-01:00"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2025-03-04T19:14:26-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_HadGEM3-GC31-MM_day_r1i1p1f3_pr_1850_2100 .
 
 tippecc_data:pr_day_HadGEM3-GC31-MM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_452 ;
-            prov:atTime "2024-12-19T09:33:29"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T09:33:29"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:pr_day_HadGEM3-GC31-MM_historical_r1i1p1f3_gn_18500101-18541230,
         tippecc_data:pr_day_HadGEM3-GC31-MM_historical_r1i1p1f3_gn_18550101-18591230,

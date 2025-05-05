@@ -1,6 +1,9 @@
-<script>
+<script lang='ts'>
     import Timeline from '$lib/components/timeline.svelte';
     import { Handle, Position } from '@xyflow/svelte';
+    import netcdfIcon from '$lib/icons/netcdf_icon.png';
+    import shpIcon from '$lib/icons/shp_icon.png';
+    import txtIcon from '$lib/icons/txt_icon.png';
     
     export let id;
     export let selected;
@@ -17,6 +20,19 @@
 	export let positionAbsoluteY;
     export let sourcePosition;
     export let targetPosition;
+
+
+    function getFormatIcon(format: string): string {
+        switch (format.toLowerCase()) {
+          case 'netcdf': return netcdfIcon;
+          case '.nc': return netcdfIcon;
+          case 'shp': return shpIcon;
+          case '.shp': return shpIcon;
+          case 'txt': return txtIcon;
+          case '.txt': return txtIcon;
+          default: return 'None';
+        }
+    }
 
 	export let data = {
 		parameter: '',
@@ -230,14 +246,14 @@
             class="bg-[#EAF6EA] text-[#424242] font-bold border border-[#9CCEA0] px-4 py-2 inline-flex items-center justify-center rounded-md text-xs flex-grow hover:bg-white transition-colors duration-200"
             style="z-index: 1; border: {isChangedFormat ? '2px solid #7f1d1d' : 'none'};"
         >
-            {data.format}
+            <img src="{getFormatIcon(data.format)}" alt="Icon" class="w-16 h-10 ml-0" />
         </div>
         <!-- File Size -->
         <div 
             class="bg-[#EAF6EA] text-[#424242] font-bold px-4 py-2 inline-flex items-center justify-center rounded-md inline-block text-xs flex-grow hover:bg-white transition-colors duration-200"
             style="z-index: 1; border: {isChangedSize ? '2px solid #7f1d1d' : 'none'};"
         >
-            {data.dateigroesse}
+            {data.dateigroesse} 
         </div>
     </div>
 

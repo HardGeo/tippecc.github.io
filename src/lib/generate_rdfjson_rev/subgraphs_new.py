@@ -171,6 +171,8 @@ def subquery(entity):
         ?activity prov:wasAssociatedWith ?software .
         ?software ?p5 ?o5 .
         ?collection prov:hadMember ?entity .
+        ?agent prov:actedOnBehalfOf ?org .
+        ?org ?p6 ?o6 .
     }
     WHERE { tippecc_data:""" + entity + """
         prov:qualifiedGeneration/prov:activity ?baseActivity .
@@ -189,10 +191,14 @@ def subquery(entity):
       			?entity prov:qualifiedGeneration ?gen .
       			?gen ?p3 ?o3 .
     		}
-    		OPTIONAL {
-      			?entity prov:wasAttributedTo ?agent .
-      			?agent ?p4 ?o4 .
-    		}
+            OPTIONAL {
+                ?entity prov:wasAttributedTo ?agent .
+                ?agent ?p4 ?o4 .
+                OPTIONAL {
+                    ?agent prov:actedOnBehalfOf ?org .
+                    ?org ?p6 ?o6 .
+                }
+            }
     		OPTIONAL {
       			?collection prov:hadMember ?entity .
 
@@ -429,7 +435,7 @@ def export_combined_turtle(entity_id: str):
 
 
 ttl_file = r"C:\Users\jonas\svelte_scripts\tippecc.github.io\src\lib\generate_rdfjson_rev\GRAPH.ttl"
-entity = "TIPPECC_ACCESS-CM2_day_r1i1p1f1__ai_1950_2100__yearsum_mean_1981_2000-2080_2099"
+entity = "TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100__yearsum_mean_1981_2000-2080_2099"
 delete_all_repos()
 create_repo(repo_name)
 import_data(ttl_file,repo_name)
@@ -447,7 +453,10 @@ entity_list = [entry.split("/")[-1] for entry in entity_list if not entry.split(
 
 total = len(entity_list)
 
+
 for idx, entity in enumerate(entity_list, start=1):
     print(f"Processing {idx}/{total}", end="\r")
     export_combined_turtle(entity)
+
+
 #activities(entity)
