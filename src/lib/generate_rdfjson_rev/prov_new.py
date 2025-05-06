@@ -296,7 +296,7 @@ for filename in os.listdir(prov_path):
             if software_id not in added_agents and not software_id == None:
                 d1.agent(software_id, software_metadata)
                 added_agents.add(software_id)
-            if function_id not in added_agents and not software_id == None:
+            if function_id not in added_agents and not function_id == None:
                 d1.agent(function_id, function_metadata)
                 added_agents.add(function_id)
 
@@ -351,9 +351,9 @@ for filename in os.listdir(prov_path):
                 #'prov:function': function, 'prov:params': params
 
 
-                if software_id:
+                if not software_id == None:
                     d1.wasAssociatedWith(activity_id, software_id)
-                if function_id:
+                if not function_id == None:
                     d1.wasAssociatedWith(activity_id, function_id)
 
                 added_agents.add(activity_id)

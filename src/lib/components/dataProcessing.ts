@@ -694,63 +694,14 @@ export function AddEntities(dataset: Dataset, nodes: any, edges: any, label: any
 
 
 export function AddActions(dataset: Dataset, nodes: any, edges: any, label: any): void {
-    /*
-    function findExecutionOrder(dataset: any): string[] {
-        const wasInformedBy = Object.values(dataset.wasInformedBy) as {
-            "prov:informed": string;
-            "prov:informant": string;
-        }[];
-    
-        const graph = new Map<string, string[]>(); // Speichert Kanten (informant → [informed])
-        const inDegree = new Map<string, number>(); // Speichert die Anzahl der eingehenden Kanten (In-Degree)
-    
-        // Graphen aufbauen
-        wasInformedBy.forEach(({ "prov:informed": informed, "prov:informant": informant }) => {
-            if (!graph.has(informant)) graph.set(informant, []);
-            if (!graph.has(informed)) graph.set(informed, []);
-            graph.get(informant)!.push(informed);
-    
-            inDegree.set(informed, (inDegree.get(informed) || 0) + 1);
-            inDegree.set(informant, inDegree.get(informant) || 0);
-        });
-    
-        // Startknoten (Knoten ohne Vorgänger) finden
-        const queue: string[] = [];
-        for (const [node, degree] of inDegree) {
-            if (degree === 0) {
-                queue.push(node);
-            }
-        }
-    
-        // Topologische Sortierung durchführen
-        const executionOrder: string[] = [];
-        while (queue.length > 0) {
-            const current = queue.shift()!;
-            executionOrder.push(current);
-    
-            for (const neighbor of graph.get(current) || []) {
-                inDegree.set(neighbor, inDegree.get(neighbor)! - 1);
-                if (inDegree.get(neighbor) === 0) {
-                    queue.push(neighbor);
-                }
-            }
-        }
-    
-        return executionOrder;
-    }
-    */
 
-    function findActivities(dataset: any): string[] { 
-        const used = Object.values(dataset.used) as { 
-            "prov:activity": string;
-            "prov:entity": string; 
-        }[];
-    
-        // Extract all "prov:activity" values and store them in a Set to ensure uniqueness
-        const uniqueActivities = new Set(used.map(entry => entry["prov:activity"]));
-    
-        // Convert the Set back to an array and return it
-        return Array.from(uniqueActivities);
+    function findActivities(dataset: any): string[] {
+        if (!dataset.activity || typeof dataset.activity !== 'object') {
+            return [];
+        }
+
+        // Die Keys des activity-Objekts sind die IDs der Aktivitäten
+        return Object.keys(dataset.activity);
     }
 
     const currentNodes:any = get(nodes); // Get all nodes in the flow
