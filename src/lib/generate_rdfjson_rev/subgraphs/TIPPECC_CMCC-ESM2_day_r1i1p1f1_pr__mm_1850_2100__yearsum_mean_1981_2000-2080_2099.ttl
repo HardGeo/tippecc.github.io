@@ -44,14 +44,50 @@ exe:Calc_abs._change_1055 a prov:Activity ;
     prov:startedAtTime "2025-02-09T22:01:47-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000,
         tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_2080_2099 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SUB,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Calc_mean_1057,
         exe:Calc_mean_1059 .
 
-software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
-    sdo:softwareVersion "0.49.0" ;
+software:FUNCTION__CDO_REMAPBIL a prov:Agent ;
+    sdo:description "This module remaps the input field using bilinear interpolation." ;
+    sdo:name "Remap bilinear" ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareSourceCode" .
+
+software:FUNCTION__CDO_SELLONLATBOX a prov:Agent ;
+    sdo:description "This module selects a region in the input field." ;
+    sdo:name "sellonlatbox - select a region" ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareSourceCode" .
+
+software:FUNCTION__CDO_SUB a prov:Agent ;
+    sdo:description "This module performs simple arithmetic of two datasets. The number of fields in ifile1 should be the same as in ifile2. One of the input files can contain only one timestep or one variable. The fields in ofile inherit the meta data from ifile1 or ifile2." ;
+    sdo:name "sub - subtract two fields" ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareSourceCode" .
+
+software:FUNCTION__CDO_YEARSUM a prov:Agent ;
+    sdo:description "This module computes the sum of the input field over a year." ;
+    sdo:name "Year sum" ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareSourceCode" .
+
+software:FUNCTION__XCLIM_CONVERT_UNITS a prov:Agent ;
+    sdo:description "Convert a mathematical expression into a value with the same units as a DataArray." ;
+    sdo:name "Convert units" ;
     sdo:targetProduct software:SOFTWARE__XCLIM ;
-    sdo:type "sdo:SoftwareApplication" .
+    sdo:type "sdo:SoftwareSourceCode" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.convert_units_to" .
+
+software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
+
+<http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX> a prov:Agent .
 
 <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> a prov:Agent .
 
@@ -79,7 +115,8 @@ exe:Calc_mean_1057 a prov:Activity ;
     prov:function "FUNCTION__CDO_TIMMEAN" ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-02-09T22:01:35-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_TIMMEAN,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_ref._period_1056 .
 
 exe:Calc_mean_1059 a prov:Activity ;
@@ -88,7 +125,8 @@ exe:Calc_mean_1059 a prov:Activity ;
     prov:function "FUNCTION__CDO_TIMMEAN" ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-02-09T22:01:41-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_TIMMEAN,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_ref._period_1058 .
 
 exe:Convert_pr_to_mm_1054 a prov:Activity ;
@@ -98,7 +136,8 @@ exe:Convert_pr_to_mm_1054 a prov:Activity ;
     prov:params "{'unit': 'mm'}" ;
     prov:startedAtTime "2025-01-24T16:19:06-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr_1850_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__XCLIM_0_49 ;
+    prov:wasAssociatedWith software:FUNCTION__XCLIM_CONVERT_UNITS,
+        software:SOFTWARE__XCLIM_0_49 ;
     prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Rename/Metadata_1053> .
 
 exe:Merge_datasets_1050 a prov:Activity ;
@@ -109,7 +148,8 @@ exe:Merge_datasets_1050 a prov:Activity ;
     prov:startedAtTime "2025-01-17T17:41:40"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_CMCC-ESM2_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_27 .
 
 exe:Merge_datasets_447 a prov:Activity ;
@@ -125,7 +165,8 @@ exe:Merge_datasets_447 a prov:Activity ;
         tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231,
         tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231,
         tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Remap_bilinear_27 a prov:Activity ;
     rdfs:label "Remap bilinear" ;
@@ -135,7 +176,8 @@ exe:Remap_bilinear_27 a prov:Activity ;
     prov:startedAtTime "2024-12-20T16:36:13"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_447 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1053> a prov:Activity ;
@@ -143,7 +185,8 @@ exe:Remap_bilinear_27 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T11:16:18-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
+    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
+        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1052 .
 
 exe:Slice_TIPPECC_area_1052 a prov:Activity ;
@@ -152,7 +195,8 @@ exe:Slice_TIPPECC_area_1052 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T12:15:44"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_1051 .
 
 exe:Slice_ref._period_1056 a prov:Activity ;
@@ -162,7 +206,8 @@ exe:Slice_ref._period_1056 a prov:Activity ;
     prov:params "{'start_year': '1981', 'end_year': '2000'}" ;
     prov:startedAtTime "2025-02-09T22:01:35-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr__mm_1850_2100__yearsum ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Calc_year_sum_1060 .
 
 exe:Slice_ref._period_1058 a prov:Activity ;
@@ -172,7 +217,8 @@ exe:Slice_ref._period_1058 a prov:Activity ;
     prov:params "{'start_year': '2080', 'end_year': '2099'}" ;
     prov:startedAtTime "2025-02-09T22:01:41-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr__mm_1850_2100__yearsum ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Calc_year_sum_1060 .
 
 exe:Slice_years_1051 a prov:Activity ;
@@ -181,7 +227,8 @@ exe:Slice_years_1051 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T12:12:44"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_1050 .
 
 orgs:ORG__FSU a prov:Agent,
@@ -204,39 +251,69 @@ people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
     foaf:familyName "Padavatan" ;
     foaf:givenName "Jonathan" .
 
+software:FUNCTION__CDO_MERGE a prov:Agent ;
+    sdo:description "This module merges two fields." ;
+    sdo:name "Merge two fields" ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareSourceCode" .
+
+software:FUNCTION__CDO_TIMMEAN a prov:Agent ;
+    sdo:description "This module computes the temporal mean of the input field." ;
+    sdo:name "timmean - time mean" ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareSourceCode" .
+
 tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000 a prov:Entity ;
     tippecc_data:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)" ;
     tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-09 22:01:35 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
-    tippecc_data:climatology_bounds "['1981-01-01 00:00:00', '2000-01-01 00:00:00']" ;
     tippecc_data:cmor_version "3.6.0" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
+    tippecc_data:comment "none" ;
     tippecc_data:contact "T. Lovato" ;
     tippecc_data:creation_date "2020-12-21T16:16:04Z" ;
     tippecc_data:data_specs_version "01.00.31" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "86321"^^xsd:int ;
-    tippecc_data:frequency "none" ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-09 22:01:35 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.13195" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13195" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:file.climatology_bounds "['1981-01-01 00:00:00', '2000-01-01 00:00:00']" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "86321"^^xsd:int ;
+    tippecc_data:file.frequency "none" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "3267.34689589376" ;
+    tippecc_data:file.global_min "21.46603813984097" ;
+    tippecc_data:file.global_model "CMCC-ESM2" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-02-09 22:01:35 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "1"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_amount" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "1991-01-01 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1991-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "mm" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
+    tippecc_data:frequency "year" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CMCC.CMCC-ESM2.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "3267.34689589376" ;
-    tippecc_data:global_min "21.46603813984097" ;
-    tippecc_data:global_model "CMCC-ESM2" ;
     tippecc_data:grid "native atmosphere regular grid" ;
     tippecc_data:grid_label "gn" ;
     tippecc_data:history """Sun Feb 09 21:01:35 2025: cdo -O -s -timmean -selyear,1981/2000 /data/cmip6_raw_ind/TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr__mm_1850_2100__yearsum.nc /data/cmip6_raw_ind/TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000.nc
@@ -248,28 +325,28 @@ Fri Dec 20 16:36:13 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024
 Fri Dec 20 16:34:11 2024: cdo mergetime pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc
 2020-12-21T16:16:04Z ;rewrote data to be consistent with CMIP for variable pr found in table day.;
 none""" ;
-    tippecc_data:indicator "yes" ;
     tippecc_data:institution "Fondazione Centro Euro-Mediterraneo sui Cambiamenti Climatici, Lecce 73100, Italy" ;
     tippecc_data:institution_id "CMCC" ;
-    tippecc_data:last_modification_time "2025-02-09 22:01:35 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by CMCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "1"^^xsd:int ;
-    tippecc_data:original_name "PRECT" ;
+    tippecc_data:nominal_resolution "100 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "CMCC-ESM2" ;
     tippecc_data:parent_time_units "days since 1850-01-01" ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "PRECT" ;
+    tippecc_data:pr.standard_name "precipitation_amount" ;
+    tippecc_data:pr.units "mm" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
     tippecc_data:references "none" ;
     tippecc_data:run_variant "1st realization" ;
-    tippecc_data:short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """CMCC-ESM2 (2017): 
 aerosol: MAM3
 atmos: CAM5.3 (1deg; 288 x 192 longitude/latitude; 30 levels; top at ~2 hPa)
@@ -281,27 +358,19 @@ ocnBgchem: BFM5.1
 seaIce: CICE4.0""" ;
     tippecc_data:source_id "CMCC-ESM2" ;
     tippecc_data:source_type "AOGCM" ;
-    tippecc_data:standard_name "precipitation_amount" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(05 February 2020) MD5:6a248fd76c55aa6d6f7b3cc6866b5faf" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "1991-01-01 00:00:00" ;
-    tippecc_data:time_coverage_start "1991-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "CMCC-ESM2 output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/93285402-04f9-4ce8-869b-233c1d64d22f" ;
-    tippecc_data:unit "mm" ;
-    tippecc_data:units "mm" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Slice_ref._period_1056 ;
+            prov:activity exe:Calc_mean_1057 ;
             prov:atTime "2025-02-09T22:01:35-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity exe:Calc_mean_1057 ;
+            prov:activity exe:Slice_ref._period_1056 ;
             prov:atTime "2025-02-09T22:01:35-01:00"^^xsd:dateTime ],
         [ ],
         [ ] ;
@@ -313,34 +382,52 @@ tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_2080_
     tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-09 22:01:41 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
-    tippecc_data:climatology_bounds "['2080-01-01 00:00:00', '2099-01-01 00:00:00']" ;
     tippecc_data:cmor_version "3.6.0" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
+    tippecc_data:comment "none" ;
     tippecc_data:contact "T. Lovato" ;
     tippecc_data:creation_date "2020-12-21T16:16:04Z" ;
     tippecc_data:data_specs_version "01.00.31" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "86321"^^xsd:int ;
-    tippecc_data:frequency "none" ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-09 22:01:41 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.13195" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13195" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:file.climatology_bounds "['2080-01-01 00:00:00', '2099-01-01 00:00:00']" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "86321"^^xsd:int ;
+    tippecc_data:file.frequency "none" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "3038.944245819422" ;
+    tippecc_data:file.global_min "21.055010172044117" ;
+    tippecc_data:file.global_model "CMCC-ESM2" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-02-09 22:01:41 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "1"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_amount" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2090-01-01 00:00:00" ;
+    tippecc_data:file.time_coverage_start "2090-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "mm" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
+    tippecc_data:frequency "year" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CMCC.CMCC-ESM2.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "3038.944245819422" ;
-    tippecc_data:global_min "21.055010172044117" ;
-    tippecc_data:global_model "CMCC-ESM2" ;
     tippecc_data:grid "native atmosphere regular grid" ;
     tippecc_data:grid_label "gn" ;
     tippecc_data:history """Sun Feb 09 21:01:40 2025: cdo -O -s -timmean -selyear,2080/2099 /data/cmip6_raw_ind/TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr__mm_1850_2100__yearsum.nc /data/cmip6_raw_ind/TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_2080_2099.nc
@@ -352,28 +439,28 @@ Fri Dec 20 16:36:13 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024
 Fri Dec 20 16:34:11 2024: cdo mergetime pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc
 2020-12-21T16:16:04Z ;rewrote data to be consistent with CMIP for variable pr found in table day.;
 none""" ;
-    tippecc_data:indicator "yes" ;
     tippecc_data:institution "Fondazione Centro Euro-Mediterraneo sui Cambiamenti Climatici, Lecce 73100, Italy" ;
     tippecc_data:institution_id "CMCC" ;
-    tippecc_data:last_modification_time "2025-02-09 22:01:41 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by CMCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "1"^^xsd:int ;
-    tippecc_data:original_name "PRECT" ;
+    tippecc_data:nominal_resolution "100 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "CMCC-ESM2" ;
     tippecc_data:parent_time_units "days since 1850-01-01" ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "PRECT" ;
+    tippecc_data:pr.standard_name "precipitation_amount" ;
+    tippecc_data:pr.units "mm" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
     tippecc_data:references "none" ;
     tippecc_data:run_variant "1st realization" ;
-    tippecc_data:short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """CMCC-ESM2 (2017): 
 aerosol: MAM3
 atmos: CAM5.3 (1deg; 288 x 192 longitude/latitude; 30 levels; top at ~2 hPa)
@@ -385,27 +472,19 @@ ocnBgchem: BFM5.1
 seaIce: CICE4.0""" ;
     tippecc_data:source_id "CMCC-ESM2" ;
     tippecc_data:source_type "AOGCM" ;
-    tippecc_data:standard_name "precipitation_amount" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(05 February 2020) MD5:6a248fd76c55aa6d6f7b3cc6866b5faf" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2090-01-01 00:00:00" ;
-    tippecc_data:time_coverage_start "2090-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "CMCC-ESM2 output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/93285402-04f9-4ce8-869b-233c1d64d22f" ;
-    tippecc_data:unit "mm" ;
-    tippecc_data:units "mm" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Slice_ref._period_1058 ;
+            prov:activity exe:Calc_mean_1059 ;
             prov:atTime "2025-02-09T22:01:41-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity exe:Calc_mean_1059 ;
+            prov:activity exe:Slice_ref._period_1058 ;
             prov:atTime "2025-02-09T22:01:41-01:00"^^xsd:dateTime ],
         [ ],
         [ ] ;
@@ -419,8 +498,15 @@ exe:Calc_year_sum_1060 a prov:Activity ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-02-09T22:01:29-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr__mm_1850_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_YEARSUM,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Convert_pr_to_mm_1054 .
+
+software:FUNCTION__CDO_SELYEAR a prov:Agent ;
+    sdo:description "This module selects a year range in the input field." ;
+    sdo:name "selyear - select a year range" ;
+    sdo:targetProduct software:SOFTWARE__CDO ;
+    sdo:type "sdo:SoftwareSourceCode" .
 
 tippecc_data:05deg_pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014 a prov:Entity ;
     prov:qualifiedGeneration [ a prov:Generation ;
@@ -436,33 +522,51 @@ tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:31 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.6.0" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
+    tippecc_data:comment "none" ;
     tippecc_data:contact "T. Lovato" ;
     tippecc_data:creation_date "2020-12-21T16:16:04Z" ;
     tippecc_data:data_specs_version "01.00.31" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1920180214"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:31 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.13195" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13195" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1920180214"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "0.006684057" ;
+    tippecc_data:file.global_min "-1.492232e-17" ;
+    tippecc_data:file.global_model "CMCC-ESM2" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 11:16:18 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_flux" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "kg m-2 s-1" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CMCC.CMCC-ESM2.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "0.006684057" ;
-    tippecc_data:global_min "-1.492232e-17" ;
-    tippecc_data:global_model "CMCC-ESM2" ;
     tippecc_data:grid "native atmosphere regular grid" ;
     tippecc_data:grid_label "gn" ;
     tippecc_data:history """Tue Jan 21 12:15:44 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_CMCC-ESM2_pr_day_r1i1p1f1_1850_2100.nc
@@ -472,28 +576,28 @@ Fri Dec 20 16:36:13 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024
 Fri Dec 20 16:34:11 2024: cdo mergetime pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc
 2020-12-21T16:16:04Z ;rewrote data to be consistent with CMIP for variable pr found in table day.;
 none""" ;
-    tippecc_data:indicator "no" ;
     tippecc_data:institution "Fondazione Centro Euro-Mediterraneo sui Cambiamenti Climatici, Lecce 73100, Italy" ;
     tippecc_data:institution_id "CMCC" ;
-    tippecc_data:last_modification_time "2025-01-21 11:16:18 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by CMCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
-    tippecc_data:original_name "PRECT" ;
+    tippecc_data:nominal_resolution "100 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "CMCC-ESM2" ;
     tippecc_data:parent_time_units "days since 1850-01-01" ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "PRECT" ;
+    tippecc_data:pr.standard_name "precipitation_flux" ;
+    tippecc_data:pr.units "kg m-2 s-1" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
     tippecc_data:references "none" ;
     tippecc_data:run_variant "1st realization" ;
-    tippecc_data:short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """CMCC-ESM2 (2017): 
 aerosol: MAM3
 atmos: CAM5.3 (1deg; 288 x 192 longitude/latitude; 30 levels; top at ~2 hPa)
@@ -505,34 +609,26 @@ ocnBgchem: BFM5.1
 seaIce: CICE4.0""" ;
     tippecc_data:source_id "CMCC-ESM2" ;
     tippecc_data:source_type "AOGCM" ;
-    tippecc_data:standard_name "precipitation_flux" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(05 February 2020) MD5:6a248fd76c55aa6d6f7b3cc6866b5faf" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "CMCC-ESM2 output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/93285402-04f9-4ce8-869b-233c1d64d22f" ;
-    tippecc_data:unit "kg m-2 s-1" ;
-    tippecc_data:units "kg m-2 s-1" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Slice_years_1051 ;
-            prov:atTime "2025-01-21T12:12:44"^^xsd:dateTime ],
-        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_1050 ;
             prov:atTime "2025-01-17T17:41:40"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity exe:Slice_TIPPECC_area_1052 ;
-            prov:atTime "2025-01-21T12:15:44"^^xsd:dateTime ],
-        [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1053> ;
             prov:atTime "2025-01-21T11:16:18-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_1051 ;
+            prov:atTime "2025-01-21T12:12:44"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_1052 ;
+            prov:atTime "2025-01-21T12:15:44"^^xsd:dateTime ],
         [ ],
         [ ],
         [ ],
@@ -546,33 +642,51 @@ tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr__mm_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-01-24 16:19:06 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.6.0" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
+    tippecc_data:comment "none" ;
     tippecc_data:contact "T. Lovato" ;
     tippecc_data:creation_date "2020-12-21T16:16:04Z" ;
     tippecc_data:data_specs_version "01.00.31" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "3817822163"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-01-24 16:19:06 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.13195" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13195" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "3817822163"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "577.5025203824043" ;
+    tippecc_data:file.global_min "-1.2892884525345436e-12" ;
+    tippecc_data:file.global_model "CMCC-ESM2" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-01-24 16:19:06 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_amount" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "mm" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CMCC.CMCC-ESM2.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "577.5025203824043" ;
-    tippecc_data:global_min "-1.2892884525345436e-12" ;
-    tippecc_data:global_model "CMCC-ESM2" ;
     tippecc_data:grid "native atmosphere regular grid" ;
     tippecc_data:grid_label "gn" ;
     tippecc_data:history """Tue Jan 21 12:15:44 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_CMCC-ESM2_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_CMCC-ESM2_pr_day_r1i1p1f1_1850_2100.nc
@@ -582,28 +696,28 @@ Fri Dec 20 16:36:13 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024
 Fri Dec 20 16:34:11 2024: cdo mergetime pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc
 2020-12-21T16:16:04Z ;rewrote data to be consistent with CMIP for variable pr found in table day.;
 none""" ;
-    tippecc_data:indicator "yes" ;
     tippecc_data:institution "Fondazione Centro Euro-Mediterraneo sui Cambiamenti Climatici, Lecce 73100, Italy" ;
     tippecc_data:institution_id "CMCC" ;
-    tippecc_data:last_modification_time "2025-01-24 16:19:06 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by CMCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
-    tippecc_data:original_name "PRECT" ;
+    tippecc_data:nominal_resolution "100 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "CMCC-ESM2" ;
     tippecc_data:parent_time_units "days since 1850-01-01" ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "PRECT" ;
+    tippecc_data:pr.standard_name "precipitation_amount" ;
+    tippecc_data:pr.units "mm" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
     tippecc_data:references "none" ;
     tippecc_data:run_variant "1st realization" ;
-    tippecc_data:short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """CMCC-ESM2 (2017): 
 aerosol: MAM3
 atmos: CAM5.3 (1deg; 288 x 192 longitude/latitude; 30 levels; top at ~2 hPa)
@@ -615,21 +729,13 @@ ocnBgchem: BFM5.1
 seaIce: CICE4.0""" ;
     tippecc_data:source_id "CMCC-ESM2" ;
     tippecc_data:source_type "AOGCM" ;
-    tippecc_data:standard_name "precipitation_amount" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(05 February 2020) MD5:6a248fd76c55aa6d6f7b3cc6866b5faf" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "CMCC-ESM2 output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/93285402-04f9-4ce8-869b-233c1d64d22f" ;
-    tippecc_data:unit "mm" ;
-    tippecc_data:units "mm" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Convert_pr_to_mm_1054 ;
@@ -666,33 +772,52 @@ tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr__mm_1850_2100__yearsum a prov:Ent
     tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-09 22:01:29 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.6.0" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
+    tippecc_data:comment "none" ;
     tippecc_data:contact "T. Lovato" ;
     tippecc_data:creation_date "2020-12-21T16:16:04Z" ;
     tippecc_data:data_specs_version "01.00.31" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "10531792"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-09 22:01:29 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.13195" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13195" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "10531792"^^xsd:int ;
+    tippecc_data:file.frequency "year" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "4801.309764938742" ;
+    tippecc_data:file.global_min "5.528273712684983" ;
+    tippecc_data:file.global_model "CMCC-ESM2" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-02-09 22:01:29 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "251"^^xsd:int ;
+    tippecc_data:file.num_years "251"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_amount" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-01-01 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "mm" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "year" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.CMCC.CMCC-ESM2.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "4801.309764938742" ;
-    tippecc_data:global_min "5.528273712684983" ;
-    tippecc_data:global_model "CMCC-ESM2" ;
     tippecc_data:grid "native atmosphere regular grid" ;
     tippecc_data:grid_label "gn" ;
     tippecc_data:history """Sun Feb 09 21:01:11 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr__mm_1850_2100__yearsum.nc
@@ -703,29 +828,28 @@ Fri Dec 20 16:36:13 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024
 Fri Dec 20 16:34:11 2024: cdo mergetime pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_18500101-18741231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_18750101-18991231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19000101-19241231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19250101-19491231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19500101-19741231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_19750101-19991231.nc pr_day_CMCC-ESM2_historical_r1i1p1f1_gn_20000101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_CMCC-ESM2_historical_r1i1p1f1_1850_2014.nc
 2020-12-21T16:16:04Z ;rewrote data to be consistent with CMIP for variable pr found in table day.;
 none""" ;
-    tippecc_data:indicator "yes" ;
     tippecc_data:institution "Fondazione Centro Euro-Mediterraneo sui Cambiamenti Climatici, Lecce 73100, Italy" ;
     tippecc_data:institution_id "CMCC" ;
-    tippecc_data:last_modification_time "2025-02-09 22:01:29 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by CMCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "251"^^xsd:int ;
-    tippecc_data:num_years "251"^^xsd:int ;
-    tippecc_data:original_name "PRECT" ;
+    tippecc_data:nominal_resolution "100 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "CMCC-ESM2" ;
     tippecc_data:parent_time_units "days since 1850-01-01" ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "PRECT" ;
+    tippecc_data:pr.standard_name "precipitation_amount" ;
+    tippecc_data:pr.units "mm" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
     tippecc_data:references "none" ;
     tippecc_data:run_variant "1st realization" ;
-    tippecc_data:short_data_reference "Lovato, Tomas et al. (2021). CMCC CMCC-ESM2 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.13259" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """CMCC-ESM2 (2017): 
 aerosol: MAM3
 atmos: CAM5.3 (1deg; 288 x 192 longitude/latitude; 30 levels; top at ~2 hPa)
@@ -737,21 +861,13 @@ ocnBgchem: BFM5.1
 seaIce: CICE4.0""" ;
     tippecc_data:source_id "CMCC-ESM2" ;
     tippecc_data:source_type "AOGCM" ;
-    tippecc_data:standard_name "precipitation_amount" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(05 February 2020) MD5:6a248fd76c55aa6d6f7b3cc6866b5faf" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-01-01 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "CMCC-ESM2 output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/93285402-04f9-4ce8-869b-233c1d64d22f" ;
-    tippecc_data:unit "mm" ;
-    tippecc_data:units "mm" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Calc_year_sum_1060 ;
@@ -761,7 +877,9 @@ seaIce: CICE4.0""" ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_CMCC-ESM2_day_r1i1p1f1_pr__mm_1850_2100 .
 
 software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
-    sdo:softwareVersion "1.9.3" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareApplication" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 

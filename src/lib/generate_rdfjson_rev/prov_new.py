@@ -111,14 +111,18 @@ def get_prov_metadata(key, prov_path, namespace="tippecc_data:"):
     metadata = prov_metadata.get(key, {})
 
     # Lies Metadaten aus Software nicht aus Software mit Version Key
-    if isinstance(key, str) and key.startswith("SOFTWARE__") and isinstance(metadata.get("sdo:targetProduct"), dict):
-        target = metadata["sdo:targetProduct"]
-
+    if isinstance(key, str) and (key.startswith("SOFTWARE__") or  key.startswith("FUNCTION__")) and isinstance(metadata.get("sdo:targetProduct"), dict):
+        target = metadata.get("sdo:targetProduct")
+        version = metadata.get("sdo:softwareVersion")
         if "@id" in target:
             target_id = target["@id"]
 
             if isinstance(target_id, str) and target_id.startswith("SOFTWARE__"):
                 metadata = prov_metadata.get(target_id, {})
+                # Füge Version wieder hinzu, falls vorhanden
+                if version:
+                    metadata["sdo:softwareVersion"] = version
+
 
     updated_metadata = {}
 
@@ -255,7 +259,6 @@ for filename in os.listdir(prov_path):
         first = True
         for process in prov_data['processing']:
 
-
             # Add person
             person_id = process['executed_by']
             person_id, person_metadata = get_prov_metadata (person_id, prov_base, f"{people_namespace}:")
@@ -276,25 +279,24 @@ for filename in os.listdir(prov_path):
                 d1.agent(orga_id, orga_metadata)
                 added_agents.add(orga_id)
 
-            # Add software and function
-            try:
-                software_id = process['software']
-                function_id = process['function']
-            except:
-                pass
-            try:
-                software_id, software_metadata = get_prov_metadata (software_id, prov_base, f"{software_namespace}:")
-                function_id, function_metadata = get_prov_metadata (function_id, prov_base, f"{software_namespace}:")
-            except:
+            software_id = process.get('software', None)
+            function_id = process.get('function', None)
+
+            if isinstance(software_id, list):
                 software_id = software_id[0]
+            if isinstance(function_id, list):
                 function_id = function_id[0]
+
+            if not software_id == None:
                 software_id, software_metadata = get_prov_metadata (software_id, prov_base, f"{software_namespace}:")
+            if not function_id == None:
                 function_id, function_metadata = get_prov_metadata (function_id, prov_base, f"{software_namespace}:")
 
-            if software_id not in added_agents:
+
+            if software_id not in added_agents and not software_id == None:
                 d1.agent(software_id, software_metadata)
                 added_agents.add(software_id)
-            if function_id not in added_agents:
+            if function_id not in added_agents and not software_id == None:
                 d1.agent(function_id, function_metadata)
                 added_agents.add(function_id)
 
@@ -349,8 +351,10 @@ for filename in os.listdir(prov_path):
                 #'prov:function': function, 'prov:params': params
 
 
-                d1.wasAssociatedWith(activity_id, software_id)
-                d1.wasAssociatedWith(activity_id, function_id)
+                if software_id:
+                    d1.wasAssociatedWith(activity_id, software_id)
+                if function_id:
+                    d1.wasAssociatedWith(activity_id, function_id)
 
                 added_agents.add(activity_id)
 

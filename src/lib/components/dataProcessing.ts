@@ -950,9 +950,11 @@ export function addSoftware({
                     data: {
                         //TODO add Data
                         software: agentId  || "N/A",
-                        software_name: dataset.agent[agentId]["sdo:targetProduct"]?.["$"] || "N/A",
+                        software_name: dataset.agent[agentId]["sdo:name"] || "N/A",
                         version: dataset.agent[agentId]["sdo:softwareVersion"]  || "N/A",
-                        type: dataset.agent[agentId]["sdo:type"]  || "N/A",
+                        url: dataset.agent[agentId]["sdo:url"]  || "N/A",
+                        license: dataset.agent[agentId]["sdo:license"]  || "N/A",
+                        description: dataset.agent[agentId]["sdo:description"]  || "N/A",
                      },
                     position: { x: 1200, y: yPosition }, // Adjust as needed
                 });

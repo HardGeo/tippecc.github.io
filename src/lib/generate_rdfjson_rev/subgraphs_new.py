@@ -438,7 +438,7 @@ def export_combined_turtle(entity_id: str):
 
 
 ttl_file = r"C:\Users\jonas\svelte_scripts\tippecc.github.io\src\lib\generate_rdfjson_rev\GRAPH.ttl"
-entity = "TIPPECC_ACCESS-ESM1-5_day_r1i1p1f1_pr__mm_1950_2100__yearsum_mean_1981_2000-2080_2099"
+entity = "TIPPECC_ACCESS-CM2_day_r1i1p1f1__evspsblpot__mm_1950_2100__yearsum_mean_1981_2000-2080_2099"
 delete_all_repos()
 create_repo(repo_name)
 import_data(ttl_file,repo_name)
@@ -455,10 +455,10 @@ entity_list = [entry.split("/")[-1] for entry in entity_list if not entry.split(
 #result_entities(entity)
 
 total = len(entity_list)
-#export_combined_turtle(entity)
-
+export_combined_turtle(entity)
+"""
 for idx, entity in enumerate(entity_list, start=1):
     print(f"Processing {idx}/{total}", end="\r")
     export_combined_turtle(entity)
-
+"""
 #activities(entity)

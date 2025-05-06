@@ -81,7 +81,9 @@ RORID;${detailedData.rorid}
 Software;${detailedData.software}
 Software_name;${detailedData.software_name}
 Version;${detailedData.version}
-Type;${detailedData.type}
+URL;${detailedData.url}
+License;${detailedData.license}
+Description;${detailedData.description}
 `.trim();
 
         // Use Clipboard API to copy the string
@@ -368,25 +370,45 @@ Collection_name;${detailedData.collection_name}
                             </td>
                         </tr>
                         <tr>
-                            <td ><strong>DOI</strong></td>
+                            <td><strong>DOI</strong></td>
                             <td>
-                                <a
-                                    href={detailedData.doi.startsWith('http') ? detailedData.doi : `https://doi.org/${detailedData.doi}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="text-blue-600 underline hover:text-blue-800"
-                                >
-                                    {detailedData.doi}
-                                    {detailedData.doi_hist}
-                                </a>
-                                <span
-                                    class="info-icon ml-2"
-                                    title="A DOI (Digital Object Identifier) is a permanent and unique identifier assigned to digital documents, datasets, or publications to ensure persistent access and citation. It is defined by the International DOI Foundation (IDF) and can be resolved via doi.org."
-                                >
-                                    <i class="fas fa-info-circle" aria-hidden="true"></i>
-                                </span>
+                                {#if detailedData.doi !== "N/A"}
+                                    <a
+                                        href={detailedData.doi.startsWith('http') ? detailedData.doi : `https://doi.org/${detailedData.doi}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-blue-600 underline hover:text-blue-800"
+                                    >
+                                        {detailedData.doi}
+                                    </a>
+                                {:else}
+                                    N/A
+                                {/if}
+                        
+                                {#if detailedData.doi_hist !== "N/A"}
+                                        <a
+                                            href={detailedData.doi_hist.startsWith('http') ? detailedData.doi_hist : `https://doi.org/${detailedData.doi_hist}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="text-blue-600 underline hover:text-blue-800"
+                                        >
+                                            {detailedData.doi_hist}
+                                        </a>
+                                {:else}
+                                    N/A
+                                {/if}
+                        
+                                {#if detailedData.doi !== "N/A" || detailedData.doi_hist !== "N/A"}
+                                    <span
+                                        class="info-icon ml-2"
+                                        title="A DOI (Digital Object Identifier) is a permanent and unique identifier assigned to digital documents, datasets, or publications to ensure persistent access and citation. It is defined by the International DOI Foundation (IDF) and can be resolved via doi.org."
+                                    >
+                                        <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                    </span>
+                                {/if}
                             </td>
                         </tr>
+                        
                         <tr>
                             <td ><strong>Collection</strong></td>
                             <td >
@@ -502,7 +524,7 @@ Collection_name;${detailedData.collection_name}
             </button>
             <h2>{"Software Details"}</h2>
             <div class="triangle absolute left-1/2 -top-2 transform -translate-x-1/2"></div>
-            
+
             <div class="table-container">
                 <!-- Table layout with adjusted column spacing -->
                 <table class="w-full">
@@ -524,8 +546,24 @@ Collection_name;${detailedData.collection_name}
                             <td >{detailedData.version}</td>
                         </tr>
                         <tr>
-                            <td ><strong>Type</strong></td>
-                            <td >{detailedData.type}</td>
+                            <td><strong>URL</strong></td>
+                            <td>
+                                {#if detailedData.url !== "N/A"}
+                                    <a href="{detailedData.url}" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+                                        {detailedData.url}
+                                    </a>
+                                {:else}
+                                    N/A
+                                {/if}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td ><strong>License</strong></td>
+                            <td >{detailedData.license}</td>
+                        </tr>
+                        <tr>
+                            <td ><strong>Description</strong></td>
+                            <td >{detailedData.description}</td>
                         </tr>
                     </tbody>
                 </table>
