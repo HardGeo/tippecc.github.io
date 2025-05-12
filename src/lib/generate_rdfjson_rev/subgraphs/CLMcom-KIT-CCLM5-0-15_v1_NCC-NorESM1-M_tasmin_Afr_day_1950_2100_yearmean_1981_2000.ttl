@@ -12,7 +12,8 @@ exe:Calc_year_sum_299 a prov:Activity ;
     prov:function "FUNCTION__CDO_YEARSUM" ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-02-19T17:51:18-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_YEARSUM,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_ref._period_298 .
 
 tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_tasmin_Afr_day_1950_2100 a prov:Entity .
@@ -24,10 +25,30 @@ exe:Slice_ref._period_298 a prov:Activity ;
     prov:params "{'start_year': '1981', 'end_year': '2000'}" ;
     prov:startedAtTime "2025-02-19T17:51:18-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_CLMcom-KIT-CCLM5-0-15_v1_NCC-NorESM1-M_tasmin_Afr_day_1950_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 .
+
+software:FUNCTION__CDO_SELYEAR a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_YEARSUM a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
     sdo:softwareVersion "1.9.3" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareApplication" .
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 

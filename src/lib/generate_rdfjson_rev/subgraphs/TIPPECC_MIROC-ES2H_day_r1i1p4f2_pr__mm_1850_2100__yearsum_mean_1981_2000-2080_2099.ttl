@@ -44,16 +44,64 @@ exe:Calc_abs._change_1951 a prov:Activity ;
     prov:startedAtTime "2025-03-04T20:08:02-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100__yearsum_mean_1981_2000,
         tippecc_data:TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100__yearsum_mean_2080_2099 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SUB,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Calc_mean_1953,
         exe:Calc_mean_1955 .
 
-software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
-    sdo:softwareVersion "0.49.0" ;
-    sdo:targetProduct software:SOFTWARE__XCLIM ;
-    sdo:type "sdo:SoftwareApplication" .
+orgs:ORG__WITS a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "University of the Witwatersrand" ;
+    sdo:name "University of the Witwatersrand" ;
+    wd:P6782 "https://ror.org/03rp50x72" .
 
-<http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> a prov:Agent .
+software:FUNCTION__CDO_REMAPBIL a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_SELLONLATBOX a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_SUB a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_YEARSUM a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__XCLIM_CONVERT_UNITS a prov:Agent ;
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
+
+software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
 
 tippecc_data:05deg_pr_day_MIROC-ES2H_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
 
@@ -395,7 +443,8 @@ exe:Calc_mean_1953 a prov:Activity ;
     prov:function "FUNCTION__CDO_TIMMEAN" ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-03-04T20:07:47-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_TIMMEAN,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_ref._period_1952 .
 
 exe:Calc_mean_1955 a prov:Activity ;
@@ -404,7 +453,8 @@ exe:Calc_mean_1955 a prov:Activity ;
     prov:function "FUNCTION__CDO_TIMMEAN" ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-03-04T20:07:56-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_TIMMEAN,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_ref._period_1954 .
 
 exe:Convert_pr_to_mm_1950 a prov:Activity ;
@@ -414,7 +464,8 @@ exe:Convert_pr_to_mm_1950 a prov:Activity ;
     prov:params "{'unit': 'mm'}" ;
     prov:startedAtTime "2025-03-04T20:05:34-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr_1850_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__XCLIM_0_49 ;
+    prov:wasAssociatedWith software:FUNCTION__XCLIM_CONVERT_UNITS,
+        software:SOFTWARE__XCLIM_0_49 ;
     prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Rename/Metadata_1949> .
 
 exe:Merge_datasets_1947 a prov:Activity ;
@@ -425,7 +476,8 @@ exe:Merge_datasets_1947 a prov:Activity ;
     prov:startedAtTime "2025-02-14T11:08:04"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_MIROC-ES2H_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_36 .
 
 exe:Merge_datasets_456 a prov:Activity ;
@@ -599,7 +651,8 @@ exe:Merge_datasets_456 a prov:Activity ;
         tippecc_data:pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20120101-20121231,
         tippecc_data:pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20130101-20131231,
         tippecc_data:pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20140101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Remap_bilinear_36 a prov:Activity ;
     rdfs:label "Remap bilinear" ;
@@ -609,7 +662,8 @@ exe:Remap_bilinear_36 a prov:Activity ;
     prov:startedAtTime "2025-02-12T14:46:15"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_456 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1949> a prov:Activity ;
@@ -617,7 +671,6 @@ exe:Remap_bilinear_36 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-02-19T14:44:34-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1948 .
 
 exe:Slice_TIPPECC_area_1948 a prov:Activity ;
@@ -626,7 +679,8 @@ exe:Slice_TIPPECC_area_1948 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-02-19T15:41:43"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_1947 .
 
 exe:Slice_ref._period_1952 a prov:Activity ;
@@ -636,7 +690,8 @@ exe:Slice_ref._period_1952 a prov:Activity ;
     prov:params "{'start_year': '1981', 'end_year': '2000'}" ;
     prov:startedAtTime "2025-03-04T20:07:47-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100__yearsum ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Calc_year_sum_1956 .
 
 exe:Slice_ref._period_1954 a prov:Activity ;
@@ -646,7 +701,8 @@ exe:Slice_ref._period_1954 a prov:Activity ;
     prov:params "{'start_year': '2080', 'end_year': '2099'}" ;
     prov:startedAtTime "2025-03-04T20:07:56-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100__yearsum ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Calc_year_sum_1956 .
 
 orgs:ORG__FSU a prov:Agent,
@@ -655,76 +711,113 @@ orgs:ORG__FSU a prov:Agent,
     sdo:name "Friedrich Schiller University of Jena" ;
     wd:P6782 "https://ror.org/05qpz1x62" .
 
-orgs:ORG__WITS a prov:Agent,
-        "prov:Organization" ;
-    rdfs:label "University of the Witwatersrand" ;
-    sdo:name "University of the Witwatersrand" ;
-    wd:P6782 "https://ror.org/03rp50x72" .
+people:PERSON__JONATHAN_PADAVATAN a prov:Agent ;
+    prov:actedOnBehalfOf orgs:ORG__WITS .
 
-people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
-        "prov:Person" ;
-    rdfs:label "Jonathan Padavatan" ;
-    sdo:affiliation orgs:ORG__WITS ;
-    prov:actedOnBehalfOf orgs:ORG__WITS ;
-    foaf:familyName "Padavatan" ;
-    foaf:givenName "Jonathan" .
+software:FUNCTION__CDO_MERGE a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_SELYEAR a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_TIMMEAN a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 tippecc_data:TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100__yearsum_mean_1981_2000 a prov:Entity ;
     tippecc_data:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)" ;
     tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-03-04 20:07:47 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
-    tippecc_data:climatology_bounds "['1981-01-01 00:00:00', '2000-01-01 00:00:00']" ;
     tippecc_data:cmor_version "3.3.2" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
     tippecc_data:creation_date "2023-08-09T12:36:15Z" ;
     tippecc_data:data_specs_version "01.00.28" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.15664" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "104999"^^xsd:int ;
-    tippecc_data:frequency "none" ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-03-04 20:07:47 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5601" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Watanabe, Shingo et al. (2021). MIROC MIROC-ES2H model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5601" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.15664" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Watanabe, Shingo et al. (2023). MIROC MIROC-ES2H model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.15664" ;
+    tippecc_data:file.climatology_bounds "['1981-01-01 00:00:00', '2000-01-01 00:00:00']" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "104999"^^xsd:int ;
+    tippecc_data:file.frequency "none" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "2303.4510952457085" ;
+    tippecc_data:file.global_min "52.48903858953112" ;
+    tippecc_data:file.global_model "MIROC-ES2H" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-03-04 20:07:47 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "1"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_amount" ;
+    tippecc_data:file.time_calendar "gregorian" ;
+    tippecc_data:file.time_coverage_end "1991-01-01 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1991-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "mm" ;
+    tippecc_data:file.variant "r1i1p4f2" ;
+    tippecc_data:frequency "year" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC-ES2H.historical.none.r1i1p4f2" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "2303.4510952457085" ;
-    tippecc_data:global_min "52.48903858953112" ;
-    tippecc_data:global_model "MIROC-ES2H" ;
     tippecc_data:grid "native atmosphere T85 Gaussian grid" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2023-08-09T12:36:15Z altered by CMOR: Converted units from 'kg/m**2/s' to 'kg m-2 s-1'. 2023-08-09T12:36:15Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2023-08-09T12:36:15Z altered by CMOR: Inverted axis: lat." ;
-    tippecc_data:indicator "yes" ;
+    tippecc_data:history """Tue Mar 04 19:07:46 2025: cdo -O -s -timmean -selyear,1981/2000 /data/cmip6_raw_ind/TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100__yearsum.nc /data/cmip6_raw_ind/TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100__yearsum_mean_1981_2000.nc
+Tue Mar 04 19:07:24 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100__yearsum.nc
+Wed Feb 19 15:41:43 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_MIROC-ES2H_r1i1p4f2_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain_Feb25/TIPPECC_MIROC-ES2H_pr_day_r1i1p1f1_1850_2100.nc
+Fri Feb 14 11:08:04 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/pr/05deg_pr_day_MIROC-ES2H_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_MIROC-ES2H_r1i1p1f1_1850_2100.nc
+Wed Feb 12 14:46:15 2025: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc
+Wed Feb 12 14:44:51 2025: cdo mergetime pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18500101-18501231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18510101-18511231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18520101-18521231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18530101-18531231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18540101-18541231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18550101-18551231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18560101-18561231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18570101-18571231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18580101-18581231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18590101-18591231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18600101-18601231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18610101-18611231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18620101-18621231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18630101-18631231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18640101-18641231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18650101-18651231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18660101-18661231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18670101-18671231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18680101-18681231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18690101-18691231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18700101-18701231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18710101-18711231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18720101-18721231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18730101-18731231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18740101-18741231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18750101-18751231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18760101-18761231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18770101-18771231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18780101-18781231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18790101-18791231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18800101-18801231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18810101-18811231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18820101-18821231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18830101-18831231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18840101-18841231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18850101-18851231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18860101-18861231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18870101-18871231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18880101-18881231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18890101-18891231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18900101-18901231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18910101-18911231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18920101-18921231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18930101-18931231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18940101-18941231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18950101-18951231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18960101-18961231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18970101-18971231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18980101-18981231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18990101-18991231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19000101-19001231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19010101-19011231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19020101-19021231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19030101-19031231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19040101-19041231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19050101-19051231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19060101-19061231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19070101-19071231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19080101-19081231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19090101-19091231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19100101-19101231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19110101-19111231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19120101-19121231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19130101-19131231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19140101-19141231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19150101-19151231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19160101-19161231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19170101-19171231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19180101-19181231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19190101-19191231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19200101-19201231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19210101-19211231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19220101-19221231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19230101-19231231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19240101-19241231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19250101-19251231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19260101-19261231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19270101-19271231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19280101-19281231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19290101-19291231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19300101-19301231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19310101-19311231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19320101-19321231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19330101-19331231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19340101-19341231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19350101-19351231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19360101-19361231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19370101-19371231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19380101-19381231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19390101-19391231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19400101-19401231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19410101-19411231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19420101-19421231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19430101-19431231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19440101-19441231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19450101-19451231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19460101-19461231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19470101-19471231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19480101-19481231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19490101-19491231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19500101-19501231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19510101-19511231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19520101-19521231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19530101-19531231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19540101-19541231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19550101-19551231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19560101-19561231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19570101-19571231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19580101-19581231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19590101-19591231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19600101-19601231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19610101-19611231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19620101-19621231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19630101-19631231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19640101-19641231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19650101-19651231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19660101-19661231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19670101-19671231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19680101-19681231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19690101-19691231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19700101-19701231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19710101-19711231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19720101-19721231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19730101-19731231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19740101-19741231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19750101-19751231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19760101-19761231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19770101-19771231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19780101-19781231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19790101-19791231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19800101-19801231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19810101-19811231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19820101-19821231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19830101-19831231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19840101-19841231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19850101-19851231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19860101-19861231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19870101-19871231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19880101-19881231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19890101-19891231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19900101-19901231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19910101-19911231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19920101-19921231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19930101-19931231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19940101-19941231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19950101-19951231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19960101-19961231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19970101-19971231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19980101-19981231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19990101-19991231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20000101-20001231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20010101-20011231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20020101-20021231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20030101-20031231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20040101-20041231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20050101-20051231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20060101-20061231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20070101-20071231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20080101-20081231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20090101-20091231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20100101-20101231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20110101-20111231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20120101-20121231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20130101-20131231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20140101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc
+2023-08-09T12:36:15Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.""" ;
     tippecc_data:institution "JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)" ;
     tippecc_data:institution_id "MIROC" ;
-    tippecc_data:last_modification_time "2025-03-04 20:07:47 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by MIROC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "1"^^xsd:int ;
-    tippecc_data:original_name "PRCP" ;
-    tippecc_data:original_units "kg/m**2/s" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "MIROC-ES2H" ;
     tippecc_data:parent_time_units "days since 1850-1-1" ;
     tippecc_data:parent_variant_label "r1i1p4f2" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.history "2023-08-09T12:36:15Z altered by CMOR: Converted units from 'kg/m**2/s' to 'kg m-2 s-1'. 2023-08-09T12:36:15Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2023-08-09T12:36:15Z altered by CMOR: Inverted axis: lat." ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "PRCP" ;
+    tippecc_data:pr.original_units "kg/m**2/s" ;
+    tippecc_data:pr.standard_name "precipitation_amount" ;
+    tippecc_data:pr.units "mm" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
-    tippecc_data:short_data_reference "Watanabe, Shingo et al. (2023). MIROC MIROC-ES2H model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.15664" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """MIROC-ES2H (2018): 
 aerosol: SPRINTARS6.0
 atmos: CCSR AGCM (T85; 256 x 128 longitude/latitude; 81 levels; top level 0.004 hPa)
@@ -736,30 +829,22 @@ ocnBgchem: OECO ver.2.0; NPZD-type with C/N/P/Fe/O cycles
 seaIce: COCO4.9""" ;
     tippecc_data:source_id "MIROC-ES2H" ;
     tippecc_data:source_type "AOGCM AER CHEM BGC" ;
-    tippecc_data:standard_name "precipitation_amount" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(06 November 2018) MD5:e67849c1ce7db8b463964f0e90cf70a5" ;
-    tippecc_data:time_calendar "gregorian" ;
-    tippecc_data:time_coverage_end "1991-01-01 00:00:00" ;
-    tippecc_data:time_coverage_start "1991-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "MIROC-ES2H output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/2cd53839-82ac-47fc-a44a-efdca9a20969" ;
-    tippecc_data:unit "mm" ;
-    tippecc_data:units "mm" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p4f2" ;
     tippecc_data:variant_label "r1i1p4f2" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity exe:Slice_ref._period_1952 ;
             prov:atTime "2025-03-04T20:07:47-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Calc_mean_1953 ;
-            prov:atTime "2025-03-04T20:07:47-01:00"^^xsd:dateTime ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-03-04T20:07:47-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100__yearsum .
 
@@ -768,57 +853,81 @@ tippecc_data:TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100__yearsum_mean_2080
     tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-03-04 20:07:56 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
-    tippecc_data:climatology_bounds "['2080-01-01 00:00:00', '2099-01-01 00:00:00']" ;
     tippecc_data:cmor_version "3.3.2" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
     tippecc_data:creation_date "2023-08-09T12:36:15Z" ;
     tippecc_data:data_specs_version "01.00.28" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.15664" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "104999"^^xsd:int ;
-    tippecc_data:frequency "none" ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-03-04 20:07:56 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5601" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Watanabe, Shingo et al. (2021). MIROC MIROC-ES2H model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5601" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.15664" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Watanabe, Shingo et al. (2023). MIROC MIROC-ES2H model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.15664" ;
+    tippecc_data:file.climatology_bounds "['2080-01-01 00:00:00', '2099-01-01 00:00:00']" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "104999"^^xsd:int ;
+    tippecc_data:file.frequency "none" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "2580.9040133081594" ;
+    tippecc_data:file.global_min "35.35998287727886" ;
+    tippecc_data:file.global_model "MIROC-ES2H" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-03-04 20:07:56 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "1"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_amount" ;
+    tippecc_data:file.time_calendar "gregorian" ;
+    tippecc_data:file.time_coverage_end "2090-01-01 00:00:00" ;
+    tippecc_data:file.time_coverage_start "2090-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "mm" ;
+    tippecc_data:file.variant "r1i1p4f2" ;
+    tippecc_data:frequency "year" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC-ES2H.historical.none.r1i1p4f2" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "2580.9040133081594" ;
-    tippecc_data:global_min "35.35998287727886" ;
-    tippecc_data:global_model "MIROC-ES2H" ;
     tippecc_data:grid "native atmosphere T85 Gaussian grid" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2023-08-09T12:36:15Z altered by CMOR: Converted units from 'kg/m**2/s' to 'kg m-2 s-1'. 2023-08-09T12:36:15Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2023-08-09T12:36:15Z altered by CMOR: Inverted axis: lat." ;
-    tippecc_data:indicator "yes" ;
+    tippecc_data:history """Tue Mar 04 19:07:55 2025: cdo -O -s -timmean -selyear,2080/2099 /data/cmip6_raw_ind/TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100__yearsum.nc /data/cmip6_raw_ind/TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100__yearsum_mean_2080_2099.nc
+Tue Mar 04 19:07:24 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100__yearsum.nc
+Wed Feb 19 15:41:43 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_MIROC-ES2H_r1i1p4f2_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain_Feb25/TIPPECC_MIROC-ES2H_pr_day_r1i1p1f1_1850_2100.nc
+Fri Feb 14 11:08:04 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/pr/05deg_pr_day_MIROC-ES2H_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_MIROC-ES2H_r1i1p1f1_1850_2100.nc
+Wed Feb 12 14:46:15 2025: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc
+Wed Feb 12 14:44:51 2025: cdo mergetime pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18500101-18501231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18510101-18511231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18520101-18521231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18530101-18531231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18540101-18541231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18550101-18551231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18560101-18561231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18570101-18571231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18580101-18581231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18590101-18591231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18600101-18601231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18610101-18611231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18620101-18621231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18630101-18631231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18640101-18641231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18650101-18651231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18660101-18661231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18670101-18671231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18680101-18681231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18690101-18691231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18700101-18701231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18710101-18711231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18720101-18721231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18730101-18731231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18740101-18741231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18750101-18751231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18760101-18761231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18770101-18771231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18780101-18781231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18790101-18791231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18800101-18801231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18810101-18811231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18820101-18821231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18830101-18831231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18840101-18841231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18850101-18851231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18860101-18861231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18870101-18871231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18880101-18881231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18890101-18891231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18900101-18901231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18910101-18911231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18920101-18921231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18930101-18931231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18940101-18941231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18950101-18951231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18960101-18961231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18970101-18971231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18980101-18981231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18990101-18991231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19000101-19001231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19010101-19011231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19020101-19021231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19030101-19031231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19040101-19041231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19050101-19051231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19060101-19061231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19070101-19071231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19080101-19081231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19090101-19091231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19100101-19101231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19110101-19111231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19120101-19121231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19130101-19131231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19140101-19141231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19150101-19151231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19160101-19161231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19170101-19171231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19180101-19181231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19190101-19191231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19200101-19201231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19210101-19211231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19220101-19221231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19230101-19231231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19240101-19241231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19250101-19251231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19260101-19261231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19270101-19271231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19280101-19281231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19290101-19291231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19300101-19301231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19310101-19311231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19320101-19321231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19330101-19331231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19340101-19341231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19350101-19351231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19360101-19361231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19370101-19371231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19380101-19381231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19390101-19391231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19400101-19401231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19410101-19411231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19420101-19421231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19430101-19431231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19440101-19441231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19450101-19451231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19460101-19461231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19470101-19471231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19480101-19481231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19490101-19491231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19500101-19501231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19510101-19511231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19520101-19521231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19530101-19531231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19540101-19541231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19550101-19551231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19560101-19561231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19570101-19571231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19580101-19581231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19590101-19591231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19600101-19601231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19610101-19611231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19620101-19621231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19630101-19631231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19640101-19641231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19650101-19651231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19660101-19661231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19670101-19671231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19680101-19681231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19690101-19691231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19700101-19701231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19710101-19711231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19720101-19721231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19730101-19731231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19740101-19741231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19750101-19751231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19760101-19761231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19770101-19771231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19780101-19781231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19790101-19791231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19800101-19801231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19810101-19811231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19820101-19821231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19830101-19831231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19840101-19841231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19850101-19851231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19860101-19861231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19870101-19871231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19880101-19881231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19890101-19891231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19900101-19901231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19910101-19911231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19920101-19921231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19930101-19931231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19940101-19941231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19950101-19951231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19960101-19961231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19970101-19971231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19980101-19981231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19990101-19991231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20000101-20001231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20010101-20011231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20020101-20021231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20030101-20031231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20040101-20041231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20050101-20051231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20060101-20061231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20070101-20071231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20080101-20081231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20090101-20091231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20100101-20101231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20110101-20111231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20120101-20121231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20130101-20131231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20140101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc
+2023-08-09T12:36:15Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.""" ;
     tippecc_data:institution "JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)" ;
     tippecc_data:institution_id "MIROC" ;
-    tippecc_data:last_modification_time "2025-03-04 20:07:56 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by MIROC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "1"^^xsd:int ;
-    tippecc_data:original_name "PRCP" ;
-    tippecc_data:original_units "kg/m**2/s" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "MIROC-ES2H" ;
     tippecc_data:parent_time_units "days since 1850-1-1" ;
     tippecc_data:parent_variant_label "r1i1p4f2" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.history "2023-08-09T12:36:15Z altered by CMOR: Converted units from 'kg/m**2/s' to 'kg m-2 s-1'. 2023-08-09T12:36:15Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2023-08-09T12:36:15Z altered by CMOR: Inverted axis: lat." ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "PRCP" ;
+    tippecc_data:pr.original_units "kg/m**2/s" ;
+    tippecc_data:pr.standard_name "precipitation_amount" ;
+    tippecc_data:pr.units "mm" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
-    tippecc_data:short_data_reference "Watanabe, Shingo et al. (2023). MIROC MIROC-ES2H model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.15664" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """MIROC-ES2H (2018): 
 aerosol: SPRINTARS6.0
 atmos: CCSR AGCM (T85; 256 x 128 longitude/latitude; 81 levels; top level 0.004 hPa)
@@ -830,30 +939,22 @@ ocnBgchem: OECO ver.2.0; NPZD-type with C/N/P/Fe/O cycles
 seaIce: COCO4.9""" ;
     tippecc_data:source_id "MIROC-ES2H" ;
     tippecc_data:source_type "AOGCM AER CHEM BGC" ;
-    tippecc_data:standard_name "precipitation_amount" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(06 November 2018) MD5:e67849c1ce7db8b463964f0e90cf70a5" ;
-    tippecc_data:time_calendar "gregorian" ;
-    tippecc_data:time_coverage_end "2090-01-01 00:00:00" ;
-    tippecc_data:time_coverage_start "2090-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "MIROC-ES2H output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/2cd53839-82ac-47fc-a44a-efdca9a20969" ;
-    tippecc_data:unit "mm" ;
-    tippecc_data:units "mm" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p4f2" ;
     tippecc_data:variant_label "r1i1p4f2" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity exe:Calc_mean_1955 ;
             prov:atTime "2025-03-04T20:07:56-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_ref._period_1954 ;
-            prov:atTime "2025-03-04T20:07:56-01:00"^^xsd:dateTime ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-03-04T20:07:56-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100__yearsum .
 
@@ -864,14 +965,15 @@ exe:Calc_year_sum_1956 a prov:Activity ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-03-04T20:07:40-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_YEARSUM,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Convert_pr_to_mm_1950 .
 
 tippecc_data:05deg_pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_36 ;
-            prov:atTime "2025-02-12T14:46:15"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2025-02-12T14:46:15"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014 .
@@ -881,56 +983,78 @@ tippecc_data:TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-03-01 18:27:08 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.3.2" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
     tippecc_data:creation_date "2023-08-09T12:36:15Z" ;
     tippecc_data:data_specs_version "01.00.28" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.15664" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1921481211"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-03-01 18:27:08 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5601" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Watanabe, Shingo et al. (2021). MIROC MIROC-ES2H model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5601" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.15664" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Watanabe, Shingo et al. (2023). MIROC MIROC-ES2H model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.15664" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1921481211"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "0.004534453" ;
+    tippecc_data:file.global_min "2.086678e-39" ;
+    tippecc_data:file.global_model "MIROC-ES2H" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-02-19 14:44:34 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91676"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_flux" ;
+    tippecc_data:file.time_calendar "gregorian" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-1-1" ;
+    tippecc_data:file.unit "kg m-2 s-1" ;
+    tippecc_data:file.variant "r1i1p4f2" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC-ES2H.historical.none.r1i1p4f2" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "0.004534453" ;
-    tippecc_data:global_min "2.086678e-39" ;
-    tippecc_data:global_model "MIROC-ES2H" ;
     tippecc_data:grid "native atmosphere T85 Gaussian grid" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2023-08-09T12:36:15Z altered by CMOR: Converted units from 'kg/m**2/s' to 'kg m-2 s-1'. 2023-08-09T12:36:15Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2023-08-09T12:36:15Z altered by CMOR: Inverted axis: lat." ;
-    tippecc_data:indicator "no" ;
+    tippecc_data:history """Wed Feb 19 15:41:43 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_MIROC-ES2H_r1i1p4f2_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain_Feb25/TIPPECC_MIROC-ES2H_pr_day_r1i1p1f1_1850_2100.nc
+Fri Feb 14 11:08:04 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/pr/05deg_pr_day_MIROC-ES2H_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_MIROC-ES2H_r1i1p1f1_1850_2100.nc
+Wed Feb 12 14:46:15 2025: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc
+Wed Feb 12 14:44:51 2025: cdo mergetime pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18500101-18501231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18510101-18511231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18520101-18521231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18530101-18531231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18540101-18541231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18550101-18551231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18560101-18561231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18570101-18571231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18580101-18581231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18590101-18591231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18600101-18601231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18610101-18611231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18620101-18621231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18630101-18631231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18640101-18641231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18650101-18651231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18660101-18661231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18670101-18671231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18680101-18681231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18690101-18691231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18700101-18701231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18710101-18711231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18720101-18721231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18730101-18731231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18740101-18741231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18750101-18751231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18760101-18761231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18770101-18771231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18780101-18781231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18790101-18791231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18800101-18801231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18810101-18811231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18820101-18821231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18830101-18831231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18840101-18841231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18850101-18851231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18860101-18861231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18870101-18871231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18880101-18881231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18890101-18891231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18900101-18901231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18910101-18911231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18920101-18921231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18930101-18931231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18940101-18941231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18950101-18951231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18960101-18961231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18970101-18971231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18980101-18981231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18990101-18991231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19000101-19001231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19010101-19011231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19020101-19021231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19030101-19031231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19040101-19041231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19050101-19051231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19060101-19061231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19070101-19071231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19080101-19081231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19090101-19091231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19100101-19101231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19110101-19111231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19120101-19121231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19130101-19131231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19140101-19141231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19150101-19151231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19160101-19161231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19170101-19171231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19180101-19181231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19190101-19191231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19200101-19201231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19210101-19211231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19220101-19221231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19230101-19231231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19240101-19241231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19250101-19251231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19260101-19261231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19270101-19271231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19280101-19281231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19290101-19291231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19300101-19301231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19310101-19311231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19320101-19321231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19330101-19331231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19340101-19341231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19350101-19351231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19360101-19361231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19370101-19371231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19380101-19381231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19390101-19391231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19400101-19401231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19410101-19411231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19420101-19421231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19430101-19431231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19440101-19441231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19450101-19451231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19460101-19461231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19470101-19471231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19480101-19481231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19490101-19491231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19500101-19501231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19510101-19511231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19520101-19521231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19530101-19531231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19540101-19541231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19550101-19551231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19560101-19561231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19570101-19571231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19580101-19581231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19590101-19591231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19600101-19601231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19610101-19611231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19620101-19621231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19630101-19631231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19640101-19641231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19650101-19651231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19660101-19661231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19670101-19671231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19680101-19681231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19690101-19691231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19700101-19701231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19710101-19711231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19720101-19721231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19730101-19731231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19740101-19741231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19750101-19751231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19760101-19761231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19770101-19771231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19780101-19781231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19790101-19791231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19800101-19801231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19810101-19811231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19820101-19821231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19830101-19831231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19840101-19841231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19850101-19851231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19860101-19861231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19870101-19871231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19880101-19881231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19890101-19891231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19900101-19901231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19910101-19911231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19920101-19921231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19930101-19931231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19940101-19941231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19950101-19951231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19960101-19961231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19970101-19971231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19980101-19981231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19990101-19991231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20000101-20001231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20010101-20011231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20020101-20021231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20030101-20031231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20040101-20041231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20050101-20051231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20060101-20061231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20070101-20071231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20080101-20081231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20090101-20091231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20100101-20101231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20110101-20111231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20120101-20121231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20130101-20131231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20140101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc
+2023-08-09T12:36:15Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.""" ;
     tippecc_data:institution "JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)" ;
     tippecc_data:institution_id "MIROC" ;
-    tippecc_data:last_modification_time "2025-02-19 14:44:34 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by MIROC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91676"^^xsd:int ;
-    tippecc_data:original_name "PRCP" ;
-    tippecc_data:original_units "kg/m**2/s" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "MIROC-ES2H" ;
     tippecc_data:parent_time_units "days since 1850-1-1" ;
     tippecc_data:parent_variant_label "r1i1p4f2" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.history "2023-08-09T12:36:15Z altered by CMOR: Converted units from 'kg/m**2/s' to 'kg m-2 s-1'. 2023-08-09T12:36:15Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2023-08-09T12:36:15Z altered by CMOR: Inverted axis: lat." ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "PRCP" ;
+    tippecc_data:pr.original_units "kg/m**2/s" ;
+    tippecc_data:pr.standard_name "precipitation_flux" ;
+    tippecc_data:pr.units "kg m-2 s-1" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
-    tippecc_data:short_data_reference "Watanabe, Shingo et al. (2023). MIROC MIROC-ES2H model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.15664" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """MIROC-ES2H (2018): 
 aerosol: SPRINTARS6.0
 atmos: CCSR AGCM (T85; 256 x 128 longitude/latitude; 81 levels; top level 0.004 hPa)
@@ -942,34 +1066,26 @@ ocnBgchem: OECO ver.2.0; NPZD-type with C/N/P/Fe/O cycles
 seaIce: COCO4.9""" ;
     tippecc_data:source_id "MIROC-ES2H" ;
     tippecc_data:source_type "AOGCM AER CHEM BGC" ;
-    tippecc_data:standard_name "precipitation_flux" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(06 November 2018) MD5:e67849c1ce7db8b463964f0e90cf70a5" ;
-    tippecc_data:time_calendar "gregorian" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-1-1" ;
     tippecc_data:title "MIROC-ES2H output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/2cd53839-82ac-47fc-a44a-efdca9a20969" ;
-    tippecc_data:unit "kg m-2 s-1" ;
-    tippecc_data:units "kg m-2 s-1" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p4f2" ;
     tippecc_data:variant_label "r1i1p4f2" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1949> ;
+            prov:atTime "2025-02-19T14:44:34-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_1947 ;
             prov:atTime "2025-02-14T11:08:04"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_1948 ;
-            prov:atTime "2025-02-19T15:41:43"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1949> ;
-            prov:atTime "2025-02-19T14:44:34-01:00"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-02-19T15:41:43"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_MIROC-ES2H_ssp585_r1i1p1f1_2015_2100 .
@@ -979,56 +1095,78 @@ tippecc_data:TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-03-04 20:05:34 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.3.2" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
     tippecc_data:creation_date "2023-08-09T12:36:15Z" ;
     tippecc_data:data_specs_version "01.00.28" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.15664" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "3820388611"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-03-04 20:05:34 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5601" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Watanabe, Shingo et al. (2021). MIROC MIROC-ES2H model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5601" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.15664" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Watanabe, Shingo et al. (2023). MIROC MIROC-ES2H model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.15664" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "3820388611"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "391.7767524719238" ;
+    tippecc_data:file.global_min "1.802889573512957e-34" ;
+    tippecc_data:file.global_model "MIROC-ES2H" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-03-04 20:05:34 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91676"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_amount" ;
+    tippecc_data:file.time_calendar "gregorian" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "mm" ;
+    tippecc_data:file.variant "r1i1p4f2" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC-ES2H.historical.none.r1i1p4f2" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "391.7767524719238" ;
-    tippecc_data:global_min "1.802889573512957e-34" ;
-    tippecc_data:global_model "MIROC-ES2H" ;
     tippecc_data:grid "native atmosphere T85 Gaussian grid" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2023-08-09T12:36:15Z altered by CMOR: Converted units from 'kg/m**2/s' to 'kg m-2 s-1'. 2023-08-09T12:36:15Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2023-08-09T12:36:15Z altered by CMOR: Inverted axis: lat." ;
-    tippecc_data:indicator "yes" ;
+    tippecc_data:history """Wed Feb 19 15:41:43 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_MIROC-ES2H_r1i1p4f2_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain_Feb25/TIPPECC_MIROC-ES2H_pr_day_r1i1p1f1_1850_2100.nc
+Fri Feb 14 11:08:04 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/pr/05deg_pr_day_MIROC-ES2H_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_MIROC-ES2H_r1i1p1f1_1850_2100.nc
+Wed Feb 12 14:46:15 2025: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc
+Wed Feb 12 14:44:51 2025: cdo mergetime pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18500101-18501231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18510101-18511231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18520101-18521231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18530101-18531231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18540101-18541231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18550101-18551231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18560101-18561231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18570101-18571231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18580101-18581231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18590101-18591231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18600101-18601231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18610101-18611231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18620101-18621231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18630101-18631231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18640101-18641231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18650101-18651231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18660101-18661231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18670101-18671231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18680101-18681231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18690101-18691231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18700101-18701231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18710101-18711231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18720101-18721231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18730101-18731231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18740101-18741231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18750101-18751231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18760101-18761231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18770101-18771231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18780101-18781231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18790101-18791231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18800101-18801231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18810101-18811231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18820101-18821231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18830101-18831231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18840101-18841231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18850101-18851231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18860101-18861231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18870101-18871231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18880101-18881231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18890101-18891231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18900101-18901231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18910101-18911231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18920101-18921231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18930101-18931231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18940101-18941231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18950101-18951231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18960101-18961231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18970101-18971231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18980101-18981231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18990101-18991231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19000101-19001231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19010101-19011231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19020101-19021231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19030101-19031231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19040101-19041231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19050101-19051231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19060101-19061231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19070101-19071231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19080101-19081231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19090101-19091231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19100101-19101231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19110101-19111231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19120101-19121231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19130101-19131231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19140101-19141231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19150101-19151231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19160101-19161231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19170101-19171231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19180101-19181231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19190101-19191231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19200101-19201231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19210101-19211231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19220101-19221231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19230101-19231231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19240101-19241231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19250101-19251231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19260101-19261231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19270101-19271231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19280101-19281231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19290101-19291231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19300101-19301231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19310101-19311231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19320101-19321231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19330101-19331231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19340101-19341231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19350101-19351231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19360101-19361231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19370101-19371231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19380101-19381231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19390101-19391231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19400101-19401231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19410101-19411231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19420101-19421231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19430101-19431231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19440101-19441231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19450101-19451231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19460101-19461231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19470101-19471231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19480101-19481231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19490101-19491231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19500101-19501231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19510101-19511231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19520101-19521231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19530101-19531231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19540101-19541231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19550101-19551231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19560101-19561231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19570101-19571231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19580101-19581231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19590101-19591231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19600101-19601231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19610101-19611231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19620101-19621231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19630101-19631231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19640101-19641231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19650101-19651231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19660101-19661231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19670101-19671231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19680101-19681231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19690101-19691231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19700101-19701231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19710101-19711231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19720101-19721231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19730101-19731231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19740101-19741231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19750101-19751231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19760101-19761231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19770101-19771231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19780101-19781231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19790101-19791231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19800101-19801231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19810101-19811231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19820101-19821231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19830101-19831231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19840101-19841231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19850101-19851231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19860101-19861231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19870101-19871231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19880101-19881231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19890101-19891231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19900101-19901231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19910101-19911231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19920101-19921231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19930101-19931231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19940101-19941231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19950101-19951231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19960101-19961231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19970101-19971231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19980101-19981231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19990101-19991231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20000101-20001231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20010101-20011231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20020101-20021231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20030101-20031231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20040101-20041231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20050101-20051231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20060101-20061231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20070101-20071231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20080101-20081231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20090101-20091231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20100101-20101231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20110101-20111231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20120101-20121231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20130101-20131231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20140101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc
+2023-08-09T12:36:15Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.""" ;
     tippecc_data:institution "JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)" ;
     tippecc_data:institution_id "MIROC" ;
-    tippecc_data:last_modification_time "2025-03-04 20:05:34 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by MIROC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91676"^^xsd:int ;
-    tippecc_data:original_name "PRCP" ;
-    tippecc_data:original_units "kg/m**2/s" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "MIROC-ES2H" ;
     tippecc_data:parent_time_units "days since 1850-1-1" ;
     tippecc_data:parent_variant_label "r1i1p4f2" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.history "2023-08-09T12:36:15Z altered by CMOR: Converted units from 'kg/m**2/s' to 'kg m-2 s-1'. 2023-08-09T12:36:15Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2023-08-09T12:36:15Z altered by CMOR: Inverted axis: lat." ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "PRCP" ;
+    tippecc_data:pr.original_units "kg/m**2/s" ;
+    tippecc_data:pr.standard_name "precipitation_amount" ;
+    tippecc_data:pr.units "mm" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
-    tippecc_data:short_data_reference "Watanabe, Shingo et al. (2023). MIROC MIROC-ES2H model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.15664" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """MIROC-ES2H (2018): 
 aerosol: SPRINTARS6.0
 atmos: CCSR AGCM (T85; 256 x 128 longitude/latitude; 81 levels; top level 0.004 hPa)
@@ -1040,34 +1178,26 @@ ocnBgchem: OECO ver.2.0; NPZD-type with C/N/P/Fe/O cycles
 seaIce: COCO4.9""" ;
     tippecc_data:source_id "MIROC-ES2H" ;
     tippecc_data:source_type "AOGCM AER CHEM BGC" ;
-    tippecc_data:standard_name "precipitation_amount" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(06 November 2018) MD5:e67849c1ce7db8b463964f0e90cf70a5" ;
-    tippecc_data:time_calendar "gregorian" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "MIROC-ES2H output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/2cd53839-82ac-47fc-a44a-efdca9a20969" ;
-    tippecc_data:unit "mm" ;
-    tippecc_data:units "mm" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p4f2" ;
     tippecc_data:variant_label "r1i1p4f2" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Convert_pr_to_mm_1950 ;
-            prov:atTime "2025-03-04T20:05:34-01:00"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2025-03-04T20:05:34-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr_1850_2100 .
 
 tippecc_data:pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_456 ;
-            prov:atTime "2025-02-12T14:44:51"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2025-02-12T14:44:51"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18500101-18501231,
         tippecc_data:pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18510101-18511231,
@@ -1249,57 +1379,80 @@ tippecc_data:TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100__yearsum a prov:En
     tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-03-04 20:07:40 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.3.2" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
     tippecc_data:creation_date "2023-08-09T12:36:15Z" ;
     tippecc_data:data_specs_version "01.00.28" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.15664" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "10550124"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-03-04 20:07:40 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5601" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Watanabe, Shingo et al. (2021). MIROC MIROC-ES2H model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5601" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.15664" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Watanabe, Shingo et al. (2023). MIROC MIROC-ES2H model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.15664" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "10550124"^^xsd:int ;
+    tippecc_data:file.frequency "year" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "3462.6738315967664" ;
+    tippecc_data:file.global_min "10.959313832437727" ;
+    tippecc_data:file.global_model "MIROC-ES2H" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-03-04 20:07:40 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "251"^^xsd:int ;
+    tippecc_data:file.num_years "251"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_amount" ;
+    tippecc_data:file.time_calendar "gregorian" ;
+    tippecc_data:file.time_coverage_end "2100-01-01 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "mm" ;
+    tippecc_data:file.variant "r1i1p4f2" ;
     tippecc_data:frequency "year" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC-ES2H.historical.none.r1i1p4f2" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "3462.6738315967664" ;
-    tippecc_data:global_min "10.959313832437727" ;
-    tippecc_data:global_model "MIROC-ES2H" ;
     tippecc_data:grid "native atmosphere T85 Gaussian grid" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2023-08-09T12:36:15Z altered by CMOR: Converted units from 'kg/m**2/s' to 'kg m-2 s-1'. 2023-08-09T12:36:15Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2023-08-09T12:36:15Z altered by CMOR: Inverted axis: lat." ;
-    tippecc_data:indicator "yes" ;
+    tippecc_data:history """Tue Mar 04 19:07:24 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100__yearsum.nc
+Wed Feb 19 15:41:43 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_MIROC-ES2H_r1i1p4f2_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain_Feb25/TIPPECC_MIROC-ES2H_pr_day_r1i1p1f1_1850_2100.nc
+Fri Feb 14 11:08:04 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/pr/05deg_pr_day_MIROC-ES2H_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_MIROC-ES2H_r1i1p1f1_1850_2100.nc
+Wed Feb 12 14:46:15 2025: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc
+Wed Feb 12 14:44:51 2025: cdo mergetime pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18500101-18501231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18510101-18511231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18520101-18521231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18530101-18531231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18540101-18541231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18550101-18551231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18560101-18561231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18570101-18571231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18580101-18581231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18590101-18591231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18600101-18601231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18610101-18611231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18620101-18621231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18630101-18631231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18640101-18641231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18650101-18651231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18660101-18661231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18670101-18671231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18680101-18681231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18690101-18691231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18700101-18701231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18710101-18711231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18720101-18721231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18730101-18731231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18740101-18741231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18750101-18751231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18760101-18761231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18770101-18771231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18780101-18781231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18790101-18791231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18800101-18801231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18810101-18811231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18820101-18821231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18830101-18831231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18840101-18841231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18850101-18851231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18860101-18861231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18870101-18871231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18880101-18881231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18890101-18891231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18900101-18901231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18910101-18911231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18920101-18921231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18930101-18931231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18940101-18941231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18950101-18951231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18960101-18961231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18970101-18971231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18980101-18981231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_18990101-18991231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19000101-19001231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19010101-19011231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19020101-19021231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19030101-19031231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19040101-19041231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19050101-19051231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19060101-19061231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19070101-19071231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19080101-19081231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19090101-19091231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19100101-19101231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19110101-19111231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19120101-19121231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19130101-19131231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19140101-19141231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19150101-19151231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19160101-19161231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19170101-19171231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19180101-19181231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19190101-19191231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19200101-19201231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19210101-19211231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19220101-19221231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19230101-19231231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19240101-19241231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19250101-19251231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19260101-19261231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19270101-19271231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19280101-19281231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19290101-19291231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19300101-19301231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19310101-19311231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19320101-19321231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19330101-19331231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19340101-19341231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19350101-19351231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19360101-19361231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19370101-19371231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19380101-19381231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19390101-19391231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19400101-19401231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19410101-19411231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19420101-19421231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19430101-19431231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19440101-19441231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19450101-19451231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19460101-19461231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19470101-19471231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19480101-19481231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19490101-19491231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19500101-19501231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19510101-19511231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19520101-19521231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19530101-19531231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19540101-19541231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19550101-19551231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19560101-19561231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19570101-19571231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19580101-19581231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19590101-19591231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19600101-19601231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19610101-19611231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19620101-19621231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19630101-19631231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19640101-19641231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19650101-19651231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19660101-19661231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19670101-19671231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19680101-19681231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19690101-19691231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19700101-19701231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19710101-19711231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19720101-19721231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19730101-19731231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19740101-19741231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19750101-19751231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19760101-19761231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19770101-19771231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19780101-19781231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19790101-19791231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19800101-19801231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19810101-19811231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19820101-19821231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19830101-19831231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19840101-19841231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19850101-19851231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19860101-19861231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19870101-19871231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19880101-19881231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19890101-19891231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19900101-19901231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19910101-19911231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19920101-19921231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19930101-19931231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19940101-19941231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19950101-19951231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19960101-19961231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19970101-19971231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19980101-19981231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_19990101-19991231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20000101-20001231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20010101-20011231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20020101-20021231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20030101-20031231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20040101-20041231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20050101-20051231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20060101-20061231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20070101-20071231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20080101-20081231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20090101-20091231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20100101-20101231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20110101-20111231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20120101-20121231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20130101-20131231.nc pr_day_MIROC-ES2H_historical_r1i1p4f2_gn_20140101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014.nc
+2023-08-09T12:36:15Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.""" ;
     tippecc_data:institution "JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)" ;
     tippecc_data:institution_id "MIROC" ;
-    tippecc_data:last_modification_time "2025-03-04 20:07:40 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by MIROC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "251"^^xsd:int ;
-    tippecc_data:num_years "251"^^xsd:int ;
-    tippecc_data:original_name "PRCP" ;
-    tippecc_data:original_units "kg/m**2/s" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "MIROC-ES2H" ;
     tippecc_data:parent_time_units "days since 1850-1-1" ;
     tippecc_data:parent_variant_label "r1i1p4f2" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.history "2023-08-09T12:36:15Z altered by CMOR: Converted units from 'kg/m**2/s' to 'kg m-2 s-1'. 2023-08-09T12:36:15Z altered by CMOR: replaced missing value flag (-999) with standard missing value (1e+20). 2023-08-09T12:36:15Z altered by CMOR: Inverted axis: lat." ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "PRCP" ;
+    tippecc_data:pr.original_units "kg/m**2/s" ;
+    tippecc_data:pr.standard_name "precipitation_amount" ;
+    tippecc_data:pr.units "mm" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
-    tippecc_data:short_data_reference "Watanabe, Shingo et al. (2023). MIROC MIROC-ES2H model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.15664" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """MIROC-ES2H (2018): 
 aerosol: SPRINTARS6.0
 atmos: CCSR AGCM (T85; 256 x 128 longitude/latitude; 81 levels; top level 0.004 hPa)
@@ -1311,31 +1464,26 @@ ocnBgchem: OECO ver.2.0; NPZD-type with C/N/P/Fe/O cycles
 seaIce: COCO4.9""" ;
     tippecc_data:source_id "MIROC-ES2H" ;
     tippecc_data:source_type "AOGCM AER CHEM BGC" ;
-    tippecc_data:standard_name "precipitation_amount" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(06 November 2018) MD5:e67849c1ce7db8b463964f0e90cf70a5" ;
-    tippecc_data:time_calendar "gregorian" ;
-    tippecc_data:time_coverage_end "2100-01-01 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "MIROC-ES2H output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/2cd53839-82ac-47fc-a44a-efdca9a20969" ;
-    tippecc_data:unit "mm" ;
-    tippecc_data:units "mm" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p4f2" ;
     tippecc_data:variant_label "r1i1p4f2" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Calc_year_sum_1956 ;
-            prov:atTime "2025-03-04T20:07:40-01:00"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2025-03-04T20:07:40-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_MIROC-ES2H_day_r1i1p4f2_pr__mm_1850_2100 .
 
 software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
     sdo:softwareVersion "1.9.3" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareApplication" .
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 

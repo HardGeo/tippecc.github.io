@@ -35,8 +35,15 @@ exe:Convert_pr_to_mm_2732 a prov:Activity ;
     prov:params "{'unit': 'mm'}" ;
     prov:startedAtTime "2025-01-24T21:58:22-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1_pr_1850_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__XCLIM_0_49 ;
+    prov:wasAssociatedWith software:FUNCTION__XCLIM_CONVERT_UNITS,
+        software:SOFTWARE__XCLIM_0_49 ;
     prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Rename/Metadata_2731> .
+
+orgs:ORG__WITS a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "University of the Witwatersrand" ;
+    sdo:name "University of the Witwatersrand" ;
+    wd:P6782 "https://ror.org/03rp50x72" .
 
 people:PERSON__ZANDER_FRANZISKA a prov:Agent,
         "prov:Person" ;
@@ -47,12 +54,45 @@ people:PERSON__ZANDER_FRANZISKA a prov:Agent,
     foaf:familyName "Zander" ;
     foaf:givenName "Franziska" .
 
-software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
-    sdo:softwareVersion "0.49.0" ;
-    sdo:targetProduct software:SOFTWARE__XCLIM ;
-    sdo:type "sdo:SoftwareApplication" .
+software:FUNCTION__CDO_REMAPBIL a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
-<http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> a prov:Agent .
+software:FUNCTION__CDO_SELLONLATBOX a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_SELYEAR a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__XCLIM_CONVERT_UNITS a prov:Agent ;
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
+
+software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
 
 tippecc_data:05deg_pr_day_TaiESM1_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
 
@@ -100,7 +140,8 @@ exe:Merge_datasets_2728 a prov:Activity ;
     prov:startedAtTime "2025-01-17T18:27:47"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_pr_day_TaiESM1_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_TaiESM1_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_44 .
 
 exe:Merge_datasets_464 a prov:Activity ;
@@ -126,7 +167,8 @@ exe:Merge_datasets_464 a prov:Activity ;
         tippecc_data:pr_day_TaiESM1_historical_r1i1p1f1_gn_19900101-19991231,
         tippecc_data:pr_day_TaiESM1_historical_r1i1p1f1_gn_20000101-20091231,
         tippecc_data:pr_day_TaiESM1_historical_r1i1p1f1_gn_20100101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Remap_bilinear_44 a prov:Activity ;
     rdfs:label "Remap bilinear" ;
@@ -136,7 +178,8 @@ exe:Remap_bilinear_44 a prov:Activity ;
     prov:startedAtTime "2024-12-19T10:27:25"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:pr_day_TaiESM1_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_464 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_2731> a prov:Activity ;
@@ -144,7 +187,6 @@ exe:Remap_bilinear_44 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T12:16:13-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_2730 .
 
 exe:Slice_TIPPECC_area_2730 a prov:Activity ;
@@ -153,7 +195,8 @@ exe:Slice_TIPPECC_area_2730 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T13:15:24"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_2729 .
 
 exe:Slice_years_2729 a prov:Activity ;
@@ -162,7 +205,8 @@ exe:Slice_years_2729 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T13:12:26"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_2728 .
 
 orgs:ORG__FSU a prov:Agent,
@@ -171,67 +215,81 @@ orgs:ORG__FSU a prov:Agent,
     sdo:name "Friedrich Schiller University of Jena" ;
     wd:P6782 "https://ror.org/05qpz1x62" .
 
-orgs:ORG__WITS a prov:Agent,
-        "prov:Organization" ;
-    rdfs:label "University of the Witwatersrand" ;
-    sdo:name "University of the Witwatersrand" ;
-    wd:P6782 "https://ror.org/03rp50x72" .
+people:PERSON__JONATHAN_PADAVATAN a prov:Agent ;
+    prov:actedOnBehalfOf orgs:ORG__WITS .
 
-people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
-        "prov:Person" ;
-    rdfs:label "Jonathan Padavatan" ;
-    sdo:affiliation orgs:ORG__WITS ;
-    prov:actedOnBehalfOf orgs:ORG__WITS ;
-    foaf:familyName "Padavatan" ;
-    foaf:givenName "Jonathan" .
+software:FUNCTION__CDO_MERGE a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1_pr_1850_2100 a prov:Entity ;
     tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:11 CET+0100" ;
     tippecc_data:branch_method "Hybrid-restart from year 0671-01-01 of piControl" ;
     tippecc_data:branch_time 0e+00 ;
     tippecc_data:branch_time_in_child 1.7155e+05 ;
     tippecc_data:branch_time_in_parent 1.7155e+05 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.5.0" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
     tippecc_data:contact "Dr. Wei-Liang Lee (leelupin@gate.sinica.edu.tw)" ;
     tippecc_data:creation_date "2020-02-05T02:16:57Z" ;
     tippecc_data:data_specs_version "01.00.31" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.9823" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1920183845"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:11 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.9755" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Lee, Wei-Liang; Liang, Hsin-Chien (2020). AS-RCEC TaiESM1.0 model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.9755" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.9823" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Lee, Wei-Liang; Liang, Hsin-Chien (2020). AS-RCEC TaiESM1.0 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.9823" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1920183845"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "0.007092388" ;
+    tippecc_data:file.global_min "-5.117422e-17" ;
+    tippecc_data:file.global_model "TaiESM1" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 12:16:13 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_flux" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 0001-01-01 00:00:00" ;
+    tippecc_data:file.unit "kg m-2 s-1" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.AS-RCEC.TaiESM1.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "0.007092388" ;
-    tippecc_data:global_min "-5.117422e-17" ;
-    tippecc_data:global_model "TaiESM1" ;
     tippecc_data:grid "finite-volume grid with 0.9x1.25 degree lat/lon resolution" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2020-02-05T02:16:57Z altered by CMOR: Converted type from 'd' to 'f'." ;
-    tippecc_data:indicator "no" ;
+    tippecc_data:history """Tue Jan 21 13:15:24 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_TaiESM1_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_TaiESM1_pr_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 13:12:26 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_TaiESM1_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_TaiESM1_r1i1p1f1_1850_2100.nc
+Fri Jan 17 18:27:47 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_TaiESM1_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/pr/05deg_pr_day_TaiESM1_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_TaiESM1_r1i1p1f1_1850_2100.nc
+Thu Dec 19 10:27:25 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_TaiESM1_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_TaiESM1_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 10:21:56 2024: cdo mergetime pr_day_TaiESM1_historical_r1i1p1f1_gn_18500101-18591231.nc pr_day_TaiESM1_historical_r1i1p1f1_gn_18600101-18691231.nc pr_day_TaiESM1_historical_r1i1p1f1_gn_18700101-18791231.nc pr_day_TaiESM1_historical_r1i1p1f1_gn_18800101-18891231.nc pr_day_TaiESM1_historical_r1i1p1f1_gn_18900101-18991231.nc pr_day_TaiESM1_historical_r1i1p1f1_gn_19000101-19091231.nc pr_day_TaiESM1_historical_r1i1p1f1_gn_19100101-19191231.nc pr_day_TaiESM1_historical_r1i1p1f1_gn_19200101-19291231.nc pr_day_TaiESM1_historical_r1i1p1f1_gn_19300101-19391231.nc pr_day_TaiESM1_historical_r1i1p1f1_gn_19400101-19491231.nc pr_day_TaiESM1_historical_r1i1p1f1_gn_19500101-19591231.nc pr_day_TaiESM1_historical_r1i1p1f1_gn_19600101-19691231.nc pr_day_TaiESM1_historical_r1i1p1f1_gn_19700101-19791231.nc pr_day_TaiESM1_historical_r1i1p1f1_gn_19800101-19891231.nc pr_day_TaiESM1_historical_r1i1p1f1_gn_19900101-19991231.nc pr_day_TaiESM1_historical_r1i1p1f1_gn_20000101-20091231.nc pr_day_TaiESM1_historical_r1i1p1f1_gn_20100101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_TaiESM1_historical_r1i1p1f1_1850_2014.nc
+2020-02-05T02:16:57Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.""" ;
     tippecc_data:institution "Research Center for Environmental Changes, Academia Sinica, Nankang, Taipei 11529, Taiwan" ;
     tippecc_data:institution_id "AS-RCEC" ;
-    tippecc_data:last_modification_time "2025-01-21 12:16:13 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by NCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
     tippecc_data:model_id "TaiESM1" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
-    tippecc_data:original_name "PRECT" ;
+    tippecc_data:nominal_resolution "100 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -239,12 +297,18 @@ tippecc_data:TIPPECC_TaiESM1_day_r1i1p1f1_pr_1850_2100 a prov:Entity ;
     tippecc_data:parent_sub_experiment_id "none" ;
     tippecc_data:parent_time_units "days since 1850-01-01" ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.history "2020-02-05T02:16:57Z altered by CMOR: Converted type from 'd' to 'f'." ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "PRECT" ;
+    tippecc_data:pr.standard_name "precipitation_flux" ;
+    tippecc_data:pr.units "kg m-2 s-1" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
     tippecc_data:references "http://cclics.rcec.sinica.edu.tw/index.php/taiesm/outline.html" ;
     tippecc_data:run_variant "N/A" ;
-    tippecc_data:short_data_reference "Lee, Wei-Liang; Liang, Hsin-Chien (2020). AS-RCEC TaiESM1.0 model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.9823" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """TaiESM 1.0 (2018): 
 aerosol: SNAP (same grid as atmos)
 atmos: TaiAM1 (0.9x1.25 degree; 288 x 192 longitude/latitude; 30 levels; top level ~2 hPa)
@@ -256,56 +320,48 @@ ocnBgchem: none
 seaIce: CICE4""" ;
     tippecc_data:source_id "TaiESM1" ;
     tippecc_data:source_type "AOGCM AER BGC" ;
-    tippecc_data:standard_name "precipitation_flux" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(24 July 2019) MD5:0bb394a356ef9d214d027f1aca45853e" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 0001-01-01 00:00:00" ;
     tippecc_data:title "TaiESM1 output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/0f96fcb9-47d2-46a2-a376-500192bec36a" ;
-    tippecc_data:unit "kg m-2 s-1" ;
-    tippecc_data:units "kg m-2 s-1" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2731> ;
-            prov:atTime "2025-01-21T12:16:13-01:00"^^xsd:dateTime ],
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
         [ a prov:Generation ;
-            prov:activity exe:Slice_TIPPECC_area_2730 ;
-            prov:atTime "2025-01-21T13:15:24"^^xsd:dateTime ],
+            prov:activity exe:Merge_datasets_2728 ;
+            prov:atTime "2025-01-17T18:27:47"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_2729 ;
             prov:atTime "2025-01-21T13:12:26"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_2728 ;
-            prov:atTime "2025-01-17T18:27:47"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2731> ;
+            prov:atTime "2025-01-21T12:16:13-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_2730 ;
+            prov:atTime "2025-01-21T13:15:24"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_pr_day_TaiESM1_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_TaiESM1_ssp585_r1i1p1f1_2015_2100 .
 
 tippecc_data:05deg_pr_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_44 ;
-            prov:atTime "2024-12-19T10:27:25"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T10:27:25"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:pr_day_TaiESM1_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:pr_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_464 ;
-            prov:atTime "2024-12-19T10:21:56"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T10:21:56"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:pr_day_TaiESM1_historical_r1i1p1f1_gn_18500101-18591231,
         tippecc_data:pr_day_TaiESM1_historical_r1i1p1f1_gn_18600101-18691231,
@@ -326,7 +382,10 @@ tippecc_data:pr_day_TaiESM1_historical_r1i1p1f1_1850_2014 a prov:Entity ;
         tippecc_data:pr_day_TaiESM1_historical_r1i1p1f1_gn_20100101-20141231 .
 
 software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
     sdo:softwareVersion "1.9.3" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareApplication" .
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 

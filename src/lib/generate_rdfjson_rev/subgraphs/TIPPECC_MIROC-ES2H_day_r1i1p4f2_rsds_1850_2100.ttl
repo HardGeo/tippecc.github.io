@@ -1,5 +1,4 @@
 @prefix exe: <http://www.provbook.org/tippecc/exe/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix orgs: <http://www.provbook.org/tippecc/orgs/> .
 @prefix people: <http://www.provbook.org/tippecc/people/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -31,7 +30,6 @@ tippecc_data:COLLECTION__TIPPECC a prov:Collection,
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-02-19T17:42:41-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1964 .
 
 tippecc_data:05deg_rsds_day_MIROC-ES2H_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
@@ -44,7 +42,8 @@ exe:Merge_datasets_1963 a prov:Activity ;
     prov:startedAtTime "2025-02-14T11:26:41"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_rsds_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rsds_day_MIROC-ES2H_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_105 .
 
 exe:Slice_TIPPECC_area_1964 a prov:Activity ;
@@ -53,10 +52,31 @@ exe:Slice_TIPPECC_area_1964 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-02-19T18:39:46"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_1963 .
 
-<http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> a prov:Agent .
+orgs:ORG__WITS a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "University of the Witwatersrand" ;
+    sdo:name "University of the Witwatersrand" ;
+    wd:P6782 "https://ror.org/03rp50x72" .
+
+software:FUNCTION__CDO_REMAPBIL a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_SELLONLATBOX a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 tippecc_data:africa05.txt a prov:Entity .
 
@@ -561,7 +581,8 @@ exe:Merge_datasets_525 a prov:Activity ;
         tippecc_data:rsds_day_MIROC-ES2H_historical_r1i1p4f2_gn_20120101-20121231,
         tippecc_data:rsds_day_MIROC-ES2H_historical_r1i1p4f2_gn_20130101-20131231,
         tippecc_data:rsds_day_MIROC-ES2H_historical_r1i1p4f2_gn_20140101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Remap_bilinear_105 a prov:Activity ;
     rdfs:label "Remap bilinear" ;
@@ -571,22 +592,20 @@ exe:Remap_bilinear_105 a prov:Activity ;
     prov:startedAtTime "2025-02-12T14:59:03"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:rsds_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_525 .
 
-orgs:ORG__WITS a prov:Agent,
-        "prov:Organization" ;
-    rdfs:label "University of the Witwatersrand" ;
-    sdo:name "University of the Witwatersrand" ;
-    wd:P6782 "https://ror.org/03rp50x72" .
+people:PERSON__JONATHAN_PADAVATAN a prov:Agent ;
+    prov:actedOnBehalfOf orgs:ORG__WITS .
 
-people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
-        "prov:Person" ;
-    rdfs:label "Jonathan Padavatan" ;
-    sdo:affiliation orgs:ORG__WITS ;
-    prov:actedOnBehalfOf orgs:ORG__WITS ;
-    foaf:familyName "Padavatan" ;
-    foaf:givenName "Jonathan" .
+software:FUNCTION__CDO_MERGE a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 tippecc_data:05deg_rsds_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014 a prov:Entity ;
     prov:qualifiedGeneration [ ],
@@ -770,7 +789,10 @@ tippecc_data:rsds_day_MIROC-ES2H_historical_r1i1p1f1_1850_2014 a prov:Entity ;
         tippecc_data:rsds_day_MIROC-ES2H_historical_r1i1p4f2_gn_20140101-20141231 .
 
 software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
     sdo:softwareVersion "1.9.3" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareApplication" .
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 

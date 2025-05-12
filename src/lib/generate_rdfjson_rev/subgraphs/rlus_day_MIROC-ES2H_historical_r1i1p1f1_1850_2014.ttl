@@ -177,7 +177,8 @@ exe:Merge_datasets_502 a prov:Activity ;
         tippecc_data:rlus_day_MIROC-ES2H_historical_r1i1p4f2_gn_20120101-20121231,
         tippecc_data:rlus_day_MIROC-ES2H_historical_r1i1p4f2_gn_20130101-20131231,
         tippecc_data:rlus_day_MIROC-ES2H_historical_r1i1p4f2_gn_20140101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 tippecc_data:rlus_day_MIROC-ES2H_historical_r1i1p4f2_gn_18500101-18501231 a prov:Entity .
 
@@ -509,8 +510,19 @@ tippecc_data:rlus_day_MIROC-ES2H_historical_r1i1p4f2_gn_20130101-20131231 a prov
 
 tippecc_data:rlus_day_MIROC-ES2H_historical_r1i1p4f2_gn_20140101-20141231 a prov:Entity .
 
-software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+software:FUNCTION__CDO_MERGE a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
     sdo:softwareVersion "1.9.3" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareApplication" .
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 

@@ -90,7 +90,8 @@ exe:Calc_mean_1934 a prov:Activity ;
     prov:function "FUNCTION__CDO_TIMMEAN" ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-03-12T22:18:23-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_TIMMEAN,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_ref._period_1933 .
 
 exe:Slice_ref._period_1933 a prov:Activity ;
@@ -100,8 +101,55 @@ exe:Slice_ref._period_1933 a prov:Activity ;
     prov:params "{'start_year': '1851', 'end_year': '1900'}" ;
     prov:startedAtTime "2025-03-12T22:18:23-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget__mm_1850_2100__sum__OND ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Calc_season_sum_1937 .
+
+orgs:ORG__WITS a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "University of the Witwatersrand" ;
+    sdo:name "University of the Witwatersrand" ;
+    wd:P6782 "https://ror.org/03rp50x72" .
+
+software:FUNCTION__CDO_TIMMEAN a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_YEARSUM a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__XCLIM_EVAPOTRANSPIRATION a prov:Agent ;
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
+
+software:FUNCTION__XCLIM_RATE2AMOUNT a prov:Agent ;
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
+
+software:FUNCTION__XCLIM_WATER_BUDGET a prov:Agent ;
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
 
 tippecc_data:05deg_hurs_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
 
@@ -153,7 +201,8 @@ exe:Calc_pot._ET_1903 a prov:Activity ;
         tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_sfcWind_1850_2100,
         tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_tasmax_1850_2100,
         tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_tasmin_1850_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__XCLIM_0_49 ;
+    prov:wasAssociatedWith software:FUNCTION__XCLIM_EVAPOTRANSPIRATION,
+        software:SOFTWARE__XCLIM_0_49 ;
     prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Rename/Metadata_1847>,
         <http://www.provbook.org/tippecc/exe/Rename/Metadata_1862>,
         <http://www.provbook.org/tippecc/exe/Rename/Metadata_1866>,
@@ -170,7 +219,8 @@ exe:Calc_season_sum_1937 a prov:Activity ;
     prov:params "{'months': '10,11,12'}" ;
     prov:startedAtTime "2025-03-12T22:18:17-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget__mm_1850_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_YEARSUM,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Convert_water_budget_to_mm/day_1912> .
 
 exe:Calc_water_budget_1911 a prov:Activity ;
@@ -181,7 +231,8 @@ exe:Calc_water_budget_1911 a prov:Activity ;
     prov:startedAtTime "2025-03-12T22:10:52-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100,
         tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_pr_1850_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__XCLIM_0_49 ;
+    prov:wasAssociatedWith software:FUNCTION__XCLIM_WATER_BUDGET,
+        software:SOFTWARE__XCLIM_0_49 ;
     prov:wasInformedBy exe:Calc_pot._ET_1903,
         <http://www.provbook.org/tippecc/exe/Rename/Metadata_1851> .
 
@@ -192,7 +243,8 @@ exe:Calc_water_budget_1911 a prov:Activity ;
     prov:params "{'sampling_rate_from_coord': True}" ;
     prov:startedAtTime "2025-03-12T22:12:12-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget_1850_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__XCLIM_0_49 ;
+    prov:wasAssociatedWith software:FUNCTION__XCLIM_RATE2AMOUNT,
+        software:SOFTWARE__XCLIM_0_49 ;
     prov:wasInformedBy exe:Calc_water_budget_1911 .
 
 exe:Merge_datasets_1844 a prov:Activity ;
@@ -203,7 +255,8 @@ exe:Merge_datasets_1844 a prov:Activity ;
     prov:startedAtTime "2025-01-17T17:04:52"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_hurs_day_KIOST-ESM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_hurs_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_12 .
 
 exe:Merge_datasets_1848 a prov:Activity ;
@@ -214,7 +267,8 @@ exe:Merge_datasets_1848 a prov:Activity ;
     prov:startedAtTime "2025-01-17T18:08:48"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_pr_day_KIOST-ESM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_35 .
 
 exe:Merge_datasets_1859 a prov:Activity ;
@@ -225,7 +279,8 @@ exe:Merge_datasets_1859 a prov:Activity ;
     prov:startedAtTime "2025-01-17T19:13:35"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_rlds_day_KIOST-ESM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rlds_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_58 .
 
 exe:Merge_datasets_1863 a prov:Activity ;
@@ -236,7 +291,8 @@ exe:Merge_datasets_1863 a prov:Activity ;
     prov:startedAtTime "2025-01-17T20:20:37"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_rlus_day_KIOST-ESM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rlus_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_81 .
 
 exe:Merge_datasets_1867 a prov:Activity ;
@@ -247,7 +303,8 @@ exe:Merge_datasets_1867 a prov:Activity ;
     prov:startedAtTime "2025-01-17T21:27:05"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_rsds_day_KIOST-ESM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rsds_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_104 .
 
 exe:Merge_datasets_1871 a prov:Activity ;
@@ -258,7 +315,8 @@ exe:Merge_datasets_1871 a prov:Activity ;
     prov:startedAtTime "2025-01-17T22:30:12"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_rsus_day_KIOST-ESM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rsus_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_127 .
 
 exe:Merge_datasets_1875 a prov:Activity ;
@@ -269,7 +327,8 @@ exe:Merge_datasets_1875 a prov:Activity ;
     prov:startedAtTime "2025-01-17T23:33:24"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_sfcWind_day_KIOST-ESM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_sfcWind_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_150 .
 
 exe:Merge_datasets_1879 a prov:Activity ;
@@ -280,7 +339,8 @@ exe:Merge_datasets_1879 a prov:Activity ;
     prov:startedAtTime "2025-01-18T01:43:03"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_tasmax_day_KIOST-ESM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_tasmax_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_173 .
 
 exe:Merge_datasets_1883 a prov:Activity ;
@@ -291,7 +351,8 @@ exe:Merge_datasets_1883 a prov:Activity ;
     prov:startedAtTime "2025-01-18T02:52:17"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_tasmin_day_KIOST-ESM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_tasmin_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_196 .
 
 exe:Merge_datasets_384 a prov:Activity ;
@@ -301,7 +362,8 @@ exe:Merge_datasets_384 a prov:Activity ;
     prov:params "N/A" ;
     prov:startedAtTime "2024-12-19T08:37:42"^^xsd:dateTime ;
     prov:used tippecc_data:hurs_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Merge_datasets_455 a prov:Activity ;
     rdfs:label "Merge datasets" ;
@@ -310,7 +372,8 @@ exe:Merge_datasets_455 a prov:Activity ;
     prov:params "N/A" ;
     prov:startedAtTime "2024-12-19T09:51:37"^^xsd:dateTime ;
     prov:used tippecc_data:pr_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Merge_datasets_478 a prov:Activity ;
     rdfs:label "Merge datasets" ;
@@ -319,7 +382,8 @@ exe:Merge_datasets_478 a prov:Activity ;
     prov:params "N/A" ;
     prov:startedAtTime "2024-12-19T11:08:49"^^xsd:dateTime ;
     prov:used tippecc_data:rlds_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Merge_datasets_501 a prov:Activity ;
     rdfs:label "Merge datasets" ;
@@ -328,7 +392,8 @@ exe:Merge_datasets_501 a prov:Activity ;
     prov:params "N/A" ;
     prov:startedAtTime "2024-12-19T12:21:22"^^xsd:dateTime ;
     prov:used tippecc_data:rlus_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Merge_datasets_524 a prov:Activity ;
     rdfs:label "Merge datasets" ;
@@ -337,7 +402,8 @@ exe:Merge_datasets_524 a prov:Activity ;
     prov:params "N/A" ;
     prov:startedAtTime "2024-12-19T13:32:35"^^xsd:dateTime ;
     prov:used tippecc_data:rsds_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Merge_datasets_547 a prov:Activity ;
     rdfs:label "Merge datasets" ;
@@ -346,7 +412,8 @@ exe:Merge_datasets_547 a prov:Activity ;
     prov:params "N/A" ;
     prov:startedAtTime "2024-12-19T14:47:36"^^xsd:dateTime ;
     prov:used tippecc_data:rsus_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Merge_datasets_570 a prov:Activity ;
     rdfs:label "Merge datasets" ;
@@ -355,7 +422,8 @@ exe:Merge_datasets_570 a prov:Activity ;
     prov:params "N/A" ;
     prov:startedAtTime "2024-12-19T16:01:48"^^xsd:dateTime ;
     prov:used tippecc_data:sfcWind_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Merge_datasets_593 a prov:Activity ;
     rdfs:label "Merge datasets" ;
@@ -364,7 +432,8 @@ exe:Merge_datasets_593 a prov:Activity ;
     prov:params "N/A" ;
     prov:startedAtTime "2024-12-19T18:24:13"^^xsd:dateTime ;
     prov:used tippecc_data:tasmax_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Merge_datasets_616 a prov:Activity ;
     rdfs:label "Merge datasets" ;
@@ -373,7 +442,8 @@ exe:Merge_datasets_616 a prov:Activity ;
     prov:params "N/A" ;
     prov:startedAtTime "2024-12-19T19:38:01"^^xsd:dateTime ;
     prov:used tippecc_data:tasmin_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Remap_bilinear_104 a prov:Activity ;
     rdfs:label "Remap bilinear" ;
@@ -383,7 +453,8 @@ exe:Remap_bilinear_104 a prov:Activity ;
     prov:startedAtTime "2024-12-19T13:32:55"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:rsds_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_524 .
 
 exe:Remap_bilinear_12 a prov:Activity ;
@@ -394,7 +465,8 @@ exe:Remap_bilinear_12 a prov:Activity ;
     prov:startedAtTime "2024-12-19T08:38:04"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:hurs_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_384 .
 
 exe:Remap_bilinear_127 a prov:Activity ;
@@ -405,7 +477,8 @@ exe:Remap_bilinear_127 a prov:Activity ;
     prov:startedAtTime "2024-12-19T14:47:57"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:rsus_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_547 .
 
 exe:Remap_bilinear_150 a prov:Activity ;
@@ -416,7 +489,8 @@ exe:Remap_bilinear_150 a prov:Activity ;
     prov:startedAtTime "2024-12-19T16:02:10"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:sfcWind_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_570 .
 
 exe:Remap_bilinear_173 a prov:Activity ;
@@ -427,7 +501,8 @@ exe:Remap_bilinear_173 a prov:Activity ;
     prov:startedAtTime "2024-12-19T18:24:35"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:tasmax_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_593 .
 
 exe:Remap_bilinear_196 a prov:Activity ;
@@ -438,7 +513,8 @@ exe:Remap_bilinear_196 a prov:Activity ;
     prov:startedAtTime "2024-12-19T19:38:23"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:tasmin_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_616 .
 
 exe:Remap_bilinear_35 a prov:Activity ;
@@ -449,7 +525,8 @@ exe:Remap_bilinear_35 a prov:Activity ;
     prov:startedAtTime "2024-12-19T09:51:58"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:pr_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_455 .
 
 exe:Remap_bilinear_58 a prov:Activity ;
@@ -460,7 +537,8 @@ exe:Remap_bilinear_58 a prov:Activity ;
     prov:startedAtTime "2024-12-19T11:09:10"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:rlds_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_478 .
 
 exe:Remap_bilinear_81 a prov:Activity ;
@@ -471,7 +549,8 @@ exe:Remap_bilinear_81 a prov:Activity ;
     prov:startedAtTime "2024-12-19T12:21:43"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:rlus_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_501 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1847> a prov:Activity ;
@@ -479,7 +558,6 @@ exe:Remap_bilinear_81 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T10:28:56-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1846 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1851> a prov:Activity ;
@@ -487,7 +565,6 @@ exe:Remap_bilinear_81 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-02-04T23:10:13-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1850 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1862> a prov:Activity ;
@@ -495,7 +572,6 @@ exe:Remap_bilinear_81 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T13:08:29-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1861 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1866> a prov:Activity ;
@@ -503,7 +579,6 @@ exe:Remap_bilinear_81 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T14:29:07-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1865 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1870> a prov:Activity ;
@@ -511,7 +586,6 @@ exe:Remap_bilinear_81 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T15:48:41-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1869 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1874> a prov:Activity ;
@@ -519,7 +593,6 @@ exe:Remap_bilinear_81 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T17:04:25-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1873 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1878> a prov:Activity ;
@@ -527,7 +600,6 @@ exe:Remap_bilinear_81 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T18:21:20-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1877 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1882> a prov:Activity ;
@@ -535,7 +607,6 @@ exe:Remap_bilinear_81 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T21:00:28-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1881 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1886> a prov:Activity ;
@@ -543,7 +614,6 @@ exe:Remap_bilinear_81 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-02-04T23:12:14-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1885 .
 
 exe:Slice_TIPPECC_area_1846 a prov:Activity ;
@@ -552,7 +622,8 @@ exe:Slice_TIPPECC_area_1846 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T11:28:22"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_1845 .
 
 exe:Slice_TIPPECC_area_1850 a prov:Activity ;
@@ -561,7 +632,8 @@ exe:Slice_TIPPECC_area_1850 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T12:48:26"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_1849 .
 
 exe:Slice_TIPPECC_area_1861 a prov:Activity ;
@@ -570,7 +642,8 @@ exe:Slice_TIPPECC_area_1861 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T14:07:55"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_1860 .
 
 exe:Slice_TIPPECC_area_1865 a prov:Activity ;
@@ -579,7 +652,8 @@ exe:Slice_TIPPECC_area_1865 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T15:28:35"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_1864 .
 
 exe:Slice_TIPPECC_area_1869 a prov:Activity ;
@@ -588,7 +662,8 @@ exe:Slice_TIPPECC_area_1869 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T16:48:08"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_1868 .
 
 exe:Slice_TIPPECC_area_1873 a prov:Activity ;
@@ -597,7 +672,8 @@ exe:Slice_TIPPECC_area_1873 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T18:03:50"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_1872 .
 
 exe:Slice_TIPPECC_area_1877 a prov:Activity ;
@@ -606,7 +682,8 @@ exe:Slice_TIPPECC_area_1877 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T19:20:47"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_1876 .
 
 exe:Slice_TIPPECC_area_1881 a prov:Activity ;
@@ -615,7 +692,8 @@ exe:Slice_TIPPECC_area_1881 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T21:59:54"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_1880 .
 
 exe:Slice_TIPPECC_area_1885 a prov:Activity ;
@@ -624,7 +702,8 @@ exe:Slice_TIPPECC_area_1885 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T23:22:48"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_1884 .
 
 exe:Slice_years_1845 a prov:Activity ;
@@ -633,7 +712,8 @@ exe:Slice_years_1845 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T11:27:41"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_1844 .
 
 exe:Slice_years_1849 a prov:Activity ;
@@ -642,7 +722,8 @@ exe:Slice_years_1849 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T12:47:47"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_1848 .
 
 exe:Slice_years_1860 a prov:Activity ;
@@ -651,7 +732,8 @@ exe:Slice_years_1860 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T14:07:14"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_1859 .
 
 exe:Slice_years_1864 a prov:Activity ;
@@ -660,7 +742,8 @@ exe:Slice_years_1864 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T15:27:54"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_1863 .
 
 exe:Slice_years_1868 a prov:Activity ;
@@ -669,7 +752,8 @@ exe:Slice_years_1868 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T16:47:28"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_1867 .
 
 exe:Slice_years_1872 a prov:Activity ;
@@ -678,7 +762,8 @@ exe:Slice_years_1872 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T18:03:09"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_1871 .
 
 exe:Slice_years_1876 a prov:Activity ;
@@ -687,7 +772,8 @@ exe:Slice_years_1876 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T19:20:06"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_1875 .
 
 exe:Slice_years_1880 a prov:Activity ;
@@ -696,7 +782,8 @@ exe:Slice_years_1880 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T21:59:12"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_1879 .
 
 exe:Slice_years_1884 a prov:Activity ;
@@ -705,7 +792,8 @@ exe:Slice_years_1884 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T23:22:03"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_1883 .
 
 orgs:ORG__FSU a prov:Agent,
@@ -714,46 +802,93 @@ orgs:ORG__FSU a prov:Agent,
     sdo:name "Friedrich Schiller University of Jena" ;
     wd:P6782 "https://ror.org/05qpz1x62" .
 
-orgs:ORG__WITS a prov:Agent,
-        "prov:Organization" ;
-    rdfs:label "University of the Witwatersrand" ;
-    sdo:name "University of the Witwatersrand" ;
-    wd:P6782 "https://ror.org/03rp50x72" .
-
 tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget__mm_1850_2100__sum__OND a prov:Entity ;
     tippecc_data:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)" ;
     tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-03-12 22:18:17 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 4.85782e+05 ;
-    tippecc_data:cell_methods "pr: area: time: mean evspsblpot: tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean" ;
     tippecc_data:cmor_version "3.5.0" ;
     tippecc_data:contact "YoungHo Kim (yhokim@pknu.ac.kr & yhkimstar@gmail.com)" ;
     tippecc_data:creation_date "2025-03-12T22:12:05Z" ;
     tippecc_data:data_specs_version "01.00.30" ;
-    tippecc_data:description "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget, where the potential evapotranspiration is calculated with the FAO_PM985 method." ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "10445582"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-03-12 22:18:17 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "10445582"^^xsd:int ;
+    tippecc_data:file.frequency "year" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "41842.79873802452" ;
+    tippecc_data:file.global_min "-833.4209760639933" ;
+    tippecc_data:file.global_model "KIOST-ESM" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-03-12 22:18:17 CET+0100" ;
+    tippecc_data:file.long_name "Water budget (\"FAO_PM985\" method)" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "249"^^xsd:int ;
+    tippecc_data:file.num_years "251"^^xsd:int ;
+    tippecc_data:file.short_variable_name "water_budget_from_tas" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-01-01 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "mmday" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "year" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.KIOST.KIOST-ESM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "41842.79873802452" ;
-    tippecc_data:global_min "-833.4209760639933" ;
-    tippecc_data:global_model "KIOST-ESM" ;
     tippecc_data:grid "atmos data regridded from Cubed-sphere (c48) to 94X192" ;
     tippecc_data:grid_label "gr1" ;
-    tippecc_data:history """pr: 
+    tippecc_data:history "Wed Mar 12 21:18:12 2025: cdo -O -s -yearsum -selmon,10,11,12 /data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget__mm_1850_2100__sum__OND.nc" ;
+    tippecc_data:institution "Korea Institute of Ocean Science & Technology, Busan 49111, Republic of Korea" ;
+    tippecc_data:institution_id "KIOST" ;
+    tippecc_data:license "CMIP6 model data produced by Lawrence Livermore KIOST is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "250 km" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "KIOST-ESM" ;
+    tippecc_data:parent_time_units "days since 1850-01-01" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:references "Model described by Pak et al. (Ocean Science Journal, to be submitted)." ;
+    tippecc_data:run_variant "3rd realization" ;
+    tippecc_data:source """KIOST-ESM (2018): 
+aerosol: none
+atmos: GFDL-AM2.0 (cubed sphere (C48); 192 x 96 longitude/latitude; 32 vertical levels; top level 2 hPa)
+atmosChem: Simple carbon aerosol model (emission type)
+land: NCAR-CLM4
+landIce: NCAR-CLM4
+ocean: GFDL-MOM5.0 (tripolar - nominal 1.0 deg; 360 x 200 longitude/latitude; 52 levels; top grid cell 0-2 m; NK mixed layer scheme)
+ocnBgchem: TOPAZ2
+seaIce: GFDL-SIS""" ;
+    tippecc_data:source_id "KIOST-ESM" ;
+    tippecc_data:source_type "AOGCM BGC" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87" ;
+    tippecc_data:title "KIOST-ESM output prepared for CMIP6" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    tippecc_data:water_budget_from_tas.cell_methods "pr: area: time: mean evspsblpot: tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean" ;
+    tippecc_data:water_budget_from_tas.description "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget, where the potential evapotranspiration is calculated with the FAO_PM985 method." ;
+    tippecc_data:water_budget_from_tas.history """pr: 
 evspsblpot: tasmin: 2019-11-04T04:12:56Z altered by CMOR: Treated scalar dimension: 'height'.
 tasmax: 2019-11-04T03:12:08Z altered by CMOR: Treated scalar dimension: 'height'.
 hurs: 2019-11-04T06:12:17Z altered by CMOR: Treated scalar dimension: 'height'.
@@ -764,142 +899,101 @@ rlus:
 sfcWind: 2019-11-04T09:43:08Z altered by CMOR: Treated scalar dimension: 'height'.
 [2025-03-12 22:08:56] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0
 [2025-03-12 22:10:44] water_budget_from_tas: WATER_BUDGET_FROM_TAS(pr=pr, evspsblpot=evspsblpot, method='BR65') - xclim version: 0.49.0""" ;
-    tippecc_data:indicator "yes" ;
-    tippecc_data:institution "Korea Institute of Ocean Science & Technology, Busan 49111, Republic of Korea" ;
-    tippecc_data:institution_id "KIOST" ;
-    tippecc_data:last_modification_time "2025-03-12 22:18:17 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Water budget (\"FAO_PM985\" method)" ;
-    tippecc_data:method "pr - evspsblpot " ;
-    tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "249"^^xsd:int ;
-    tippecc_data:num_years "251"^^xsd:int ;
-    tippecc_data:parent_activity_id "CMIP" ;
-    tippecc_data:parent_experiment_id "piControl" ;
-    tippecc_data:parent_mip_era "CMIP6" ;
-    tippecc_data:parent_source_id "KIOST-ESM" ;
-    tippecc_data:parent_time_units "days since 1850-01-01" ;
-    tippecc_data:parent_variant_label "r1i1p1f1" ;
-    tippecc_data:product "model-output" ;
-    tippecc_data:realm "atmos" ;
-    tippecc_data:references "Model described by Pak et al. (Ocean Science Journal, to be submitted)." ;
-    tippecc_data:run_variant "3rd realization" ;
-    tippecc_data:short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
-    tippecc_data:short_variable_name "water_budget_from_tas" ;
-    tippecc_data:source """KIOST-ESM (2018): 
-aerosol: none
-atmos: GFDL-AM2.0 (cubed sphere (C48); 192 x 96 longitude/latitude; 32 vertical levels; top level 2 hPa)
-atmosChem: Simple carbon aerosol model (emission type)
-land: NCAR-CLM4
-landIce: NCAR-CLM4
-ocean: GFDL-MOM5.0 (tripolar - nominal 1.0 deg; 360 x 200 longitude/latitude; 52 levels; top grid cell 0-2 m; NK mixed layer scheme)
-ocnBgchem: TOPAZ2
-seaIce: GFDL-SIS""" ;
-    tippecc_data:source_id "KIOST-ESM" ;
-    tippecc_data:source_type "AOGCM BGC" ;
-    tippecc_data:sub_experiment "none" ;
-    tippecc_data:sub_experiment_id "none" ;
-    tippecc_data:table_id "day" ;
-    tippecc_data:table_info "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-01-01 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
-    tippecc_data:title "KIOST-ESM output prepared for CMIP6" ;
-    tippecc_data:unit "mmday" ;
-    tippecc_data:units "mmday" ;
-    tippecc_data:variant "r1i1p1f1" ;
-    tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    tippecc_data:water_budget_from_tas.long_name "Water budget (\"FAO_PM985\" method)" ;
+    tippecc_data:water_budget_from_tas.method "pr - evspsblpot " ;
+    tippecc_data:water_budget_from_tas.units "mmday" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Calc_season_sum_1937 ;
-            prov:atTime "2025-03-12T22:18:17-01:00"^^xsd:dateTime ] ;
+            prov:atTime "2025-03-12T22:18:17-01:00"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget__mm_1850_2100 .
 
 software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
     sdo:softwareVersion "0.49.0" ;
-    sdo:targetProduct software:SOFTWARE__XCLIM ;
-    sdo:type "sdo:SoftwareApplication" .
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
 
 tippecc_data:05deg_hurs_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_12 ;
-            prov:atTime "2024-12-19T08:38:04"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T08:38:04"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:hurs_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_pr_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_35 ;
-            prov:atTime "2024-12-19T09:51:58"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T09:51:58"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:pr_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_rlds_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_58 ;
-            prov:atTime "2024-12-19T11:09:10"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T11:09:10"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:rlds_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_rlus_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_81 ;
-            prov:atTime "2024-12-19T12:21:43"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T12:21:43"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:rlus_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_rsds_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_104 ;
-            prov:atTime "2024-12-19T13:32:55"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T13:32:55"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:rsds_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_rsus_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_127 ;
-            prov:atTime "2024-12-19T14:47:57"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T14:47:57"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:rsus_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_sfcWind_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_150 ;
-            prov:atTime "2024-12-19T16:02:10"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T16:02:10"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:sfcWind_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_tasmax_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_173 ;
-            prov:atTime "2024-12-19T18:24:35"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T18:24:35"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:tasmax_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_tasmin_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_196 ;
-            prov:atTime "2024-12-19T19:38:23"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T19:38:23"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:tasmin_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 .
@@ -909,35 +1003,16 @@ tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100 a prov:Entity 
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-03-12 22:09:06 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 4.85782e+05 ;
-    tippecc_data:cell_methods "tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean" ;
     tippecc_data:cmor_version "3.5.0" ;
     tippecc_data:contact "YoungHo Kim (yhokim@pknu.ac.kr & yhkimstar@gmail.com)" ;
     tippecc_data:creation_date "2025-03-12T22:08:56Z" ;
     tippecc_data:data_specs_version "01.00.30" ;
-    tippecc_data:description "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with the fao_pm98 method." ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
-    tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
-    tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "3787387895"^^xsd:int ;
-    tippecc_data:frequency "day" ;
-    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.KIOST.KIOST-ESM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "0.00018936722366898144" ;
-    tippecc_data:global_min "-7.406074415754388e-06" ;
-    tippecc_data:global_model "KIOST-ESM" ;
-    tippecc_data:grid "atmos data regridded from Cubed-sphere (c48) to 94X192" ;
-    tippecc_data:grid_label "gr1" ;
-    tippecc_data:history """tasmin: 2019-11-04T04:12:56Z altered by CMOR: Treated scalar dimension: 'height'.
+    tippecc_data:evspsblpot.cell_methods "tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean" ;
+    tippecc_data:evspsblpot.description "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with the fao_pm98 method." ;
+    tippecc_data:evspsblpot.history """tasmin: 2019-11-04T04:12:56Z altered by CMOR: Treated scalar dimension: 'height'.
 tasmax: 2019-11-04T03:12:08Z altered by CMOR: Treated scalar dimension: 'height'.
 hurs: 2019-11-04T06:12:17Z altered by CMOR: Treated scalar dimension: 'height'.
 rsds: 
@@ -946,15 +1021,53 @@ rlds:
 rlus: 
 sfcWind: 2019-11-04T09:43:08Z altered by CMOR: Treated scalar dimension: 'height'.
 [2025-03-12 22:08:56] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0""" ;
-    tippecc_data:indicator "yes" ;
+    tippecc_data:evspsblpot.long_name "Potential evapotranspiration (\"fao_pm98\" method)" ;
+    tippecc_data:evspsblpot.standard_name "water_potential_evapotranspiration_flux" ;
+    tippecc_data:evspsblpot.units "kg m-2 s-1" ;
+    tippecc_data:experiment "all-forcing simulation of the recent past" ;
+    tippecc_data:experiment_id "historical" ;
+    tippecc_data:external_variables "areacella" ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-03-12 22:09:06 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "3787387895"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "0.00018936722366898144" ;
+    tippecc_data:file.global_min "-7.406074415754388e-06" ;
+    tippecc_data:file.global_model "KIOST-ESM" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-03-12 22:09:06 CET+0100" ;
+    tippecc_data:file.long_name "Potential evapotranspiration (\"fao_pm98\" method)" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "90885"^^xsd:int ;
+    tippecc_data:file.short_variable_name "evspsblpot" ;
+    tippecc_data:file.standard_name "water_potential_evapotranspiration_flux" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "kg m-2 s-1" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
+    tippecc_data:frequency "day" ;
+    tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.KIOST.KIOST-ESM.historical.none.r1i1p1f1" ;
+    tippecc_data:grid "atmos data regridded from Cubed-sphere (c48) to 94X192" ;
+    tippecc_data:grid_label "gr1" ;
     tippecc_data:institution "Korea Institute of Ocean Science & Technology, Busan 49111, Republic of Korea" ;
     tippecc_data:institution_id "KIOST" ;
-    tippecc_data:last_modification_time "2025-03-12 22:09:06 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Potential evapotranspiration (\"fao_pm98\" method)" ;
+    tippecc_data:license "CMIP6 model data produced by Lawrence Livermore KIOST is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "90885"^^xsd:int ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -965,8 +1078,6 @@ sfcWind: 2019-11-04T09:43:08Z altered by CMOR: Treated scalar dimension: 'height
     tippecc_data:realm "atmos" ;
     tippecc_data:references "Model described by Pak et al. (Ocean Science Journal, to be submitted)." ;
     tippecc_data:run_variant "3rd realization" ;
-    tippecc_data:short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
-    tippecc_data:short_variable_name "evspsblpot" ;
     tippecc_data:source """KIOST-ESM (2018): 
 aerosol: none
 atmos: GFDL-AM2.0 (cubed sphere (C48); 192 x 96 longitude/latitude; 32 vertical levels; top level 2 hPa)
@@ -978,24 +1089,16 @@ ocnBgchem: TOPAZ2
 seaIce: GFDL-SIS""" ;
     tippecc_data:source_id "KIOST-ESM" ;
     tippecc_data:source_type "AOGCM BGC" ;
-    tippecc_data:standard_name "water_potential_evapotranspiration_flux" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "KIOST-ESM output prepared for CMIP6" ;
-    tippecc_data:unit "kg m-2 s-1" ;
-    tippecc_data:units "kg m-2 s-1" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Calc_pot._ET_1903 ;
-            prov:atTime "2025-03-12T22:09:06-01:00"^^xsd:dateTime ] ;
+            prov:atTime "2025-03-12T22:09:06-01:00"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_hurs_1850_2100,
         tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rlds_1850_2100,
@@ -1011,55 +1114,56 @@ tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget_1850_2100 a prov:Entit
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-03-12 22:10:52 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 4.85782e+05 ;
-    tippecc_data:cell_methods "pr: area: time: mean evspsblpot: tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean" ;
     tippecc_data:cmor_version "3.5.0" ;
     tippecc_data:contact "YoungHo Kim (yhokim@pknu.ac.kr & yhkimstar@gmail.com)" ;
     tippecc_data:creation_date "2025-03-12T22:10:44Z" ;
     tippecc_data:data_specs_version "01.00.30" ;
-    tippecc_data:description "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget, where the potential evapotranspiration is calculated with the FAO_PM985 method." ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "3787388045"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-03-12 22:10:52 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "3787388045"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "0.004227667098037071" ;
+    tippecc_data:file.global_min "-0.00018614936979584277" ;
+    tippecc_data:file.global_model "KIOST-ESM" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-03-12 22:10:52 CET+0100" ;
+    tippecc_data:file.long_name "Water budget (\"FAO_PM985\" method)" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "90885"^^xsd:int ;
+    tippecc_data:file.short_variable_name "water_budget_from_tas" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "kg m-2 s-1" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.KIOST.KIOST-ESM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "0.004227667098037071" ;
-    tippecc_data:global_min "-0.00018614936979584277" ;
-    tippecc_data:global_model "KIOST-ESM" ;
     tippecc_data:grid "atmos data regridded from Cubed-sphere (c48) to 94X192" ;
     tippecc_data:grid_label "gr1" ;
-    tippecc_data:history """pr: 
-evspsblpot: tasmin: 2019-11-04T04:12:56Z altered by CMOR: Treated scalar dimension: 'height'.
-tasmax: 2019-11-04T03:12:08Z altered by CMOR: Treated scalar dimension: 'height'.
-hurs: 2019-11-04T06:12:17Z altered by CMOR: Treated scalar dimension: 'height'.
-rsds: 
-rsus: 
-rlds: 
-rlus: 
-sfcWind: 2019-11-04T09:43:08Z altered by CMOR: Treated scalar dimension: 'height'.
-[2025-03-12 22:08:56] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0
-[2025-03-12 22:10:44] water_budget_from_tas: WATER_BUDGET_FROM_TAS(pr=pr, evspsblpot=evspsblpot, method='BR65') - xclim version: 0.49.0""" ;
-    tippecc_data:indicator "yes" ;
     tippecc_data:institution "Korea Institute of Ocean Science & Technology, Busan 49111, Republic of Korea" ;
     tippecc_data:institution_id "KIOST" ;
-    tippecc_data:last_modification_time "2025-03-12 22:10:52 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Water budget (\"FAO_PM985\" method)" ;
-    tippecc_data:method "pr - evspsblpot " ;
+    tippecc_data:license "CMIP6 model data produced by Lawrence Livermore KIOST is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "90885"^^xsd:int ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -1070,8 +1174,6 @@ sfcWind: 2019-11-04T09:43:08Z altered by CMOR: Treated scalar dimension: 'height
     tippecc_data:realm "atmos" ;
     tippecc_data:references "Model described by Pak et al. (Ocean Science Journal, to be submitted)." ;
     tippecc_data:run_variant "3rd realization" ;
-    tippecc_data:short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
-    tippecc_data:short_variable_name "water_budget_from_tas" ;
     tippecc_data:source """KIOST-ESM (2018): 
 aerosol: none
 atmos: GFDL-AM2.0 (cubed sphere (C48); 192 x 96 longitude/latitude; 32 vertical levels; top level 2 hPa)
@@ -1087,19 +1189,28 @@ seaIce: GFDL-SIS""" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "KIOST-ESM output prepared for CMIP6" ;
-    tippecc_data:unit "kg m-2 s-1" ;
-    tippecc_data:units "kg m-2 s-1" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    tippecc_data:water_budget_from_tas.cell_methods "pr: area: time: mean evspsblpot: tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean" ;
+    tippecc_data:water_budget_from_tas.description "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget, where the potential evapotranspiration is calculated with the FAO_PM985 method." ;
+    tippecc_data:water_budget_from_tas.history """pr: 
+evspsblpot: tasmin: 2019-11-04T04:12:56Z altered by CMOR: Treated scalar dimension: 'height'.
+tasmax: 2019-11-04T03:12:08Z altered by CMOR: Treated scalar dimension: 'height'.
+hurs: 2019-11-04T06:12:17Z altered by CMOR: Treated scalar dimension: 'height'.
+rsds: 
+rsus: 
+rlds: 
+rlus: 
+sfcWind: 2019-11-04T09:43:08Z altered by CMOR: Treated scalar dimension: 'height'.
+[2025-03-12 22:08:56] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0
+[2025-03-12 22:10:44] water_budget_from_tas: WATER_BUDGET_FROM_TAS(pr=pr, evspsblpot=evspsblpot, method='BR65') - xclim version: 0.49.0""" ;
+    tippecc_data:water_budget_from_tas.long_name "Water budget (\"FAO_PM985\" method)" ;
+    tippecc_data:water_budget_from_tas.method "pr - evspsblpot " ;
+    tippecc_data:water_budget_from_tas.units "kg m-2 s-1" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Calc_water_budget_1911 ;
-            prov:atTime "2025-03-12T22:10:52-01:00"^^xsd:dateTime ] ;
+            prov:atTime "2025-03-12T22:10:52-01:00"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__evspsblpot_1850_2100,
         tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_pr_1850_2100 .
@@ -1109,35 +1220,86 @@ tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget__mm_1850_2100 a prov:E
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-03-12 22:12:12 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 4.85782e+05 ;
-    tippecc_data:cell_methods "pr: area: time: mean evspsblpot: tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean" ;
     tippecc_data:cmor_version "3.5.0" ;
     tippecc_data:contact "YoungHo Kim (yhokim@pknu.ac.kr & yhkimstar@gmail.com)" ;
     tippecc_data:creation_date "2025-03-12T22:12:05Z" ;
     tippecc_data:data_specs_version "01.00.30" ;
-    tippecc_data:description "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget, where the potential evapotranspiration is calculated with the FAO_PM985 method." ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "3787388045"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-03-12 22:12:12 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "3787388045"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "42172.26776665449" ;
+    tippecc_data:file.global_min "-16.083305550360816" ;
+    tippecc_data:file.global_model "KIOST-ESM" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-03-12 22:12:12 CET+0100" ;
+    tippecc_data:file.long_name "Water budget (\"FAO_PM985\" method)" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "90885"^^xsd:int ;
+    tippecc_data:file.short_variable_name "water_budget_from_tas" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "mmday" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.KIOST.KIOST-ESM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "42172.26776665449" ;
-    tippecc_data:global_min "-16.083305550360816" ;
-    tippecc_data:global_model "KIOST-ESM" ;
     tippecc_data:grid "atmos data regridded from Cubed-sphere (c48) to 94X192" ;
     tippecc_data:grid_label "gr1" ;
-    tippecc_data:history """pr: 
+    tippecc_data:institution "Korea Institute of Ocean Science & Technology, Busan 49111, Republic of Korea" ;
+    tippecc_data:institution_id "KIOST" ;
+    tippecc_data:license "CMIP6 model data produced by Lawrence Livermore KIOST is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
+    tippecc_data:mip_era "CMIP6" ;
+    tippecc_data:nominal_resolution "250 km" ;
+    tippecc_data:parent_activity_id "CMIP" ;
+    tippecc_data:parent_experiment_id "piControl" ;
+    tippecc_data:parent_mip_era "CMIP6" ;
+    tippecc_data:parent_source_id "KIOST-ESM" ;
+    tippecc_data:parent_time_units "days since 1850-01-01" ;
+    tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:product "model-output" ;
+    tippecc_data:realm "atmos" ;
+    tippecc_data:references "Model described by Pak et al. (Ocean Science Journal, to be submitted)." ;
+    tippecc_data:run_variant "3rd realization" ;
+    tippecc_data:source """KIOST-ESM (2018): 
+aerosol: none
+atmos: GFDL-AM2.0 (cubed sphere (C48); 192 x 96 longitude/latitude; 32 vertical levels; top level 2 hPa)
+atmosChem: Simple carbon aerosol model (emission type)
+land: NCAR-CLM4
+landIce: NCAR-CLM4
+ocean: GFDL-MOM5.0 (tripolar - nominal 1.0 deg; 360 x 200 longitude/latitude; 52 levels; top grid cell 0-2 m; NK mixed layer scheme)
+ocnBgchem: TOPAZ2
+seaIce: GFDL-SIS""" ;
+    tippecc_data:source_id "KIOST-ESM" ;
+    tippecc_data:source_type "AOGCM BGC" ;
+    tippecc_data:sub_experiment "none" ;
+    tippecc_data:sub_experiment_id "none" ;
+    tippecc_data:table_id "day" ;
+    tippecc_data:table_info "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87" ;
+    tippecc_data:title "KIOST-ESM output prepared for CMIP6" ;
+    tippecc_data:variant_label "r1i1p1f1" ;
+    tippecc_data:water_budget_from_tas.cell_methods "pr: area: time: mean evspsblpot: tasmin: area: mean time: minimum tasmax: area: mean time: maximum hurs: area: time: mean rsds: area: time: mean rsus: area: time: mean rlds: area: time: mean rlus: area: time: mean sfcWind: area: time: mean" ;
+    tippecc_data:water_budget_from_tas.description "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget, where the potential evapotranspiration is calculated with the FAO_PM985 method." ;
+    tippecc_data:water_budget_from_tas.history """pr: 
 evspsblpot: tasmin: 2019-11-04T04:12:56Z altered by CMOR: Treated scalar dimension: 'height'.
 tasmax: 2019-11-04T03:12:08Z altered by CMOR: Treated scalar dimension: 'height'.
 hurs: 2019-11-04T06:12:17Z altered by CMOR: Treated scalar dimension: 'height'.
@@ -1148,56 +1310,13 @@ rlus:
 sfcWind: 2019-11-04T09:43:08Z altered by CMOR: Treated scalar dimension: 'height'.
 [2025-03-12 22:08:56] evspsblpot: POTENTIAL_EVAPOTRANSPIRATION(tasmin=tasmin, tasmax=tasmax, hurs=hurs, rsds=rsds, rsus=rsus, rlds=rlds, rlus=rlus, sfcWind=sfcWind, method='FAO_PM98', peta=0.00516409319477, petb=0.0874972822289) - xclim version: 0.49.0
 [2025-03-12 22:10:44] water_budget_from_tas: WATER_BUDGET_FROM_TAS(pr=pr, evspsblpot=evspsblpot, method='BR65') - xclim version: 0.49.0""" ;
-    tippecc_data:indicator "yes" ;
-    tippecc_data:institution "Korea Institute of Ocean Science & Technology, Busan 49111, Republic of Korea" ;
-    tippecc_data:institution_id "KIOST" ;
-    tippecc_data:last_modification_time "2025-03-12 22:12:12 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Water budget (\"FAO_PM985\" method)" ;
-    tippecc_data:method "pr - evspsblpot " ;
-    tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "90885"^^xsd:int ;
-    tippecc_data:parent_activity_id "CMIP" ;
-    tippecc_data:parent_experiment_id "piControl" ;
-    tippecc_data:parent_mip_era "CMIP6" ;
-    tippecc_data:parent_source_id "KIOST-ESM" ;
-    tippecc_data:parent_time_units "days since 1850-01-01" ;
-    tippecc_data:parent_variant_label "r1i1p1f1" ;
-    tippecc_data:product "model-output" ;
-    tippecc_data:realm "atmos" ;
-    tippecc_data:references "Model described by Pak et al. (Ocean Science Journal, to be submitted)." ;
-    tippecc_data:run_variant "3rd realization" ;
-    tippecc_data:short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
-    tippecc_data:short_variable_name "water_budget_from_tas" ;
-    tippecc_data:source """KIOST-ESM (2018): 
-aerosol: none
-atmos: GFDL-AM2.0 (cubed sphere (C48); 192 x 96 longitude/latitude; 32 vertical levels; top level 2 hPa)
-atmosChem: Simple carbon aerosol model (emission type)
-land: NCAR-CLM4
-landIce: NCAR-CLM4
-ocean: GFDL-MOM5.0 (tripolar - nominal 1.0 deg; 360 x 200 longitude/latitude; 52 levels; top grid cell 0-2 m; NK mixed layer scheme)
-ocnBgchem: TOPAZ2
-seaIce: GFDL-SIS""" ;
-    tippecc_data:source_id "KIOST-ESM" ;
-    tippecc_data:source_type "AOGCM BGC" ;
-    tippecc_data:sub_experiment "none" ;
-    tippecc_data:sub_experiment_id "none" ;
-    tippecc_data:table_id "day" ;
-    tippecc_data:table_info "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
-    tippecc_data:title "KIOST-ESM output prepared for CMIP6" ;
-    tippecc_data:unit "mmday" ;
-    tippecc_data:units "mmday" ;
-    tippecc_data:variant "r1i1p1f1" ;
-    tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    tippecc_data:water_budget_from_tas.long_name "Water budget (\"FAO_PM985\" method)" ;
+    tippecc_data:water_budget_from_tas.method "pr - evspsblpot " ;
+    tippecc_data:water_budget_from_tas.units "mmday" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Convert_water_budget_to_mm/day_1912> ;
-            prov:atTime "2025-03-12T22:12:12-01:00"^^xsd:dateTime ] ;
+            prov:atTime "2025-03-12T22:12:12-01:00"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1__water_budget_1850_2100 .
 
@@ -1206,45 +1325,71 @@ tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_hurs_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:40 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 4.85782e+05 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.5.0" ;
-    tippecc_data:comment "The relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C." ;
     tippecc_data:contact "YoungHo Kim (yhokim@pknu.ac.kr & yhkimstar@gmail.com)" ;
     tippecc_data:creation_date "2019-11-04T06:12:17Z" ;
     tippecc_data:data_specs_version "01.00.30" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1910729852"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:40 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1910729852"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "99.85502" ;
+    tippecc_data:file.global_min "2.9397008" ;
+    tippecc_data:file.global_model "KIOST-ESM" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 10:28:56 CET+0100" ;
+    tippecc_data:file.long_name "Near-Surface Relative Humidity" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "hurs" ;
+    tippecc_data:file.standard_name "relative_humidity" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "%" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.KIOST.KIOST-ESM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "99.85502" ;
-    tippecc_data:global_min "2.9397008" ;
-    tippecc_data:global_model "KIOST-ESM" ;
     tippecc_data:grid "atmos data regridded from Cubed-sphere (c48) to 94X192" ;
     tippecc_data:grid_label "gr1" ;
-    tippecc_data:history "2019-11-04T06:12:17Z altered by CMOR: Treated scalar dimension: 'height'." ;
-    tippecc_data:indicator "no" ;
+    tippecc_data:history """Tue Jan 21 11:28:22 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_hurs_day_KIOST-ESM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_KIOST-ESM_hurs_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 11:27:41 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/hurs/05deg_hurs_day_KIOST-ESM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_hurs_day_KIOST-ESM_r1i1p1f1_1850_2100.nc
+Fri Jan 17 17:04:52 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/hurs/05deg_hurs_day_KIOST-ESM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/hurs/05deg_hurs_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/hurs/05deg_hurs_day_KIOST-ESM_r1i1p1f1_1850_2100.nc
+Thu Dec 19 08:38:04 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/hurs/hurs_day_KIOST-ESM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/hurs/05deg_hurs_day_KIOST-ESM_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 08:37:42 2024: cdo mergetime hurs_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/hurs/hurs_day_KIOST-ESM_historical_r1i1p1f1_1850_2014.nc
+2019-11-04T06:12:17Z ;rewrote data to be consistent with CMIP for variable hurs found in table day.;
+File was processed by CMOR""" ;
+    tippecc_data:hurs.cell_measures "area: areacella" ;
+    tippecc_data:hurs.cell_methods "area: time: mean" ;
+    tippecc_data:hurs.comment "The relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C." ;
+    tippecc_data:hurs.history "2019-11-04T06:12:17Z altered by CMOR: Treated scalar dimension: 'height'." ;
+    tippecc_data:hurs.long_name "Near-Surface Relative Humidity" ;
+    tippecc_data:hurs.standard_name "relative_humidity" ;
+    tippecc_data:hurs.units "%" ;
     tippecc_data:institution "Korea Institute of Ocean Science & Technology, Busan 49111, Republic of Korea" ;
     tippecc_data:institution_id "KIOST" ;
-    tippecc_data:last_modification_time "2025-01-21 10:28:56 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Near-Surface Relative Humidity" ;
+    tippecc_data:license "CMIP6 model data produced by Lawrence Livermore KIOST is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -1255,8 +1400,6 @@ tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_hurs_1850_2100 a prov:Entity ;
     tippecc_data:realm "atmos" ;
     tippecc_data:references "Model described by Pak et al. (Ocean Science Journal, to be submitted)." ;
     tippecc_data:run_variant "3rd realization" ;
-    tippecc_data:short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
-    tippecc_data:short_variable_name "hurs" ;
     tippecc_data:source """KIOST-ESM (2018): 
 aerosol: none
 atmos: GFDL-AM2.0 (cubed sphere (C48); 192 x 96 longitude/latitude; 32 vertical levels; top level 2 hPa)
@@ -1268,26 +1411,17 @@ ocnBgchem: TOPAZ2
 seaIce: GFDL-SIS""" ;
     tippecc_data:source_id "KIOST-ESM" ;
     tippecc_data:source_type "AOGCM BGC" ;
-    tippecc_data:standard_name "relative_humidity" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "KIOST-ESM output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/4fa9ee31-ea16-4b8d-b347-e684530d6f46" ;
-    tippecc_data:unit "%" ;
-    tippecc_data:units "%" ;
     tippecc_data:variable_id "hurs" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ ],
-        [ ],
-        [ ],
-        [ ],
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1844 ;
+            prov:atTime "2025-01-17T17:04:52"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_1846 ;
             prov:atTime "2025-01-21T11:28:22"^^xsd:dateTime ],
@@ -1295,11 +1429,12 @@ seaIce: GFDL-SIS""" ;
             prov:activity exe:Slice_years_1845 ;
             prov:atTime "2025-01-21T11:27:41"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_1844 ;
-            prov:atTime "2025-01-17T17:04:52"^^xsd:dateTime ],
-        [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1847> ;
-            prov:atTime "2025-01-21T10:28:56-01:00"^^xsd:dateTime ] ;
+            prov:atTime "2025-01-21T10:28:56-01:00"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_hurs_day_KIOST-ESM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_hurs_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 .
@@ -1309,33 +1444,50 @@ tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_pr_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:30 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 4.85782e+05 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.5.0" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
     tippecc_data:contact "YoungHo Kim (yhokim@pknu.ac.kr & yhkimstar@gmail.com)" ;
     tippecc_data:creation_date "2019-11-06T07:13:02Z" ;
     tippecc_data:data_specs_version "01.00.30" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1910729756"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:30 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1910729756"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "0.004230079" ;
+    tippecc_data:file.global_min "0.0" ;
+    tippecc_data:file.global_model "KIOST-ESM" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-02-04 23:10:13 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_flux" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "kg m-2 s-1" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.KIOST.KIOST-ESM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "0.004230079" ;
-    tippecc_data:global_min "0.0" ;
-    tippecc_data:global_model "KIOST-ESM" ;
     tippecc_data:grid "atmos data regridded from Cubed-sphere (c48) to 94X192" ;
     tippecc_data:grid_label "gr1" ;
     tippecc_data:history """Tue Jan 21 12:48:26 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_KIOST-ESM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_KIOST-ESM_pr_day_r1i1p1f1_1850_2100.nc
@@ -1345,27 +1497,27 @@ Thu Dec 19 09:51:58 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024
 Thu Dec 19 09:51:37 2024: cdo mergetime pr_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_KIOST-ESM_historical_r1i1p1f1_1850_2014.nc
 2019-11-06T07:13:02Z ;rewrote data to be consistent with CMIP for variable pr found in table day.;
 File was processed by CMOR""" ;
-    tippecc_data:indicator "no" ;
     tippecc_data:institution "Korea Institute of Ocean Science & Technology, Busan 49111, Republic of Korea" ;
     tippecc_data:institution_id "KIOST" ;
-    tippecc_data:last_modification_time "2025-02-04 23:10:13 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by Lawrence Livermore KIOST is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "KIOST-ESM" ;
     tippecc_data:parent_time_units "days since 1850-01-01" ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.standard_name "precipitation_flux" ;
+    tippecc_data:pr.units "kg m-2 s-1" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
     tippecc_data:references "Model described by Pak et al. (Ocean Science Journal, to be submitted)." ;
     tippecc_data:run_variant "3rd realization" ;
-    tippecc_data:short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """KIOST-ESM (2018): 
 aerosol: none
 atmos: GFDL-AM2.0 (cubed sphere (C48); 192 x 96 longitude/latitude; 32 vertical levels; top level 2 hPa)
@@ -1377,38 +1529,32 @@ ocnBgchem: TOPAZ2
 seaIce: GFDL-SIS""" ;
     tippecc_data:source_id "KIOST-ESM" ;
     tippecc_data:source_type "AOGCM BGC" ;
-    tippecc_data:standard_name "precipitation_flux" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:time_coverage_end "2100-12-31T00:00:00" ;
+    tippecc_data:time_coverage_start "1850-01-01T00:00:00" ;
     tippecc_data:title "KIOST-ESM output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/af7484bb-182b-47a8-bc12-1d03f528f8c8" ;
-    tippecc_data:unit "kg m-2 s-1" ;
-    tippecc_data:units "kg m-2 s-1" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ ],
-        [ ],
-        [ ],
-        [ ],
-        [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1851> ;
-            prov:atTime "2025-02-04T23:10:13-01:00"^^xsd:dateTime ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_1850 ;
             prov:atTime "2025-01-21T12:48:26"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Merge_datasets_1848 ;
             prov:atTime "2025-01-17T18:08:48"^^xsd:dateTime ],
         [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1851> ;
+            prov:atTime "2025-02-04T23:10:13-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
             prov:activity exe:Slice_years_1849 ;
-            prov:atTime "2025-01-21T12:47:47"^^xsd:dateTime ] ;
+            prov:atTime "2025-01-21T12:47:47"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_pr_day_KIOST-ESM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 .
@@ -1419,32 +1565,49 @@ tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rlds_1850_2100 a prov:Entity ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:NCO "netCDF Operators version 4.9.6 (Homepage = http://nco.sf.net, Code = http://github.com/nco/nco)" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:44 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.5.0" ;
-    tippecc_data:comment "The surface called 'surface' means the lower boundary of the atmosphere. 'longwave' means longwave radiation. Downwelling radiation is radiation from above. It does not mean 'net downward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics." ;
     tippecc_data:contact "YoungHo Kim (yhokim@pknu.ac.kr & yhkimstar@gmail.com)" ;
     tippecc_data:creation_date "2019-11-04T17:38:17Z" ;
     tippecc_data:data_specs_version "01.00.30" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1910730568"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:44 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1910730568"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "488.9273" ;
+    tippecc_data:file.global_min "181.32312" ;
+    tippecc_data:file.global_model "KIOST-ESM" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 13:08:29 CET+0100" ;
+    tippecc_data:file.long_name "Surface Downwelling Longwave Radiation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "rlds" ;
+    tippecc_data:file.standard_name "surface_downwelling_longwave_flux_in_air" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "W m-2" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.KIOST.KIOST-ESM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "488.9273" ;
-    tippecc_data:global_min "181.32312" ;
-    tippecc_data:global_model "KIOST-ESM" ;
     tippecc_data:grid "atmos data regridded from Cubed-sphere (c48) to 94X192" ;
     tippecc_data:grid_label "gr1" ;
     tippecc_data:history """Tue Jan 21 14:07:55 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rlds_day_KIOST-ESM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_KIOST-ESM_rlds_day_r1i1p1f1_1850_2100.nc
@@ -1455,15 +1618,11 @@ Thu Dec 19 11:08:49 2024: cdo mergetime rlds_day_KIOST-ESM_historical_r1i1p1f1_g
 Sat Jan 23 20:17:58 2021: ncatted -O -a branch_time_in_parent,global,o,i,488370 /data/cmip6/CMIP6/CMIP/KIOST/KIOST-ESM/historical/r1i1p1f1/day/rlds/gr1/v20191202/rlds_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231.nc
 2019-11-04T17:38:17Z ;rewrote data to be consistent with CMIP for variable rlds found in table day.;
 File was processed by CMOR""" ;
-    tippecc_data:indicator "no" ;
     tippecc_data:institution "Korea Institute of Ocean Science & Technology, Busan 49111, Republic of Korea" ;
     tippecc_data:institution_id "KIOST" ;
-    tippecc_data:last_modification_time "2025-01-21 13:08:29 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Surface Downwelling Longwave Radiation" ;
+    tippecc_data:license "CMIP6 model data produced by Lawrence Livermore KIOST is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -1473,9 +1632,13 @@ File was processed by CMOR""" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
     tippecc_data:references "Model described by Pak et al. (Ocean Science Journal, to be submitted)." ;
+    tippecc_data:rlds.cell_measures "area: areacella" ;
+    tippecc_data:rlds.cell_methods "area: time: mean" ;
+    tippecc_data:rlds.comment "The surface called 'surface' means the lower boundary of the atmosphere. 'longwave' means longwave radiation. Downwelling radiation is radiation from above. It does not mean 'net downward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics." ;
+    tippecc_data:rlds.long_name "Surface Downwelling Longwave Radiation" ;
+    tippecc_data:rlds.standard_name "surface_downwelling_longwave_flux_in_air" ;
+    tippecc_data:rlds.units "W m-2" ;
     tippecc_data:run_variant "3rd realization" ;
-    tippecc_data:short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
-    tippecc_data:short_variable_name "rlds" ;
     tippecc_data:source """KIOST-ESM (2018): 
 aerosol: none
 atmos: GFDL-AM2.0 (cubed sphere (C48); 192 x 96 longitude/latitude; 32 vertical levels; top level 2 hPa)
@@ -1487,29 +1650,17 @@ ocnBgchem: TOPAZ2
 seaIce: GFDL-SIS""" ;
     tippecc_data:source_id "KIOST-ESM" ;
     tippecc_data:source_type "AOGCM BGC" ;
-    tippecc_data:standard_name "surface_downwelling_longwave_flux_in_air" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "KIOST-ESM output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/f655490f-4ab4-4dc4-98b0-798c7e702749" ;
-    tippecc_data:unit "W m-2" ;
-    tippecc_data:units "W m-2" ;
     tippecc_data:variable_id "rlds" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ ],
-        [ ],
-        [ ],
-        [ ],
-        [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1862> ;
-            prov:atTime "2025-01-21T13:08:29-01:00"^^xsd:dateTime ],
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Slice_years_1860 ;
+            prov:atTime "2025-01-21T14:07:14"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Merge_datasets_1859 ;
             prov:atTime "2025-01-17T19:13:35"^^xsd:dateTime ],
@@ -1517,8 +1668,12 @@ seaIce: GFDL-SIS""" ;
             prov:activity exe:Slice_TIPPECC_area_1861 ;
             prov:atTime "2025-01-21T14:07:55"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity exe:Slice_years_1860 ;
-            prov:atTime "2025-01-21T14:07:14"^^xsd:dateTime ] ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1862> ;
+            prov:atTime "2025-01-21T13:08:29-01:00"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_rlds_day_KIOST-ESM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rlds_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 .
@@ -1529,32 +1684,49 @@ tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rlus_1850_2100 a prov:Entity ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:NCO "netCDF Operators version 4.9.6 (Homepage = http://nco.sf.net, Code = http://github.com/nco/nco)" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:42 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.5.0" ;
-    tippecc_data:comment "The surface called 'surface' means the lower boundary of the atmosphere. 'longwave' means longwave radiation. Upwelling radiation is radiation from below. It does not mean 'net upward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics." ;
     tippecc_data:contact "YoungHo Kim (yhokim@pknu.ac.kr & yhkimstar@gmail.com)" ;
     tippecc_data:creation_date "2019-11-04T16:37:00Z" ;
     tippecc_data:data_specs_version "01.00.30" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1910730560"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:42 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1910730560"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "606.38025" ;
+    tippecc_data:file.global_min "282.04706" ;
+    tippecc_data:file.global_model "KIOST-ESM" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 14:29:07 CET+0100" ;
+    tippecc_data:file.long_name "Surface Upwelling Longwave Radiation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "rlus" ;
+    tippecc_data:file.standard_name "surface_upwelling_longwave_flux_in_air" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "W m-2" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.KIOST.KIOST-ESM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "606.38025" ;
-    tippecc_data:global_min "282.04706" ;
-    tippecc_data:global_model "KIOST-ESM" ;
     tippecc_data:grid "atmos data regridded from Cubed-sphere (c48) to 94X192" ;
     tippecc_data:grid_label "gr1" ;
     tippecc_data:history """Tue Jan 21 15:28:35 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rlus_day_KIOST-ESM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_KIOST-ESM_rlus_day_r1i1p1f1_1850_2100.nc
@@ -1565,15 +1737,11 @@ Thu Dec 19 12:21:22 2024: cdo mergetime rlus_day_KIOST-ESM_historical_r1i1p1f1_g
 Sat Jan 23 20:56:13 2021: ncatted -O -a branch_time_in_parent,global,o,i,488370 /data/cmip6/CMIP6/CMIP/KIOST/KIOST-ESM/historical/r1i1p1f1/day/rlus/gr1/v20191202/rlus_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231.nc
 2019-11-04T16:37:00Z ;rewrote data to be consistent with CMIP for variable rlus found in table day.;
 File was processed by CMOR""" ;
-    tippecc_data:indicator "no" ;
     tippecc_data:institution "Korea Institute of Ocean Science & Technology, Busan 49111, Republic of Korea" ;
     tippecc_data:institution_id "KIOST" ;
-    tippecc_data:last_modification_time "2025-01-21 14:29:07 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Surface Upwelling Longwave Radiation" ;
+    tippecc_data:license "CMIP6 model data produced by Lawrence Livermore KIOST is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -1583,9 +1751,13 @@ File was processed by CMOR""" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
     tippecc_data:references "Model described by Pak et al. (Ocean Science Journal, to be submitted)." ;
+    tippecc_data:rlus.cell_measures "area: areacella" ;
+    tippecc_data:rlus.cell_methods "area: time: mean" ;
+    tippecc_data:rlus.comment "The surface called 'surface' means the lower boundary of the atmosphere. 'longwave' means longwave radiation. Upwelling radiation is radiation from below. It does not mean 'net upward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics." ;
+    tippecc_data:rlus.long_name "Surface Upwelling Longwave Radiation" ;
+    tippecc_data:rlus.standard_name "surface_upwelling_longwave_flux_in_air" ;
+    tippecc_data:rlus.units "W m-2" ;
     tippecc_data:run_variant "3rd realization" ;
-    tippecc_data:short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
-    tippecc_data:short_variable_name "rlus" ;
     tippecc_data:source """KIOST-ESM (2018): 
 aerosol: none
 atmos: GFDL-AM2.0 (cubed sphere (C48); 192 x 96 longitude/latitude; 32 vertical levels; top level 2 hPa)
@@ -1597,38 +1769,30 @@ ocnBgchem: TOPAZ2
 seaIce: GFDL-SIS""" ;
     tippecc_data:source_id "KIOST-ESM" ;
     tippecc_data:source_type "AOGCM BGC" ;
-    tippecc_data:standard_name "surface_upwelling_longwave_flux_in_air" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "KIOST-ESM output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/7d370c22-4797-4e64-8b70-e43f13bd341b" ;
-    tippecc_data:unit "W m-2" ;
-    tippecc_data:units "W m-2" ;
     tippecc_data:variable_id "rlus" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ ],
-        [ ],
-        [ ],
-        [ ],
-        [ a prov:Generation ;
-            prov:activity exe:Slice_years_1864 ;
-            prov:atTime "2025-01-21T15:27:54"^^xsd:dateTime ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Merge_datasets_1863 ;
             prov:atTime "2025-01-17T20:20:37"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_1865 ;
+            prov:atTime "2025-01-21T15:28:35"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1866> ;
             prov:atTime "2025-01-21T14:29:07-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity exe:Slice_TIPPECC_area_1865 ;
-            prov:atTime "2025-01-21T15:28:35"^^xsd:dateTime ] ;
+            prov:activity exe:Slice_years_1864 ;
+            prov:atTime "2025-01-21T15:27:54"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_rlus_day_KIOST-ESM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rlus_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 .
@@ -1639,32 +1803,49 @@ tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rsds_1850_2100 a prov:Entity ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:NCO "netCDF Operators version 4.9.6 (Homepage = http://nco.sf.net, Code = http://github.com/nco/nco)" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:43 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.5.0" ;
-    tippecc_data:comment "Surface solar irradiance for UV calculations." ;
     tippecc_data:contact "YoungHo Kim (yhokim@pknu.ac.kr & yhkimstar@gmail.com)" ;
     tippecc_data:creation_date "2019-11-04T15:36:06Z" ;
     tippecc_data:data_specs_version "01.00.30" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1910730076"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:43 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1910730076"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "424.67017" ;
+    tippecc_data:file.global_min "0.8446606" ;
+    tippecc_data:file.global_model "KIOST-ESM" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 15:48:41 CET+0100" ;
+    tippecc_data:file.long_name "Surface Downwelling Shortwave Radiation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "rsds" ;
+    tippecc_data:file.standard_name "surface_downwelling_shortwave_flux_in_air" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "W m-2" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.KIOST.KIOST-ESM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "424.67017" ;
-    tippecc_data:global_min "0.8446606" ;
-    tippecc_data:global_model "KIOST-ESM" ;
     tippecc_data:grid "atmos data regridded from Cubed-sphere (c48) to 94X192" ;
     tippecc_data:grid_label "gr1" ;
     tippecc_data:history """Tue Jan 21 16:48:08 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rsds_day_KIOST-ESM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_KIOST-ESM_rsds_day_r1i1p1f1_1850_2100.nc
@@ -1675,15 +1856,11 @@ Thu Dec 19 13:32:35 2024: cdo mergetime rsds_day_KIOST-ESM_historical_r1i1p1f1_g
 Sat Jan 23 22:50:40 2021: ncatted -O -a branch_time_in_parent,global,o,i,488370 /data/cmip6/CMIP6/CMIP/KIOST/KIOST-ESM/historical/r1i1p1f1/day/rsds/gr1/v20191202/rsds_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231.nc
 2019-11-04T15:36:06Z ;rewrote data to be consistent with CMIP for variable rsds found in table day.;
 File was processed by CMOR""" ;
-    tippecc_data:indicator "no" ;
     tippecc_data:institution "Korea Institute of Ocean Science & Technology, Busan 49111, Republic of Korea" ;
     tippecc_data:institution_id "KIOST" ;
-    tippecc_data:last_modification_time "2025-01-21 15:48:41 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Surface Downwelling Shortwave Radiation" ;
+    tippecc_data:license "CMIP6 model data produced by Lawrence Livermore KIOST is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -1693,9 +1870,13 @@ File was processed by CMOR""" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
     tippecc_data:references "Model described by Pak et al. (Ocean Science Journal, to be submitted)." ;
+    tippecc_data:rsds.cell_measures "area: areacella" ;
+    tippecc_data:rsds.cell_methods "area: time: mean" ;
+    tippecc_data:rsds.comment "Surface solar irradiance for UV calculations." ;
+    tippecc_data:rsds.long_name "Surface Downwelling Shortwave Radiation" ;
+    tippecc_data:rsds.standard_name "surface_downwelling_shortwave_flux_in_air" ;
+    tippecc_data:rsds.units "W m-2" ;
     tippecc_data:run_variant "3rd realization" ;
-    tippecc_data:short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
-    tippecc_data:short_variable_name "rsds" ;
     tippecc_data:source """KIOST-ESM (2018): 
 aerosol: none
 atmos: GFDL-AM2.0 (cubed sphere (C48); 192 x 96 longitude/latitude; 32 vertical levels; top level 2 hPa)
@@ -1707,38 +1888,30 @@ ocnBgchem: TOPAZ2
 seaIce: GFDL-SIS""" ;
     tippecc_data:source_id "KIOST-ESM" ;
     tippecc_data:source_type "AOGCM BGC" ;
-    tippecc_data:standard_name "surface_downwelling_shortwave_flux_in_air" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "KIOST-ESM output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/5d756d58-77a1-4188-b420-499a069a4fd2" ;
-    tippecc_data:unit "W m-2" ;
-    tippecc_data:units "W m-2" ;
     tippecc_data:variable_id "rsds" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ ],
-        [ ],
-        [ ],
-        [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_1869 ;
             prov:atTime "2025-01-21T16:48:08"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_1867 ;
-            prov:atTime "2025-01-17T21:27:05"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_1868 ;
             prov:atTime "2025-01-21T16:47:28"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1870> ;
-            prov:atTime "2025-01-21T15:48:41-01:00"^^xsd:dateTime ] ;
+            prov:atTime "2025-01-21T15:48:41-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1867 ;
+            prov:atTime "2025-01-17T21:27:05"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_rsds_day_KIOST-ESM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rsds_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 .
@@ -1749,32 +1922,49 @@ tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_rsus_1850_2100 a prov:Entity ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:NCO "netCDF Operators version 4.9.6 (Homepage = http://nco.sf.net, Code = http://github.com/nco/nco)" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:36 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.5.0" ;
-    tippecc_data:comment "The surface called 'surface' means the lower boundary of the atmosphere. 'shortwave' means shortwave radiation. Upwelling radiation is radiation from below. It does not mean 'net upward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics." ;
     tippecc_data:contact "YoungHo Kim (yhokim@pknu.ac.kr & yhkimstar@gmail.com)" ;
     tippecc_data:creation_date "2019-11-04T14:35:24Z" ;
     tippecc_data:data_specs_version "01.00.30" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1910730568"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:36 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1910730568"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "109.643" ;
+    tippecc_data:file.global_min "0.050679635" ;
+    tippecc_data:file.global_model "KIOST-ESM" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 17:04:25 CET+0100" ;
+    tippecc_data:file.long_name "Surface Upwelling Shortwave Radiation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "rsus" ;
+    tippecc_data:file.standard_name "surface_upwelling_shortwave_flux_in_air" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "W m-2" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.KIOST.KIOST-ESM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "109.643" ;
-    tippecc_data:global_min "0.050679635" ;
-    tippecc_data:global_model "KIOST-ESM" ;
     tippecc_data:grid "atmos data regridded from Cubed-sphere (c48) to 94X192" ;
     tippecc_data:grid_label "gr1" ;
     tippecc_data:history """Tue Jan 21 18:03:50 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rsus_day_KIOST-ESM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_KIOST-ESM_rsus_day_r1i1p1f1_1850_2100.nc
@@ -1785,15 +1975,11 @@ Thu Dec 19 14:47:36 2024: cdo mergetime rsus_day_KIOST-ESM_historical_r1i1p1f1_g
 Sat Jan 23 23:28:56 2021: ncatted -O -a branch_time_in_parent,global,o,i,488370 /data/cmip6/CMIP6/CMIP/KIOST/KIOST-ESM/historical/r1i1p1f1/day/rsus/gr1/v20191202/rsus_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231.nc
 2019-11-04T14:35:24Z ;rewrote data to be consistent with CMIP for variable rsus found in table day.;
 File was processed by CMOR""" ;
-    tippecc_data:indicator "no" ;
     tippecc_data:institution "Korea Institute of Ocean Science & Technology, Busan 49111, Republic of Korea" ;
     tippecc_data:institution_id "KIOST" ;
-    tippecc_data:last_modification_time "2025-01-21 17:04:25 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Surface Upwelling Shortwave Radiation" ;
+    tippecc_data:license "CMIP6 model data produced by Lawrence Livermore KIOST is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -1803,9 +1989,13 @@ File was processed by CMOR""" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
     tippecc_data:references "Model described by Pak et al. (Ocean Science Journal, to be submitted)." ;
+    tippecc_data:rsus.cell_measures "area: areacella" ;
+    tippecc_data:rsus.cell_methods "area: time: mean" ;
+    tippecc_data:rsus.comment "The surface called 'surface' means the lower boundary of the atmosphere. 'shortwave' means shortwave radiation. Upwelling radiation is radiation from below. It does not mean 'net upward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics." ;
+    tippecc_data:rsus.long_name "Surface Upwelling Shortwave Radiation" ;
+    tippecc_data:rsus.standard_name "surface_upwelling_shortwave_flux_in_air" ;
+    tippecc_data:rsus.units "W m-2" ;
     tippecc_data:run_variant "3rd realization" ;
-    tippecc_data:short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
-    tippecc_data:short_variable_name "rsus" ;
     tippecc_data:source """KIOST-ESM (2018): 
 aerosol: none
 atmos: GFDL-AM2.0 (cubed sphere (C48); 192 x 96 longitude/latitude; 32 vertical levels; top level 2 hPa)
@@ -1817,30 +2007,15 @@ ocnBgchem: TOPAZ2
 seaIce: GFDL-SIS""" ;
     tippecc_data:source_id "KIOST-ESM" ;
     tippecc_data:source_type "AOGCM BGC" ;
-    tippecc_data:standard_name "surface_upwelling_shortwave_flux_in_air" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "KIOST-ESM output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/f3288268-ba88-4a6e-b2e8-904536ca1b99" ;
-    tippecc_data:unit "W m-2" ;
-    tippecc_data:units "W m-2" ;
     tippecc_data:variable_id "rsus" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ ],
-        [ ],
-        [ ],
-        [ ],
-        [ a prov:Generation ;
-            prov:activity exe:Slice_years_1872 ;
-            prov:atTime "2025-01-21T18:03:09"^^xsd:dateTime ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1874> ;
             prov:atTime "2025-01-21T17:04:25-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
@@ -1848,7 +2023,14 @@ seaIce: GFDL-SIS""" ;
             prov:atTime "2025-01-17T22:30:12"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_1873 ;
-            prov:atTime "2025-01-21T18:03:50"^^xsd:dateTime ] ;
+            prov:atTime "2025-01-21T18:03:50"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_1872 ;
+            prov:atTime "2025-01-21T18:03:09"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_rsus_day_KIOST-ESM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rsus_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 .
@@ -1858,45 +2040,64 @@ tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_sfcWind_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:42 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 4.85782e+05 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.5.0" ;
-    tippecc_data:comment "near-surface (usually, 10 meters) wind speed." ;
     tippecc_data:contact "YoungHo Kim (yhokim@pknu.ac.kr & yhkimstar@gmail.com)" ;
     tippecc_data:creation_date "2019-11-04T09:43:08Z" ;
     tippecc_data:data_specs_version "01.00.30" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1895504984"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:42 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1895504984"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "28.20161" ;
+    tippecc_data:file.global_min "0.2235738" ;
+    tippecc_data:file.global_model "KIOST-ESM" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 18:21:20 CET+0100" ;
+    tippecc_data:file.long_name "Daily-Mean Near-Surface Wind Speed" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "90885"^^xsd:int ;
+    tippecc_data:file.short_variable_name "sfcWind" ;
+    tippecc_data:file.standard_name "wind_speed" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "m s-1" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.KIOST.KIOST-ESM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "28.20161" ;
-    tippecc_data:global_min "0.2235738" ;
-    tippecc_data:global_model "KIOST-ESM" ;
     tippecc_data:grid "atmos data regridded from Cubed-sphere (c48) to 94X192" ;
     tippecc_data:grid_label "gr1" ;
-    tippecc_data:history "2019-11-04T09:43:08Z altered by CMOR: Treated scalar dimension: 'height'." ;
-    tippecc_data:indicator "no" ;
+    tippecc_data:history """Tue Jan 21 19:20:47 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_sfcWind_day_KIOST-ESM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_KIOST-ESM_sfcWind_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 19:20:06 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/sfcWind/05deg_sfcWind_day_KIOST-ESM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_sfcWind_day_KIOST-ESM_r1i1p1f1_1850_2100.nc
+Fri Jan 17 23:33:24 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/sfcWind/05deg_sfcWind_day_KIOST-ESM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/sfcWind/05deg_sfcWind_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/sfcWind/05deg_sfcWind_day_KIOST-ESM_r1i1p1f1_1850_2100.nc
+Thu Dec 19 16:02:10 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/sfcWind/sfcWind_day_KIOST-ESM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/sfcWind/05deg_sfcWind_day_KIOST-ESM_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 16:01:48 2024: cdo mergetime sfcWind_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/sfcWind/sfcWind_day_KIOST-ESM_historical_r1i1p1f1_1850_2014.nc
+2019-11-04T09:43:08Z ;rewrote data to be consistent with CMIP for variable sfcWind found in table day.;
+File was processed by CMOR""" ;
     tippecc_data:institution "Korea Institute of Ocean Science & Technology, Busan 49111, Republic of Korea" ;
     tippecc_data:institution_id "KIOST" ;
-    tippecc_data:last_modification_time "2025-01-21 18:21:20 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Daily-Mean Near-Surface Wind Speed" ;
+    tippecc_data:license "CMIP6 model data produced by Lawrence Livermore KIOST is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "90885"^^xsd:int ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -1907,8 +2108,13 @@ tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_sfcWind_1850_2100 a prov:Entity ;
     tippecc_data:realm "atmos" ;
     tippecc_data:references "Model described by Pak et al. (Ocean Science Journal, to be submitted)." ;
     tippecc_data:run_variant "3rd realization" ;
-    tippecc_data:short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
-    tippecc_data:short_variable_name "sfcWind" ;
+    tippecc_data:sfcWind.cell_measures "area: areacella" ;
+    tippecc_data:sfcWind.cell_methods "area: time: mean" ;
+    tippecc_data:sfcWind.comment "near-surface (usually, 10 meters) wind speed." ;
+    tippecc_data:sfcWind.history "2019-11-04T09:43:08Z altered by CMOR: Treated scalar dimension: 'height'." ;
+    tippecc_data:sfcWind.long_name "Daily-Mean Near-Surface Wind Speed" ;
+    tippecc_data:sfcWind.standard_name "wind_speed" ;
+    tippecc_data:sfcWind.units "m s-1" ;
     tippecc_data:source """KIOST-ESM (2018): 
 aerosol: none
 atmos: GFDL-AM2.0 (cubed sphere (C48); 192 x 96 longitude/latitude; 32 vertical levels; top level 2 hPa)
@@ -1920,38 +2126,30 @@ ocnBgchem: TOPAZ2
 seaIce: GFDL-SIS""" ;
     tippecc_data:source_id "KIOST-ESM" ;
     tippecc_data:source_type "AOGCM BGC" ;
-    tippecc_data:standard_name "wind_speed" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "KIOST-ESM output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/fb56128a-2c65-4dc4-b15d-92a835111be7" ;
-    tippecc_data:unit "m s-1" ;
-    tippecc_data:units "m s-1" ;
     tippecc_data:variable_id "sfcWind" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ ],
-        [ ],
-        [ ],
-        [ ],
-        [ a prov:Generation ;
-            prov:activity exe:Slice_TIPPECC_area_1877 ;
-            prov:atTime "2025-01-21T19:20:47"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Slice_years_1876 ;
-            prov:atTime "2025-01-21T19:20:06"^^xsd:dateTime ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Merge_datasets_1875 ;
             prov:atTime "2025-01-17T23:33:24"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1878> ;
-            prov:atTime "2025-01-21T18:21:20-01:00"^^xsd:dateTime ] ;
+            prov:atTime "2025-01-21T18:21:20-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_1876 ;
+            prov:atTime "2025-01-21T19:20:06"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_1877 ;
+            prov:atTime "2025-01-21T19:20:47"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_sfcWind_day_KIOST-ESM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_sfcWind_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 .
@@ -1961,45 +2159,64 @@ tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_tasmax_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:36 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 4.85782e+05 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: mean time: maximum" ;
     tippecc_data:cmor_version "3.5.0" ;
-    tippecc_data:comment "maximum near-surface (usually, 2 meter) air temperature (add cell_method attribute 'time: max')" ;
     tippecc_data:contact "YoungHo Kim (yhokim@pknu.ac.kr & yhkimstar@gmail.com)" ;
     tippecc_data:creation_date "2019-11-04T03:12:08Z" ;
     tippecc_data:data_specs_version "01.00.30" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1910729912"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:36 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1910729912"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "341.28525" ;
+    tippecc_data:file.global_min "271.04895" ;
+    tippecc_data:file.global_model "KIOST-ESM" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 21:00:28 CET+0100" ;
+    tippecc_data:file.long_name "Daily Maximum Near-Surface Air Temperature" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "tasmax" ;
+    tippecc_data:file.standard_name "air_temperature" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "K" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.KIOST.KIOST-ESM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "341.28525" ;
-    tippecc_data:global_min "271.04895" ;
-    tippecc_data:global_model "KIOST-ESM" ;
     tippecc_data:grid "atmos data regridded from Cubed-sphere (c48) to 94X192" ;
     tippecc_data:grid_label "gr1" ;
-    tippecc_data:history "2019-11-04T03:12:08Z altered by CMOR: Treated scalar dimension: 'height'." ;
-    tippecc_data:indicator "no" ;
+    tippecc_data:history """Tue Jan 21 21:59:54 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_tasmax_day_KIOST-ESM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_KIOST-ESM_tasmax_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 21:59:12 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/tasmax/05deg_tasmax_day_KIOST-ESM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_tasmax_day_KIOST-ESM_r1i1p1f1_1850_2100.nc
+Sat Jan 18 01:43:03 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/tasmax/05deg_tasmax_day_KIOST-ESM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/tasmax/05deg_tasmax_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/tasmax/05deg_tasmax_day_KIOST-ESM_r1i1p1f1_1850_2100.nc
+Thu Dec 19 18:24:35 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/tasmax/tasmax_day_KIOST-ESM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/tasmax/05deg_tasmax_day_KIOST-ESM_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 18:24:13 2024: cdo mergetime tasmax_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/tasmax/tasmax_day_KIOST-ESM_historical_r1i1p1f1_1850_2014.nc
+2019-11-04T03:12:08Z ;rewrote data to be consistent with CMIP for variable tasmax found in table day.;
+File was processed by CMOR""" ;
     tippecc_data:institution "Korea Institute of Ocean Science & Technology, Busan 49111, Republic of Korea" ;
     tippecc_data:institution_id "KIOST" ;
-    tippecc_data:last_modification_time "2025-01-21 21:00:28 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Daily Maximum Near-Surface Air Temperature" ;
+    tippecc_data:license "CMIP6 model data produced by Lawrence Livermore KIOST is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -2010,8 +2227,6 @@ tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_tasmax_1850_2100 a prov:Entity ;
     tippecc_data:realm "atmos" ;
     tippecc_data:references "Model described by Pak et al. (Ocean Science Journal, to be submitted)." ;
     tippecc_data:run_variant "3rd realization" ;
-    tippecc_data:short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
-    tippecc_data:short_variable_name "tasmax" ;
     tippecc_data:source """KIOST-ESM (2018): 
 aerosol: none
 atmos: GFDL-AM2.0 (cubed sphere (C48); 192 x 96 longitude/latitude; 32 vertical levels; top level 2 hPa)
@@ -2023,38 +2238,37 @@ ocnBgchem: TOPAZ2
 seaIce: GFDL-SIS""" ;
     tippecc_data:source_id "KIOST-ESM" ;
     tippecc_data:source_type "AOGCM BGC" ;
-    tippecc_data:standard_name "air_temperature" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:tasmax.cell_measures "area: areacella" ;
+    tippecc_data:tasmax.cell_methods "area: mean time: maximum" ;
+    tippecc_data:tasmax.comment "maximum near-surface (usually, 2 meter) air temperature (add cell_method attribute 'time: max')" ;
+    tippecc_data:tasmax.history "2019-11-04T03:12:08Z altered by CMOR: Treated scalar dimension: 'height'." ;
+    tippecc_data:tasmax.long_name "Daily Maximum Near-Surface Air Temperature" ;
+    tippecc_data:tasmax.standard_name "air_temperature" ;
+    tippecc_data:tasmax.units "K" ;
     tippecc_data:title "KIOST-ESM output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/e7844876-b9de-41cb-941a-24b8ed8bd63b" ;
-    tippecc_data:unit "K" ;
-    tippecc_data:units "K" ;
     tippecc_data:variable_id "tasmax" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ ],
-        [ ],
-        [ ],
-        [ ],
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1879 ;
+            prov:atTime "2025-01-18T01:43:03"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1882> ;
+            prov:atTime "2025-01-21T21:00:28-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_1881 ;
             prov:atTime "2025-01-21T21:59:54"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_1879 ;
-            prov:atTime "2025-01-18T01:43:03"^^xsd:dateTime ],
-        [ a prov:Generation ;
             prov:activity exe:Slice_years_1880 ;
             prov:atTime "2025-01-21T21:59:12"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1882> ;
-            prov:atTime "2025-01-21T21:00:28-01:00"^^xsd:dateTime ] ;
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_tasmax_day_KIOST-ESM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_tasmax_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 .
@@ -2064,45 +2278,64 @@ tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_tasmin_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:35 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 4.85782e+05 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: mean time: minimum" ;
     tippecc_data:cmor_version "3.5.0" ;
-    tippecc_data:comment "minimum near-surface (usually, 2 meter) air temperature (add cell_method attribute 'time: min')" ;
     tippecc_data:contact "YoungHo Kim (yhokim@pknu.ac.kr & yhkimstar@gmail.com)" ;
     tippecc_data:creation_date "2019-11-04T04:12:56Z" ;
     tippecc_data:data_specs_version "01.00.30" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1910729964"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:35 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5296" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1910729964"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "309.68863" ;
+    tippecc_data:file.global_min "258.61438" ;
+    tippecc_data:file.global_model "KIOST-ESM" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-02-04 23:12:14 CET+0100" ;
+    tippecc_data:file.long_name "Daily Minimum Near-Surface Air Temperature" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "tasmin" ;
+    tippecc_data:file.standard_name "air_temperature" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "K" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.KIOST.KIOST-ESM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "309.68863" ;
-    tippecc_data:global_min "258.61438" ;
-    tippecc_data:global_model "KIOST-ESM" ;
     tippecc_data:grid "atmos data regridded from Cubed-sphere (c48) to 94X192" ;
     tippecc_data:grid_label "gr1" ;
-    tippecc_data:history "2019-11-04T04:12:56Z altered by CMOR: Treated scalar dimension: 'height'." ;
-    tippecc_data:indicator "no" ;
+    tippecc_data:history """Tue Jan 21 23:22:48 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_tasmin_day_KIOST-ESM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_KIOST-ESM_tasmin_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 23:22:03 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/tasmin/05deg_tasmin_day_KIOST-ESM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_tasmin_day_KIOST-ESM_r1i1p1f1_1850_2100.nc
+Sat Jan 18 02:52:17 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/tasmin/05deg_tasmin_day_KIOST-ESM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/tasmin/05deg_tasmin_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/tasmin/05deg_tasmin_day_KIOST-ESM_r1i1p1f1_1850_2100.nc
+Thu Dec 19 19:38:23 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/tasmin/tasmin_day_KIOST-ESM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/tasmin/05deg_tasmin_day_KIOST-ESM_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 19:38:01 2024: cdo mergetime tasmin_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/tasmin/tasmin_day_KIOST-ESM_historical_r1i1p1f1_1850_2014.nc
+2019-11-04T04:12:56Z ;rewrote data to be consistent with CMIP for variable tasmin found in table day.;
+File was processed by CMOR""" ;
     tippecc_data:institution "Korea Institute of Ocean Science & Technology, Busan 49111, Republic of Korea" ;
     tippecc_data:institution_id "KIOST" ;
-    tippecc_data:last_modification_time "2025-02-04 23:12:14 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Daily Minimum Near-Surface Air Temperature" ;
+    tippecc_data:license "CMIP6 model data produced by Lawrence Livermore KIOST is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -2113,8 +2346,6 @@ tippecc_data:TIPPECC_KIOST-ESM_day_r1i1p1f1_tasmin_1850_2100 a prov:Entity ;
     tippecc_data:realm "atmos" ;
     tippecc_data:references "Model described by Pak et al. (Ocean Science Journal, to be submitted)." ;
     tippecc_data:run_variant "3rd realization" ;
-    tippecc_data:short_data_reference "Kim, YoungHo et al. (2019). KIOST KIOST-ESM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.11249" ;
-    tippecc_data:short_variable_name "tasmin" ;
     tippecc_data:source """KIOST-ESM (2018): 
 aerosol: none
 atmos: GFDL-AM2.0 (cubed sphere (C48); 192 x 96 longitude/latitude; 32 vertical levels; top level 2 hPa)
@@ -2126,115 +2357,137 @@ ocnBgchem: TOPAZ2
 seaIce: GFDL-SIS""" ;
     tippecc_data:source_id "KIOST-ESM" ;
     tippecc_data:source_type "AOGCM BGC" ;
-    tippecc_data:standard_name "air_temperature" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
+    tippecc_data:tasmin.cell_measures "area: areacella" ;
+    tippecc_data:tasmin.cell_methods "area: mean time: minimum" ;
+    tippecc_data:tasmin.comment "minimum near-surface (usually, 2 meter) air temperature (add cell_method attribute 'time: min')" ;
+    tippecc_data:tasmin.history "2019-11-04T04:12:56Z altered by CMOR: Treated scalar dimension: 'height'." ;
+    tippecc_data:tasmin.long_name "Daily Minimum Near-Surface Air Temperature" ;
+    tippecc_data:tasmin.standard_name "air_temperature" ;
+    tippecc_data:tasmin.units "K" ;
+    tippecc_data:time_coverage_start "1850-01-01T00:00:00" ;
     tippecc_data:title "KIOST-ESM output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/2e884e5c-f837-4c96-ade6-fcad29eb982f" ;
-    tippecc_data:unit "K" ;
-    tippecc_data:units "K" ;
     tippecc_data:variable_id "tasmin" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ ],
-        [ ],
-        [ ],
-        [ ],
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1883 ;
+            prov:atTime "2025-01-18T02:52:17"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_1885 ;
             prov:atTime "2025-01-21T23:22:48"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_1883 ;
-            prov:atTime "2025-01-18T02:52:17"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1886> ;
             prov:atTime "2025-02-04T23:12:14-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_1884 ;
-            prov:atTime "2025-01-21T23:22:03"^^xsd:dateTime ] ;
+            prov:atTime "2025-01-21T23:22:03"^^xsd:dateTime ],
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_tasmin_day_KIOST-ESM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_tasmin_day_KIOST-ESM_ssp585_r1i1p1f1_2015_2100 .
 
 tippecc_data:hurs_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Merge_datasets_384 ;
-            prov:atTime "2024-12-19T08:37:42"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T08:37:42"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:hurs_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231 .
 
 tippecc_data:pr_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Merge_datasets_455 ;
-            prov:atTime "2024-12-19T09:51:37"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T09:51:37"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:pr_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231 .
 
 tippecc_data:rlds_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Merge_datasets_478 ;
-            prov:atTime "2024-12-19T11:08:49"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T11:08:49"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:rlds_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231 .
 
 tippecc_data:rlus_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Merge_datasets_501 ;
-            prov:atTime "2024-12-19T12:21:22"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T12:21:22"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:rlus_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231 .
 
 tippecc_data:rsds_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Merge_datasets_524 ;
-            prov:atTime "2024-12-19T13:32:35"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T13:32:35"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:rsds_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231 .
 
 tippecc_data:rsus_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Merge_datasets_547 ;
-            prov:atTime "2024-12-19T14:47:36"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T14:47:36"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:rsus_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231 .
 
 tippecc_data:sfcWind_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Merge_datasets_570 ;
-            prov:atTime "2024-12-19T16:01:48"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T16:01:48"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:sfcWind_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231 .
 
 tippecc_data:tasmax_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Merge_datasets_593 ;
-            prov:atTime "2024-12-19T18:24:13"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T18:24:13"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:tasmax_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231 .
 
 tippecc_data:tasmin_day_KIOST-ESM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Merge_datasets_616 ;
-            prov:atTime "2024-12-19T19:38:01"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T19:38:01"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:tasmin_day_KIOST-ESM_historical_r1i1p1f1_gr1_18500101-20141231 .
 
-<http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> a prov:Agent .
+software:FUNCTION__CDO_REMAPBIL a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_SELLONLATBOX a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_SELYEAR a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 people:PERSON__ZANDER_FRANZISKA a prov:Agent,
         "prov:Person" ;
@@ -2247,16 +2500,22 @@ people:PERSON__ZANDER_FRANZISKA a prov:Agent,
 
 tippecc_data:africa05.txt a prov:Entity .
 
-people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
-        "prov:Person" ;
-    rdfs:label "Jonathan Padavatan" ;
-    sdo:affiliation orgs:ORG__WITS ;
-    prov:actedOnBehalfOf orgs:ORG__WITS ;
-    foaf:familyName "Padavatan" ;
-    foaf:givenName "Jonathan" .
+people:PERSON__JONATHAN_PADAVATAN a prov:Agent ;
+    prov:actedOnBehalfOf orgs:ORG__WITS .
+
+software:FUNCTION__CDO_MERGE a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
     sdo:softwareVersion "1.9.3" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareApplication" .
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 

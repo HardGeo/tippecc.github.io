@@ -38,7 +38,8 @@ exe:Calc_mean_1757 a prov:Activity ;
     prov:function "FUNCTION__CDO_TIMMEAN" ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-24T19:21:04-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_TIMMEAN,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_ref._period_1756 .
 
 exe:Slice_ref._period_1756 a prov:Activity ;
@@ -48,15 +49,63 @@ exe:Slice_ref._period_1756 a prov:Activity ;
     prov:params "{'start_year': '2080', 'end_year': '2099'}" ;
     prov:startedAtTime "2025-01-24T19:21:04-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Calc_year_sum_1758 .
 
-software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
-    sdo:softwareVersion "0.49.0" ;
-    sdo:targetProduct software:SOFTWARE__XCLIM ;
-    sdo:type "sdo:SoftwareApplication" .
+orgs:ORG__WITS a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "University of the Witwatersrand" ;
+    sdo:name "University of the Witwatersrand" ;
+    wd:P6782 "https://ror.org/03rp50x72" .
 
-<http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> a prov:Agent .
+software:FUNCTION__CDO_REMAPBIL a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_SELLONLATBOX a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_TIMMEAN a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_YEARSUM a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__XCLIM_CONVERT_UNITS a prov:Agent ;
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
+
+software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
 
 tippecc_data:05deg_pr_day_KACE-1-0-G_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
 
@@ -71,7 +120,8 @@ exe:Calc_year_sum_1758 a prov:Activity ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-24T19:20:54-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_YEARSUM,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Convert_pr_to_mm_1752 .
 
 exe:Convert_pr_to_mm_1752 a prov:Activity ;
@@ -81,7 +131,8 @@ exe:Convert_pr_to_mm_1752 a prov:Activity ;
     prov:params "{'unit': 'mm'}" ;
     prov:startedAtTime "2025-01-24T19:19:46-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr_1850_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__XCLIM_0_49 ;
+    prov:wasAssociatedWith software:FUNCTION__XCLIM_CONVERT_UNITS,
+        software:SOFTWARE__XCLIM_0_49 ;
     prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Rename/Metadata_1751> .
 
 exe:Merge_datasets_1748 a prov:Activity ;
@@ -92,7 +143,8 @@ exe:Merge_datasets_1748 a prov:Activity ;
     prov:startedAtTime "2025-01-17T18:06:34"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_pr_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_KACE-1-0-G_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_34 .
 
 exe:Merge_datasets_454 a prov:Activity ;
@@ -102,7 +154,8 @@ exe:Merge_datasets_454 a prov:Activity ;
     prov:params "N/A" ;
     prov:startedAtTime "2024-12-19T09:46:38"^^xsd:dateTime ;
     prov:used tippecc_data:pr_day_KACE-1-0-G_historical_r1i1p1f1_gr_18500101-20141230 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Remap_bilinear_34 a prov:Activity ;
     rdfs:label "Remap bilinear" ;
@@ -112,7 +165,8 @@ exe:Remap_bilinear_34 a prov:Activity ;
     prov:startedAtTime "2024-12-19T09:49:45"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:pr_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_454 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1751> a prov:Activity ;
@@ -120,7 +174,6 @@ exe:Remap_bilinear_34 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T11:47:46-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1750 .
 
 exe:Slice_TIPPECC_area_1750 a prov:Activity ;
@@ -129,7 +182,8 @@ exe:Slice_TIPPECC_area_1750 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T12:46:59"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_1749 .
 
 exe:Slice_years_1749 a prov:Activity ;
@@ -138,7 +192,8 @@ exe:Slice_years_1749 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T12:44:05"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_1748 .
 
 orgs:ORG__FSU a prov:Agent,
@@ -147,77 +202,106 @@ orgs:ORG__FSU a prov:Agent,
     sdo:name "Friedrich Schiller University of Jena" ;
     wd:P6782 "https://ror.org/05qpz1x62" .
 
-orgs:ORG__WITS a prov:Agent,
-        "prov:Organization" ;
-    rdfs:label "University of the Witwatersrand" ;
-    sdo:name "University of the Witwatersrand" ;
-    wd:P6782 "https://ror.org/03rp50x72" .
+people:PERSON__JONATHAN_PADAVATAN a prov:Agent ;
+    prov:actedOnBehalfOf orgs:ORG__WITS .
 
-people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
-        "prov:Person" ;
-    rdfs:label "Jonathan Padavatan" ;
-    sdo:affiliation orgs:ORG__WITS ;
-    prov:actedOnBehalfOf orgs:ORG__WITS ;
-    foaf:familyName "Padavatan" ;
-    foaf:givenName "Jonathan" .
+software:FUNCTION__CDO_MERGE a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_SELYEAR a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum a prov:Entity ;
     tippecc_data:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)" ;
     tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-01-24 19:20:54 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean (interval: 1 day)" ;
     tippecc_data:cmor_version "3.4.0" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
     tippecc_data:contact "Yoon-Jin Lim (yoonjin.lim@korea.kr)" ;
     tippecc_data:creation_date "2019-09-11T03:40:51Z" ;
     tippecc_data:data_specs_version "01.00.30" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.8456" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "10529039"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-01-24 19:20:54 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8378" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Byun, Young-Hwa et al. (2019). NIMS-KMA KACE1.0-G model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8378" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8456" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Byun, Young-Hwa et al. (2019). NIMS-KMA KACE1.0-G model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8456" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "10529039"^^xsd:int ;
+    tippecc_data:file.frequency "year" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "5473.377860262735" ;
+    tippecc_data:file.global_min "7.858118532741209" ;
+    tippecc_data:file.global_model "KACE-1-0-G" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-01-24 19:20:54 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "251"^^xsd:int ;
+    tippecc_data:file.num_years "251"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_amount" ;
+    tippecc_data:file.time_calendar "360_day" ;
+    tippecc_data:file.time_coverage_end "2100-01-01 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "mm" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "year" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.NIMS-KMA.KACE-1-0-G.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "5473.377860262735" ;
-    tippecc_data:global_min "7.858118532741209" ;
-    tippecc_data:global_model "KACE-1-0-G" ;
     tippecc_data:grid "gs1x1" ;
     tippecc_data:grid_label "gr" ;
-    tippecc_data:history "2019-09-11T03:40:51Z altered by CMOR: replaced missing value flag (9.999e+20) with standard missing value (1e+20)." ;
-    tippecc_data:indicator "yes" ;
+    tippecc_data:history """Fri Jan 24 18:20:41 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100__yearsum.nc
+Tue Jan 21 12:46:59 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_KACE-1-0-G_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_KACE-1-0-G_pr_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 12:44:05 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_KACE-1-0-G_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_KACE-1-0-G_r1i1p1f1_1850_2100.nc
+Fri Jan 17 18:06:34 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/pr/05deg_pr_day_KACE-1-0-G_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_KACE-1-0-G_r1i1p1f1_1850_2100.nc
+Thu Dec 19 09:49:45 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 09:46:38 2024: cdo mergetime pr_day_KACE-1-0-G_historical_r1i1p1f1_gr_18500101-20141230.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014.nc
+2019-09-11T03:40:51Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.""" ;
     tippecc_data:institution "National Institute of Meteorological Sciences/Korea Meteorological Administration, Climate Research Division, Seoho-bukro 33, Seogwipo-si, Jejudo 63568, Republic of Korea" ;
     tippecc_data:institution_id "NIMS-KMA" ;
-    tippecc_data:last_modification_time "2025-01-24 19:20:54 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by NIMS-KMA is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "251"^^xsd:int ;
-    tippecc_data:num_years "251"^^xsd:int ;
-    tippecc_data:original_name "m01s05i216" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "KACE-1-0-G" ;
     tippecc_data:parent_time_units "days since 1850-01-01" ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean (interval: 1 day)" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.history "2019-09-11T03:40:51Z altered by CMOR: replaced missing value flag (9.999e+20) with standard missing value (1e+20)." ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "m01s05i216" ;
+    tippecc_data:pr.standard_name "precipitation_amount" ;
+    tippecc_data:pr.units "mm" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
     tippecc_data:references "Evaluation of the Korea Meteorological Administration Advanced Community Earth-system model (K-ACE): doi: 10.1007/s13143-019-00144-7. Lee et al., 2019." ;
-    tippecc_data:short_data_reference "Byun, Young-Hwa et al. (2019). NIMS-KMA KACE1.0-G model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8456" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """KACE1.0-G (2018): 
 aerosol: UKCA-GLOMAP-mode
 atmos: MetUM-HadGEM3-GA7.1 (N96; 192 x 144 longitude/latitude; 85 levels; top level 85 km)
@@ -229,21 +313,13 @@ ocnBgchem: none
 seaIce: CICE-HadGEM3-GSI8 (tripolar primarily 1deg; 360 x 200 longitude/latitude)""" ;
     tippecc_data:source_id "KACE-1-0-G" ;
     tippecc_data:source_type "AOGCM" ;
-    tippecc_data:standard_name "precipitation_amount" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87" ;
-    tippecc_data:time_calendar "360_day" ;
-    tippecc_data:time_coverage_end "2100-01-01 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "KACE-1-0-G output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/e7ec22af-7d4c-4f11-8290-24995dbe827d" ;
-    tippecc_data:unit "mm" ;
-    tippecc_data:units "mm" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     prov:qualifiedGeneration [ ],
         [ a prov:Generation ;
@@ -275,57 +351,80 @@ tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:46 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean (interval: 1 day)" ;
     tippecc_data:cmor_version "3.4.0" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
     tippecc_data:contact "Yoon-Jin Lim (yoonjin.lim@korea.kr)" ;
     tippecc_data:creation_date "2019-09-11T03:40:51Z" ;
     tippecc_data:data_specs_version "01.00.30" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.8456" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1893873070"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:46 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8378" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Byun, Young-Hwa et al. (2019). NIMS-KMA KACE1.0-G model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8378" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8456" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Byun, Young-Hwa et al. (2019). NIMS-KMA KACE1.0-G model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8456" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1893873070"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "0.013423773" ;
+    tippecc_data:file.global_min "0.0" ;
+    tippecc_data:file.global_model "KACE-1-0-G" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 11:47:46 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "90360"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_flux" ;
+    tippecc_data:file.time_calendar "360_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-30 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "kg m-2 s-1" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.NIMS-KMA.KACE-1-0-G.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "0.013423773" ;
-    tippecc_data:global_min "0.0" ;
-    tippecc_data:global_model "KACE-1-0-G" ;
     tippecc_data:grid "gs1x1" ;
     tippecc_data:grid_label "gr" ;
-    tippecc_data:history "2019-09-11T03:40:51Z altered by CMOR: replaced missing value flag (9.999e+20) with standard missing value (1e+20)." ;
-    tippecc_data:indicator "no" ;
+    tippecc_data:history """Tue Jan 21 12:46:59 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_KACE-1-0-G_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_KACE-1-0-G_pr_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 12:44:05 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_KACE-1-0-G_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_KACE-1-0-G_r1i1p1f1_1850_2100.nc
+Fri Jan 17 18:06:34 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/pr/05deg_pr_day_KACE-1-0-G_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_KACE-1-0-G_r1i1p1f1_1850_2100.nc
+Thu Dec 19 09:49:45 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 09:46:38 2024: cdo mergetime pr_day_KACE-1-0-G_historical_r1i1p1f1_gr_18500101-20141230.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014.nc
+2019-09-11T03:40:51Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.""" ;
     tippecc_data:institution "National Institute of Meteorological Sciences/Korea Meteorological Administration, Climate Research Division, Seoho-bukro 33, Seogwipo-si, Jejudo 63568, Republic of Korea" ;
     tippecc_data:institution_id "NIMS-KMA" ;
-    tippecc_data:last_modification_time "2025-01-21 11:47:46 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by NIMS-KMA is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "90360"^^xsd:int ;
-    tippecc_data:original_name "m01s05i216" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "KACE-1-0-G" ;
     tippecc_data:parent_time_units "days since 1850-01-01" ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean (interval: 1 day)" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.history "2019-09-11T03:40:51Z altered by CMOR: replaced missing value flag (9.999e+20) with standard missing value (1e+20)." ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "m01s05i216" ;
+    tippecc_data:pr.standard_name "precipitation_flux" ;
+    tippecc_data:pr.units "kg m-2 s-1" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
     tippecc_data:references "Evaluation of the Korea Meteorological Administration Advanced Community Earth-system model (K-ACE): doi: 10.1007/s13143-019-00144-7. Lee et al., 2019." ;
-    tippecc_data:short_data_reference "Byun, Young-Hwa et al. (2019). NIMS-KMA KACE1.0-G model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8456" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """KACE1.0-G (2018): 
 aerosol: UKCA-GLOMAP-mode
 atmos: MetUM-HadGEM3-GA7.1 (N96; 192 x 144 longitude/latitude; 85 levels; top level 85 km)
@@ -337,21 +436,13 @@ ocnBgchem: none
 seaIce: CICE-HadGEM3-GSI8 (tripolar primarily 1deg; 360 x 200 longitude/latitude)""" ;
     tippecc_data:source_id "KACE-1-0-G" ;
     tippecc_data:source_type "AOGCM" ;
-    tippecc_data:standard_name "precipitation_flux" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87" ;
-    tippecc_data:time_calendar "360_day" ;
-    tippecc_data:time_coverage_end "2100-12-30 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "KACE-1-0-G output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/e7ec22af-7d4c-4f11-8290-24995dbe827d" ;
-    tippecc_data:unit "kg m-2 s-1" ;
-    tippecc_data:units "kg m-2 s-1" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     prov:qualifiedGeneration [ ],
         [ ],
@@ -361,14 +452,14 @@ seaIce: CICE-HadGEM3-GSI8 (tripolar primarily 1deg; 360 x 200 longitude/latitude
             prov:activity exe:Slice_TIPPECC_area_1750 ;
             prov:atTime "2025-01-21T12:46:59"^^xsd:dateTime ],
         [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1748 ;
+            prov:atTime "2025-01-17T18:06:34"^^xsd:dateTime ],
+        [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1751> ;
             prov:atTime "2025-01-21T11:47:46-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_1749 ;
-            prov:atTime "2025-01-21T12:44:05"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_1748 ;
-            prov:atTime "2025-01-17T18:06:34"^^xsd:dateTime ] ;
+            prov:atTime "2025-01-21T12:44:05"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_pr_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_KACE-1-0-G_ssp585_r1i1p1f1_2015_2100 .
@@ -378,57 +469,80 @@ tippecc_data:TIPPECC_KACE-1-0-G_day_r1i1p1f1_pr__mm_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-01-24 19:19:46 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean (interval: 1 day)" ;
     tippecc_data:cmor_version "3.4.0" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
     tippecc_data:contact "Yoon-Jin Lim (yoonjin.lim@korea.kr)" ;
     tippecc_data:creation_date "2019-09-11T03:40:51Z" ;
     tippecc_data:data_specs_version "01.00.30" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.8456" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "3765523320"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-01-24 19:19:46 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8378" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Byun, Young-Hwa et al. (2019). NIMS-KMA KACE1.0-G model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8378" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8456" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Byun, Young-Hwa et al. (2019). NIMS-KMA KACE1.0-G model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8456" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "3765523320"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "1159.8140269517899" ;
+    tippecc_data:file.global_min "0.0" ;
+    tippecc_data:file.global_model "KACE-1-0-G" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-01-24 19:19:46 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "90360"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_amount" ;
+    tippecc_data:file.time_calendar "360_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-30 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "mm" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.NIMS-KMA.KACE-1-0-G.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "1159.8140269517899" ;
-    tippecc_data:global_min "0.0" ;
-    tippecc_data:global_model "KACE-1-0-G" ;
     tippecc_data:grid "gs1x1" ;
     tippecc_data:grid_label "gr" ;
-    tippecc_data:history "2019-09-11T03:40:51Z altered by CMOR: replaced missing value flag (9.999e+20) with standard missing value (1e+20)." ;
-    tippecc_data:indicator "yes" ;
+    tippecc_data:history """Tue Jan 21 12:46:59 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_KACE-1-0-G_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_KACE-1-0-G_pr_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 12:44:05 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_KACE-1-0-G_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_KACE-1-0-G_r1i1p1f1_1850_2100.nc
+Fri Jan 17 18:06:34 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/pr/05deg_pr_day_KACE-1-0-G_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_KACE-1-0-G_r1i1p1f1_1850_2100.nc
+Thu Dec 19 09:49:45 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 09:46:38 2024: cdo mergetime pr_day_KACE-1-0-G_historical_r1i1p1f1_gr_18500101-20141230.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014.nc
+2019-09-11T03:40:51Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.""" ;
     tippecc_data:institution "National Institute of Meteorological Sciences/Korea Meteorological Administration, Climate Research Division, Seoho-bukro 33, Seogwipo-si, Jejudo 63568, Republic of Korea" ;
     tippecc_data:institution_id "NIMS-KMA" ;
-    tippecc_data:last_modification_time "2025-01-24 19:19:46 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by NIMS-KMA is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "90360"^^xsd:int ;
-    tippecc_data:original_name "m01s05i216" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "KACE-1-0-G" ;
     tippecc_data:parent_time_units "days since 1850-01-01" ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean (interval: 1 day)" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.history "2019-09-11T03:40:51Z altered by CMOR: replaced missing value flag (9.999e+20) with standard missing value (1e+20)." ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "m01s05i216" ;
+    tippecc_data:pr.standard_name "precipitation_amount" ;
+    tippecc_data:pr.units "mm" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
     tippecc_data:references "Evaluation of the Korea Meteorological Administration Advanced Community Earth-system model (K-ACE): doi: 10.1007/s13143-019-00144-7. Lee et al., 2019." ;
-    tippecc_data:short_data_reference "Byun, Young-Hwa et al. (2019). NIMS-KMA KACE1.0-G model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8456" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """KACE1.0-G (2018): 
 aerosol: UKCA-GLOMAP-mode
 atmos: MetUM-HadGEM3-GA7.1 (N96; 192 x 144 longitude/latitude; 85 levels; top level 85 km)
@@ -440,21 +554,13 @@ ocnBgchem: none
 seaIce: CICE-HadGEM3-GSI8 (tripolar primarily 1deg; 360 x 200 longitude/latitude)""" ;
     tippecc_data:source_id "KACE-1-0-G" ;
     tippecc_data:source_type "AOGCM" ;
-    tippecc_data:standard_name "precipitation_amount" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(30 April 2019) MD5:cc2ae51c23960ce127b4d68ab3d8ac87" ;
-    tippecc_data:time_calendar "360_day" ;
-    tippecc_data:time_coverage_end "2100-12-30 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "KACE-1-0-G output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/e7ec22af-7d4c-4f11-8290-24995dbe827d" ;
-    tippecc_data:unit "mm" ;
-    tippecc_data:units "mm" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     prov:qualifiedGeneration [ ],
         [ a prov:Generation ;
@@ -472,7 +578,10 @@ tippecc_data:pr_day_KACE-1-0-G_historical_r1i1p1f1_1850_2014 a prov:Entity ;
     prov:wasDerivedFrom tippecc_data:pr_day_KACE-1-0-G_historical_r1i1p1f1_gr_18500101-20141230 .
 
 software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
     sdo:softwareVersion "1.9.3" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareApplication" .
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 

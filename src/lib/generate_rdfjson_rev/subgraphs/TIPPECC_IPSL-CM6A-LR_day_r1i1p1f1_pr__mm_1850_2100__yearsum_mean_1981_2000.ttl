@@ -38,7 +38,8 @@ exe:Calc_mean_1655 a prov:Activity ;
     prov:function "FUNCTION__CDO_TIMMEAN" ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-24T19:04:10-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_TIMMEAN,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_ref._period_1654 .
 
 exe:Slice_ref._period_1654 a prov:Activity ;
@@ -48,15 +49,63 @@ exe:Slice_ref._period_1654 a prov:Activity ;
     prov:params "{'start_year': '1981', 'end_year': '2000'}" ;
     prov:startedAtTime "2025-01-24T19:04:10-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1_pr__mm_1850_2100__yearsum ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Calc_year_sum_1658 .
 
-software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
-    sdo:softwareVersion "0.49.0" ;
-    sdo:targetProduct software:SOFTWARE__XCLIM ;
-    sdo:type "sdo:SoftwareApplication" .
+orgs:ORG__WITS a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "University of the Witwatersrand" ;
+    sdo:name "University of the Witwatersrand" ;
+    wd:P6782 "https://ror.org/03rp50x72" .
 
-<http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> a prov:Agent .
+software:FUNCTION__CDO_REMAPBIL a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_SELLONLATBOX a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_TIMMEAN a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_YEARSUM a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__XCLIM_CONVERT_UNITS a prov:Agent ;
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
+
+software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
 
 tippecc_data:05deg_pr_day_IPSL-CM6A-LR_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
 
@@ -71,7 +120,8 @@ exe:Calc_year_sum_1658 a prov:Activity ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-24T19:04:03-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1_pr__mm_1850_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_YEARSUM,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Convert_pr_to_mm_1652 .
 
 exe:Convert_pr_to_mm_1652 a prov:Activity ;
@@ -81,7 +131,8 @@ exe:Convert_pr_to_mm_1652 a prov:Activity ;
     prov:params "{'unit': 'mm'}" ;
     prov:startedAtTime "2025-01-24T19:02:49-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1_pr_1850_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__XCLIM_0_49 ;
+    prov:wasAssociatedWith software:FUNCTION__XCLIM_CONVERT_UNITS,
+        software:SOFTWARE__XCLIM_0_49 ;
     prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Rename/Metadata_1651> .
 
 exe:Merge_datasets_1648 a prov:Activity ;
@@ -92,7 +143,8 @@ exe:Merge_datasets_1648 a prov:Activity ;
     prov:startedAtTime "2025-01-17T18:03:29"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_IPSL-CM6A-LR_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_33 .
 
 exe:Merge_datasets_453 a prov:Activity ;
@@ -102,7 +154,8 @@ exe:Merge_datasets_453 a prov:Activity ;
     prov:params "N/A" ;
     prov:startedAtTime "2024-12-19T09:44:58"^^xsd:dateTime ;
     prov:used tippecc_data:pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_18500101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Remap_bilinear_33 a prov:Activity ;
     rdfs:label "Remap bilinear" ;
@@ -112,7 +165,8 @@ exe:Remap_bilinear_33 a prov:Activity ;
     prov:startedAtTime "2024-12-19T09:45:51"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_453 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1651> a prov:Activity ;
@@ -120,7 +174,6 @@ exe:Remap_bilinear_33 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T11:44:04-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1650 .
 
 exe:Slice_TIPPECC_area_1650 a prov:Activity ;
@@ -129,7 +182,8 @@ exe:Slice_TIPPECC_area_1650 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T12:43:15"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_1649 .
 
 exe:Slice_years_1649 a prov:Activity ;
@@ -138,7 +192,8 @@ exe:Slice_years_1649 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T12:40:20"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_1648 .
 
 orgs:ORG__FSU a prov:Agent,
@@ -147,19 +202,24 @@ orgs:ORG__FSU a prov:Agent,
     sdo:name "Friedrich Schiller University of Jena" ;
     wd:P6782 "https://ror.org/05qpz1x62" .
 
-orgs:ORG__WITS a prov:Agent,
-        "prov:Organization" ;
-    rdfs:label "University of the Witwatersrand" ;
-    sdo:name "University of the Witwatersrand" ;
-    wd:P6782 "https://ror.org/03rp50x72" .
+people:PERSON__JONATHAN_PADAVATAN a prov:Agent ;
+    prov:actedOnBehalfOf orgs:ORG__WITS .
 
-people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
-        "prov:Person" ;
-    rdfs:label "Jonathan Padavatan" ;
-    sdo:affiliation orgs:ORG__WITS ;
-    prov:actedOnBehalfOf orgs:ORG__WITS ;
-    foaf:familyName "Padavatan" ;
-    foaf:givenName "Jonathan" .
+software:FUNCTION__CDO_MERGE a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_SELYEAR a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1_pr__mm_1850_2100__yearsum a prov:Entity ;
     tippecc_data:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)" ;
@@ -169,84 +229,109 @@ tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1_pr__mm_1850_2100__yearsum a prov:
     tippecc_data:EXPID "historical" ;
     tippecc_data:NCO "\"4.6.0\"" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-01-24 19:04:03 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 2.1914e+04 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:contact "ipsl-cmip6@listes.ipsl.fr" ;
     tippecc_data:creation_date "2018-07-11T07:27:15Z" ;
     tippecc_data:data_specs_version "01.00.21" ;
-    tippecc_data:description "at surface; includes both liquid and solid phases from all types of clouds (both large-scale and convective)" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.5271" ;
+    tippecc_data:description "CMIP6 historical" ;
     tippecc_data:dr2xml_md5sum "f1e40c1fc5d8281f865f72fbf4e38f9d" ;
     tippecc_data:dr2xml_version "1.11" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "10533101"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-01-24 19:04:03 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5195" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Boucher, Olivier et al. (2018). IPSL IPSL-CM6A-LR model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5195" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5271" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Boucher, Olivier et al. (2019). IPSL IPSL-CM6A-LR model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5271" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "10533101"^^xsd:int ;
+    tippecc_data:file.frequency "year" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "4213.879098750476" ;
+    tippecc_data:file.global_min "4.920740645559332" ;
+    tippecc_data:file.global_model "IPSL-CM6A-LR" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-01-24 19:04:03 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "251"^^xsd:int ;
+    tippecc_data:file.num_years "251"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_amount" ;
+    tippecc_data:file.time_calendar "gregorian" ;
+    tippecc_data:file.time_coverage_end "2100-01-01 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "mm" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "year" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.IPSL.IPSL-CM6A-LR.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "4213.879098750476" ;
-    tippecc_data:global_min "4.920740645559332" ;
-    tippecc_data:global_model "IPSL-CM6A-LR" ;
     tippecc_data:grid "LMDZ grid" ;
     tippecc_data:grid_label "gr" ;
-    tippecc_data:history "none" ;
-    tippecc_data:indicator "yes" ;
+    tippecc_data:history """Fri Jan 24 18:03:50 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1_pr__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1_pr__mm_1850_2100__yearsum.nc
+Tue Jan 21 12:43:15 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_IPSL-CM6A-LR_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_IPSL-CM6A-LR_pr_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 12:40:20 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_IPSL-CM6A-LR_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_IPSL-CM6A-LR_r1i1p1f1_1850_2100.nc
+Fri Jan 17 18:03:29 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/pr/05deg_pr_day_IPSL-CM6A-LR_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_IPSL-CM6A-LR_r1i1p1f1_1850_2100.nc
+Thu Dec 19 09:45:51 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 09:44:58 2024: cdo mergetime pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_18500101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_1850_2014.nc
+Sat Dec  1 12:16:31 2018: ncatted -O -a realization_index,global,m,i,1 /ccc/work/cont003/cmip6/cmip6/onhold/CM61-LR-histEXT-03.1910/files+ext/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_18500101-20141231.nc
+Sat Dec  1 12:09:56 2018: ncatted -O -a realization_index,global,m,i,1 /ccc/work/cont003/cmip6/cmip6/onhold/CM61-LR-hist-03.1910/files/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_18500101-20141231.nc
+Sat Dec  1 11:04:28 2018: ncatted -O -a realization_index,global,m,i,1 /ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_18500101-20141231.nc
+Fri Nov 30 16:51:32 2018: ncatted -O -a realization_index,global,m,s,1 /ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_18500101-20141231.nc
+Thu Nov 29 16:52:55 2018: ncatted -O -a variant_label,global,m,c,r1i1p1f1 /ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r3i1p1f1_gr_18500101-20141231.nc
+Thu Nov 29 16:52:55 2018: ncatted -O -a further_info_url,global,m,c,https://furtherinfo.es-doc.org/CMIP6.IPSL.IPSL-CM6A-LR.historical.none.r1i1p1f1 /ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r3i1p1f1_gr_18500101-20141231.nc
+Thu Nov 29 16:52:55 2018: ncatted -O -a name,global,m,c,/ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_%start_date%-%end_date% /ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r3i1p1f1_gr_18500101-20141231.nc
+Mon Sep  3 14:51:09 2018: ncatted -O -a parent_variant_label,global,m,c,r1i1p1f1 pr_day_IPSL-CM6A-LR_historical_r3i1p1f1_gr_18500101-20141231.nc
+none""" ;
     tippecc_data:institution "Institut Pierre Simon Laplace, Paris 75252, France" ;
     tippecc_data:institution_id "IPSL" ;
-    tippecc_data:interval_operation "900 s" ;
-    tippecc_data:interval_write "1 d" ;
-    tippecc_data:last_modification_time "2025-01-24 19:04:03 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by IPSL is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https://cmc.ipsl.fr/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
     tippecc_data:model_version "6.1.5" ;
     tippecc_data:name "/ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_%start_date%-%end_date%" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "251"^^xsd:int ;
-    tippecc_data:num_years "251"^^xsd:int ;
-    tippecc_data:online_operation "average" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "IPSL-CM6A-LR" ;
     tippecc_data:parent_time_units "days since 1850-01-01 00:00:00" ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.description "at surface; includes both liquid and solid phases from all types of clouds (both large-scale and convective)" ;
+    tippecc_data:pr.history "none" ;
+    tippecc_data:pr.interval_operation "900 s" ;
+    tippecc_data:pr.interval_write "1 d" ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.online_operation "average" ;
+    tippecc_data:pr.standard_name "precipitation_amount" ;
+    tippecc_data:pr.units "mm" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
-    tippecc_data:short_data_reference "Boucher, Olivier et al. (2019). IPSL IPSL-CM6A-LR model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5271" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source "IPSL-CM6A-LR (2017):  atmos: LMDZ (NPv6, N96; 144 x 143 longitude/latitude; 79 levels; top level 40000 m) land: ORCHIDEE (v2.0, Water/Carbon/Energy mode) ocean: NEMO-OPA (eORCA1.3, tripolar primarily 1deg; 362 x 332 longitude/latitude; 75 levels; top grid cell 0-2 m) ocnBgchem: NEMO-PISCES seaIce: NEMO-LIM3" ;
     tippecc_data:source_id "IPSL-CM6A-LR" ;
     tippecc_data:source_type "AOGCM BGC" ;
-    tippecc_data:standard_name "precipitation_amount" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
-    tippecc_data:time_calendar "gregorian" ;
-    tippecc_data:time_coverage_end "2100-01-01 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "IPSL-CM6A-LR model output prepared for CMIP6 / CMIP historical" ;
     tippecc_data:tracking_id "hdl:21.14100/41b69e94-c1e8-4950-8f04-9a4cbe5c700c" ;
-    tippecc_data:unit "mm" ;
-    tippecc_data:units "mm" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Calc_year_sum_1658 ;
-            prov:atTime "2025-01-24T19:04:03-01:00"^^xsd:dateTime ] ;
+            prov:atTime "2025-01-24T19:04:03-01:00"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1_pr__mm_1850_2100 .
 
@@ -260,10 +345,10 @@ people:PERSON__ZANDER_FRANZISKA a prov:Agent,
     foaf:givenName "Franziska" .
 
 tippecc_data:05deg_pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_33 ;
-            prov:atTime "2024-12-19T09:45:51"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T09:45:51"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_1850_2014 .
@@ -276,95 +361,119 @@ tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1_pr_1850_2100 a prov:Entity ;
     tippecc_data:EXPID "historical" ;
     tippecc_data:NCO "\"4.6.0\"" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:38 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 2.1914e+04 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:contact "ipsl-cmip6@listes.ipsl.fr" ;
     tippecc_data:creation_date "2018-07-11T07:27:15Z" ;
     tippecc_data:data_specs_version "01.00.21" ;
-    tippecc_data:description "at surface; includes both liquid and solid phases from all types of clouds (both large-scale and convective)" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.5271" ;
+    tippecc_data:description "CMIP6 historical" ;
     tippecc_data:dr2xml_md5sum "f1e40c1fc5d8281f865f72fbf4e38f9d" ;
     tippecc_data:dr2xml_version "1.11" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1921465528"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:38 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5195" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Boucher, Olivier et al. (2018). IPSL IPSL-CM6A-LR model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5195" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5271" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Boucher, Olivier et al. (2019). IPSL IPSL-CM6A-LR model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5271" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1921465528"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "0.00420087" ;
+    tippecc_data:file.global_min "0.0" ;
+    tippecc_data:file.global_model "IPSL-CM6A-LR" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 11:44:04 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91676"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_flux" ;
+    tippecc_data:file.time_calendar "gregorian" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01 00:00:00" ;
+    tippecc_data:file.unit "kg m-2 s-1" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.IPSL.IPSL-CM6A-LR.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "0.00420087" ;
-    tippecc_data:global_min "0.0" ;
-    tippecc_data:global_model "IPSL-CM6A-LR" ;
     tippecc_data:grid "LMDZ grid" ;
     tippecc_data:grid_label "gr" ;
-    tippecc_data:history "none" ;
-    tippecc_data:indicator "no" ;
+    tippecc_data:history """Tue Jan 21 12:43:15 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_IPSL-CM6A-LR_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_IPSL-CM6A-LR_pr_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 12:40:20 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_IPSL-CM6A-LR_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_IPSL-CM6A-LR_r1i1p1f1_1850_2100.nc
+Fri Jan 17 18:03:29 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/pr/05deg_pr_day_IPSL-CM6A-LR_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_IPSL-CM6A-LR_r1i1p1f1_1850_2100.nc
+Thu Dec 19 09:45:51 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 09:44:58 2024: cdo mergetime pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_18500101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_1850_2014.nc
+Sat Dec  1 12:16:31 2018: ncatted -O -a realization_index,global,m,i,1 /ccc/work/cont003/cmip6/cmip6/onhold/CM61-LR-histEXT-03.1910/files+ext/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_18500101-20141231.nc
+Sat Dec  1 12:09:56 2018: ncatted -O -a realization_index,global,m,i,1 /ccc/work/cont003/cmip6/cmip6/onhold/CM61-LR-hist-03.1910/files/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_18500101-20141231.nc
+Sat Dec  1 11:04:28 2018: ncatted -O -a realization_index,global,m,i,1 /ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_18500101-20141231.nc
+Fri Nov 30 16:51:32 2018: ncatted -O -a realization_index,global,m,s,1 /ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_18500101-20141231.nc
+Thu Nov 29 16:52:55 2018: ncatted -O -a variant_label,global,m,c,r1i1p1f1 /ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r3i1p1f1_gr_18500101-20141231.nc
+Thu Nov 29 16:52:55 2018: ncatted -O -a further_info_url,global,m,c,https://furtherinfo.es-doc.org/CMIP6.IPSL.IPSL-CM6A-LR.historical.none.r1i1p1f1 /ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r3i1p1f1_gr_18500101-20141231.nc
+Thu Nov 29 16:52:55 2018: ncatted -O -a name,global,m,c,/ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_%start_date%-%end_date% /ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r3i1p1f1_gr_18500101-20141231.nc
+Mon Sep  3 14:51:09 2018: ncatted -O -a parent_variant_label,global,m,c,r1i1p1f1 pr_day_IPSL-CM6A-LR_historical_r3i1p1f1_gr_18500101-20141231.nc
+none""" ;
     tippecc_data:institution "Institut Pierre Simon Laplace, Paris 75252, France" ;
     tippecc_data:institution_id "IPSL" ;
-    tippecc_data:interval_operation "900 s" ;
-    tippecc_data:interval_write "1 d" ;
-    tippecc_data:last_modification_time "2025-01-21 11:44:04 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by IPSL is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https://cmc.ipsl.fr/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
     tippecc_data:model_version "6.1.5" ;
     tippecc_data:name "/ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_%start_date%-%end_date%" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91676"^^xsd:int ;
-    tippecc_data:online_operation "average" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "IPSL-CM6A-LR" ;
     tippecc_data:parent_time_units "days since 1850-01-01 00:00:00" ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.description "at surface; includes both liquid and solid phases from all types of clouds (both large-scale and convective)" ;
+    tippecc_data:pr.history "none" ;
+    tippecc_data:pr.interval_operation "900 s" ;
+    tippecc_data:pr.interval_write "1 d" ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.online_operation "average" ;
+    tippecc_data:pr.standard_name "precipitation_flux" ;
+    tippecc_data:pr.units "kg m-2 s-1" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
-    tippecc_data:short_data_reference "Boucher, Olivier et al. (2019). IPSL IPSL-CM6A-LR model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5271" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source "IPSL-CM6A-LR (2017):  atmos: LMDZ (NPv6, N96; 144 x 143 longitude/latitude; 79 levels; top level 40000 m) land: ORCHIDEE (v2.0, Water/Carbon/Energy mode) ocean: NEMO-OPA (eORCA1.3, tripolar primarily 1deg; 362 x 332 longitude/latitude; 75 levels; top grid cell 0-2 m) ocnBgchem: NEMO-PISCES seaIce: NEMO-LIM3" ;
     tippecc_data:source_id "IPSL-CM6A-LR" ;
     tippecc_data:source_type "AOGCM BGC" ;
-    tippecc_data:standard_name "precipitation_flux" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
-    tippecc_data:time_calendar "gregorian" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01 00:00:00" ;
     tippecc_data:title "IPSL-CM6A-LR model output prepared for CMIP6 / CMIP historical" ;
     tippecc_data:tracking_id "hdl:21.14100/41b69e94-c1e8-4950-8f04-9a4cbe5c700c" ;
-    tippecc_data:unit "kg m-2 s-1" ;
-    tippecc_data:units "kg m-2 s-1" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ ],
-        [ ],
-        [ ],
-        [ ],
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_1650 ;
+            prov:atTime "2025-01-21T12:43:15"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1648 ;
+            prov:atTime "2025-01-17T18:03:29"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1651> ;
             prov:atTime "2025-01-21T11:44:04-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_1649 ;
             prov:atTime "2025-01-21T12:40:20"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Slice_TIPPECC_area_1650 ;
-            prov:atTime "2025-01-21T12:43:15"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_1648 ;
-            prov:atTime "2025-01-17T18:03:29"^^xsd:dateTime ] ;
+        [ ],
+        [ ],
+        [ ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_IPSL-CM6A-LR_ssp585_r1i1p1f1_2015_2100 .
@@ -377,96 +486,123 @@ tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1_pr__mm_1850_2100 a prov:Entity ;
     tippecc_data:EXPID "historical" ;
     tippecc_data:NCO "\"4.6.0\"" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-01-24 19:02:49 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 2.1914e+04 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:contact "ipsl-cmip6@listes.ipsl.fr" ;
     tippecc_data:creation_date "2018-07-11T07:27:15Z" ;
     tippecc_data:data_specs_version "01.00.21" ;
-    tippecc_data:description "at surface; includes both liquid and solid phases from all types of clouds (both large-scale and convective)" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.5271" ;
+    tippecc_data:description "CMIP6 historical" ;
     tippecc_data:dr2xml_md5sum "f1e40c1fc5d8281f865f72fbf4e38f9d" ;
     tippecc_data:dr2xml_version "1.11" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "3820371272"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-01-24 19:02:49 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5195" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Boucher, Olivier et al. (2018). IPSL IPSL-CM6A-LR model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5195" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.5271" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Boucher, Olivier et al. (2019). IPSL IPSL-CM6A-LR model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5271" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "3820371272"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "362.9551827907562" ;
+    tippecc_data:file.global_min "0.0" ;
+    tippecc_data:file.global_model "IPSL-CM6A-LR" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-01-24 19:02:49 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91676"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_amount" ;
+    tippecc_data:file.time_calendar "gregorian" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "mm" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.IPSL.IPSL-CM6A-LR.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "362.9551827907562" ;
-    tippecc_data:global_min "0.0" ;
-    tippecc_data:global_model "IPSL-CM6A-LR" ;
     tippecc_data:grid "LMDZ grid" ;
     tippecc_data:grid_label "gr" ;
-    tippecc_data:history "none" ;
-    tippecc_data:indicator "yes" ;
+    tippecc_data:history """Tue Jan 21 12:43:15 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_IPSL-CM6A-LR_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_IPSL-CM6A-LR_pr_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 12:40:20 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_IPSL-CM6A-LR_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_pr_day_IPSL-CM6A-LR_r1i1p1f1_1850_2100.nc
+Fri Jan 17 18:03:29 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/pr/05deg_pr_day_IPSL-CM6A-LR_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_IPSL-CM6A-LR_r1i1p1f1_1850_2100.nc
+Thu Dec 19 09:45:51 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 09:44:58 2024: cdo mergetime pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_18500101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_1850_2014.nc
+Sat Dec  1 12:16:31 2018: ncatted -O -a realization_index,global,m,i,1 /ccc/work/cont003/cmip6/cmip6/onhold/CM61-LR-histEXT-03.1910/files+ext/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_18500101-20141231.nc
+Sat Dec  1 12:09:56 2018: ncatted -O -a realization_index,global,m,i,1 /ccc/work/cont003/cmip6/cmip6/onhold/CM61-LR-hist-03.1910/files/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_18500101-20141231.nc
+Sat Dec  1 11:04:28 2018: ncatted -O -a realization_index,global,m,i,1 /ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_18500101-20141231.nc
+Fri Nov 30 16:51:32 2018: ncatted -O -a realization_index,global,m,s,1 /ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_18500101-20141231.nc
+Thu Nov 29 16:52:55 2018: ncatted -O -a variant_label,global,m,c,r1i1p1f1 /ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r3i1p1f1_gr_18500101-20141231.nc
+Thu Nov 29 16:52:55 2018: ncatted -O -a further_info_url,global,m,c,https://furtherinfo.es-doc.org/CMIP6.IPSL.IPSL-CM6A-LR.historical.none.r1i1p1f1 /ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r3i1p1f1_gr_18500101-20141231.nc
+Thu Nov 29 16:52:55 2018: ncatted -O -a name,global,m,c,/ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_%start_date%-%end_date% /ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r3i1p1f1_gr_18500101-20141231.nc
+Mon Sep  3 14:51:09 2018: ncatted -O -a parent_variant_label,global,m,c,r1i1p1f1 pr_day_IPSL-CM6A-LR_historical_r3i1p1f1_gr_18500101-20141231.nc
+none""" ;
     tippecc_data:institution "Institut Pierre Simon Laplace, Paris 75252, France" ;
     tippecc_data:institution_id "IPSL" ;
-    tippecc_data:interval_operation "900 s" ;
-    tippecc_data:interval_write "1 d" ;
-    tippecc_data:last_modification_time "2025-01-24 19:02:49 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by IPSL is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https://cmc.ipsl.fr/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
     tippecc_data:model_version "6.1.5" ;
     tippecc_data:name "/ccc/work/cont003/gencmip6/p86caub/IGCM_OUT/IPSLCM6/PROD/historical/CM61-LR-hist-03.1910/CMIP6/ATM/pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_%start_date%-%end_date%" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91676"^^xsd:int ;
-    tippecc_data:online_operation "average" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "IPSL-CM6A-LR" ;
     tippecc_data:parent_time_units "days since 1850-01-01 00:00:00" ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.description "at surface; includes both liquid and solid phases from all types of clouds (both large-scale and convective)" ;
+    tippecc_data:pr.history "none" ;
+    tippecc_data:pr.interval_operation "900 s" ;
+    tippecc_data:pr.interval_write "1 d" ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.online_operation "average" ;
+    tippecc_data:pr.standard_name "precipitation_amount" ;
+    tippecc_data:pr.units "mm" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
-    tippecc_data:short_data_reference "Boucher, Olivier et al. (2019). IPSL IPSL-CM6A-LR model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.5271" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source "IPSL-CM6A-LR (2017):  atmos: LMDZ (NPv6, N96; 144 x 143 longitude/latitude; 79 levels; top level 40000 m) land: ORCHIDEE (v2.0, Water/Carbon/Energy mode) ocean: NEMO-OPA (eORCA1.3, tripolar primarily 1deg; 362 x 332 longitude/latitude; 75 levels; top grid cell 0-2 m) ocnBgchem: NEMO-PISCES seaIce: NEMO-LIM3" ;
     tippecc_data:source_id "IPSL-CM6A-LR" ;
     tippecc_data:source_type "AOGCM BGC" ;
-    tippecc_data:standard_name "precipitation_amount" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
-    tippecc_data:time_calendar "gregorian" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "IPSL-CM6A-LR model output prepared for CMIP6 / CMIP historical" ;
     tippecc_data:tracking_id "hdl:21.14100/41b69e94-c1e8-4950-8f04-9a4cbe5c700c" ;
-    tippecc_data:unit "mm" ;
-    tippecc_data:units "mm" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Convert_pr_to_mm_1652 ;
-            prov:atTime "2025-01-24T19:02:49-01:00"^^xsd:dateTime ] ;
+            prov:atTime "2025-01-24T19:02:49-01:00"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_IPSL-CM6A-LR_day_r1i1p1f1_pr_1850_2100 .
 
 tippecc_data:pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ ],
-        [ a prov:Generation ;
+    prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity exe:Merge_datasets_453 ;
-            prov:atTime "2024-12-19T09:44:58"^^xsd:dateTime ] ;
+            prov:atTime "2024-12-19T09:44:58"^^xsd:dateTime ],
+        [ ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:pr_day_IPSL-CM6A-LR_historical_r1i1p1f1_gr_18500101-20141231 .
 
 software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
     sdo:softwareVersion "1.9.3" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareApplication" .
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 

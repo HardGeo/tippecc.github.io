@@ -44,16 +44,64 @@ exe:Calc_abs._change_1453 a prov:Activity ;
     prov:startedAtTime "2025-03-04T18:26:02-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100__yearsum_mean_1981_2000,
         tippecc_data:TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100__yearsum_mean_2080_2099 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SUB,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Calc_mean_1455,
         exe:Calc_mean_1457 .
 
-software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
-    sdo:softwareVersion "0.49.0" ;
-    sdo:targetProduct software:SOFTWARE__XCLIM ;
-    sdo:type "sdo:SoftwareApplication" .
+orgs:ORG__WITS a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "University of the Witwatersrand" ;
+    sdo:name "University of the Witwatersrand" ;
+    wd:P6782 "https://ror.org/03rp50x72" .
 
-<http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> a prov:Agent .
+software:FUNCTION__CDO_REMAPBIL a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_SELLONLATBOX a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_SUB a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_YEARSUM a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__XCLIM_CONVERT_UNITS a prov:Agent ;
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
+
+software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
 
 tippecc_data:05deg_pr_day_HadGEM3-GC31-LL_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
 
@@ -69,7 +117,8 @@ exe:Calc_mean_1455 a prov:Activity ;
     prov:function "FUNCTION__CDO_TIMMEAN" ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-03-04T18:25:50-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_TIMMEAN,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_ref._period_1454 .
 
 exe:Calc_mean_1457 a prov:Activity ;
@@ -78,7 +127,8 @@ exe:Calc_mean_1457 a prov:Activity ;
     prov:function "FUNCTION__CDO_TIMMEAN" ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-03-04T18:25:55-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_TIMMEAN,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_ref._period_1456 .
 
 exe:Convert_pr_to_mm_1452 a prov:Activity ;
@@ -88,7 +138,8 @@ exe:Convert_pr_to_mm_1452 a prov:Activity ;
     prov:params "{'unit': 'mm'}" ;
     prov:startedAtTime "2025-03-04T18:24:00-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr_1850_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__XCLIM_0_49 ;
+    prov:wasAssociatedWith software:FUNCTION__XCLIM_CONVERT_UNITS,
+        software:SOFTWARE__XCLIM_0_49 ;
     prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Rename/Metadata_1451> .
 
 exe:Merge_datasets_1448 a prov:Activity ;
@@ -99,7 +150,8 @@ exe:Merge_datasets_1448 a prov:Activity ;
     prov:startedAtTime "2025-01-17T17:57:27"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_HadGEM3-GC31-LL_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_31 .
 
 exe:Merge_datasets_451 a prov:Activity ;
@@ -110,7 +162,8 @@ exe:Merge_datasets_451 a prov:Activity ;
     prov:startedAtTime "2024-12-19T09:28:33"^^xsd:dateTime ;
     prov:used tippecc_data:pr_day_HadGEM3-GC31-LL_historical_r1i1p1f3_gn_18500101-19491230,
         tippecc_data:pr_day_HadGEM3-GC31-LL_historical_r1i1p1f3_gn_19500101-20141230 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Remap_bilinear_31 a prov:Activity ;
     rdfs:label "Remap bilinear" ;
@@ -120,7 +173,8 @@ exe:Remap_bilinear_31 a prov:Activity ;
     prov:startedAtTime "2024-12-19T09:31:43"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_451 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1451> a prov:Activity ;
@@ -128,7 +182,6 @@ exe:Remap_bilinear_31 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-02-19T14:26:56-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1450 .
 
 exe:Slice_TIPPECC_area_1450 a prov:Activity ;
@@ -137,7 +190,8 @@ exe:Slice_TIPPECC_area_1450 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-02-19T15:24:08"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_1449 .
 
 exe:Slice_ref._period_1454 a prov:Activity ;
@@ -147,7 +201,8 @@ exe:Slice_ref._period_1454 a prov:Activity ;
     prov:params "{'start_year': '1981', 'end_year': '2000'}" ;
     prov:startedAtTime "2025-03-04T18:25:50-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100__yearsum ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Calc_year_sum_1458 .
 
 exe:Slice_ref._period_1456 a prov:Activity ;
@@ -157,7 +212,8 @@ exe:Slice_ref._period_1456 a prov:Activity ;
     prov:params "{'start_year': '2080', 'end_year': '2099'}" ;
     prov:startedAtTime "2025-03-04T18:25:55-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100__yearsum ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Calc_year_sum_1458 .
 
 exe:Slice_years_1449 a prov:Activity ;
@@ -166,7 +222,8 @@ exe:Slice_years_1449 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-22T13:13:35"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_1448 .
 
 orgs:ORG__FSU a prov:Agent,
@@ -175,77 +232,108 @@ orgs:ORG__FSU a prov:Agent,
     sdo:name "Friedrich Schiller University of Jena" ;
     wd:P6782 "https://ror.org/05qpz1x62" .
 
-orgs:ORG__WITS a prov:Agent,
-        "prov:Organization" ;
-    rdfs:label "University of the Witwatersrand" ;
-    sdo:name "University of the Witwatersrand" ;
-    wd:P6782 "https://ror.org/03rp50x72" .
+people:PERSON__JONATHAN_PADAVATAN a prov:Agent ;
+    prov:actedOnBehalfOf orgs:ORG__WITS .
 
-people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
-        "prov:Person" ;
-    rdfs:label "Jonathan Padavatan" ;
-    sdo:affiliation orgs:ORG__WITS ;
-    prov:actedOnBehalfOf orgs:ORG__WITS ;
-    foaf:familyName "Padavatan" ;
-    foaf:givenName "Jonathan" .
+software:FUNCTION__CDO_MERGE a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_TIMMEAN a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 tippecc_data:TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100__yearsum_mean_1981_2000 a prov:Entity ;
     tippecc_data:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)" ;
     tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-03-04 18:25:50 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
-    tippecc_data:climatology_bounds "['1981-01-01 00:00:00', '2000-01-01 00:00:00']" ;
     tippecc_data:cmor_version "3.4.0" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
     tippecc_data:creation_date "2019-06-19T14:05:44Z" ;
     tippecc_data:cv_version "6.2.20.1" ;
     tippecc_data:data_specs_version "01.00.29" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.10901" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "87391"^^xsd:int ;
-    tippecc_data:frequency "none" ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-03-04 18:25:50 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.6109" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Ridley, Jeff et al. (2019). MOHC HadGEM3-GC31-LL model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.6109" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.10901" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Good, Peter (2020). MOHC HadGEM3-GC31-LL model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.10901" ;
+    tippecc_data:file.climatology_bounds "['1981-01-01 00:00:00', '2000-01-01 00:00:00']" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "87391"^^xsd:int ;
+    tippecc_data:file.frequency "none" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "2689.764841143096" ;
+    tippecc_data:file.global_min "46.93164903800012" ;
+    tippecc_data:file.global_model "HadGEM3-GC31-LL" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-03-04 18:25:50 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "1"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_amount" ;
+    tippecc_data:file.time_calendar "360_day" ;
+    tippecc_data:file.time_coverage_end "1991-01-01 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1991-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "mm" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
+    tippecc_data:frequency "year" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MOHC.HadGEM3-GC31-LL.historical.none.r1i1p1f3" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "2689.764841143096" ;
-    tippecc_data:global_min "46.93164903800012" ;
-    tippecc_data:global_model "HadGEM3-GC31-LL" ;
     tippecc_data:grid "Native N96 grid; 192 x 144 longitude/latitude" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2019-06-19T14:05:44Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20)." ;
-    tippecc_data:indicator "yes" ;
+    tippecc_data:history """Tue Mar 04 17:25:49 2025: cdo -O -s -timmean -selyear,1981/2000 /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100__yearsum.nc /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100__yearsum_mean_1981_2000.nc
+Tue Mar 04 17:25:28 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100__yearsum.nc
+Wed Feb 19 15:24:08 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f3_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain_Feb25/TIPPECC_HadGEM3-GC31-LL_pr_day_r1i1p1f1_1850_2100.nc
+Wed Jan 22 13:13:35 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/temp/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f1_1850_2100.nc
+Fri Jan 17 17:57:27 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/pr/05deg_pr_day_HadGEM3-GC31-LL_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f1_1850_2100.nc
+Thu Dec 19 09:31:43 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 09:28:33 2024: cdo mergetime pr_day_HadGEM3-GC31-LL_historical_r1i1p1f3_gn_18500101-19491230.nc pr_day_HadGEM3-GC31-LL_historical_r1i1p1f3_gn_19500101-20141230.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc
+2019-06-19T11:16:23Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.;
+2019-06-19T11:07:16Z MIP Convert v1.1.0, Python v2.7.12, Iris v1.13.0, Numpy v1.13.3, netcdftime v1.4.1.""" ;
     tippecc_data:institution "Met Office Hadley Centre, Fitzroy Road, Exeter, Devon, EX1 3PB, UK" ;
     tippecc_data:institution_id "MOHC" ;
-    tippecc_data:last_modification_time "2025-03-04 18:25:50 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by the Met Office Hadley Centre is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https://ukesm.ac.uk/cmip6. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
     tippecc_data:mo_runid "u-bg466" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "1"^^xsd:int ;
-    tippecc_data:original_name "mo: (stash: m01s05i216, lbproc: 128)" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "HadGEM3-GC31-LL" ;
     tippecc_data:parent_time_units "days since 1850-01-01-00-00-00" ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.history "2019-06-19T14:05:44Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20)." ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "mo: (stash: m01s05i216, lbproc: 128)" ;
+    tippecc_data:pr.standard_name "precipitation_amount" ;
+    tippecc_data:pr.units "mm" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
-    tippecc_data:short_data_reference "Good, Peter (2020). MOHC HadGEM3-GC31-LL model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.10901" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """HadGEM3-GC31-LL (2016): 
 aerosol: UKCA-GLOMAP-mode
 atmos: MetUM-HadGEM3-GA7.1 (N96; 192 x 144 longitude/latitude; 85 levels; top level 85 km)
@@ -257,30 +345,22 @@ ocnBgchem: none
 seaIce: CICE-HadGEM3-GSI8 (eORCA1 tripolar primarily 1 deg; 360 x 330 longitude/latitude)""" ;
     tippecc_data:source_id "HadGEM3-GC31-LL" ;
     tippecc_data:source_type "AOGCM AER" ;
-    tippecc_data:standard_name "precipitation_amount" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(13 December 2018) MD5:2b12b5db6db112aa8b8b0d6c1645b121" ;
-    tippecc_data:time_calendar "360_day" ;
-    tippecc_data:time_coverage_end "1991-01-01 00:00:00" ;
-    tippecc_data:time_coverage_start "1991-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "HadGEM3-GC31-LL output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/2e09e588-18d1-41be-9517-922ec40b7ecd" ;
-    tippecc_data:unit "mm" ;
-    tippecc_data:units "mm" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f3" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Calc_mean_1455 ;
-            prov:atTime "2025-03-04T18:25:50-01:00"^^xsd:dateTime ],
+    prov:qualifiedGeneration [ ],
+        [ ],
         [ a prov:Generation ;
             prov:activity exe:Slice_ref._period_1454 ;
             prov:atTime "2025-03-04T18:25:50-01:00"^^xsd:dateTime ],
-        [ ],
-        [ ] ;
+        [ a prov:Generation ;
+            prov:activity exe:Calc_mean_1455 ;
+            prov:atTime "2025-03-04T18:25:50-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100__yearsum .
 
@@ -289,58 +369,84 @@ tippecc_data:TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100__yearsum_mean
     tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-03-04 18:25:55 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
-    tippecc_data:climatology_bounds "['2080-01-01 00:00:00', '2099-01-01 00:00:00']" ;
     tippecc_data:cmor_version "3.4.0" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
     tippecc_data:creation_date "2019-06-19T14:05:44Z" ;
     tippecc_data:cv_version "6.2.20.1" ;
     tippecc_data:data_specs_version "01.00.29" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.10901" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "87391"^^xsd:int ;
-    tippecc_data:frequency "none" ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-03-04 18:25:55 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.6109" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Ridley, Jeff et al. (2019). MOHC HadGEM3-GC31-LL model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.6109" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.10901" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Good, Peter (2020). MOHC HadGEM3-GC31-LL model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.10901" ;
+    tippecc_data:file.climatology_bounds "['2080-01-01 00:00:00', '2099-01-01 00:00:00']" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "87391"^^xsd:int ;
+    tippecc_data:file.frequency "none" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "2677.2584120370943" ;
+    tippecc_data:file.global_min "41.33451276829649" ;
+    tippecc_data:file.global_model "HadGEM3-GC31-LL" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-03-04 18:25:55 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "1"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_amount" ;
+    tippecc_data:file.time_calendar "360_day" ;
+    tippecc_data:file.time_coverage_end "2090-01-01 00:00:00" ;
+    tippecc_data:file.time_coverage_start "2090-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "mm" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
+    tippecc_data:frequency "year" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MOHC.HadGEM3-GC31-LL.historical.none.r1i1p1f3" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "2677.2584120370943" ;
-    tippecc_data:global_min "41.33451276829649" ;
-    tippecc_data:global_model "HadGEM3-GC31-LL" ;
     tippecc_data:grid "Native N96 grid; 192 x 144 longitude/latitude" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2019-06-19T14:05:44Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20)." ;
-    tippecc_data:indicator "yes" ;
+    tippecc_data:history """Tue Mar 04 17:25:55 2025: cdo -O -s -timmean -selyear,2080/2099 /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100__yearsum.nc /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100__yearsum_mean_2080_2099.nc
+Tue Mar 04 17:25:28 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100__yearsum.nc
+Wed Feb 19 15:24:08 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f3_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain_Feb25/TIPPECC_HadGEM3-GC31-LL_pr_day_r1i1p1f1_1850_2100.nc
+Wed Jan 22 13:13:35 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/temp/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f1_1850_2100.nc
+Fri Jan 17 17:57:27 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/pr/05deg_pr_day_HadGEM3-GC31-LL_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f1_1850_2100.nc
+Thu Dec 19 09:31:43 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 09:28:33 2024: cdo mergetime pr_day_HadGEM3-GC31-LL_historical_r1i1p1f3_gn_18500101-19491230.nc pr_day_HadGEM3-GC31-LL_historical_r1i1p1f3_gn_19500101-20141230.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc
+2019-06-19T11:16:23Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.;
+2019-06-19T11:07:16Z MIP Convert v1.1.0, Python v2.7.12, Iris v1.13.0, Numpy v1.13.3, netcdftime v1.4.1.""" ;
     tippecc_data:institution "Met Office Hadley Centre, Fitzroy Road, Exeter, Devon, EX1 3PB, UK" ;
     tippecc_data:institution_id "MOHC" ;
-    tippecc_data:last_modification_time "2025-03-04 18:25:55 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by the Met Office Hadley Centre is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https://ukesm.ac.uk/cmip6. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
     tippecc_data:mo_runid "u-bg466" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "1"^^xsd:int ;
-    tippecc_data:original_name "mo: (stash: m01s05i216, lbproc: 128)" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "HadGEM3-GC31-LL" ;
     tippecc_data:parent_time_units "days since 1850-01-01-00-00-00" ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.history "2019-06-19T14:05:44Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20)." ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "mo: (stash: m01s05i216, lbproc: 128)" ;
+    tippecc_data:pr.standard_name "precipitation_amount" ;
+    tippecc_data:pr.units "mm" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
-    tippecc_data:short_data_reference "Good, Peter (2020). MOHC HadGEM3-GC31-LL model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.10901" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """HadGEM3-GC31-LL (2016): 
 aerosol: UKCA-GLOMAP-mode
 atmos: MetUM-HadGEM3-GA7.1 (N96; 192 x 144 longitude/latitude; 85 levels; top level 85 km)
@@ -352,30 +458,22 @@ ocnBgchem: none
 seaIce: CICE-HadGEM3-GSI8 (eORCA1 tripolar primarily 1 deg; 360 x 330 longitude/latitude)""" ;
     tippecc_data:source_id "HadGEM3-GC31-LL" ;
     tippecc_data:source_type "AOGCM AER" ;
-    tippecc_data:standard_name "precipitation_amount" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(13 December 2018) MD5:2b12b5db6db112aa8b8b0d6c1645b121" ;
-    tippecc_data:time_calendar "360_day" ;
-    tippecc_data:time_coverage_end "2090-01-01 00:00:00" ;
-    tippecc_data:time_coverage_start "2090-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "HadGEM3-GC31-LL output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/2e09e588-18d1-41be-9517-922ec40b7ecd" ;
-    tippecc_data:unit "mm" ;
-    tippecc_data:units "mm" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f3" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity exe:Slice_ref._period_1456 ;
             prov:atTime "2025-03-04T18:25:55-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Calc_mean_1457 ;
-            prov:atTime "2025-03-04T18:25:55-01:00"^^xsd:dateTime ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-03-04T18:25:55-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100__yearsum .
 
@@ -386,14 +484,23 @@ exe:Calc_year_sum_1458 a prov:Activity ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-03-04T18:25:44-01:00"^^xsd:dateTime ;
     prov:used tippecc_data:TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_YEARSUM,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Convert_pr_to_mm_1452 .
 
+software:FUNCTION__CDO_SELYEAR a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
 tippecc_data:05deg_pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_31 ;
-            prov:atTime "2024-12-19T09:31:43"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T09:31:43"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014 .
@@ -403,57 +510,81 @@ tippecc_data:TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-03-04 17:41:08 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.4.0" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
     tippecc_data:creation_date "2019-06-19T14:05:44Z" ;
     tippecc_data:cv_version "6.2.20.1" ;
     tippecc_data:data_specs_version "01.00.29" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.10901" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1893873183"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-03-04 17:41:08 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.6109" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Ridley, Jeff et al. (2019). MOHC HadGEM3-GC31-LL model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.6109" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.10901" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Good, Peter (2020). MOHC HadGEM3-GC31-LL model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.10901" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1893873183"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "0.014018223" ;
+    tippecc_data:file.global_min "0.0" ;
+    tippecc_data:file.global_model "HadGEM3-GC31-LL" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-02-19 14:26:56 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "90360"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_flux" ;
+    tippecc_data:file.time_calendar "360_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-30 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "kg m-2 s-1" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MOHC.HadGEM3-GC31-LL.historical.none.r1i1p1f3" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "0.014018223" ;
-    tippecc_data:global_min "0.0" ;
-    tippecc_data:global_model "HadGEM3-GC31-LL" ;
     tippecc_data:grid "Native N96 grid; 192 x 144 longitude/latitude" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2019-06-19T14:05:44Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20)." ;
-    tippecc_data:indicator "no" ;
+    tippecc_data:history """Wed Feb 19 15:24:08 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f3_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain_Feb25/TIPPECC_HadGEM3-GC31-LL_pr_day_r1i1p1f1_1850_2100.nc
+Wed Jan 22 13:13:35 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/temp/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f1_1850_2100.nc
+Fri Jan 17 17:57:27 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/pr/05deg_pr_day_HadGEM3-GC31-LL_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f1_1850_2100.nc
+Thu Dec 19 09:31:43 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 09:28:33 2024: cdo mergetime pr_day_HadGEM3-GC31-LL_historical_r1i1p1f3_gn_18500101-19491230.nc pr_day_HadGEM3-GC31-LL_historical_r1i1p1f3_gn_19500101-20141230.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc
+2019-06-19T11:16:23Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.;
+2019-06-19T11:07:16Z MIP Convert v1.1.0, Python v2.7.12, Iris v1.13.0, Numpy v1.13.3, netcdftime v1.4.1.""" ;
     tippecc_data:institution "Met Office Hadley Centre, Fitzroy Road, Exeter, Devon, EX1 3PB, UK" ;
     tippecc_data:institution_id "MOHC" ;
-    tippecc_data:last_modification_time "2025-02-19 14:26:56 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by the Met Office Hadley Centre is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https://ukesm.ac.uk/cmip6. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
     tippecc_data:mo_runid "u-bg466" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "90360"^^xsd:int ;
-    tippecc_data:original_name "mo: (stash: m01s05i216, lbproc: 128)" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "HadGEM3-GC31-LL" ;
     tippecc_data:parent_time_units "days since 1850-01-01-00-00-00" ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.history "2019-06-19T14:05:44Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20)." ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "mo: (stash: m01s05i216, lbproc: 128)" ;
+    tippecc_data:pr.standard_name "precipitation_flux" ;
+    tippecc_data:pr.units "kg m-2 s-1" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
-    tippecc_data:short_data_reference "Good, Peter (2020). MOHC HadGEM3-GC31-LL model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.10901" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """HadGEM3-GC31-LL (2016): 
 aerosol: UKCA-GLOMAP-mode
 atmos: MetUM-HadGEM3-GA7.1 (N96; 192 x 144 longitude/latitude; 85 levels; top level 85 km)
@@ -465,38 +596,30 @@ ocnBgchem: none
 seaIce: CICE-HadGEM3-GSI8 (eORCA1 tripolar primarily 1 deg; 360 x 330 longitude/latitude)""" ;
     tippecc_data:source_id "HadGEM3-GC31-LL" ;
     tippecc_data:source_type "AOGCM AER" ;
-    tippecc_data:standard_name "precipitation_flux" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(13 December 2018) MD5:2b12b5db6db112aa8b8b0d6c1645b121" ;
-    tippecc_data:time_calendar "360_day" ;
-    tippecc_data:time_coverage_end "2100-12-30 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "HadGEM3-GC31-LL output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/2e09e588-18d1-41be-9517-922ec40b7ecd" ;
-    tippecc_data:unit "kg m-2 s-1" ;
-    tippecc_data:units "kg m-2 s-1" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f3" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_1448 ;
-            prov:atTime "2025-01-17T17:57:27"^^xsd:dateTime ],
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
         [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1451> ;
             prov:atTime "2025-02-19T14:26:56-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1448 ;
+            prov:atTime "2025-01-17T17:57:27"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_1449 ;
             prov:atTime "2025-01-22T13:13:35"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_1450 ;
-            prov:atTime "2025-02-19T15:24:08"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-02-19T15:24:08"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_HadGEM3-GC31-LL_ssp585_r1i1p1f1_2015_2100 .
@@ -506,57 +629,81 @@ tippecc_data:TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100 a prov:Entity
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-03-04 18:24:00 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.4.0" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
     tippecc_data:creation_date "2019-06-19T14:05:44Z" ;
     tippecc_data:cv_version "6.2.20.1" ;
     tippecc_data:data_specs_version "01.00.29" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.10901" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "3765523553"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-03-04 18:24:00 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.6109" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Ridley, Jeff et al. (2019). MOHC HadGEM3-GC31-LL model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.6109" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.10901" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Good, Peter (2020). MOHC HadGEM3-GC31-LL model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.10901" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "3765523553"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "1211.1744403839111" ;
+    tippecc_data:file.global_min "0.0" ;
+    tippecc_data:file.global_model "HadGEM3-GC31-LL" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-03-04 18:24:00 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "90360"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_amount" ;
+    tippecc_data:file.time_calendar "360_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-30 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "mm" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MOHC.HadGEM3-GC31-LL.historical.none.r1i1p1f3" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "1211.1744403839111" ;
-    tippecc_data:global_min "0.0" ;
-    tippecc_data:global_model "HadGEM3-GC31-LL" ;
     tippecc_data:grid "Native N96 grid; 192 x 144 longitude/latitude" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2019-06-19T14:05:44Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20)." ;
-    tippecc_data:indicator "yes" ;
+    tippecc_data:history """Wed Feb 19 15:24:08 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f3_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain_Feb25/TIPPECC_HadGEM3-GC31-LL_pr_day_r1i1p1f1_1850_2100.nc
+Wed Jan 22 13:13:35 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/temp/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f1_1850_2100.nc
+Fri Jan 17 17:57:27 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/pr/05deg_pr_day_HadGEM3-GC31-LL_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f1_1850_2100.nc
+Thu Dec 19 09:31:43 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 09:28:33 2024: cdo mergetime pr_day_HadGEM3-GC31-LL_historical_r1i1p1f3_gn_18500101-19491230.nc pr_day_HadGEM3-GC31-LL_historical_r1i1p1f3_gn_19500101-20141230.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc
+2019-06-19T11:16:23Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.;
+2019-06-19T11:07:16Z MIP Convert v1.1.0, Python v2.7.12, Iris v1.13.0, Numpy v1.13.3, netcdftime v1.4.1.""" ;
     tippecc_data:institution "Met Office Hadley Centre, Fitzroy Road, Exeter, Devon, EX1 3PB, UK" ;
     tippecc_data:institution_id "MOHC" ;
-    tippecc_data:last_modification_time "2025-03-04 18:24:00 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by the Met Office Hadley Centre is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https://ukesm.ac.uk/cmip6. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
     tippecc_data:mo_runid "u-bg466" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "90360"^^xsd:int ;
-    tippecc_data:original_name "mo: (stash: m01s05i216, lbproc: 128)" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "HadGEM3-GC31-LL" ;
     tippecc_data:parent_time_units "days since 1850-01-01-00-00-00" ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.history "2019-06-19T14:05:44Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20)." ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "mo: (stash: m01s05i216, lbproc: 128)" ;
+    tippecc_data:pr.standard_name "precipitation_amount" ;
+    tippecc_data:pr.units "mm" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
-    tippecc_data:short_data_reference "Good, Peter (2020). MOHC HadGEM3-GC31-LL model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.10901" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """HadGEM3-GC31-LL (2016): 
 aerosol: UKCA-GLOMAP-mode
 atmos: MetUM-HadGEM3-GA7.1 (N96; 192 x 144 longitude/latitude; 85 levels; top level 85 km)
@@ -568,34 +715,26 @@ ocnBgchem: none
 seaIce: CICE-HadGEM3-GSI8 (eORCA1 tripolar primarily 1 deg; 360 x 330 longitude/latitude)""" ;
     tippecc_data:source_id "HadGEM3-GC31-LL" ;
     tippecc_data:source_type "AOGCM AER" ;
-    tippecc_data:standard_name "precipitation_amount" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(13 December 2018) MD5:2b12b5db6db112aa8b8b0d6c1645b121" ;
-    tippecc_data:time_calendar "360_day" ;
-    tippecc_data:time_coverage_end "2100-12-30 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "HadGEM3-GC31-LL output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/2e09e588-18d1-41be-9517-922ec40b7ecd" ;
-    tippecc_data:unit "mm" ;
-    tippecc_data:units "mm" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f3" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Convert_pr_to_mm_1452 ;
-            prov:atTime "2025-03-04T18:24:00-01:00"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2025-03-04T18:24:00-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr_1850_2100 .
 
 tippecc_data:pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_451 ;
-            prov:atTime "2024-12-19T09:28:33"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T09:28:33"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:pr_day_HadGEM3-GC31-LL_historical_r1i1p1f3_gn_18500101-19491230,
         tippecc_data:pr_day_HadGEM3-GC31-LL_historical_r1i1p1f3_gn_19500101-20141230 .
@@ -614,58 +753,83 @@ tippecc_data:TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100__yearsum a pr
     tippecc_data:CDO "Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-03-04 18:25:44 CET+0100" ;
     tippecc_data:branch_method "standard" ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 0e+00 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.4.0" ;
-    tippecc_data:comment "includes both liquid and solid phases" ;
     tippecc_data:creation_date "2019-06-19T14:05:44Z" ;
     tippecc_data:cv_version "6.2.20.1" ;
     tippecc_data:data_specs_version "01.00.29" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.10901" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "10530701"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-03-04 18:25:44 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.6109" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Ridley, Jeff et al. (2019). MOHC HadGEM3-GC31-LL model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.6109" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.10901" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Good, Peter (2020). MOHC HadGEM3-GC31-LL model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.10901" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "10530701"^^xsd:int ;
+    tippecc_data:file.frequency "year" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "4995.938808836991" ;
+    tippecc_data:file.global_min "18.460376887291865" ;
+    tippecc_data:file.global_model "HadGEM3-GC31-LL" ;
+    tippecc_data:file.indicator "yes" ;
+    tippecc_data:file.last_modification_time "2025-03-04 18:25:44 CET+0100" ;
+    tippecc_data:file.long_name "Precipitation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "251"^^xsd:int ;
+    tippecc_data:file.num_years "251"^^xsd:int ;
+    tippecc_data:file.short_variable_name "pr" ;
+    tippecc_data:file.standard_name "precipitation_amount" ;
+    tippecc_data:file.time_calendar "360_day" ;
+    tippecc_data:file.time_coverage_end "2100-01-01 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 1850-01-01" ;
+    tippecc_data:file.unit "mm" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "year" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.MOHC.HadGEM3-GC31-LL.historical.none.r1i1p1f3" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "4995.938808836991" ;
-    tippecc_data:global_min "18.460376887291865" ;
-    tippecc_data:global_model "HadGEM3-GC31-LL" ;
     tippecc_data:grid "Native N96 grid; 192 x 144 longitude/latitude" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2019-06-19T14:05:44Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20)." ;
-    tippecc_data:indicator "yes" ;
+    tippecc_data:history """Tue Mar 04 17:25:28 2025: cdo -O -s -yearsum /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100.nc /data/cmip6_raw_ind/TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100__yearsum.nc
+Wed Feb 19 15:24:08 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f3_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain_Feb25/TIPPECC_HadGEM3-GC31-LL_pr_day_r1i1p1f1_1850_2100.nc
+Wed Jan 22 13:13:35 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/temp/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f1_1850_2100.nc
+Fri Jan 17 17:57:27 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/pr/05deg_pr_day_HadGEM3-GC31-LL_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/pr/05deg_pr_day_HadGEM3-GC31-LL_r1i1p1f1_1850_2100.nc
+Thu Dec 19 09:31:43 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/05deg_pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 09:28:33 2024: cdo mergetime pr_day_HadGEM3-GC31-LL_historical_r1i1p1f3_gn_18500101-19491230.nc pr_day_HadGEM3-GC31-LL_historical_r1i1p1f3_gn_19500101-20141230.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/pr/pr_day_HadGEM3-GC31-LL_historical_r1i1p1f1_1850_2014.nc
+2019-06-19T11:16:23Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.;
+2019-06-19T11:07:16Z MIP Convert v1.1.0, Python v2.7.12, Iris v1.13.0, Numpy v1.13.3, netcdftime v1.4.1.""" ;
     tippecc_data:institution "Met Office Hadley Centre, Fitzroy Road, Exeter, Devon, EX1 3PB, UK" ;
     tippecc_data:institution_id "MOHC" ;
-    tippecc_data:last_modification_time "2025-03-04 18:25:44 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Precipitation" ;
+    tippecc_data:license "CMIP6 model data produced by the Met Office Hadley Centre is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https://ukesm.ac.uk/cmip6. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
     tippecc_data:mo_runid "u-bg466" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "251"^^xsd:int ;
-    tippecc_data:num_years "251"^^xsd:int ;
-    tippecc_data:original_name "mo: (stash: m01s05i216, lbproc: 128)" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
     tippecc_data:parent_source_id "HadGEM3-GC31-LL" ;
     tippecc_data:parent_time_units "days since 1850-01-01-00-00-00" ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
+    tippecc_data:pr.cell_measures "area: areacella" ;
+    tippecc_data:pr.cell_methods "area: time: mean" ;
+    tippecc_data:pr.comment "includes both liquid and solid phases" ;
+    tippecc_data:pr.history "2019-06-19T14:05:44Z altered by CMOR: replaced missing value flag (-1.07374e+09) with standard missing value (1e+20)." ;
+    tippecc_data:pr.long_name "Precipitation" ;
+    tippecc_data:pr.original_name "mo: (stash: m01s05i216, lbproc: 128)" ;
+    tippecc_data:pr.standard_name "precipitation_amount" ;
+    tippecc_data:pr.units "mm" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
-    tippecc_data:short_data_reference "Good, Peter (2020). MOHC HadGEM3-GC31-LL model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.10901" ;
-    tippecc_data:short_variable_name "pr" ;
     tippecc_data:source """HadGEM3-GC31-LL (2016): 
 aerosol: UKCA-GLOMAP-mode
 atmos: MetUM-HadGEM3-GA7.1 (N96; 192 x 144 longitude/latitude; 85 levels; top level 85 km)
@@ -677,31 +841,26 @@ ocnBgchem: none
 seaIce: CICE-HadGEM3-GSI8 (eORCA1 tripolar primarily 1 deg; 360 x 330 longitude/latitude)""" ;
     tippecc_data:source_id "HadGEM3-GC31-LL" ;
     tippecc_data:source_type "AOGCM AER" ;
-    tippecc_data:standard_name "precipitation_amount" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(13 December 2018) MD5:2b12b5db6db112aa8b8b0d6c1645b121" ;
-    tippecc_data:time_calendar "360_day" ;
-    tippecc_data:time_coverage_end "2100-01-01 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 1850-01-01" ;
     tippecc_data:title "HadGEM3-GC31-LL output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/2e09e588-18d1-41be-9517-922ec40b7ecd" ;
-    tippecc_data:unit "mm" ;
-    tippecc_data:units "mm" ;
     tippecc_data:variable_id "pr" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f3" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Calc_year_sum_1458 ;
-            prov:atTime "2025-03-04T18:25:44-01:00"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2025-03-04T18:25:44-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_HadGEM3-GC31-LL_day_r1i1p1f3_pr__mm_1850_2100 .
 
 software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
     sdo:softwareVersion "1.9.3" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareApplication" .
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 

@@ -1,5 +1,4 @@
 @prefix exe: <http://www.provbook.org/tippecc/exe/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix orgs: <http://www.provbook.org/tippecc/orgs/> .
 @prefix people: <http://www.provbook.org/tippecc/people/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -38,25 +37,30 @@ exe:Remap_bilinear_38 a prov:Activity ;
 
 tippecc_data:africa05.txt a prov:Entity .
 
-people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
-        "prov:Person" ;
-    rdfs:label "Jonathan Padavatan" ;
-    sdo:affiliation orgs:ORG__WITS ;
-    prov:actedOnBehalfOf orgs:ORG__WITS ;
-    foaf:familyName "Padavatan" ;
-    foaf:givenName "Jonathan" .
+orgs:ORG__WITS a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "University of the Witwatersrand" ;
+    sdo:name "University of the Witwatersrand" ;
+    wd:P6782 "https://ror.org/03rp50x72" .
+
+people:PERSON__JONATHAN_PADAVATAN a prov:Agent ;
+    prov:actedOnBehalfOf orgs:ORG__WITS .
 
 software:FUNCTION__CDO_MERGE a prov:Agent ;
-    sdo:description "This module merges two fields." ;
-    sdo:name "Merge two fields" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 software:FUNCTION__CDO_REMAPBIL a prov:Agent ;
-    sdo:description "This module remaps the input field using bilinear interpolation." ;
-    sdo:name "Remap bilinear" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 tippecc_data:pr_day_MIROC6_historical_r1i1p1f1_gn_18500101-18591231 a prov:Entity .
 
@@ -118,16 +122,11 @@ exe:Merge_datasets_458 a prov:Activity ;
     prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
         software:SOFTWARE__CDO_1_9_3 .
 
-orgs:ORG__WITS a prov:Agent,
-        "prov:Organization" ;
-    rdfs:label "University of the Witwatersrand" ;
-    sdo:name "University of the Witwatersrand" ;
-    wd:P6782 "https://ror.org/03rp50x72" .
-
 software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
     sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
     sdo:license "GPL-2.0" ;
     sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
     sdo:type "sdo:SoftwareApplication" ;
     sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 

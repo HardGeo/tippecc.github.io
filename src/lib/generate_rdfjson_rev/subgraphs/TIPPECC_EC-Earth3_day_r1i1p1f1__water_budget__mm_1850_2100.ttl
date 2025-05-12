@@ -91,26 +91,35 @@ tippecc_data:COLLECTION__TIPPECC a prov:Collection,
         software:SOFTWARE__XCLIM_0_49 ;
     prov:wasInformedBy exe:Calc_water_budget_1213 .
 
+orgs:ORG__WITS a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "University of the Witwatersrand" ;
+    sdo:name "University of the Witwatersrand" ;
+    wd:P6782 "https://ror.org/03rp50x72" .
+
 software:FUNCTION__XCLIM_EVAPOTRANSPIRATION a prov:Agent ;
-    sdo:description "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with a given method." ;
-    sdo:name "Evapotranspiration" ;
-    sdo:targetProduct software:SOFTWARE__XCLIM ;
-    sdo:type "sdo:SoftwareSourceCode" ;
-    sdo:url "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.potential_evapotranspiration" .
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
 
 software:FUNCTION__XCLIM_RATE2AMOUNT a prov:Agent ;
-    sdo:description "Convert a rate variable to an amount by multiplying by the sampling period length." ;
-    sdo:name "Rate to amount" ;
-    sdo:targetProduct software:SOFTWARE__XCLIM ;
-    sdo:type "sdo:SoftwareSourceCode" ;
-    sdo:url "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.rate2amount" .
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
 
 software:FUNCTION__XCLIM_WATER_BUDGET a prov:Agent ;
-    sdo:description "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget." ;
-    sdo:name "Water budget" ;
-    sdo:targetProduct software:SOFTWARE__XCLIM ;
-    sdo:type "sdo:SoftwareSourceCode" ;
-    sdo:url "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.water_budget" .
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
 
 tippecc_data:05deg_hurs_day_EC-Earth3_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
 
@@ -4925,8 +4934,6 @@ exe:Remap_bilinear_97 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T10:05:59-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1148 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1153> a prov:Activity ;
@@ -4934,8 +4941,6 @@ exe:Remap_bilinear_97 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T11:27:53-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1152 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1164> a prov:Activity ;
@@ -4943,8 +4948,6 @@ exe:Remap_bilinear_97 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T12:45:59-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1163 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1168> a prov:Activity ;
@@ -4952,8 +4955,6 @@ exe:Remap_bilinear_97 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T14:06:15-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1167 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1172> a prov:Activity ;
@@ -4961,8 +4962,6 @@ exe:Remap_bilinear_97 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T15:26:57-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1171 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1176> a prov:Activity ;
@@ -4970,8 +4969,6 @@ exe:Remap_bilinear_97 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T16:41:57-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1175 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1180> a prov:Activity ;
@@ -4979,8 +4976,6 @@ exe:Remap_bilinear_97 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T17:59:28-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1179 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1184> a prov:Activity ;
@@ -4988,8 +4983,6 @@ exe:Remap_bilinear_97 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T20:37:49-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1183 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_1188> a prov:Activity ;
@@ -4997,8 +4990,6 @@ exe:Remap_bilinear_97 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T22:00:46-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_1187 .
 
 exe:Slice_TIPPECC_area_1148 a prov:Activity ;
@@ -5187,12 +5178,6 @@ orgs:ORG__FSU a prov:Agent,
     sdo:name "Friedrich Schiller University of Jena" ;
     wd:P6782 "https://ror.org/05qpz1x62" .
 
-orgs:ORG__WITS a prov:Agent,
-        "prov:Organization" ;
-    rdfs:label "University of the Witwatersrand" ;
-    sdo:name "University of the Witwatersrand" ;
-    wd:P6782 "https://ror.org/03rp50x72" .
-
 tippecc_data:TIPPECC_EC-Earth3_day_r1i1p1f1__water_budget_1850_2100 a prov:Entity ;
     tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
@@ -5303,6 +5288,7 @@ software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
     sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
     sdo:license "MIT" ;
     sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
     sdo:type "sdo:SoftwareApplication" ;
     sdo:url "https://xclim.readthedocs.io/en/stable/" .
 
@@ -5599,11 +5585,11 @@ seaIce: LIM3""" ;
     tippecc_data:variable_id "hurs" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_1146 ;
-            prov:atTime "2025-01-17T16:44:22"^^xsd:dateTime ],
-        [ a prov:Generation ;
             prov:activity exe:Slice_years_1147 ;
             prov:atTime "2025-01-21T11:02:11"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1146 ;
+            prov:atTime "2025-01-17T16:44:22"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_1148 ;
             prov:atTime "2025-01-21T11:05:10"^^xsd:dateTime ],
@@ -5719,17 +5705,17 @@ seaIce: LIM3""" ;
     tippecc_data:variable_id "pr" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_1150 ;
-            prov:atTime "2025-01-17T17:50:45"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Slice_years_1151 ;
-            prov:atTime "2025-01-21T12:24:08"^^xsd:dateTime ],
-        [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1153> ;
             prov:atTime "2025-01-21T11:27:53-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_1152 ;
             prov:atTime "2025-01-21T12:27:05"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1150 ;
+            prov:atTime "2025-01-17T17:50:45"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_1151 ;
+            prov:atTime "2025-01-21T12:24:08"^^xsd:dateTime ],
         [ ],
         [ ],
         [ ],
@@ -5839,17 +5825,17 @@ seaIce: LIM3""" ;
     tippecc_data:variable_id "rlds" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Slice_TIPPECC_area_1163 ;
-            prov:atTime "2025-01-21T13:45:10"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1164> ;
-            prov:atTime "2025-01-21T12:45:59-01:00"^^xsd:dateTime ],
+            prov:activity exe:Merge_datasets_1161 ;
+            prov:atTime "2025-01-17T18:53:05"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_1162 ;
             prov:atTime "2025-01-21T13:42:12"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_1161 ;
-            prov:atTime "2025-01-17T18:53:05"^^xsd:dateTime ],
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1164> ;
+            prov:atTime "2025-01-21T12:45:59-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_1163 ;
+            prov:atTime "2025-01-21T13:45:10"^^xsd:dateTime ],
         [ ],
         [ ],
         [ ],
@@ -5959,14 +5945,14 @@ seaIce: LIM3""" ;
     tippecc_data:variable_id "rlus" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Slice_TIPPECC_area_1167 ;
-            prov:atTime "2025-01-21T15:05:07"^^xsd:dateTime ],
+            prov:activity exe:Slice_years_1166 ;
+            prov:atTime "2025-01-21T15:02:10"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Merge_datasets_1165 ;
             prov:atTime "2025-01-17T20:00:05"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity exe:Slice_years_1166 ;
-            prov:atTime "2025-01-21T15:02:10"^^xsd:dateTime ],
+            prov:activity exe:Slice_TIPPECC_area_1167 ;
+            prov:atTime "2025-01-21T15:05:07"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1168> ;
             prov:atTime "2025-01-21T14:06:15-01:00"^^xsd:dateTime ],
@@ -6079,17 +6065,17 @@ seaIce: LIM3""" ;
     tippecc_data:variable_id "rsds" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1172> ;
-            prov:atTime "2025-01-21T15:26:57-01:00"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_1169 ;
-            prov:atTime "2025-01-17T21:07:12"^^xsd:dateTime ],
+            prov:activity exe:Slice_TIPPECC_area_1171 ;
+            prov:atTime "2025-01-21T16:25:54"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_1170 ;
             prov:atTime "2025-01-21T16:22:58"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity exe:Slice_TIPPECC_area_1171 ;
-            prov:atTime "2025-01-21T16:25:54"^^xsd:dateTime ],
+            prov:activity exe:Merge_datasets_1169 ;
+            prov:atTime "2025-01-17T21:07:12"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1172> ;
+            prov:atTime "2025-01-21T15:26:57-01:00"^^xsd:dateTime ],
         [ ],
         [ ],
         [ ],
@@ -6199,17 +6185,17 @@ seaIce: LIM3""" ;
     tippecc_data:variable_id "rsus" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Slice_years_1174 ;
-            prov:atTime "2025-01-21T17:38:01"^^xsd:dateTime ],
-        [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_1175 ;
             prov:atTime "2025-01-21T17:40:57"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_1173 ;
-            prov:atTime "2025-01-17T22:11:14"^^xsd:dateTime ],
-        [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1176> ;
             prov:atTime "2025-01-21T16:41:57-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_1174 ;
+            prov:atTime "2025-01-21T17:38:01"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1173 ;
+            prov:atTime "2025-01-17T22:11:14"^^xsd:dateTime ],
         [ ],
         [ ],
         [ ],
@@ -6322,14 +6308,14 @@ seaIce: LIM3""" ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1180> ;
             prov:atTime "2025-01-21T17:59:28-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_1177 ;
+            prov:atTime "2025-01-17T23:13:57"^^xsd:dateTime ],
+        [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_1179 ;
             prov:atTime "2025-01-21T18:58:22"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_1178 ;
             prov:atTime "2025-01-21T18:55:26"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_1177 ;
-            prov:atTime "2025-01-17T23:13:57"^^xsd:dateTime ],
         [ ],
         [ ],
         [ ],
@@ -6439,9 +6425,6 @@ seaIce: LIM3""" ;
     tippecc_data:variable_id "tasmax" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Slice_TIPPECC_area_1183 ;
-            prov:atTime "2025-01-21T21:36:47"^^xsd:dateTime ],
-        [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1184> ;
             prov:atTime "2025-01-21T20:37:49-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
@@ -6450,6 +6433,9 @@ seaIce: LIM3""" ;
         [ a prov:Generation ;
             prov:activity exe:Slice_years_1182 ;
             prov:atTime "2025-01-21T21:33:52"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_1183 ;
+            prov:atTime "2025-01-21T21:36:47"^^xsd:dateTime ],
         [ ],
         [ ],
         [ ],
@@ -6559,17 +6545,17 @@ seaIce: LIM3""" ;
     tippecc_data:variable_id "tasmin" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_1185 ;
-            prov:atTime "2025-01-18T02:30:40"^^xsd:dateTime ],
-        [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_1188> ;
             prov:atTime "2025-01-21T22:00:46-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_1187 ;
+            prov:atTime "2025-01-21T22:59:58"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_1186 ;
             prov:atTime "2025-01-21T22:56:58"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity exe:Slice_TIPPECC_area_1187 ;
-            prov:atTime "2025-01-21T22:59:58"^^xsd:dateTime ],
+            prov:activity exe:Merge_datasets_1185 ;
+            prov:atTime "2025-01-18T02:30:40"^^xsd:dateTime ],
         [ ],
         [ ],
         [ ],
@@ -8127,26 +8113,28 @@ tippecc_data:tasmin_day_EC-Earth3_historical_r1i1p1f1_1850_2014 a prov:Entity ;
         tippecc_data:tasmin_day_EC-Earth3_historical_r1i1p1f1_gr_20140101-20141231 .
 
 software:FUNCTION__CDO_REMAPBIL a prov:Agent ;
-    sdo:description "This module remaps the input field using bilinear interpolation." ;
-    sdo:name "Remap bilinear" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 software:FUNCTION__CDO_SELLONLATBOX a prov:Agent ;
-    sdo:description "This module selects a region in the input field." ;
-    sdo:name "sellonlatbox - select a region" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 software:FUNCTION__CDO_SELYEAR a prov:Agent ;
-    sdo:description "This module selects a year range in the input field." ;
-    sdo:name "selyear - select a year range" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
-
-<http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX> a prov:Agent .
-
-<http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> a prov:Agent .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 people:PERSON__ZANDER_FRANZISKA a prov:Agent,
         "prov:Person" ;
@@ -8159,24 +8147,22 @@ people:PERSON__ZANDER_FRANZISKA a prov:Agent,
 
 tippecc_data:africa05.txt a prov:Entity .
 
-people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
-        "prov:Person" ;
-    rdfs:label "Jonathan Padavatan" ;
-    sdo:affiliation orgs:ORG__WITS ;
-    prov:actedOnBehalfOf orgs:ORG__WITS ;
-    foaf:familyName "Padavatan" ;
-    foaf:givenName "Jonathan" .
+people:PERSON__JONATHAN_PADAVATAN a prov:Agent ;
+    prov:actedOnBehalfOf orgs:ORG__WITS .
 
 software:FUNCTION__CDO_MERGE a prov:Agent ;
-    sdo:description "This module merges two fields." ;
-    sdo:name "Merge two fields" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
     sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
     sdo:license "GPL-2.0" ;
     sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
     sdo:type "sdo:SoftwareApplication" ;
     sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 

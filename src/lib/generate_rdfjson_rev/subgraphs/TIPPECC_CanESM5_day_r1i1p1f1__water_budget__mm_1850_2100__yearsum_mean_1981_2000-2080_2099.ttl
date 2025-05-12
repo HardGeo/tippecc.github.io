@@ -101,38 +101,51 @@ exe:Calc_abs._change_1040 a prov:Activity ;
     prov:wasInformedBy exe:Calc_mean_1042,
         exe:Calc_mean_1044 .
 
+orgs:ORG__WITS a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "University of the Witwatersrand" ;
+    sdo:name "University of the Witwatersrand" ;
+    wd:P6782 "https://ror.org/03rp50x72" .
+
 software:FUNCTION__CDO_SUB a prov:Agent ;
-    sdo:description "This module performs simple arithmetic of two datasets. The number of fields in ifile1 should be the same as in ifile2. One of the input files can contain only one timestep or one variable. The fields in ofile inherit the meta data from ifile1 or ifile2." ;
-    sdo:name "sub - subtract two fields" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 software:FUNCTION__CDO_YEARSUM a prov:Agent ;
-    sdo:description "This module computes the sum of the input field over a year." ;
-    sdo:name "Year sum" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 software:FUNCTION__XCLIM_EVAPOTRANSPIRATION a prov:Agent ;
-    sdo:description "The potential for water evaporation from soil and transpiration by plants if the water supply is sufficient, calculated with a given method." ;
-    sdo:name "Evapotranspiration" ;
-    sdo:targetProduct software:SOFTWARE__XCLIM ;
-    sdo:type "sdo:SoftwareSourceCode" ;
-    sdo:url "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.potential_evapotranspiration" .
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
 
 software:FUNCTION__XCLIM_RATE2AMOUNT a prov:Agent ;
-    sdo:description "Convert a rate variable to an amount by multiplying by the sampling period length." ;
-    sdo:name "Rate to amount" ;
-    sdo:targetProduct software:SOFTWARE__XCLIM ;
-    sdo:type "sdo:SoftwareSourceCode" ;
-    sdo:url "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.rate2amount" .
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
 
 software:FUNCTION__XCLIM_WATER_BUDGET a prov:Agent ;
-    sdo:description "Precipitation minus potential evapotranspiration as a measure of an approximated surface water budget." ;
-    sdo:name "Water budget" ;
-    sdo:targetProduct software:SOFTWARE__XCLIM ;
-    sdo:type "sdo:SoftwareSourceCode" ;
-    sdo:url "https://xclim.readthedocs.io/en/stable/api_indicators.html#xclim.indicators.atmos.water_budget" .
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
 
 tippecc_data:05deg_hurs_day_CanESM5_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
 
@@ -550,8 +563,6 @@ exe:Remap_bilinear_95 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T09:58:06-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_948 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_953> a prov:Activity ;
@@ -559,8 +570,6 @@ exe:Remap_bilinear_95 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T11:20:02-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_952 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_964> a prov:Activity ;
@@ -568,8 +577,6 @@ exe:Remap_bilinear_95 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T12:38:11-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_963 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_968> a prov:Activity ;
@@ -577,8 +584,6 @@ exe:Remap_bilinear_95 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T13:58:25-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_967 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_972> a prov:Activity ;
@@ -586,8 +591,6 @@ exe:Remap_bilinear_95 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T15:19:00-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_971 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_976> a prov:Activity ;
@@ -595,8 +598,6 @@ exe:Remap_bilinear_95 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T16:37:59-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_975 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_980> a prov:Activity ;
@@ -604,8 +605,6 @@ exe:Remap_bilinear_95 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T17:55:24-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_979 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_984> a prov:Activity ;
@@ -613,8 +612,6 @@ exe:Remap_bilinear_95 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T20:29:47-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_983 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_988> a prov:Activity ;
@@ -622,8 +619,6 @@ exe:Remap_bilinear_95 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T21:52:47-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_987 .
 
 exe:Slice_TIPPECC_area_948 a prov:Activity ;
@@ -834,17 +829,13 @@ orgs:ORG__FSU a prov:Agent,
     sdo:name "Friedrich Schiller University of Jena" ;
     wd:P6782 "https://ror.org/05qpz1x62" .
 
-orgs:ORG__WITS a prov:Agent,
-        "prov:Organization" ;
-    rdfs:label "University of the Witwatersrand" ;
-    sdo:name "University of the Witwatersrand" ;
-    wd:P6782 "https://ror.org/03rp50x72" .
-
 software:FUNCTION__CDO_TIMMEAN a prov:Agent ;
-    sdo:description "This module computes the temporal mean of the input field." ;
-    sdo:name "timmean - time mean" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 tippecc_data:TIPPECC_CanESM5_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum_mean_1981_2000 a prov:Entity ;
     tippecc_data:CCCma_model_hash "3dedf95315d603326fde4f5340dc0519d80d10c0" ;
@@ -953,14 +944,14 @@ sfcWind: 2019-05-02T08:01:47Z altered by CMOR: Treated scalar dimension: 'height
     tippecc_data:water_budget_from_tas.long_name "Water budget (\"FAO_PM985\" method)" ;
     tippecc_data:water_budget_from_tas.method "pr - evspsblpot " ;
     tippecc_data:water_budget_from_tas.units "mmday" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Slice_ref._period_1041 ;
-            prov:atTime "2025-02-09T22:05:25-01:00"^^xsd:dateTime ],
+    prov:qualifiedGeneration [ ],
+        [ ],
         [ a prov:Generation ;
             prov:activity exe:Calc_mean_1042 ;
             prov:atTime "2025-02-09T22:05:25-01:00"^^xsd:dateTime ],
-        [ ],
-        [ ] ;
+        [ a prov:Generation ;
+            prov:activity exe:Slice_ref._period_1041 ;
+            prov:atTime "2025-02-09T22:05:25-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_CanESM5_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum .
 
@@ -1071,14 +1062,14 @@ sfcWind: 2019-05-02T08:01:47Z altered by CMOR: Treated scalar dimension: 'height
     tippecc_data:water_budget_from_tas.long_name "Water budget (\"FAO_PM985\" method)" ;
     tippecc_data:water_budget_from_tas.method "pr - evspsblpot " ;
     tippecc_data:water_budget_from_tas.units "mmday" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Calc_mean_1044 ;
-            prov:atTime "2025-02-09T22:05:31-01:00"^^xsd:dateTime ],
+    prov:qualifiedGeneration [ ],
+        [ ],
         [ a prov:Generation ;
             prov:activity exe:Slice_ref._period_1043 ;
             prov:atTime "2025-02-09T22:05:31-01:00"^^xsd:dateTime ],
-        [ ],
-        [ ] ;
+        [ a prov:Generation ;
+            prov:activity exe:Calc_mean_1044 ;
+            prov:atTime "2025-02-09T22:05:31-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_CanESM5_day_r1i1p1f1__water_budget__mm_1850_2100__yearsum .
 
@@ -1097,86 +1088,87 @@ software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
     sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
     sdo:license "MIT" ;
     sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
     sdo:type "sdo:SoftwareApplication" ;
     sdo:url "https://xclim.readthedocs.io/en/stable/" .
 
 tippecc_data:05deg_hurs_day_CanESM5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_3 ;
-            prov:atTime "2024-12-20T16:12:08"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T16:12:08"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:hurs_day_CanESM5_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_pr_day_CanESM5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_26 ;
-            prov:atTime "2024-12-20T16:39:52"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T16:39:52"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:pr_day_CanESM5_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_rlds_day_CanESM5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_49 ;
-            prov:atTime "2024-12-20T17:00:41"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T17:00:41"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:rlds_day_CanESM5_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_rlus_day_CanESM5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_72 ;
-            prov:atTime "2024-12-20T17:29:03"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T17:29:03"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:rlus_day_CanESM5_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_rsds_day_CanESM5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_95 ;
-            prov:atTime "2024-12-20T17:55:14"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T17:55:14"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:rsds_day_CanESM5_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_rsus_day_CanESM5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_118 ;
-            prov:atTime "2024-12-20T18:20:33"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T18:20:33"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:rsus_day_CanESM5_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_sfcWind_day_CanESM5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_141 ;
-            prov:atTime "2024-12-20T18:53:05"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T18:53:05"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:sfcWind_day_CanESM5_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_tasmax_day_CanESM5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_164 ;
-            prov:atTime "2024-12-20T19:42:48"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T19:42:48"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:tasmax_day_CanESM5_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_tasmin_day_CanESM5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_187 ;
-            prov:atTime "2024-12-20T20:07:46"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T20:07:46"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:tasmin_day_CanESM5_historical_r1i1p1f1_1850_2014 .
@@ -1284,10 +1276,10 @@ seaIce: LIM2""" ;
     tippecc_data:title "CanESM5 output prepared for CMIP6" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     tippecc_data:version "v20190429" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Calc_pot._ET_1005 ;
-            prov:atTime "2025-01-24T16:32:55-01:00"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2025-01-24T16:32:55-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_CanESM5_day_r1i1p1f1_hurs_1850_2100,
         tippecc_data:TIPPECC_CanESM5_day_r1i1p1f1_rlds_1850_2100,
@@ -1402,10 +1394,10 @@ sfcWind: 2019-05-02T08:01:47Z altered by CMOR: Treated scalar dimension: 'height
     tippecc_data:water_budget_from_tas.long_name "Water budget (\"FAO_PM985\" method)" ;
     tippecc_data:water_budget_from_tas.method "pr - evspsblpot " ;
     tippecc_data:water_budget_from_tas.units "kg m-2 s-1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Calc_water_budget_1013 ;
-            prov:atTime "2025-01-24T16:34:32-01:00"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2025-01-24T16:34:32-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_CanESM5_day_r1i1p1f1__evspsblpot_1850_2100,
         tippecc_data:TIPPECC_CanESM5_day_r1i1p1f1_pr_1850_2100 .
@@ -1514,10 +1506,10 @@ sfcWind: 2019-05-02T08:01:47Z altered by CMOR: Treated scalar dimension: 'height
     tippecc_data:water_budget_from_tas.long_name "Water budget (\"FAO_PM985\" method)" ;
     tippecc_data:water_budget_from_tas.method "pr - evspsblpot " ;
     tippecc_data:water_budget_from_tas.units "mmday" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Convert_water_budget_to_mm/day_1014> ;
-            prov:atTime "2025-01-24T16:35:50-01:00"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2025-01-24T16:35:50-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_CanESM5_day_r1i1p1f1__water_budget_1850_2100 .
 
@@ -1627,22 +1619,22 @@ seaIce: LIM2""" ;
     tippecc_data:variable_id "hurs" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     tippecc_data:version "v20190429" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_946 ;
-            prov:atTime "2025-01-17T16:37:23"^^xsd:dateTime ],
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
         [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_948 ;
             prov:atTime "2025-01-21T10:57:20"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity exe:Slice_years_947 ;
-            prov:atTime "2025-01-21T10:53:50"^^xsd:dateTime ],
+            prov:activity exe:Merge_datasets_946 ;
+            prov:atTime "2025-01-17T16:37:23"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_949> ;
             prov:atTime "2025-01-21T09:58:06-01:00"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_947 ;
+            prov:atTime "2025-01-21T10:53:50"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_hurs_day_CanESM5_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_hurs_day_CanESM5_ssp585_r1i1p1f1_2015_2100 .
@@ -1753,22 +1745,22 @@ seaIce: LIM2""" ;
     tippecc_data:variable_id "pr" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     tippecc_data:version "v20190429" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_953> ;
-            prov:atTime "2025-01-21T11:20:02-01:00"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_950 ;
-            prov:atTime "2025-01-17T17:44:39"^^xsd:dateTime ],
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_951 ;
             prov:atTime "2025-01-21T12:16:21"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_952 ;
             prov:atTime "2025-01-21T12:19:18"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_950 ;
+            prov:atTime "2025-01-17T17:44:39"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_953> ;
+            prov:atTime "2025-01-21T11:20:02-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_pr_day_CanESM5_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_CanESM5_ssp585_r1i1p1f1_2015_2100 .
@@ -1879,9 +1871,10 @@ seaIce: LIM2""" ;
     tippecc_data:variable_id "rlds" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     tippecc_data:version "v20190429" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_964> ;
-            prov:atTime "2025-01-21T12:38:11-01:00"^^xsd:dateTime ],
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_962 ;
             prov:atTime "2025-01-21T13:34:04"^^xsd:dateTime ],
@@ -1889,12 +1882,11 @@ seaIce: LIM2""" ;
             prov:activity exe:Slice_TIPPECC_area_963 ;
             prov:atTime "2025-01-21T13:37:37"^^xsd:dateTime ],
         [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_964> ;
+            prov:atTime "2025-01-21T12:38:11-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_961 ;
-            prov:atTime "2025-01-17T18:46:02"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-01-17T18:46:02"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_rlds_day_CanESM5_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rlds_day_CanESM5_ssp585_r1i1p1f1_2015_2100 .
@@ -2004,22 +1996,22 @@ seaIce: LIM2""" ;
     tippecc_data:variable_id "rlus" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     tippecc_data:version "v20190429" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_966 ;
+            prov:atTime "2025-01-21T14:54:08"^^xsd:dateTime ],
+        [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_968> ;
             prov:atTime "2025-01-21T13:58:25-01:00"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_965 ;
-            prov:atTime "2025-01-17T19:53:01"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_967 ;
             prov:atTime "2025-01-21T14:57:39"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity exe:Slice_years_966 ;
-            prov:atTime "2025-01-21T14:54:08"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:activity exe:Merge_datasets_965 ;
+            prov:atTime "2025-01-17T19:53:01"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_rlus_day_CanESM5_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rlus_day_CanESM5_ssp585_r1i1p1f1_2015_2100 .
@@ -2130,22 +2122,22 @@ seaIce: LIM2""" ;
     tippecc_data:variable_id "rsds" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     tippecc_data:version "v20190429" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_969 ;
             prov:atTime "2025-01-17T21:00:11"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Slice_years_970 ;
-            prov:atTime "2025-01-21T16:14:46"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_972> ;
             prov:atTime "2025-01-21T15:19:00-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
+            prov:activity exe:Slice_years_970 ;
+            prov:atTime "2025-01-21T16:14:46"^^xsd:dateTime ],
+        [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_971 ;
-            prov:atTime "2025-01-21T16:18:13"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-01-21T16:18:13"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_rsds_day_CanESM5_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rsds_day_CanESM5_ssp585_r1i1p1f1_2015_2100 .
@@ -2255,9 +2247,10 @@ seaIce: LIM2""" ;
     tippecc_data:variable_id "rsus" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     tippecc_data:version "v20190429" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Slice_years_974 ;
-            prov:atTime "2025-01-21T17:33:44"^^xsd:dateTime ],
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
         [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_976> ;
             prov:atTime "2025-01-21T16:37:59-01:00"^^xsd:dateTime ],
@@ -2265,12 +2258,11 @@ seaIce: LIM2""" ;
             prov:activity exe:Merge_datasets_973 ;
             prov:atTime "2025-01-17T22:07:08"^^xsd:dateTime ],
         [ a prov:Generation ;
+            prov:activity exe:Slice_years_974 ;
+            prov:atTime "2025-01-21T17:33:44"^^xsd:dateTime ],
+        [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_975 ;
-            prov:atTime "2025-01-21T17:37:11"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-01-21T17:37:11"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_rsus_day_CanESM5_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rsus_day_CanESM5_ssp585_r1i1p1f1_2015_2100 .
@@ -2381,22 +2373,22 @@ seaIce: LIM2""" ;
     tippecc_data:variable_id "sfcWind" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     tippecc_data:version "v20190429" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_977 ;
             prov:atTime "2025-01-17T23:09:58"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_978 ;
             prov:atTime "2025-01-21T18:51:08"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_980> ;
-            prov:atTime "2025-01-21T17:55:24-01:00"^^xsd:dateTime ],
-        [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_979 ;
             prov:atTime "2025-01-21T18:54:36"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_980> ;
+            prov:atTime "2025-01-21T17:55:24-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_sfcWind_day_CanESM5_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_sfcWind_day_CanESM5_ssp585_r1i1p1f1_2015_2100 .
@@ -2507,22 +2499,22 @@ seaIce: LIM2""" ;
     tippecc_data:variable_id "tasmax" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     tippecc_data:version "v20190429" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_984> ;
-            prov:atTime "2025-01-21T20:29:47-01:00"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Slice_TIPPECC_area_983 ;
-            prov:atTime "2025-01-21T21:28:58"^^xsd:dateTime ],
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
         [ a prov:Generation ;
             prov:activity exe:Merge_datasets_981 ;
             prov:atTime "2025-01-18T01:14:33"^^xsd:dateTime ],
         [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_983 ;
+            prov:atTime "2025-01-21T21:28:58"^^xsd:dateTime ],
+        [ a prov:Generation ;
             prov:activity exe:Slice_years_982 ;
             prov:atTime "2025-01-21T21:25:30"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_984> ;
+            prov:atTime "2025-01-21T20:29:47-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_tasmax_day_CanESM5_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_tasmax_day_CanESM5_ssp585_r1i1p1f1_2015_2100 .
@@ -2633,95 +2625,95 @@ seaIce: LIM2""" ;
     tippecc_data:variable_id "tasmin" ;
     tippecc_data:variant_label "r1i1p1f1" ;
     tippecc_data:version "v20190429" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_985 ;
             prov:atTime "2025-01-18T02:23:25"^^xsd:dateTime ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_987 ;
+            prov:atTime "2025-01-21T22:51:57"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_988> ;
             prov:atTime "2025-01-21T21:52:47-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_986 ;
-            prov:atTime "2025-01-21T22:48:27"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Slice_TIPPECC_area_987 ;
-            prov:atTime "2025-01-21T22:51:57"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-01-21T22:48:27"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_tasmin_day_CanESM5_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_tasmin_day_CanESM5_ssp585_r1i1p1f1_2015_2100 .
 
 tippecc_data:hurs_day_CanESM5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_375 ;
-            prov:atTime "2024-12-20T16:11:01"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T16:11:01"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:hurs_day_CanESM5_historical_r1i1p1f1_gn_18500101-20141231 .
 
 tippecc_data:pr_day_CanESM5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_446 ;
-            prov:atTime "2024-12-20T16:38:57"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T16:38:57"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:pr_day_CanESM5_historical_r1i1p1f1_gn_18500101-20141231 .
 
 tippecc_data:rlds_day_CanESM5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_469 ;
-            prov:atTime "2024-12-20T16:59:48"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T16:59:48"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:rlds_day_CanESM5_historical_r1i1p1f1_gn_18500101-20141231 .
 
 tippecc_data:rlus_day_CanESM5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_492 ;
-            prov:atTime "2024-12-20T17:28:08"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T17:28:08"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:rlus_day_CanESM5_historical_r1i1p1f1_gn_18500101-20141231 .
 
 tippecc_data:rsds_day_CanESM5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_515 ;
-            prov:atTime "2024-12-20T17:54:21"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T17:54:21"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:rsds_day_CanESM5_historical_r1i1p1f1_gn_18500101-20141231 .
 
 tippecc_data:rsus_day_CanESM5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_538 ;
-            prov:atTime "2024-12-20T18:19:43"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T18:19:43"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:rsus_day_CanESM5_historical_r1i1p1f1_gn_18500101-20141231 .
 
 tippecc_data:sfcWind_day_CanESM5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_561 ;
-            prov:atTime "2024-12-20T18:52:15"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T18:52:15"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:sfcWind_day_CanESM5_historical_r1i1p1f1_gn_18500101-20141231 .
 
 tippecc_data:tasmax_day_CanESM5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_584 ;
-            prov:atTime "2024-12-20T19:41:59"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T19:41:59"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:tasmax_day_CanESM5_historical_r1i1p1f1_gn_18500101-20141231 .
 
 tippecc_data:tasmin_day_CanESM5_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_607 ;
-            prov:atTime "2024-12-20T20:06:59"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T20:06:59"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:tasmin_day_CanESM5_historical_r1i1p1f1_gn_18500101-20141231 .
 
@@ -2831,34 +2823,36 @@ sfcWind: 2019-05-02T08:01:47Z altered by CMOR: Treated scalar dimension: 'height
     tippecc_data:water_budget_from_tas.long_name "Water budget (\"FAO_PM985\" method)" ;
     tippecc_data:water_budget_from_tas.method "pr - evspsblpot " ;
     tippecc_data:water_budget_from_tas.units "mmday" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Calc_year_sum_1045 ;
-            prov:atTime "2025-02-09T22:05:19-01:00"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2025-02-09T22:05:19-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_CanESM5_day_r1i1p1f1__water_budget__mm_1850_2100 .
 
 software:FUNCTION__CDO_REMAPBIL a prov:Agent ;
-    sdo:description "This module remaps the input field using bilinear interpolation." ;
-    sdo:name "Remap bilinear" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 software:FUNCTION__CDO_SELLONLATBOX a prov:Agent ;
-    sdo:description "This module selects a region in the input field." ;
-    sdo:name "sellonlatbox - select a region" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
-
-<http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX> a prov:Agent .
-
-<http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> a prov:Agent .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 software:FUNCTION__CDO_SELYEAR a prov:Agent ;
-    sdo:description "This module selects a year range in the input field." ;
-    sdo:name "selyear - select a year range" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 people:PERSON__ZANDER_FRANZISKA a prov:Agent,
         "prov:Person" ;
@@ -2871,24 +2865,22 @@ people:PERSON__ZANDER_FRANZISKA a prov:Agent,
 
 tippecc_data:africa05.txt a prov:Entity .
 
-people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
-        "prov:Person" ;
-    rdfs:label "Jonathan Padavatan" ;
-    sdo:affiliation orgs:ORG__WITS ;
-    prov:actedOnBehalfOf orgs:ORG__WITS ;
-    foaf:familyName "Padavatan" ;
-    foaf:givenName "Jonathan" .
+people:PERSON__JONATHAN_PADAVATAN a prov:Agent ;
+    prov:actedOnBehalfOf orgs:ORG__WITS .
 
 software:FUNCTION__CDO_MERGE a prov:Agent ;
-    sdo:description "This module merges two fields." ;
-    sdo:name "Merge two fields" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
     sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
     sdo:license "GPL-2.0" ;
     sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
     sdo:type "sdo:SoftwareApplication" ;
     sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 

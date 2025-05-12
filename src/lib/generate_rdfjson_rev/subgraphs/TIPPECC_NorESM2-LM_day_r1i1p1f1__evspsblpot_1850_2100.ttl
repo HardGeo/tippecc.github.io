@@ -84,7 +84,8 @@ exe:Calc_pot._ET_2583 a prov:Activity ;
         tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_sfcWind_1850_2100,
         tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_tasmax_1850_2100,
         tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_tasmin_1850_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__XCLIM_0_49 ;
+    prov:wasAssociatedWith software:FUNCTION__XCLIM_EVAPOTRANSPIRATION,
+        software:SOFTWARE__XCLIM_0_49 ;
     prov:wasInformedBy <http://www.provbook.org/tippecc/exe/Rename/Metadata_2527>,
         <http://www.provbook.org/tippecc/exe/Rename/Metadata_2542>,
         <http://www.provbook.org/tippecc/exe/Rename/Metadata_2546>,
@@ -94,10 +95,27 @@ exe:Calc_pot._ET_2583 a prov:Activity ;
         <http://www.provbook.org/tippecc/exe/Rename/Metadata_2562>,
         <http://www.provbook.org/tippecc/exe/Rename/Metadata_2566> .
 
-software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
+orgs:ORG__WITS a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "University of the Witwatersrand" ;
+    sdo:name "University of the Witwatersrand" ;
+    wd:P6782 "https://ror.org/03rp50x72" .
+
+software:FUNCTION__XCLIM_EVAPOTRANSPIRATION a prov:Agent ;
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
     sdo:softwareVersion "0.49.0" ;
-    sdo:targetProduct software:SOFTWARE__XCLIM ;
-    sdo:type "sdo:SoftwareApplication" .
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
+
+software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
 
 tippecc_data:05deg_hurs_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
 
@@ -395,7 +413,8 @@ exe:Merge_datasets_2524 a prov:Activity ;
     prov:startedAtTime "2025-01-17T17:20:19"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_hurs_day_NorESM2-LM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_hurs_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_19 .
 
 exe:Merge_datasets_2539 a prov:Activity ;
@@ -406,7 +425,8 @@ exe:Merge_datasets_2539 a prov:Activity ;
     prov:startedAtTime "2025-01-17T19:28:53"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_rlds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rlds_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_65 .
 
 exe:Merge_datasets_2543 a prov:Activity ;
@@ -417,7 +437,8 @@ exe:Merge_datasets_2543 a prov:Activity ;
     prov:startedAtTime "2025-01-17T20:36:03"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_rlus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rlus_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_88 .
 
 exe:Merge_datasets_2547 a prov:Activity ;
@@ -428,7 +449,8 @@ exe:Merge_datasets_2547 a prov:Activity ;
     prov:startedAtTime "2025-01-17T21:42:40"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_rsds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rsds_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_111 .
 
 exe:Merge_datasets_2551 a prov:Activity ;
@@ -439,7 +461,8 @@ exe:Merge_datasets_2551 a prov:Activity ;
     prov:startedAtTime "2025-01-17T22:45:42"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_rsus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rsus_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_134 .
 
 exe:Merge_datasets_2555 a prov:Activity ;
@@ -450,7 +473,8 @@ exe:Merge_datasets_2555 a prov:Activity ;
     prov:startedAtTime "2025-01-17T23:49:00"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_sfcWind_day_NorESM2-LM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_sfcWind_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_157 .
 
 exe:Merge_datasets_2559 a prov:Activity ;
@@ -461,7 +485,8 @@ exe:Merge_datasets_2559 a prov:Activity ;
     prov:startedAtTime "2025-01-18T01:58:39"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_tasmax_day_NorESM2-LM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_tasmax_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_180 .
 
 exe:Merge_datasets_2563 a prov:Activity ;
@@ -472,7 +497,8 @@ exe:Merge_datasets_2563 a prov:Activity ;
     prov:startedAtTime "2025-01-18T03:07:48"^^xsd:dateTime ;
     prov:used tippecc_data:05deg_tasmin_day_NorESM2-LM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_tasmin_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Remap_bilinear_203 .
 
 exe:Merge_datasets_391 a prov:Activity ;
@@ -498,7 +524,8 @@ exe:Merge_datasets_391 a prov:Activity ;
         tippecc_data:hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_19900101-19991231,
         tippecc_data:hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_20000101-20091231,
         tippecc_data:hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Merge_datasets_485 a prov:Activity ;
     rdfs:label "Merge datasets" ;
@@ -523,7 +550,8 @@ exe:Merge_datasets_485 a prov:Activity ;
         tippecc_data:rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_19900101-19991231,
         tippecc_data:rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_20000101-20091231,
         tippecc_data:rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Merge_datasets_508 a prov:Activity ;
     rdfs:label "Merge datasets" ;
@@ -548,7 +576,8 @@ exe:Merge_datasets_508 a prov:Activity ;
         tippecc_data:rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_19900101-19991231,
         tippecc_data:rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_20000101-20091231,
         tippecc_data:rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Merge_datasets_531 a prov:Activity ;
     rdfs:label "Merge datasets" ;
@@ -573,7 +602,8 @@ exe:Merge_datasets_531 a prov:Activity ;
         tippecc_data:rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_19900101-19991231,
         tippecc_data:rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_20000101-20091231,
         tippecc_data:rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Merge_datasets_554 a prov:Activity ;
     rdfs:label "Merge datasets" ;
@@ -598,7 +628,8 @@ exe:Merge_datasets_554 a prov:Activity ;
         tippecc_data:rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_19900101-19991231,
         tippecc_data:rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_20000101-20091231,
         tippecc_data:rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Merge_datasets_577 a prov:Activity ;
     rdfs:label "Merge datasets" ;
@@ -623,7 +654,8 @@ exe:Merge_datasets_577 a prov:Activity ;
         tippecc_data:sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_19900101-19991231,
         tippecc_data:sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_20000101-20091231,
         tippecc_data:sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Merge_datasets_600 a prov:Activity ;
     rdfs:label "Merge datasets" ;
@@ -648,7 +680,8 @@ exe:Merge_datasets_600 a prov:Activity ;
         tippecc_data:tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_19900101-19991231,
         tippecc_data:tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_20000101-20091231,
         tippecc_data:tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Merge_datasets_623 a prov:Activity ;
     rdfs:label "Merge datasets" ;
@@ -673,7 +706,8 @@ exe:Merge_datasets_623 a prov:Activity ;
         tippecc_data:tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_19900101-19991231,
         tippecc_data:tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_20000101-20091231,
         tippecc_data:tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 .
+    prov:wasAssociatedWith software:FUNCTION__CDO_MERGE,
+        software:SOFTWARE__CDO_1_9_3 .
 
 exe:Remap_bilinear_111 a prov:Activity ;
     rdfs:label "Remap bilinear" ;
@@ -683,7 +717,8 @@ exe:Remap_bilinear_111 a prov:Activity ;
     prov:startedAtTime "2024-12-19T13:53:47"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:rsds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_531 .
 
 exe:Remap_bilinear_134 a prov:Activity ;
@@ -694,7 +729,8 @@ exe:Remap_bilinear_134 a prov:Activity ;
     prov:startedAtTime "2024-12-19T15:07:32"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:rsus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_554 .
 
 exe:Remap_bilinear_157 a prov:Activity ;
@@ -705,7 +741,8 @@ exe:Remap_bilinear_157 a prov:Activity ;
     prov:startedAtTime "2024-12-19T16:22:55"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:sfcWind_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_577 .
 
 exe:Remap_bilinear_180 a prov:Activity ;
@@ -716,7 +753,8 @@ exe:Remap_bilinear_180 a prov:Activity ;
     prov:startedAtTime "2024-12-19T18:43:57"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:tasmax_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_600 .
 
 exe:Remap_bilinear_19 a prov:Activity ;
@@ -727,7 +765,8 @@ exe:Remap_bilinear_19 a prov:Activity ;
     prov:startedAtTime "2024-12-19T08:58:37"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:hurs_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_391 .
 
 exe:Remap_bilinear_203 a prov:Activity ;
@@ -738,7 +777,8 @@ exe:Remap_bilinear_203 a prov:Activity ;
     prov:startedAtTime "2024-12-19T19:55:55"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:tasmin_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_623 .
 
 exe:Remap_bilinear_65 a prov:Activity ;
@@ -749,7 +789,8 @@ exe:Remap_bilinear_65 a prov:Activity ;
     prov:startedAtTime "2024-12-19T11:28:23"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:rlds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_485 .
 
 exe:Remap_bilinear_88 a prov:Activity ;
@@ -760,7 +801,8 @@ exe:Remap_bilinear_88 a prov:Activity ;
     prov:startedAtTime "2024-12-19T12:40:21"^^xsd:dateTime ;
     prov:used tippecc_data:africa05.txt,
         tippecc_data:rlus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_REMAPBIL,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_508 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_2527> a prov:Activity ;
@@ -768,7 +810,6 @@ exe:Remap_bilinear_88 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T10:49:40-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_2526 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_2542> a prov:Activity ;
@@ -776,7 +817,6 @@ exe:Remap_bilinear_88 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T13:29:10-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_2541 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_2546> a prov:Activity ;
@@ -784,7 +824,6 @@ exe:Remap_bilinear_88 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T14:49:59-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_2545 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_2550> a prov:Activity ;
@@ -792,7 +831,6 @@ exe:Remap_bilinear_88 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T16:08:51-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_2549 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_2554> a prov:Activity ;
@@ -800,7 +838,6 @@ exe:Remap_bilinear_88 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T17:24:56-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_2553 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_2558> a prov:Activity ;
@@ -808,7 +845,6 @@ exe:Remap_bilinear_88 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T18:42:03-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_2557 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_2562> a prov:Activity ;
@@ -816,7 +852,6 @@ exe:Remap_bilinear_88 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T21:21:33-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_2561 .
 
 <http://www.provbook.org/tippecc/exe/Rename/Metadata_2566> a prov:Activity ;
@@ -824,7 +859,6 @@ exe:Remap_bilinear_88 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T22:44:26-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_2565 .
 
 exe:Slice_TIPPECC_area_2526 a prov:Activity ;
@@ -833,7 +867,8 @@ exe:Slice_TIPPECC_area_2526 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T11:48:50"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_2525 .
 
 exe:Slice_TIPPECC_area_2541 a prov:Activity ;
@@ -842,7 +877,8 @@ exe:Slice_TIPPECC_area_2541 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T14:28:23"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_2540 .
 
 exe:Slice_TIPPECC_area_2545 a prov:Activity ;
@@ -851,7 +887,8 @@ exe:Slice_TIPPECC_area_2545 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T15:49:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_2544 .
 
 exe:Slice_TIPPECC_area_2549 a prov:Activity ;
@@ -860,7 +897,8 @@ exe:Slice_TIPPECC_area_2549 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T17:08:02"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_2548 .
 
 exe:Slice_TIPPECC_area_2553 a prov:Activity ;
@@ -869,7 +907,8 @@ exe:Slice_TIPPECC_area_2553 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T18:24:06"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_2552 .
 
 exe:Slice_TIPPECC_area_2557 a prov:Activity ;
@@ -878,7 +917,8 @@ exe:Slice_TIPPECC_area_2557 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T19:41:14"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_2556 .
 
 exe:Slice_TIPPECC_area_2561 a prov:Activity ;
@@ -887,7 +927,8 @@ exe:Slice_TIPPECC_area_2561 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T22:20:31"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_2560 .
 
 exe:Slice_TIPPECC_area_2565 a prov:Activity ;
@@ -896,7 +937,8 @@ exe:Slice_TIPPECC_area_2565 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELLONLATBOX" ;
     prov:params "{'lonmin': 10.0, 'lonmax': 51.81, 'latmin': -35.97, 'latmax': -4.95}" ;
     prov:startedAtTime "2025-01-21T23:43:40"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELLONLATBOX,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Slice_years_2564 .
 
 exe:Slice_years_2525 a prov:Activity ;
@@ -905,7 +947,8 @@ exe:Slice_years_2525 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T11:45:49"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_2524 .
 
 exe:Slice_years_2540 a prov:Activity ;
@@ -914,7 +957,8 @@ exe:Slice_years_2540 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T14:25:28"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_2539 .
 
 exe:Slice_years_2544 a prov:Activity ;
@@ -923,7 +967,8 @@ exe:Slice_years_2544 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T15:46:02"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_2543 .
 
 exe:Slice_years_2548 a prov:Activity ;
@@ -932,7 +977,8 @@ exe:Slice_years_2548 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T17:05:06"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_2547 .
 
 exe:Slice_years_2552 a prov:Activity ;
@@ -941,7 +987,8 @@ exe:Slice_years_2552 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T18:21:09"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_2551 .
 
 exe:Slice_years_2556 a prov:Activity ;
@@ -950,7 +997,8 @@ exe:Slice_years_2556 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T19:38:21"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_2555 .
 
 exe:Slice_years_2560 a prov:Activity ;
@@ -959,7 +1007,8 @@ exe:Slice_years_2560 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T22:17:36"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_2559 .
 
 exe:Slice_years_2564 a prov:Activity ;
@@ -968,7 +1017,8 @@ exe:Slice_years_2564 a prov:Activity ;
     prov:function "FUNCTION__CDO_SELYEAR" ;
     prov:params "{'start_year': '1850', 'end_year': '2100'}" ;
     prov:startedAtTime "2025-01-21T23:40:44"^^xsd:dateTime ;
-    prov:wasAssociatedWith software:SOFTWARE__CDO_1_9_3 ;
+    prov:wasAssociatedWith software:FUNCTION__CDO_SELYEAR,
+        software:SOFTWARE__CDO_1_9_3 ;
     prov:wasInformedBy exe:Merge_datasets_2563 .
 
 orgs:ORG__FSU a prov:Agent,
@@ -977,59 +1027,78 @@ orgs:ORG__FSU a prov:Agent,
     sdo:name "Friedrich Schiller University of Jena" ;
     wd:P6782 "https://ror.org/05qpz1x62" .
 
-orgs:ORG__WITS a prov:Agent,
-        "prov:Organization" ;
-    rdfs:label "University of the Witwatersrand" ;
-    sdo:name "University of the Witwatersrand" ;
-    wd:P6782 "https://ror.org/03rp50x72" .
-
 tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_hurs_1850_2100 a prov:Entity ;
     tippecc_data:CDI "Climate Data Interface version 1.9.8 (https://mpimet.mpg.de/cdi)" ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:46 CET+0100" ;
     tippecc_data:branch_method "Hybrid-restart from year 1600-01-01 of piControl" ;
     tippecc_data:branch_time 0e+00 ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 4.30335e+05 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.5.0" ;
-    tippecc_data:comment "The relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C." ;
     tippecc_data:contact "Please send any requests or bug reports to noresm-ncc@met.no." ;
     tippecc_data:creation_date "2019-08-15T15:23:10Z" ;
     tippecc_data:data_specs_version "01.00.31" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.8319" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1920184596"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:46 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8036" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8036" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8319" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1920184596"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "102.075356" ;
+    tippecc_data:file.global_min "5.098798" ;
+    tippecc_data:file.global_model "NorESM2-LM" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 10:49:40 CET+0100" ;
+    tippecc_data:file.long_name "Near-Surface Relative Humidity" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "hurs" ;
+    tippecc_data:file.standard_name "relative_humidity" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 0001-01-01 00:00:00" ;
+    tippecc_data:file.unit "%" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "102.075356" ;
-    tippecc_data:global_min "5.098798" ;
-    tippecc_data:global_model "NorESM2-LM" ;
     tippecc_data:grid "finite-volume grid with 1.9x2.5 degree lat/lon resolution" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2019-08-15T15:23:10Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-15T15:23:10Z altered by CMOR: Converted type from 'd' to 'f'." ;
-    tippecc_data:indicator "no" ;
+    tippecc_data:history """Tue Jan 21 11:48:50 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_hurs_day_NorESM2-LM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_NorESM2-LM_hurs_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 11:45:49 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/hurs/05deg_hurs_day_NorESM2-LM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_hurs_day_NorESM2-LM_r1i1p1f1_1850_2100.nc
+Fri Jan 17 17:20:19 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/hurs/05deg_hurs_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/hurs/05deg_hurs_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/hurs/05deg_hurs_day_NorESM2-LM_r1i1p1f1_1850_2100.nc
+Thu Dec 19 08:58:37 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/hurs/hurs_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/hurs/05deg_hurs_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 08:57:34 2024: cdo mergetime hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_18500101-18591231.nc hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_18600101-18691231.nc hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_18700101-18791231.nc hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_18800101-18891231.nc hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_18900101-18991231.nc hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_19000101-19091231.nc hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_19100101-19191231.nc hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_19200101-19291231.nc hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_19300101-19391231.nc hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_19400101-19491231.nc hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_19500101-19591231.nc hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_19600101-19691231.nc hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_19700101-19791231.nc hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_19800101-19891231.nc hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_19900101-19991231.nc hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_20000101-20091231.nc hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/hurs/hurs_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc
+2019-08-15T15:23:10Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.""" ;
+    tippecc_data:hurs.cell_measures "area: areacella" ;
+    tippecc_data:hurs.cell_methods "area: time: mean" ;
+    tippecc_data:hurs.comment "The relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C." ;
+    tippecc_data:hurs.history "2019-08-15T15:23:10Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-15T15:23:10Z altered by CMOR: Converted type from 'd' to 'f'." ;
+    tippecc_data:hurs.long_name "Near-Surface Relative Humidity" ;
+    tippecc_data:hurs.original_name "RHREFHT" ;
+    tippecc_data:hurs.standard_name "relative_humidity" ;
+    tippecc_data:hurs.units "%" ;
     tippecc_data:institution "NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway" ;
     tippecc_data:institution_id "NCC" ;
-    tippecc_data:last_modification_time "2025-01-21 10:49:40 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Near-Surface Relative Humidity" ;
+    tippecc_data:license "CMIP6 model data produced by NCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
     tippecc_data:model_id "NorESM2-LM" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
-    tippecc_data:original_name "RHREFHT" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -1040,8 +1109,6 @@ tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_hurs_1850_2100 a prov:Entity ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
     tippecc_data:run_variant "N/A" ;
-    tippecc_data:short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319" ;
-    tippecc_data:short_variable_name "hurs" ;
     tippecc_data:source """NorESM2-LM (2017): 
 aerosol: OsloAero
 atmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)
@@ -1053,38 +1120,30 @@ ocnBgchem: HAMOCC
 seaIce: CICE""" ;
     tippecc_data:source_id "NorESM2-LM" ;
     tippecc_data:source_type "AOGCM" ;
-    tippecc_data:standard_name "relative_humidity" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(24 July 2019) MD5:08e314340b9dd440c36c1b8e484514f4" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 0001-01-01 00:00:00" ;
     tippecc_data:title "NorESM2-LM output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/135f99cc-5ff3-4ea6-9358-f24a3b764994" ;
-    tippecc_data:unit "%" ;
-    tippecc_data:units "%" ;
     tippecc_data:variable_id "hurs" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Slice_TIPPECC_area_2526 ;
-            prov:atTime "2025-01-21T11:48:50"^^xsd:dateTime ],
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
         [ a prov:Generation ;
             prov:activity exe:Merge_datasets_2524 ;
             prov:atTime "2025-01-17T17:20:19"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2527> ;
-            prov:atTime "2025-01-21T10:49:40-01:00"^^xsd:dateTime ],
+            prov:activity exe:Slice_TIPPECC_area_2526 ;
+            prov:atTime "2025-01-21T11:48:50"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_2525 ;
             prov:atTime "2025-01-21T11:45:49"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2527> ;
+            prov:atTime "2025-01-21T10:49:40-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_hurs_day_NorESM2-LM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_hurs_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100 .
@@ -1094,49 +1153,65 @@ tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_rlds_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:30 CET+0100" ;
     tippecc_data:branch_method "Hybrid-restart from year 1600-01-01 of piControl" ;
     tippecc_data:branch_time 0e+00 ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 4.30335e+05 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.5.0" ;
-    tippecc_data:comment "The surface called 'surface' means the lower boundary of the atmosphere. 'longwave' means longwave radiation. Downwelling radiation is radiation from above. It does not mean 'net downward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics." ;
     tippecc_data:contact "Please send any requests or bug reports to noresm-ncc@met.no." ;
     tippecc_data:creation_date "2019-08-15T16:01:29Z" ;
     tippecc_data:data_specs_version "01.00.31" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.8319" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1920185420"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:30 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8036" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8036" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8319" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1920185420"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "497.48917" ;
+    tippecc_data:file.global_min "204.77522" ;
+    tippecc_data:file.global_model "NorESM2-LM" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 13:29:10 CET+0100" ;
+    tippecc_data:file.long_name "Surface Downwelling Longwave Radiation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "rlds" ;
+    tippecc_data:file.standard_name "surface_downwelling_longwave_flux_in_air" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 0001-01-01 00:00:00" ;
+    tippecc_data:file.unit "W m-2" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "497.48917" ;
-    tippecc_data:global_min "204.77522" ;
-    tippecc_data:global_model "NorESM2-LM" ;
     tippecc_data:grid "finite-volume grid with 1.9x2.5 degree lat/lon resolution" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2019-08-15T16:01:29Z altered by CMOR: Converted units from 'W/m2' to 'W m-2'. 2019-08-15T16:01:29Z altered by CMOR: Converted type from 'd' to 'f'." ;
-    tippecc_data:indicator "no" ;
+    tippecc_data:history """Tue Jan 21 14:28:23 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rlds_day_NorESM2-LM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_NorESM2-LM_rlds_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 14:25:28 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/rlds/05deg_rlds_day_NorESM2-LM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rlds_day_NorESM2-LM_r1i1p1f1_1850_2100.nc
+Fri Jan 17 19:28:53 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rlds/05deg_rlds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/rlds/05deg_rlds_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/rlds/05deg_rlds_day_NorESM2-LM_r1i1p1f1_1850_2100.nc
+Thu Dec 19 11:28:23 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rlds/rlds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rlds/05deg_rlds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 11:27:23 2024: cdo mergetime rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_18500101-18591231.nc rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_18600101-18691231.nc rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_18700101-18791231.nc rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_18800101-18891231.nc rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_18900101-18991231.nc rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_19000101-19091231.nc rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_19100101-19191231.nc rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_19200101-19291231.nc rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_19300101-19391231.nc rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_19400101-19491231.nc rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_19500101-19591231.nc rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_19600101-19691231.nc rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_19700101-19791231.nc rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_19800101-19891231.nc rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_19900101-19991231.nc rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_20000101-20091231.nc rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rlds/rlds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc
+2019-08-15T16:01:29Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.""" ;
     tippecc_data:institution "NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway" ;
     tippecc_data:institution_id "NCC" ;
-    tippecc_data:last_modification_time "2025-01-21 13:29:10 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Surface Downwelling Longwave Radiation" ;
+    tippecc_data:license "CMIP6 model data produced by NCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
     tippecc_data:model_id "NorESM2-LM" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
-    tippecc_data:original_name "FLDS" ;
-    tippecc_data:original_units "W/m2" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -1146,9 +1221,16 @@ tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_rlds_1850_2100 a prov:Entity ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
+    tippecc_data:rlds.cell_measures "area: areacella" ;
+    tippecc_data:rlds.cell_methods "area: time: mean" ;
+    tippecc_data:rlds.comment "The surface called 'surface' means the lower boundary of the atmosphere. 'longwave' means longwave radiation. Downwelling radiation is radiation from above. It does not mean 'net downward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics." ;
+    tippecc_data:rlds.history "2019-08-15T16:01:29Z altered by CMOR: Converted units from 'W/m2' to 'W m-2'. 2019-08-15T16:01:29Z altered by CMOR: Converted type from 'd' to 'f'." ;
+    tippecc_data:rlds.long_name "Surface Downwelling Longwave Radiation" ;
+    tippecc_data:rlds.original_name "FLDS" ;
+    tippecc_data:rlds.original_units "W/m2" ;
+    tippecc_data:rlds.standard_name "surface_downwelling_longwave_flux_in_air" ;
+    tippecc_data:rlds.units "W m-2" ;
     tippecc_data:run_variant "N/A" ;
-    tippecc_data:short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319" ;
-    tippecc_data:short_variable_name "rlds" ;
     tippecc_data:source """NorESM2-LM (2017): 
 aerosol: OsloAero
 atmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)
@@ -1160,38 +1242,30 @@ ocnBgchem: HAMOCC
 seaIce: CICE""" ;
     tippecc_data:source_id "NorESM2-LM" ;
     tippecc_data:source_type "AOGCM" ;
-    tippecc_data:standard_name "surface_downwelling_longwave_flux_in_air" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(24 July 2019) MD5:08e314340b9dd440c36c1b8e484514f4" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 0001-01-01 00:00:00" ;
     tippecc_data:title "NorESM2-LM output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/08e68b7d-75f4-4f0e-8435-27cbee4d7fa0" ;
-    tippecc_data:unit "W m-2" ;
-    tippecc_data:units "W m-2" ;
     tippecc_data:variable_id "rlds" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Slice_TIPPECC_area_2541 ;
-            prov:atTime "2025-01-21T14:28:23"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2542> ;
-            prov:atTime "2025-01-21T13:29:10-01:00"^^xsd:dateTime ],
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_2540 ;
             prov:atTime "2025-01-21T14:25:28"^^xsd:dateTime ],
         [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_2541 ;
+            prov:atTime "2025-01-21T14:28:23"^^xsd:dateTime ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_2539 ;
             prov:atTime "2025-01-17T19:28:53"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+        [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2542> ;
+            prov:atTime "2025-01-21T13:29:10-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_rlds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rlds_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100 .
@@ -1201,49 +1275,65 @@ tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_rlus_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:43 CET+0100" ;
     tippecc_data:branch_method "Hybrid-restart from year 1600-01-01 of piControl" ;
     tippecc_data:branch_time 0e+00 ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 4.30335e+05 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.5.0" ;
-    tippecc_data:comment "The surface called 'surface' means the lower boundary of the atmosphere. 'longwave' means longwave radiation. Upwelling radiation is radiation from below. It does not mean 'net upward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics." ;
     tippecc_data:contact "Please send any requests or bug reports to noresm-ncc@met.no." ;
     tippecc_data:creation_date "2019-08-15T16:07:20Z" ;
     tippecc_data:data_specs_version "01.00.31" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.8319" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1920185416"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:43 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8036" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8036" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8319" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1920185416"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "608.91754" ;
+    tippecc_data:file.global_min "314.93454" ;
+    tippecc_data:file.global_model "NorESM2-LM" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 14:49:59 CET+0100" ;
+    tippecc_data:file.long_name "Surface Upwelling Longwave Radiation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "rlus" ;
+    tippecc_data:file.standard_name "surface_upwelling_longwave_flux_in_air" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 0001-01-01 00:00:00" ;
+    tippecc_data:file.unit "W m-2" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "608.91754" ;
-    tippecc_data:global_min "314.93454" ;
-    tippecc_data:global_model "NorESM2-LM" ;
     tippecc_data:grid "finite-volume grid with 1.9x2.5 degree lat/lon resolution" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2019-08-15T16:07:20Z altered by CMOR: Converted units from 'W/m2' to 'W m-2'. 2019-08-15T16:07:20Z altered by CMOR: Converted type from 'd' to 'f'." ;
-    tippecc_data:indicator "no" ;
+    tippecc_data:history """Tue Jan 21 15:49:00 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rlus_day_NorESM2-LM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_NorESM2-LM_rlus_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 15:46:02 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/rlus/05deg_rlus_day_NorESM2-LM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rlus_day_NorESM2-LM_r1i1p1f1_1850_2100.nc
+Fri Jan 17 20:36:03 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rlus/05deg_rlus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/rlus/05deg_rlus_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/rlus/05deg_rlus_day_NorESM2-LM_r1i1p1f1_1850_2100.nc
+Thu Dec 19 12:40:21 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rlus/rlus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rlus/05deg_rlus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 12:39:19 2024: cdo mergetime rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_18500101-18591231.nc rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_18600101-18691231.nc rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_18700101-18791231.nc rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_18800101-18891231.nc rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_18900101-18991231.nc rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_19000101-19091231.nc rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_19100101-19191231.nc rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_19200101-19291231.nc rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_19300101-19391231.nc rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_19400101-19491231.nc rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_19500101-19591231.nc rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_19600101-19691231.nc rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_19700101-19791231.nc rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_19800101-19891231.nc rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_19900101-19991231.nc rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_20000101-20091231.nc rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rlus/rlus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc
+2019-08-15T16:07:20Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.""" ;
     tippecc_data:institution "NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway" ;
     tippecc_data:institution_id "NCC" ;
-    tippecc_data:last_modification_time "2025-01-21 14:49:59 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Surface Upwelling Longwave Radiation" ;
+    tippecc_data:license "CMIP6 model data produced by NCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
     tippecc_data:model_id "NorESM2-LM" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
-    tippecc_data:original_name "FLDS+FLNS" ;
-    tippecc_data:original_units "W/m2" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -1253,9 +1343,16 @@ tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_rlus_1850_2100 a prov:Entity ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
+    tippecc_data:rlus.cell_measures "area: areacella" ;
+    tippecc_data:rlus.cell_methods "area: time: mean" ;
+    tippecc_data:rlus.comment "The surface called 'surface' means the lower boundary of the atmosphere. 'longwave' means longwave radiation. Upwelling radiation is radiation from below. It does not mean 'net upward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics." ;
+    tippecc_data:rlus.history "2019-08-15T16:07:20Z altered by CMOR: Converted units from 'W/m2' to 'W m-2'. 2019-08-15T16:07:20Z altered by CMOR: Converted type from 'd' to 'f'." ;
+    tippecc_data:rlus.long_name "Surface Upwelling Longwave Radiation" ;
+    tippecc_data:rlus.original_name "FLDS+FLNS" ;
+    tippecc_data:rlus.original_units "W/m2" ;
+    tippecc_data:rlus.standard_name "surface_upwelling_longwave_flux_in_air" ;
+    tippecc_data:rlus.units "W m-2" ;
     tippecc_data:run_variant "N/A" ;
-    tippecc_data:short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319" ;
-    tippecc_data:short_variable_name "rlus" ;
     tippecc_data:source """NorESM2-LM (2017): 
 aerosol: OsloAero
 atmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)
@@ -1267,38 +1364,30 @@ ocnBgchem: HAMOCC
 seaIce: CICE""" ;
     tippecc_data:source_id "NorESM2-LM" ;
     tippecc_data:source_type "AOGCM" ;
-    tippecc_data:standard_name "surface_upwelling_longwave_flux_in_air" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(24 July 2019) MD5:08e314340b9dd440c36c1b8e484514f4" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 0001-01-01 00:00:00" ;
     tippecc_data:title "NorESM2-LM output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/02534ff2-8a8b-40b2-83df-d525e3879097" ;
-    tippecc_data:unit "W m-2" ;
-    tippecc_data:units "W m-2" ;
     tippecc_data:variable_id "rlus" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_2543 ;
+            prov:atTime "2025-01-17T20:36:03"^^xsd:dateTime ],
+        [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2546> ;
             prov:atTime "2025-01-21T14:49:59-01:00"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Slice_years_2544 ;
-            prov:atTime "2025-01-21T15:46:02"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_2545 ;
             prov:atTime "2025-01-21T15:49:00"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_2543 ;
-            prov:atTime "2025-01-17T20:36:03"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:activity exe:Slice_years_2544 ;
+            prov:atTime "2025-01-21T15:46:02"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_rlus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rlus_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100 .
@@ -1308,49 +1397,65 @@ tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_rsds_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:11 CET+0100" ;
     tippecc_data:branch_method "Hybrid-restart from year 1600-01-01 of piControl" ;
     tippecc_data:branch_time 0e+00 ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 4.30335e+05 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.5.0" ;
-    tippecc_data:comment "Surface solar irradiance for UV calculations." ;
     tippecc_data:contact "Please send any requests or bug reports to noresm-ncc@met.no." ;
     tippecc_data:creation_date "2019-08-15T16:13:28Z" ;
     tippecc_data:data_specs_version "01.00.31" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.8319" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1920183897"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:11 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8036" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8036" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8319" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1920183897"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "415.40546" ;
+    tippecc_data:file.global_min "3.0656033" ;
+    tippecc_data:file.global_model "NorESM2-LM" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 16:08:51 CET+0100" ;
+    tippecc_data:file.long_name "Surface Downwelling Shortwave Radiation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "rsds" ;
+    tippecc_data:file.standard_name "surface_downwelling_shortwave_flux_in_air" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 0001-01-01 00:00:00" ;
+    tippecc_data:file.unit "W m-2" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "415.40546" ;
-    tippecc_data:global_min "3.0656033" ;
-    tippecc_data:global_model "NorESM2-LM" ;
     tippecc_data:grid "finite-volume grid with 1.9x2.5 degree lat/lon resolution" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2019-08-15T16:13:28Z altered by CMOR: Converted units from 'W/m2' to 'W m-2'. 2019-08-15T16:13:28Z altered by CMOR: Converted type from 'd' to 'f'." ;
-    tippecc_data:indicator "no" ;
+    tippecc_data:history """Tue Jan 21 17:08:02 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rsds_day_NorESM2-LM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_NorESM2-LM_rsds_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 17:05:06 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/rsds/05deg_rsds_day_NorESM2-LM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rsds_day_NorESM2-LM_r1i1p1f1_1850_2100.nc
+Fri Jan 17 21:42:40 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsds/05deg_rsds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/rsds/05deg_rsds_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/rsds/05deg_rsds_day_NorESM2-LM_r1i1p1f1_1850_2100.nc
+Thu Dec 19 13:53:47 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsds/rsds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsds/05deg_rsds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 13:52:41 2024: cdo mergetime rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_18500101-18591231.nc rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_18600101-18691231.nc rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_18700101-18791231.nc rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_18800101-18891231.nc rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_18900101-18991231.nc rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_19000101-19091231.nc rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_19100101-19191231.nc rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_19200101-19291231.nc rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_19300101-19391231.nc rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_19400101-19491231.nc rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_19500101-19591231.nc rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_19600101-19691231.nc rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_19700101-19791231.nc rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_19800101-19891231.nc rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_19900101-19991231.nc rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_20000101-20091231.nc rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsds/rsds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc
+2019-08-15T16:13:28Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.""" ;
     tippecc_data:institution "NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway" ;
     tippecc_data:institution_id "NCC" ;
-    tippecc_data:last_modification_time "2025-01-21 16:08:51 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Surface Downwelling Shortwave Radiation" ;
+    tippecc_data:license "CMIP6 model data produced by NCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
     tippecc_data:model_id "NorESM2-LM" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
-    tippecc_data:original_name "FSDS" ;
-    tippecc_data:original_units "W/m2" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -1360,9 +1465,16 @@ tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_rsds_1850_2100 a prov:Entity ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
+    tippecc_data:rsds.cell_measures "area: areacella" ;
+    tippecc_data:rsds.cell_methods "area: time: mean" ;
+    tippecc_data:rsds.comment "Surface solar irradiance for UV calculations." ;
+    tippecc_data:rsds.history "2019-08-15T16:13:28Z altered by CMOR: Converted units from 'W/m2' to 'W m-2'. 2019-08-15T16:13:28Z altered by CMOR: Converted type from 'd' to 'f'." ;
+    tippecc_data:rsds.long_name "Surface Downwelling Shortwave Radiation" ;
+    tippecc_data:rsds.original_name "FSDS" ;
+    tippecc_data:rsds.original_units "W/m2" ;
+    tippecc_data:rsds.standard_name "surface_downwelling_shortwave_flux_in_air" ;
+    tippecc_data:rsds.units "W m-2" ;
     tippecc_data:run_variant "N/A" ;
-    tippecc_data:short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319" ;
-    tippecc_data:short_variable_name "rsds" ;
     tippecc_data:source """NorESM2-LM (2017): 
 aerosol: OsloAero
 atmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)
@@ -1374,38 +1486,30 @@ ocnBgchem: HAMOCC
 seaIce: CICE""" ;
     tippecc_data:source_id "NorESM2-LM" ;
     tippecc_data:source_type "AOGCM" ;
-    tippecc_data:standard_name "surface_downwelling_shortwave_flux_in_air" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(24 July 2019) MD5:08e314340b9dd440c36c1b8e484514f4" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 0001-01-01 00:00:00" ;
     tippecc_data:title "NorESM2-LM output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/927e051c-4029-4fd2-b4dc-ebd4332b5745" ;
-    tippecc_data:unit "W m-2" ;
-    tippecc_data:units "W m-2" ;
     tippecc_data:variable_id "rsds" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2550> ;
             prov:atTime "2025-01-21T16:08:51-01:00"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Slice_TIPPECC_area_2549 ;
-            prov:atTime "2025-01-21T17:08:02"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_2548 ;
             prov:atTime "2025-01-21T17:05:06"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Merge_datasets_2547 ;
             prov:atTime "2025-01-17T21:42:40"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_2549 ;
+            prov:atTime "2025-01-21T17:08:02"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_rsds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rsds_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100 .
@@ -1415,49 +1519,65 @@ tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_rsus_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:48 CET+0100" ;
     tippecc_data:branch_method "Hybrid-restart from year 1600-01-01 of piControl" ;
     tippecc_data:branch_time 0e+00 ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 4.30335e+05 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.5.0" ;
-    tippecc_data:comment "The surface called 'surface' means the lower boundary of the atmosphere. 'shortwave' means shortwave radiation. Upwelling radiation is radiation from below. It does not mean 'net upward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics." ;
     tippecc_data:contact "Please send any requests or bug reports to noresm-ncc@met.no." ;
     tippecc_data:creation_date "2019-08-15T16:19:18Z" ;
     tippecc_data:data_specs_version "01.00.31" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.8319" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1920185418"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:48 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8036" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8036" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8319" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1920185418"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "104.458206" ;
+    tippecc_data:file.global_min "0.2677425" ;
+    tippecc_data:file.global_model "NorESM2-LM" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 17:24:56 CET+0100" ;
+    tippecc_data:file.long_name "Surface Upwelling Shortwave Radiation" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "rsus" ;
+    tippecc_data:file.standard_name "surface_upwelling_shortwave_flux_in_air" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 0001-01-01 00:00:00" ;
+    tippecc_data:file.unit "W m-2" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "104.458206" ;
-    tippecc_data:global_min "0.2677425" ;
-    tippecc_data:global_model "NorESM2-LM" ;
     tippecc_data:grid "finite-volume grid with 1.9x2.5 degree lat/lon resolution" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2019-08-15T16:19:18Z altered by CMOR: Converted units from 'W/m2' to 'W m-2'. 2019-08-15T16:19:18Z altered by CMOR: Converted type from 'd' to 'f'." ;
-    tippecc_data:indicator "no" ;
+    tippecc_data:history """Tue Jan 21 18:24:06 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rsus_day_NorESM2-LM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_NorESM2-LM_rsus_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 18:21:09 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/rsus/05deg_rsus_day_NorESM2-LM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_rsus_day_NorESM2-LM_r1i1p1f1_1850_2100.nc
+Fri Jan 17 22:45:42 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsus/05deg_rsus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/rsus/05deg_rsus_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/rsus/05deg_rsus_day_NorESM2-LM_r1i1p1f1_1850_2100.nc
+Thu Dec 19 15:07:32 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsus/rsus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsus/05deg_rsus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 15:06:26 2024: cdo mergetime rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_18500101-18591231.nc rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_18600101-18691231.nc rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_18700101-18791231.nc rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_18800101-18891231.nc rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_18900101-18991231.nc rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_19000101-19091231.nc rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_19100101-19191231.nc rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_19200101-19291231.nc rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_19300101-19391231.nc rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_19400101-19491231.nc rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_19500101-19591231.nc rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_19600101-19691231.nc rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_19700101-19791231.nc rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_19800101-19891231.nc rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_19900101-19991231.nc rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_20000101-20091231.nc rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/rsus/rsus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc
+2019-08-15T16:19:18Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.""" ;
     tippecc_data:institution "NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway" ;
     tippecc_data:institution_id "NCC" ;
-    tippecc_data:last_modification_time "2025-01-21 17:24:56 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Surface Upwelling Shortwave Radiation" ;
+    tippecc_data:license "CMIP6 model data produced by NCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
     tippecc_data:model_id "NorESM2-LM" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
-    tippecc_data:original_name "FSDS-FSNS" ;
-    tippecc_data:original_units "W/m2" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -1467,9 +1587,16 @@ tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_rsus_1850_2100 a prov:Entity ;
     tippecc_data:parent_variant_label "r1i1p1f1" ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
+    tippecc_data:rsus.cell_measures "area: areacella" ;
+    tippecc_data:rsus.cell_methods "area: time: mean" ;
+    tippecc_data:rsus.comment "The surface called 'surface' means the lower boundary of the atmosphere. 'shortwave' means shortwave radiation. Upwelling radiation is radiation from below. It does not mean 'net upward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics." ;
+    tippecc_data:rsus.history "2019-08-15T16:19:18Z altered by CMOR: Converted units from 'W/m2' to 'W m-2'. 2019-08-15T16:19:18Z altered by CMOR: Converted type from 'd' to 'f'." ;
+    tippecc_data:rsus.long_name "Surface Upwelling Shortwave Radiation" ;
+    tippecc_data:rsus.original_name "FSDS-FSNS" ;
+    tippecc_data:rsus.original_units "W/m2" ;
+    tippecc_data:rsus.standard_name "surface_upwelling_shortwave_flux_in_air" ;
+    tippecc_data:rsus.units "W m-2" ;
     tippecc_data:run_variant "N/A" ;
-    tippecc_data:short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319" ;
-    tippecc_data:short_variable_name "rsus" ;
     tippecc_data:source """NorESM2-LM (2017): 
 aerosol: OsloAero
 atmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)
@@ -1481,38 +1608,30 @@ ocnBgchem: HAMOCC
 seaIce: CICE""" ;
     tippecc_data:source_id "NorESM2-LM" ;
     tippecc_data:source_type "AOGCM" ;
-    tippecc_data:standard_name "surface_upwelling_shortwave_flux_in_air" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(24 July 2019) MD5:08e314340b9dd440c36c1b8e484514f4" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 0001-01-01 00:00:00" ;
     tippecc_data:title "NorESM2-LM output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/61ee5576-2945-4724-839a-571864ff37dc" ;
-    tippecc_data:unit "W m-2" ;
-    tippecc_data:units "W m-2" ;
     tippecc_data:variable_id "rsus" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_2553 ;
+            prov:atTime "2025-01-21T18:24:06"^^xsd:dateTime ],
+        [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2554> ;
             prov:atTime "2025-01-21T17:24:56-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Merge_datasets_2551 ;
             prov:atTime "2025-01-17T22:45:42"^^xsd:dateTime ],
         [ a prov:Generation ;
-            prov:activity exe:Slice_TIPPECC_area_2553 ;
-            prov:atTime "2025-01-21T18:24:06"^^xsd:dateTime ],
-        [ a prov:Generation ;
             prov:activity exe:Slice_years_2552 ;
-            prov:atTime "2025-01-21T18:21:09"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-01-21T18:21:09"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_rsus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_rsus_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100 .
@@ -1522,49 +1641,65 @@ tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_sfcWind_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:41 CET+0100" ;
     tippecc_data:branch_method "Hybrid-restart from year 1600-01-01 of piControl" ;
     tippecc_data:branch_time 0e+00 ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 4.30335e+05 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: time: mean" ;
     tippecc_data:cmor_version "3.5.0" ;
-    tippecc_data:comment "near-surface (usually, 10 meters) wind speed." ;
     tippecc_data:contact "Please send any requests or bug reports to noresm-ncc@met.no." ;
     tippecc_data:creation_date "2019-11-15T14:22:10Z" ;
     tippecc_data:data_specs_version "01.00.31" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.8319" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1920184643"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:41 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8036" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8036" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8319" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1920184643"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "19.536562" ;
+    tippecc_data:file.global_min "0.43442735" ;
+    tippecc_data:file.global_model "NorESM2-LM" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 18:42:03 CET+0100" ;
+    tippecc_data:file.long_name "Daily-Mean Near-Surface Wind Speed" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "sfcWind" ;
+    tippecc_data:file.standard_name "wind_speed" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 0001-01-01 00:00:00" ;
+    tippecc_data:file.unit "m s-1" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "19.536562" ;
-    tippecc_data:global_min "0.43442735" ;
-    tippecc_data:global_model "NorESM2-LM" ;
     tippecc_data:grid "finite-volume grid with 1.9x2.5 degree lat/lon resolution" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2019-11-15T14:22:10Z altered by CMOR: Converted units from 'm/s' to 'm s-1'. 2019-11-15T14:22:10Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T14:22:10Z altered by CMOR: Converted type from 'd' to 'f'." ;
-    tippecc_data:indicator "no" ;
+    tippecc_data:history """Tue Jan 21 19:41:14 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_sfcWind_day_NorESM2-LM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_NorESM2-LM_sfcWind_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 19:38:21 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/sfcWind/05deg_sfcWind_day_NorESM2-LM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_sfcWind_day_NorESM2-LM_r1i1p1f1_1850_2100.nc
+Fri Jan 17 23:49:00 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/sfcWind/05deg_sfcWind_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/sfcWind/05deg_sfcWind_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/sfcWind/05deg_sfcWind_day_NorESM2-LM_r1i1p1f1_1850_2100.nc
+Thu Dec 19 16:22:55 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/sfcWind/sfcWind_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/sfcWind/05deg_sfcWind_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 16:21:54 2024: cdo mergetime sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_18500101-18591231.nc sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_18600101-18691231.nc sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_18700101-18791231.nc sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_18800101-18891231.nc sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_18900101-18991231.nc sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_19000101-19091231.nc sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_19100101-19191231.nc sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_19200101-19291231.nc sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_19300101-19391231.nc sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_19400101-19491231.nc sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_19500101-19591231.nc sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_19600101-19691231.nc sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_19700101-19791231.nc sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_19800101-19891231.nc sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_19900101-19991231.nc sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_20000101-20091231.nc sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/sfcWind/sfcWind_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc
+2019-11-15T14:22:10Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.""" ;
     tippecc_data:institution "NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway" ;
     tippecc_data:institution_id "NCC" ;
-    tippecc_data:last_modification_time "2025-01-21 18:42:03 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Daily-Mean Near-Surface Wind Speed" ;
+    tippecc_data:license "CMIP6 model data produced by NCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
     tippecc_data:model_id "NorESM2-LM" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
-    tippecc_data:original_name "U10" ;
-    tippecc_data:original_units "m/s" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -1575,8 +1710,15 @@ tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_sfcWind_1850_2100 a prov:Entity ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
     tippecc_data:run_variant "N/A" ;
-    tippecc_data:short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319" ;
-    tippecc_data:short_variable_name "sfcWind" ;
+    tippecc_data:sfcWind.cell_measures "area: areacella" ;
+    tippecc_data:sfcWind.cell_methods "area: time: mean" ;
+    tippecc_data:sfcWind.comment "near-surface (usually, 10 meters) wind speed." ;
+    tippecc_data:sfcWind.history "2019-11-15T14:22:10Z altered by CMOR: Converted units from 'm/s' to 'm s-1'. 2019-11-15T14:22:10Z altered by CMOR: Treated scalar dimension: 'height'. 2019-11-15T14:22:10Z altered by CMOR: Converted type from 'd' to 'f'." ;
+    tippecc_data:sfcWind.long_name "Daily-Mean Near-Surface Wind Speed" ;
+    tippecc_data:sfcWind.original_name "U10" ;
+    tippecc_data:sfcWind.original_units "m/s" ;
+    tippecc_data:sfcWind.standard_name "wind_speed" ;
+    tippecc_data:sfcWind.units "m s-1" ;
     tippecc_data:source """NorESM2-LM (2017): 
 aerosol: OsloAero
 atmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)
@@ -1588,25 +1730,18 @@ ocnBgchem: HAMOCC
 seaIce: CICE""" ;
     tippecc_data:source_id "NorESM2-LM" ;
     tippecc_data:source_type "AOGCM AER BGC" ;
-    tippecc_data:standard_name "wind_speed" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(24 July 2019) MD5:0bb394a356ef9d214d027f1aca45853e" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 0001-01-01 00:00:00" ;
     tippecc_data:title "NorESM2-LM output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/712c7849-8ae9-47c6-9e11-6bf6b08d00dc" ;
-    tippecc_data:unit "m s-1" ;
-    tippecc_data:units "m s-1" ;
     tippecc_data:variable_id "sfcWind" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Slice_years_2556 ;
-            prov:atTime "2025-01-21T19:38:21"^^xsd:dateTime ],
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
         [ a prov:Generation ;
             prov:activity exe:Merge_datasets_2555 ;
             prov:atTime "2025-01-17T23:49:00"^^xsd:dateTime ],
@@ -1616,10 +1751,9 @@ seaIce: CICE""" ;
         [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_2557 ;
             prov:atTime "2025-01-21T19:41:14"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_2556 ;
+            prov:atTime "2025-01-21T19:38:21"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_sfcWind_day_NorESM2-LM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_sfcWind_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100 .
@@ -1629,48 +1763,65 @@ tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_tasmax_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:10 CET+0100" ;
     tippecc_data:branch_method "Hybrid-restart from year 1600-01-01 of piControl" ;
     tippecc_data:branch_time 0e+00 ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 4.30335e+05 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: mean time: maximum" ;
     tippecc_data:cmor_version "3.5.0" ;
-    tippecc_data:comment "maximum near-surface (usually, 2 meter) air temperature (add cell_method attribute 'time: max')" ;
     tippecc_data:contact "Please send any requests or bug reports to noresm-ncc@met.no." ;
     tippecc_data:creation_date "2019-08-15T16:41:37Z" ;
     tippecc_data:data_specs_version "01.00.31" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.8319" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1920184673"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:10 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8036" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8036" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8319" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1920184673"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "323.04102" ;
+    tippecc_data:file.global_min "272.46365" ;
+    tippecc_data:file.global_model "NorESM2-LM" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 21:21:33 CET+0100" ;
+    tippecc_data:file.long_name "Daily Maximum Near-Surface Air Temperature" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "tasmax" ;
+    tippecc_data:file.standard_name "air_temperature" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 0001-01-01 00:00:00" ;
+    tippecc_data:file.unit "K" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "323.04102" ;
-    tippecc_data:global_min "272.46365" ;
-    tippecc_data:global_model "NorESM2-LM" ;
     tippecc_data:grid "finite-volume grid with 1.9x2.5 degree lat/lon resolution" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2019-08-15T16:41:37Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-15T16:41:37Z altered by CMOR: Converted type from 'd' to 'f'." ;
-    tippecc_data:indicator "no" ;
+    tippecc_data:history """Tue Jan 21 22:20:31 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_tasmax_day_NorESM2-LM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_NorESM2-LM_tasmax_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 22:17:36 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/tasmax/05deg_tasmax_day_NorESM2-LM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_tasmax_day_NorESM2-LM_r1i1p1f1_1850_2100.nc
+Sat Jan 18 01:58:39 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/tasmax/05deg_tasmax_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/tasmax/05deg_tasmax_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/tasmax/05deg_tasmax_day_NorESM2-LM_r1i1p1f1_1850_2100.nc
+Thu Dec 19 18:43:57 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/tasmax/tasmax_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/tasmax/05deg_tasmax_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 18:42:57 2024: cdo mergetime tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_18500101-18591231.nc tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_18600101-18691231.nc tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_18700101-18791231.nc tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_18800101-18891231.nc tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_18900101-18991231.nc tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_19000101-19091231.nc tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_19100101-19191231.nc tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_19200101-19291231.nc tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_19300101-19391231.nc tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_19400101-19491231.nc tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_19500101-19591231.nc tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_19600101-19691231.nc tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_19700101-19791231.nc tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_19800101-19891231.nc tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_19900101-19991231.nc tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_20000101-20091231.nc tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/tasmax/tasmax_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc
+2019-08-15T16:41:37Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.""" ;
     tippecc_data:institution "NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway" ;
     tippecc_data:institution_id "NCC" ;
-    tippecc_data:last_modification_time "2025-01-21 21:21:33 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Daily Maximum Near-Surface Air Temperature" ;
+    tippecc_data:license "CMIP6 model data produced by NCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
     tippecc_data:model_id "NorESM2-LM" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
-    tippecc_data:original_name "TREFHTMX" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -1681,8 +1832,6 @@ tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_tasmax_1850_2100 a prov:Entity ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
     tippecc_data:run_variant "N/A" ;
-    tippecc_data:short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319" ;
-    tippecc_data:short_variable_name "tasmax" ;
     tippecc_data:source """NorESM2-LM (2017): 
 aerosol: OsloAero
 atmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)
@@ -1694,38 +1843,38 @@ ocnBgchem: HAMOCC
 seaIce: CICE""" ;
     tippecc_data:source_id "NorESM2-LM" ;
     tippecc_data:source_type "AOGCM" ;
-    tippecc_data:standard_name "air_temperature" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(24 July 2019) MD5:08e314340b9dd440c36c1b8e484514f4" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 0001-01-01 00:00:00" ;
+    tippecc_data:tasmax.cell_measures "area: areacella" ;
+    tippecc_data:tasmax.cell_methods "area: mean time: maximum" ;
+    tippecc_data:tasmax.comment "maximum near-surface (usually, 2 meter) air temperature (add cell_method attribute 'time: max')" ;
+    tippecc_data:tasmax.history "2019-08-15T16:41:37Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-15T16:41:37Z altered by CMOR: Converted type from 'd' to 'f'." ;
+    tippecc_data:tasmax.long_name "Daily Maximum Near-Surface Air Temperature" ;
+    tippecc_data:tasmax.original_name "TREFHTMX" ;
+    tippecc_data:tasmax.standard_name "air_temperature" ;
+    tippecc_data:tasmax.units "K" ;
     tippecc_data:title "NorESM2-LM output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/9c6f314a-3dd3-4bfe-9453-f64f3e3721bc" ;
-    tippecc_data:unit "K" ;
-    tippecc_data:units "K" ;
     tippecc_data:variable_id "tasmax" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Slice_years_2560 ;
-            prov:atTime "2025-01-21T22:17:36"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2562> ;
-            prov:atTime "2025-01-21T21:21:33-01:00"^^xsd:dateTime ],
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
         [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_2561 ;
             prov:atTime "2025-01-21T22:20:31"^^xsd:dateTime ],
         [ a prov:Generation ;
+            prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2562> ;
+            prov:atTime "2025-01-21T21:21:33-01:00"^^xsd:dateTime ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_2559 ;
             prov:atTime "2025-01-18T01:58:39"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+        [ a prov:Generation ;
+            prov:activity exe:Slice_years_2560 ;
+            prov:atTime "2025-01-21T22:17:36"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_tasmax_day_NorESM2-LM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_tasmax_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100 .
@@ -1735,48 +1884,65 @@ tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_tasmin_1850_2100 a prov:Entity ;
     tippecc_data:CDO "Climate Data Operators version 1.9.8 (https://mpimet.mpg.de/cdo)" ;
     tippecc_data:Conventions "CF-1.7 CMIP-6.2" ;
     tippecc_data:activity_id "CMIP" ;
-    tippecc_data:bias_correction "no" ;
-    tippecc_data:birth_time "2025-02-23 16:47:49 CET+0100" ;
     tippecc_data:branch_method "Hybrid-restart from year 1600-01-01 of piControl" ;
     tippecc_data:branch_time 0e+00 ;
     tippecc_data:branch_time_in_child 0e+00 ;
     tippecc_data:branch_time_in_parent 4.30335e+05 ;
-    tippecc_data:cell_measures "area: areacella" ;
-    tippecc_data:cell_methods "area: mean time: minimum" ;
     tippecc_data:cmor_version "3.5.0" ;
-    tippecc_data:comment "minimum near-surface (usually, 2 meter) air temperature (add cell_method attribute 'time: min')" ;
     tippecc_data:contact "Please send any requests or bug reports to noresm-ncc@met.no." ;
     tippecc_data:creation_date "2019-08-15T16:47:30Z" ;
     tippecc_data:data_specs_version "01.00.31" ;
-    tippecc_data:doi "https://doi.org/10.22033/ESGF/CMIP6.8319" ;
     tippecc_data:experiment "all-forcing simulation of the recent past" ;
-    tippecc_data:experiment_id "historical+ssp585" ;
+    tippecc_data:experiment_id "historical" ;
     tippecc_data:external_variables "areacella" ;
-    tippecc_data:file_format "netCDF" ;
-    tippecc_data:file_size "1920184673"^^xsd:int ;
+    tippecc_data:file.bias_correction "no" ;
+    tippecc_data:file.birth_time "2025-02-23 16:47:49 CET+0100" ;
+    tippecc_data:file.citation_historical_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8036" ;
+    tippecc_data:file.citation_historical_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_historical_source.short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 CMIP historical historical. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8036" ;
+    tippecc_data:file.citation_scenario_source.doi "https://doi.org/10.22033/ESGF/CMIP6.8319" ;
+    tippecc_data:file.citation_scenario_source.license "CC BY 4.0" ;
+    tippecc_data:file.citation_scenario_source.short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319" ;
+    tippecc_data:file.experiment_id "historical+ssp585" ;
+    tippecc_data:file.file_format "netCDF" ;
+    tippecc_data:file.file_size "1920184673"^^xsd:int ;
+    tippecc_data:file.frequency "day" ;
+    tippecc_data:file.geospatial_lat_max "-5.25" ;
+    tippecc_data:file.geospatial_lat_min "-35.75" ;
+    tippecc_data:file.geospatial_lon_max "51.75" ;
+    tippecc_data:file.geospatial_lon_min "10.25" ;
+    tippecc_data:file.global_max "310.4761" ;
+    tippecc_data:file.global_min "268.50476" ;
+    tippecc_data:file.global_model "NorESM2-LM" ;
+    tippecc_data:file.indicator "no" ;
+    tippecc_data:file.last_modification_time "2025-01-21 22:44:26 CET+0100" ;
+    tippecc_data:file.long_name "Daily Minimum Near-Surface Air Temperature" ;
+    tippecc_data:file.nominal_resolution "50 km" ;
+    tippecc_data:file.num_time_steps "91615"^^xsd:int ;
+    tippecc_data:file.short_variable_name "tasmin" ;
+    tippecc_data:file.standard_name "air_temperature" ;
+    tippecc_data:file.time_calendar "365_day" ;
+    tippecc_data:file.time_coverage_end "2100-12-31 00:00:00" ;
+    tippecc_data:file.time_coverage_start "1850-01-01 00:00:00" ;
+    tippecc_data:file.time_units "days since 0001-01-01 00:00:00" ;
+    tippecc_data:file.unit "K" ;
+    tippecc_data:file.variant "r1i1p1f1" ;
     tippecc_data:frequency "day" ;
     tippecc_data:further_info_url "https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r1i1p1f1" ;
-    tippecc_data:geospatial_lat_max "-5.25" ;
-    tippecc_data:geospatial_lat_min "-35.75" ;
-    tippecc_data:geospatial_lon_max "51.75" ;
-    tippecc_data:geospatial_lon_min "10.25" ;
-    tippecc_data:global_max "310.4761" ;
-    tippecc_data:global_min "268.50476" ;
-    tippecc_data:global_model "NorESM2-LM" ;
     tippecc_data:grid "finite-volume grid with 1.9x2.5 degree lat/lon resolution" ;
     tippecc_data:grid_label "gn" ;
-    tippecc_data:history "2019-08-15T16:47:30Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-15T16:47:30Z altered by CMOR: Converted type from 'd' to 'f'." ;
-    tippecc_data:indicator "no" ;
+    tippecc_data:history """Tue Jan 21 23:43:40 2025: cdo sellonlatbox,10,51.81,-35.97,-4.95 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_tasmin_day_NorESM2-LM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/TIPPECC_NorESM2-LM_tasmin_day_r1i1p1f1_1850_2100.nc
+Tue Jan 21 23:40:44 2025: cdo selyear,1850/2100 /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/tasmin/05deg_tasmin_day_NorESM2-LM_r1i1p1f1_1850_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/domain/05deg_tasmin_day_NorESM2-LM_r1i1p1f1_1850_2100.nc
+Sat Jan 18 03:07:48 2025: cdo mergetime /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/tasmin/05deg_tasmin_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/ssp585/tempo_05degree/tasmin/05deg_tasmin_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/merged/tasmin/05deg_tasmin_day_NorESM2-LM_r1i1p1f1_1850_2100.nc
+Thu Dec 19 19:55:55 2024: cdo remapbil,/home/jessica/cmip_cordex_scripts/Dec2024/africa05.txt /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/tasmin/tasmin_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/tasmin/05deg_tasmin_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc
+Thu Dec 19 19:54:58 2024: cdo mergetime tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_18500101-18591231.nc tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_18600101-18691231.nc tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_18700101-18791231.nc tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_18800101-18891231.nc tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_18900101-18991231.nc tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_19000101-19091231.nc tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_19100101-19191231.nc tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_19200101-19291231.nc tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_19300101-19391231.nc tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_19400101-19491231.nc tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_19500101-19591231.nc tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_19600101-19691231.nc tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_19700101-19791231.nc tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_19800101-19891231.nc tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_19900101-19991231.nc tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_20000101-20091231.nc tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231.nc /dataJ/wpsm/work/ik1017/CMIP6/TIPPEC/historical/tempo_05degree/tasmin/tasmin_day_NorESM2-LM_historical_r1i1p1f1_1850_2014.nc
+2019-08-15T16:47:30Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.""" ;
     tippecc_data:institution "NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway" ;
     tippecc_data:institution_id "NCC" ;
-    tippecc_data:last_modification_time "2025-01-21 22:44:26 CET+0100" ;
-    tippecc_data:license "CC BY 4.0" ;
-    tippecc_data:long_name "Daily Minimum Near-Surface Air Temperature" ;
+    tippecc_data:license "CMIP6 model data produced by NCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
     tippecc_data:mip_era "CMIP6" ;
     tippecc_data:model_id "NorESM2-LM" ;
-    tippecc_data:nominal_resolution "50 km" ;
-    tippecc_data:num_time_steps "91615"^^xsd:int ;
-    tippecc_data:original_name "TREFHTMN" ;
+    tippecc_data:nominal_resolution "250 km" ;
     tippecc_data:parent_activity_id "CMIP" ;
     tippecc_data:parent_experiment_id "piControl" ;
     tippecc_data:parent_mip_era "CMIP6" ;
@@ -1787,8 +1953,6 @@ tippecc_data:TIPPECC_NorESM2-LM_day_r1i1p1f1_tasmin_1850_2100 a prov:Entity ;
     tippecc_data:product "model-output" ;
     tippecc_data:realm "atmos" ;
     tippecc_data:run_variant "N/A" ;
-    tippecc_data:short_data_reference "Seland, Øyvind et al. (2019). NCC NorESM2-LM model output prepared for CMIP6 ScenarioMIP ssp585 ssp585. Earth System Grid Federation. doi:https://doi.org/10.22033/ESGF/CMIP6.8319" ;
-    tippecc_data:short_variable_name "tasmin" ;
     tippecc_data:source """NorESM2-LM (2017): 
 aerosol: OsloAero
 atmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)
@@ -1800,119 +1964,119 @@ ocnBgchem: HAMOCC
 seaIce: CICE""" ;
     tippecc_data:source_id "NorESM2-LM" ;
     tippecc_data:source_type "AOGCM" ;
-    tippecc_data:standard_name "air_temperature" ;
     tippecc_data:sub_experiment "none" ;
     tippecc_data:sub_experiment_id "none" ;
     tippecc_data:table_id "day" ;
     tippecc_data:table_info "Creation Date:(24 July 2019) MD5:08e314340b9dd440c36c1b8e484514f4" ;
-    tippecc_data:time_calendar "365_day" ;
-    tippecc_data:time_coverage_end "2100-12-31 00:00:00" ;
-    tippecc_data:time_coverage_start "1850-01-01 00:00:00" ;
-    tippecc_data:time_units "days since 0001-01-01 00:00:00" ;
+    tippecc_data:tasmin.cell_measures "area: areacella" ;
+    tippecc_data:tasmin.cell_methods "area: mean time: minimum" ;
+    tippecc_data:tasmin.comment "minimum near-surface (usually, 2 meter) air temperature (add cell_method attribute 'time: min')" ;
+    tippecc_data:tasmin.history "2019-08-15T16:47:30Z altered by CMOR: Treated scalar dimension: 'height'. 2019-08-15T16:47:30Z altered by CMOR: Converted type from 'd' to 'f'." ;
+    tippecc_data:tasmin.long_name "Daily Minimum Near-Surface Air Temperature" ;
+    tippecc_data:tasmin.original_name "TREFHTMN" ;
+    tippecc_data:tasmin.standard_name "air_temperature" ;
+    tippecc_data:tasmin.units "K" ;
     tippecc_data:title "NorESM2-LM output prepared for CMIP6" ;
     tippecc_data:tracking_id "hdl:21.14100/8c11b43f-fa78-44eb-8a28-b862b450abdf" ;
-    tippecc_data:unit "K" ;
-    tippecc_data:units "K" ;
     tippecc_data:variable_id "tasmin" ;
-    tippecc_data:variant "r1i1p1f1" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity exe:Slice_TIPPECC_area_2565 ;
             prov:atTime "2025-01-21T23:43:40"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Merge_datasets_2563 ;
-            prov:atTime "2025-01-18T03:07:48"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Slice_years_2564 ;
             prov:atTime "2025-01-21T23:40:44"^^xsd:dateTime ],
         [ a prov:Generation ;
+            prov:activity exe:Merge_datasets_2563 ;
+            prov:atTime "2025-01-18T03:07:48"^^xsd:dateTime ],
+        [ a prov:Generation ;
             prov:activity <http://www.provbook.org/tippecc/exe/Rename/Metadata_2566> ;
-            prov:atTime "2025-01-21T22:44:26-01:00"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-01-21T22:44:26-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_tasmin_day_NorESM2-LM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_tasmin_day_NorESM2-LM_ssp585_r1i1p1f1_2015_2100 .
 
 tippecc_data:05deg_hurs_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_19 ;
-            prov:atTime "2024-12-19T08:58:37"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T08:58:37"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:hurs_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_rlds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_65 ;
-            prov:atTime "2024-12-19T11:28:23"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T11:28:23"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:rlds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_rlus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_88 ;
-            prov:atTime "2024-12-19T12:40:21"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T12:40:21"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:rlus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_rsds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_111 ;
-            prov:atTime "2024-12-19T13:53:47"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T13:53:47"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:rsds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_rsus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_134 ;
-            prov:atTime "2024-12-19T15:07:32"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T15:07:32"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:rsus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_sfcWind_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_157 ;
-            prov:atTime "2024-12-19T16:22:55"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T16:22:55"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:sfcWind_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_tasmax_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_180 ;
-            prov:atTime "2024-12-19T18:43:57"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T18:43:57"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:tasmax_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:05deg_tasmin_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_203 ;
-            prov:atTime "2024-12-19T19:55:55"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T19:55:55"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:tasmin_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 .
 
 tippecc_data:hurs_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_391 ;
-            prov:atTime "2024-12-19T08:57:34"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T08:57:34"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_18500101-18591231,
         tippecc_data:hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_18600101-18691231,
@@ -1933,10 +2097,10 @@ tippecc_data:hurs_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
         tippecc_data:hurs_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231 .
 
 tippecc_data:rlds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_485 ;
-            prov:atTime "2024-12-19T11:27:23"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T11:27:23"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_18500101-18591231,
         tippecc_data:rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_18600101-18691231,
@@ -1957,10 +2121,10 @@ tippecc_data:rlds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
         tippecc_data:rlds_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231 .
 
 tippecc_data:rlus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_508 ;
-            prov:atTime "2024-12-19T12:39:19"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T12:39:19"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_18500101-18591231,
         tippecc_data:rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_18600101-18691231,
@@ -1981,10 +2145,10 @@ tippecc_data:rlus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
         tippecc_data:rlus_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231 .
 
 tippecc_data:rsds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_531 ;
-            prov:atTime "2024-12-19T13:52:41"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T13:52:41"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_18500101-18591231,
         tippecc_data:rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_18600101-18691231,
@@ -2005,10 +2169,10 @@ tippecc_data:rsds_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
         tippecc_data:rsds_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231 .
 
 tippecc_data:rsus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_554 ;
-            prov:atTime "2024-12-19T15:06:26"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T15:06:26"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_18500101-18591231,
         tippecc_data:rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_18600101-18691231,
@@ -2029,10 +2193,10 @@ tippecc_data:rsus_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
         tippecc_data:rsus_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231 .
 
 tippecc_data:sfcWind_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_577 ;
-            prov:atTime "2024-12-19T16:21:54"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T16:21:54"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_18500101-18591231,
         tippecc_data:sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_18600101-18691231,
@@ -2053,10 +2217,10 @@ tippecc_data:sfcWind_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity 
         tippecc_data:sfcWind_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231 .
 
 tippecc_data:tasmax_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_600 ;
-            prov:atTime "2024-12-19T18:42:57"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T18:42:57"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_18500101-18591231,
         tippecc_data:tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_18600101-18691231,
@@ -2077,10 +2241,10 @@ tippecc_data:tasmax_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
         tippecc_data:tasmax_day_NorESM2-LM_historical_r1i1p1f1_gn_20100101-20141231 .
 
 tippecc_data:tasmin_day_NorESM2-LM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_623 ;
-            prov:atTime "2024-12-19T19:54:58"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-19T19:54:58"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_18500101-18591231,
         tippecc_data:tasmin_day_NorESM2-LM_historical_r1i1p1f1_gn_18600101-18691231,
@@ -2109,20 +2273,48 @@ people:PERSON__ZANDER_FRANZISKA a prov:Agent,
     foaf:familyName "Zander" ;
     foaf:givenName "Franziska" .
 
-<http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> a prov:Agent .
+software:FUNCTION__CDO_REMAPBIL a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_SELLONLATBOX a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
+
+software:FUNCTION__CDO_SELYEAR a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 tippecc_data:africa05.txt a prov:Entity .
 
-people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
-        "prov:Person" ;
-    rdfs:label "Jonathan Padavatan" ;
-    sdo:affiliation orgs:ORG__WITS ;
-    prov:actedOnBehalfOf orgs:ORG__WITS ;
-    foaf:familyName "Padavatan" ;
-    foaf:givenName "Jonathan" .
+people:PERSON__JONATHAN_PADAVATAN a prov:Agent ;
+    prov:actedOnBehalfOf orgs:ORG__WITS .
+
+software:FUNCTION__CDO_MERGE a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
     sdo:softwareVersion "1.9.3" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareApplication" .
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 

@@ -49,47 +49,59 @@ exe:Calc_abs._change_855 a prov:Activity ;
     prov:wasInformedBy exe:Calc_mean_857,
         exe:Calc_mean_859 .
 
+orgs:ORG__WITS a prov:Agent,
+        "prov:Organization" ;
+    rdfs:label "University of the Witwatersrand" ;
+    sdo:name "University of the Witwatersrand" ;
+    wd:P6782 "https://ror.org/03rp50x72" .
+
 software:FUNCTION__CDO_REMAPBIL a prov:Agent ;
-    sdo:description "This module remaps the input field using bilinear interpolation." ;
-    sdo:name "Remap bilinear" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 software:FUNCTION__CDO_SELLONLATBOX a prov:Agent ;
-    sdo:description "This module selects a region in the input field." ;
-    sdo:name "sellonlatbox - select a region" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 software:FUNCTION__CDO_SUB a prov:Agent ;
-    sdo:description "This module performs simple arithmetic of two datasets. The number of fields in ifile1 should be the same as in ifile2. One of the input files can contain only one timestep or one variable. The fields in ofile inherit the meta data from ifile1 or ifile2." ;
-    sdo:name "sub - subtract two fields" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 software:FUNCTION__CDO_YEARSUM a prov:Agent ;
-    sdo:description "This module computes the sum of the input field over a year." ;
-    sdo:name "Year sum" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 software:FUNCTION__XCLIM_CONVERT_UNITS a prov:Agent ;
-    sdo:description "Convert a mathematical expression into a value with the same units as a DataArray." ;
-    sdo:name "Convert units" ;
-    sdo:targetProduct software:SOFTWARE__XCLIM ;
-    sdo:type "sdo:SoftwareSourceCode" ;
-    sdo:url "https://xclim.readthedocs.io/en/stable/apidoc/xclim.core.html#xclim.core.units.convert_units_to" .
+    sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
+    sdo:license "MIT" ;
+    sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://xclim.readthedocs.io/en/stable/" .
 
 software:SOFTWARE__XCLIM_0_49 a prov:Agent ;
     sdo:description "xclim is a library for the analysis of climate data. It is designed to work with xarray datasets and follows the CF conventions. It is part of the PyData ecosystem and is built on top of xarray and dask." ;
     sdo:license "MIT" ;
     sdo:name "xclim" ;
+    sdo:softwareVersion "0.49.0" ;
     sdo:type "sdo:SoftwareApplication" ;
     sdo:url "https://xclim.readthedocs.io/en/stable/" .
-
-<http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX> a prov:Agent .
-
-<http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> a prov:Agent .
 
 tippecc_data:05deg_pr_day_AWI-ESM-1-REcoM_ssp585_r1i1p1f1_2015_2100 a prov:Entity .
 
@@ -191,8 +203,6 @@ exe:Remap_bilinear_25 a prov:Activity ;
     prov:description "Rename the dataset and adjust metadata." ;
     prov:params "N/A" ;
     prov:startedAtTime "2025-01-21T11:12:43-01:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <http://www.provbook.org/tippecc/software/software:FUNCTION__CDO_SELLONLATBOX>,
-        <http://www.provbook.org/tippecc/software/software:SOFTWARE__CDO_1_9_3> ;
     prov:wasInformedBy exe:Slice_TIPPECC_area_852 .
 
 exe:Slice_TIPPECC_area_852 a prov:Activity ;
@@ -243,31 +253,24 @@ orgs:ORG__FSU a prov:Agent,
     sdo:name "Friedrich Schiller University of Jena" ;
     wd:P6782 "https://ror.org/05qpz1x62" .
 
-orgs:ORG__WITS a prov:Agent,
-        "prov:Organization" ;
-    rdfs:label "University of the Witwatersrand" ;
-    sdo:name "University of the Witwatersrand" ;
-    wd:P6782 "https://ror.org/03rp50x72" .
-
-people:PERSON__JONATHAN_PADAVATAN a prov:Agent,
-        "prov:Person" ;
-    rdfs:label "Jonathan Padavatan" ;
-    sdo:affiliation orgs:ORG__WITS ;
-    prov:actedOnBehalfOf orgs:ORG__WITS ;
-    foaf:familyName "Padavatan" ;
-    foaf:givenName "Jonathan" .
+people:PERSON__JONATHAN_PADAVATAN a prov:Agent ;
+    prov:actedOnBehalfOf orgs:ORG__WITS .
 
 software:FUNCTION__CDO_MERGE a prov:Agent ;
-    sdo:description "This module merges two fields." ;
-    sdo:name "Merge two fields" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 software:FUNCTION__CDO_TIMMEAN a prov:Agent ;
-    sdo:description "This module computes the temporal mean of the input field." ;
-    sdo:name "timmean - time mean" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr__mm_1850_2100__yearsum_mean_1981_2000 a prov:Entity ;
     tippecc_data:CDI "Climate Data Interface version 1.9.3 (http://mpimet.mpg.de/cdi)" ;
@@ -373,14 +376,14 @@ seaIce: FESOM 1.4 (same grid as ocean component)""" ;
     tippecc_data:tracking_id "hdl:21.14100/8c31c2f8-54c9-40ab-8890-94e96c7f2017" ;
     tippecc_data:variable_id "pr" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity exe:Slice_ref._period_856 ;
-            prov:atTime "2025-02-10T11:51:32-01:00"^^xsd:dateTime ],
+    prov:qualifiedGeneration [ ],
+        [ ],
         [ a prov:Generation ;
             prov:activity exe:Calc_mean_857 ;
             prov:atTime "2025-02-10T11:51:32-01:00"^^xsd:dateTime ],
-        [ ],
-        [ ] ;
+        [ a prov:Generation ;
+            prov:activity exe:Slice_ref._period_856 ;
+            prov:atTime "2025-02-10T11:51:32-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr__mm_1850_2100__yearsum .
 
@@ -488,14 +491,14 @@ seaIce: FESOM 1.4 (same grid as ocean component)""" ;
     tippecc_data:tracking_id "hdl:21.14100/8c31c2f8-54c9-40ab-8890-94e96c7f2017" ;
     tippecc_data:variable_id "pr" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ a prov:Generation ;
             prov:activity exe:Slice_ref._period_858 ;
             prov:atTime "2025-02-10T11:51:37-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Calc_mean_859 ;
-            prov:atTime "2025-02-10T11:51:37-01:00"^^xsd:dateTime ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-02-10T11:51:37-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr__mm_1850_2100__yearsum .
 
@@ -511,16 +514,18 @@ exe:Calc_year_sum_860 a prov:Activity ;
     prov:wasInformedBy exe:Convert_pr_to_mm_854 .
 
 software:FUNCTION__CDO_SELYEAR a prov:Agent ;
-    sdo:description "This module selects a year range in the input field." ;
-    sdo:name "selyear - select a year range" ;
-    sdo:targetProduct software:SOFTWARE__CDO ;
-    sdo:type "sdo:SoftwareSourceCode" .
+    sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
+    sdo:license "GPL-2.0" ;
+    sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
+    sdo:type "sdo:SoftwareApplication" ;
+    sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
 tippecc_data:05deg_pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Remap_bilinear_25 ;
-            prov:atTime "2024-12-20T16:32:30"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T16:32:30"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:africa05.txt,
         tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014 .
@@ -626,7 +631,14 @@ seaIce: FESOM 1.4 (same grid as ocean component)""" ;
     tippecc_data:tracking_id "hdl:21.14100/8c31c2f8-54c9-40ab-8890-94e96c7f2017" ;
     tippecc_data:variable_id "pr" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a prov:Generation ;
+            prov:activity exe:Slice_TIPPECC_area_852 ;
+            prov:atTime "2025-01-21T12:11:42"^^xsd:dateTime ],
+        [ a prov:Generation ;
             prov:activity exe:Slice_years_851 ;
             prov:atTime "2025-01-21T12:08:46"^^xsd:dateTime ],
         [ a prov:Generation ;
@@ -634,14 +646,7 @@ seaIce: FESOM 1.4 (same grid as ocean component)""" ;
             prov:atTime "2025-01-21T11:12:43-01:00"^^xsd:dateTime ],
         [ a prov:Generation ;
             prov:activity exe:Merge_datasets_850 ;
-            prov:atTime "2025-01-17T17:38:37"^^xsd:dateTime ],
-        [ a prov:Generation ;
-            prov:activity exe:Slice_TIPPECC_area_852 ;
-            prov:atTime "2025-01-21T12:11:42"^^xsd:dateTime ],
-        [ ],
-        [ ],
-        [ ],
-        [ ] ;
+            prov:atTime "2025-01-17T17:38:37"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:05deg_pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014,
         tippecc_data:05deg_pr_day_AWI-ESM-1-REcoM_ssp585_r1i1p1f1_2015_2100 .
@@ -747,18 +752,18 @@ seaIce: FESOM 1.4 (same grid as ocean component)""" ;
     tippecc_data:tracking_id "hdl:21.14100/8c31c2f8-54c9-40ab-8890-94e96c7f2017" ;
     tippecc_data:variable_id "pr" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Convert_pr_to_mm_854 ;
-            prov:atTime "2025-01-24T16:02:02-01:00"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2025-01-24T16:02:02-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr_1850_2100 .
 
 tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_1850_2014 a prov:Entity ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Merge_datasets_445 ;
-            prov:atTime "2024-12-20T16:31:37"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2024-12-20T16:31:37"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__JONATHAN_PADAVATAN ;
     prov:wasDerivedFrom tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_18500101-18691231,
         tippecc_data:pr_day_AWI-ESM-1-REcoM_historical_r1i1p1f1_gn_18700101-18891231,
@@ -882,10 +887,10 @@ seaIce: FESOM 1.4 (same grid as ocean component)""" ;
     tippecc_data:tracking_id "hdl:21.14100/8c31c2f8-54c9-40ab-8890-94e96c7f2017" ;
     tippecc_data:variable_id "pr" ;
     tippecc_data:variant_label "r1i1p1f1" ;
-    prov:qualifiedGeneration [ a prov:Generation ;
+    prov:qualifiedGeneration [ ],
+        [ a prov:Generation ;
             prov:activity exe:Calc_year_sum_860 ;
-            prov:atTime "2025-02-10T11:51:26-01:00"^^xsd:dateTime ],
-        [ ] ;
+            prov:atTime "2025-02-10T11:51:26-01:00"^^xsd:dateTime ] ;
     prov:wasAttributedTo people:PERSON__ZANDER_FRANZISKA ;
     prov:wasDerivedFrom tippecc_data:TIPPECC_AWI-ESM-1-REcoM_day_r1i1p1f1_pr__mm_1850_2100 .
 
@@ -893,6 +898,7 @@ software:SOFTWARE__CDO_1_9_3 a prov:Agent ;
     sdo:description "The Climate Data Operators (CDO) software is a collection of many operators for standard processing of climate and forecast model data." ;
     sdo:license "GPL-2.0" ;
     sdo:name "Climate Data Operators" ;
+    sdo:softwareVersion "1.9.3" ;
     sdo:type "sdo:SoftwareApplication" ;
     sdo:url "https://code.mpimet.mpg.de/projects/cdo" .
 
