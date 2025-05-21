@@ -344,7 +344,7 @@ for filename in os.listdir(prov_path):
                 activity.add_attributes({'prov:label': label})
                 activity.add_attributes({'prov:description': description})
                 # TODO: Add more activity metadata ???
-                activity.add_attributes({'prov:function': function})
+                #activity.add_attributes({'prov:function': function})
                 activity.add_attributes({'prov:params': params})
 
                 #'prov:function': function, 'prov:params': params
