@@ -110,16 +110,14 @@ def get_prov_metadata(key, prov_path, namespace="tippecc_data:"):
 
     metadata = prov_metadata.get(key, {})
 
-    # Lies Metadaten aus Software nicht aus Software mit Version Key
-    if isinstance(key, str) and (key.startswith("SOFTWARE__") or  key.startswith("FUNCTION__")) and isinstance(metadata.get("sdo:targetProduct"), dict):
+    # SOFTWARE-Verarbeitung
+    if isinstance(key, str) and key.startswith("SOFTWARE__") and isinstance(metadata.get("sdo:targetProduct"), dict):
         target = metadata.get("sdo:targetProduct")
         version = metadata.get("sdo:softwareVersion")
         if "@id" in target:
             target_id = target["@id"]
-
             if isinstance(target_id, str) and target_id.startswith("SOFTWARE__"):
                 metadata = prov_metadata.get(target_id, {})
-                # Füge Version wieder hinzu, falls vorhanden
                 if version:
                     metadata["sdo:softwareVersion"] = version
 
@@ -289,6 +287,7 @@ for filename in os.listdir(prov_path):
 
             if not software_id == None:
                 software_id, software_metadata = get_prov_metadata (software_id, prov_base, f"{software_namespace}:")
+
             if not function_id == None:
                 function_id, function_metadata = get_prov_metadata (function_id, prov_base, f"{software_namespace}:")
 
